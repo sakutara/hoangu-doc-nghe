@@ -1,0 +1,199 @@
+## G3-15 | Thế giới game: nghề & vai trò
+玩家=người chơi
+法师=pháp sư
+刺客=thích khách
+弓箭手=xạ thủ cung
+坦克=tank (người chịu đòn)
+奶妈=healer (người hồi máu)
+辅助=hỗ trợ
+输出=sát thương đầu ra (dps)
+副本=phụ bản (dungeon)
+组队=lập đội
+公会=công hội (guild)
+道具=đạo cụ
+氪金=nạp tiền (cày kim)
+肝帝=vua cày game
+新手=tân thủ
+老手=người lão luyện
+大神=đại thần (cao thủ)
+菜鸟=gà mờ
+服务器=máy chủ
+排行榜=bảng xếp hạng
+> 他是一个战士，我是法师。 | Anh ấy là chiến binh, còn tôi là pháp sư.
+> 我们一起组队打副本吧。 | Chúng ta cùng lập đội đánh phụ bản đi.
+> 这个新手什么都不懂。 | Tân thủ này cái gì cũng không hiểu.
+> 他是服务器里的第一名。 | Anh ấy là hạng nhất trong máy chủ.
+## G3-16 | Game: chỉ số, vật phẩm & chiến đấu
+血量=lượng máu (HP)
+蓝量=lượng mana (MP)
+魔法值=điểm ma pháp
+攻击力=sức tấn công
+防御力=sức phòng thủ
+暴击=đòn chí mạng
+闪避=né tránh
+冷却=hồi chiêu (thời gian hồi)
+增益=hiệu ứng tăng (buff)
+减益=hiệu ứng giảm (debuff)
+复活=hồi sinh
+掉落=rơi đồ
+史诗=sử thi (epic)
+神装=trang bị thần
+极品=cực phẩm
+满级=cấp tối đa
+开挂=bật hack
+刷怪=cày quái
+打怪=đánh quái
+野怪=quái hoang
+首领=thủ lĩnh (boss)
+小怪=quái nhỏ
+> 他的血量只剩下一点。 | Lượng máu của anh ấy chỉ còn lại một chút.
+> 打败首领可以掉落极品装备。 | Đánh bại thủ lĩnh có thể rơi trang bị cực phẩm.
+> 我的角色已经满级了。 | Nhân vật của tôi đã đạt cấp tối đa.
+> 这个技能冷却时间很长。 | Kỹ năng này có thời gian hồi chiêu rất dài.
+## G3-17 | Vai trò nhân vật & quan hệ tình cảm
+配角=nhân vật phụ
+反派=phản diện
+女主=nữ chính
+男主=nam chính
+女配=nữ phụ
+男配=nam phụ
+炮灰=bia đỡ đạn
+龙套=vai quần chúng
+路人=người qua đường
+宿敌=kẻ thù truyền kiếp
+师徒=thầy trò
+道侣=đạo lữ
+夫君=phu quân
+娘子=nương tử
+相公=tướng công
+爱人=người yêu
+前任=người yêu cũ
+白月光=ánh trăng trắng (mối tình khó quên)
+替身=người thế thân
+女神=nữ thần
+男神=nam thần
+校花=hoa khôi
+学霸=học bá (học giỏi)
+恩人=ân nhân
+> 她是这本小说的女主。 | Cô ấy là nữ chính của cuốn tiểu thuyết này.
+> 反派总是想杀死主角。 | Phản diện luôn muốn giết nhân vật chính.
+> 他把她当成白月光的替身。 | Anh ta coi cô ấy là người thế thân của ánh trăng trắng.
+> 夫君，你回来了！ | Phu quân, chàng về rồi!
+## G3-18 | Trạng từ & thần thái trong văn truyện
+愕然=ngỡ ngàng
+冷笑=cười lạnh
+苦笑=cười gượng
+淡淡=nhàn nhạt
+冷冷=lạnh lùng
+缓缓=chậm rãi
+默默=lặng lẽ
+轻轻=nhẹ nhàng
+猛地=bỗng nhiên, đột ngột
+忽然=chợt, bỗng
+顿时=lập tức
+瞬间=trong chớp mắt
+刹那=sát na, khoảnh khắc
+不禁=không kìm được
+忍不住=nhịn không được
+情不自禁=không tự chủ được
+隐隐=lờ mờ
+渐渐=dần dần
+微微=khẽ, hơi
+狠狠=hung hăng
+深深=thật sâu
+静静=lặng lẽ yên tĩnh
+悄悄=lén lút, khẽ khàng
+冷哼=hừ lạnh
+> 他冷笑一声，转身离开。 | Hắn cười lạnh một tiếng rồi quay người rời đi.
+> 她轻轻地笑了，情不自禁地点了点头。 | Nàng khẽ bật cười, không tự chủ được mà gật đầu.
+> 瞬间，所有人都震惊了。 | Trong chớp mắt, tất cả mọi người đều sửng sốt.
+> 他缓缓地睁开了眼睛。 | Hắn chậm rãi mở mắt ra.
+## G3-19 | Động tác & biểu cảm trong truyện
+皱眉=nhíu mày
+咬牙=nghiến răng
+握拳=nắm chặt tay
+叹气=thở dài
+点头=gật đầu
+摇头=lắc đầu
+转身=quay người
+抬头=ngẩng đầu
+低头=cúi đầu
+伸手=đưa tay
+挥手=vẫy tay
+抬手=giơ tay
+出手=xuất thủ, ra tay đánh
+一掌=một chưởng
+一拳=một quyền
+一脚=một cước
+一剑=một kiếm
+一刀=một đao
+睁眼=mở mắt
+闭眼=nhắm mắt
+眨眼=chớp mắt
+瞪眼=trừng mắt
+张嘴=há miệng
+闭嘴=ngậm miệng
+> 他皱眉，不说话。 | Hắn nhíu mày, không nói gì.
+> 她抬手一掌，打在对方身上。 | Nàng giơ tay tung một chưởng, đánh trúng người đối phương.
+> 老师摇了摇头，叹气。 | Thầy giáo lắc đầu, thở dài một tiếng.
+> 你给我闭嘴！ | Ngươi câm miệng cho ta!
+## G3-20 | Cảnh vật thiên nhiên trong truyện
+山峰=đỉnh núi
+山脉=dãy núi
+山谷=thung lũng
+悬崖=vách đá
+瀑布=thác nước
+河流=dòng sông
+湖泊=hồ nước
+草原=thảo nguyên
+荒野=đồng hoang
+海洋=đại dương
+岛屿=hải đảo
+云雾=mây mù
+月光=ánh trăng
+星空=bầu trời sao
+夕阳=tịch dương, nắng chiều
+晨曦=ánh bình minh
+风雪=gió tuyết
+雷鸣=tiếng sấm
+暴雨=mưa to
+乌云=mây đen
+闪电=tia chớp
+大地=đại địa, mặt đất
+天际=chân trời
+远方=phương xa
+荒凉=hoang vắng
+> 山峰上的云雾很多。 | Mây mù trên đỉnh núi rất nhiều.
+> 月光照在湖面上。 | Ánh trăng chiếu trên mặt hồ.
+> 远方的天际出现了乌云。 | Phía chân trời xa xuất hiện mây đen.
+> 夕阳下的草原非常漂亮。 | Thảo nguyên dưới nắng chiều vô cùng đẹp.
+## G3-21 | Y phục & vật dụng thời cổ
+长袍=áo bào dài
+白衣=áo trắng
+黑衣=áo đen
+面纱=khăn che mặt
+玉佩=ngọc bội
+发簪=trâm cài tóc
+折扇=quạt gấp
+古琴=cổ cầm
+茶杯=chén trà
+酒杯=chén rượu
+灯笼=đèn lồng
+烛火=ánh nến
+屏风=bình phong
+床榻=giường tháp
+轿子=cỗ kiệu
+马车=xe ngựa
+战马=chiến mã
+披风=áo choàng
+腰带=đai lưng
+长发=tóc dài
+玉镯=vòng ngọc
+香囊=túi thơm
+竹简=thẻ tre
+书房=thư phòng
+庭院=sân vườn
+> 她穿着一身白衣，脸上戴着面纱。 | Nàng mặc một thân áo trắng, trên mặt đeo khăn che.
+> 他手里拿着一把折扇。 | Trong tay hắn cầm một chiếc quạt gấp.
+> 马车停在庭院外面。 | Xe ngựa dừng bên ngoài sân.
+> 书房里的烛火还亮着。 | Ánh nến trong thư phòng vẫn còn sáng.

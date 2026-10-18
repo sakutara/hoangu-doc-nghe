@@ -1,0 +1,309 @@
+l4-21 | 他总是乱发消息，我只好把他拉黑了。 | Anh ấy cứ nhắn tin linh tinh nên tôi đành chặn anh ấy.
+l4-21 | 周末我在家追剧，一看就是一整天。 | Cuối tuần tôi ở nhà cày phim bộ, xem một mạch cả ngày.
+l4-21 | 为了通关，他每天晚上都在肝游戏。 | Để qua màn, tối nào cậu ấy cũng thức đêm cày game.
+l4-21 | 这部小说的世界观很完整，逻辑也很清楚。 | Cuốn tiểu thuyết này có thế giới quan rất hoàn chỉnh, logic cũng rất rõ ràng.
+l4-21 | 这件事跟我没关系，我只是来打酱油的。 | Chuyện này không liên quan đến tôi, tôi chỉ đi ngang qua thôi.
+l4-21 | 他喜欢收集卡牌，还常常在游戏里氪金。 | Cậu ấy thích sưu tầm thẻ bài, lại hay nạp tiền vào game.
+l4-21 | 边走路边听英语，真是一举两得。 | Vừa đi bộ vừa nghe tiếng Anh, đúng là một công đôi việc.
+l4-22 | 我的家乡在中国东北，冬天特别冷。 | Quê tôi ở đông bắc Trung Quốc, mùa đông rất lạnh.
+l4-22 | 这个名称很长，我记不住。 | Tên gọi này dài quá, tôi không nhớ nổi.
+l4-22 | 我家的洗衣机坏了，得买新的。 | Máy giặt nhà tôi hỏng rồi, phải mua cái mới.
+l4-22 | 祝你一路顺风，到了给我打电话。 | Chúc bạn thượng lộ bình an, đến nơi nhớ gọi điện cho tôi.
+l4-22 | 十二月份很冷，老年人要多穿衣服。 | Tháng mười hai rất lạnh, người già nên mặc nhiều áo.
+l4-22 | 这件衣服太难看了，我不想买。 | Cái áo này khó coi quá, tôi không muốn mua.
+l4-22 | 他是外地人，去年回国工作了。 | Anh ấy là người ở nơi khác, năm ngoái đã về nước làm việc.
+l4-22 | 电脑还没开机，你再等一会儿。 | Máy tính chưa bật, bạn đợi một lát nữa.
+l4-23 | 这些是常用的汉字，你要多写几遍。 | Đây là những chữ Hán thường dùng, bạn cần viết thêm vài lần.
+l4-23 | 老师在黑板上写了一个字。 | Thầy giáo viết một chữ lên bảng đen.
+l4-23 | 这种水果在中国叫作“火龙果”。 | Loại trái cây này ở Trung Quốc được gọi là "thanh long".
+l4-23 | 学校在城市的东南方向。 | Trường học nằm ở hướng đông nam của thành phố.
+l4-23 | 我买了两斤苹果。 | Tôi mua hai cân táo.
+l4-23 | 医生给我开了一瓶药水。 | Bác sĩ kê cho tôi một chai thuốc nước.
+l4-23 | “中国”这个词有两个音节。 | Từ "中国" có hai âm tiết.
+l4-23 | 他喜欢打排球，说得也很流利。 | Anh ấy thích chơi bóng chuyền, lại nói rất trôi chảy.
+l4-23 | 我迷路了，只好向路人问路。 | Tôi bị lạc nên đành hỏi đường người qua đường.
+l4-23 | 他唱歌太难听了。 | Anh ấy hát khó nghe quá.
+l4-23 | 不懂的字可以查词典。 | Chữ nào không hiểu thì có thể tra từ điển.
+l4-23 | 晚上太忙，我吃了一碗方便面。 | Tối bận quá nên tôi ăn một tô mì ăn liền.
+l4-24 | 这袋米有五千克。 | Túi gạo này nặng năm kilôgam.
+l4-24 | 学生们都在认真听讲。 | Các học sinh đều đang chăm chú nghe giảng.
+l4-24 | 他从包里拿出一本书。 | Anh ấy lấy một quyển sách từ trong cặp ra.
+l4-24 | 爸爸在工地干活儿，很辛苦。 | Bố làm việc ở công trường, rất vất vả.
+l4-24 | 这家商店全年都营业。 | Cửa hàng này mở cửa cả năm.
+l4-24 | 西医和中医各有各的好处。 | Tây y và đông y mỗi bên có cái hay riêng.
+l4-24 | 今晚我们去吃西餐吧。 | Tối nay chúng ta đi ăn món Tây nhé.
+l4-24 | 考生们走进了教室。 | Các thí sinh bước vào phòng thi.
+l4-24 | 他在一所中小学教英语。 | Cô ấy dạy tiếng Anh ở một trường trung tiểu học.
+l4-24 | 秋天到了，树叶变黄了。 | Mùa thu đến rồi, lá cây đã vàng.
+l4-25 | 我每天坐公交车上班，你得快点儿。 | Ngày nào tôi cũng đi xe buýt đi làm, bạn phải nhanh lên chút.
+l4-25 | 那时候我还小，觉得这里挺好。 | Hồi đó tôi còn nhỏ, thấy chỗ này rất ổn.
+l4-25 | 我的银行卡丢了，心里有一点儿着急。 | Thẻ ngân hàng của tôi bị mất, trong lòng hơi lo.
+l4-25 | 我找出了问题的原因，你干吗还生气？ | Tôi đã tìm ra nguyên nhân vấn đề, sao bạn còn giận?
+l4-25 | 这条高速路很长。 | Con đường cao tốc này rất dài.
+l4-25 | 这个消息传播得很快。 | Tin này lan truyền rất nhanh.
+l4-25 | 他每天早上吃一根香蕉。 | Sáng nào anh ấy cũng ăn một quả chuối.
+l4-25 | 各地的朋友都来参加婚礼。 | Bạn bè từ khắp nơi đều đến dự đám cưới.
+l4-26 | 请带好您的证件。 | Xin hãy mang theo giấy tờ của bạn.
+l4-26 | 这件上衣是新买的，那条短裤是旧的。 | Cái áo này mới mua, chiếc quần short kia thì cũ.
+l4-26 | 老师带领我们参观博物馆。 | Thầy giáo dẫn dắt chúng tôi đi tham quan bảo tàng.
+l4-26 | 远处传来美丽的歌声。 | Từ xa vọng lại tiếng hát hay.
+l4-26 | 今天比昨天较冷，你要多穿点。 | Hôm nay lạnh hơn hôm qua, bạn nên mặc thêm.
+l4-26 | 这个概念很难懂，我还不认得这几个字。 | Khái niệm này khó hiểu, tôi cũng chưa nhận ra mấy chữ này.
+l4-26 | 毕业后我们就要分别了，但友谊不会变。 | Tốt nghiệp xong chúng ta sẽ chia tay, nhưng tình bạn không đổi.
+l4-26 | 大家分别回答了三个问题。 | Mọi người trả lời riêng từng ba câu hỏi.
+l4-26 | 这是我们努力的成果。 | Đây là thành quả nỗ lực của chúng tôi.
+l4-26 | 越南南部一年四季都很热。 | Miền nam Việt Nam bốn mùa đều nóng.
+l4-26 | 这个盒子的形状很特别。 | Hình dạng của chiếc hộp này rất đặc biệt.
+l4-26 | 他们打算改造这个旧房子。 | Họ định cải tạo ngôi nhà cũ này.
+l4-27 | 这片房屋是十年前建的。 | Dãy nhà cửa này được xây từ mười năm trước.
+l4-27 | 请先填写这张表格，再把它放进信封里。 | Xin hãy điền biểu mẫu này trước, rồi cho vào phong bì.
+l4-27 | 公司要了解客户的需求。 | Công ty cần tìm hiểu nhu cầu của khách hàng.
+l4-27 | 我们应当遵守规则。 | Chúng ta nên tuân thủ quy tắc.
+l4-27 | 这个问题的原因在于他自身。 | Nguyên nhân của vấn đề này nằm ở chính bản thân anh ấy.
+l4-27 | 汉字是一种古老的文字。 | Chữ Hán là một loại văn tự cổ xưa.
+l4-27 | 经理正在分配今天的工作。 | Giám đốc đang phân công công việc hôm nay.
+l4-27 | 我哥哥在一家工业公司上班。 | Anh trai tôi làm ở một công ty công nghiệp.
+l4-28 | 我属龙，你属什么？ | Tôi tuổi Rồng, bạn tuổi gì?
+l4-28 | 这种花喜欢生长在温暖的地方。 | Loài hoa này thích sinh trưởng ở nơi ấm áp.
+l4-28 | 他送了我一束花。 | Anh ấy tặng tôi một bó hoa.
+l4-28 | 大家一起推进这项工作。 | Mọi người cùng thúc đẩy công việc này.
+l4-28 | 图书馆是学习的好场所。 | Thư viện là nơi học tập tốt.
+l4-28 | 他家在中国北部，姐姐在东部工作。 | Nhà anh ấy ở miền bắc Trung Quốc, chị gái làm việc ở miền đông.
+l4-28 | 孩子做完功课才能玩。 | Con làm xong bài vở mới được chơi.
+l4-28 | 他的成绩得到了老师的认可。 | Thành tích của cậu ấy được thầy cô công nhận.
+l4-28 | 鞋子里进了一点沙子。 | Trong giày có lọt chút hạt cát.
+l4-29 | 这家店的商品很便宜。 | Mặt hàng của cửa hàng này rất rẻ.
+l4-29 | 预计明天会下雨。 | Dự kiến ngày mai sẽ có mưa.
+l4-29 | 中国有五十六个民族。 | Trung Quốc có năm mươi sáu dân tộc.
+l4-29 | 她的成绩在班里很突出。 | Thành tích của cô ấy rất nổi bật trong lớp.
+l4-29 | 比赛时，家属可以在外面等。 | Khi thi đấu, thân nhân có thể đợi ở bên ngoài.
+l4-29 | 吸烟会危害健康。 | Hút thuốc gây hại cho sức khỏe.
+l4-29 | 今年公司的收入增长了很多。 | Năm nay thu nhập của công ty tăng trưởng nhiều.
+l4-29 | 这件事我早已知道了。 | Chuyện này tôi đã biết từ lâu rồi.
+l4-30 | 这件作品体现了他的才华。 | Tác phẩm này thể hiện tài năng của anh ấy.
+l4-30 | 你的考试成绩合格了，请在表上填性别。 | Điểm thi của bạn đã đạt, xin điền giới tính vào bảng.
+l4-30 | 他在外交部工作。 | Anh ấy làm việc ở Bộ Ngoại giao.
+l4-30 | 我们已经初步完成了计划。 | Chúng tôi đã hoàn thành kế hoạch ở mức sơ bộ.
+l4-30 | 老板否定了这个办法。 | Sếp đã phủ định cách này.
+l4-30 | 每个人的观念都不一样。 | Quan niệm của mỗi người đều khác nhau.
+l4-30 | 从整体来看，这个方案不错。 | Nhìn tổng thể, phương án này không tệ.
+l4-30 | 春天到了，农民开始撒种子。 | Xuân đến, nông dân bắt đầu gieo hạt giống.
+l4-30 | 这所大学的排名很高。 | Trường đại học này xếp hạng rất cao.
+l4-30 | 现在很多工作都靠人工智能，请把文件发到我的邮箱。 | Giờ nhiều việc dựa vào trí tuệ nhân tạo, xin gửi tệp vào hộp thư của tôi.
+l4-30 | 这家店还是需要人工服务。 | Cửa hàng này vẫn cần dịch vụ nhân công.
+l4-31 | 这条规定适用于所有人。 | Quy định này áp dụng cho tất cả mọi người.
+l4-31 | 这篇文章的标题很吸引人。 | Tiêu đề bài viết này rất thu hút.
+l4-31 | 多洗手可以预防感冒。 | Rửa tay nhiều có thể phòng ngừa cảm cúm.
+l4-31 | 努力学习，成功是必然的。 | Chăm chỉ học tập, thành công là điều tất nhiên.
+l4-31 | 他一唱歌，全场都安静了。 | Anh ấy vừa hát, cả hội trường đều im lặng.
+l4-31 | 公司需要创新才能发展。 | Công ty cần đổi mới mới phát triển được.
+l4-31 | 我想买一张邮票寄信。 | Tôi muốn mua một con tem để gửi thư.
+l4-32 | 他主张大家多运动。 | Anh ấy chủ trương mọi người nên vận động nhiều.
+l4-32 | 前后不到十分钟，他就做完了。 | Tính trước sau chưa đến mười phút, anh ấy đã làm xong.
+l4-32 | 新政策推动了经济发展。 | Chính sách mới đã thúc đẩy kinh tế phát triển.
+l4-32 | 我住在三号楼二单元。 | Tôi ở đơn nguyên hai, tòa số ba.
+l4-32 | 现在用手机付钱很普遍。 | Bây giờ dùng điện thoại để trả tiền rất phổ biến.
+l4-32 | 晚上冷，记得盖好被子。 | Buổi tối lạnh, nhớ đắp chăn cho kỹ.
+l4-32 | 这项技术已经应用到生活中了。 | Công nghệ này đã được ứng dụng vào đời sống.
+l4-32 | 这个制度还需要继续完善。 | Chế độ này vẫn cần tiếp tục hoàn thiện.
+l4-32 | 小村子变为一座漂亮的小城。 | Làng nhỏ đã chuyển thành một thành phố nhỏ xinh đẹp.
+l4-32 | 孩子们喜欢彩色的气球。 | Bọn trẻ thích những quả bóng bay đủ màu.
+l4-33 | 我在学初级汉语。 | Tôi đang học tiếng Trung sơ cấp.
+l4-33 | 请到那边办理手续。 | Xin hãy đến đằng kia làm thủ tục.
+l4-33 | 爷爷每天早上收听广播。 | Ông nội sáng nào cũng nghe đài.
+l4-33 | 孩子要学会自主学习。 | Trẻ em cần học cách tự chủ trong học tập.
+l4-33 | 他是一名志愿者。 | Anh ấy là một tình nguyện viên.
+l4-33 | 新桥终于建成了。 | Cây cầu mới cuối cùng đã xây xong.
+l4-33 | 墙上挂着一幅漂亮的图画。 | Trên tường treo một bức tranh vẽ rất đẹp.
+l4-34 | 我们昨晚去看了一场话剧。 | Tối qua chúng tôi đi xem một vở kịch nói.
+l4-34 | 每个人都有自己的长处。 | Mỗi người đều có sở trường riêng.
+l4-34 | 书架上有很多书，衣架上挂着外套。 | Trên giá sách có rất nhiều sách, trên móc áo treo áo khoác.
+l4-34 | 这家工厂有两百名职工。 | Nhà máy này có hai trăm công nhân viên.
+l4-34 | 今天的专题讲座很有意思。 | Buổi chuyên đề hôm nay rất thú vị.
+l4-34 | 所长今天不在办公室。 | Hôm nay sở trưởng không có ở văn phòng.
+l4-34 | 她从小就喜欢影视作品。 | Cô ấy từ nhỏ đã thích các tác phẩm điện ảnh truyền hình.
+l4-34 | 旅游业带动了当地经济。 | Ngành du lịch đã kéo theo kinh tế địa phương.
+l4-35 | 交警在路口指挥交通。 | Cảnh sát giao thông chỉ huy giao thông ở ngã tư.
+l4-35 | 妈妈买了一棵白菜。 | Mẹ mua một cây cải thảo.
+l4-35 | 天太热了，我想喝一杯凉水。 | Trời nóng quá, tôi muốn uống một cốc nước lạnh.
+l4-35 | 春节的初一，全家人一起吃饺子。 | Mùng một Tết, cả nhà cùng ăn sủi cảo.
+l4-35 | 智能手机已经普及了。 | Điện thoại thông minh đã được phổ cập.
+l4-35 | 谁都有短处，不要笑话别人。 | Ai cũng có chỗ kém, đừng cười người khác.
+l4-35 | 老师想提高学生的积极性。 | Thầy giáo muốn nâng cao tính tích cực của học sinh.
+l4-35 | 后年我打算去中国留学。 | Năm sau nữa tôi định đi Trung Quốc du học.
+l4-36 | 中华民族有五千年的历史。 | Dân tộc Trung Hoa có lịch sử năm nghìn năm.
+l4-36 | 请你把地扫一扫。 | Bạn quét nhà một chút nhé.
+l4-36 | 我们学校位于市中心。 | Trường chúng tôi nằm ở trung tâm thành phố.
+l4-36 | 这条路很宽。 | Con đường này rất rộng.
+l4-36 | 这里不能吸烟。 | Ở đây không được hút thuốc.
+l4-36 | 眼睛的颜色是可以遗传的。 | Màu mắt có thể di truyền.
+l4-36 | 刚才下了一阵雨。 | Vừa nãy có một cơn mưa.
+l4-37 | 这座楼的结构很特别。 | Kết cấu của tòa nhà này rất đặc biệt.
+l4-37 | 十减三等于七。 | Mười trừ ba bằng bảy.
+l4-37 | 这种动物有一个明显的特征。 | Loài động vật này có một đặc trưng rất rõ.
+l4-37 | 我下午要去银行办事。 | Chiều nay tôi phải đi ngân hàng làm việc.
+l4-37 | 长城是世界文化遗产。 | Vạn Lý Trường Thành là di sản văn hóa thế giới.
+l4-37 | 这种茶含糖很少。 | Loại trà này chứa rất ít đường.
+l4-37 | 那个情景我永远忘不了。 | Tôi mãi mãi không quên cảnh tượng đó.
+l4-37 | 我喜欢喝浓一点的咖啡。 | Tôi thích uống cà phê đậm hơn một chút.
+l4-38 | 请把这张照片缩小一点。 | Xin hãy thu nhỏ bức ảnh này một chút.
+l4-38 | 你知道这个符号的含义吗？ | Bạn có biết hàm nghĩa của ký hiệu này không?
+l4-38 | 这场比赛我们败了。 | Trận đấu này chúng tôi thua rồi.
+l4-38 | 他从大陆来到这个小岛。 | Anh ấy từ đại lục đến hòn đảo nhỏ này.
+l4-38 | 汽车的燃料是汽油，加油站负责供应。 | Nhiên liệu của ô tô là xăng, trạm xăng chịu trách nhiệm cung ứng.
+l4-38 | 这家公司的待遇不错。 | Đãi ngộ của công ty này khá tốt.
+l4-38 | 学汉语要先学好语音。 | Học tiếng Trung phải học tốt ngữ âm trước.
+l4-39 | 读书可以获取很多知识。 | Đọc sách có thể thu được nhiều kiến thức.
+l4-39 | 他是一个品格高尚的人。 | Anh ấy là người phẩm chất cao thượng.
+l4-39 | 春天是我最喜欢的季节。 | Mùa xuân là mùa tôi thích nhất.
+l4-39 | 我们的想法已经统一了。 | Ý kiến của chúng tôi đã thống nhất.
+l4-39 | 这个小区现在是封闭管理。 | Khu dân cư này hiện được quản lý khép kín.
+l4-39 | 现在的形势对我们很有利。 | Tình thế hiện nay rất có lợi cho chúng ta.
+l4-39 | 这条河很浅，孩子可以玩水。 | Con sông này nông, trẻ con có thể nghịch nước.
+l4-39 | 桌上放着一张相片。 | Trên bàn đặt một tấm ảnh.
+l4-39 | 各个房间都打扫干净了。 | Từng căn phòng đều đã được quét dọn sạch sẽ.
+l4-39 | 她很善于和别人交流。 | Cô ấy rất khéo giao tiếp với người khác.
+l4-39 | 前面有一个加油站，男女老少都在排队。 | Phía trước có một trạm xăng, nam nữ già trẻ đều đang xếp hàng.
+l4-40 | 我们的时间有限，请长话短说。 | Thời gian của chúng ta có hạn, xin nói ngắn gọn.
+l4-40 | 这次旅行总共花了三千块。 | Chuyến du lịch lần này tổng cộng tốn ba nghìn tệ.
+l4-40 | 他在回家的途中遇到了老朋友。 | Trên đường về nhà anh ấy gặp bạn cũ.
+l4-40 | 银行要求有人担保。 | Ngân hàng yêu cầu phải có người bảo lãnh.
+l4-40 | 消防员们在火灾中十分英勇。 | Các lính cứu hỏa rất anh dũng trong đám cháy.
+l4-40 | 他的想法很单纯。 | Suy nghĩ của cậu ấy rất đơn thuần.
+l4-40 | 公司打算扩大生产。 | Công ty định mở rộng sản xuất.
+l4-40 | 我们在阳台上喝茶，雨天要避开台阶。 | Chúng tôi uống trà trên ban công, ngày mưa phải tránh bậc thềm.
+l4-40 | 月末我要交报告。 | Cuối tháng tôi phải nộp báo cáo.
+l4-41 | 这块宝石很贵重。 | Viên bảo thạch này rất quý giá.
+l4-41 | 他的心情很沉重。 | Tâm trạng của anh ấy rất nặng nề.
+l4-41 | 这个价格包含服务费。 | Giá này đã bao gồm phí dịch vụ.
+l4-41 | 今天的雨有三毫米。 | Hôm nay lượng mưa là ba milimét.
+l4-41 | 这篇文章反映了社会问题。 | Bài viết này phản ánh vấn đề xã hội.
+l4-41 | 机器人不能完全替代人。 | Người máy không thể thay thế hoàn toàn con người.
+l4-41 | 这道菜的味儿很特别。 | Mùi vị của món này rất đặc biệt.
+l4-41 | 请把这段话抄在本子上。 | Hãy chép đoạn này vào vở.
+l4-41 | 做这份工作要具备很多能力。 | Làm công việc này cần có đủ nhiều năng lực.
+l4-41 | 把两个方案对比一下吧。 | Hãy đối chiếu hai phương án này đi.
+l4-42 | 这幅画的色彩很丰富。 | Màu sắc của bức tranh này rất phong phú.
+l4-42 | 吃得太快不容易消化。 | Ăn quá nhanh thì khó tiêu hóa.
+l4-42 | 生活要有规律。 | Cuộc sống cần có quy luật.
+l4-42 | 这种饮料含有很多糖。 | Loại đồ uống này có chứa nhiều đường.
+l4-42 | 他们两家的关系很密切。 | Quan hệ giữa hai nhà họ rất mật thiết.
+l4-42 | 比赛的比分是三比二。 | Tỷ số trận đấu là ba hai.
+l4-42 | 这种病已经大规模出现了。 | Căn bệnh này đã xuất hiện trên diện rộng.
+l4-42 | 老师对学生很严，把门关严了。 | Thầy giáo rất nghiêm với học sinh, đóng kín cửa lại.
+l4-43 | 玩游戏可以提高孩子的智力。 | Chơi trò chơi có thể nâng cao trí lực của trẻ.
+l4-43 | 这是一份综合报告。 | Đây là một bản báo cáo tổng hợp.
+l4-43 | 这场雨还会延续两天。 | Cơn mưa này còn kéo dài hai ngày nữa.
+l4-43 | 历史书上记载了这件事。 | Sách lịch sử có ghi chép chuyện này.
+l4-43 | 两个国家的合作越来越紧密。 | Sự hợp tác giữa hai nước ngày càng chặt chẽ.
+l4-43 | 这个汤太咸了。 | Món canh này mặn quá.
+l4-43 | 听音乐可以缓解压力。 | Nghe nhạc có thể làm dịu áp lực.
+l4-43 | 每天早晚都要刷牙。 | Mỗi sáng tối đều phải đánh răng.
+l4-43 | 这条鱼很新鲜，海鲜在这里很鲜。 | Con cá này rất tươi, hải sản ở đây rất tươi.
+l4-44 | 会议延期到下周举行。 | Cuộc họp hoãn sang tuần sau.
+l4-44 | 请先登录你的账号。 | Xin hãy đăng nhập tài khoản của bạn trước.
+l4-44 | 看完这部电影，她流下了眼泪。 | Xem xong bộ phim này, cô ấy rơi nước mắt.
+l4-44 | 我的牙刷旧了，得换一把新的。 | Bàn chải đánh răng của tôi cũ rồi, phải đổi cái mới.
+l4-44 | 下雨天，屋子里很潮。 | Ngày mưa, trong nhà rất ẩm.
+l4-44 | 这个杯子是透明的。 | Chiếc cốc này trong suốt.
+l4-44 | 这个故事在民间流传了很多年。 | Câu chuyện này lưu truyền trong dân gian nhiều năm.
+l4-44 | 她从小就练体操。 | Cô ấy luyện thể dục dụng cụ từ nhỏ.
+l4-44 | 年轻人总是追赶潮流。 | Người trẻ luôn chạy theo trào lưu.
+l4-44 | 他的决心从来没有动摇过。 | Quyết tâm của anh ấy chưa bao giờ dao động.
+l4-44 | 这笔投资的收益很高。 | Khoản đầu tư này có lợi nhuận rất cao.
+l4-45 | 她很大方，从不小气。 | Cô ấy rất hào phóng, chưa bao giờ keo kiệt.
+l4-45 | 这根绳子有五十厘米长。 | Sợi dây này dài năm mươi xăng-ti-mét.
+l4-45 | 陆地比海洋小。 | Đất liền nhỏ hơn đại dương.
+l4-45 | 这两种东西的性质不一样。 | Tính chất của hai thứ này không giống nhau.
+l4-45 | 专家来这里考察环境。 | Chuyên gia đến đây khảo sát môi trường.
+l4-45 | 冬天屋里有暖气，一点也不冷。 | Mùa đông trong nhà có hơi sưởi, chẳng lạnh chút nào.
+l4-45 | 他在一家商务公司工作。 | Anh ấy làm ở một công ty thương vụ.
+l4-46 | 孩子发烧了，我带他去打针。 | Con sốt rồi, tôi đưa con đi tiêm.
+l4-46 | 这间屋子有二十平方米。 | Căn phòng này rộng hai mươi mét vuông.
+l4-46 | 秋天，树的叶子变黄了。 | Mùa thu, lá cây ngả vàng.
+l4-46 | 这座桥非常坚固。 | Cây cầu này vô cùng kiên cố.
+l4-46 | 压力促使他更加努力。 | Áp lực thúc ép anh ấy cố gắng hơn.
+l4-46 | 粮食是人们生活的基础。 | Lương thực là nền tảng cuộc sống của con người.
+l4-46 | 请把椅子排列整齐。 | Hãy xếp ghế thành hàng cho ngay ngắn.
+l4-47 | 这家小公司去年倒闭了。 | Công ty nhỏ này năm ngoái đã đóng cửa phá sản.
+l4-47 | 公司每年都安排体检。 | Công ty hằng năm đều sắp xếp khám sức khỏe.
+l4-47 | 请给我倒二百毫升水。 | Làm ơn rót cho tôi hai trăm mi-li-lít nước.
+l4-47 | 这座山被列为国家公园。 | Ngọn núi này được xếp vào công viên quốc gia.
+l4-47 | 学校后头有一个小花园。 | Phía sau trường có một vườn hoa nhỏ.
+l4-47 | 他很会交际，朋友很多。 | Anh ấy giỏi giao tế nên bạn rất nhiều.
+l4-48 | 每个个体都不一样。 | Mỗi cá thể đều không giống nhau.
+l4-48 | 这台机器的构造很简单。 | Cấu trúc của cỗ máy này rất đơn giản.
+l4-48 | 这个名字被列入了名单。 | Cái tên này đã được liệt vào danh sách.
+l4-48 | 这种鸟分布在南方。 | Loài chim này phân bố ở miền nam.
+l4-48 | 运动可以促进健康。 | Vận động có thể thúc đẩy sức khỏe.
+l4-48 | 超市里有多种水果。 | Trong siêu thị có nhiều loại trái cây.
+l4-48 | 我是通过中介找到房子的。 | Tôi tìm được nhà thông qua môi giới.
+l4-49 | 最近物价比较平稳。 | Gần đây giá cả khá bình ổn.
+l4-49 | 他用刷子刷鞋。 | Anh ấy dùng bàn chải để chải giày.
+l4-49 | 科学家研制出了新药。 | Các nhà khoa học đã nghiên cứu chế tạo ra thuốc mới.
+l4-49 | 这本书分为上下两册。 | Quyển sách này chia thành hai tập trên và dưới.
+l4-49 | 前头有一家面包店。 | Phía trước có một tiệm bánh mì.
+l4-49 | 他一再说对不起，我再三劝他别难过。 | Anh ấy liên tục xin lỗi, tôi nhiều lần khuyên anh đừng buồn.
+l4-49 | 这幅画的颜色很鲜明。 | Màu sắc của bức tranh này rất rõ nét.
+l4-50 | 这批大米质量优良。 | Lô gạo này chất lượng ưu việt.
+l4-50 | 请你概括一下这篇文章的意思。 | Bạn hãy khái quát ý của bài văn này.
+l4-50 | 他以高价买了一块手表。 | Anh ấy mua một chiếc đồng hồ với giá cao.
+l4-50 | 售货员热情地接待顾客。 | Nhân viên bán hàng đón tiếp khách nhiệt tình.
+l4-50 | 我们坐轮船去了小岛。 | Chúng tôi đi tàu thủy ra đảo nhỏ.
+l4-50 | 他个子矮小，但跑得很快。 | Cậu ấy người thấp bé nhưng chạy rất nhanh.
+l4-51 | 公司制订了新的计划。 | Công ty đã soạn thảo kế hoạch mới.
+l4-51 | 草原宽广，天空很蓝。 | Thảo nguyên bao la, bầu trời rất xanh.
+l4-51 | 他率先举手回答问题。 | Anh ấy giơ tay trả lời câu hỏi đầu tiên.
+l4-51 | 老师让我们抄写十个生词。 | Thầy giáo cho chúng tôi chép lại mười từ mới.
+l4-51 | 看问题不能太片面。 | Nhìn vấn đề không thể quá phiến diện.
+l4-51 | 她是本科毕业，现在读研究生。 | Cô ấy tốt nghiệp đại học chính quy, hiện đang học cao học.
+l4-52 | 请把答案写在括号里。 | Xin hãy viết đáp án vào trong dấu ngoặc.
+l4-52 | 今天的汇率是多少？ | Tỷ giá hôm nay là bao nhiêu?
+l4-52 | 这座桥是近代建的。 | Cây cầu này được xây ở thời cận đại.
+l4-52 | 我用尺子量一量桌子。 | Tôi dùng cái thước đo cái bàn.
+l4-52 | 全班三分之二的学生通过了考试。 | Hai phần ba học sinh cả lớp đã thi đỗ.
+l4-52 | 亚运会每四年举行一次。 | Á vận hội bốn năm tổ chức một lần.
+l4-52 | 这门课一共有六十个学时。 | Môn học này tổng cộng có sáu mươi tiết.
+l4-52 | 一堵墙把两个房间隔开了。 | Một bức tường ngăn cách hai căn phòng.
+l4-53 | 每个人都有自己的梦想。 | Mỗi người đều có ước mơ của mình.
+l4-53 | 你等我一会儿，马上就好。 | Bạn đợi tôi một lát, sắp xong ngay.
+l4-53 | 现在是三点一刻。 | Bây giờ là ba giờ mười lăm.
+l4-53 | 紧张的时候，试着深呼吸。 | Khi căng thẳng hãy thử hít thở sâu.
+l4-53 | 一名警员在路口帮助老人。 | Một nhân viên cảnh sát giúp ông cụ ở ngã tư.
+l4-54 | 我还要再买一本书。 | Tôi còn phải mua thêm một quyển sách nữa.
+l4-54 | 请给我多点儿米饭。 | Làm ơn cho tôi thêm chút cơm.
+l4-54 | 某个同学忘了带作业。 | Có một bạn học nào đó quên mang bài tập.
+l4-54 | 这是我第三次来北京，第四次是明年。 | Đây là lần thứ ba tôi đến Bắc Kinh, lần thứ tư là năm sau.
+l4-54 | 任何人都可以参加这个活动。 | Bất cứ ai cũng có thể tham gia hoạt động này.
+l4-54 | 你听听这首歌怎么样，再问问朋友的看法。 | Bạn nghe thử bài hát này thế nào, rồi hỏi thử ý bạn bè.
+l4-54 | 你瞧瞧这件衣服，我想见见你的新同事。 | Bạn xem thử cái áo này, tôi muốn gặp đồng nghiệp mới của bạn.
+l4-54 | 你猜猜我买了什么，再尝尝这个蛋糕。 | Bạn đoán thử tôi mua gì, rồi nếm thử cái bánh này.
+l4-54 | 不认识的字，你可以查查词典。 | Chữ nào không biết, bạn có thể tra thử từ điển.
+l4-54 | 快来救救我，我的车坏了！ | Mau đến cứu giúp tôi với, xe tôi hỏng rồi!
+l4-54 | 他脸上带着笑容，墙上挂着一张地图。 | Trên mặt anh ấy mang nụ cười, trên tường treo một tấm bản đồ.
+l4-54 | 他住在城里，屋里很安静。 | Anh ấy ở trong thành, trong phòng rất yên tĩnh.
+l4-54 | 你把钥匙放在哪儿了？我放在桌子上了。 | Bạn để chìa khóa ở đâu? Tôi để trên bàn rồi.
+l4-54 | 钥匙我已经放在桌上了。 | Chìa khóa tôi đã đặt ở trên bàn rồi.
+l4-55 | 据报道，明天会有大雨。 | Theo đưa tin, ngày mai sẽ có mưa lớn.
+l4-55 | 小偷把他的钱包偷走了。 | Kẻ trộm đã trộm mất ví tiền của anh ấy.
+l4-55 | 这个机会就在你手中。 | Cơ hội này nằm trong tay bạn.
+l4-55 | 这道题只差一分就满分了。 | Câu này chỉ kém một điểm nữa là đủ điểm tối đa.
+l4-55 | 小狗趴下睡着了。 | Chú chó nằm sấp xuống ngủ rồi.
+l4-55 | 这家店的菜真好吃。可不，我每周都来。 | Món ở quán này ngon thật. Đúng thế đấy, tuần nào tôi cũng đến.
+l4-55 | 别担心，我会帮你的。 | Đừng lo, tôi sẽ giúp bạn.
+l4-55 | 这部电影好极了！ | Bộ phim này tuyệt vời!
+l4-55 | 你也觉得很贵，对吧？ | Bạn cũng thấy đắt, đúng không?
+l4-55 | 他今天没来？是吗？ | Hôm nay anh ấy không đến? Vậy sao?
+l4-55 | 这么简单，不是吗？ | Đơn giản vậy mà, chẳng phải sao?
+l4-55 | 这样写，对不对？ | Viết thế này, có đúng không?
+l4-55 | 这个办法好不好？ | Cách này có tốt không?
+l4-55 | 明天去爬山，行不行？ | Mai đi leo núi, được không?
+l4-55 | 请问，我可不可以坐这里？ | Xin hỏi, tôi có thể ngồi ở đây không?
+l4-55 | 你为什么不告诉我？ | Sao bạn không nói cho tôi biết?
+l4-55 | 为什么不试试看呢？ | Sao lại không thử xem?
+l4-55 | 这点小事，没问题！ | Chuyện nhỏ này, không vấn đề gì!
+l4-55 | 这到底是怎么回事？ | Rốt cuộc chuyện này là thế nào?
+l4-55 | 你找我有什么事？ | Bạn tìm tôi có việc gì?
+l4-55 | 我们认识多久了？十年了，真的多久了啊。 | Chúng ta quen nhau bao lâu rồi? Mười năm rồi.
+l4-55 | 教室里没有人。 | Trong lớp học không có ai.
+l4-55 | 这两个字看起来不一样。 | Hai chữ này trông không giống nhau.

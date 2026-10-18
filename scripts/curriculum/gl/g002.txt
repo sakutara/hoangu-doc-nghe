@@ -1,0 +1,256 @@
+## F4-10 | Đoạn đọc: Phát triển và hải quan
+1=cổ đại
+2=thích dụng
+3=cảm động lòng người
+4=fan ca nhạc
+5=thực hành
+6=đề mục, đề bài
+7=tiêu dùng
+8=tiêu đề
+9=phòng ngừa
+10=khách quan
+11=kiên quyết
+12=thân thiết
+13=tỷ lệ
+14=tất nhiên
+15=lòng nhân ái
+16=hải quan
+17=cả hội trường
+18=thiết lập
+19=kiến thiết
+20=đổi mới
+21=gần tới
+22=khí hậu
+23=tem thư
+24=phát đạt
+25=dự báo
+> 古代的中国没有海关，现在的国家都设立了海关。 | Trung Quốc thời cổ đại không có hải quan, các quốc gia ngày nay đều lập ra hải quan.
+> 气候预报说，明天会下雨。 | Dự báo khí hậu nói ngày mai sẽ có mưa.
+> 歌迷们对这位歌手很亲切，他的歌声很动人。 | Fan hâm mộ rất thân thiết với ca sĩ này, giọng hát của anh ấy rất cảm động.
+> 这个题目很客观，我们坚决实行这个计划。 | Đề bài này rất khách quan, chúng tôi kiên quyết thực hiện kế hoạch này.
+> 将近一半的人有爱心，这个比例很高。 | Gần một nửa số người có lòng nhân ái, tỷ lệ này rất cao.
+> 消费和建设都在发展，国家越来越发达。 | Tiêu dùng và kiến thiết đều đang phát triển, đất nước ngày càng phát đạt.
+## F4-11 | Đoạn đọc: Quê nhà và cửa hàng mới
+1=cố hương
+2=cắt tóc
+3=chủ trương
+4=ngắn hạn
+5=cặp da
+6=sinh động
+7=ngay ngắn
+8=tổng cộng có
+9=trước sau
+10=photo
+11=khai trương
+12=thúc đẩy
+13=thời gian, công sức
+14=đẩy ra
+15=đơn nguyên, khu
+16=phổ biến
+17=chăn
+18=ứng dụng
+19=hoàn thiện
+20=võ thuật
+21=chuyển thành
+22=chèo thuyền
+23=phổ biến rộng
+24=lớp (cấp lớp)
+25=đủ màu
+> 我的故乡有一家新店，今天开业了。 | Quê tôi có một cửa hàng mới, hôm nay khai trương.
+> 我推开门，里面很整齐，生动的画挂在墙上。 | Tôi đẩy cửa ra, bên trong rất ngăn nắp, những bức tranh sinh động treo trên tường.
+> 我要理发，也想复印一张证件。 | Tôi muốn cắt tóc, cũng muốn photo một tờ giấy tờ.
+> 老板说他们共有二十个人，短期内会推广新的服务。 | Ông chủ nói họ tổng cộng có hai mươi người, trong ngắn hạn sẽ phổ biến dịch vụ mới.
+> 这个班级的学生在划船，也在学习武术。 | Học sinh lớp này đang chèo thuyền, cũng đang học võ thuật.
+> 你有工夫的话，请带着皮包来看看。 | Nếu bạn có thời gian, xin mang cặp da đến xem thử.
+## F4-12 | Đoạn đọc: Nông nghiệp và người dân
+1=trung học cơ sở
+2=gia công
+3=sơ cấp
+4=kỹ năng nghe
+5=con cái
+6=mỹ thuật
+7=dân gian
+8=định kỳ
+9=xử lý làm thủ tục
+10=mở ra, tiến hành
+11=diện tích
+12=nông nghiệp
+13=nghe (đài)
+14=tự chủ
+15=thời gian gần đây
+16=công chức
+17=năng lực, kỹ năng
+18=quy phạm
+19=dân thường
+20=tiết kiệm
+21=tình nguyện
+22=xây xong
+23=hình vẽ
+24=tự giác
+25=thỉnh giáo
+> 他是公务员，子女都在读初中。 | Ông ấy là công chức, con cái đều đang học trung học cơ sở.
+> 近期，农业的面积变大了，加工的工作也多了。 | Thời gian gần đây, diện tích nông nghiệp lớn hơn, công việc gia công cũng nhiều hơn.
+> 老百姓喜欢美术和民间艺术。 | Dân thường thích mỹ thuật và nghệ thuật dân gian.
+> 学校定期开展活动，提高学生的听力和本领。 | Trường học định kỳ triển khai hoạt động, nâng cao kỹ năng nghe và bản lĩnh của học sinh.
+> 我们要节约，也要自觉遵守规范。 | Chúng ta phải tiết kiệm, cũng phải tự giác tuân thủ quy phạm.
+> 有问题可以请教老师，大家都愿意帮忙。 | Có vấn đề có thể thỉnh giáo thầy cô, ai cũng sẵn lòng giúp đỡ.
+## F4-13 | Đoạn đọc: Chuyến đi Vạn Lý Trường Thành
+1=một mặt
+2=kịch nói
+3=có việc làm
+4=Vạn Lý Trường Thành
+5=World Cup
+6=phim nhiều tập
+7=chia nhóm
+8=sở trường
+9=giá sách
+10=nông thôn
+11=công ty du lịch
+12=móc áo
+13=công nhân viên
+14=chuyên đề
+15=làm khách
+16=ông cụ
+17=quốc khánh
+18=rộng lớn
+19=hiện đại hóa
+20=khởi nghiệp
+21=có đầy
+22=giá vé
+23=sở trưởng
+24=điện ảnh truyền hình
+25=kéo theo
+> 国庆节的时候，旅行社带我们去长城。 | Dịp Quốc khánh, công ty du lịch đưa chúng tôi đi Vạn Lý Trường Thành.
+> 票价不贵，我们分组上车。 | Giá vé không đắt, chúng tôi chia nhóm lên xe.
+> 一位老头儿在农村做客，热情地欢迎我们。 | Một ông cụ làm khách ở nông thôn, nhiệt tình chào đón chúng tôi.
+> 一方面，我们看到了广大的土地；另一方面，我们也看到了现代化的城市。 | Một mặt, chúng tôi thấy vùng đất rộng lớn; mặt khác, chúng tôi cũng thấy thành phố hiện đại hóa.
+> 回到家，我们看了世界杯，也看了连续剧。 | Về đến nhà, chúng tôi xem World Cup, cũng xem phim nhiều tập.
+> 年轻人想创业，也想就业，机会有的是。 | Người trẻ muốn khởi nghiệp, cũng muốn có việc làm, cơ hội thì có đầy.
+## F4-14 | Đoạn đọc: Du học và trà sữa
+1=cảnh sát giao thông
+2=cuối năm
+3=phái đoàn
+4=cải thảo
+5=người Hoa
+6=hồng trà
+7=du học
+8=đề thi
+9=huy chương bạc
+10=giáo trình
+11=nước lạnh
+12=mùng một
+13=nộp phí
+14=trà sữa
+15=phổ cập
+16=chỗ kém
+17=đầu năm
+18=nhảy cao
+19=tính tích cực
+20=lúc rảnh
+21=chữ nước ngoài
+22=xem trước bài
+23=nhân dân tệ
+24=nhảy xa
+25=năm sau nữa
+> 年初，他去中国留学，现在是一名华人学生。 | Đầu năm anh ấy sang Trung Quốc du học, giờ là một sinh viên người Hoa.
+> 学校的教材很多，试题也不容易。 | Giáo trình của trường rất nhiều, đề thi cũng không dễ.
+> 他预习外文课文，也练习跳高和跳远。 | Anh ấy xem trước bài khóa tiếng nước ngoài, cũng luyện nhảy cao và nhảy xa.
+> 在比赛中，他拿了银牌。 | Trong cuộc thi, anh ấy giành huy chương bạc.
+> 年底，代表团来了，大家喝红茶，也喝奶茶。 | Cuối năm, phái đoàn đến, mọi người uống hồng trà, cũng uống trà sữa.
+> 他用人民币交费，问有没有空儿聊聊。 | Anh ấy dùng nhân dân tệ nộp phí, hỏi có rảnh để trò chuyện chút không.
+## F4-15 | Đoạn đọc: Kinh kịch và học bổng
+1=Kinh kịch
+2=vội vàng
+3=đạo diễn
+4=thư điện tử
+5=rượu vang
+6=dân tộc Trung Hoa
+7=không kịp
+8=tài trợ
+9=công trình
+10=học bổng
+11=đoàn tàu
+12=cực kỳ
+13=quét (bằng chổi);;sǎo;;tảo
+14=nằm ở
+15=rộng;;kuān;;khoan
+16=hút thuốc lá
+17=ngược lại (trái dự đoán)
+18=tuổi thơ
+19=gấp; bẻ;;zhé;;chiết
+20=thô; to;;cū;;thô
+21=cái đuôi
+22=di truyền
+23=trận; cơn;;zhèn;;trận
+24=phong cảnh
+25=giảm cân
+> 他的童年是在京剧院里度过的。 | Tuổi thơ của anh ấy trôi qua trong nhà hát Kinh kịch.
+> 导演给我发了一封电子邮件，说公司赞助了这个工程。 | Đạo diễn gửi cho tôi một bức thư điện tử, nói công ty đã tài trợ cho công trình này.
+> 我连忙去车站，但是列车已经开了，来不及了。 | Tôi vội vàng đến ga, nhưng đoàn tàu đã chạy rồi, không kịp nữa.
+> 他想减肥，反而吃得更多。 | Anh ấy muốn giảm cân, trái lại ăn nhiều hơn.
+> 窗外的风景极其美丽，尾巴很粗的狗在草地上跑。 | Phong cảnh ngoài cửa sổ vô cùng đẹp, con chó đuôi rất to đang chạy trên bãi cỏ.
+> 他得了奖学金，请大家喝红酒。 | Anh ấy nhận được học bổng, mời mọi người uống rượu vang.
+## F4-16 | Đoạn đọc: Chất lượng và phấn đấu
+1=kịp giờ
+2=phần còn lại
+3=kết cấu
+4=xe lăn
+5=biện luận
+6=giảm; trừ;;jiǎn;;giảm
+7=không hề gì
+8=đặc trưng
+9=mua (hàng)
+10=xem nhẹ
+11=làm việc
+12=di sản
+13=hạ thấp
+14=ngậm; chứa;;hán;;hàm
+15=chất lượng
+16=quý giá
+17=tình cảnh
+18=mịn; nhỏ;;xì;;tế
+19=dẫn dắt hướng dẫn
+20=từng bước dần
+21=đậm;;nóng;;nùng
+22=phấn đấu
+23=bồi dưỡng
+24=cơ sở vật chất
+25=quý ông
+> 这个公司很重视质量，不会忽视任何细节。 | Công ty này rất coi trọng chất lượng, sẽ không xem nhẹ bất kỳ chi tiết nào.
+> 他们购买了新的设施，价格也降低了。 | Họ đã mua cơ sở vật chất mới, giá cả cũng hạ xuống.
+> 老师引导学生辩论，培养他们的能力。 | Thầy cô dẫn dắt học sinh biện luận, bồi dưỡng năng lực của các em.
+> 一位坐轮椅的男士说：只要奋斗，就来得及。 | Một quý ông ngồi xe lăn nói: chỉ cần phấn đấu thì vẫn kịp.
+> 其余的人都逐渐明白了，这是宝贵的经验。 | Những người còn lại dần dần hiểu ra, đây là kinh nghiệm quý giá.
+> 他说，不要紧，慢慢来。 | Anh ấy nói, không hề gì, cứ từ từ.
+## F4-17 | Đoạn đọc: Trang hoàng nhà cửa mùa hè
+1=trang hoàng
+2=cư trú
+3=không sai
+4=cái bóng
+5=mỏng;;báo;;bạc
+6=thu nhỏ
+7=áo len
+8=ký hiệu
+9=cỡ nhỏ
+10=đọc hiểu
+11=chào hàng
+12=thứ tự
+13=mơ thấy
+14=hàm nghĩa
+15=bại;;bài;;bại
+16=đại lục
+17=nhiên liệu
+18=thần thoại
+19=kỳ nghỉ hè
+20=cung ứng
+21=đãi ngộ
+22=gửi lời hỏi thăm
+23=ngữ âm
+24=nguồn điện
+25=sửa chữa bảo trì
+> 暑假的时候，我们家装修了房子。 | Dịp nghỉ hè, nhà chúng tôi trang hoàng lại căn nhà.
+> 工人说，居住的环境要整齐，电源也要安全。 | Thợ nói môi trường sống phải gọn gàng, nguồn điện cũng phải an toàn.
+> 我在墙上看到我的影子，还梦见了神话里的人。 | Tôi thấy cái bóng của mình trên tường, còn mơ thấy người trong thần thoại.
+> 他穿着一件薄毛衣，向我推销小型的产品。 | Anh ta mặc một chiếc áo len mỏng, chào bán sản phẩm cỡ nhỏ cho tôi.
+> 我阅读说明，按照顺序做，没错。 | Tôi đọc hướng dẫn, làm theo thứ tự, không sai.
+> 最后，我们问候了邻居，请他们有空来坐。 | Cuối cùng, chúng tôi thăm hỏi hàng xóm, mời họ có rảnh thì đến chơi.

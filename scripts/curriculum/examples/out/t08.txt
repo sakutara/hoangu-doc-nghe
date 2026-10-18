@@ -1,0 +1,365 @@
+l3-18 | 他愕然地看着我，然后苦笑了一下。 | Anh ấy ngỡ ngàng nhìn tôi, rồi cười gượng một cái.
+l3-18 | 她淡淡地说完，冷冷地看了他一眼。 | Cô ấy nhàn nhạt nói xong, rồi lạnh lùng liếc anh ta một cái.
+l3-18 | 他默默地走了出去。 | Anh ấy lặng lẽ đi ra ngoài.
+l3-18 | 他猛地站起来，忽然大喊了一声。 | Anh ấy bỗng nhiên đứng bật dậy, chợt hét lên một tiếng.
+l3-18 | 听到这句话，大家顿时安静了下来。 | Nghe câu này, mọi người lập tức im lặng.
+l3-18 | 就在那一刹那，她不禁笑了。 | Ngay trong khoảnh khắc ấy, cô ấy không kìm được mà bật cười.
+l3-18 | 看到这一幕，我忍不住哭了。 | Nhìn cảnh này, tôi không nhịn được mà khóc.
+l3-18 | 他的头隐隐作痛。 | Đầu anh ấy đau âm ỉ.
+l3-18 | 天色渐渐黑了下来。 | Trời dần dần tối xuống.
+l3-18 | 她微微一笑，轻轻点了点头。 | Cô ấy khẽ mỉm cười, nhẹ nhàng gật đầu.
+l3-18 | 她深深地吸了一口气。 | Cô ấy hít một hơi thật sâu.
+l3-18 | 他静静地坐在窗边。 | Anh ấy lặng lẽ yên tĩnh ngồi bên cửa sổ.
+l3-18 | 孩子悄悄地走进了房间。 | Đứa trẻ lén lút bước vào phòng.
+l3-18 | 他冷哼一声，转身离开了。 | Anh ta hừ lạnh một tiếng rồi quay người bỏ đi.
+l3-19 | 他咬牙忍住了疼，握拳站了起来。 | Anh ấy nghiến răng chịu đau, nắm chặt tay đứng dậy.
+l3-19 | 她点头同意，然后转身走了。 | Cô ấy gật đầu đồng ý, rồi quay người đi.
+l3-19 | 他抬头看天，又低头看路。 | Anh ấy ngẩng đầu nhìn trời, lại cúi đầu nhìn đường.
+l3-19 | 他伸手拉住我，向远处挥手。 | Anh ấy đưa tay kéo tôi lại, rồi vẫy tay về phía xa.
+l3-19 | 他突然出手，一拳打在墙上。 | Anh ta bất ngờ ra tay, một quyền đấm vào tường.
+l3-19 | 他飞起一脚，把门踢开了。 | Anh ta tung một cước, đá tung cánh cửa.
+l3-19 | 他一剑刺出，对手倒下了。 | Anh ta một kiếm đâm ra, đối thủ ngã xuống.
+l3-19 | 她一刀砍断了绳子。 | Cô ấy một đao chém đứt sợi dây.
+l3-19 | 他慢慢睁眼，看见了阳光。 | Anh ấy từ từ mở mắt, nhìn thấy ánh nắng.
+l3-19 | 她闭眼想了一会儿。 | Cô ấy nhắm mắt suy nghĩ một lúc.
+l3-19 | 眨眼之间，他就不见了。 | Chớp mắt một cái, anh ấy đã biến mất.
+l3-19 | 他瞪眼看着我，张嘴想说话。 | Anh ta trừng mắt nhìn tôi, há miệng định nói.
+l3-20 | 山谷里有一条小河。 | Trong thung lũng có một con suối nhỏ.
+l3-20 | 他站在悬崖边，不敢往下看。 | Anh ấy đứng bên vách đá, không dám nhìn xuống.
+l3-20 | 这条河流穿过整座城市。 | Dòng sông này chảy xuyên qua cả thành phố.
+l3-20 | 这片荒野上几乎没有人烟。 | Trên vùng đồng hoang này hầu như không có bóng người.
+l3-20 | 海上有几座岛屿。 | Trên biển có mấy hòn đảo.
+l3-20 | 夜晚的星空特别美。 | Bầu trời sao ban đêm đặc biệt đẹp.
+l3-20 | 晨曦照在山顶上。 | Ánh bình minh chiếu lên đỉnh núi.
+l3-20 | 风雪越来越大。 | Gió tuyết ngày càng lớn.
+l3-20 | 远处传来雷鸣，一道闪电划过天空。 | Xa xa vang lên tiếng sấm, một tia chớp xẹt ngang bầu trời.
+l3-20 | 昨晚下了一场暴雨。 | Tối qua có một trận mưa to.
+l3-20 | 这里一片荒凉，看不到一个人。 | Nơi đây hoang vắng, không thấy một bóng người.
+l3-21 | 他穿着一件长袍。 | Anh ấy mặc một chiếc áo bào dài.
+l3-21 | 一个黑衣人站在门口。 | Một người áo đen đứng ở cửa.
+l3-21 | 她腰间挂着一块玉佩。 | Bên hông cô ấy đeo một miếng ngọc bội.
+l3-21 | 她头上插着一支发簪。 | Trên đầu cô ấy cài một chiếc trâm.
+l3-21 | 他会弹古琴。 | Anh ấy biết chơi cổ cầm.
+l3-21 | 桌上放着一个茶杯和一个酒杯。 | Trên bàn có một chén trà và một chén rượu.
+l3-21 | 门口挂着红色的灯笼。 | Trước cửa treo những chiếc đèn lồng đỏ.
+l3-21 | 屏风后面站着一个人。 | Sau bình phong có một người đứng.
+l3-21 | 他躺在床榻上休息。 | Anh ấy nằm nghỉ trên giường tháp.
+l3-21 | 新娘坐上了轿子。 | Cô dâu bước lên kiệu.
+l3-21 | 他披上披风走出门。 | Anh ấy khoác áo choàng rồi bước ra cửa.
+l3-21 | 她的腰带是红色的。 | Đai lưng của cô ấy màu đỏ.
+l3-21 | 她送了我一个香囊。 | Cô ấy tặng tôi một túi thơm.
+l3-21 | 古人把字写在竹简上。 | Người xưa viết chữ lên thẻ tre.
+l3-22 | 他身上带着很多银两。 | Trên người anh ấy mang rất nhiều bạc lượng.
+l3-22 | 他从怀里拿出一张银票。 | Anh ấy lấy từ trong ngực ra một tờ ngân phiếu.
+l3-22 | 这些铜钱只够买一个包子。 | Chỗ tiền xu đồng này chỉ đủ mua một cái bánh bao.
+l3-22 | 这件东西值一百两白银。 | Món đồ này đáng giá một trăm lượng bạc trắng.
+l3-22 | 他在坊市里买了一把剑。 | Anh ấy mua một thanh kiếm ở phường thị.
+l3-22 | 商会的人明天要来。 | Người của thương hội ngày mai sẽ đến.
+l3-22 | 这家店铺卖茶叶。 | Tiệm này bán trà.
+l3-22 | 请你先报价。 | Xin anh báo giá trước.
+l3-22 | 大家开始竞价，有人不断抬价。 | Mọi người bắt đầu đấu giá, có người liên tục nâng giá.
+l3-22 | 买主和卖家都很满意。 | Người mua và người bán đều rất hài lòng.
+l3-22 | 这批货物明天送到。 | Lô hàng này ngày mai sẽ được giao đến.
+l3-22 | 做生意有时会赔钱。 | Làm ăn đôi khi sẽ lỗ vốn.
+l3-22 | 祝你发财！ | Chúc bạn phát tài!
+l3-22 | 他是城里有名的富翁。 | Ông ấy là phú ông nổi tiếng trong thành.
+l3-22 | 穷人也有自己的尊严。 | Người nghèo cũng có lòng tự trọng của mình.
+l3-22 | 他背了很多债务。 | Anh ấy gánh rất nhiều nợ nần.
+l3-22 | 他欠债太多，还不起。 | Anh ấy thiếu nợ quá nhiều, không trả nổi.
+l3-22 | 你什么时候还钱？ | Khi nào bạn trả tiền?
+l3-23 | 他带着兵马出城了。 | Ông ấy dẫn binh mã ra khỏi thành.
+l3-23 | 战场上一片混乱。 | Trên chiến trường hỗn loạn một mảnh.
+l3-23 | 这次战役持续了三个月。 | Chiến dịch lần này kéo dài ba tháng.
+l3-23 | 敌人开始攻城，我们必须守城。 | Địch bắt đầu công thành, chúng ta phải giữ thành.
+l3-23 | 这座城池非常坚固。 | Tòa thành trì này vô cùng kiên cố.
+l3-23 | 将军回到了营帐。 | Tướng quân trở về doanh trướng.
+l3-23 | 他是军队的先锋。 | Anh ấy là tiên phong của quân đội.
+l3-23 | 副将站在将军身边。 | Phó tướng đứng bên cạnh tướng quân.
+l3-23 | 这位将领很有经验。 | Vị tướng lĩnh này rất có kinh nghiệm.
+l3-23 | 他熟读兵法。 | Ông ấy đọc thuộc binh pháp.
+l3-23 | 他很有谋略。 | Ông ấy rất có mưu lược.
+l3-23 | 山后面有伏兵。 | Sau núi có quân phục kích.
+l3-23 | 敌人想趁夜偷袭我们。 | Địch muốn nhân đêm đánh lén chúng ta.
+l3-23 | 他们终于突围成功了。 | Cuối cùng họ đã phá vòng vây thành công.
+l3-23 | 很多俘虏被带了回来。 | Rất nhiều tù binh bị dẫn về.
+l3-23 | 军粮快吃完了。 | Lương thực quân đội sắp hết rồi.
+l3-24 | 等一盏茶的工夫，他就回来了。 | Chỉ chờ chừng một chén trà là anh ấy đã quay lại.
+l3-24 | 一切在弹指之间就变了。 | Mọi thứ thay đổi chỉ trong một cái búng tay.
+l3-24 | 须臾之间，天就黑了。 | Trong chốc lát, trời đã tối.
+l3-24 | 请稍等片刻。 | Xin chờ một lát.
+l3-24 | 他沉默了半晌才开口。 | Anh ấy im lặng hồi lâu mới mở lời.
+l3-24 | 他已经离开数日了。 | Anh ấy đã rời đi vài ngày rồi.
+l3-24 | 我一夜没睡。 | Tôi một đêm không ngủ.
+l3-24 | 良久，他才说了一句话。 | Hồi lâu sau, anh ấy mới nói một câu.
+l3-24 | 我等了半天，他还没来。 | Tôi đợi nửa ngày rồi mà anh ấy vẫn chưa đến.
+l3-24 | 我一时想不起他的名字。 | Nhất thời tôi không nhớ ra tên anh ấy.
+l3-24 | 此刻，我心里很平静。 | Lúc này, lòng tôi rất bình yên.
+l3-24 | 此时天色已晚。 | Bấy giờ trời đã muộn.
+l3-24 | 当日的情景，我至今记得。 | Cảnh tượng hôm ấy, đến nay tôi vẫn nhớ.
+l3-24 | 翌日清晨，他就出发了。 | Sáng sớm ngày hôm sau, anh ấy lên đường.
+l3-24 | 黄昏时，鸟儿飞回了家。 | Lúc hoàng hôn, chim bay về tổ.
+l3-24 | 深夜里，街上没有人。 | Giữa đêm khuya, trên đường không có ai.
+l3-24 | 午后下起了小雨。 | Quá trưa trời bắt đầu mưa nhỏ.
+l3-24 | 他们走了三天三夜。 | Họ đã đi suốt ba ngày ba đêm.
+l3-24 | 多年以后，我又回到了这里。 | Nhiều năm sau, tôi lại trở về nơi này.
+l3-25 | 一阵风吹了过来。 | Một trận gió thổi tới.
+l3-25 | 他眼中闪过一丝惊讶。 | Trong mắt anh ấy thoáng qua một tia ngạc nhiên.
+l3-25 | 她脸上露出一抹微笑。 | Trên mặt cô ấy hiện một vệt cười nhạt.
+l3-25 | 一团火在院子里燃烧。 | Một đám lửa cháy trong sân.
+l3-25 | 一名学生站了起来。 | Một học sinh đứng dậy.
+l3-25 | 一位老人坐在树下。 | Một vị lão nhân ngồi dưới gốc cây.
+l3-25 | 山下聚集了数百人。 | Dưới chân núi tụ tập vài trăm người.
+l3-25 | 那座山高达万丈。 | Ngọn núi ấy cao đến vạn trượng.
+l3-25 | 他不远千里来找你。 | Anh ấy không quản ngàn dặm đến tìm bạn.
+l3-25 | 这里离城还有百里。 | Nơi này cách thành còn trăm dặm.
+l3-25 | 河边有一座塔。 | Bên sông có một tòa tháp.
+l3-25 | 一条小路通向山里。 | Một con đường nhỏ dẫn vào núi.
+l3-25 | 花园里开了一朵花。 | Trong vườn nở một đóa hoa.
+l3-25 | 一滴水落在地上。 | Một giọt nước rơi xuống đất.
+l3-25 | 我去过一次北京。 | Tôi đã đến Bắc Kinh một lần.
+l3-25 | 他手里拿着一枚戒指。 | Trong tay anh ấy cầm một chiếc nhẫn.
+l3-25 | 我买了一件新衣服。 | Tôi mua một món quần áo mới.
+l3-26 | 本王今天心情不错。 | Bổn vương hôm nay tâm trạng không tệ.
+l3-26 | 本宫累了，你们退下吧。 | Bổn cung mệt rồi, các ngươi lui xuống đi.
+l3-26 | 老夫活了七十年。 | Lão phu đã sống bảy mươi năm.
+l3-26 | 老朽愿意帮忙。 | Lão hủ nguyện ý giúp đỡ.
+l3-26 | 贫道路过此地。 | Bần đạo đi ngang qua nơi này.
+l3-26 | 小人知错了。 | Tiểu nhân biết lỗi rồi.
+l3-26 | 兄台请留步。 | Huynh đài xin dừng bước.
+l3-26 | 不知尊驾是哪位？ | Không biết tôn giá là vị nào?
+l3-26 | 在下岂敢无礼？ | Tại hạ nào dám vô lễ?
+l3-26 | 休得胡说！ | Chớ có nói bậy!
+l3-26 | 你是何方高人？ | Ngươi là cao nhân phương nào?
+l3-26 | 来者何人？ | Kẻ đến là người nào?
+l3-26 | 你竟胆敢骗我！ | Ngươi lại dám to gan lừa ta!
+l3-26 | 岂有此理！ | Có lý nào như vậy!
+l3-27 | 他说话很狂妄。 | Anh ta ăn nói rất ngông cuồng.
+l3-27 | 她总是很谦虚。 | Cô ấy lúc nào cũng khiêm tốn.
+l3-27 | 开车要谨慎。 | Lái xe phải cẩn trọng.
+l3-27 | 他对敌人很冷酷。 | Anh ta rất lạnh lùng tàn nhẫn với kẻ thù.
+l3-27 | 你怎么这么无情？ | Sao bạn vô tình như vậy?
+l3-27 | 他是个多情的人。 | Anh ấy là người đa tình.
+l3-27 | 她是个痴情的女孩。 | Cô ấy là cô gái si tình.
+l3-27 | 他很固执，谁的话都不听。 | Anh ta rất cố chấp, không nghe lời ai.
+l3-27 | 他做事很沉稳。 | Anh ấy làm việc rất điềm đạm vững vàng.
+l3-27 | 这个人非常阴险。 | Người này vô cùng âm hiểm.
+l3-27 | 孩子的眼神很纯真。 | Ánh mắt của đứa trẻ rất thuần khiết.
+l3-27 | 她还是那么天真。 | Cô ấy vẫn ngây thơ như vậy.
+l3-27 | 他的态度很嚣张。 | Thái độ của anh ta rất hống hách.
+l3-27 | 她打扮得很张扬。 | Cô ấy ăn mặc rất phô trương.
+l3-27 | 他身上有一股霸气。 | Trên người anh ấy có một luồng bá khí.
+l3-27 | 他淡然地笑了笑。 | Anh ấy thản nhiên cười một cái.
+l3-27 | 他说话很傲慢。 | Anh ta nói chuyện rất kiêu ngạo.
+l3-27 | 天空阴沉沉的。 | Bầu trời u ám.
+l3-28 | 主角最后逆袭成功了。 | Nhân vật chính cuối cùng đã lội ngược dòng thành công.
+l3-28 | 他的实力碾压了对手。 | Thực lực của anh ấy nghiền ép đối thủ.
+l3-28 | 这个故事的套路太老了。 | Mô-típ của câu chuyện này cũ quá rồi.
+l3-28 | 大家都说她是白莲花。 | Ai cũng nói cô ta là bạch liên hoa.
+l3-28 | 那个绿茶总是装可怜。 | Cô lục trà đó lúc nào cũng giả vờ đáng thương.
+l3-28 | 她表面傲娇，其实很关心你。 | Bề ngoài cô ấy ngạo kiều, thật ra rất quan tâm bạn.
+l3-28 | 他是个病娇。 | Anh ta là một bệnh kiều.
+l3-28 | 这只小猫真萌！ | Chú mèo con này dễ thương quá!
+l3-28 | 这一章作者又撒糖了。 | Chương này tác giả lại rải đường rồi.
+l3-28 | 我不喜欢看虐文。 | Tôi không thích đọc truyện ngược.
+l3-28 | 我更喜欢甜文。 | Tôi thích truyện ngọt hơn.
+l3-28 | 他爱看种田文。 | Anh ấy thích đọc truyện làm ruộng.
+l3-28 | 她写了一部后宫文。 | Cô ấy viết một bộ truyện hậu cung.
+l3-28 | 这本无限流小说很好看。 | Cuốn tiểu thuyết vô hạn lưu này rất hay.
+l3-28 | 他喜欢系统流小说。 | Anh ấy thích tiểu thuyết hệ thống lưu.
+l3-28 | 作者在前面埋下了伏笔。 | Tác giả đã cài phục bút ở phần trước.
+l3-28 | 我还想看番外。 | Tôi còn muốn đọc phiên ngoại.
+l3-29 | 他及时赶到了。 | Anh ấy đã đến kịp thời.
+l3-29 | 孩子们喜欢超人。 | Bọn trẻ thích siêu nhân.
+l3-29 | 他很喜欢体育。 | Anh ấy rất thích thể dục thể thao.
+l3-29 | 要保持工作和生活的平衡。 | Cần giữ cân bằng giữa công việc và cuộc sống.
+l3-29 | 他们在电影里接吻了。 | Họ hôn nhau trong phim.
+l3-29 | 你的结论是什么？ | Kết luận của bạn là gì?
+l3-29 | 她在做销售工作。 | Cô ấy làm công việc bán hàng.
+l3-29 | 海里有一条鲨鱼。 | Dưới biển có một con cá mập.
+l3-29 | 这个价钱太贵了。 | Giá tiền này đắt quá.
+l3-29 | 通道里很暗。 | Lối đi rất tối.
+l3-29 | 两家之间隔着一条河。 | Giữa hai nhà có một con sông ngăn cách.
+l3-29 | 他学习很有动力。 | Anh ấy học tập rất có động lực.
+l3-29 | 这块布有一尺长。 | Miếng vải này dài một thước.
+l3-29 | 别着急，慢慢来。 | Đừng vội, cứ từ từ.
+l3-29 | 他的成绩良好。 | Thành tích của anh ấy khá tốt.
+l3-29 | 为此，我们开了一个会。 | Vì thế, chúng tôi đã họp một buổi.
+l3-29 | 他救了我的性命。 | Anh ấy đã cứu tính mạng tôi.
+l3-29 | 桌上有一本书。 | Trên bàn có một quyển sách.
+l3-29 | 他们把小偷赶走了。 | Họ đã đuổi tên trộm đi.
+l3-30 | 这家工厂有很多工人。 | Nhà máy này có rất nhiều công nhân.
+l3-30 | 他参加了一个协会。 | Anh ấy tham gia một hiệp hội.
+l3-30 | 一个人在外面很孤单。 | Một mình ở bên ngoài rất lẻ loi.
+l3-30 | 院子里有一棵树。 | Trong sân có một cây.
+l3-30 | 我喉咙很痛。 | Cổ họng tôi rất đau.
+l3-30 | 两个孩子在争玩具。 | Hai đứa trẻ đang tranh đồ chơi.
+l3-30 | 政府采取了新措施。 | Chính phủ đã áp dụng biện pháp mới.
+l3-30 | 他证明了自己的清白。 | Anh ấy đã chứng minh sự trong sạch của mình.
+l3-30 | 战争突然爆发了。 | Chiến tranh bất ngờ bùng nổ.
+l3-30 | 很多人目击了这起事故。 | Rất nhiều người đã chứng kiến vụ tai nạn này.
+l3-30 | 祝福你们幸福。 | Chúc phúc cho hai bạn hạnh phúc.
+l3-30 | 这件事一直困扰着他。 | Chuyện này luôn làm anh ấy phiền muộn.
+l3-30 | 我最喜欢化学课。 | Tôi thích nhất môn hóa học.
+l3-30 | 这款手机很好用。 | Kiểu điện thoại này rất dễ dùng.
+l3-30 | 他举枪瞄准了目标。 | Anh ta giơ súng ngắm bắn mục tiêu.
+l3-30 | 我们要进一步了解情况。 | Chúng ta cần tìm hiểu tình hình thêm một bước.
+l3-30 | 你觉得谁是最好的人选？ | Bạn thấy ai là ứng viên tốt nhất?
+l3-30 | 警察正在审讯嫌疑人。 | Cảnh sát đang thẩm vấn nghi phạm.
+l3-30 | 少校走进了办公室。 | Thiếu tá bước vào văn phòng.
+l3-30 | 这个想法太荒唐了。 | Ý nghĩ này thật lố bịch vô lý.
+l3-31 | 你可以随意坐。 | Bạn cứ ngồi tùy ý.
+l3-31 | 这个场景很感人。 | Cảnh tượng này rất cảm động.
+l3-31 | 他们一家都很高兴。 | Cả nhà họ đều rất vui.
+l3-31 | 大家围着桌子吃饭。 | Mọi người vây quanh bàn ăn cơm.
+l3-31 | 他的速度很惊人。 | Tốc độ của anh ấy rất kinh người.
+l3-31 | 他的身体已经康复了。 | Cơ thể anh ấy đã bình phục.
+l3-31 | 他在策划一场活动。 | Anh ấy đang trù hoạch một hoạt động.
+l3-31 | 我想弥补我的错误。 | Tôi muốn bù đắp lỗi lầm của mình.
+l3-31 | 这笔费用太高了。 | Khoản chi phí này cao quá.
+l3-31 | 大门没有关。 | Cổng lớn chưa đóng.
+l3-31 | 我胃不舒服。 | Dạ dày tôi khó chịu.
+l3-31 | 网络连接断了。 | Kết nối mạng bị ngắt rồi.
+l3-31 | 他是这个党的成员。 | Anh ấy là thành viên của đảng này.
+l3-31 | 他有自己的理想。 | Anh ấy có lý tưởng của riêng mình.
+l3-31 | 快递员送来了一个包裹。 | Nhân viên giao hàng mang đến một bưu kiện.
+l3-31 | 这个月的工资发了。 | Tiền lương tháng này đã được phát.
+l3-31 | 他总是有很多好点子。 | Anh ấy luôn có nhiều ý tưởng hay.
+l3-31 | 科技改变了我们的生活。 | Khoa học kỹ thuật đã thay đổi cuộc sống của chúng ta.
+l3-31 | 这件衣服很漂亮。 | Chiếc áo này rất đẹp.
+l3-31 | 法官宣布了判决。 | Thẩm phán tuyên bố phán quyết.
+l3-31 | 现在是三点一刻。 | Bây giờ là ba giờ mười lăm phút.
+l3-32 | 妇女也能顶半边天。 | Phụ nữ cũng gánh được nửa bầu trời.
+l3-32 | 这条消息的来源是什么？ | Nguồn gốc của tin này là gì?
+l3-32 | 我们走哪条路线？ | Chúng ta đi tuyến đường nào?
+l3-32 | 孩子要依靠父母。 | Trẻ con phải dựa vào cha mẹ.
+l3-32 | 法官必须公正。 | Thẩm phán phải công bằng chính trực.
+l3-32 | 把这些垃圾扔掉。 | Vứt chỗ rác này đi.
+l3-32 | 画里有一个裸体的人。 | Trong bức tranh có một người khỏa thân.
+l3-32 | 不妙，我们迷路了。 | Không ổn rồi, chúng ta lạc đường.
+l3-32 | 士兵用树叶伪装自己。 | Binh lính dùng lá cây để ngụy trang.
+l3-32 | 这是一座古老的城市。 | Đây là một thành phố cổ kính.
+l3-32 | 他委托律师处理这件事。 | Anh ấy ủy thác luật sư xử lý việc này.
+l3-32 | 你刚才说什么来着？ | Hồi nãy bạn nói gì ấy nhỉ?
+l3-32 | 我是真心喜欢你。 | Tôi thật lòng thích bạn.
+l3-32 | 两国之间发生了冲突。 | Giữa hai nước đã xảy ra xung đột.
+l3-32 | 邮件已经发送成功了。 | Thư đã được gửi đi thành công.
+l3-32 | 这只犬很聪明。 | Con chó này rất thông minh.
+l3-32 | 美国总统住在白宫。 | Tổng thống Mỹ sống ở Nhà Trắng.
+l3-32 | 演员正在化妆。 | Diễn viên đang hóa trang.
+l3-32 | 老板给了我们新的指示。 | Sếp đã đưa cho chúng tôi chỉ thị mới.
+l3-33 | 我的衣柜很大。 | Tủ quần áo của tôi rất to.
+l3-33 | 我上午有课。 | Buổi sáng tôi có tiết học.
+l3-33 | 别用手捅我。 | Đừng dùng tay chọc tôi.
+l3-33 | 新郎穿着红色的衣服。 | Chú rể mặc quần áo màu đỏ.
+l3-33 | 我们去剧院看戏。 | Chúng tôi đến nhà hát xem kịch.
+l3-33 | 这家店原本是书店。 | Tiệm này vốn là tiệm sách.
+l3-33 | 请宽恕我。 | Xin hãy khoan thứ cho tôi.
+l3-33 | 我很怀念小时候。 | Tôi rất hoài niệm thời thơ ấu.
+l3-33 | 请把菜端上来。 | Làm ơn bưng món ăn lên.
+l3-33 | 各界人士都来了。 | Nhân sĩ các giới đều đã đến.
+l3-33 | 没有人能代替你。 | Không ai có thể thay thế bạn.
+l3-33 | 这个创意很好。 | Sáng ý này rất hay.
+l3-33 | 我喝了一杯果汁。 | Tôi uống một ly nước ép trái cây.
+l3-33 | 干脆我们一起去吧。 | Dứt khoát là chúng ta cùng đi đi.
+l3-33 | 这个村子有几十户人家。 | Làng này có mấy chục hộ gia đình.
+l3-33 | 他的心很脆弱。 | Trái tim anh ấy rất mong manh.
+l3-34 | 各国争霸，战争不断。 | Các nước tranh bá, chiến tranh không ngừng.
+l3-34 | 不能侵犯别人的隐私。 | Không được xâm phạm quyền riêng tư của người khác.
+l3-34 | 我很幸运，遇到了你。 | Tôi rất may mắn khi gặp được bạn.
+l3-34 | 我无意伤害你。 | Tôi vô ý làm tổn thương bạn.
+l3-34 | 他从不提起过去。 | Anh ấy chưa bao giờ nhắc tới chuyện quá khứ.
+l3-34 | 冬天屋里很温暖。 | Mùa đông trong nhà rất ấm áp.
+l3-34 | 她戴着很多珠宝。 | Cô ấy đeo rất nhiều châu báu.
+l3-34 | 这本书明年出版。 | Cuốn sách này sang năm xuất bản.
+l3-34 | 有人切断了电源。 | Có người cắt đứt nguồn điện.
+l3-34 | 心脏是重要的器官。 | Tim là cơ quan quan trọng.
+l3-34 | 大伙一起来帮忙吧。 | Mọi người cùng đến giúp đi.
+l3-34 | 他向我讨钱。 | Anh ta xin tiền tôi.
+l3-34 | 他的前妻住在国外。 | Vợ cũ của anh ấy sống ở nước ngoài.
+l3-34 | 他不是失败者。 | Anh ấy không phải là kẻ thua cuộc.
+l3-34 | 他承认了自己的罪行。 | Anh ta thừa nhận tội trạng của mình.
+l3-34 | 这是对我们的考验。 | Đây là thử thách đối với chúng ta.
+l3-34 | 谁来主持会议？ | Ai sẽ chủ trì cuộc họp?
+l3-34 | 愿为您效劳。 | Xin được phục vụ ngài.
+l3-34 | 她喜欢看时装秀。 | Cô ấy thích xem trình diễn thời trang.
+l3-34 | 这活儿很累。 | Việc này mệt lắm.
+l3-34 | 那个男子是谁？ | Người đàn ông kia là ai?
+l3-35 | 他做了很多罪恶的事。 | Anh ta đã làm nhiều việc tội lỗi.
+l3-35 | 刀是用来切菜的。 | Dao dùng để thái rau.
+l3-35 | 我们要重视安全。 | Chúng ta phải coi trọng an toàn.
+l3-35 | 我远远地看见了他。 | Tôi nhìn thấy anh ấy từ xa tít.
+l3-35 | 假期你想去哪儿？ | Kỳ nghỉ bạn muốn đi đâu?
+l3-35 | 请扫描这个二维码。 | Vui lòng quét mã QR này.
+l3-35 | 这道题很难。 | Câu hỏi này rất khó.
+l3-35 | 他跑得很猛。 | Anh ấy chạy rất mạnh.
+l3-35 | 他缺乏经验。 | Anh ấy thiếu kinh nghiệm.
+l3-35 | 连续下了三天雨。 | Mưa liên tục ba ngày.
+l3-35 | 人都有欲望。 | Con người ai cũng có dục vọng.
+l3-35 | 这是一个连环计。 | Đây là một kế liên hoàn.
+l3-35 | 他会变魔术。 | Anh ấy biết làm ảo thuật.
+l3-35 | 我之所以迟到，是因为堵车。 | Sở dĩ tôi đến muộn là vì tắc đường.
+l3-35 | 森林里住着精灵。 | Trong rừng có tinh linh sinh sống.
+l3-35 | 汽车突然失控了。 | Chiếc xe bỗng mất kiểm soát.
+l3-35 | 你说得太夸张了。 | Bạn nói phóng đại quá.
+l3-35 | 警察在犯罪团伙里当卧底。 | Cảnh sát nằm vùng trong băng nhóm tội phạm.
+l3-35 | 他的处境很危险。 | Hoàn cảnh của anh ấy rất nguy hiểm.
+l3-36 | 她穿着白色的礼服。 | Cô ấy mặc lễ phục màu trắng.
+l3-36 | 现在是零下五度。 | Bây giờ là âm năm độ.
+l3-36 | 他发行了新专辑。 | Anh ấy phát hành album mới.
+l3-36 | 请保存好这份文件。 | Hãy lưu giữ cẩn thận tài liệu này.
+l3-36 | 电脑已经修好了。 | Máy tính đã sửa xong rồi.
+l3-36 | 这个故事让我很感动。 | Câu chuyện này làm tôi rất cảm động.
+l3-36 | 船在水里晃来晃去。 | Con thuyền lắc lư trên mặt nước.
+l3-36 | 如今大家都用手机。 | Ngày nay ai cũng dùng điện thoại.
+l3-36 | 她把头发染成了黄色。 | Cô ấy nhuộm tóc thành màu vàng.
+l3-36 | 我的祖母今年八十岁。 | Bà của tôi năm nay tám mươi tuổi.
+l3-36 | 我老爹爱钓鱼。 | Lão cha tôi thích câu cá.
+l3-36 | 他企图逃跑。 | Anh ta mưu toan bỏ trốn.
+l3-36 | 钱放在保险箱里。 | Tiền để trong két sắt.
+l3-36 | 他手上沾了油。 | Tay anh ấy dính dầu.
+l3-36 | 新年到了，祝你福气满满。 | Năm mới đến rồi, chúc bạn phúc khí đầy nhà.
+l3-36 | 他买了一条新裤子。 | Anh ấy mua một chiếc quần mới.
+l3-36 | 病人需要隔离。 | Bệnh nhân cần được cách ly.
+l3-36 | 公司雇佣了很多人。 | Công ty đã thuê mướn rất nhiều người.
+l3-36 | 他在厨房做饭。 | Anh ấy nấu cơm trong bếp.
+l3-36 | 我们明天去旅行。 | Ngày mai chúng tôi đi du lịch.
+l3-37 | 我不晓得他在哪儿。 | Tôi không biết rõ anh ấy ở đâu.
+l3-37 | 我在听电台广播。 | Tôi đang nghe đài phát thanh.
+l3-37 | 乱扔垃圾会被罚款。 | Vứt rác bừa bãi sẽ bị phạt tiền.
+l3-37 | 他迟早会明白的。 | Sớm muộn gì anh ấy cũng hiểu.
+l3-37 | 你可以用手机支付。 | Bạn có thể chi trả bằng điện thoại.
+l3-37 | 读书能增加知识。 | Đọc sách có thể tăng thêm tri thức.
+l3-37 | 他在水里拼命挣扎。 | Anh ấy giãy giụa liều mạng dưới nước.
+l3-37 | 你能推荐一本书吗？ | Bạn có thể đề cử một cuốn sách không?
+l3-37 | 这位球员跑得很快。 | Cầu thủ này chạy rất nhanh.
+l3-37 | 这台电视有五十英寸。 | Chiếc tivi này dài năm mươi inch.
+l3-37 | 观众在观看比赛。 | Khán giả đang xem trận đấu.
+l3-37 | 他是一位伟大的领袖。 | Ông ấy là một vị lãnh tụ vĩ đại.
+l3-37 | 他们收养了一个孩子。 | Họ đã nhận nuôi một đứa trẻ.
+l3-37 | 别再骚扰我了。 | Đừng quấy rối tôi nữa.
+l3-37 | 两个人的说法完全吻合。 | Lời khai của hai người hoàn toàn khớp nhau.
+l3-37 | 他们引爆了炸弹。 | Họ đã kích nổ quả bom.
+l3-37 | 成年人要为自己负责。 | Người trưởng thành phải chịu trách nhiệm về mình.
+l3-37 | 我口袋里有一枚硬币。 | Trong túi tôi có một đồng xu.
+l3-37 | 他裸着上身。 | Anh ấy cởi trần.
+l3-37 | 没有许可不能进入。 | Không có giấy phép thì không được vào.
+l3-38 | 他当众出丑，非常难堪。 | Anh ấy bị bẽ mặt trước đám đông, rất khó coi.
+l3-38 | 他在电梯里放屁，大家都很尴尬。 | Anh ta đánh rắm trong thang máy, ai cũng rất ngượng.
+l3-38 | 我要向经理汇报工作。 | Tôi phải báo cáo công việc với giám đốc.
+l3-38 | 年底有一笔奖金。 | Cuối năm có một khoản tiền thưởng.
+l3-38 | 祝你旅程愉快！ | Chúc bạn có hành trình vui vẻ!
+l3-38 | 我午饭吃了一个热狗。 | Bữa trưa tôi ăn một cái hot dog.
+l3-38 | 这部电影讲的是世界末日。 | Bộ phim này kể về ngày tận thế.
+l3-38 | 这部片子很好看。 | Bộ phim này rất hay.
+l3-38 | 警方正在找目击者。 | Cảnh sát đang tìm người chứng kiến.
+l3-38 | 孩子们喜欢糖果。 | Bọn trẻ thích kẹo.
+l3-38 | 地面很滑。 | Mặt đất rất trơn.
+l3-38 | 他声称自己是无辜的。 | Anh ta xưng rằng mình vô tội.
+l3-38 | 我待会儿再给你打电话。 | Chốc nữa tôi gọi lại cho bạn.
+l3-38 | 猫在捉老鼠。 | Con mèo đang bắt chuột.
+l3-38 | 他把信撕了。 | Anh ấy xé bức thư.
+l3-38 | 这是一桩大案子。 | Đây là một vụ án lớn.
+l3-38 | 警察包围了房子。 | Cảnh sát bao vây ngôi nhà.
+l3-38 | 你可以去咨询医生。 | Bạn có thể đi tư vấn bác sĩ.
+l3-38 | 屏幕上出现了一条提示。 | Trên màn hình xuất hiện một dòng nhắc nhở.
+l3-38 | 我一时糊涂，做错了事。 | Tôi nhất thời hồ đồ nên làm sai.

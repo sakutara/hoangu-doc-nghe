@@ -1,0 +1,180 @@
+## F2-43 | Kinh tế, mua sắm & kim loại
+1=không việc gì
+2=chín; quen;;shú;;thục
+3=khỉ
+4=kinh tế
+5=đạt được (thỏa thuận)
+6=đôi phu phụ
+7=học viện
+8=chỗ ngồi
+9=sữa bò
+10=chạy thoát
+11=một phía
+12=giành thắng lợi
+13=không còn nghi ngờ
+14=áp dụng
+15=cô dâu
+16=lên, thăng;;shēng;;thăng
+17=kiểu loại
+18=mong sao
+19=mua sắm
+20=hợp lý
+21=hút thuốc
+22=kiểm nghiệm
+23=tranh cử
+24=màu xanh lá
+25=kim loại
+> 他们是一对夫妇。 | Họ là một đôi vợ chồng.
+> 我想喝牛奶。 | Tôi muốn uống sữa bò.
+> 这里不能抽烟。 | Ở đây không được hút thuốc.
+> 这个经济计划很合理。 | Kế hoạch kinh tế này rất hợp lý.
+## F2-44 | Chuyến bay, thị trấn & lịch sự
+1=xong đời
+2=tối;;àn;;ám
+3=trong thời gian
+4=chuyến bay
+5=trong miệng
+6=kho;;kù;;khố
+7=trong tâm
+8=màu trắng
+9=sản phẩm
+10=binh;;bīng;;binh
+11=thị trấn nhỏ
+12=tinh lực
+13=về hưu
+14=thân mật
+15=dưới đất
+16=lịch sự
+17=bạn cũ
+18=nói bậy
+19=cắt;;gē;;cát
+20=cường tráng
+21=chỉ huy
+22=chế phục; khuất phục
+23=đúng điệu, ổn;;duìjìn;;đối kình
+24=nhận ra (nhận diện)
+25=việc xấu
+> 我的航班取消了。 | Chuyến bay của tôi bị hủy rồi.
+> 他今年退休了。 | Năm nay ông ấy về hưu rồi.
+> 请你有礼貌。 | Xin bạn hãy lịch sự.
+> 你是我的老朋友。 | Bạn là bạn cũ của tôi.
+## F2-45 | Tòa án, tôn giáo & áo khoác
+1=xấu; hề;;chǒu;;sửu
+2=tra ra
+3=viện pháp
+4=tự động
+5=phát trực tiếp
+6=bye bye
+7=sớm hơn dự kiến
+8=phổ;;pǔ;;phổ
+9=ngồi tù
+10=tôn giáo
+11=sụp đổ
+12=chào hỏi
+13=rậm rạp;;sēn;;sâm
+14=đồ ngu
+15=vẫn cứ
+16=yên ả
+17=đi (xe), nhân;;chéng;;thừa
+18=bên phải
+19=không lâu sau
+20=quần lót
+21=lướt sóng
+22=chắc; nhà tù;;láo;;lao
+23=sợ chết khiếp
+24=áo khoác
+25=việc lớn
+> 他在法院工作。 | Anh ấy làm việc ở tòa án.
+> 再见！拜拜！ | Tạm biệt! Bye bye!
+> 我要提前走。 | Tôi phải đi sớm hơn dự kiến.
+> 外面很冷，你穿外套吧。 | Bên ngoài lạnh lắm, bạn mặc áo khoác vào đi.
+## F2-46 | Diễn thuyết, giá rẻ & người lạ
+1=lòng bàn tay; nắm;;zhǎng;;chưởng
+2=rơi vào
+3=ngồi xổm;;dūn;;tồn
+4=ban đầu; sơ;;chū;;sơ
+5=phát biểu, công bố
+6=đền đáp
+7=diễn thuyết
+8=giọt; nhỏ giọt;;dī;;trích
+9=bao giờ
+10=rẻ
+11=bên dưới
+12=cai; giới;;jiè;;giới
+13=đóng cánh cửa
+14=người môi giới
+15=bãi đỗ xe
+16=phán đoán
+17=phát triển, lớn lên
+18=khảo nghiệm
+19=nằm mơ
+20=hằng năm
+21=phô mai
+22=lễ; quà;;lǐ;;lễ
+23=phun;;pēn;;phún
+24=ném;;pāo;;phao
+25=người lạ
+> 东西很便宜。 | Đồ rất rẻ.
+> 他在做梦。 | Anh ấy đang nằm mơ.
+> 我在停车场等你。 | Tôi đợi bạn ở bãi đỗ xe.
+> 不要和陌生人说话。 | Đừng nói chuyện với người lạ.
+## F2-47 | Quân đội, áo sơ mi & công chúng
+1=chỉ, dừng lại (văn viết);;zhǐ;;chỉ
+2=sâu sắc
+3=có hiệu quả
+4=quân;;jūn;;quân
+5=chèo; vạch;;huá;;họa
+6=tầng hầm
+7=ghé thăm (kính ngữ)
+8=chảy máu
+9=mật; dày;;mì;;mật
+10=áo sơ mi
+11=đập nát
+12=tóc vàng
+13=cánh tay
+14=người khác (văn viết)
+15=Nga
+16=anh bạn (nhi hóa)
+17=bất thường
+18=bệnh tật
+19=sắc; màu;;sè;;sắc
+20=công chúng
+21=thể hiện ra
+22=bệnh tim
+23=chiến sĩ
+24=chức trách
+25=dưới lầu
+> 他穿着一件白色衬衫。 | Anh ấy mặc một chiếc áo sơ mi màu trắng.
+> 楼下有人在等你。 | Dưới lầu có người đang đợi bạn.
+> 他得了心脏病。 | Ông ấy bị bệnh tim.
+> 这是我的职责。 | Đây là chức trách của tôi.
+## F2-48 | Chương sách, rừng & cầu thang
+1=chương;;zhāng;;chương
+2=số lượng lớn
+3=cô nàng (khẩu ngữ);;niū;;nữu
+4=bóng; ảnh;;yǐng;;ảnh
+5=thơ;;shī;;thi
+6=chỉnh lý, sắp xếp
+7=đấu (đơn vị đong); đấu tranh;;dǒu;;đấu
+8=lời khai
+9=cửa ra vào
+10=chiếm;;zhàn;;chiếm
+11=ép buộc
+12=rừng rậm
+13=ám chỉ
+14=định sẵn
+15=đi tới
+16=tay (cánh tay)
+17=miễn trừ
+18=hô; thở ra;;hū;;hô
+19=ta, chúng ta (văn nói);;zán;;tạm
+20=đương sự
+21=rảnh
+22=thông cảm
+23=gọi (liên lạc)
+24=ôi (thở dài);;āi;;ai
+25=cầu thang
+> 这一章很长。 | Chương này rất dài.
+> 他站在门口。 | Anh ấy đứng ở cửa ra vào.
+> 你明天有空吗？ | Ngày mai bạn có rảnh không?
+> 楼梯在你的右边。 | Cầu thang ở bên phải bạn.

@@ -1,0 +1,210 @@
+## F3-14 | Nhiệm vụ, nền tảng & tập hợp
+1=lão đệ, em trai (thân mật)
+2=ki-lô-mét
+3=chua;;suān;;toan
+4=câu cá
+5=người cùng đi
+6=đỡ;;fú;;phù
+7=nuôi dưỡng
+8=khâu, mắt xích
+9=riêng tư, kín đáo
+10=bến xe
+11=tập hợp
+12=trước đó
+13=toàn thể
+14=sảnh đường;;táng;;đường
+15=có quyền quyết định
+16=xông;;chuǎng;;sấm
+17=nhất định phải
+18=thỏa sức
+19=nấu cơm
+20=đội cổ vũ
+21=quái thú
+22=vặn; trẹo;;niǔ;;nữu
+23=tàn nhẫn; dữ;;hěn;;ngận
+24=sứ mệnh
+25=cơ sở, nền tảng
+> 车站在哪里？ | Bến xe ở đâu?
+> 全体人员请集合！ | Toàn thể nhân viên xin tập hợp!
+> 我们要尽情地玩。 | Chúng ta phải chơi thỏa thích.
+> 他每天做饭。 | Mỗi ngày anh ấy đều nấu cơm.
+## F3-15 | Đế quốc, hồ bơi & ác mộng
+1=xấu hổ e thẹn
+2=đế quốc
+3=cái cốc
+4=tàn khốc
+5=trả về, quay trở lại
+6=dịp, hoàn cảnh
+7=tầm, kiếm;;xún;;tầm
+8=cồn
+9=đúng giờ
+10=u linh, bóng ma
+11=thứ Sáu (cách nói khác)
+12=mô hình
+13=bể bơi
+14=khung hình
+15=quỷ dị
+16=bộ trưởng
+17=đi xuống, giảm
+18=khả nghi
+19=sao chép
+20=giấc mơ dữ (biến thể)
+21=vậy; đúng;;rán;;nhiên
+22=thịt bò
+23=cơn đau nhức
+24=tạm tha
+25=nhiếp ảnh
+> 我们九点准时出发。 | Chín giờ chúng ta xuất phát đúng giờ.
+> 游泳池里有很多人。 | Trong bể bơi có rất nhiều người.
+> 这个杯子很旧。 | Chiếc cốc này rất cũ.
+> 我喜欢吃牛肉。 | Tôi thích ăn thịt bò.
+## F3-16 | Chào buổi sáng, gara & phá sản
+1=diệt; tắt;;miè;;diệt
+2=tích cực
+3=bột; hồng;;fěn;;phấn
+4=miễn;;miǎn;;miễn
+5=chào buổi sáng
+6=gỡ bỏ
+7=thẩm định
+8=gara
+9=thông tin liên lạc
+10=bữa điểm tâm
+11=cái đĩa
+12=sau lưng; sau khi mất
+13=giáng; hạ;;jiàng;;giáng
+14=điển hình
+15=hà hà
+16=giống như
+17=xây dựng
+18=(trợ từ nhấn mạnh)
+19=phá sản
+20=trao cho
+21=đạt được, bắt;;huò;;hoạch
+22=làm giả
+23=ra sân
+24=giữa đêm
+25=danh nghĩa
+> 早安！你吃早点了吗？ | Chào buổi sáng! Bạn đã ăn điểm tâm chưa?
+> 公司破产了。 | Công ty phá sản rồi.
+> 车库里有一辆车。 | Trong gara có một chiếc xe.
+> 他伪造了合同。 | Hắn đã làm giả hợp đồng.
+## F3-17 | Giàu có, vụ kiện & cám dỗ
+1=giàu;;fù;;phú
+2=xem xét
+3=sòng bạc
+4=sức lực
+5=vụ kiện
+6=che đậy
+7=đứng; lập;;lì;;lập
+8=qua đêm
+9=trở lên
+10=phát tác
+11=đoàn kết
+12=tuyển chọn
+13=cứu viện
+14=nằm úp;;pā;;ba
+15=tốc;;sù;;tốc
+16=trừ khử
+17=mở đầu
+18=dân;;mín;;dân
+19=vểnh; giỏi (khẩu ngữ);;qiáo;;kiều
+20=tiếp quản
+21=theo dõi xem
+22=hiểm;;xiǎn;;hiểm
+23=cửa sổ (thành tố);;chuāng;;song
+24=cám dỗ
+25=mười hai
+> 他有很多钱，是个富人。 | Anh ta có rất nhiều tiền, là một người giàu.
+> 我今天要在这里过夜。 | Hôm nay tôi phải qua đêm ở đây.
+> 这是一个官司。 | Đây là một vụ kiện.
+> 他不能拒绝这个诱惑。 | Anh ta không thể từ chối sự cám dỗ này.
+## F3-18 | Tên lửa, tất & gánh nặng
+1=tên lửa
+2=nói bậy bạ
+3=phải chịu, bị
+4=bạn, đi cùng;;bàn;;bạn
+5=chứa; dung;;róng;;dung
+6=ngói;;wǎ;;ngõa
+7=tất
+8=cách làm
+9=hoa; Trung Hoa;;huá;;hoa
+10=gây rắc rối
+11=tạm dừng
+12=gánh nặng
+13=chưa bao giờ
+14=bãi cát
+15=phiền não
+16=giao tiếp xã hội
+17=lên đây
+18=đoàn thể
+19=được rồi
+20=hữu dụng
+21=bốc cháy
+22=di dân
+23=lốp xe
+24=đứng ra tổ chức
+25=cướp đi
+> 房子着火了！ | Căn nhà bốc cháy rồi!
+> 你有什么烦恼？ | Bạn có phiền não gì?
+> 这个办法有用吗？ | Cách này có hữu dụng không?
+> 他们要举办一个晚会。 | Họ sắp tổ chức một buổi tiệc tối.
+## F3-19 | Nước mắt, xe máy & hươu nai
+1=bôi; lau;;mǒ;;mạt
+2=làng;;cūn;;thôn
+3=nước mắt
+4=doanh trại;;yíng;;doanh
+5=khuynh hướng
+6=liên quan
+7=chờ lệnh
+8=nghĩ;;sī;;tư
+9=xe máy
+10=ngày (thời điểm cụ thể)
+11=say mê yêu
+12=tán thành
+13=giữ được
+14=đả bại, đánh gục
+15=tùy thuộc vào
+16=vô tuyến
+17=thống trị
+18=bất ngờ gặp, cuộc chạm trán
+19=hươu;;lù;;lộc
+20=môi
+21=thê; vợ;;qī;;thê
+22=hình thức
+23=diễu hành
+24=ăn nói xằng bậy
+25=bỏ;;qì;;khí
+> 我有一辆摩托车。 | Tôi có một chiếc xe máy.
+> 他流下了眼泪。 | Anh ấy rơi nước mắt.
+> 他们都赞成这个计划。 | Họ đều tán thành kế hoạch này.
+> 今天是什么日期？ | Hôm nay là ngày mấy?
+## F3-20 | Hiện tượng, mâu thuẫn & lĩnh vực
+1=người kỳ quặc
+2=hiện tượng
+3=tương đồng
+4=mâu thuẫn
+5=kết hợp
+6=ngũ cốc; thung lũng;;gǔ;;cốc
+7=một dạo
+8=đầy đủ
+9=quyết;;jué;;quyết
+10=sinh đôi
+11=dự bị
+12=những cái nào
+13=phần đầu
+14=phấn chấn lên
+15=bản kê
+16=búp bê
+17=rìa, ven
+18=lĩnh vực
+19=sửa chữa
+20=giá;;jià;;giá
+21=sảnh;;tīng;;sảnh
+22=cư dân
+23=theo như lời đồn
+24=pin
+25=nụ cười
+> 这是两个相似的现象。 | Đây là hai hiện tượng tương tự nhau.
+> 他们是双胞胎。 | Họ là cặp sinh đôi.
+> 请你振作起来。 | Xin bạn hãy phấn chấn lên.
+> 他脸上有笑容。 | Trên mặt anh ấy có nụ cười.

@@ -1,0 +1,229 @@
+## F3-44 | Biên giới, phòng họp & mù sương
+1=nghe hay
+2=khăn tay;;pà;;phạ
+3=ban tặng;;cì;;tứ
+4=biên giới
+5=phát cho
+6=tráng; khỏe;;zhuàng;;tráng
+7=cản lại
+8=ngụy trang che giấu
+9=bận tâm lo lắng
+10=nghi vấn
+11=liệu pháp
+12=ví dụ cụ thể
+13=mảnh giấy ghi
+14=Đức Quốc xã
+15=điểm cuối
+16=bảo vệ duy trì
+17=sương mù;;wù;;vụ
+18=phòng họp
+19=tàn sát
+20=đề danh
+21=nhìn; mong;;wàng;;vọng
+22=-
+23=hội đồng quản trị
+24=tán tỉnh
+25=xu hướng; đi về phía
+> 我要去会议室。 | Tôi phải đến phòng họp.
+> 雾很大。 | Sương mù rất dày.
+> 请你举一个例子。 | Xin bạn hãy nêu một ví dụ.
+> 这个终点很远。 | Điểm cuối này rất xa.
+## F3-45 | Lẩn tránh, người hầu & vé vào cửa
+1=lẩn tránh
+2=man rợ
+3=ngày trước
+4=ghét cay ghét đắng
+5=kẹo cao su
+6=ngọn đuốc
+7=lưu ý
+8=kiểu cách
+9=đậu;;dòu;;đậu
+10=ruột thịt
+11=người hầu
+12=xong việc
+13=thế nào đây
+14=phát sóng
+15=ấm;;nuǎn;;noãn
+16=khôi hài
+17=vận dụng
+18=trống;;gǔ;;cổ
+19=cùng làm việc
+20=kẻ nhu nhược
+21=chút xíu
+22=có tiếng
+23=trung học
+24=đường cái
+25=vé vào cửa
+> 他是一个有名的演员。 | Anh ấy là một diễn viên có tiếng.
+> 我要买门票。 | Tôi muốn mua vé vào cửa.
+> 仆人在厨房里。 | Người hầu đang ở trong bếp.
+> 马路上有很多车。 | Trên đường cái có rất nhiều xe.
+## F3-46 | Tiểu học, rạp phim & phương hướng
+1=tiểu học
+2=lên mạng
+3=cùng nhau (nhi hóa)
+4=máy thu hình
+5=nước ngoài
+6=khát
+7=chị;;jiě;;tỷ
+8=ở nước ngoài
+9=hiệu sách
+10=xuống xe
+11=trời mưa
+12=sinh viên
+13=rạp chiếu phim
+14=ngã tư
+15=vé xe
+16=đệ, em (thành tố);;dì;;đệ
+17=không lớn lắm
+18=phía bắc
+19=nghỉ lễ
+20=phía nam
+21=phía ngoài
+22=phía tây
+23=khám bệnh
+24=cơm trắng
+25=xin nghỉ
+> 我想去书店。 | Tôi muốn đến hiệu sách.
+> 我渴了。 | Tôi khát rồi.
+> 他在国外工作。 | Anh ấy làm việc ở nước ngoài.
+> 下雨了，我们回家吧。 | Trời mưa rồi, chúng ta về nhà đi.
+## F3-47 | Bắc Kinh, sách vở & tiếng Hán
+1=Bắc Kinh
+2=tiếng Trung
+3=phía trong
+4=phía đông
+5=tan lớp
+6=hôm kia
+7=bên trên
+8=quyển vở
+9=đằng sau
+10=cặp sách
+11=vui (nhi hóa)
+12=ngày kia
+13=chủ nhật (viết)
+14=sách giáo khoa
+15=ngoại ngữ
+16=học sinh tiểu học
+17=phía dưới đó
+18=học sinh trung học
+19=tiếng Hán
+20=bánh bao
+21=đằng trước
+22=chữ Hán
+23=tòa nhà giảng đường
+24=bạn trên mạng
+25=chép chính tả
+> 我在北京学习汉语。 | Tôi học tiếng Hán ở Bắc Kinh.
+> 书包在桌子上。 | Cặp sách ở trên bàn.
+> 后天是星期日。 | Ngày kia là chủ nhật.
+> 你会写汉字吗？ | Bạn có biết viết chữ Hán không?
+## F3-48 | Bài khóa, phòng học & học kỳ
+1=bài khóa
+2=nửa năm
+3=đừng khách sáo
+4=lông; hào;;máo;;mao
+5=mì sợi (nhi hóa)
+6=cậu bé (nhi hóa)
+7=cô bé (nhi hóa)
+8=mời vào
+9=mời ngồi
+10=trẻ con (nhi hóa)
+11=một chút (nhi hóa)
+12=có một ít
+13=thương nhân
+14=sổ tay
+15=thiếu niên
+16=sân nhà
+17=to nhỏ
+18=phòng học
+19=khuôn viên trường
+20=nghỉ phép
+21=thực tập
+22=ven đường
+23=mây; nói (cổ);;yún;;vân
+24=học kỳ
+25=khi này
+> 请进，请坐。 | Mời vào, mời ngồi.
+> 不客气！ | Đừng khách sáo!
+> 教室里有很多学生。 | Trong phòng học có rất nhiều học sinh.
+> 我们这学期有六门课。 | Học kỳ này chúng tôi có sáu môn học.
+## F3-49 | Từ nhỏ, thực đơn & họa sĩ
+1=từ nhỏ
+2=to lớn; rất nhiều
+3=âm; râm;;yīn;;âm
+4=quần vợt
+5=đi qua
+6=thực đơn
+7=áo khoác dài
+8=miền bắc
+9=thanh niên
+10=vườn thú
+11=từ nay về sau
+12=ban đêm
+13=làm thuê
+14=đợi đến khi
+15=số đông
+16=bình đẳng
+17=họa sĩ
+18=coi trọng
+19=chữ Anh
+20=chụp hình
+21=cho thuê
+22=giơ tay lên
+23=bản ghi chép
+24=thường gặp
+25=chẳng những
+> 我从小喜欢画画。 | Từ nhỏ tôi đã thích vẽ tranh.
+> 请给我菜单。 | Xin cho tôi thực đơn.
+> 我们去动物园玩。 | Chúng ta đến vườn thú chơi.
+> 他是一位画家。 | Ông ấy là một họa sĩ.
+## F3-50 | Mùa thu, điểm số & du khách
+1=mời khách (đãi)
+2=phương Tây
+3=bất mãn
+4=mùa thu
+5=điểm số
+6=bên trong (khẩu ngữ)
+7=thiểu số
+8=rút ra
+9=nhà thi đấu
+10=một phần
+11=lấy được
+12=du khách
+13=đặc điểm
+14=xuất viện
+15=đăng ký tham gia
+16=ki-lô-gam
+17=lúc ấy
+18=viện trưởng
+19=đạp xe
+20=bài toán khó
+21=dáng người cao thấp
+22=viên thuốc
+23=phương Đông
+24=tây bắc
+25=dạy học
+> 秋天来了。 | Mùa thu đến rồi.
+> 我今天请客。 | Hôm nay tôi mời khách.
+> 他的分数很高。 | Điểm số của anh ấy rất cao.
+> 游客们在博物馆里。 | Các du khách đang ở trong bảo tàng.
+## F3-51 | Thiên nhiên, ôn tập & từ điển
+1=tuổi trung niên
+2=thiên nhiên
+3=tình cờ gặp
+4=tắt máy
+5=ra nước ngoài
+6=bãi cỏ
+7=tuyết rơi
+8=in ấn
+9=ôn tập
+10=lớp học
+11=hành khách đi đường
+12=tác hại
+13=tây nam
+14=từ điển chữ
+> 我们坐在草地上。 | Chúng tôi ngồi trên bãi cỏ.
+> 请把手机关机。 | Xin hãy tắt máy điện thoại.
+> 他明年要出国。 | Sang năm anh ấy sẽ ra nước ngoài.
+> 我需要一本字典。 | Tôi cần một cuốn từ điển.

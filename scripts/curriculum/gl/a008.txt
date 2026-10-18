@@ -1,0 +1,180 @@
+## F1-35 | Xã hội, chính phủ & may mắn
+1=giao; nộp; kết giao;;jiāo;;giao
+2=cùng với, cũng như
+3=mười
+4=đài; bàn; (lượng từ máy);;tái;;đài
+5=dọn, khuân
+6=cá nhân
+7=đại diện
+8=kiên trì
+9=ý nghĩa
+10=tòa nhà; tầng
+11=thừa nhận
+12=thề
+13=lý do
+14=hiển nhiên
+15=cục; ván; cuộc;;jú;;cục
+16=chính phủ
+17=làm ăn, buôn bán
+18=mắt (văn viết); lỗ
+19=lửa
+20=gặp phải
+21=mèo
+22=cho dù
+23=ghi nhớ
+24=khắp nơi
+25=may mắn
+> 这是政府的意思。 | Đây là ý của chính phủ.
+> 他们住在十楼。 | Họ sống ở tầng mười.
+> 我家有一只猫。 | Nhà tôi có một con mèo.
+> 我遇到了麻烦。 | Tôi gặp rắc rối rồi.
+## F1-36 | Tội phạm, tin tức & tương lai
+1=thẻ; kẹt;;kǎ;;tạp
+2=rửa; giặt;;xǐ;;tẩy
+3=khi đó
+4=làm gì vậy
+5=chuyện (khẩu ngữ)
+6=trộn; lăn lộn;;hùn;;hỗn
+7=phạm tội
+8=treo; cúp máy;;guà;;quải
+9=nhảy múa
+10=đồ ngốc, thằng ngu
+11=tin cậy
+12=tin tức, thời sự
+13=tương lai
+14=xin lỗi (chính thức)
+15=đáng thương
+16=thật sự, quả thật
+17=lừa
+18=gia nhập
+19=bệnh nhân
+20=vụ án; bàn
+21=rễ; (lượng từ cho vật dài);;gēn;;căn
+22=dọa;;xià;;hách
+23=tha thứ
+24=điều trị
+25=hành vi
+> 他犯罪了，现在在监狱里。 | Hắn phạm tội, giờ đang ở trong tù.
+> 我信任你，请不要骗我。 | Tôi tin bạn, xin đừng lừa tôi.
+> 你在干什么？ | Bạn đang làm gì vậy?
+> 病人需要治疗。 | Bệnh nhân cần được điều trị.
+## F1-37 | Thành phố, gia đình & công việc
+1=khá; so sánh
+2=bên, cạnh;;biān;;biên
+3=đôi, cặp;;shuāng;;song
+4=đám cưới
+5=em trai
+6=tổ chức
+7=gặp mặt
+8=thường xuyên
+9=thành phố
+10=ông chủ
+11=hợp tác
+12=đến nơi
+13=một lát
+14=loạn, lộn xộn;;luàn;;loạn
+15=từ, lời;;cí;;từ
+16=ngươi; (văn viết) vậy;;ěr;;nhĩ
+17=vượt; siêu;;chāo;;siêu
+18=gần như
+19=chi (lượng từ cây bút, đội); chống đỡ;;zhī;;chi
+20=vợ (thân mật)
+21=trung tâm
+22=đáng sợ
+23=bút
+24=đầy
+25=giả;;jiǎ;;giả
+> 我们明天见面。 | Ngày mai chúng ta gặp nhau.
+> 他是我的老板。 | Anh ấy là sếp của tôi.
+> 这个城市很大，也很乱。 | Thành phố này rất lớn, cũng rất lộn xộn.
+> 我弟弟差不多十岁了。 | Em trai tôi sắp mười tuổi rồi.
+## F1-38 | Điều tra, manh mối & máy tính
+1=rõ rệt
+2=nghiên cứu
+3=ý thức
+4=lân cận, quanh đây
+5=đồng tính luyến ái
+6=làm phiền
+7=vận may
+8=manh mối
+9=trước mặt
+10=biến mất
+11=em gái
+12=chính xác
+13=vị trí
+14=đồng ý, nhận lời
+15=thu; nhận;;shōu;;thu
+16=đập, phá
+17=phố
+18=máy tính
+19=khu;;qū;;khu
+20=đâm, va
+21=mượn, vay
+22=giây
+23=dường như
+24=đặt xuống
+25=sức mạnh
+> 他的电脑在哪里？ | Máy tính của anh ấy ở đâu?
+> 别打扰我，我在研究。 | Đừng làm phiền tôi, tôi đang nghiên cứu.
+> 你借我一支笔，好吗？ | Bạn cho tôi mượn một cây bút được không?
+> 我听说他消失了。 | Tôi nghe nói anh ấy biến mất rồi.
+## F1-39 | Chiến tranh, ảnh hưởng & chúc mừng
+1=mệnh lệnh
+2=đồng thời
+3=cung cấp
+4=đe dọa
+5=thua
+6=con số, số hiệu
+7=ngày tháng
+8=chỗ ngồi; tòa;;zuò;;tọa
+9=cái nào
+10=ví dụ
+11=còn lại
+12=nghiêm trọng
+13=cảm giác; cảm;;gǎn;;cảm
+14=thưởng thức
+15=chiến tranh
+16=chúc mừng
+17=giết chết
+18=của nó/họ (văn viết);;qí;;kỳ
+19=ảnh hưởng
+20=lợi dụng
+21=hận, căm
+22=giết người
+23=cởi; thoát;;tuō;;thoát
+24=đi cùng, bầu bạn
+25=mất tích
+> 恭喜你！你赢了。 | Chúc mừng bạn! Bạn thắng rồi.
+> 战争影响了所有人。 | Chiến tranh ảnh hưởng đến tất cả mọi người.
+> 他在威胁我。 | Hắn đang đe dọa tôi.
+> 你的号码是多少？ | Số của bạn là bao nhiêu?
+## F1-40 | Ngân hàng, pháp luật & sự thật
+1=nghiêm túc
+2=sự thật (chân tướng)
+3=pháp luật
+4=huấn luyện
+5=gạo; mét;;mǐ;;mễ
+6=đáng
+7=A (tiền tố thân mật);;ā;;a
+8=chủ;;zhǔ;;chủ
+9=hay, có ý nghĩa
+10=nóng;;rè;;nhiệt
+11=sử dụng (trang trọng)
+12=kém; chênh lệch; thiếu;;chà;;sai
+13=phương diện
+14=ngân hàng
+15=khủng bố; kinh hoàng
+16=hết; tận;;jìn;;tận
+17=hóa ra; vốn là
+18=sĩ quan cảnh sát
+19=gợi cảm
+20=tự sát
+21=quán bar
+22=thảo luận
+23=như nhau, tương tự
+24=thân phận
+25=kiểu gì
+> 我们去银行。 | Chúng ta đi ngân hàng.
+> 原来他是警官。 | Hóa ra anh ấy là sĩ quan cảnh sát.
+> 这件事值得认真讨论。 | Chuyện này đáng được thảo luận nghiêm túc.
+> 法律是不是真的有用？ | Pháp luật có thật sự hữu dụng không?

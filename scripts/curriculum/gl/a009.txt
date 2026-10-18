@@ -1,0 +1,179 @@
+## F1-41 | Động vật, học sinh & cảm xúc
+1=nói rõ, chỉ rõ
+2=yên tĩnh
+3=đảo;;dǎo;;đảo
+4=người mẫu
+5=biết bao
+6=đủ đầy, đủ mức
+7=đói
+9=đỏ; nổi tiếng;;hóng;;hồng
+10=gà
+11=nuôi
+12=buổi chiều
+13=một khi
+14=vẫn
+15=động tác
+16=đuổi theo
+17=cảm ơn; tạ;;xiè;;tạ
+18=có nghĩa là
+19=chịu, nhận (sự đối xử)
+20=đám, bầy;;qún;;quần
+21=một trong
+22=do, bởi vì (văn viết);;yīn;;nhân
+23=hẹn; khoảng;;yuē;;ước
+24=đuổi kịp; vội;;gǎn;;cản
+25=đối mặt
+> 我饿了，下午想吃鸡。 | Tôi đói rồi, buổi chiều muốn ăn gà.
+> 他仍然在追她。 | Anh ta vẫn đang theo đuổi cô ấy.
+> 你要面对这个问题。 | Bạn phải đối mặt với vấn đề này.
+> 这里很安静。 | Ở đây rất yên tĩnh.
+## F1-42 | Giao dịch, từ chối & đời người
+1=nghi ngờ
+2=chậm
+3=không ngờ lại
+4=sắp
+5=người nhà
+6=từ chối
+7=sấm
+8=diễn viên
+9=đốt, cháy; nấu;;shāo;;thiêu
+10=chân thực
+11=giao dịch
+12=rách, vỡ; phá;;pò;;phá
+13=ngừng lại
+14=đời người
+15=trong, sạch;;qīng;;thanh
+16=bởi vậy
+17=buồn nôn, ghê tởm;;ěxin;;ố tâm
+18=bị thương
+19=đêm;;yè;;dạ
+20=con đĩ (chửi);;biǎozi;;biểu tử
+21=thuộc về
+22=vũ đạo
+23=căn cứ
+24=hầu như
+25=coi như là
+> 他居然拒绝了这个交易。 | Không ngờ anh ta lại từ chối giao dịch này.
+> 雷声很大，孩子们很害怕。 | Tiếng sấm rất to, bọn trẻ rất sợ.
+> 这个演员属于我们公司。 | Diễn viên này thuộc về công ty chúng tôi.
+> 他受伤了，几乎不能走。 | Anh ấy bị thương, gần như không đi được.
+## F1-43 | Kết cục, anh hùng & ước mơ
+1=diễn;;yǎn;;diễn
+2=ni (ni cô);;ní;;ni
+3=đáp án
+4=xuất sắc
+5=hiện nay
+6=hoạt động; vận động
+7=ước mơ
+8=khóa;;suǒ;;tỏa
+9=sau cùng
+10=lần nữa
+11=người lớn
+12=đã..., thì
+13=nhân sự
+14=anh hùng
+15=ngồi xuống
+16=cảm nhận
+17=sự kiện
+18=phó; bộ (lượng từ);;fù;;phó
+19=hôn
+20=tội;;zuì;;tội
+21=trốn;;táo;;đào
+22=đành phải
+23=thông báo
+24=bất luận
+25=buông ra
+> 这就是我的梦想。 | Đây chính là ước mơ của tôi.
+> 你不得不面对。 | Bạn đành phải đối mặt.
+> 他是我们的英雄。 | Anh ấy là anh hùng của chúng tôi.
+> 请坐下，我通知他们。 | Xin mời ngồi, tôi sẽ thông báo cho họ.
+## F1-44 | Tấn công, mời mọc & lãng phí
+1=dao
+2=về sau
+3=nguyện, muốn;;yuàn;;nguyện
+4=phù hợp
+5=cho phép
+6=thất vọng
+7=ý kiến
+8=giành được
+9=nếu như
+10=gần;;jìn;;cận
+11=số; đếm;;shù;;số
+12=chung cư
+13=tài liệu, tệp
+14=chỉ có thể
+15=tìm kiếm
+16=trắng; uổng công;;bái;;bạch
+17=tấn công
+18=thối, nát;;làn;;lạn
+19=không thế thì, bằng không
+20=mời, lời mời
+21=mặc dù
+22=chị gái
+23=lãng phí
+24=đa tạ
+25=bạn gái
+> 后来他邀请了我女朋友。 | Về sau anh ấy đã mời bạn gái tôi.
+> 这个公寓很近。 | Căn hộ này rất gần.
+> 要是你有意见，请告诉我。 | Nếu bạn có ý kiến, xin hãy nói với tôi.
+> 我姐姐在银行工作。 | Chị gái tôi làm việc ở ngân hàng.
+## F1-45 | Phản ứng, trách nhiệm & ẩm thực
+1=động vật
+2=một nửa
+3=trốn, né
+4=vì sao
+5=hoặc là
+6=ép, bức
+7=nợ
+8=bánh xe; vòng; lượt;;lún;;luân
+9=cố gắng
+10=phản ứng
+11=tây;;xī;;tây
+12=một bên; vừa...vừa
+13=nghe được
+14=thất bại
+15=dễ chịu
+16=thông; thạo;;tōng;;thông
+17=đôi khi
+18=bình thường; thông thường
+19=trứng
+20=giới thiệu
+21=bất ngờ; tai nạn
+22=chữ;;zì;;tự
+23=vào; nhập;;rù;;nhập
+24=trách nhiệm
+25=thức ăn
+> 他一边吃蛋，一边看电视。 | Anh ấy vừa ăn trứng vừa xem tivi.
+> 这不是你的责任。 | Đây không phải trách nhiệm của bạn.
+> 请介绍一下你自己。 | Xin hãy giới thiệu một chút về bản thân bạn.
+> 你要么去，要么留下。 | Hoặc là bạn đi, hoặc là bạn ở lại.
+## F1-46 | Cảm xúc, nhân chứng & áp lực
+1=tiếc nuối
+2=dù sao
+3=sát thủ
+4=phong; bức (thư);;fēng;;phong
+5=thiết kế
+6=giành được (thắng lợi)
+7=chính là
+8=nhân chứng
+9=tươi đẹp
+10=áp lực
+11=mùi vị
+12=đào thải, loại
+13=giỏi, ghê gớm
+14=cá
+15=bắn;;shè;;xạ
+16=phòng;;shì;;thất
+17=ngu xuẩn
+18=say;;zuì;;túy
+19=chưa (văn viết);;wèi;;vị
+20=đức;;dé;;đức
+21=riêng tư
+22=nào đó, một;;mǒu;;mỗ
+23=xuất phát
+24=vĩ đại
+25=phấn khích
+> 这个味道很特别。 | Mùi vị này rất đặc biệt.
+> 你真厉害！ | Bạn giỏi thật đấy!
+> 他喝醉了，我们送他回家。 | Anh ấy say rồi, chúng tôi đưa anh ấy về nhà.
+> 压力很大，但是他从不放弃。 | Áp lực rất lớn, nhưng anh ấy chưa bao giờ từ bỏ.

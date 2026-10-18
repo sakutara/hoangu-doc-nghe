@@ -1,0 +1,180 @@
+## F3-01 | Hành khách, cân bằng & kết luận
+1=kịp thời
+2=siêu nhân
+3=hành khách
+4=thể dục thể thao
+5=cân bằng
+6=hôn môi
+7=kết luận
+8=lạc đường
+9=bán hàng
+10=cá mập
+11=đám đông
+12=giá tiền
+13=tinh; yêu tinh;;jīng;;tinh
+14=lối đi
+15=cách; ngăn;;gé;;cách
+16=động lực
+17=thước;;chǐ;;xích
+18=cứ từ từ
+19=khá tốt
+20=âm mưu
+21=vì thế
+22=tính mạng
+23=bàn;;zhuō;;trác
+24=hai mươi
+25=đuổi đi
+> 他在路上迷路了。 | Anh ấy bị lạc đường trên đường đi.
+> 这是一个阴谋！ | Đây là một âm mưu!
+> 乘客们都很害怕。 | Các hành khách đều rất sợ.
+> 人群里有二十个人。 | Trong đám đông có hai mươi người.
+## F3-02 | Công nhân, súng & hiệp hội
+1=công nhân
+2=súng ngắn
+3=tự nguyện
+4=hiệp hội
+5=-
+6=lẻ loi
+7=cây (lượng từ cây cối);;kē;;khỏa
+8=cổ họng
+9=tranh;;zhēng;;tranh
+10=biện pháp
+11=trong sạch
+12=bùng nổ
+13=chứng kiến
+14=chúc phúc
+15=bóng đá
+16=làm phiền muộn
+17=hãm hại
+18=hóa học
+19=khoản; kiểu;;kuǎn;;khoản
+20=ngắm bắn
+21=tiến thêm một bước
+22=ứng viên
+23=thẩm vấn
+24=thiếu tá
+25=lố bịch vô lý
+> 他有一把手枪。 | Anh ấy có một khẩu súng ngắn.
+> 我是自愿去的。 | Tôi tự nguyện đi.
+> 他们是被陷害的。 | Họ bị hãm hại.
+> 足球比赛开始了。 | Trận bóng đá đã bắt đầu.
+## F3-03 | Điều chỉnh, phi công & lương bổng
+1=điều chỉnh
+2=tùy ý
+3=cảnh tượng
+4=phi công
+5=một nhà
+6=vây quanh;;wéi;;vi
+7=kinh người
+8=bình phục
+9=trù hoạch
+10=bù đắp
+11=hỏa hoạn
+12=chi phí
+13=cổng lớn
+14=dạ dày;;wèi;;vị
+15=kết nối
+16=đảng;;dǎng;;đảng
+17=lý tưởng
+18=dị ứng
+19=bưu kiện; bọc
+20=tiền công
+21=ý tưởng
+22=khoa học kỹ thuật
+23=áo;;yī;;y
+24=phán quyết
+25=khắc; mười lăm phút;;kè;;khắc
+> 火灾发生了，大家快跑！ | Hỏa hoạn xảy ra rồi, mọi người chạy mau!
+> 他是飞行员。 | Anh ấy là phi công.
+> 我对花过敏。 | Tôi bị dị ứng với hoa.
+> 我们需要调整计划。 | Chúng ta cần điều chỉnh kế hoạch.
+## F3-04 | Phụ nữ, cạm bẫy & yến tiệc
+1=phụ nữ (chung)
+2=nguồn gốc
+3=tuyến đường
+4=dựa dẫm
+5=công bằng chính trực
+6=thảm trải sàn
+7=rốt cuộc cũng
+8=ném đi
+9=khỏa thân
+10=cạm bẫy
+11=không ổn
+12=ngụy trang
+13=hề (trợ từ cổ);;xī;;hề
+14=lâu đời, cổ kính
+15=ủy thác
+16=yến tiệc
+17=(trợ từ: hồi nãy)
+18=chân tâm
+19=xung đột
+20=gửi đi
+21=khuyển;;quǎn;;khuyển
+22=Nhà Trắng
+23=hóa trang
+24=chỉ còn cách
+25=chỉ thị
+> 我们只好走路去。 | Chúng ta đành phải đi bộ đến.
+> 他在宴会上遇到了她。 | Anh ấy đã gặp cô ấy trong buổi yến tiệc.
+> 这是一个陷阱！ | Đây là một cái bẫy!
+> 我总算找到你了。 | Cuối cùng tôi cũng tìm thấy bạn rồi.
+## F3-05 | Đi dạo, trái cây & chân thành
+1=đi dạo
+2=tủ;;guì;;quỹ
+3=buổi sáng (trước trưa)
+4=bác; rộng;;bó;;bác
+5=chọc, đâm
+6=-
+7=lang; chàng;;láng;;lang
+8=nhà hát
+9=đê tiện
+10=ban đầu vốn là
+11=khoan thứ
+12=hoài niệm
+13=nắm;;wò;;ác
+14=đầu mút; bưng;;duān;;đoan
+15=kiến thức, từng trải
+16=những việc làm
+17=sò ốc; bảo bối;;bèi;;bối
+18=nhân sĩ
+19=thay thế
+20=sáng ý
+21=nước ép;;zhī;;trấp
+22=dứt khoát
+23=hộ;;hù;;hộ
+24=trái cây
+25=mong manh
+> 我们去公园散步吧。 | Chúng ta ra công viên đi dạo nhé.
+> 我喜欢吃水果。 | Tôi thích ăn trái cây.
+> 他的所作所为太卑鄙了。 | Những việc làm của hắn đê tiện quá.
+> 他握着我的手。 | Anh ấy nắm lấy tay tôi.
+## F3-06 | Tranh bá, thời trang & chuyển nhà
+1=tranh bá
+2=xâm phạm
+3=may; hạnh;;xìng;;hạnh
+4=vô ý
+5=nhắc tới
+6=ấm áp
+7=châu báu
+8=xuất bản
+9=cắt đứt
+10=cơ quan (cơ thể)
+11=mọi người (khẩu ngữ)
+12=hoa hồng
+13=xin; đòi;;tǎo;;thảo
+14=vợ cũ
+15=kẻ thua cuộc
+16=sùng bái
+17=tội trạng
+18=thử thách khảo nghiệm
+19=chủ trì
+20=chuyển nhà
+21=phục vụ, cống hiến
+22=thời trang
+23=việc (khẩu ngữ)
+24=nam tử
+25=lát nữa
+> 玫瑰很漂亮。 | Hoa hồng rất đẹp.
+> 我们明天搬家。 | Ngày mai chúng tôi chuyển nhà.
+> 他崇拜这个英雄。 | Anh ấy sùng bái người anh hùng này.
+> 稍后我会告诉你。 | Lát nữa tôi sẽ nói với bạn.

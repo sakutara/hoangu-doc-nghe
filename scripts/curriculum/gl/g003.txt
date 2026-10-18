@@ -1,0 +1,256 @@
+## F4-18 | Đoạn đọc: Đám cưới của nhà thơ
+1=chú rể
+2=thu được
+3=nhà thơ
+4=nội thành
+5=truyện cổ tích
+6=cao thượng
+7=mùa (thời kỳ)
+8=thống nhất
+9=phong bế
+10=dưa;;guā;;qua
+11=thế cục
+12=kế toán
+13=nông, cạn;;qiǎn;;thiển
+14=thanh xuân
+15=tấm ảnh
+16=bóng bay
+17=ráng sức
+18=từng cái
+19=vô hạn
+20=phát sốt
+21=bạn thân
+22=khéo về
+23=hoãn lại
+24=trạm xăng
+25=nam nữ
+> 新郎是一位诗人，新娘是会计。 | Chú rể là một nhà thơ, cô dâu là kế toán.
+> 婚礼在市区举行，好友们都来了。 | Hôn lễ tổ chức ở nội thành, bạn thân đều đến.
+> 孩子们拿着气球，听着童话。 | Bọn trẻ cầm bóng bay, nghe truyện cổ tích.
+> 青春是无限的，大家都很高兴。 | Thanh xuân là vô hạn, mọi người đều rất vui.
+> 新郎发烧了，但是他使劲笑着。 | Chú rể bị sốt, nhưng anh ấy ráng sức mỉm cười.
+> 他们把婚礼推迟了一天，因为新郎要去医院。 | Họ lùi hôn lễ một ngày vì chú rể phải đi bệnh viện.
+## F4-19 | Đoạn đọc: Hồ sơ xin việc
+1=hữu hạn
+2=đảm nhiệm
+3=thống kê
+4=huyện;;xiàn;;huyện
+5=đào tạo
+6=cải thiện
+7=tính gộp tất cả
+8=giữa đường
+9=bình quân
+10=bên cạnh đó
+11=bảo lãnh
+12=anh dũng
+13=đơn thuần
+14=mở rộng
+15=quê gốc
+16=trúng tuyển
+17=ban công
+18=tháng trước
+19=sơ yếu lý lịch
+20=chiều cao
+21=bộ hành
+22=trọng lượng
+23=lẩn tránh (thành tố);;bì;;tị
+24=bậc thềm
+25=cuối;;mò;;mạt
+> 上个月他寄了简历，被公司录取了。 | Tháng trước anh ấy gửi sơ yếu lý lịch, được công ty trúng tuyển.
+> 他的老家在县里，路上步行了两个小时。 | Quê gốc của anh ấy ở trong huyện, đi bộ trên đường hai tiếng.
+> 公司给他培训，他担任新的工作。 | Công ty đào tạo cho anh ấy, anh đảm nhiệm công việc mới.
+> 他的身高一米八，重量也比较重。 | Chiều cao của anh ấy một mét tám, cân nặng cũng khá nặng.
+> 统计显示，平均工资有所提高。 | Thống kê cho thấy lương bình quân đã tăng lên phần nào.
+> 此外，公司还改善了他的住房。 | Ngoài ra, công ty còn cải thiện chỗ ở của anh ấy.
+## F4-20 | Đoạn đọc: Hoa tươi và chiếc ô
+1=kích cỡ
+2=hai phía
+3=nhắn lại
+4=bảo thạch
+5=nặng nề
+6=đậu phụ
+7=nước ngọt có ga
+8=hoa tươi
+9=bao hàm
+10=kéo ra
+11=milimét
+12=rẽ góc
+13=đúng hạn
+14=phản ánh
+15=bố trí
+16=tĩnh lặng
+17=lên lầu
+18=thế chỗ
+19=mùi vị (nhi hóa)
+20=chép; sao;;chāo;;sao
+21=đắc ý
+22=có đủ
+23=cái ô;;sǎn;;tản
+24=họa tiết
+25=đối chiếu
+> 下雨了，她拿着一把红色的伞上楼。 | Trời mưa rồi, cô ấy cầm một chiếc ô màu đỏ đi lên lầu.
+> 她把鲜花放在桌子两边，房间很宁静。 | Cô ấy đặt hoa tươi ở hai bên bàn, căn phòng rất tĩnh lặng.
+> 汽水和豆腐都在冰箱里。 | Nước ngọt có ga và đậu phụ đều ở trong tủ lạnh.
+> 她得意地说：这件衣服的尺寸和图案都很好。 | Cô ấy đắc ý nói: kích cỡ và họa tiết của bộ đồ này đều rất đẹp.
+> 我按时转告了他，他说一定到。 | Tôi đã nhắn lại cho anh ấy đúng hạn, anh ấy nói nhất định sẽ đến.
+> 路上转弯的时候，要小心。 | Khi rẽ góc trên đường phải cẩn thận.
+## F4-21 | Đoạn đọc: Mẫu giáo và kỷ luật
+1=kỷ luật
+2=cấu tạo
+3=màu sắc, sắc thái
+4=nhiều lần
+5=khăn quàng
+6=tiêu hóa
+7=quy luật
+8=hàm lượng
+9=có chứa
+10=mật thiết
+11=quy mô
+12=triệu tập
+13=sữa chua
+14=thủ công
+15=nhà trẻ mẫu giáo
+16=đo đạc
+17=đạt điểm
+18=tỷ số
+19=phần nhiều
+20=nhạt;;dàn;;đạm
+21=bánh xe
+22=trên diện rộng
+23=phẩm chất
+24=cháu gái nội
+25=nghiêm; kín;;yán;;nghiêm
+> 幼儿园的老师很重视纪律。 | Cô giáo mẫu giáo rất coi trọng kỷ luật.
+> 孩子们围着围巾，手里拿着手工做的轮子。 | Bọn trẻ quàng khăn, trong tay cầm những chiếc bánh xe làm thủ công.
+> 多次测量以后，他们都及格了。 | Sau nhiều lần đo đạc, họ đều đạt điểm.
+> 酸奶的含量不多，大多数人喜欢淡一点。 | Hàm lượng sữa chua không nhiều, phần lớn mọi người thích nhạt hơn một chút.
+> 学校召开了大会，规模很大。 | Trường triệu tập đại hội, quy mô rất lớn.
+> 孙女说：好的品质来自好的习惯。 | Cháu gái nói: phẩm chất tốt đến từ thói quen tốt.
+## F4-22 | Đoạn đọc: Cửa hàng mở rộng giờ kinh doanh
+1=thỏa thích hả hê
+2=mã hiệu, mẫu
+3=kỳ hạn
+4=trí lực
+5=tổng hợp
+6=tao nhã
+7=náo nhiệt
+8=xoay
+9=kéo giãn ra
+10=tiền lãi
+11=kinh doanh, mở cửa
+12=tiếp diễn
+13=ô cửa
+14=giá rét
+15=đặt trước
+16=hiệu suất
+17=ghi chép
+18=chặt chẽ
+19=mặn; đều;;xián;;hàm
+20=làm dịu
+21=tai nghe
+22=đánh răng
+23=nói chung
+24=quý (3 tháng)
+25=tươi; hiếm;;xiān;;tiên
+> 这家店的营业时间延长了。 | Giờ kinh doanh của tiệm này đã kéo dài hơn.
+> 窗子外面很寒冷，里面却很热闹。 | Bên ngoài cửa sổ rất giá rét, bên trong lại rất náo nhiệt.
+> 一般来说，预订的期限是一个季度。 | Nói chung, kỳ hạn đặt trước là một quý.
+> 他的工作效率很高，利息也不低。 | Hiệu suất làm việc của anh ấy rất cao, tiền lãi cũng không thấp.
+> 他戴着耳机，心情很痛快。 | Anh ấy đeo tai nghe, tâm trạng rất sảng khoái.
+> 这个型号的产品，每次转动都很顺利。 | Sản phẩm mẫu này lần nào xoay cũng rất suôn sẻ.
+## F4-23 | Đoạn đọc: Thăm bà vào cuối tuần
+1=lịch
+2=hoãn kỳ
+3=đăng nhập
+4=lệ;;lèi;;lệ
+5=bàn chải đánh răng
+6=triều; ẩm;;cháo;;triều
+7=dè sẻn
+8=đến thăm
+9=trong suốt
+10=nhiệt tâm
+11=việc nhà
+12=lưu truyền
+13=tham khảo
+14=ca ngợi
+15=thể dục dụng cụ
+16=bưu điện
+17=trong phạm vi
+18=ngọc;;yù;;ngọc
+19=trào lưu
+20=dao động
+21=hội; gửi tiền;;huì;;hối
+22=lợi nhuận
+23=kỹ thuật số
+24=đồ ăn vặt
+25=đồng hồ báo thức
+> 我的日历上写着：周六去看望奶奶。 | Trên lịch của tôi ghi: thứ Bảy đi thăm bà.
+> 闹钟响了，我起床刷牙。 | Đồng hồ báo thức reo, tôi dậy đánh răng.
+> 我去邮局汇钱，一小时以内就回来了。 | Tôi đến bưu điện gửi tiền, trong vòng một tiếng thì quay về.
+> 奶奶很热心，买了很多零食，玉镯也送给了我。 | Bà rất nhiệt tâm, mua rất nhiều đồ ăn vặt, còn tặng tôi cả vòng ngọc.
+> 我们参考老办法做家务，也用数码相机拍照。 | Chúng tôi tham khảo cách cũ làm việc nhà, cũng dùng máy ảnh kỹ thuật số chụp ảnh.
+> 她称赞我很节省，我很高兴。 | Bà khen tôi biết dè sẻn, tôi rất vui.
+## F4-24 | Đoạn đọc: Thủ tướng thăm sân trường
+1=thủ tướng
+2=cơ hội vận may
+3=hào phóng, đàng hoàng
+4=mùa hạ
+5=riêng lẻ
+6=xăng-ti-mét
+7=dòng lệ
+8=đất liền
+9=phim hoạt hình
+10=tính chất
+11=kiến thức thường thức
+12=yêu nước
+13=sinh viên tốt nghiệp
+14=đoạt giải
+15=nhập khẩu
+16=chủng loại
+17=sân tập
+18=khảo sát
+19=hơi sưởi
+20=thưởng;;shǎng;;thưởng
+21=nước biển
+22=công dụng
+23=thương vụ
+24=tán thưởng
+25=chị cả
+> 夏季，总理去操场看望毕业生。 | Mùa hạ, thủ tướng đến sân tập thăm các sinh viên tốt nghiệp.
+> 他说：爱国需要常识，也需要机遇。 | Ông nói: yêu nước cần có kiến thức thường thức, cũng cần cơ hội.
+> 个别学生获奖，大家热烈地鼓掌。 | Một vài học sinh đoạt giải, mọi người nhiệt liệt vỗ tay.
+> 孩子们喜欢看动画片，也喜欢大海里的海水。 | Bọn trẻ thích xem phim hoạt hình, cũng thích nước biển ngoài khơi.
+> 我们进口了很多种类的东西，用途不同。 | Chúng tôi nhập khẩu rất nhiều chủng loại đồ, công dụng khác nhau.
+> 大姐流下了泪水，很多人赞赏她。 | Chị cả rơi nước mắt, rất nhiều người tán thưởng chị.
+## F4-25 | Đoạn đọc: Nghiên cứu sinh và hải sản
+1=nghiên cứu sinh
+2=bức thiết
+3=tuyên dương
+4=đi tiêm
+5=lá cây
+6=không hẳn
+7=thông minh (AI)
+8=khắc họa bằng lời
+9=nguyên liệu
+10=từ vựng
+11=viên mãn
+12=trưng cầu
+13=kẹt xe
+14=hải sản
+15=mùa đông (viết)
+16=mùa thu (viết)
+17=bình phương
+18=chiếc lá
+19=ẩm ướt
+20=giảm giá
+21=học thuật
+22=kiên cố
+23=thúc ép
+24=lương thực
+25=sắp thành hàng
+> 研究生迫切想学习新的词汇。 | Nghiên cứu sinh bức thiết muốn học từ vựng mới.
+> 秋季的树叶很美，老师表扬了他的描写。 | Lá cây mùa thu rất đẹp, thầy giáo tuyên dương phần miêu tả của anh ấy.
+> 今天堵车，他未必能来。 | Hôm nay kẹt xe, anh ấy chưa chắc đến được.
+> 海鲜的原料很新鲜，最近打折，我们买了很多。 | Nguyên liệu hải sản rất tươi, gần đây giảm giá, chúng tôi mua rất nhiều.
+> 冬季很寒冷，房子潮湿，需要智能暖气。 | Mùa đông rất giá rét, nhà ẩm ướt, cần hệ thống sưởi thông minh.
+> 这个学术问题，我们要征求大家的意见，才能圆满解决。 | Vấn đề học thuật này, chúng ta cần trưng cầu ý kiến mọi người mới giải quyết viên mãn được.

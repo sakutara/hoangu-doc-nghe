@@ -1,0 +1,67 @@
+import JSZip from 'jszip';
+import type { BookFileSystemStore } from '../../services/storage/BookFileSystemStore';
+import { chapterFileName } from '../../services/storage/BookFileSystemStore';
+import type { BookMetadata } from '../../services/storage/types';
+import { sanitizeHtmlToPlainText } from './PlainTextSanitizer';
+
+const tag = (xml: string, name: string) =>
+  new RegExp(`<${name}[^>]*>([\\s\\S]*?)</${name}>`, 'i').exec(xml)?.[1].trim();
+
+function resolvePath(base: string, href: string): string {
+  const dir = base.includes('/') ? base.slice(0, base.lastIndexOf('/') + 1) : '';
+  const parts = (dir + decodeURIComponent(href.split('#')[0])).split('/');
+  const out: string[] = [];
+  for (const p of parts) {
+    if (p === '..') out.pop();
+    else if (p !== '.' && p !== '') out.push(p);
+  }
+  return out.join('/');
+}
+
+export async function importEpub(
+  buffer: ArrayBuffer | Uint8Array, bookId: string, files: BookFileSystemStore,
+): Promise<BookMetadata> {
+  const zip = await JSZip.loadAsync(buffer);
+  const container = await zip.file('META-INF/container.xml')?.async('string');
+  const opfPath = container && /full-path="([^"]+)"/.exec(container)?.[1];
+  if (!opfPath) throw new Error('EPUB không hợp lệ: thiếu container.xml/OPF');
+  const opf = await zip.file(opfPath)?.async('string');
+  if (!opf) throw new Error('EPUB không hợp lệ: không đọc được OPF');
+
+  const manifest = new Map<string, { href: string; type: string }>();
+  for (const m of opf.matchAll(/<item\b[^>]*>/gi)) {
+    const id = /\bid="([^"]+)"/.exec(m[0])?.[1];
+    const href = /\bhref="([^"]+)"/.exec(m[0])?.[1];
+    const type = /media-type="([^"]+)"/.exec(m[0])?.[1] ?? '';
+    if (id && href) manifest.set(id, { href, type });
+  }
+
+  const chapters: BookMetadata['chapters'] = [];
+  let index = 0;
+  for (const ref of opf.matchAll(/<itemref\b[^>]*idref="([^"]+)"/gi)) {
+    const item = manifest.get(ref[1]);
+    if (!item || !/xhtml|html/.test(item.type)) continue; // bỏ ảnh/css/font
+    const html = await zip.file(resolvePath(opfPath, item.href))?.async('string');
+    if (!html) continue;
+    const { title, paragraphs } = sanitizeHtmlToPlainText(html);
+    if (title && paragraphs[0] === title) paragraphs.shift(); // tiêu đề đã nằm ở dòng đầu file
+    if (paragraphs.length === 0) continue;
+    index += 1;
+    const chTitle = title ?? `Chương ${index}`;
+    await files.writeChapterFile(bookId, { index, title: chTitle, paragraphs });
+    chapters.push({ index, title: chTitle, fileName: chapterFileName(index) });
+  }
+  if (index === 0) throw new Error('EPUB không có chương văn bản nào');
+
+  return {
+    bookId,
+    title: tag(opf, 'dc:title') ?? 'Không tên',
+    author: tag(opf, 'dc:creator'),
+    language: 'zh',
+    originType: 'epub_upload',
+    chapterCount: index,
+    chapters,
+    lastReadChapterIndex: 1,
+    createdAt: new Date().toISOString(),
+  };
+}

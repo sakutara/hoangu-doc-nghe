@@ -1,0 +1,210 @@
+## F1-54 | Du lịch, trường học & quyền lợi
+1=trung học phổ thông
+2=châu, bang;;zhōu;;châu
+3=vừa vặn
+4=hoàn toàn không
+5=nhắc nhở
+6=du lịch
+7=niềm vui bất ngờ
+8=lấy đi
+9=tiếp cận
+10=bắt giữ
+11=cãi nhau; ồn;;chǎo;;sảo
+12=bên cạnh
+13=xúc động
+14=kiêu hãnh; tự hào
+15=lợi; sắc bén;;lì;;lợi
+16=mà là
+17=bài; biển;;pái;;bài
+18=tám
+19=thành viên
+20=giám sát
+21=nữ giới
+22=quyền lợi
+23=nói láo, bịa chuyện
+24=Giáng Sinh
+25=người da đen
+> 他坐在我旁边。 | Anh ấy ngồi bên cạnh tôi.
+> 我很激动，也很骄傲。 | Tôi rất xúc động và cũng rất tự hào.
+> 警察逮捕了他。 | Cảnh sát đã bắt giữ anh ta.
+> 你有权利说话。 | Bạn có quyền lên tiếng.
+## F1-55 | Cảnh sát, nhà vô địch & kẻ thù
+1=phía cảnh sát
+2=Pháp
+3=bỏ lỡ
+4=cảnh cáo
+5=trời ơi
+6=cát, may mắn;;jí;;cát
+7=chọc, gây (chuyện)
+8=khách sạn; quán rượu
+9=rút; hút (thuốc);;chōu;;trừu
+10=đại loại như
+11=vua;;wáng;;vương
+12=quán quân
+13=thử (làm)
+14=huấn luyện viên
+15=thường;;cháng;;thường
+16=đối phương
+17=bất cứ lúc nào
+18=đạn; bắn; gảy;;dàn;;đạn
+19=kẻ thù
+20=xưa nay chưa hề
+21=cộng sự
+22=trướng; màn; sổ sách;;zhàng;;trướng
+23=độ; lần; trải qua;;dù;;độ
+24=lưng; thuộc lòng;;bèi;;bối
+25=cuộc nói chuyện
+> 警方警告我们，不要离开。 | Phía cảnh sát cảnh cáo chúng tôi đừng rời đi.
+> 他是这次比赛的冠军。 | Anh ấy là quán quân của cuộc thi lần này.
+> 这是你的敌人。 | Đây là kẻ thù của bạn.
+> 我可以随时帮你。 | Tôi có thể giúp bạn bất cứ lúc nào.
+## F1-56 | Nhân vật, thức ăn & thử thách
+1=đốt; tiết; lễ;;jié;;tiết
+2=hàng; xếp;;pái;;bài
+3=nhân vật (đáng chú ý)
+4=rất nhiều, vô số
+5=gọi là
+6=sếp, cầm đầu
+7=lợn
+8=cảm kích
+9=theo; tùy;;suí;;tùy
+10=Trung Quốc
+11=bò; giỏi (khẩu ngữ)
+12=chai, lọ
+13=bánh ngọt
+14=hút, hít;;xī;;hấp
+15=suôn sẻ
+16=người chết
+17=kẻ khờ khạo
+18=lấy chồng
+19=dặm Anh
+20=thách thức
+21=qua đời
+22=đi lên
+23=bảy
+24=nghề nghiệp
+25=rau; món ăn
+> 我家有三头猪。 | Nhà tôi có ba con lợn.
+> 我感激你的帮助。 | Tôi cảm kích sự giúp đỡ của bạn.
+> 这是一个挑战。 | Đây là một thử thách.
+> 你的职业是什么？ | Nghề nghiệp của bạn là gì?
+## F1-57 | Địa chỉ, địa ngục & dọn dẹp
+1=sửa, đổi
+2=địa chỉ
+3=ý;;yì;;ý
+4=kiếm (tiền);;zhuàn;;trám
+5=không ít
+6=địa ngục
+7=thế là
+8=cái tôi
+9=đối phó
+10=phi, không phải;;fēi;;phi
+11=ừm (đồng ý);;wú;;ngô
+12=việc tốt
+13=đồng (tệ); nguyên;;yuán;;nguyên
+14=cầu nguyện
+15=biên; bện;;biān;;biên
+16=dọn dẹp
+17=khách
+18=trạng thái
+19=chiến;;zhàn;;chiến
+20=á; thứ hai;;yà;;á
+21=xung quanh
+22=đưa tin
+23=kịch; trò;;xì;;hí
+24=tham dự
+25=vận động; thể thao
+> 你的地址是什么？ | Địa chỉ của bạn là gì?
+> 他非常想赚钱。 | Anh ấy vô cùng muốn kiếm tiền.
+> 请你收拾一下房间。 | Xin bạn dọn dẹp phòng một chút.
+> 他的状态不好。 | Trạng thái của anh ấy không tốt.
+## F1-58 | Hội nghị, sân khấu & tình yêu
+1=lẫn nhau
+2=vinh hạnh
+3=hội nghị
+4=đạt tới nơi
+5=leo, trèo
+6=cờ bạc, cá cược;;dǔ;;đổ
+7=hiển thị
+8=đội ngũ
+9=ngay tức khắc
+10=tuyệt đối không
+11=nhổ; nôn;;tǔ;;thổ
+12=sân khấu
+13=bà nội
+14=phối; xứng;;pèi;;phối
+15=hủy bỏ
+16=ly hôn
+17=chờ đợi
+18=cố hết sức
+19=tình yêu
+20=hết sức, mười phần
+21=tôn trọng
+22=giáo sư
+23=năm ngoái
+24=ngữ; lời nói;;yǔ;;ngữ
+25=vượt quá
+> 我们十分荣幸。 | Chúng tôi vô cùng vinh hạnh.
+> 会议取消了。 | Cuộc họp đã bị hủy.
+> 他离婚了。 | Anh ấy ly hôn rồi.
+> 我奶奶去年去了中国。 | Bà nội tôi năm ngoái đã đi Trung Quốc.
+## F1-59 | Lái xe, thần tượng & quân đội
+1=tơ; sợi;;sī;;ti
+2=lái xe
+3=vẫn (văn viết);;réng;;nhưng
+4=khí cụ, máy;;qì;;khí
+5=gửi (thư)
+6=tán gẫu
+7=vân tay
+8=ăn mừng
+9=dừng tay
+10=mẹ; nàng;;niáng;;nương
+11=thần tượng
+12=đồng chí
+13=quần
+14=giả vờ
+15=quân đội
+16=thám tử
+17=nhớ ra
+18=cuồng, điên;;kuáng;;cuồng
+19=kéo lê;;tuō;;tha
+20=phòng thí nghiệm
+21=tiện thể
+22=thổi
+23=hại;;hài;;hại
+24=sửa; tu;;xiū;;tu
+25=hoặc, hay là
+> 他每天开车去上班。 | Hằng ngày anh ấy lái xe đi làm.
+> 我想起来了！ | Tôi nhớ ra rồi!
+> 我们去庆祝一下吧。 | Chúng ta đi ăn mừng một chút đi.
+> 他喜欢那个偶像。 | Anh ấy thích thần tượng đó.
+## F1-60 | Xã hội, hàng xóm & phức tạp
+1=để tâm
+2=chán
+3=tình trạng
+4=mục đích
+5=ác ma
+6=bảo đảm chắc chắn
+7=tim
+8=như thể
+9=gấp, vội;;jí;;cấp
+10=dạ hội
+11=chơi; giở trò
+12=gió;;fēng;;phong
+13=(phiên âm) la;;luó;;la
+14=gia tộc
+15=thấp;;dī;;đê
+16=từ từ
+17=dư, thừa;;shèng;;thặng
+18=chiến đấu
+19=cơm;;fàn;;phạn
+20=phức tạp
+21=não;;nǎo;;não
+22=xã hội
+23=phiền;;fán;;phiền
+24=cố ý
+25=hàng xóm
+> 这个社会很复杂。 | Xã hội này rất phức tạp.
+> 别急，慢慢来。 | Đừng vội, cứ từ từ.
+> 他是我的邻居。 | Anh ấy là hàng xóm của tôi.
+> 你是故意的吗？ | Bạn cố ý đúng không?

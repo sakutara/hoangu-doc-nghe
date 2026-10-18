@@ -1,0 +1,144 @@
+## F1-08 | Hành động & cảm giác thường ngày
+1=xem thử, xem qua
+2=xe
+3=lúc, khi (văn viết)
+5=nơi, chỗ
+6=nhưng; chẳng qua
+7=ờ... (do dự)
+9=mấy, bao nhiêu (số nhỏ)
+10=trở về
+11=chuẩn bị
+13=sau; sau khi;;hòu;;hậu
+14=bố, cha
+15=mọi thứ, tất cả
+16=xin lỗi, áy náy
+17=so với; so sánh
+18=cảm giác; cảm thấy
+19=một ít, vài (lượng từ)
+20=chỉ là
+21=thế nào, ra sao
+22=đi ra, xuất hiện
+23=đừng; không cần
+24=xin lỗi
+> 对不起，我只是想看看。 | Xin lỗi, tôi chỉ muốn xem thử thôi.
+> 发生了什么事？ | Đã xảy ra chuyện gì vậy?
+> 不要杀他，他是我爸爸。 | Đừng giết ông ấy, ông ấy là bố tôi.
+> 我准备好了，你们不要等我。 | Tôi chuẩn bị xong rồi, các bạn đừng đợi tôi.
+## F1-09 | Nhận thức & kết nối ý
+1=rời đi, rời khỏi
+2=một chút
+3=nhất định, chắc chắn
+4=dậy; nổi lên (bổ ngữ)
+5=vẫn là; hay là
+6=phát hiện
+7=sở (chỉ nơi chốn); trợ từ trong 所以, 所有
+8=ở, sống; dừng
+9=cái, chiếc (lượng từ cho việc, áo)
+10=đúng; đang;;zhèng;;chính
+11=hơn nữa, mà còn
+12=mà, hơn nữa; hề;;bìng;;tịnh
+13=phải, nhất thiết phải
+14=ý nghĩa, ý
+15=đặt, để; thả
+16=không tệ, khá tốt
+17=chắc chắn; khẳng định
+18=điện thoại
+19=để, vì (mục đích)
+20=làm, xoay xở
+21=tuyệt, giỏi; cây gậy
+22=thứ nhất, đầu tiên
+23=mẹ, má
+24=(trợ từ trạng ngữ: -một cách);;de;;địa
+25=vào, tiến vào;;jìn;;tiến
+> 你一定要进来。 | Bạn nhất định phải vào đây.
+> 我发现他已经离开了。 | Tôi phát hiện anh ấy đã rời đi rồi.
+> 电话在哪里？我必须找到它。 | Điện thoại ở đâu? Tôi phải tìm thấy nó.
+> 他的意思是什么？ | Ý của anh ấy là gì?
+## F1-10 | Đại từ, lượng từ & người xung quanh
+1=như thế kia
+2=mọi người
+3=mới
+4=ngài (kính ngữ)
+5=hướng về; với;;xiàng;;hướng
+6=một vài, một số
+7=ba
+8=ở đó, chỗ đó
+9=tưởng là, cứ ngỡ
+10=vui mừng
+11=mà (trợ từ nhấn điều hiển nhiên)
+12=già; cũ; (tiền tố thân mật)
+13=vị (lượng từ lịch sự); chỗ
+14=qua đây
+15=rơi; (bổ ngữ) mất
+16=trước, trước tiên
+17=vân vân; chờ chút
+18=cuộc sống; sinh sống
+19=(trợ từ văn viết: của)
+21=loại, giống;;zhǒng;;chủng
+22=bác sĩ
+24=trước đây, trước khi
+25=bạn bè; anh bạn; người làm thuê
+> 大家好，我是新来的医生。 | Chào mọi người, tôi là bác sĩ mới đến.
+> 您想买什么？ | Ngài muốn mua gì ạ?
+> 最后他还是过来了。 | Cuối cùng anh ấy vẫn đã qua đây.
+> 我以为你已经走了。 | Tôi tưởng bạn đã đi rồi.
+## F1-11 | Ngôn ngữ đời thường: uống, viết, mặc
+1=tay
+2=bất cứ
+3=ở đâu (khẩu ngữ)
+4=loại này
+5=Thượng Đế
+6=phụ nữ
+7=tên
+8=quen, biết (người)
+9=ngồi
+10=tối nay
+11=khác, còn lại
+12=uống
+13=nhớ
+14=gã, thằng cha
+15=và; với (văn viết)
+16=hoặc, hay
+17=viết
+18=mặc
+19=làm; xoay xở
+20=đi qua; quá khứ;;guòqù;;quá khứ
+21=ở đâu; đâu có (khiêm tốn)
+22=(trợ từ ngữ khí: rồi, nhé)
+23=nhưng lại;;què;;khước
+24=tính; coi như
+25=lo lắng
+> 你叫什么名字？ | Bạn tên là gì?
+> 今晚你想喝什么？ | Tối nay bạn muốn uống gì?
+> 你认识这个女人吗？ | Bạn có quen người phụ nữ này không?
+> 我记得你，你却不记得我。 | Tôi nhớ bạn, vậy mà bạn lại không nhớ tôi.
+## F1-12 | Con vật, thời gian & thế giới
+1=tiếp tục
+2=tặng; tiễn; đưa
+3=cô gái, bé gái
+4=dùng, bằng; để;;yǐ;;dĩ
+5=chơi
+6=thân yêu
+7=xuống đây; (bổ ngữ) xuống
+8=thành; trở thành
+9=con, cái (lượng từ dài mảnh)
+10=đủ
+11=cha
+12=trước đây
+13=chạy
+14=tháng; trăng
+15=sớm; chào buổi sáng
+16=Mỹ
+17=dài
+18=hoàn toàn
+19=bảo bối, cưng
+20=số; ngày (trong tháng); cỡ;;hào;;hiệu
+21=súng
+22=chó
+23=nhưng mà
+24=thế giới
+25=giờ đồng hồ
+> 我家有一条狗。 | Nhà tôi có một con chó.
+> 三月一号我去美国。 | Ngày mồng một tháng ba tôi đi Mỹ.
+> 他跑了一个小时，已经够了。 | Anh ấy đã chạy một tiếng rồi, thế là đủ rồi.
+> 这个世界很大。 | Thế giới này rất rộng lớn.

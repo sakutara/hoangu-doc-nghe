@@ -1,0 +1,180 @@
+## F2-31 | Nghi thức, quốc tế & thiên tài
+1=nghi lễ
+2=quốc tế
+3=dốc sức vào
+4=chín chắn; chín
+5=luyến;;liàn;;luyến
+6=niềm tin
+7=xem như
+8=hỗn loạn
+9=kinh; trải qua;;jīng;;kinh
+10=vụ án mưu sát
+11=thảm;;cǎn;;thảm
+12=liên lạc
+13=khiêng, nâng lên;;tái;;đài
+14=hiệp sĩ; nhạc jazz
+15=ung thư
+16=cho thấy
+17=bay (phi hành)
+18=kiếm;;jiàn;;kiếm
+19=bức; khổ (lượng từ);;fú;;bức
+20=ông xã, chồng;;lǎogōng;;lão công
+21=thiên tài
+22=chú; rót;;zhù;;chú
+23=công cụ
+24=tặng cho
+25=xương
+> 这个仪式很特别。 | Nghi lễ này rất đặc biệt.
+> 他是一个天才。 | Anh ấy là một thiên tài.
+> 我送给你这个礼物。 | Tôi tặng bạn món quà này.
+> 狗在吃骨头。 | Con chó đang gặm xương.
+## F2-32 | Thị trưởng, kỳ thi & hợp đồng
+1=lời;;yán;;ngôn
+2=dẫm;;cǎi;;thải
+3=nhịn;;rěn;;nhẫn
+4=thị trưởng
+5=nam sinh
+6=tỉnh dậy
+7=trong vòng
+8=phóng, bắn
+9=thi cử
+10=phạm nhân
+11=sinh tồn
+12=người nổi tiếng
+13=hải quân
+14=giả như
+15=thứ năm
+16=vân;;wén;;văn
+17=kết cục
+18=hóa;;huà;;hóa
+19=cắt (bằng kéo);;jiǎn;;tiễn
+20=hợp đồng
+21=cạnh tranh
+22=phi pháp
+23=giành lấy
+24=phán; xét;;pàn;;phán
+25=không có chuyện gì
+> 明天有一个考试。 | Ngày mai có một kỳ thi.
+> 我想生存下去。 | Tôi muốn sống sót tiếp.
+> 他签了合同。 | Anh ấy đã ký hợp đồng.
+> 你没事儿吧？ | Bạn không sao chứ?
+## F2-33 | Tai nạn, thang máy & động cơ
+1=tiếp theo đây
+2=mọi người (ai cũng)
+3=ngực;;xiōng;;hung
+4=địa phương
+5=tai nạn xe
+6=thẻ tín dụng
+7=sáng sớm
+8=người ta
+9=mỉm cười
+10=cút đi;;gǔnkāi;;cổn khai
+11=thang máy
+12=lối ra
+13=bên trái
+14=nâng; nhờ;;tuō;;thác
+15=bùng nổ, nổ tung;;bào;;bạo
+16=cả đời (hậu tố);;bèizi;;bối tử
+17=động cơ (lý do)
+18=lễ bái; tuần lễ
+19=rắn;;shé;;xà
+20=ngoan
+21=tên là
+22=lừa dối
+23=theo dõi (camera)
+24=màu đen
+25=phát ra
+> 电梯在你的左边。 | Thang máy ở bên trái bạn.
+> 早晨我去公园。 | Buổi sáng sớm tôi đến công viên.
+> 这是一场车祸。 | Đây là một vụ tai nạn xe.
+> 他的动机是什么？ | Động cơ của anh ta là gì?
+## F2-34 | Chụp ảnh, vũ trụ & kịch bản
+1=chụp ảnh
+2=làm tình (ân ái)
+3=bạn học
+4=hoàn toàn không phải
+5=đi xuyên qua
+6=châu Phi
+7=báo động
+8=bị loại
+9=con tin
+10=nội bộ
+11=một chốc
+12=thủ vai
+13=bắc;;běi;;bắc
+14=tư thế
+15=phục; quần áo;;fú;;phục
+16=hệ; liên quan;;xì;;hệ
+17=vũ trụ
+18=mù; bừa bãi;;xiā;;hạt
+19=canh, súp;;tāng;;thang
+20=phỏng vấn
+21=đẹp (lệ);;lì;;lệ
+22=phòng ngủ
+23=mới nhất
+24=tránh xa
+25=kịch bản
+> 我们在卧室里拍照。 | Chúng tôi chụp ảnh trong phòng ngủ.
+> 他在电影里扮演医生。 | Anh ấy đóng vai bác sĩ trong phim.
+> 他是我的同学。 | Anh ấy là bạn học của tôi.
+> 这个剧本很有意思。 | Kịch bản này rất thú vị.
+## F2-35 | Họ tên, nhà văn & thành thật
+1=xin hỏi
+2=ngón tay
+3=hộp nhỏ;;hé;;hạp
+4=ái chà;;āi;;ai
+5=xác thực
+6=suốt đường
+7=họ;;xìng;;tính
+8=bơi; du;;yóu;;du
+9=tư cách
+10=nhà văn
+11=khách (hậu tố);;kè;;khách
+12=bị cáo
+13=từ chức
+14=ví tiền
+15=thành thật
+16=đồ hèn hạ (chửi)
+17=hợp pháp
+18=fan, người hâm mộ; miến
+19=cấp;;jí;;cấp
+20=tạ ơn trời đất
+21=lâu lắm
+22=nhà máy
+23=truy tìm, tra cứu
+24=hít ma túy
+25=độc lập
+> 请问，你姓什么？ | Xin hỏi, bạn họ gì?
+> 他是一位作家。 | Ông ấy là một nhà văn.
+> 我的钱包不见了。 | Ví tiền của tôi biến mất rồi.
+> 谢天谢地，你没事！ | Tạ ơn trời đất, bạn không sao!
+## F2-36 | Nông trại, mạng lưới & cơ hội
+1=để lại cho
+2=gặp may
+3=sự đến, lúc tới
+4=chung kết
+5=thủ đoạn
+6=cài; khấu trừ;;kòu;;khấu
+7=ăn; thực;;shí;;thực
+8=khách mua hàng
+9=nông trại
+10=mạng
+11=túi áo
+12=tiện lợi
+13=gửi; tồn;;cún;;tồn
+14=thời cơ
+15=trục trặc, tật xấu
+16=trăm;;bǎi;;bách
+17=thơm;;xiāng;;hương
+18=giao lưu
+19=Ấn Độ
+20=trang điểm, ăn mặc
+21=choáng;;yūn;;vựng
+22=biện hộ
+23=ít nhất là
+24=công khai
+25=nghi phạm
+> 这个农场很大。 | Nông trại này rất rộng.
+> 我钱包里有一百块。 | Trong ví tôi có một trăm đồng.
+> 这是个好时机。 | Đây là một thời cơ tốt.
+> 请问，银行在哪儿？ | Xin hỏi, ngân hàng ở đâu?

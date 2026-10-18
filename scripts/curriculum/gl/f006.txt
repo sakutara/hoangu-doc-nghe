@@ -1,0 +1,240 @@
+## F3-36 | Phê bình, thất nghiệp & siêu thị
+1=tìm; dây; đòi;;suǒ;;sách
+2=cục diện
+3=phê bình
+4=thao túng
+5=sóng cuộn;;làng;;lãng
+6=đi sâu
+7=chạy trốn khỏi
+8=xây dựng lại
+9=đáp lại
+10=thất nghiệp
+11=không hề
+12=cút xéo
+13=cài đặt
+14=thuốc lá
+15=đến tận nhà
+16=khắc phục
+17=toàn diện
+18=chuẩn bị sắp
+19=nút bấm
+20=méo; lệch;;wāi;;oai
+21=siêu thị
+22=hỏi thăm
+23=thảo nào
+24=cocktail
+25=cả hai bên
+> 我们去超市买东西。 | Chúng ta đi siêu thị mua đồ.
+> 难怪他不高兴。 | Thảo nào anh ấy không vui.
+> 请按这个按钮。 | Xin hãy bấm nút này.
+> 他失业了。 | Anh ấy thất nghiệp rồi.
+## F3-37 | Công tước, đầu bếp & mùa đông
+1=công tước
+2=kỳ diệu
+3=thu hoạch
+4=con nghiện
+5=tính toán
+6=đại lý, thay mặt
+7=đầu bếp
+8=thở hổn hển;;chuǎn;;suyễn
+9=canh giữ, lính gác
+10=xếp hàng
+11=có phải không
+12=có lợi
+13=nghỉ;;xiē;;yết
+14=xóa bỏ
+15=phòng giam
+16=bằng không thì
+17=chẳng hạn như
+18=cải trang; đóng;;bàn;;phẫn
+19=quyên tặng
+20=Phật;;fó;;phật
+21=mùa đông
+22=quang cảnh, cục diện
+23=nhọn;;jiān;;tiêm
+24=năm xưa
+25=từ xưa đến nay
+> 冬天很冷。 | Mùa đông rất lạnh.
+> 他是一位厨师。 | Anh ấy là một đầu bếp.
+> 大家在排队。 | Mọi người đang xếp hàng.
+> 例如，你可以喝茶。 | Chẳng hạn, bạn có thể uống trà.
+## F3-38 | Hẹn ước, quả báo & thực vật
+1=hẹn ước
+2=thuần túy
+3=ngăn ngừa
+4=tòa (lượng từ nhà);;zhuàng;;chàng
+5=quả báo
+6=tố cáo
+7=không quan trọng
+8=cuộc gọi đến
+9=ven biển
+10=tổ; ổ;;wō;;oa
+11=trong đầu
+12=vinh quang
+13=rõ ràng là
+14=thực vật
+15=vượt qua
+16=xe con
+17=thị trấn (khẩu ngữ)
+18=nguyên thủy
+19=ôi (thán từ);;yōu;;ưu
+20=quan chức
+21=nhựa
+22=thời không
+23=giáp;;jiǎ;;giáp
+24=bệnh thần kinh
+25=không tiếc
+> 海边的风很大。 | Gió ở bờ biển rất lớn.
+> 他不惜一切代价。 | Anh ấy không tiếc bất cứ giá nào.
+> 这是一个塑料杯子。 | Đây là một cái cốc nhựa.
+> 官员们开会了。 | Các quan chức đã họp.
+## F3-39 | Phục vụ, tuần trăng mật & đồ nội thất
+1=nổi nóng
+2=nhân viên phục vụ
+3=uống (thuốc)
+4=do dự
+5=khấn vái
+6=từ đó
+7=ra giá
+8=hẹn gặp lại
+9=điểm yếu
+10=tan học
+11=vĩnh hằng
+12=ông nội (trang trọng)
+13=tải xuống
+14=doanh nghiệp
+15=khải;;kǎi;;khải
+16=đồ nội thất
+17=trò đùa ác
+18=khiếu nại
+19=mặt trăng
+20=nghèo;;qióng;;cùng
+21=tuần trăng mật
+22=người làm thuê
+23=mát;;liáng;;lương
+24=lôi kéo;;zhuài;;duệ
+25=chặng đường đi
+> 服务员，请给我一杯水。 | Phục vụ ơi, cho tôi một ly nước.
+> 他发火了。 | Anh ấy nổi nóng rồi.
+> 月亮很圆。 | Mặt trăng rất tròn.
+> 他们的蜜月很甜蜜。 | Tuần trăng mật của họ rất ngọt ngào.
+## F3-40 | Sư tử, hối lộ & thanh thiếu niên
+1=sư tử
+2=khen;;zàn;;tán
+3=cao trào
+4=câm miệng
+5=tín niệm
+6=phục tùng
+7=nhiệt độ
+8=muối;;yán;;diêm
+9=chân thành
+10=lão già
+11=buổi nhạc hội
+12=về cơ bản
+13=triển khai
+14=thị dân
+15=nối máy
+16=cực độ
+17=hoàng gia
+18=hối lộ
+19=thanh thiếu niên
+20=bá tước
+21=rao bán
+22=hậu đài, hậu trường; chỗ dựa
+23=nữ phù thủy
+24=sự cố hỏng hóc
+25=ký kết
+> 狮子是动物之王。 | Sư tử là vua của loài vật.
+> 他们在后台等着。 | Họ đang đợi ở hậu trường.
+> 这个房子正在出售。 | Căn nhà này đang rao bán.
+> 温度太低了。 | Nhiệt độ thấp quá.
+## F3-41 | Vàng bạc, nghẹt thở & nhập viện
+1=vàng bạc
+2=no;;bǎo;;bão
+3=hai bên
+4=à đúng rồi
+5=số lượng
+6=suy đoán
+7=so với nhau
+8=khoang;;cāng;;thương
+9=cổ (văn viết);;jǐng;;cảnh
+10=ghép đôi
+11=ngạt thở
+12=sáng tác
+13=vệ sinh
+14=xử nữ
+15=đánh trận
+16=tấm biển
+17=tượng trưng
+18=sa vào;;xiàn;;hãm
+19=phân tán
+20=nhỏ tiếng
+21=khai mở
+22=cứ mãi
+23=dạo chơi;;guàng;;cuống
+24=nằm viện
+25=sao không
+> 我吃饱了。 | Tôi ăn no rồi.
+> 他们在打仗。 | Họ đang đánh trận.
+> 他住院了。 | Anh ấy nằm viện rồi.
+> 你想逛街吗？ | Bạn có muốn đi dạo phố không?
+## F3-42 | Sân bóng, nha sĩ & văn minh
+1=đóng băng; lạnh cóng;;dòng;;đống
+2=thông báo cho biết
+3=quy mô lớn
+4=lùng sục
+5=bồn tắm
+6=sân bóng
+7=sao (khẩu ngữ); cắn;;zǎ;;sạ
+8=chỉ ra
+9=ba mươi
+10=ứng cử viên
+11=dũng sĩ
+12=phần mộ
+13=hộp đêm
+14=tông; dòng họ;;zōng;;tông
+15=phía chính thức
+16=phỏng đoán
+17=văn minh
+18=phơi nắng;;shài;;sái
+19=màu nâu
+20=nha sĩ
+21=lại (văn viết);;jìng;;cánh
+22=giáng lâm
+23=thực thi
+24=tra hỏi
+25=khúc nhạc
+> 我要去看牙医。 | Tôi phải đi khám nha sĩ.
+> 他在球场上。 | Anh ấy đang ở sân bóng.
+> 冬天湖水冻了。 | Mùa đông nước hồ đóng băng.
+> 古代文明很有意思。 | Nền văn minh cổ đại rất thú vị.
+## F3-43 | Hạt nhân, hạm đội & quý tộc
+1=hạt nhân;;hé;;hạch
+2=thoải mái
+3=hạm đội
+4=chứng kiến, nhân chứng
+5=máy tính điện toán
+6=dày;;hòu;;hậu
+7=hu hu;;wū;;ô
+8=con voi
+9=đau đầu
+10=tiệc tối long trọng
+11=quý tộc
+12=ma lực
+13=đề phòng bất trắc
+14=cong;;wān;;loan
+15=phụ;;fù;;phụ
+16=nhân tố
+17=uy;;wēi;;uy
+18=hy;;xī;;hi
+19=chọc;;chuō;;trạc
+20=mở toang
+21=người thường
+22=bực bội
+23=trình bày
+24=chưa đủ
+25=tiên;;xiān;;tiên
+> 我头疼。 | Tôi đau đầu.
+> 他是贵族。 | Ông ấy là quý tộc.
+> 这个因素很重要。 | Nhân tố này rất quan trọng.
+> 他心里很郁闷。 | Trong lòng anh ấy rất bực bội.

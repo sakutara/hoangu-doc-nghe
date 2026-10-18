@@ -1,0 +1,447 @@
+## l3-18 | Trạng từ & thần thái trong văn truyện
+愕然	èrán	ngỡ ngàng
+苦笑	kǔxiào	cười gượng
+淡淡	dàndàn	nhàn nhạt
+冷冷	lěnglěng	lạnh lùng
+默默	mòmò	lặng lẽ
+猛地	měngde	bỗng nhiên, đột ngột
+忽然	hūrán	chợt, bỗng
+顿时	dùnshí	lập tức
+刹那	chànà	sát na, khoảnh khắc
+不禁	bùjīn	không kìm được
+忍不住	rěnbuzhù	nhịn không được
+隐隐	yǐnyǐn	lờ mờ
+渐渐	jiànjiàn	dần dần
+微微	wēiwēi	khẽ, hơi
+狠狠	hěnhěn	hung hăng
+深深	shēnshēn	thật sâu
+静静	jìngjìng	lặng lẽ yên tĩnh
+悄悄	qiāoqiāo	lén lút, khẽ khàng
+冷哼	lěnghēng	hừ lạnh
+
+## l3-19 | Động tác & biểu cảm trong truyện
+咬牙	yǎoyá	nghiến răng
+握拳	wòquán	nắm chặt tay
+点头	diǎntóu	gật đầu
+转身	zhuǎnshēn	quay người
+抬头	táitóu	ngẩng đầu
+低头	dītóu	cúi đầu
+伸手	shēnshǒu	đưa tay
+挥手	huīshǒu	vẫy tay
+出手	chūshǒu	xuất thủ, ra tay đánh
+一拳	yīquán	một quyền
+一脚	yījiǎo	một cước
+一剑	yījiàn	một kiếm
+一刀	yīdāo	một đao
+睁眼	zhēngyǎn	mở mắt
+闭眼	bìyǎn	nhắm mắt
+眨眼	zhǎyǎn	chớp mắt
+瞪眼	dèngyǎn	trừng mắt
+张嘴	zhāngzuǐ	há miệng
+
+## l3-20 | Cảnh vật thiên nhiên trong truyện
+山脉	shānmài	dãy núi
+山谷	shāngǔ	thung lũng
+悬崖	xuányá	vách đá
+瀑布	pùbù	thác nước
+河流	héliú	dòng sông
+湖泊	húpō	hồ nước
+荒野	huāngyě	đồng hoang
+海洋	hǎiyáng	đại dương
+岛屿	dǎoyǔ	hải đảo
+星空	xīngkōng	bầu trời sao
+晨曦	chénxī	ánh bình minh
+风雪	fēngxuě	gió tuyết
+雷鸣	léimíng	tiếng sấm
+暴雨	bàoyǔ	mưa to
+闪电	shǎndiàn	tia chớp
+大地	dàdì	đại địa, mặt đất
+荒凉	huāngliáng	hoang vắng
+
+## l3-21 | Y phục & vật dụng thời cổ
+长袍	chángpáo	áo bào dài
+黑衣	hēiyī	áo đen
+玉佩	yùpèi	ngọc bội
+发簪	fàzān	trâm cài tóc
+古琴	gǔqín	cổ cầm
+茶杯	chábēi	chén trà
+酒杯	jiǔbēi	chén rượu
+灯笼	dēnglóng	đèn lồng
+屏风	píngfēng	bình phong
+床榻	chuángtà	giường tháp
+轿子	jiàozi	cỗ kiệu
+战马	zhànmǎ	chiến mã
+披风	pīfēng	áo choàng
+腰带	yāodài	đai lưng
+长发	chángfà	tóc dài
+玉镯	yùzhuó	vòng ngọc
+香囊	xiāngnáng	túi thơm
+竹简	zhújiǎn	thẻ tre
+
+## l3-22 | Giao dịch, đấu giá & tiền tệ
+银两	yínliǎng	bạc lượng
+银票	yínpiào	ngân phiếu
+铜钱	tóngqián	đồng tiền xu
+白银	báiyín	bạc trắng
+坊市	fāngshì	phường thị (chợ tu sĩ)
+商会	shānghuì	thương hội
+店铺	diànpù	tiệm quán
+报价	bàojià	báo giá
+竞价	jìngjià	đấu giá cạnh tranh
+抬价	táijià	nâng giá
+买主	mǎizhǔ	người mua
+卖家	màijiā	người bán
+货物	huòwù	lô hàng
+赔钱	péiqián	lỗ vốn
+发财	fācái	phát tài
+富翁	fùwēng	phú ông
+穷人	qióngrén	người nghèo
+债务	zhàiwù	nợ nần
+欠债	qiànzhài	thiếu nợ
+还钱	huánqián	trả tiền
+
+## l3-23 | Quân sự & chiến trận
+兵马	bīngmǎ	binh mã
+战场	zhànchǎng	chiến trường
+战役	zhànyì	chiến dịch
+攻城	gōngchéng	công thành
+守城	shǒuchéng	giữ thành
+城池	chéngchí	thành trì
+营帐	yíngzhàng	doanh trướng
+先锋	xiānfēng	tiên phong
+副将	fùjiàng	phó tướng
+将领	jiànglǐng	tướng lĩnh
+兵法	bīngfǎ	binh pháp
+谋略	móulüè	mưu lược
+伏兵	fúbīng	quân phục kích
+偷袭	tōuxí	đánh lén
+突围	tūwéi	phá vòng vây
+投诚	tóuchéng	quy hàng
+俘虏	fúlǔ	tù binh
+军粮	jūnliáng	lương thực quân đội
+
+## l3-24 | Thời gian ước lượng trong truyện
+一盏茶	yīzhǎnchá	một chén trà (thời gian)
+弹指	tánzhǐ	búng tay (thoáng chốc)
+须臾	xūyú	chốc lát
+片刻	piànkè	giây lát
+半晌	bànshǎng	nửa buổi
+数日	shùrì	vài ngày
+一夜	yīyè	một đêm
+良久	liángjiǔ	hồi lâu
+半天	bàntiān	nửa ngày
+一时	yīshí	nhất thời
+此刻	cǐkè	lúc này
+此时	cǐshí	bấy giờ
+当日	dāngrì	hôm ấy
+翌日	yìrì	ngày kế tiếp
+黄昏	huánghūn	hoàng hôn
+深夜	shēnyè	đêm khuya
+午后	wǔhòu	quá trưa
+三天三夜	sān tiān sān yè	ba ngày ba đêm
+多年	duōnián	nhiều năm
+
+## l3-25 | Lượng từ & cụm số lượng trong truyện
+一阵	yīzhèn	một trận
+一丝	yīsī	một tia
+一抹	yīmǒ	một vệt
+一片	yīpiàn	một mảnh
+一团	yītuán	một đám
+一名	yīmíng	một người (trang trọng)
+一位	yīwèi	một vị
+一众	yīzhòng	một đám người
+数百	shùbǎi	vài trăm
+万丈	wànzhàng	vạn trượng
+千里	qiānlǐ	ngàn dặm
+百里	bǎilǐ	trăm dặm
+一座	yīzuò	một ngọn, một tòa
+一条	yītiáo	một con, một dải
+一朵	yīduǒ	một đóa
+一滴	yīdī	một giọt
+一声	yīshēng	một tiếng
+一次	yīcì	một lần
+一枚	yīméi	một chiếc
+一件	yījiàn	một món
+
+## l3-26 | Xưng hô & lời thoại thời cổ
+本王	běnwáng	bổn vương
+本宫	běngōng	bổn cung
+老夫	lǎofū	lão phu
+老朽	lǎoxiǔ	lão hủ
+贫道	píndào	bần đạo
+小人	xiǎorén	tiểu nhân
+兄台	xiōngtái	huynh đài
+尊驾	zūnjià	tôn giá
+岂敢	qǐgǎn	nào dám
+休得	xiūdé	chớ có
+何方	héfāng	phương nào
+何人	hérén	người nào
+胆敢	dǎngǎn	dám to gan
+岂有此理	qǐ yǒu cǐ lǐ	có lý nào như vậy
+放肆	fàngsì	to gan, hỗn xược
+
+## l3-27 | Tính cách & khí chất nhân vật
+狂妄	kuángwàng	ngông cuồng
+谦虚	qiānxū	khiêm tốn
+谨慎	jǐnshèn	cẩn trọng
+腹黑	fùhēi	thâm hiểm (bụng đen)
+冷酷	lěngkù	lạnh lùng tàn nhẫn
+无情	wúqíng	vô tình
+多情	duōqíng	đa tình
+痴情	chīqíng	si tình
+固执	gùzhí	cố chấp
+沉稳	chénwěn	điềm đạm vững vàng
+阴险	yīnxiǎn	âm hiểm
+纯真	chúnzhēn	thuần khiết
+天真	tiānzhēn	ngây thơ
+嚣张	xiāozhāng	hống hách
+张扬	zhāngyáng	phô trương
+霸气	bàqì	bá khí
+淡然	dànrán	thản nhiên
+傲慢	àomàn	kiêu ngạo
+阴沉	yīnchén	u ám
+
+## l3-28 | Thuật ngữ truyện mạng & thể loại
+逆袭	nìxí	lội ngược dòng, lật kèo
+碾压	niǎnyā	nghiền ép
+套路	tàolù	mô-típ, chiêu trò
+白莲花	báiliánhuā	bạch liên hoa (giả trong sáng)
+绿茶	lǜchá	lục trà (giả dịu dàng)
+傲娇	àojiāo	ngạo kiều
+病娇	bìngjiāo	bệnh kiều
+萌	méng	dễ thương (moe)
+撒糖	sātáng	rải đường (cảnh ngọt)
+虐文	nüèwén	truyện ngược
+甜文	tiánwén	truyện ngọt
+种田文	zhòngtiánwén	truyện làm ruộng
+后宫文	hòugōngwén	truyện hậu cung
+无限流	wúxiànliú	vô hạn lưu
+系统流	xìtǒngliú	hệ thống lưu
+伏笔	fúbǐ	phục bút
+番外	fānwài	phiên ngoại
+
+## l3-29 | Hành khách, cân bằng & kết luận
+及时	jíshí	kịp thời
+超人	chāorén	siêu nhân
+体育	tǐyù	thể dục thể thao
+平衡	pínghéng	cân bằng
+接吻	jiēwěn	hôn môi
+结论	jiélùn	kết luận
+销售	xiāoshòu	bán hàng
+鲨鱼	shāyú	cá mập
+价钱	jiàqian	giá tiền
+精	jīng	tinh; yêu tinh
+通道	tōngdào	lối đi
+隔	gé	cách; ngăn
+动力	dònglì	động lực
+尺	chǐ	thước
+慢慢来	mànmànlái	cứ từ từ
+良好	liánghǎo	khá tốt
+为此	wèicǐ	vì thế
+性命	xìngmìng	tính mạng
+桌	zhuō	bàn
+赶走	gǎnzǒu	đuổi đi
+
+## l3-30 | Công nhân, súng & hiệp hội
+工人	gōngrén	công nhân
+协会	xiéhuì	hiệp hội
+孤单	gūdān	lẻ loi
+棵	kē	cây (lượng từ cây cối)
+喉咙	hóulóng	cổ họng
+争	zhēng	tranh
+措施	cuòshī	biện pháp
+清白	qīngbái	trong sạch
+爆发	bàofā	bùng nổ
+目击	mùjī	chứng kiến
+祝福	zhùfú	chúc phúc
+困扰	kùnrǎo	làm phiền muộn
+化学	huàxué	hóa học
+款	kuǎn	khoản; kiểu
+瞄准	miáozhǔn	ngắm bắn
+进一步	jìnyībù	tiến thêm một bước
+人选	rénxuǎn	ứng viên
+审讯	shěnxùn	thẩm vấn
+少校	shàoxiào	thiếu tá
+荒唐	huāngtáng	lố bịch vô lý
+
+## l3-31 | Điều chỉnh, phi công & lương bổng
+随意	suíyì	tùy ý
+场景	chǎngjǐng	cảnh tượng
+一家	yījiā	một nhà
+围	wéi	vây quanh
+惊人	jīngrén	kinh người
+康复	kāngfù	bình phục
+策划	cèhuà	trù hoạch
+弥补	míbǔ	bù đắp
+费用	fèiyòng	chi phí
+大门	dàmén	cổng lớn
+胃	wèi	dạ dày
+连接	liánjiē	kết nối
+党	dǎng	đảng
+理想	lǐxiǎng	lý tưởng
+包裹	bāoguǒ	bưu kiện; bọc
+工资	gōngzī	tiền công
+点子	diǎnzi	ý tưởng
+科技	kējì	khoa học kỹ thuật
+衣	yī	áo
+判决	pànjué	phán quyết
+刻	kè	khắc; mười lăm phút
+
+## l3-32 | Phụ nữ, cạm bẫy & yến tiệc
+妇女	fùnǚ	phụ nữ (chung)
+来源	láiyuán	nguồn gốc
+路线	lùxiàn	tuyến đường
+依靠	yīkào	dựa dẫm
+公正	gōngzhèng	công bằng chính trực
+地毯	dìtǎn	thảm trải sàn
+扔掉	rēngdiào	ném đi
+裸体	luǒtǐ	khỏa thân
+不妙	bùmiào	không ổn
+伪装	wěizhuāng	ngụy trang
+兮	xī	hề (trợ từ cổ)
+古老	gǔlǎo	lâu đời, cổ kính
+委托	wěituō	ủy thác
+来着	láizhe	(trợ từ: hồi nãy)
+真心	zhēnxīn	chân tâm
+冲突	chōngtū	xung đột
+发送	fāsòng	gửi đi
+犬	quǎn	khuyển
+白宫	báigōng	Nhà Trắng
+化妆	huàzhuāng	hóa trang
+指示	zhǐshì	chỉ thị
+
+## l3-33 | Đi dạo, trái cây & chân thành
+柜	guì	tủ
+上午	shàngwǔ	buổi sáng (trước trưa)
+博	bó	bác; rộng
+捅	tǒng	chọc, đâm
+郎	láng	lang; chàng
+剧院	jùyuàn	nhà hát
+原本	yuánběn	ban đầu vốn là
+宽恕	kuānshù	khoan thứ
+怀念	huáiniàn	hoài niệm
+端	duān	đầu mút; bưng
+见识	jiànshi	kiến thức, từng trải
+贝	bèi	sò ốc; bảo bối
+人士	rénshì	nhân sĩ
+代替	dàitì	thay thế
+创意	chuàngyì	sáng ý
+汁	zhī	nước ép
+干脆	gāncuì	dứt khoát
+户	hù	hộ
+脆弱	cuìruò	mong manh
+
+## l3-34 | Tranh bá, thời trang & chuyển nhà
+争霸	zhēngbà	tranh bá
+侵犯	qīnfàn	xâm phạm
+幸	xìng	may; hạnh
+无意	wúyì	vô ý
+提起	tíqǐ	nhắc tới
+温暖	wēnnuǎn	ấm áp
+珠宝	zhūbǎo	châu báu
+出版	chūbǎn	xuất bản
+切断	qiēduàn	cắt đứt
+器官	qìguān	cơ quan (cơ thể)
+大伙	dàhuǒ	mọi người (khẩu ngữ)
+讨	tǎo	xin; đòi
+前妻	qiánqī	vợ cũ
+失败者	shībàizhě	kẻ thua cuộc
+罪行	zuìxíng	tội trạng
+考验	kǎoyàn	thử thách khảo nghiệm
+主持	zhǔchí	chủ trì
+效劳	xiàoláo	phục vụ, cống hiến
+时装	shízhuāng	thời trang
+活儿	huór	việc (khẩu ngữ)
+男子	nánzǐ	nam tử
+
+## l3-35 | Tội lỗi, kỳ nghỉ & thực lực
+罪恶	zuìè	tội lỗi, điều ác
+用来	yònglái	dùng để
+视	shì	nhìn; xem
+远远	yuǎnyuǎn	xa tít
+假期	jiàqī	kỳ nghỉ
+扫描	sǎomiáo	quét
+题	tí	đề; câu hỏi
+猛	měng	mạnh dữ
+缺乏	quēfá	thiếu hụt
+连续	liánxù	liên tục
+欲望	yùwàng	dục vọng
+连环	liánhuán	liên hoàn
+魔术	móshù	ảo thuật
+之所以	zhīsuǒyǐ	sở dĩ
+精灵	jīnglíng	tinh linh
+蜜蜂	mìfēng	ong mật
+除	chú	trừ; loại bỏ
+失控	shīkòng	mất kiểm soát
+夸张	kuāzhāng	phóng đại
+卧底	wòdǐ	nằm vùng
+处境	chǔjìng	hoàn cảnh
+
+## l3-36 | Lễ phục, thừa kế & cách ly
+礼服	lǐfú	lễ phục
+零	líng	không (số 0)
+专辑	zhuānjí	album
+保存	bǎocún	lưu giữ
+修好	xiūhǎo	sửa xong
+感动	gǎndòng	làm cảm động
+晃	huàng	lắc lư
+曼	màn	mạn (dài, đẹp)
+如今	rújīn	ngày nay
+染	rǎn	nhuộm; nhiễm
+祖母	zǔmǔ	tổ mẫu (bà)
+老爹	lǎodiē	lão cha
+企图	qǐtú	mưu toan
+保险箱	bǎoxiǎnxiāng	két sắt
+沾	zhān	dây vào, nhiễm
+福	fú	phúc
+裤	kù	quần (thành tố)
+隔离	gélí	cách ly
+雇佣	gùyōng	thuê mướn
+厨	chú	bếp
+旅	lǚ	lữ; du lịch
+
+## l3-37 | Hộ chiếu, kẻ cắp & tri thức
+晓得	xiǎode	biết rõ
+电台	diàntái	đài phát thanh
+罚	fá	phạt
+迟早	chízǎo	sớm muộn
+生涯	shēngyá	sự nghiệp, sinh nhai
+支付	zhīfù	chi trả
+知识	zhīshi	tri thức
+挣扎	zhēngzhá	giãy giụa
+推荐	tuījiàn	đề cử
+球员	qiúyuán	cầu thủ
+英寸	yīngcùn	inch
+观看	guānkàn	xem
+领袖	lǐngxiù	lãnh tụ
+收养	shōuyǎng	nhận nuôi
+骚扰	sāorǎo	quấy rối
+吻合	wěnhé	khớp
+引爆	yǐnbào	kích nổ
+成年人	chéngniánrén	người trưởng thành
+硬币	yìngbì	đồng xu
+裸	luǒ	trần
+许可	xǔkě	giấy phép
+
+## l3-38 | Xấu hổ, tiền thưởng & ra tòa
+难堪	nánkān	khó coi, bẽ mặt
+放屁	fàngpì	đánh rắm
+汇报	huìbào	tổng hợp báo cáo
+奖金	jiǎngjīn	tiền thưởng
+旅程	lǚchéng	hành trình
+热狗	règǒu	xúc xích hot dog
+末日	mòrì	ngày tận thế
+片子	piānzi	bộ phim
+目击者	mùjīzhě	người chứng kiến
+糖果	tángguǒ	kẹo
+地面	dìmiàn	mặt đất
+声称	shēngchēng	xưng rằng
+待会儿	dāihuìr	chốc nữa
+捉	zhuō	bắt
+撕	sī	xé
+桩	zhuāng	cọc; việc (lượng từ)
+过度	guòdù	quá độ
+包围	bāowéi	bao vây
+咨询	zīxún	tư vấn
+提示	tíshì	gợi ý nhắc nhở
+糊涂	hútu	hồ đồ

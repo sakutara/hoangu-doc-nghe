@@ -1,0 +1,455 @@
+## l1-1 | Đại từ & trợ từ cốt lõi
+的	de	của; (trợ từ sở hữu, định ngữ)
+是	shì	là
+了	le	(trợ từ hoàn thành / thay đổi)
+在	zài	ở, tại; đang
+有	yǒu	có
+这	zhè	này, đây
+就	jiù	thì, liền, ngay
+会	huì	biết (làm); sẽ; hội
+一	yī	một
+知道	zhīdào	biết
+人	rén	người
+吧	ba	nhé, đi (trợ từ gợi ý)
+
+## l1-2 | Chỉ thị, phủ định & động từ nền
+那	nà	kia, đó
+来	lái	đến, lại
+能	néng	có thể, có năng lực
+和	hé	và, với; hòa
+到	dào	đến, tới
+对	duì	đúng; đối với
+啊	a	à, ạ (thán từ)
+还	hái	vẫn, còn; trả lại
+把	bǎ	(giới từ "bả": đưa tân ngữ ra trước)
+做	zuò	làm
+给	gěi	cho; đưa
+上	shàng	trên; lên
+过	guò	qua, trải qua; (trợ từ kinh nghiệm)
+得	de	(trợ từ bổ ngữ: "đến mức...")
+
+## l1-3 | Từ nghi vấn, liên từ & chỉ thị thường gặp
+着	zhe	(trợ từ chỉ trạng thái đang diễn ra)
+事	shì	việc, sự việc
+这个	zhège	cái này, này
+怎么	zěnme	thế nào, sao
+点	diǎn	điểm; giờ; gọi (món)
+呢	ne	thì sao? (trợ từ hỏi lại)
+只	zhǐ	chỉ, chỉ có
+别	bié	đừng; khác
+哦	ò	ồ (thán từ)
+但	dàn	nhưng
+被	bèi	bị (câu bị động)
+太	tài	quá, rất
+这样	zhèyàng	như vậy, thế này
+跟	gēn	theo; cùng với
+再	zài	lại, nữa
+听	tīng	nghe
+
+## l1-4 | Thời gian, lý do & cảm xúc cơ bản
+快	kuài	nhanh
+谁	shéi	ai
+但是	dànshì	nhưng, tuy nhiên
+多	duō	nhiều
+用	yòng	dùng, sử dụng
+下	xià	xuống; dưới
+天	tiān	ngày; trời
+像	xiàng	giống, như
+这么	zhème	như thế này, đến thế
+从	cóng	từ; theo
+先生	xiānsheng	ngài, ông; thầy
+找	zhǎo	tìm
+最	zuì	nhất (mức cao nhất)
+需要	xūyào	cần, cần phải
+
+## l1-5 | Lượng từ, liên từ & nhấn mạnh
+是的	shìde	đúng vậy
+死	sǐ	chết
+次	cì	lần (số lần); thứ tự
+出	chū	ra, đi ra
+那么	nàme	như thế, vậy thì
+干	gàn	làm (khẩu ngữ)
+那个	nàge	cái kia, đó
+嘿	hēi	này, ê (thán từ)
+话	huà	lời, lời nói
+而	ér	mà, và (liên từ)
+么	me	(hậu tố trong 什么, 这么...)
+应该	yīnggāi	nên, cần phải
+才	cái	mới, vừa mới
+两	liǎng	hai (đếm)
+错	cuò	sai, lỗi
+还有	háiyǒu	còn có, ngoài ra
+又	yòu	lại (đã xảy ra)
+中	zhōng	trong; giữa
+
+## l1-6 | Động từ hành động thường gặp
+叫	jiào	gọi; bảo; tên là
+嗯	èn	ừm, ừ
+该	gāi	nên; đến lượt
+问题	wèntí	vấn đề, câu hỏi
+拿	ná	cầm, lấy
+更	gèng	hơn nữa, càng
+帮	bāng	giúp
+打	dǎ	đánh; gọi (điện thoại)
+带	dài	mang, dẫn theo
+时间	shíjiān	thời gian
+年	nián	năm
+当	dāng	làm; đang khi; đáng
+见	jiàn	thấy, gặp
+噢	ō	ồ, ôi (thán từ)
+一样	yīyàng	giống nhau
+事情	shìqing	sự việc, chuyện
+
+## l1-7 | Đời thường: ăn uống, gia đình, tin tưởng
+就是	jiùshì	chính là; đúng là
+所有	suǒyǒu	tất cả, mọi
+开	kāi	mở; lái; bật
+一下	yīxià	một chút, thử (sau động từ)
+家	jiā	nhà; gia đình
+看到	kàndào	nhìn tới, trông thấy
+那些	nàxiē	những cái kia
+当然	dāngrán	dĩ nhiên
+也许	yěxǔ	có lẽ
+行	xíng	được; đi (khẩu ngữ)
+妈妈	māma	mẹ
+前	qián	trước; phía trước
+嗨	hāi	chào (hi)
+认为	rènwéi	cho rằng, nghĩ rằng
+将	jiāng	sẽ; sắp
+这儿	zhèr	ở đây (khẩu ngữ)
+今天	jīntiān	hôm nay
+
+## l1-8 | Hành động & cảm giác thường ngày
+车	chē	xe
+时	shí	lúc, khi (văn viết)
+地方	dìfang	nơi, chỗ
+不过	bùguò	nhưng; chẳng qua
+呃	è	ờ... (do dự)
+几	jǐ	mấy, bao nhiêu (số nhỏ)
+回来	huílai	trở về
+找到	zhǎodào	tìm thấy
+后	hòu	sau; sau khi
+一切	yīqiè	mọi thứ, tất cả
+抱歉	bàoqiàn	xin lỗi, áy náy
+比	bǐ	so với; so sánh
+感觉	gǎnjué	cảm giác; cảm thấy
+些	xiē	một ít, vài (lượng từ)
+怎么样	zěnmeyàng	thế nào, ra sao
+出来	chūlái	đi ra, xuất hiện
+问	wèn	hỏi; thắc mắc
+
+## l1-9 | Nhận thức & kết nối ý
+一点	yīdiǎn	một chút
+起	qǐ	dậy; nổi lên (bổ ngữ)
+还是	háishi	vẫn là; hay là
+所	suǒ	sở (chỉ nơi chốn); trợ từ trong 所以, 所有
+住	zhù	ở, sống; dừng
+件	jiàn	cái, chiếc (lượng từ cho việc, áo)
+正	zhèng	đúng; đang
+而且	érqiě	hơn nữa, mà còn
+并	bìng	mà, hơn nữa; hề
+放	fàng	đặt, để; thả
+不错	bùcuò	không tệ, khá tốt
+肯定	kěndìng	chắc chắn; khẳng định
+为了	wèile	để, vì (mục đích)
+搞	gǎo	làm, xoay xở
+棒	bàng	tuyệt, giỏi; cây gậy
+第一	dìyī	thứ nhất, đầu tiên
+妈	mā	mẹ, má
+地	de	(trợ từ trạng ngữ: -một cách)
+
+## l1-10 | Đại từ, lượng từ & người xung quanh
+那样	nàyàng	như thế kia
+向	xiàng	hướng về; với
+一些	yīxiē	một vài, một số
+三	sān	ba
+那里	nàli	ở đó, chỗ đó
+高兴	gāoxìng	vui mừng
+嘛	ma	mà (trợ từ nhấn điều hiển nhiên)
+老	lǎo	già; cũ; (tiền tố thân mật)
+位	wèi	vị (lượng từ lịch sự); chỗ
+掉	diào	rơi; (bổ ngữ) mất
+先	xiān	trước, trước tiên
+等等	děngděng	vân vân; chờ chút
+生活	shēnghuó	cuộc sống; sinh sống
+之	zhī	(trợ từ văn viết: của)
+种	zhǒng	loại, giống
+之前	zhīqián	trước đây, trước khi
+伙计	huǒji	bạn bè; anh bạn; người làm thuê
+
+## l1-11 | Ngôn ngữ đời thường: uống, viết, mặc
+手	shǒu	tay
+任何	rènhé	bất cứ
+哪儿	nǎr	ở đâu (khẩu ngữ)
+这种	zhèzhǒng	loại này
+上帝	shàngdì	Thượng Đế
+坐	zuò	ngồi
+其他	qítā	khác, còn lại
+家伙	jiāhuo	gã, thằng cha
+与	yǔ	và; với (văn viết)
+或者	huòzhě	hoặc, hay
+写	xiě	viết
+穿	chuān	mặc
+弄	nòng	làm; xoay xở
+过去	guòqù	đi qua; quá khứ
+哪里	nǎlǐ	ở đâu; đâu có (khiêm tốn)
+啦	la	(trợ từ ngữ khí: rồi, nhé)
+算	suàn	tính; coi như
+担心	dānxīn	lo lắng
+
+## l1-12 | Con vật, thời gian & thế giới
+继续	jìxù	tiếp tục
+送	sòng	tặng; tiễn; đưa
+女孩	nǚhái	cô gái, bé gái
+以	yǐ	dùng, bằng; để
+玩	wán	chơi
+亲爱	qīnài	thân yêu
+下来	xiàlai	xuống đây; (bổ ngữ) xuống
+成	chéng	thành; trở thành
+父亲	fùqīn	cha
+以前	yǐqián	trước đây
+早	zǎo	sớm; chào buổi sáng
+长	cháng	dài
+完全	wánquán	hoàn toàn
+宝贝	bǎobèi	bảo bối, cưng
+枪	qiāng	súng
+可是	kěshì	nhưng mà
+
+## l1-13 | Con người, cảnh sát & cuộc gọi
+谈	tán	nói chuyện, bàn
+男人	nánrén	đàn ông
+头	tóu	đầu
+出去	chūqù	đi ra ngoài
+活	huó	sống
+者	zhě	người (hậu tố: -giả)
+打电话	dǎdiànhuà	gọi điện thoại
+得到	dédào	đạt được, nhận được
+完	wán	xong, hết
+张	zhāng	tờ, tấm (lượng từ cho giấy, bàn)
+之后	zhīhòu	sau đó, sau khi
+漂亮	piàoliang	xinh đẹp, đẹp mắt
+分钟	fēnzhōng	phút
+场	chǎng	sân; trận (lượng từ)
+再见	zàijiàn	tạm biệt
+
+## l1-14 | Quyết định, quan hệ & tình huống
+求	qiú	cầu xin; tìm kiếm
+刚	gāng	vừa mới
+如何	rúhé	như thế nào
+呀	ya	(trợ từ ngữ khí, biến thể của 啊)
+情况	qíngkuàng	tình hình
+变	biàn	biến, trở nên khác
+真是	zhēnshi	thật là (than phiền)
+女士	nǚshì	quý bà, chị
+本	běn	gốc; quyển (lượng từ sách)
+见到	jiàndào	gặp được, thấy
+根本	gēnběn	căn bản, hoàn toàn (phủ định)
+那儿	nàr	ở đó (khẩu ngữ)
+难	nán	khó
+只要	zhǐyào	chỉ cần
+里面	lǐmiàn	bên trong
+份	fèn	phần; suất (lượng từ)
+每	měi	mỗi
+
+## l1-15 | Công ty, an toàn & kế hoạch
+站	zhàn	đứng; ga, trạm
+结束	jiéshù	kết thúc
+公司	gōngsī	công ty
+成为	chéngwéi	trở thành
+帮助	bāngzhù	giúp đỡ
+哇	wā	ôi, wow
+名	míng	tên; (lượng từ cho người)
+它们	tāmen	chúng (chỉ vật)
+总	zǒng	luôn; tóm lại
+确定	quèdìng	xác định, chắc chắn
+清楚	qīngchu	rõ ràng
+晚上	wǎnshang	buổi tối
+怎样	zěnyàng	như thế nào, làm sao
+没什么	méishénme	không có gì
+块	kuài	cục, miếng; đồng (tiền)
+回家	huíjiā	về nhà
+留	liú	để lại; ở lại
+周	zhōu	tuần; vòng
+愿意	yuànyì	bằng lòng, sẵn sàng
+爸	bà	bố, ba
+
+## l1-16 | Cảm ơn, chào đón & thái độ
+停	tíng	dừng
+不能	bùnéng	không thể
+他妈的	tāmāde	mẹ kiếp (chửi thề)
+另	lìng	khác, ngoài ra
+心	xīn	tim; tâm
+花	huā	hoa; tiêu (tiền)
+她们	tāmen	các cô ấy
+有些	yǒuxiē	một số; hơi
+门	mén	cửa
+感谢	gǎnxiè	cảm tạ
+定	dìng	định, quyết định
+于	yú	ở, tại; hơn (văn viết)
+以后	yǐhòu	sau này
+管	guǎn	quản; ống
+照片	zhàopiàn	ảnh
+兄弟	xiōngdì	anh em
+总是	zǒngshì	luôn luôn
+嘴	zuǐ	miệng
+
+## l1-17 | Nhà cửa, quần áo & tin tức
+拜托	bàituō	nhờ vả, làm ơn
+抓	zhuā	bắt; nắm
+动	dòng	động; di chuyển
+赢	yíng	thắng
+消息	xiāoxi	tin tức
+忙	máng	bận
+或许	huòxǔ	có thể là, hoặc giả
+如此	rúcǐ	như vậy
+队	duì	đội
+无法	wúfǎ	không thể (không có cách)
+房子	fángzi	nhà, căn nhà
+拉	lā	kéo; kéo (đàn)
+救	jiù	cứu
+参加	cānjiā	tham gia
+回去	huíqu	quay về
+人们	rénmen	mọi người, người ta
+晚	wǎn	tối; muộn
+
+## l1-18 | Trường học, lựa chọn & cảm xúc mạnh
+该死	gāisǐ	chết tiệt
+闭	bì	đóng, nhắm
+坏	huài	xấu; hỏng
+原因	yuányīn	nguyên nhân
+下去	xiàqù	đi xuống; tiếp tục (bổ ngữ)
+连	lián	liền; ngay cả
+好好	hǎohǎo	cho tốt, đàng hoàng
+全	quán	toàn, tất cả
+确实	quèshí	quả thật, đúng là
+挺	tǐng	khá, rất (khẩu ngữ); thẳng
+此	cǐ	này, đây (văn viết)
+混蛋	húndàn	đồ khốn
+杯	bēi	cốc, ly
+学校	xuéxiào	trường học
+卖	mài	bán
+改变	gǎibiàn	thay đổi, cải biến
+舞	wǔ	múa, khiêu vũ
+高	gāo	cao
+
+## l1-19 | Phim ảnh, chú ý & kết quả
+麻烦	máfan	rắc rối; phiền
+出现	chūxiàn	xuất hiện
+打算	dǎsuàn	dự định, dự tính
+试	shì	thử
+身上	shēnshang	trên người
+房间	fángjiān	phòng, LT:間|间[jian1],個|个[ge4]
+美	měi	đẹp; mỹ lệ
+不管	bùguǎn	bất kể
+注意	zhùyì	chú ý
+查	chá	kiểm tra, tra
+球	qiú	quả bóng, bóng
+忘	wàng	quên
+甚至	shènzhì	thậm chí
+保护	bǎohù	bảo vệ
+真正	zhēnzhèng	thật sự, chân chính
+表现	biǎoxiàn	biểu hiện
+拍	pāi	vỗ; chụp, quay
+进来	jìnlái	vào đây
+
+## l1-20 | Pháp luật, mức độ & thời điểm
+呆	dāi	ngốc; ở lại
+久	jiǔ	lâu
+当时	dāngshí	lúc đó
+或	huò	hoặc (văn viết)
+只有	zhǐyǒu	chỉ có
+怎么办	zěnmebàn	làm sao đây
+第	dì	thứ (tiền tố số thứ tự)
+马	mǎ	ngựa
+讲	jiǎng	nói; giảng
+绝对	juéduì	tuyệt đối
+长官	zhǎngguān	sĩ quan, cấp trên
+员	yuán	nhân viên, thành viên (hậu tố)
+进去	jìnqù	đi vào
+喔	ō	ồ, ô (thán từ)
+整个	zhěnggè	cả, trọn vẹn
+表演	biǎoyǎn	biểu diễn
+正在	zhèngzài	đang
+无	wú	không có (văn viết)
+已	yǐ	đã (văn viết)
+
+## l1-21 | Hôn nhân, gia đình & hành động
+选	xuǎn	chọn, lựa
+感到	gǎndào	cảm nhận được, thấy
+远	yuǎn	xa
+儿	ér	con; (hậu tố nhi hóa)
+疯	fēng	điên
+结婚	jiéhūn	kết hôn
+床	chuáng	giường
+处理	chǔlǐ	xử lý
+进行	jìnxíng	tiến hành
+内	nèi	trong, bên trong (văn viết)
+是否	shìfǒu	có hay không
+段	duàn	đoạn
+令	lìng	lệnh; khiến
+刚刚	gānggang	vừa mới đây
+案子	ànzi	vụ án (khẩu ngữ)
+行动	xíngdòng	hành động
+第二	dìèr	thứ hai
+
+## l1-22 | Âm nhạc, rượu & suy nghĩ
+发	fā	gửi; phát
+调查	diàochá	điều tra
+失去	shīqù	mất đi
+成功	chénggōng	thành công
+约会	yuēhuì	cuộc hẹn hò
+节目	jiémù	chương trình
+通过	tōngguò	thông qua; vượt qua
+之间	zhījiān	giữa
+别的	biéde	cái khác
+学	xué	học
+开心	kāixīn	vui, thoải mái
+母亲	mǔqīn	mẹ (trang trọng)
+辆	liàng	chiếc (lượng từ xe)
+探	tàn	thăm dò; thăm
+丈夫	zhàngfu	chồng
+变成	biànchéng	biến thành
+待	dāi	ở lại; đối xử
+倒	dǎo	ngã; đổ
+离	lí	cách; rời
+
+## l1-23 | Giải quyết vấn đề & văn phòng
+往	wǎng	hướng tới, đi về phía
+万	wàn	mười nghìn, vạn
+联系	liánxì	liên hệ
+派	pài	phái; cử
+关	guān	đóng; liên quan
+证明	zhèngmíng	chứng minh
+句	jù	câu (lượng từ)
+五	wǔ	năm (số 5)
+生命	shēngmìng	sinh mạng
+有点	yǒudiǎn	hơi, có chút
+难道	nándào	chẳng lẽ
+作为	zuòwéi	với tư cách là; hành vi
+奇怪	qíguài	kỳ lạ
+生	shēng	sinh, đẻ; sống
+由	yóu	do, bởi
+男	nán	nam
+极了	jíle	cực kỳ (đứng sau tính từ)
+如	rú	như; ví như
+游戏	yóuxì	trò chơi, game
+帮忙	bāngmáng	giúp một tay
+
+## l1-24 | Nguy hiểm, quốc gia & cảm xúc
+指	zhǐ	ngón tay; chỉ
+曾经	céngjīng	đã từng
+处	chù	nơi; xử lý
+看上去	kànshangqu	trông có vẻ
+间	jiān	giữa; gian (phòng)
+伤害	shānghài	làm hại
+控制	kòngzhì	kiểm soát
+糟	zāo	tồi tệ, hỏng bét
+快乐	kuàilè	vui sướng
+偷	tōu	ăn trộm
+首	shǒu	đầu; đầu tiên; (lượng từ bài hát)
+可爱	kěài	đáng yêu
+进入	jìnrù	bước vào, gia nhập
+能够	nénggòu	có thể (đủ khả năng)
+事实上	shìshíshàng	thực tế là
+哈	hā	ha (tiếng cười)
+醒	xǐng	tỉnh

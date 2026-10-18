@@ -1,0 +1,210 @@
+## F3-21 | Quê hương, quan tài & ý chí
+1=người thân
+2=ách;;è;;ách
+3=quê hương
+4=bình an
+5=dọn đi
+6=thứ Bảy (cách nói khác)
+7=phi (thơm tho);;fēi;;phỉ
+8=nến
+9=cocain
+10=quan tài
+11=bệnh tâm thần
+12=mau lẹ
+13=nhân từ
+14=tiền đồ
+15=tệ, kém cỏi
+16=tình thế
+17=ý chí
+18=đồng hồ đeo tay
+19=đo;;cè;;trắc
+20=bít tết
+21=lập trường
+22=cà vạt
+23=xưa nay
+24=tên lửa dẫn đường
+25=được thành lập
+> 我的家乡很漂亮。 | Quê hương tôi rất đẹp.
+> 祝你一路平安！ | Chúc bạn thượng lộ bình an!
+> 他看了一下手表。 | Anh ấy liếc nhìn đồng hồ đeo tay.
+> 他的立场很清楚。 | Lập trường của anh ấy rất rõ ràng.
+## F3-22 | Hiện đại, đường hầm & phù thủy
+1=vô song
+2=hiện đại
+3=đường hầm
+4=yếu;;ruò;;nhược
+5=bản lĩnh
+6=cấy ghép
+7=dã thú
+8=cản trở
+9=đuôi;;wěi;;vĩ
+10=xoa; ma sát;;mó;;ma
+11=thẩm định bình xét
+12=tổng cộng
+13=đôi tay
+14=vung;;huī;;huy
+15=hôn thê
+16=dịch (chất lỏng);;yè;;dịch
+17=pháp sư phù thủy
+18=chỉ lệnh
+19=tình cờ
+20=chung; cuối;;zhōng;;chung
+21=luân;;lún;;luân
+22=dầu mỏ
+23=trang trí
+24=bảo lãnh tại ngoại
+25=viết thư
+> 这个隧道很长。 | Đường hầm này rất dài.
+> 他举起双手。 | Anh ấy giơ hai tay lên.
+> 他很有本事。 | Anh ấy rất có bản lĩnh.
+> 我给他写信。 | Tôi viết thư cho anh ấy.
+## F3-23 | Kem, bão tố & chẩn đoán
+1=sáng; rõ;;lǎng;;lãng
+2=lưỡi (văn viết);;shé;;thiệt
+3=kem sữa, bơ
+4=họ tên
+5=men theo
+6=ông trời
+7=chẩn đoán
+8=bi thảm
+9=người đã trưởng thành
+10=cái chai
+11=tài nguyên
+12=mô thức
+13=kháng;;kàng;;kháng
+14=nhà giáo
+15=thịt gà
+16=quân; ngài;;jūn;;quân
+17=dựa trên
+18=bỏ qua
+19=miền tây
+20=dự đoán
+21=bão tố
+22=thanh nhã
+23=vẻ bề ngoài
+24=chuyện nhỏ
+25=hậu trường
+> 请告诉我你的姓名。 | Xin cho tôi biết họ tên của bạn.
+> 不要看外表。 | Đừng nhìn vẻ bề ngoài.
+> 他是一位教师。 | Ông ấy là một nhà giáo.
+> 外面有一场风暴。 | Bên ngoài có một cơn bão tố.
+## F3-24 | Pháp y, tiền thuê nhà & quốc hội
+1=pháp y
+2=độc đáo
+3=tô (phiên âm);;sū;;tô
+4=gây nhiễu
+5=chìm;;chén;;trầm
+6=ngoài định mức
+7=gây án
+8=giảm bớt
+9=quốc hội
+10=tiền thuê nhà
+11=bắt nạt
+12=dắt;;qiān;;khiên
+13=ruộng;;tián;;điền
+14=phòng thủ
+15=thấu hiểu từ trải nghiệm
+16=cứu vãn
+17=cơ sở dữ liệu
+18=lên đài; lên nắm quyền
+19=sản xuất
+20=eo lưng;;yāo;;yêu
+21=phát (nhạc, video)
+22=bùn;;ní;;nê
+23=đường phố
+24=quang minh
+25=thầy thuốc chuyên nghiệp
+> 他们每月付房租。 | Mỗi tháng họ trả tiền thuê nhà.
+> 不要欺负别人。 | Đừng bắt nạt người khác.
+> 这个工厂生产汽车。 | Nhà máy này sản xuất ô tô.
+> 我的腰很疼。 | Lưng tôi rất đau.
+## F3-25 | Biển cả, nước hoa & động đất
+1=biển lớn
+2=thoát ly
+3=nghiện rượu
+4=làm nhục
+5=khoản vay
+6=thông thường (văn chương)
+7=tắc; chặn;;dǔ;;đổ
+8=đồ nhát gan
+9=nhịp điệu
+10=vá; bổ;;bǔ;;bổ
+11=chất vấn
+12=họ hàng
+13=liều mạng
+14=cái gối
+15=lời bài hát
+16=anh; Anh;;yīng;;anh
+17=đi ngang qua
+18=câu (cá);;diào;;điếu
+19=nước hoa
+20=gôn
+21=tăng tốc
+22=động đất
+23=bà ngoại
+24=tài hoa
+25=cơm sáng
+> 海边发生了地震。 | Ở bờ biển đã xảy ra động đất.
+> 我外婆住在乡村。 | Bà ngoại tôi sống ở nông thôn.
+> 他有很多亲戚。 | Anh ấy có rất nhiều họ hàng.
+> 你喜欢这个香水吗？ | Bạn có thích nước hoa này không?
+## F3-26 | Vé máy bay, tình tiết & màn hình
+1=vé máy bay
+2=phất (không);;fú;;phất
+3=tình tiết
+4=thao tác
+5=mờ; hôn;;hūn;;hôn
+6=chơi (nhi hóa)
+7=chuyển biến
+8=cơ thể người
+9=mỗi người
+10=yêu thích
+11=hái;;zhāi;;trích
+12=thi; thực hiện;;shī;;thi
+13=ban đầu nhất
+14=võ sĩ
+15=nguyên nhân tử vong
+16=cấu thành
+17=chuyên tâm
+18=tham quan
+19=màn hình
+20=từ biệt
+21=bắn chết
+22=buổi hòa nhạc
+23=hôn thắm thiết
+24=treo;;diào;;điếu
+25=giản; đơn giản;;jiǎn;;giản
+> 我买了一张机票。 | Tôi đã mua một tấm vé máy bay.
+> 请看屏幕。 | Xin hãy nhìn màn hình.
+> 他专心地学习。 | Anh ấy chuyên tâm học tập.
+> 我们明天去参观博物馆。 | Ngày mai chúng ta đi tham quan bảo tàng.
+## F3-27 | Bất lợi, đóng góp & tài khoản
+1=bất lợi
+2=chỗ ở
+3=áy náy
+4=địa vị
+5=trước sau như một
+6=nơi sâu thẳm
+7=dâm phụ (chửi)
+8=cống hiến
+9=vận hành
+10=ủng
+11=ồ; hà hơi;;hē;;a
+12=môi (văn viết);;chún;;thần
+13=giao thiệp qua lại
+14=gà tây
+15=xe cộ
+16=quá đỗi
+17=giếng;;jǐng;;tỉnh
+18=đồng bọn
+19=hình ảnh
+20=bắn hạ;;bì;;tễ
+21=tới; gửi; khiến;;zhì;;trí
+22=tài khoản
+23=long; thịnh;;lóng;;long
+24=phong phú
+25=nhúng tay
+> 这个城市有很多车辆。 | Thành phố này có rất nhiều xe cộ.
+> 他对公司有很大的贡献。 | Anh ấy có đóng góp rất lớn cho công ty.
+> 我觉得很内疚。 | Tôi cảm thấy rất áy náy.
+> 不要插手这件事。 | Đừng nhúng tay vào chuyện này.

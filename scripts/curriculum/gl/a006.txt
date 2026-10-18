@@ -1,0 +1,180 @@
+## F1-23 | Giải quyết vấn đề & văn phòng
+1=giải thích
+2=hướng tới, đi về phía
+3=mười nghìn, vạn
+4=liên hệ
+5=phái; cử
+6=đóng; liên quan;;guān;;quan
+7=chứng minh
+8=câu (lượng từ)
+9=năm (số 5)
+10=sinh mạng
+11=hơi, có chút
+12=dựa vào, tựa
+13=giải quyết
+14=văn phòng
+15=chẳng lẽ
+16=với tư cách là; hành vi
+17=kỳ lạ
+18=sinh, đẻ; sống
+19=do, bởi
+20=nam
+21=cực kỳ (đứng sau tính từ)
+22=đồng ý
+23=như; ví như;;rú;;như
+24=trò chơi, game
+25=giúp một tay
+> 你能解释一下吗？ | Bạn có thể giải thích một chút không?
+> 我同意你的计划。 | Tôi đồng ý với kế hoạch của bạn.
+> 他想靠自己解决这个问题。 | Anh ấy muốn tự mình giải quyết vấn đề này.
+> 办公室在哪里？ | Văn phòng ở đâu?
+## F1-24 | Nguy hiểm, quốc gia & cảm xúc
+1=ngón tay; chỉ;;zhǐ;;chỉ
+2=nguy hiểm
+3=ghét
+4=đã từng
+5=đôi mắt
+6=bên ngoài
+7=nơi; xử lý;;chù;;xứ
+8=quốc gia
+9=trông có vẻ
+10=tổng thống
+11=giữa; gian (phòng);;jiān;;gian
+12=làm hại
+13=kiểm soát
+14=gần đây
+15=âm thanh, giọng
+16=tồi tệ, hỏng bét
+17=vui sướng
+18=ăn trộm
+19=đầu; đầu tiên; (lượng từ bài hát);;shǒu;;thủ
+20=đáng yêu
+21=bước vào, gia nhập
+22=có thể (đủ khả năng)
+23=thực tế là
+24=ha (tiếng cười)
+25=tỉnh
+> 他的眼睛很漂亮。 | Đôi mắt của anh ấy rất đẹp.
+> 外面很危险。 | Bên ngoài rất nguy hiểm.
+> 我最近很讨厌这个声音。 | Dạo gần đây tôi rất ghét âm thanh này.
+> 总统来到我们国家了。 | Tổng thống đã đến đất nước chúng ta.
+## F1-25 | Bệnh viện, yêu cầu & ngoại lệ
+1=chia; phút; điểm;;fēn;;phân
+2=hoàn thành
+3=bộ (lượng từ phim, sách); bộ phận
+4=tối qua
+5=cùng, giống;;tóng;;đồng
+6=bệnh viện
+7=không được
+8=nửa, rưỡi
+9=mà thôi
+10=phía trên
+11=dáng vẻ
+12=ít;;shǎo;;thiểu
+13=thú vị
+14=xách; nêu ra;;tí;;đề
+15=không sao
+16=(phiên âm: tư...);;sī;;tư
+17=thật sao, thật đấy
+18=bộ phận, phần
+19=yêu cầu
+20=tệ quá
+21=ngoại trừ
+22=dễ
+23=giữ gìn, duy trì
+24=tuy rằng
+25=làm, xử lý
+> 虽然很难，但是我们完成了。 | Tuy khó, nhưng chúng tôi đã hoàn thành.
+> 除了你，我谁也不相信。 | Ngoài bạn ra, tôi không tin ai cả.
+> 这个很容易。 | Cái này rất dễ.
+> 对不起，没关系。 | Xin lỗi. — Không sao đâu.
+## F1-26 | Gia đình, bí mật & chứng cứ
+1=nghĩ tới, nhớ ra
+2=dạy;;jiāo;;giáo
+3=thấu hiểu
+4=chứng cứ
+5=thêm, cộng
+6=mặt
+7=đơn giản
+8=khác nhau
+9=phu nhân
+10=cha mẹ
+11=nặng; lặp lại;;zhòng;;trọng
+12=ơn;;ēn;;ân
+13=từng (văn viết);;céng;;tằng
+14=sự thật
+15=máy bay
+16=gia đình
+17=voi; hình;;xiàng;;tượng
+18=đóng gói; giả vờ; mặc;;zhuāng;;trang
+19=bí mật
+20=pháp; cách;;fǎ;;pháp
+21=thi thể
+22=mở ra
+23=mùa;;jì;;quý
+24=kiểm tra, khám
+25=buổi sáng
+> 这是我们家庭的秘密。 | Đây là bí mật của gia đình chúng tôi.
+> 他想到一个简单的办法。 | Anh ấy nghĩ ra một cách đơn giản.
+> 你父母怎么样？ | Cha mẹ bạn thế nào?
+> 早上我去医院检查。 | Buổi sáng tôi đến bệnh viện khám.
+## F1-27 | Nhiệm vụ, sức khỏe & thái độ
+1=câu đùa
+2=nhiệm vụ
+3=hiện trường
+4=khiến, làm cho
+5=xoay; chuyển;;zhuǎn;;chuyển
+6=tiến sĩ
+7=cho đến khi
+8=căng thẳng
+9=hai
+10=quả thực, đúng là
+11=từ bỏ
+12=thằng nhóc
+13=tivi
+14=mạnh; cưỡng;;qiáng;;cường
+15=ngại quá, xin lỗi
+16=đại khái, có lẽ
+17=quả là, thực vậy
+18=đặc biệt, rất (văn nói);;tè;;đặc
+19=thuốc;;yào;;dược
+20=trở về tới
+21=cậu bé
+22=âm nhạc
+23=cơ thể
+24=máu;;xuè;;huyết
+25=để lại
+> 不好意思，我想放弃这个任务。 | Ngại quá, tôi muốn từ bỏ nhiệm vụ này.
+> 他回到家，看了电视。 | Anh ấy về đến nhà và xem tivi.
+> 他的身体不好，需要吃药。 | Cơ thể anh ấy không tốt, cần uống thuốc.
+> 这个男孩很紧张。 | Cậu bé này rất căng thẳng.
+## F1-28 | Cách thức, cảm xúc & ghi chép
+1=phương thức
+2=làm bị thương; vết thương
+3=kỳ quái; trách
+4=đô la Mỹ
+5=nhà tù
+6=đọc;;dú;;độc
+7=bên này
+8=một lần nữa, làm lại
+9=nhìn, xem (khẩu ngữ)
+10=điên cuồng
+11=nhận được
+12=trong đó
+13=tấm, miếng; phim
+14=ý nghĩ
+15=trong nhà
+16=đen, tối
+17=thân người
+18=làm; sáng tác;;zuò;;tác
+19=phía sau
+20=tính (hậu tố); giới tính;;xìng;;tính
+21=mang đến
+22=hôm qua
+23=không tốt
+24=nắm chặt, bắt được
+25=ghi chép, bản ghi
+> 昨天我收到了他的信。 | Hôm qua tôi đã nhận được thư của anh ấy.
+> 这边的路很黑。 | Con đường bên này rất tối.
+> 你有什么想法？ | Bạn có ý nghĩ gì?
+> 他们进了监狱。 | Họ đã vào tù.

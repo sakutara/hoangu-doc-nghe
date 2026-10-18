@@ -1,0 +1,180 @@
+## F2-01 | Mạo hiểm, nhà vua & nét mặt
+1=năm nay
+2=trưng bày
+3=trong lòng
+4=điều; chuyển;;diào;;điều
+5=khởi tố
+6=anh (xưng hô)
+7=quốc vương
+8=người tốt
+9=lớn lên;;zhǎngdà;;trưởng đại
+10=loại
+11=giao cho
+12=thụy, điềm lành;;ruì;;thụy
+13=nước tiểu; đi tiểu
+14=phân
+15=bồi thẩm đoàn
+16=dự án
+17=lời thật
+18=tập trung
+19=nét mặt
+20=mạo hiểm
+21=lợi ích
+22=ô; cách;;gé;;cách
+23=trái;;zuǒ;;tả
+24=biển;;hǎi;;hải
+25=ma cà rồng
+> 今年我想去海边。 | Năm nay tôi muốn đi biển.
+> 他是一位国王。 | Ông ấy là một vị quốc vương.
+> 说实话，这个项目有很多好处。 | Nói thật, dự án này có rất nhiều lợi ích.
+> 请你集中一下。 | Xin bạn tập trung một chút.
+## F2-02 | Thắng lợi, ấn tượng & thiên thần
+1=thắng lợi
+2=thế mà, vậy mà
+3=bình thường, phổ thông
+4=quan;;guān;;quan
+5=thẳng;;zhí;;trực
+6=biểu thị
+7=ấn tượng
+8=chào đời
+9=tiến triển
+10=ước chừng
+11=vui; nhạc;;lè;;lạc
+12=địa điểm
+13=giám đốc
+14=vui lòng
+15=nhẹ nhõm
+16=tác dụng
+17=giơ; nêu;;jǔ;;cử
+18=phải;;yòu;;hữu
+19=an; yên;;ān;;an
+20=mong đợi
+21=chàng trai
+22=thầy; sư;;shī;;sư
+23=bảo hiểm; chắc chắn
+24=thiên sứ
+25=rơi; rụng;;luò;;lạc
+> 他竟然赢了，这是一次胜利。 | Anh ấy thế mà thắng, đây là một chiến thắng.
+> 你对他有什么印象？ | Bạn có ấn tượng gì về anh ấy?
+> 我期待你的消息。 | Tôi mong chờ tin của bạn.
+> 天使在天上。 | Thiên thần ở trên trời.
+## F2-03 | Chuyên gia, phong cách & miễn phí
+1=một mình
+2=ghi, thu;;lù;;lục
+3=khó tin
+4=ngược, phản;;fǎn;;phản
+5=đội trưởng
+6=lý; xử lý;;lǐ;;lý
+7=Nhật Bản
+8=chuyên gia
+9=cho đến (lúc)
+10=dụng cụ;;jù;;cụ
+11=nhà trọ
+12=tà ác
+13=mau lên
+14=không biết (văn viết)
+15=càng thêm
+16=tầng, lớp;;céng;;tằng
+17=đào
+18=mấy... (khá nhiều)
+19=miễn phí
+20=phong cách
+21=đau lòng
+22=mỗi lần
+23=lần theo dấu
+24=báo giấy
+25=kiểu; thức;;shì;;thức
+> 我一个人单独在家。 | Tôi ở nhà một mình.
+> 他是日本的专家。 | Ông ấy là chuyên gia của Nhật Bản.
+> 这里的咖啡是免费的。 | Cà phê ở đây là miễn phí.
+> 他每次都很伤心。 | Lần nào anh ấy cũng rất đau lòng.
+## F2-04 | Máy móc, màu sắc & vệ sinh
+1=máy móc
+2=nhét; tắc;;sāi;;tắc
+3=sa thải
+4=màu sắc
+5=không liên quan
+6=thời gian, năm tháng
+7=phóng viên
+8=nhanh nhất có thể
+9=vuông; phương;;fāng;;phương
+10=giá trị
+11=kỹ lưỡng
+12=sô-cô-la
+13=nữ sinh
+14=chọn lựa; gánh;;tiāo;;khiêu
+15=cay;;là;;lạt
+16=qua lại với nhau
+17=cắt; thái;;qiē;;thiết
+18=tuyển; chiêu;;zhāo;;chiêu
+19=tường;;qiáng;;tường
+20=rán ngập dầu;;zhá;;tạc
+21=chảy;;liú;;lưu
+22=nhà vệ sinh
+23=vô tội
+24=triệt để
+25=dựng; đáp;;dā;;đáp
+> 这个巧克力很甜。 | Sô-cô-la này rất ngọt.
+> 记者在外面等你。 | Phóng viên đang đợi bạn ở bên ngoài.
+> 厕所在哪里？ | Nhà vệ sinh ở đâu?
+> 请你仔细看看。 | Xin bạn xem kỹ một chút.
+## F2-05 | Quá trình, số phận & nhân dân
+1=tương, lẫn nhau;;xiāng;;tương
+2=quyền;;quán;;quyền
+3=lật; dịch;;fān;;phiên
+4=bày, đặt;;bǎi;;bãi
+5=quá trình
+6=lần trước
+7=xin, đăng ký
+8=ép, đè;;yā;;áp
+9=nướng
+10=thỉnh cầu
+11=nguyên, gốc;;yuán;;nguyên
+12=lễ Giáng Sinh
+13=nhân dân
+14=một vài
+15=sợ hãi tột độ
+16=số phận
+17=bàn luận
+18=tổ nhóm
+19=gây nên
+20=phát triển
+21=thành viên (phần tử);;fènzǐ;;phần tử
+22=người da trắng
+23=kinh ngạc
+24=đèn;;dēng;;đăng
+25=cái bàn
+> 上次的会议有什么结果？ | Cuộc họp lần trước có kết quả gì?
+> 我们的命运由我们决定。 | Số phận của chúng ta do chúng ta quyết định.
+> 桌子上有一个蛋糕。 | Trên bàn có một cái bánh ngọt.
+> 我想申请这个工作。 | Tôi muốn xin công việc này.
+## F2-06 | Tốt nghiệp, bếp núc & tâm trạng
+1=mong chờ; (phiên âm) ba;;bā;;ba
+2=tốt nghiệp
+3=luyện tập
+4=bóng tối
+5=sự nghiệp
+6=sân bay
+7=hơi, chút;;shāo;;sảo
+8=chỉ, vỏn vẹn;;jǐn;;cận
+9=không thể tưởng tượng
+10=kết; thắt;;jié;;kết
+11=ông nội
+12=nhà bếp
+13=chính thức
+14=đặc biệt (khác thường)
+15=kéo, xé
+16=chuyên ngành
+17=thật thà
+18=cơm tối
+19=thu hút
+20=binh sĩ
+21=thập niên, thời đại
+22=xanh lam;;lán;;lam
+23=từ đó đến nay
+24=tâm trạng
+25=buồn bã
+> 他去年毕业了。 | Năm ngoái anh ấy đã tốt nghiệp.
+> 爷爷在厨房做晚饭。 | Ông nội đang nấu cơm tối trong bếp.
+> 我今天心情不好，很难过。 | Hôm nay tâm trạng tôi không tốt, rất buồn.
+> 这个机场很大。 | Sân bay này rất lớn.

@@ -1,0 +1,210 @@
+## C4-01 | Thành ngữ: cảm xúc & phản ứng
+莫名其妙=chẳng hiểu ra sao
+目瞪口呆=trố mắt há miệng
+惊慌失措=hoảng hốt luống cuống
+哭笑不得=dở khóc dở cười
+欣喜若狂=mừng rỡ như điên
+怒不可遏=giận không kìm nổi
+垂头丧气=ủ rũ thất vọng
+心如刀割=lòng đau như cắt
+喜出望外=mừng ngoài mong đợi
+悲痛欲绝=đau thương tột cùng
+忐忑不安=thấp thỏm không yên
+不寒而栗=lạnh sống lưng
+毛骨悚然=sởn gai ốc
+心惊胆战=kinh hồn bạt vía
+咬牙切齿=nghiến răng căm hận
+目不转睛=nhìn không chớp mắt
+心急如焚=nóng lòng như lửa đốt
+兴高采烈=hớn hở vui mừng
+如释重负=nhẹ nhõm như trút gánh nặng
+欲哭无泪=muốn khóc cũng không ra nước mắt
+恍然大悟=chợt vỡ lẽ
+瞠目结舌=ngây người sững sờ
+魂飞魄散=hồn bay phách lạc
+无动于衷=thờ ơ chẳng động lòng
+五味杂陈=trăm mối cảm xúc ngổn ngang
+> 听到这个消息，他目瞪口呆。 | Nghe tin này, anh ta trố mắt há miệng.
+> 她一个人在家，心急如焚。 | Cô ấy ở nhà một mình, nóng lòng như lửa đốt.
+> 看到结局，我哭笑不得。 | Nhìn thấy cái kết, tôi dở khóc dở cười.
+> 他恍然大悟，原来是这样。 | Anh ta chợt vỡ lẽ, thì ra là như vậy.
+## C4-02 | Thành ngữ: chiến đấu & sinh tử
+势如破竹=thế như chẻ tre
+所向披靡=đánh đâu thắng đó
+以一敌百=một địch trăm
+刀光剑影=đao quang kiếm ảnh
+剑拔弩张=giương cung tuốt kiếm
+千钧一发=ngàn cân treo sợi tóc
+生死攸关=sinh tử liên quan
+同归于尽=cùng chết chung
+九死一生=thập tử nhất sinh
+死里逃生=thoát chết trong gang tấc
+背水一战=quyết chiến sống mái
+孤注一掷=đánh cược tất cả
+力挽狂澜=xoay chuyển tình thế
+趁火打劫=thừa nước đục thả câu
+乘虚而入=thừa cơ xâm nhập
+声东击西=giương đông kích tây
+欲擒故纵=muốn bắt cứ thả
+暗箭伤人=ám tiễn hại người
+不堪一击=không chịu nổi một đòn
+手下留情=nương tay
+赶尽杀绝=giết sạch không chừa
+斩草除根=nhổ cỏ tận gốc
+一网打尽=bắt gọn một mẻ
+兵临城下=binh lâm thành hạ
+旗鼓相当=ngang tài ngang sức
+> 这是一场生死攸关的战斗。 | Đây là một trận chiến liên quan đến sinh tử.
+> 两个人旗鼓相当，谁也赢不了。 | Hai người ngang tài ngang sức, không ai thắng nổi.
+> 他九死一生，终于回到了家。 | Anh ấy thập tử nhất sinh, cuối cùng cũng về đến nhà.
+> 请你手下留情，不要杀他。 | Xin ngươi nương tay, đừng giết hắn.
+## C4-03 | Thành ngữ: tình nghĩa & mưu hại
+忠心耿耿=trung thành tận tụy
+患难与共=chung hoạn nạn
+情同手足=tình như thủ túc
+恩重如山=ơn nặng như núi
+恩将仇报=lấy oán báo ơn
+忘恩负义=vong ơn bội nghĩa
+知恩图报=biết ơn báo đáp
+心心相印=tâm đầu ý hợp
+生死之交=bạn sinh tử
+两情相悦=hai bên cùng thương
+海誓山盟=thề non hẹn biển
+白头偕老=đầu bạc răng long
+青梅竹马=thanh mai trúc mã
+天长地久=thiên trường địa cửu
+形影不离=như hình với bóng
+同甘共苦=đồng cam cộng khổ
+反目成仇=trở mặt thành thù
+勾心斗角=đấu đá âm mưu
+笑里藏刀=miệng cười dao găm
+口蜜腹剑=miệng mật bụng gươm
+落井下石=ném đá xuống giếng
+狼狈为奸=cấu kết làm điều xấu
+同流合污=cùng một giuộc
+以德报怨=lấy đức báo oán
+肝胆相照=gan ruột thấu hiểu
+> 他们是青梅竹马，感情很好。 | Họ là thanh mai trúc mã, tình cảm rất tốt.
+> 我们要同甘共苦，白头偕老。 | Chúng ta phải đồng cam cộng khổ, đầu bạc răng long.
+> 他忘恩负义，我们不要相信他。 | Hắn vong ơn bội nghĩa, chúng ta đừng tin hắn.
+> 她笑里藏刀，我们要小心。 | Cô ta miệng cười dao găm, chúng ta phải cẩn thận.
+## C4-04 | Thành ngữ: tính cách & khí độ
+胸有成竹=nắm chắc phần thắng
+泰然自若=bình thản tự nhiên
+镇定自若=bình tĩnh tự tại
+不动声色=không động sắc mặt
+喜怒无常=thất thường mừng giận
+深藏不露=ẩn giấu không lộ
+高深莫测=sâu xa khó dò
+自命不凡=tự cho mình là phi phàm
+目中无人=coi người như không
+狂妄自大=ngông cuồng tự đại
+骄傲自满=kiêu căng tự mãn
+虚张声势=làm ra vẻ hùng hổ
+色厉内荏=ngoài cứng trong yếu
+胆小如鼠=nhát như chuột
+胆大包天=to gan lớn mật
+无法无天=không coi pháp luật ra gì
+恬不知耻=trơ trẽn không biết xấu hổ
+厚颜无耻=mặt dày vô sỉ
+老奸巨猾=gian xảo lọc lõi
+阴险狡诈=âm hiểm giảo hoạt
+心狠手辣=lòng độc tay ác
+铁石心肠=lòng dạ sắt đá
+优柔寡断=do dự thiếu quyết đoán
+宽宏大量=độ lượng rộng lòng
+光明磊落=ngay thẳng quang minh
+> 他看起来很普通，其实深藏不露。 | Hắn trông có vẻ bình thường, thật ra ẩn giấu không lộ.
+> 面对敌人，她依然泰然自若。 | Đối mặt kẻ địch, nàng vẫn bình thản tự nhiên.
+> 这个人心狠手辣，你要小心。 | Người này lòng độc tay ác, ngươi phải cẩn thận.
+> 他胆大包天，什么都敢做。 | Hắn to gan lớn mật, việc gì cũng dám làm.
+## C4-05 | Thành ngữ: thành bại & vận mệnh
+一帆风顺=thuận buồm xuôi gió
+否极泰来=hết cơn bĩ cực tới hồi thái lai
+时来运转=thời đến vận chuyển
+飞黄腾达=thăng tiến vùn vụt
+平步青云=bước thẳng lên mây xanh
+功成名就=công thành danh toại
+名扬天下=danh vang thiên hạ
+威震四方=uy chấn bốn phương
+一鸣惊人=một tiếng kinh người
+前功尽弃=công lao đổ sông đổ biển
+功亏一篑=thất bại sát nút
+半途而废=bỏ dở giữa chừng
+一败涂地=thất bại thảm hại
+走投无路=cùng đường bí lối
+穷途末路=đường cùng
+山穷水尽=núi cùng nước tận
+柳暗花明=liễu rủ hoa tươi (tình thế sáng ra)
+苦尽甘来=khổ tận cam lai
+东山再起=trỗi dậy trở lại
+卷土重来=quay lại mạnh mẽ
+起死回生=cải tử hoàn sinh
+绝处逢生=gặp đường sống giữa tuyệt cảnh
+白手起家=tay trắng làm nên
+大器晚成=đại khí vãn thành
+物极必反=vật cực tất phản
+> 他白手起家，终于功成名就。 | Anh ta tay trắng làm nên, cuối cùng công thành danh toại.
+> 别放弃，苦尽甘来的一天会到的。 | Đừng bỏ cuộc, ngày khổ tận cam lai sẽ đến.
+> 他以为已经走投无路，没想到柳暗花明。 | Hắn tưởng đã cùng đường, không ngờ tình thế sáng ra.
+> 这件事前功尽弃，太可惜了。 | Chuyện này công lao đổ sông đổ biển, tiếc quá.
+## C4-06 | Thành ngữ: vẻ đẹp & cảnh sắc
+倾国倾城=nghiêng nước nghiêng thành
+沉鱼落雁=chim sa cá lặn
+闭月羞花=bế nguyệt tu hoa
+国色天香=quốc sắc thiên hương
+花容月貌=hoa dung nguyệt mạo
+风华绝代=phong hoa tuyệt đại
+仪表堂堂=dáng vẻ đường hoàng
+玉树临风=ngọc thụ lâm phong
+英姿飒爽=anh tư hiên ngang
+美不胜收=đẹp không xiết kể
+山清水秀=non xanh nước biếc
+鸟语花香=chim hót hoa thơm
+风和日丽=gió nhẹ nắng đẹp
+阴云密布=mây đen kéo kín
+电闪雷鸣=chớp giật sấm rền
+天寒地冻=trời rét đất cóng
+万籁俱寂=muôn tiếng đều lặng
+灯火通明=đèn đuốc sáng trưng
+金碧辉煌=lộng lẫy huy hoàng
+富丽堂皇=tráng lệ nguy nga
+荒无人烟=hoang vắng không người
+一望无际=nhìn mãi không thấy bờ
+云雾缭绕=mây mù bao quanh
+波光粼粼=sóng nước lấp lánh
+繁花似锦=hoa nở rực rỡ như gấm
+> 她倾国倾城，所有人都看呆了。 | Nàng nghiêng nước nghiêng thành, ai cũng nhìn đến ngây người.
+> 这里山清水秀，鸟语花香。 | Nơi này non xanh nước biếc, chim hót hoa thơm.
+> 夜里，皇宫灯火通明。 | Ban đêm, hoàng cung đèn đuốc sáng trưng.
+> 眼前是一望无际的草原。 | Trước mắt là thảo nguyên nhìn mãi không thấy bờ.
+## C4-07 | Thành ngữ: tài trí & học thức
+聪明伶俐=thông minh lanh lợi;;cōng míng líng lì
+才华横溢=tài hoa xuất chúng
+博学多才=học rộng tài cao
+学富五车=học rộng năm xe sách
+才高八斗=tài cao bát đấu
+满腹经纶=đầy bụng kinh luân
+融会贯通=quán triệt thông suốt
+触类旁通=suy một hiểu mười
+茅塞顿开=chợt thông suốt
+出类拔萃=xuất chúng bạt tụy
+天资聪颖=bẩm sinh thông minh
+过目不忘=qua mắt không quên
+滔滔不绝=thao thao bất tuyệt
+妙语连珠=lời hay ý đẹp liền nhau
+巧舌如簧=miệng lưỡi khéo léo
+口若悬河=nói như suối chảy
+字字珠玑=từng chữ như châu ngọc
+文武双全=văn võ song toàn
+德高望重=đức cao vọng trọng
+鹤立鸡群=hạc đứng giữa bầy gà
+卧虎藏龙=ngọa hổ tàng long
+名不虚传=danh bất hư truyền
+名副其实=danh xứng với thực
+学以致用=học để vận dụng
+博古通今=thông kim bác cổ
+> 这个孩子天资聪颖，过目不忘。 | Đứa trẻ này bẩm sinh thông minh, qua mắt không quên.
+> 他文武双全，是个难得的人才。 | Hắn văn võ song toàn, là một nhân tài hiếm có.
+> 听了老师的话，我茅塞顿开。 | Nghe lời thầy giáo, tôi chợt thông suốt.
+> 这里卧虎藏龙，你要小心。 | Nơi này ngọa hổ tàng long, ngươi phải cẩn thận.

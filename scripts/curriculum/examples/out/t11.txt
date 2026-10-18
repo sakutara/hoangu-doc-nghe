@@ -1,0 +1,371 @@
+l3-79 | 他已经是中年人了，但还很爱运动。 | Ông ấy đã là người trung niên rồi nhưng vẫn rất thích thể thao.
+l3-79 | 今天在路上碰见了老同学。 | Hôm nay trên đường tôi tình cờ gặp bạn học cũ.
+l3-79 | 北京昨天下雪了，外面特别冷。 | Hôm qua Bắc Kinh có tuyết rơi, bên ngoài rất lạnh.
+l3-79 | 请帮我把这份文件打印出来。 | Làm ơn in giúp tôi tài liệu này.
+l3-79 | 考试前我们要好好复习。 | Trước kỳ thi chúng ta phải ôn tập cho kỹ.
+l3-79 | 课堂上请不要玩手机。 | Trong lớp học xin đừng chơi điện thoại.
+l3-79 | 抽烟对身体有很多坏处。 | Hút thuốc có rất nhiều tác hại cho sức khỏe.
+l3-79 | 这个城市在我们国家的西南。 | Thành phố này nằm ở phía tây nam đất nước chúng tôi.
+l4-1 | 他突然生气了，我觉得莫名其妙。 | Anh ấy đột nhiên nổi giận, tôi thấy chẳng hiểu ra sao.
+l4-1 | 听到警报声，大家都惊慌失措。 | Nghe tiếng còi báo động, mọi người đều hoảng hốt luống cuống.
+l4-1 | 他中了大奖，欣喜若狂。 | Anh ấy trúng giải lớn, mừng rỡ như điên.
+l4-1 | 看到弟弟撒谎，爸爸怒不可遏。 | Thấy em trai nói dối, bố giận không kìm nổi.
+l4-1 | 比赛输了以后，他垂头丧气地回家了。 | Sau khi thua trận, anh ấy ủ rũ thất vọng về nhà.
+l4-1 | 看着病重的母亲，她心如刀割。 | Nhìn mẹ bệnh nặng, lòng cô ấy đau như cắt.
+l4-1 | 收到录取通知书，她喜出望外。 | Nhận được giấy báo trúng tuyển, cô ấy mừng ngoài mong đợi.
+l4-1 | 等结果的时候，我忐忑不安。 | Lúc chờ kết quả, tôi thấp thỏm không yên.
+l4-1 | 这个故事让人不寒而栗。 | Câu chuyện này khiến người ta lạnh sống lưng.
+l4-1 | 夜里听到怪声，我毛骨悚然。 | Ban đêm nghe tiếng lạ, tôi sởn gai ốc.
+l4-1 | 坐过山车时，我吓得心惊胆战。 | Lúc đi tàu lượn, tôi sợ kinh hồn bạt vía.
+l4-1 | 他咬牙切齿地盯着对手。 | Anh ta nghiến răng căm hận nhìn chằm chằm đối thủ.
+l4-1 | 孩子们目不转睛地看着魔术表演。 | Bọn trẻ nhìn không chớp mắt xem màn ảo thuật.
+l4-1 | 考完试，他如释重负地笑了。 | Thi xong, anh ấy cười nhẹ nhõm như trút được gánh nặng.
+l4-1 | 手机丢了，我欲哭无泪。 | Mất điện thoại rồi, tôi muốn khóc cũng không ra nước mắt.
+l4-1 | 看到那个价格，我瞠目结舌。 | Thấy mức giá đó, tôi ngây người sững sờ.
+l4-1 | 别人都在哭，他却无动于衷。 | Người khác đều đang khóc, anh ta lại thờ ơ chẳng động lòng.
+l4-1 | 毕业那天，我心里五味杂陈。 | Ngày tốt nghiệp, trong lòng tôi trăm mối cảm xúc ngổn ngang.
+l4-2 | 我们的军队势如破竹，一路向前。 | Quân đội của chúng ta thế như chẻ tre, tiến lên suốt dọc đường.
+l4-2 | 这支球队所向披靡，没有对手。 | Đội bóng này đánh đâu thắng đó, không có đối thủ.
+l4-2 | 他武功高强，可以以一敌百。 | Anh ấy võ công cao cường, có thể một địch trăm.
+l4-2 | 电影里的战斗场面刀光剑影。 | Cảnh chiến đấu trong phim đao quang kiếm ảnh.
+l4-2 | 两国之间的气氛剑拔弩张。 | Bầu không khí giữa hai nước giương cung tuốt kiếm.
+l4-2 | 在千钧一发的时刻，他救了孩子。 | Vào lúc ngàn cân treo sợi tóc, anh ấy đã cứu đứa bé.
+l4-2 | 他想和敌人同归于尽。 | Anh ta muốn cùng chết chung với kẻ địch.
+l4-2 | 这次车祸他死里逃生。 | Vụ tai nạn xe lần này anh ấy thoát chết trong gang tấc.
+l4-2 | 最后一场比赛，我们只能背水一战。 | Trận cuối cùng, chúng ta chỉ có thể quyết chiến sống mái.
+l4-2 | 他把所有钱都投进去，孤注一掷。 | Anh ta bỏ hết tiền vào đó, đánh cược tất cả.
+l4-2 | 新经理力挽狂澜，救了公司。 | Giám đốc mới xoay chuyển tình thế, cứu được công ty.
+l4-2 | 趁火打劫的人最让人讨厌。 | Kẻ thừa nước đục thả câu là đáng ghét nhất.
+l4-2 | 小偷乘虚而入，偷走了东西。 | Tên trộm thừa cơ xâm nhập, lấy mất đồ.
+l4-2 | 他声东击西，骗过了对手。 | Anh ta giương đông kích tây, lừa được đối thủ.
+l4-2 | 他对朋友欲擒故纵，想试探他的心。 | Anh ta muốn bắt cứ thả với bạn để thăm dò lòng cậu ấy.
+l4-2 | 小心那个人，他最爱暗箭伤人。 | Cẩn thận người đó, hắn ta thích nhất là ám tiễn hại người.
+l4-2 | 对手太弱了，简直不堪一击。 | Đối thủ yếu quá, quả thật không chịu nổi một đòn.
+l4-2 | 他对敌人赶尽杀绝，一个也不放过。 | Hắn giết sạch kẻ địch, không tha một ai.
+l4-2 | 要解决问题，就得斩草除根。 | Muốn giải quyết vấn đề thì phải nhổ cỏ tận gốc.
+l4-2 | 警察把整个犯罪团伙一网打尽。 | Cảnh sát bắt gọn cả băng nhóm tội phạm một mẻ.
+l4-3 | 他对国家忠心耿耿。 | Ông ấy trung thành tận tụy với đất nước.
+l4-3 | 我们是患难与共的好朋友。 | Chúng tôi là bạn tốt chung hoạn nạn.
+l4-3 | 他们俩情同手足，从小一起长大。 | Hai người họ tình như thủ túc, cùng nhau lớn lên từ nhỏ.
+l4-3 | 老师对我恩重如山。 | Thầy giáo có ơn nặng như núi với tôi.
+l4-3 | 她是个知恩图报的人。 | Cô ấy là người biết ơn báo đáp.
+l4-3 | 他们心心相印，不用说话也明白。 | Họ tâm đầu ý hợp, không cần nói cũng hiểu.
+l4-3 | 我们是生死之交，什么都可以说。 | Chúng tôi là bạn sinh tử, chuyện gì cũng có thể nói.
+l4-3 | 他们两情相悦，决定结婚。 | Hai người họ cùng thương nhau, quyết định kết hôn.
+l4-3 | 当年他们海誓山盟，说要永远在一起。 | Năm xưa họ thề non hẹn biển, nói sẽ mãi bên nhau.
+l4-3 | 祝你们爱情天长地久。 | Chúc tình yêu của hai bạn thiên trường địa cửu.
+l4-3 | 这对双胞胎姐妹形影不离。 | Cặp chị em sinh đôi này như hình với bóng.
+l4-3 | 他们为了钱反目成仇。 | Họ vì tiền mà trở mặt thành thù.
+l4-3 | 公司里的人勾心斗角，我很累。 | Người trong công ty đấu đá âm mưu, tôi rất mệt.
+l4-3 | 他口蜜腹剑，你千万别相信他。 | Hắn miệng mật bụng gươm, bạn tuyệt đối đừng tin hắn.
+l4-3 | 别人有困难时，不要落井下石。 | Khi người khác gặp khó khăn, đừng ném đá xuống giếng.
+l4-3 | 那两个人狼狈为奸，骗了很多人。 | Hai người đó cấu kết làm điều xấu, lừa rất nhiều người.
+l4-3 | 我不愿意和他们同流合污。 | Tôi không muốn cùng một giuộc với bọn họ.
+l4-3 | 他以德报怨，原谅了对方。 | Anh ấy lấy đức báo oán, tha thứ cho đối phương.
+l4-3 | 两位老朋友肝胆相照，无话不谈。 | Hai người bạn cũ gan ruột thấu hiểu, chuyện gì cũng nói.
+l4-4 | 他对这次面试胸有成竹。 | Anh ấy nắm chắc phần thắng trong buổi phỏng vấn lần này.
+l4-4 | 遇到危险，她依然镇定自若。 | Gặp nguy hiểm, cô ấy vẫn bình tĩnh tự tại.
+l4-4 | 听到坏消息，他不动声色。 | Nghe tin xấu, anh ấy không động sắc mặt.
+l4-4 | 我的老板喜怒无常，很难相处。 | Sếp tôi thất thường mừng giận, rất khó sống chung.
+l4-4 | 这位大师高深莫测，没人看得懂他。 | Vị đại sư này sâu xa khó dò, không ai hiểu được ông ấy.
+l4-4 | 他总是自命不凡，看不起别人。 | Anh ta lúc nào cũng tự cho mình là phi phàm, coi thường người khác.
+l4-4 | 他走路都目中无人。 | Anh ta đi đường cũng coi người như không.
+l4-4 | 他说话狂妄自大，大家都不喜欢。 | Anh ta nói chuyện ngông cuồng tự đại, mọi người đều không thích.
+l4-4 | 取得一点成绩就骄傲自满，可不好。 | Mới có chút thành tích đã kiêu căng tự mãn thì không tốt.
+l4-4 | 他只是虚张声势，其实很害怕。 | Anh ta chỉ làm ra vẻ hùng hổ, thật ra rất sợ.
+l4-4 | 他看起来很凶，其实是色厉内荏。 | Anh ta trông rất dữ, thật ra là ngoài cứng trong yếu.
+l4-4 | 他胆小如鼠，连黑夜都怕。 | Anh ta nhát như chuột, đến cả đêm tối cũng sợ.
+l4-4 | 这群人无法无天，什么坏事都敢做。 | Đám người này không coi pháp luật ra gì, việc xấu nào cũng dám làm.
+l4-4 | 做错了事还恬不知耻地笑。 | Làm sai mà còn cười trơ trẽn không biết xấu hổ.
+l4-4 | 他厚颜无耻，借了钱还不还。 | Hắn mặt dày vô sỉ, mượn tiền mà không trả.
+l4-4 | 那个老奸巨猾的商人骗了很多人。 | Tên thương nhân gian xảo lọc lõi đó đã lừa rất nhiều người.
+l4-4 | 他阴险狡诈，大家都要提防他。 | Hắn âm hiểm giảo hoạt, mọi người đều phải đề phòng.
+l4-4 | 他铁石心肠，不会同情任何人。 | Ông ta lòng dạ sắt đá, không thương hại bất cứ ai.
+l4-4 | 他做事优柔寡断，总是下不了决心。 | Anh ấy làm việc do dự thiếu quyết đoán, luôn không quyết được.
+l4-4 | 校长为人宽宏大量，原谅了学生。 | Hiệu trưởng là người độ lượng rộng lòng, đã tha thứ cho học sinh.
+l4-4 | 他做人光明磊落，从不说谎。 | Anh ấy sống ngay thẳng quang minh, chưa bao giờ nói dối.
+l4-5 | 祝你工作一帆风顺！ | Chúc bạn công việc thuận buồm xuôi gió!
+l4-5 | 否极泰来，好运终于来了。 | Hết cơn bĩ cực tới hồi thái lai, vận may cuối cùng cũng đến.
+l4-5 | 他时来运转，生意越做越好。 | Anh ấy thời đến vận chuyển, việc làm ăn ngày càng tốt.
+l4-5 | 他很快就飞黄腾达，成了大老板。 | Anh ấy nhanh chóng thăng tiến vùn vụt, trở thành ông chủ lớn.
+l4-5 | 他在公司里平步青云，升得很快。 | Anh ấy trong công ty bước thẳng lên mây xanh, thăng chức rất nhanh.
+l4-5 | 这位作家的作品名扬天下。 | Tác phẩm của nhà văn này danh vang thiên hạ.
+l4-5 | 他当年威震四方，没人敢惹。 | Năm xưa ông ấy uy chấn bốn phương, không ai dám động vào.
+l4-5 | 这个新人一鸣惊人，拿了冠军。 | Người mới này một tiếng kinh người, giành chức vô địch.
+l4-5 | 就差一点点，真是功亏一篑。 | Chỉ thiếu một chút nữa thôi, thật là thất bại sát nút.
+l4-5 | 学习不能半途而废。 | Học tập không thể bỏ dở giữa chừng.
+l4-5 | 他的公司一败涂地，欠了很多钱。 | Công ty của anh ấy thất bại thảm hại, nợ rất nhiều tiền.
+l4-5 | 他已经走到穷途末路了。 | Anh ta đã đi đến đường cùng rồi.
+l4-5 | 公司到了山穷水尽的地步。 | Công ty đã đến bước núi cùng nước tận.
+l4-5 | 他失败后又东山再起，重新开了公司。 | Sau khi thất bại anh ấy trỗi dậy trở lại, mở lại công ty.
+l4-5 | 这支球队明年一定会卷土重来。 | Đội bóng này sang năm nhất định sẽ quay lại mạnh mẽ.
+l4-5 | 这位医生让病人起死回生。 | Vị bác sĩ này khiến bệnh nhân cải tử hoàn sinh.
+l4-5 | 在最危险的时候，他绝处逢生。 | Vào lúc nguy hiểm nhất, anh ấy gặp đường sống giữa tuyệt cảnh.
+l4-5 | 他四十岁才成名，真是大器晚成。 | Bốn mươi tuổi anh ấy mới nổi tiếng, đúng là đại khí vãn thành.
+l4-5 | 物极必反，太热了也会下雨。 | Vật cực tất phản, nóng quá thì cũng sẽ mưa.
+l4-6 | 她美得沉鱼落雁，人人称赞。 | Cô ấy đẹp đến chim sa cá lặn, ai cũng khen.
+l4-6 | 她花容月貌，吸引了很多人。 | Cô ấy hoa dung nguyệt mạo, thu hút rất nhiều người.
+l4-6 | 这位老演员年轻时风华绝代。 | Nữ diễn viên già này thời trẻ phong hoa tuyệt đại.
+l4-6 | 他仪表堂堂，很有精神。 | Anh ấy dáng vẻ đường hoàng, rất có tinh thần.
+l4-6 | 他穿上西装，玉树临风。 | Anh ấy mặc vest vào, ngọc thụ lâm phong.
+l4-6 | 女兵们英姿飒爽地走过来。 | Các nữ binh anh tư hiên ngang bước tới.
+l4-6 | 秋天的山里美不胜收。 | Núi non mùa thu đẹp không xiết kể.
+l4-6 | 今天风和日丽，我们去公园玩吧。 | Hôm nay gió nhẹ nắng đẹp, chúng ta đi công viên chơi nhé.
+l4-6 | 天空阴云密布，快要下雨了。 | Bầu trời mây đen kéo kín, sắp mưa rồi.
+l4-6 | 昨晚电闪雷鸣，我没睡好。 | Tối qua chớp giật sấm rền, tôi ngủ không ngon.
+l4-6 | 冬天天寒地冻，大家都穿得很厚。 | Mùa đông trời rét đất cóng, ai cũng mặc rất dày.
+l4-6 | 深夜里万籁俱寂，只听到风声。 | Đêm khuya muôn tiếng đều lặng, chỉ nghe tiếng gió.
+l4-6 | 酒店的大厅富丽堂皇。 | Đại sảnh của khách sạn tráng lệ nguy nga.
+l4-6 | 沙漠里荒无人烟，什么也没有。 | Trong sa mạc hoang vắng không người, chẳng có gì cả.
+l4-6 | 湖面波光粼粼，真漂亮。 | Mặt hồ sóng nước lấp lánh, thật đẹp.
+l4-6 | 春天的花园里繁花似锦。 | Vườn hoa mùa xuân hoa nở rực rỡ như gấm.
+l4-7 | 这个小女孩聪明伶俐，大家都喜欢她。 | Cô bé này thông minh lanh lợi, ai cũng quý.
+l4-7 | 他是一位才华横溢的音乐家。 | Anh ấy là một nhạc sĩ tài hoa xuất chúng.
+l4-7 | 王教授博学多才，什么都懂。 | Giáo sư Vương học rộng tài cao, cái gì cũng biết.
+l4-7 | 他读了很多书，学富五车。 | Ông ấy đọc rất nhiều sách, học rộng năm xe sách.
+l4-7 | 古人称赞他才高八斗。 | Người xưa khen ông ấy tài cao bát đấu.
+l4-7 | 这位老先生满腹经纶。 | Vị lão tiên sinh này đầy bụng kinh luân.
+l4-7 | 学习要融会贯通，不能只背书。 | Học tập phải quán triệt thông suốt, không thể chỉ học thuộc.
+l4-7 | 他很会触类旁通，一学就会。 | Anh ấy rất biết suy một hiểu mười, học là biết.
+l4-7 | 她在班里出类拔萃。 | Cô ấy xuất chúng bạt tụy trong lớp.
+l4-7 | 他讲起故事来滔滔不绝。 | Anh ấy kể chuyện thao thao bất tuyệt.
+l4-7 | 主持人妙语连珠，观众笑个不停。 | Người dẫn chương trình lời hay ý đẹp liền nhau, khán giả cười không ngớt.
+l4-7 | 这个销售巧舌如簧，很会说服人。 | Nhân viên bán hàng này miệng lưỡi khéo léo, rất biết thuyết phục.
+l4-7 | 他一谈到足球就口若悬河。 | Hễ nói đến bóng đá là anh ấy nói như suối chảy.
+l4-7 | 这篇文章字字珠玑，很值得读。 | Bài văn này từng chữ như châu ngọc, rất đáng đọc.
+l4-7 | 他是一位德高望重的老师。 | Ông ấy là một người thầy đức cao vọng trọng.
+l4-7 | 她个子很高，站在人群中鹤立鸡群。 | Cô ấy rất cao, đứng giữa đám đông như hạc đứng giữa bầy gà.
+l4-7 | 这家餐厅果然名不虚传。 | Nhà hàng này quả nhiên danh bất hư truyền.
+l4-7 | 他是名副其实的专家。 | Ông ấy là chuyên gia danh xứng với thực.
+l4-7 | 读书要学以致用。 | Đọc sách phải học để vận dụng.
+l4-7 | 这位历史学家博古通今。 | Nhà sử học này thông kim bác cổ.
+l4-8 | 十年过去，这里发生了天翻地覆的变化。 | Mười năm trôi qua, nơi đây xảy ra biến đổi trời long đất lở.
+l4-8 | 大风一吹，飞沙走石。 | Gió lớn thổi tới, cát bay đá chạy.
+l4-8 | 神仙能呼风唤雨。 | Thần tiên có thể hô phong hoán vũ.
+l4-8 | 他腾云驾雾，飞到了天上。 | Ông ấy đằng vân giá vụ, bay lên trời.
+l4-8 | 那个侠客神出鬼没，没人抓得到。 | Vị hiệp khách đó thần xuất quỷ một, không ai bắt được.
+l4-8 | 吃了仙丹就能返老还童。 | Ăn tiên đan vào là có thể hoàn lão hoàn đồng.
+l4-8 | 他修行千年，终于修成正果。 | Ông ấy tu hành ngàn năm, cuối cùng tu thành chánh quả.
+l4-8 | 一场大火后，房子灰飞烟灭。 | Sau trận cháy lớn, căn nhà tro bay khói tan.
+l4-8 | 一旦掉进深渊，就万劫不复。 | Một khi rơi vào vực sâu thì vạn kiếp bất phục.
+l4-8 | 他被美女迷得神魂颠倒。 | Anh ta bị người đẹp mê đến thần hồn điên đảo.
+l4-8 | 小说里说，他吃了灵药后洗经伐髓。 | Trong tiểu thuyết nói, sau khi uống linh dược anh ta tẩy kinh phạt tủy.
+l4-8 | 经过长期训练，他百炼成钢。 | Trải qua huấn luyện lâu dài, anh ấy trăm luyện thành thép.
+l4-8 | 做这种坏事，天地不容！ | Làm chuyện xấu thế này, trời đất bất dung!
+l4-8 | 这位仙人法力无边。 | Vị tiên nhân này pháp lực vô biên.
+l4-8 | 关键时刻，他大显神通，打败了妖怪。 | Lúc then chốt, ông ấy thi triển thần thông, đánh bại yêu quái.
+l4-8 | 山洞里传来鬼哭狼嚎的声音。 | Trong hang núi vọng ra tiếng quỷ khóc sói gào.
+l4-9 | 不努力就想成功，那是守株待兔。 | Không cố gắng mà muốn thành công thì là ôm cây đợi thỏ.
+l4-9 | 别做井底之蛙，要多出去看看。 | Đừng làm ếch ngồi đáy giếng, hãy ra ngoài nhìn nhiều hơn.
+l4-9 | 他想掩耳盗铃，可是大家都知道了。 | Anh ta muốn bịt tai trộm chuông nhưng mọi người đều biết rồi.
+l4-9 | 时代变了，不能刻舟求剑。 | Thời đại đã đổi, không thể khắc thuyền tìm kiếm.
+l4-9 | 出了问题再改，也算亡羊补牢。 | Xảy ra vấn đề rồi mới sửa cũng coi như mất bò mới lo làm chuồng.
+l4-9 | 他只是狐假虎威，没有真本事。 | Hắn chỉ là cáo mượn oai hùm, không có bản lĩnh thật.
+l4-9 | 他说喜欢读书，其实是叶公好龙。 | Anh ấy nói thích đọc sách, thật ra là Diệp Công thích rồng.
+l4-9 | 跟他讲道理，简直是对牛弹琴。 | Nói lý với anh ta thì đúng là đàn gảy tai trâu.
+l4-9 | 最后一句话真是画龙点睛。 | Câu cuối cùng thật là vẽ rồng điểm mắt.
+l4-9 | 两家公司鹬蚌相争，第三家得了好处。 | Hai công ty cò vạc tranh nhau, công ty thứ ba được lợi.
+l4-9 | 只看包装不看东西，等于买椟还珠。 | Chỉ nhìn bao bì không nhìn đồ bên trong thì khác nào mua hộp trả ngọc.
+l4-9 | 想想美食只是望梅止渴。 | Nghĩ đến món ngon chỉ là ngắm mơ giải khát.
+l4-9 | 这件文物完璧归赵了。 | Món cổ vật này đã được trả ngọc về Triệu.
+l4-9 | 他吓得草木皆兵，一点声音都怕。 | Anh ta sợ đến thảo mộc giai binh, chút tiếng động cũng sợ.
+l4-9 | 他在国外玩得乐不思蜀。 | Anh ấy ở nước ngoài chơi vui quên đường về.
+l4-9 | 他这样做是作茧自缚。 | Anh ta làm vậy là tự trói trong kén.
+l4-9 | 只要有愚公移山的精神，就能成功。 | Chỉ cần có tinh thần ngu công dời núi thì sẽ thành công.
+l4-10 | 他做事谨小慎微，很少出错。 | Anh ấy làm việc thận trọng từng li, rất ít khi sai.
+l4-10 | 她小心翼翼地拿起杯子。 | Cô ấy cẩn thận từng ly từng tí cầm cái ly lên.
+l4-10 | 在新公司，我如履薄冰。 | Ở công ty mới, tôi như giẫm trên băng mỏng.
+l4-10 | 这是我深思熟虑后的决定。 | Đây là quyết định sau khi tôi suy tính kỹ càng.
+l4-10 | 出门前带伞，这叫未雨绸缪。 | Ra khỏi nhà mang ô, đó gọi là lo trước khi mưa.
+l4-10 | 安全工作要防患未然。 | Công tác an toàn phải phòng họa chưa xảy ra.
+l4-10 | 到时候再见机行事吧。 | Đến lúc đó rồi hãy tùy cơ ứng biến nhé.
+l4-10 | 好的销售要懂得随机应变。 | Nhân viên bán hàng giỏi phải biết ứng biến linh hoạt.
+l4-10 | 老师因势利导，让学生自己思考。 | Thầy giáo thuận thế dẫn dắt, để học sinh tự suy nghĩ.
+l4-10 | 他顺水推舟，答应了这件事。 | Anh ấy thuận nước đẩy thuyền, nhận lời việc này.
+l4-10 | 做事要量力而行。 | Làm việc phải liệu sức mà làm.
+l4-10 | 在力所能及的范围内，我会帮你。 | Trong phạm vi khả năng, tôi sẽ giúp bạn.
+l4-10 | 为了比赛，我们要全力以赴。 | Vì cuộc thi, chúng ta phải dốc hết sức lực.
+l4-10 | 医生们尽心竭力地救治病人。 | Các bác sĩ tận tâm tận lực cứu chữa bệnh nhân.
+l4-10 | 他夜以继日地工作。 | Anh ấy làm việc ngày đêm không nghỉ.
+l4-10 | 知识要靠日积月累。 | Kiến thức phải dựa vào ngày tích tháng lũy.
+l4-10 | 学外语要有锲而不舍的精神。 | Học ngoại ngữ cần có tinh thần kiên trì không bỏ.
+l4-10 | 他做的菜总是精益求精。 | Món ăn anh ấy nấu luôn càng giỏi càng cầu tinh.
+l4-10 | 会计做账一丝不苟。 | Kế toán làm sổ sách không cẩu thả chút nào.
+l4-10 | 年轻人应该自强不息。 | Người trẻ nên tự cường không ngừng.
+l4-11 | 节日里，成千上万的人来到广场。 | Ngày lễ, hàng nghìn hàng vạn người đến quảng trường.
+l4-11 | 天上的星星数不胜数。 | Sao trên trời đếm không xuể.
+l4-11 | 会说这种方言的人屈指可数。 | Người nói được phương ngữ này đếm trên đầu ngón tay.
+l4-11 | 今天来参加会议的人寥寥无几。 | Hôm nay người đến họp thưa thớt vài ba.
+l4-11 | 超市里的商品琳琅满目。 | Hàng hóa trong siêu thị đủ loại bắt mắt.
+l4-11 | 这家商店里应有尽有。 | Cửa hàng này cái gì cũng có.
+l4-11 | 新家的家具一应俱全。 | Đồ đạc trong nhà mới đầy đủ mọi thứ.
+l4-11 | 月底我的钱包空空如也。 | Cuối tháng ví của tôi trống rỗng.
+l4-11 | 黑板上写满了密密麻麻的字。 | Trên bảng đen viết đầy những chữ chi chít.
+l4-11 | 小岛在海上星罗棋布。 | Các hòn đảo nhỏ dày đặc như sao trời trên biển.
+l4-11 | 马路上车辆川流不息。 | Trên đường xe cộ dòng người không dứt.
+l4-11 | 大家七嘴八舌地讨论起来。 | Mọi người bảy mồm tám lưỡi bàn luận.
+l4-11 | 这件事引起了网友议论纷纷。 | Chuyện này khiến cư dân mạng bàn tán xôn xao.
+l4-11 | 对这个问题，专家们众说纷纭。 | Về vấn đề này, các chuyên gia ý kiến lộn xộn.
+l4-11 | 他的房间杂乱无章。 | Phòng của anh ấy hỗn độn vô trật tự.
+l4-11 | 她把书架整理得井井有条。 | Cô ấy sắp xếp giá sách ngăn nắp gọn gàng.
+l4-11 | 老朋友们天南地北地聊了一晚上。 | Những người bạn cũ nói chuyện trời nam đất bắc cả buổi tối.
+l4-12 | 比赛结果出乎意料。 | Kết quả trận đấu ngoài dự liệu.
+l4-12 | 这么大的变化是我们始料未及的。 | Biến đổi lớn thế này là điều chúng tôi chưa lường trước.
+l4-12 | 突然停电，让我们措手不及。 | Đột nhiên mất điện, khiến chúng tôi trở tay không kịp.
+l4-12 | 孩子迫不及待地打开礼物。 | Đứa bé nóng lòng không đợi được mà mở quà.
+l4-12 | 父母照顾孩子是理所当然的。 | Cha mẹ chăm sóc con cái là lẽ đương nhiên.
+l4-12 | 事已至此，我也无可奈何。 | Sự việc đã đến nước này, tôi cũng bó tay đành chịu.
+l4-12 | 这件事我实在无能为力。 | Việc này tôi thật sự lực bất tòng tâm.
+l4-12 | 面对难题，大家都束手无策。 | Đối mặt với nan đề, mọi người đều bó tay không kế.
+l4-12 | 这个问题让经理一筹莫展。 | Vấn đề này khiến giám đốc không một kế sách.
+l4-12 | 两个都想要，我左右为难。 | Cả hai đều muốn, tôi khó xử cả hai bề.
+l4-12 | 事情已经开始，现在骑虎难下。 | Việc đã bắt đầu, giờ cưỡi hổ khó xuống.
+l4-12 | 打价格战只会两败俱伤。 | Đánh nhau về giá chỉ khiến cả hai cùng thiệt.
+l4-12 | 为了省钱花很多时间，真是得不偿失。 | Vì tiết kiệm tiền mà tốn nhiều thời gian, thật là được không bù mất.
+l4-12 | 他想帮忙，结果却事与愿违。 | Anh ấy muốn giúp nhưng kết quả lại trái ý nguyện.
+l4-12 | 他想修好电脑，结果弄巧成拙。 | Anh ấy muốn sửa máy tính, kết quả khôn quá hóa dại.
+l4-12 | 做坏事的人终会自食其果。 | Người làm chuyện xấu cuối cùng sẽ gieo gió gặt bão.
+l4-13 | 这对双胞胎长得一模一样。 | Cặp song sinh này giống y hệt nhau.
+l4-13 | 这道菜的咸淡恰到好处。 | Độ mặn nhạt của món này vừa vặn đúng chỗ.
+l4-13 | 众所周知，地球是圆的。 | Ai cũng biết, Trái Đất tròn.
+l4-13 | 显而易见，他在说谎。 | Rõ ràng hiển nhiên, anh ta đang nói dối.
+l4-13 | 这张图表一目了然。 | Biểu đồ này nhìn là hiểu ngay.
+l4-13 | 不知不觉，已经到了冬天。 | Không hay không biết, đã đến mùa đông rồi.
+l4-13 | 他年复一年地做同样的工作。 | Anh ấy năm này qua năm khác làm cùng một công việc.
+l4-13 | 他一如既往地早起跑步。 | Anh ấy như mọi khi dậy sớm chạy bộ.
+l4-13 | 每个人都是独一无二的。 | Mỗi người đều là độc nhất vô nhị.
+l4-13 | 商店里有各式各样的衣服。 | Trong cửa hàng có đủ kiểu đủ loại quần áo.
+l4-13 | 网上的广告五花八门。 | Quảng cáo trên mạng muôn hình vạn trạng.
+l4-13 | 他千方百计想考上大学。 | Anh ấy trăm phương ngàn kế muốn thi đỗ đại học.
+l4-13 | 他常常自言自语，像在背书。 | Anh ấy thường tự nói một mình, như đang học thuộc bài.
+l4-13 | 夜市的小吃让人目不暇接。 | Đồ ăn vặt ở chợ đêm khiến người ta nhìn không xuể.
+l4-13 | 听到好听的歌，我不由自主地笑了。 | Nghe bài hát hay, tôi không thể tự chủ mà mỉm cười.
+l4-13 | 上课时，他全神贯注地听讲。 | Trong giờ học, anh ấy hết sức tập trung nghe giảng.
+l4-13 | 大家聚精会神地看着屏幕。 | Mọi người tập trung tinh thần nhìn màn hình.
+l4-13 | 他在旁边小声嘀咕，我听不清。 | Anh ấy ở bên cạnh nói thầm, tôi nghe không rõ.
+l4-13 | 客人突然来了，我手忙脚乱。 | Khách bỗng đến, tôi chân tay luống cuống.
+l4-14 | 周末我常常在家无所事事。 | Cuối tuần tôi thường ở nhà rảnh rỗi không có việc gì làm.
+l4-14 | 他总是自以为是，不听别人的意见。 | Anh ta luôn tự cho mình là đúng, không nghe ý kiến người khác.
+l4-14 | 他一意孤行，结果失败了。 | Anh ta một mực làm theo ý mình, kết quả thất bại.
+l4-14 | 这是你自作自受，怪不得别人。 | Đây là bạn tự làm tự chịu, không trách người khác được.
+l4-14 | 非要熬夜工作，真是自讨苦吃。 | Nhất định thức đêm làm việc, đúng là tự chuốc khổ.
+l4-14 | 他被开除是咎由自取。 | Anh ta bị đuổi việc là tự chuốc lấy.
+l4-14 | 她看着我，欲言又止。 | Cô ấy nhìn tôi, muốn nói lại thôi.
+l4-14 | 他言而无信，没有人再相信他。 | Anh ta nói mà không giữ lời, không ai tin anh ta nữa.
+l4-14 | 那就这么说定了，一言为定！ | Vậy quyết định thế nhé, một lời đã định!
+l4-14 | 经理当机立断，取消了计划。 | Giám đốc quyết đoán đúng lúc, hủy bỏ kế hoạch.
+l4-14 | 他斩钉截铁地拒绝了。 | Anh ấy từ chối dứt khoát chắc nịch.
+l4-14 | 消防员奋不顾身地冲进火场。 | Lính cứu hỏa quên mình xông vào đám cháy.
+l4-14 | 他舍己为人，把大衣让给了老人。 | Anh ấy hy sinh vì người, nhường áo khoác cho cụ già.
+l4-14 | 他见义勇为，抓住了小偷。 | Anh ấy thấy việc nghĩa dũng cảm làm, bắt được tên trộm.
+l4-14 | 地震后，很多人无家可归。 | Sau động đất, rất nhiều người không nhà để về.
+l4-14 | 战争让无数人流离失所。 | Chiến tranh khiến vô số người lưu lạc không nơi nương tựa.
+l4-14 | 为了工作，他背井离乡去了南方。 | Vì công việc, anh ấy bỏ quê xa nhà đi miền Nam.
+l4-15 | 现在大家工作都很内卷。 | Bây giờ mọi người đều cạnh tranh công việc rất nội quyển.
+l4-15 | 他累了，想躺平一段时间。 | Anh ấy mệt rồi, muốn nằm thẳng một thời gian.
+l4-15 | 考试没考好，他干脆摆烂了。 | Thi không tốt, anh ấy dứt khoát buông thả mặc kệ.
+l4-15 | 我天天加班，真是个社畜。 | Ngày nào tôi cũng tăng ca, đúng là nô lệ công sở.
+l4-15 | 他上班总在划水，不干活。 | Anh ta đi làm toàn làm cho có, không làm việc thật.
+l4-15 | 他拼命加班，是公司的卷王。 | Anh ấy liều mạng tăng ca, là vua nội quyển của công ty.
+l4-15 | 她活得很佛系，什么都不争。 | Cô ấy sống rất phật hệ, chẳng tranh giành gì.
+l4-15 | 最近他很丧，什么都不想做。 | Dạo này anh ấy rất chán nản u ám, chẳng muốn làm gì.
+l4-15 | 我有点社恐，不敢在人多的地方说话。 | Tôi hơi sợ giao tiếp xã hội, không dám nói chuyện nơi đông người.
+l4-15 | 他是个社牛，和谁都能聊起来。 | Anh ấy là người hướng ngoại vô đối, nói chuyện được với bất kỳ ai.
+l4-15 | 我以前是学渣，数学总不及格。 | Trước đây tôi là học dốt, môn toán toàn trượt.
+l4-15 | 工厂倒闭后，他就下岗了。 | Sau khi nhà máy phá sản, anh ấy bị thất nghiệp mất việc.
+l4-15 | 他没找好新工作就裸辞了。 | Anh ấy chưa tìm được việc mới đã nghỉ việc.
+l4-15 | 她下班后做副业，赚点外快。 | Cô ấy sau giờ làm làm nghề tay trái, kiếm thêm chút tiền.
+l4-15 | 他是个斜杠青年，既当老师又做设计。 | Anh ấy là thanh niên đa nghề, vừa làm thầy vừa làm thiết kế.
+l4-15 | 学会时间管理，效率会更高。 | Học được quản lý thời gian thì hiệu suất sẽ cao hơn.
+l4-15 | 我每周五都要写周报。 | Thứ Sáu hàng tuần tôi đều phải viết báo cáo tuần.
+l4-15 | 出了问题，他就想甩锅给别人。 | Có vấn đề là anh ta muốn đổ lỗi cho người khác.
+l4-15 | 我又要替同事背锅了。 | Tôi lại phải gánh tội thay đồng nghiệp rồi.
+l4-16 | 有人爆料说，这位明星要结婚了。 | Có người tung tin nóng rằng ngôi sao này sắp kết hôn.
+l4-16 | 他的偶像塌房了，他很难过。 | Thần tượng của anh ấy sụp đổ hình tượng, anh ấy rất buồn.
+l4-16 | 大家都来为他打call！ | Mọi người đều đến cổ vũ ủng hộ anh ấy!
+l4-16 | 粉丝们为歌手准备了应援灯牌。 | Người hâm mộ chuẩn bị bảng đèn ứng viên cổ vũ cho ca sĩ.
+l4-16 | 这位明星带货，一晚上卖了很多东西。 | Ngôi sao này bán hàng qua người nổi tiếng, một tối bán được rất nhiều đồ.
+l4-16 | 她是一名人气很高的主播。 | Cô ấy là một streamer rất nổi tiếng.
+l4-16 | 观众给主播打赏了很多礼物。 | Khán giả tặng quà thưởng cho streamer rất nhiều.
+l4-16 | 这条新闻刷屏了，到处都能看到。 | Tin này tràn màn hình, đâu đâu cũng thấy.
+l4-16 | 他的视频很沙雕，看得我大笑。 | Video của anh ấy ngớ ngẩn hài hước, xem mà tôi cười lớn.
+l4-16 | 这家店的蛋糕绝绝子！ | Bánh ngọt của quán này đỉnh quá!
+l4-16 | 看到这个视频，我蚌埠住了。 | Xem video này, tôi không nhịn nổi.
+l4-16 | 我们赢了！芜湖！ | Chúng ta thắng rồi! Ồ hố!
+l4-16 | 啊这，我不知道该说什么。 | Ơ này, tôi không biết nên nói gì.
+l4-16 | 他说的话让我很无语。 | Lời anh ấy nói khiến tôi cạn lời.
+l4-16 | 你帮了我大忙，栓Q！ | Bạn giúp tôi việc lớn, cảm ơn nha!
+l4-16 | 这条消息很重要，请大家转发。 | Tin này rất quan trọng, mong mọi người chia sẻ lại.
+l4-16 | 他发的广告太多，我就取关了。 | Anh ấy đăng quảng cáo quá nhiều nên tôi bỏ theo dõi.
+l4-17 | 我又是一个单身狗，周末没人约。 | Tôi lại là chó độc thân, cuối tuần chẳng ai hẹn.
+l4-17 | 他是个暖男，很会照顾人。 | Anh ấy là chàng trai ấm áp, rất biết chăm sóc người khác.
+l4-17 | 他骗了她很多次，真是个渣男。 | Anh ta lừa cô ấy nhiều lần, đúng là đàn ông tồi.
+l4-17 | 她不想只当他的备胎。 | Cô ấy không muốn chỉ làm lốp dự phòng của anh ta.
+l4-17 | 他们的关系有点暧昧。 | Quan hệ của họ hơi mập mờ.
+l4-17 | 他终于向她表白了。 | Cuối cùng anh ấy đã tỏ tình với cô ấy.
+l4-17 | 他鼓起勇气，向她告白。 | Anh ấy lấy hết can đảm, thổ lộ với cô.
+l4-17 | 我最爱磕糖，看他们谈恋爱。 | Tôi thích nhất là hóng chuyện tình của họ.
+l4-17 | 他们天天在朋友圈虐狗。 | Ngày nào họ cũng khoe tình cảm trên vòng bạn bè để hành hạ chó độc thân.
+l4-17 | 异地恋很辛苦，但我们很坚持。 | Yêu xa rất vất vả nhưng chúng tôi rất kiên trì.
+l4-17 | 他对她百依百顺，真是舔狗。 | Anh ta chiều cô ấy mọi thứ, đúng là chó liếm.
+l4-17 | 她一谈恋爱就变成恋爱脑。 | Cô ấy hễ yêu là thành não yêu đương.
+l4-17 | 他们分手后又复合了。 | Sau khi chia tay họ lại quay lại với nhau.
+l4-17 | 今天下午我要去相亲。 | Chiều nay tôi phải đi xem mắt.
+l4-17 | 他们认识一个月就闪婚了。 | Họ quen nhau một tháng đã cưới chớp nhoáng.
+l4-17 | 她三十岁了，被人叫剩女，很不高兴。 | Cô ấy ba mươi tuổi, bị người ta gọi là gái ế, rất không vui.
+l4-17 | 他是个直男，不懂女生的心思。 | Anh ấy là trai thẳng, không hiểu tâm tư con gái.
+l4-17 | 公园里有很多情侣在散步。 | Trong công viên có rất nhiều cặp đôi đi dạo.
+l4-17 | 他们的爱情甜蜜又幸福。 | Tình yêu của họ ngọt ngào và hạnh phúc.
+l4-18 | 我喜欢网购，又方便又便宜。 | Tôi thích mua sắm online, vừa tiện vừa rẻ.
+l4-18 | 双十一我在秒杀活动里抢到了手机。 | Ngày đôi 11 tôi săn được điện thoại trong đợt flash sale.
+l4-18 | 我们一起拼单，可以便宜一点。 | Chúng ta cùng mua chung đơn thì sẽ rẻ hơn.
+l4-18 | 她很会薅羊毛，每次都能省钱。 | Cô ấy rất biết săn khuyến mãi, lần nào cũng tiết kiệm được.
+l4-18 | 衣服不合适，我想退货。 | Quần áo không vừa, tôi muốn trả hàng.
+l4-18 | 服务太差，我给了差评。 | Dịch vụ quá tệ, tôi cho đánh giá xấu.
+l4-18 | 这家店味道很好，我给了好评。 | Quán này vị rất ngon, tôi cho đánh giá tốt.
+l4-18 | 看了她的视频，我被种草了一支口红。 | Xem video của cô ấy, tôi bị gợi muốn mua một thỏi son.
+l4-18 | 终于买到了那个包，我拔草了。 | Cuối cùng mua được cái túi đó, tôi mua xong món muốn rồi.
+l4-18 | 我要给你安利一部好看的电视剧。 | Tôi muốn giới thiệu nhiệt tình cho bạn một bộ phim hay.
+l4-18 | 我们公司在做团购，水果很便宜。 | Công ty chúng tôi đang mua theo nhóm, trái cây rất rẻ.
+l4-18 | 请扫一下这个二维码。 | Xin quét mã QR này.
+l4-18 | 过年时，我给孩子发了红包。 | Dịp Tết, tôi gửi bao lì xì cho bọn trẻ.
+l4-18 | 我刚给你转账了，请查收。 | Tôi vừa chuyển khoản cho bạn, bạn kiểm tra nhé.
+l4-18 | 进小区要刷脸。 | Vào khu dân cư phải quét mặt.
+l4-18 | 我骑共享单车去上班。 | Tôi đi làm bằng xe đạp công cộng.
+l4-18 | 下雨了，我们打车回家吧。 | Trời mưa rồi, chúng ta gọi xe về nhà nhé.
+l4-18 | 手机没电了，我要去充电。 | Điện thoại hết pin rồi, tôi phải đi sạc.
+l4-18 | 我的流量用完了，没法看视频。 | Dung lượng dữ liệu của tôi hết rồi, không xem được video.
+l4-19 | 周末我就喜欢宅在家里。 | Cuối tuần tôi chỉ thích ở nhà.
+l4-19 | 他是个宅男，很少出门。 | Anh ấy là trai nhà, rất ít khi ra ngoài.
+l4-19 | 她是个腐女，喜欢看这类漫画。 | Cô ấy là hủ nữ, thích đọc loại truyện tranh này.
+l4-19 | 为了通关，他昨晚爆肝打游戏。 | Để qua màn, tối qua anh ấy cày game điên cuồng.
+l4-19 | 他终于通关了，高兴极了。 | Cuối cùng anh ấy qua màn rồi, vui vô cùng.
+l4-19 | 今晚我想上分，冲到更高的段位。 | Tối nay tôi muốn lên điểm xếp hạng, leo lên bậc cao hơn.
+l4-19 | 我今天脸黑，抽卡一直没抽到。 | Hôm nay tôi đen đủi, rút thẻ mãi không trúng.
+l4-19 | 他一抽就中，真是欧皇。 | Anh ấy rút là trúng, đúng là người may mắn.
+l4-19 | 晚上一起吃鸡吧！ | Tối nay cùng chơi game sinh tồn đi!
+l4-19 | 这个游戏抽到一百次有保底。 | Game này rút đến một trăm lần thì có bảo đảm.
+l4-19 | 我在地铁上玩手游。 | Tôi chơi game điện thoại trên tàu điện ngầm.
+l4-19 | 他更喜欢玩端游，画面更好。 | Anh ấy thích chơi game máy tính hơn, hình ảnh đẹp hơn.
+l4-19 | 他买了一台新主机放在客厅。 | Anh ấy mua một máy console mới đặt ở phòng khách.
+l4-19 | 我们晚上联机玩吧。 | Tối nay chúng ta chơi online với nhau nhé.
+l4-19 | 我现在的段位是钻石。 | Bậc xếp hạng của tôi bây giờ là kim cương.
+l4-20 | 这件事，懂的都懂。 | Chuyện này, ai hiểu thì hiểu.
+l4-20 | 这么多作业，我服了。 | Nhiều bài tập thế này, tôi chịu thua.
+l4-20 | 这道题太难了！ | Câu này khó quá đi!
+l4-20 | 你说你中奖了？真的假的？ | Bạn nói bạn trúng thưởng á? Thật hay giả vậy?
+l4-20 | 我的天，我钱包不见了！ | Ôi trời đất ơi, ví của tôi mất rồi!
+l4-20 | 他这球踢得真牛逼。 | Cú sút này của anh ấy đúng là siêu đỉnh.
+l4-20 | 你又拿了第一，厉害了！ | Bạn lại đứng nhất rồi, lợi hại rồi!
+l4-20 | 这首歌太好听了，绝了！ | Bài hát này hay quá, tuyệt vời không tả nổi!
+l4-20 | 就这？我还以为有多难呢。 | Chỉ vậy thôi sao? Tôi còn tưởng khó lắm.
+l4-20 | 你说完了，然后呢？ | Bạn nói xong rồi, thế rồi sao?
+l4-20 | 你一解释，我懂了。 | Bạn giải thích một cái là tôi hiểu rồi.
+l4-20 | 你的方案我看了，没毛病。 | Phương án của bạn tôi xem rồi, không vấn đề gì.
+l4-20 | 他的作品还真有点东西。 | Tác phẩm của anh ấy cũng có chút bản lĩnh đấy.
+l4-20 | 你说他一天吃十碗饭？太夸张了。 | Bạn nói anh ấy một ngày ăn mười bát cơm? Quá khoa trương rồi.
+l4-20 | 别闹了，我在工作呢。 | Đừng đùa nữa, tôi đang làm việc đấy.
+l4-20 | 你这样太不要脸了！ | Bạn như vậy là mặt dày quá rồi!
+l4-20 | 你居然做到了，真有你的！ | Bạn lại làm được rồi, thật là giỏi!
+l4-20 | 今天太烦了，我想静静。 | Hôm nay phiền quá, tôi muốn yên tĩnh một mình.
+l4-20 | 这个视频太搞笑了，我笑不活了。 | Video này buồn cười quá, tôi cười muốn chết.

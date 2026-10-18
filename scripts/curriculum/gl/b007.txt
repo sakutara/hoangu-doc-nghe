@@ -1,0 +1,180 @@
+## F2-37 | Hành lý, tiểu thuyết & tuyết
+1=hành lý
+2=thà rằng
+3=giấu giếm
+4=quan điểm
+5=sàn nhà
+6=thét lên
+7=bi thương
+8=trên mạng
+9=biết đâu chừng
+10=kịch; phim bộ;;jù;;kịch
+11=chú hề
+12=trao đổi
+13=tiểu thuyết
+14=tuổi (số tuổi)
+15=khớp với, tương hợp
+16=tuyết;;xuě;;tuyết
+17=nhỡ như
+18=ôm chặt, cái ôm
+19=cộng đồng
+20=trợ lý
+21=phát minh
+22=đàm thoại
+23=giao thông
+24=đắt; quý;;guì;;quý
+25=biểu diễn ca hát
+> 我看了一本小说。 | Tôi đã đọc một cuốn tiểu thuyết.
+> 东西太贵了。 | Đồ đắt quá.
+> 外面下雪了。 | Bên ngoài tuyết rơi rồi.
+> 你的行李在哪里？ | Hành lý của bạn ở đâu?
+## F2-38 | Tư tưởng, tắm rửa & lãnh đạo
+1=tư tưởng
+2=tổ hợp
+3=trọng đại
+4=ha ha
+5=đĩa nhạc
+6=phòng rửa tay (nhà vệ sinh)
+7=kỵ sĩ
+8=trên lầu
+9=chở; đăng tải;;zài;;tải
+10=ông già Noel
+11=tóm;;dǎi;;đãi
+12=gương, kính;;jìng;;kính
+13=béo; màu mỡ;;féi;;phì
+14=nhằm vào
+15=cụ thể
+16=bản; phiên bản;;bǎn;;bản
+17=cùng chung
+18=lãnh đạo
+19=khúc; cong;;qū;;khúc
+20=tắm
+21=kim;;zhēn;;châm
+22=điền;;tián;;điền
+23=hơi hơi
+24=đường cao tốc
+25=đồ uống
+> 我想洗澡。 | Tôi muốn đi tắm.
+> 这是一个重大的消息。 | Đây là một tin trọng đại.
+> 洗手间在楼上。 | Nhà vệ sinh ở trên lầu.
+> 他是我们的领导。 | Anh ấy là lãnh đạo của chúng tôi.
+## F2-39 | Cướp biển, trực thăng & hiệu trưởng
+1=chủ đề chính, đề tài
+2=đã, vừa;;jì;;ký
+3=hải tặc
+4=sắt;;tiě;;thiết
+5=lóe; né;;shǎn;;thiểm
+6=người sống sót
+7=gia tăng
+8=ở giữa, trong đám
+9=răng (nói chung)
+10=gõ;;qiāo;;xao
+11=chủ nhiệm
+12=trí óc
+13=vòng quanh;;rào;;nhiễu
+14=trực thăng
+15=khát khao
+16=cổ áo; dẫn;;lǐng;;lĩnh
+17=Canada
+18=hiệu trưởng
+19=dốc toàn lực
+20=lẻn; trượt;;liū;;lưu
+21=lái (tàu xe)
+22=một mớ hỗn độn
+23=vũ trụ không gian
+24=đổ bệnh
+25=tụ;;jù;;tụ
+> 校长生病了。 | Hiệu trưởng bị ốm rồi.
+> 直升机在天上。 | Trực thăng ở trên trời.
+> 海盗来了！ | Hải tặc đến rồi!
+> 你有什么主题？ | Bạn có chủ đề gì?
+## F2-40 | Thích nghi, nguyền rủa & bài tập
+1=thích ứng
+2=hàng; liệt kê;;liè;;liệt
+3=kẻ xấu
+4=ứng phó
+5=vật phẩm
+6=chống;;chēng;;sanh
+7=ướt;;shī;;thấp
+8=hủy diệt
+9=lời nguyền
+10=ánh mắt
+11=côn trùng;;chóng;;trùng
+12=kỳ quặc
+13=tài sản
+14=nhiệm; mặc;;rèn;;nhiệm
+15=tiến công
+16=nhóm, bọn; bạn;;huǒ;;hỏa
+17=liều, thuốc;;jì;;tễ
+18=trình độ, mức
+19=tuy nhiên
+20=vất vả
+21=kiểu tóc
+22=cãi vã
+23=ngắt lời
+24=báo thù
+25=bài tập
+> 他的发型很特别。 | Kiểu tóc của anh ấy rất đặc biệt.
+> 你辛苦了！ | Bạn vất vả rồi!
+> 今天的作业很多。 | Hôm nay bài tập rất nhiều.
+> 我很快就适应了。 | Tôi nhanh chóng thích ứng.
+## F2-41 | Châu Âu, tương lai & hậu quả
+1=kính;;jìng;;kính
+2=trang phục
+3=cao cấp
+4=sau này, mai sau
+5=kiên nhẫn
+6=cản;;dǎng;;đáng
+7=châu Âu
+8=ghế sofa
+9=rủi ro
+10=cưỡng hiếp
+11=cá tính
+12=tức là;;jí;;tức
+13=hậu quả
+14=gạt; quay (số);;bō;;bát
+15=dời;;yí;;di
+16=hoang đường
+17=tốt nhất là
+18=giao thiệp
+19=quốc, nước (quốc gia);;guó;;quốc
+20=sưu tầm
+21=nam giới
+22=trung úy
+23=đạt được
+24=chí mạng
+25=vệ tinh
+> 你要有耐心。 | Bạn phải có kiên nhẫn.
+> 沙发很舒服。 | Chiếc sofa rất dễ chịu.
+> 我最好现在走。 | Tốt nhất là bây giờ tôi đi.
+> 他去了欧洲。 | Anh ấy đã đi châu Âu.
+## F2-42 | Cấm đoán, bơi lội & điện tử
+1=dẫn; kéo;;yǐn;;dẫn
+2=chế giễu
+3=kỳ vọng
+4=tức thì
+5=tránh
+6=cung cấp; cúng;;gōng;;cung
+7=thông; lỏng;;sōng;;tùng
+8=bảo lưu
+9=phê; lô;;pī;;phê
+10=các loại
+11=ở nhà
+12=chen;;jǐ;;tễ
+13=trước mắt
+14=mạo phạm
+15=nhặt;;jiǎn;;kiểm
+16=cấm
+17=trên bục
+18=kéo dài
+19=nạp; nhận;;nà;;nạp
+20=hết cách
+21=bơi lội
+22=điện tử
+23=báo; cáo;;gào;;cáo
+24=búp bê, em bé
+25=kiểm;;jiǎn;;kiểm
+> 这里禁止游泳。 | Ở đây cấm bơi.
+> 他在家学习。 | Anh ấy học ở nhà.
+> 我们没法进去。 | Chúng tôi không có cách nào vào được.
+> 各种东西都有。 | Đủ các loại đồ đều có.

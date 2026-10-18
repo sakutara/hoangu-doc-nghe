@@ -1,0 +1,207 @@
+## G3-01 | Tu tiên nhập môn: tu luyện & linh khí
+修炼=tu luyện
+修仙=tu tiên
+修真=tu chân (tu đạo thành chân nhân)
+仙人=tiên nhân
+仙子=tiên tử (nữ tiên)
+仙界=tiên giới
+凡人=phàm nhân
+凡间=phàm trần
+神仙=thần tiên
+道士=đạo sĩ
+道观=đạo quán
+灵气=linh khí
+灵力=linh lực
+真气=chân khí
+内力=nội lực
+丹田=đan điền
+经脉=kinh mạch
+穴位=huyệt vị
+打坐=ngồi thiền (đả tọa)
+闭关=bế quan
+出关=xuất quan
+突破=đột phá
+瓶颈=nút thắt (bình cảnh)
+吸收=hấp thụ
+运转=vận chuyển (chạy linh lực)
+> 他在山洞里闭关修炼。 | Hắn bế quan tu luyện trong hang núi.
+> 这里的灵气非常多。 | Linh khí ở đây vô cùng nhiều.
+> 修仙者和凡人不一样。 | Người tu tiên khác với phàm nhân.
+> 他终于突破了瓶颈。 | Cuối cùng hắn đã đột phá nút thắt.
+## G3-02 | Cảnh giới tu luyện
+境界=cảnh giới
+炼气=luyện khí
+筑基=trúc cơ
+金丹=kim đan
+元婴=nguyên anh
+化神=hóa thần
+渡劫=độ kiếp
+飞升=phi thăng
+大乘=đại thừa
+合体=hợp thể
+天仙=thiên tiên
+真仙=chân tiên
+金仙=kim tiên
+散修=tán tu (tu sĩ không môn phái)
+仙尊=tiên tôn
+老祖=lão tổ
+祖师=tổ sư
+宗师=tông sư
+大能=đại năng
+至尊=chí tôn
+强者=cường giả
+高手=cao thủ
+修为=tu vi
+> 他的修为已经到了金丹期。 | Tu vi của hắn đã đạt đến kim đan kỳ.
+> 这位老祖是一位大能。 | Vị lão tổ này là một đại năng.
+> 她是百年难遇的天才。 | Nàng là thiên tài trăm năm khó gặp.
+> 没有人想成为废物。 | Không ai muốn trở thành phế vật.
+## G3-03 | Tông môn & quan hệ sư môn
+宗门=tông môn
+门派=môn phái
+掌门=chưởng môn
+长老=trưởng lão
+弟子=đệ tử
+内门=nội môn
+外门=ngoại môn
+亲传=thân truyền
+师父=sư phụ
+师尊=sư tôn
+师兄=sư huynh
+师姐=sư tỷ
+师弟=sư đệ
+师妹=sư muội
+师叔=sư thúc
+师伯=sư bá
+同门=đồng môn
+门规=môn quy
+山门=sơn môn
+入门=nhập môn
+逐出=trục xuất
+叛徒=phản đồ
+正道=chính đạo
+魔道=ma đạo
+邪道=tà đạo
+> 师兄带我进了山门。 | Sư huynh dẫn ta vào sơn môn.
+> 掌门要见新来的弟子。 | Chưởng môn muốn gặp đệ tử mới đến.
+> 他违反了门规，被逐出宗门。 | Hắn vi phạm môn quy nên bị trục xuất khỏi tông môn.
+> 正道和魔道一直在战斗。 | Chính đạo và ma đạo vẫn luôn giao chiến.
+## G3-04 | Pháp bảo & vật phẩm tu sĩ
+法宝=pháp bảo
+法器=pháp khí
+灵器=linh khí (vật phẩm)
+仙器=tiên khí
+神器=thần khí
+飞剑=phi kiếm
+灵剑=linh kiếm
+宝剑=bảo kiếm
+剑气=kiếm khí
+剑意=kiếm ý
+剑修=kiếm tu
+符箓=phù lục
+阵法=trận pháp
+阵眼=trận nhãn
+禁制=cấm chế
+结界=kết giới
+储物袋=túi trữ vật
+储物戒=nhẫn trữ vật
+玉简=ngọc giản
+令牌=lệnh bài
+丹炉=đan lô
+炼器=luyện khí (rèn pháp khí)
+炼丹=luyện đan
+护身=hộ thân
+法袍=pháp bào
+> 他拿出一把飞剑。 | Hắn lấy ra một thanh phi kiếm.
+> 这个结界很难打破。 | Kết giới này rất khó phá.
+> 储物袋里有很多丹药。 | Trong túi trữ vật có rất nhiều đan dược.
+> 她擅长炼丹和阵法。 | Nàng giỏi luyện đan và trận pháp.
+## G3-05 | Đan dược, linh vật & thiên phú
+丹药=đan dược
+灵丹=linh đan
+仙丹=tiên đan
+灵药=linh dược
+灵草=linh thảo
+灵果=linh quả
+灵石=linh thạch
+灵泉=linh tuyền
+灵脉=linh mạch
+灵根=linh căn
+资质=tư chất
+根骨=căn cốt
+体质=thể chất
+悟性=ngộ tính
+机缘=cơ duyên
+造化=tạo hóa
+气运=khí vận
+福缘=phúc duyên
+血脉=huyết mạch
+传承=truyền thừa
+宝物=bảo vật
+至宝=chí bảo
+稀有=hiếm có
+珍贵=trân quý
+> 他的灵根资质非常好。 | Linh căn tư chất của hắn vô cùng tốt.
+> 这是一次难得的机缘。 | Đây là một cơ duyên hiếm có.
+> 他吃了一颗灵丹。 | Hắn đã ăn một viên linh đan.
+> 灵石是修仙者的钱。 | Linh thạch là tiền của người tu tiên.
+## G3-06 | Yêu ma, quỷ quái & thần thú
+妖兽=yêu thú
+妖怪=yêu quái
+妖族=yêu tộc
+妖王=yêu vương
+魔族=ma tộc
+魔头=ma đầu
+魔君=ma quân
+魔尊=ma tôn
+魔气=ma khí
+邪修=tà tu
+鬼修=quỷ tu
+厉鬼=lệ quỷ
+僵尸=cương thi
+骷髅=bộ xương
+恶灵=ác linh
+神兽=thần thú
+灵兽=linh thú
+凶兽=hung thú
+蛟龙=giao long
+凤凰=phượng hoàng
+麒麟=kỳ lân
+玄武=huyền vũ
+白虎=bạch hổ
+青龙=thanh long
+朱雀=chu tước
+> 山里有很多凶兽。 | Trong núi có rất nhiều hung thú.
+> 魔君带着魔族来了。 | Ma quân dẫn ma tộc đến rồi.
+> 他的灵兽是一只白虎。 | Linh thú của hắn là một con bạch hổ.
+> 传说凤凰会重生。 | Truyền thuyết kể rằng phượng hoàng sẽ tái sinh.
+## G3-07 | Chiến đấu: thần thông & công pháp
+神通=thần thông
+法术=pháp thuật
+术法=thuật pháp
+功法=công pháp
+心法=tâm pháp
+秘籍=bí kíp
+绝学=tuyệt học
+武技=võ kỹ
+剑法=kiếm pháp
+掌法=chưởng pháp
+拳法=quyền pháp
+身法=thân pháp
+轻功=khinh công
+内功=nội công
+外功=ngoại công
+杀招=sát chiêu
+绝招=tuyệt chiêu
+威压=uy áp
+杀气=sát khí
+剑光=kiếm quang
+雷电=sấm sét
+火焰=ngọn lửa
+冰霜=băng sương
+一击=một đòn
+重伤=trọng thương
+> 他使出了最强的杀招。 | Hắn tung ra sát chiêu mạnh nhất.
+> 对方的威压让他不能动。 | Uy áp của đối phương khiến hắn không thể cử động.
+> 他练成了这门绝学。 | Hắn đã luyện thành môn tuyệt học này.
+> 一击之下，敌人身受重伤。 | Dưới một đòn, kẻ địch bị trọng thương.

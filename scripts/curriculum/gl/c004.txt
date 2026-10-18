@@ -1,0 +1,202 @@
+## G3-22 | Giao dịch, đấu giá & tiền tệ
+金币=kim tệ (đồng vàng)
+银两=bạc lượng
+银票=ngân phiếu
+铜钱=đồng tiền xu
+白银=bạc trắng
+拍卖=đấu giá
+拍卖会=buổi đấu giá
+坊市=phường thị (chợ tu sĩ)
+商会=thương hội
+店铺=tiệm quán
+报价=báo giá
+竞价=đấu giá cạnh tranh
+底价=giá khởi điểm
+抬价=nâng giá
+买主=người mua
+卖家=người bán
+货物=lô hàng
+赔钱=lỗ vốn
+发财=phát tài
+富翁=phú ông
+穷人=người nghèo
+债务=nợ nần
+欠债=thiếu nợ
+还钱=trả tiền
+> 这个拍卖会上有很多宝物。 | Buổi đấu giá này có rất nhiều bảo vật.
+> 这把剑的底价是一百枚金币。 | Giá khởi điểm của thanh kiếm này là một trăm đồng kim tệ.
+> 他欠了很多钱，现在没钱还。 | Hắn thiếu rất nhiều tiền, giờ không có tiền trả.
+> 掌柜的生意越来越好。 | Việc làm ăn của chưởng quầy càng ngày càng tốt.
+## G3-23 | Quân sự & chiến trận
+大军=đại quân
+兵马=binh mã
+战场=chiến trường
+战役=chiến dịch
+攻城=công thành
+守城=giữ thành
+城墙=tường thành
+城池=thành trì
+营帐=doanh trướng
+元帅=nguyên soái
+先锋=tiên phong
+副将=phó tướng
+将领=tướng lĩnh
+军令=quân lệnh
+兵法=binh pháp
+谋略=mưu lược
+伏兵=quân phục kích
+埋伏=mai phục
+偷袭=đánh lén
+突围=phá vòng vây
+撤退=rút lui
+投诚=quy hàng
+俘虏=tù binh
+军粮=lương thực quân đội
+> 大军已经到了城墙下面。 | Đại quân đã đến dưới chân tường thành.
+> 元帅下达了军令。 | Nguyên soái ban xuống quân lệnh.
+> 敌人在山谷里埋伏。 | Kẻ địch mai phục trong thung lũng.
+> 士兵们开始撤退。 | Các binh sĩ bắt đầu rút lui.
+## G3-24 | Thời gian ước lượng trong truyện
+一炷香=một nén hương
+一盏茶=một chén trà (thời gian)
+弹指=búng tay (thoáng chốc)
+须臾=chốc lát
+片刻=giây lát
+半晌=nửa buổi
+数日=vài ngày
+一夜=một đêm
+转眼=thoắt cái
+许久=hồi lâu lắm
+良久=hồi lâu
+半天=nửa ngày
+一时=nhất thời
+此刻=lúc này
+此时=bấy giờ
+当日=hôm ấy
+次日=hôm sau
+翌日=ngày kế tiếp
+清晨=sáng sớm tinh mơ
+黄昏=hoàng hôn
+深夜=đêm khuya
+午后=quá trưa
+三天三夜=ba ngày ba đêm
+多年=nhiều năm
+百年=trăm năm
+> 一炷香之后，他才醒过来。 | Sau một nén hương, hắn mới tỉnh lại.
+> 次日清晨，他们出发了。 | Sáng sớm hôm sau, họ xuất phát.
+> 许久之后，她才开口说话。 | Rất lâu sau, nàng mới mở miệng nói.
+> 转眼之间，百年过去了。 | Chớp mắt một cái, trăm năm đã trôi qua.
+## G3-25 | Lượng từ & cụm số lượng trong truyện
+一道=một đạo
+一股=một luồng
+一阵=một trận
+一丝=một tia
+一抹=một vệt
+一片=một mảnh
+一团=một đám
+一名=một người (trang trọng)
+一位=một vị
+一众=một đám người
+数百=vài trăm
+数千=vài nghìn
+万丈=vạn trượng
+千里=ngàn dặm
+百里=trăm dặm
+一座=một ngọn, một tòa
+一条=một con, một dải
+一朵=một đóa
+一滴=một giọt
+一声=một tiếng
+一眼=một cái nhìn
+一次=một lần
+一枚=một chiếc
+一件=một món
+> 一股强大的力量从他身上出现。 | Một luồng sức mạnh to lớn xuất hiện từ người hắn.
+> 一道剑光落了下来。 | Một đạo kiếm quang giáng xuống.
+> 数千人站在山谷里。 | Hàng nghìn người đứng trong thung lũng.
+> 他看了她一眼。 | Hắn liếc nhìn nàng một cái.
+## G3-26 | Xưng hô & lời thoại thời cổ
+本座=bổn tọa
+本王=bổn vương
+本宫=bổn cung
+在下=tại hạ
+老夫=lão phu
+老朽=lão hủ
+贫道=bần đạo
+小人=tiểu nhân
+晚辈=vãn bối
+前辈=tiền bối
+兄台=huynh đài
+尊驾=tôn giá
+休想=đừng mơ
+岂敢=nào dám
+休得=chớ có
+何方=phương nào
+何人=người nào
+竟敢=lại dám
+胆敢=dám to gan
+岂有此理=có lý nào như vậy
+放肆=to gan, hỗn xược
+无礼=vô lễ
+> 前辈，晚辈有礼了。 | Tiền bối, vãn bối xin hành lễ.
+> 你竟敢对本座无礼？ | Ngươi lại dám vô lễ với bổn tọa sao?
+> 在下不知道阁下是谁。 | Tại hạ không biết các hạ là ai.
+> 休想让我放弃！ | Đừng mơ bắt ta từ bỏ!
+## G3-27 | Tính cách & khí chất nhân vật
+傲气=ngạo khí
+狂妄=ngông cuồng
+谦虚=khiêm tốn
+谨慎=cẩn trọng
+腹黑=thâm hiểm (bụng đen)
+冷酷=lạnh lùng tàn nhẫn
+无情=vô tình
+多情=đa tình
+痴情=si tình
+倔强=bướng bỉnh
+固执=cố chấp
+沉稳=điềm đạm vững vàng
+狡猾=xảo quyệt
+阴险=âm hiểm
+纯真=thuần khiết
+天真=ngây thơ
+嚣张=hống hách
+低调=khiêm nhường kín tiếng
+张扬=phô trương
+霸气=bá khí
+淡然=thản nhiên
+傲慢=kiêu ngạo
+阴沉=u ám
+> 他很傲气，从来不低头。 | Hắn rất ngạo khí, chưa từng cúi đầu.
+> 她的性格倔强，也很善良。 | Tính cách nàng bướng bỉnh nhưng cũng rất hiền lành.
+> 这个人看起来很狡猾。 | Người này nhìn có vẻ rất xảo quyệt.
+> 他做事一直很低调。 | Hắn làm việc luôn rất kín tiếng.
+## G3-28 | Thuật ngữ truyện mạng & thể loại
+打脸=vả mặt
+逆袭=lội ngược dòng, lật kèo
+碾压=nghiền ép
+爽文=truyện sảng văn
+套路=mô-típ, chiêu trò
+白莲花=bạch liên hoa (giả trong sáng)
+绿茶=lục trà (giả dịu dàng)
+傲娇=ngạo kiều
+病娇=bệnh kiều
+萌=dễ thương (moe)
+撒糖=rải đường (cảnh ngọt)
+虐文=truyện ngược
+甜文=truyện ngọt
+种田文=truyện làm ruộng
+后宫文=truyện hậu cung
+无限流=vô hạn lưu
+系统流=hệ thống lưu
+重生文=truyện trọng sinh
+穿越文=truyện xuyên không
+反转=đảo ngược tình thế
+伏笔=phục bút
+剧情=cốt truyện
+大结局=đại kết cục
+番外=phiên ngoại
+更新=cập nhật (chương mới)
+> 这本爽文里有很多打脸的剧情。 | Cuốn sảng văn này có rất nhiều tình tiết vả mặt.
+> 他喜欢看重生文和穿越文。 | Anh ấy thích đọc truyện trọng sinh và xuyên không.
+> 作者今天没有更新。 | Hôm nay tác giả không cập nhật.
+> 大结局里有一个很大的反转。 | Trong đại kết cục có một cú đảo ngược rất lớn.

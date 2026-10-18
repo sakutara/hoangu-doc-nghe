@@ -1,0 +1,240 @@
+## F3-28 | Cổ phiếu, ngành nghề & kịch nghệ
+1=cổ phiếu
+2=thăm viếng; truy cập
+3=vội vã chạy đến
+4=ối chà
+5=hào phóng
+6=cầm cố;;yā;;áp
+7=tế bào
+8=tìm cách
+9=lạc lối
+10=khám nghiệm tử thi
+11=giải quyết xong
+12=hình thành
+13=đến gần
+14=Hán; đàn ông;;hàn;;hán
+15=tiềm lực
+16=ngành nghề
+17=ngoại tình
+18=salad
+19=tuân mệnh
+20=người dẫn chương trình
+21=cử chỉ hành động
+22=đếm ngược
+23=thiếu nữ
+24=ngay cả khi
+25=kịch nghệ
+> 他想访问中国。 | Anh ấy muốn thăm Trung Quốc.
+> 沙拉很好吃。 | Món salad rất ngon.
+> 就算你不去，我也去。 | Cho dù bạn không đi, tôi cũng đi.
+> 我要看戏剧。 | Tôi muốn xem kịch.
+## F3-29 | Chính sách, quân nhân & du lịch
+1=chim bồ câu
+2=vệ sĩ
+3=nài, sao đành;;nài;;nại
+4=giấy phép hành nghề
+5=kháng nghị
+6=đường dây nóng
+7=trẻ em;;tóng;;đồng
+8=quân nhân
+9=lệch;;piān;;thiên
+10=kỷ niệm năm
+11=đi tham quan du ngoạn
+12=trao đổi thông suốt
+13=chứng minh thư
+14=bác;;bó;;bá
+15=ngẫu nhiên; tượng;;ǒu;;ngẫu
+16=khóc nức nở
+17=chỉ trích
+18=chính sách
+19=chủ nhật
+20=xăng
+21=của cải
+22=cháu trai (con anh em)
+23=công; ông;;gōng;;công
+24=lá;;yè;;diệp
+25=hiến, dâng;;xiàn;;hiến
+> 我的身份证不见了。 | Chứng minh thư của tôi mất rồi.
+> 他在抗议这个政策。 | Anh ấy đang phản đối chính sách này.
+> 这里的汽油很贵。 | Xăng ở đây rất đắt.
+> 星期天我们去旅游。 | Chủ nhật chúng ta đi du lịch.
+## F3-30 | Lương tâm, bước nhảy & đại chúng
+1=lương tâm
+2=cắn hạt;;kè;;hạp
+3=dung thứ
+4=không bao giờ
+5=bước nhảy
+6=khiến cho; dùng được
+7=dựa;;yī;;y
+8=tập gym
+9=tấm thẻ
+10=chủ nhật (cách nói khác)
+11=thương xót; áo phông;;xù;;tuất
+12=không quân
+13=múa thoát y
+14=cưỡi; lái;;jià;;giá
+15=ngã xuống
+16=chia lìa
+17=cửa sau
+18=chiến thắng (đánh bại)
+19=thuần;;chún;;thuần
+20=khoác;;pī;;phi
+21=nước ép trái cây
+22=cặn bã;;zhā;;tra
+23=bị ép
+24=tự tay
+25=đại chúng
+> 他永不放弃。 | Anh ấy không bao giờ bỏ cuộc.
+> 后门在哪里？ | Cửa sau ở đâu?
+> 我喜欢喝果汁。 | Tôi thích uống nước ép trái cây.
+> 他被迫离开了家。 | Anh ấy bị ép phải rời khỏi nhà.
+## F3-31 | Cô quạnh, tôn nghiêm & di chúc
+1=cô quạnh
+2=tôn nghiêm
+3=hôn phu
+4=khăn mặt
+5=xóa sạch
+6=diễn kịch
+7=cuồng hoan
+8=đơn vị
+9=định vị
+10=mạo (mũ);;mào;;mạo
+11=bom hạt nhân
+12=chưa chắc
+13=chip
+14=tác chiến
+15=còng tay
+16=radio
+17=tác giả
+18=thường dân
+19=luận văn
+20=di chúc
+21=Hàn;;hán;;hàn
+22=bạn đời
+23=cân nặng
+24=tiến về phía trước
+25=may nhờ
+> 他觉得很寂寞。 | Anh ấy cảm thấy rất cô quạnh.
+> 作者是谁？ | Tác giả là ai?
+> 我的体重增加了。 | Cân nặng của tôi tăng lên rồi.
+> 多亏你帮助我。 | May nhờ có bạn giúp tôi.
+## F3-32 | Linh cảm, cảm cúm & danh tiếng
+1=diễm lệ;;yàn;;diễm
+2=linh cảm
+3=nghiệp; ngành;;yè;;nghiệp
+4=bạn;;yǒu;;hữu
+5=khẩu vị
+6=cố định
+7=cảm cúm
+8=rèn luyện
+9=bạn nhỏ
+10=ghi danh
+11=khối u
+12=hứng chịu
+13=ban bố
+14=danh tiếng
+15=studio, văn phòng làm việc
+16=gỗ; đần độn
+17=mùi
+18=trạng; đơn kiện;;zhuàng;;trạng
+19=anh tuấn
+20=dự toán
+21=quãng đời còn lại
+22=công khai thông báo
+23=tranh ảnh
+24=người bệnh
+25=gõ cửa
+> 我感冒了。 | Tôi bị cảm rồi.
+> 他很英俊。 | Anh ấy rất anh tuấn.
+> 有人在敲门。 | Có người đang gõ cửa.
+> 请你注册。 | Xin bạn hãy ghi danh.
+## F3-33 | Năm mới, sở thích & chinh phục
+1=năm mới
+2=quả nhiên
+3=khóa chặt
+4=trưởng, đứng đầu
+5=phẩm;;pǐn;;phẩm
+6=dẫn phát, khơi dậy
+7=phim ảnh
+8=vết;;hén;;ngân
+9=bóng râm
+10=tay phải
+11=thủ pháp
+12=thôn xóm
+13=tư vị
+14=sở thích
+15=lạc quan
+16=gian lận
+17=chấn thương
+18=chinh phục
+19=tổn thương
+20=quả;;guǒ;;quả
+21=liên quan tới
+22=đến nay
+23=chuẩn bị sẵn
+24=căn nhà nhỏ
+25=cả nhà
+> 新年快乐！ | Chúc mừng năm mới!
+> 他果然来了。 | Quả nhiên anh ấy đã đến.
+> 我的爱好是读书。 | Sở thích của tôi là đọc sách.
+> 他有一间小屋。 | Anh ấy có một căn nhà nhỏ.
+## F3-34 | Mùa xuân, dây an toàn & tranh luận
+1=thân thiện
+2=trả thù
+3=cấm đoán;;jìn;;cấm
+4=gọi nó là
+5=dơi
+6=nhận tội
+7=gãy xương
+8=tranh luận
+9=gần gũi
+10=số người
+11=quấy rầy
+12=mùa xuân
+13=khắp mình mẩy
+14=vinh;;róng;;vinh
+15=chúng;;zhòng;;chúng
+16=xe buýt
+17=trở về với
+18=dây an toàn
+19=thống đốc
+20=tăng lên
+21=nghe lời
+22=tận cùng
+23=bài trí
+24=cất giữ sưu tầm
+25=lỗ; thô lỗ;;lǔ;;lỗ
+> 春天来了。 | Mùa xuân đến rồi.
+> 请系好安全带。 | Xin hãy thắt dây an toàn.
+> 他是一个听话的孩子。 | Cậu ấy là một đứa trẻ biết nghe lời.
+> 公车站在前面。 | Trạm xe buýt ở phía trước.
+## F3-35 | Tống tiền, danh thiếp & nhân tài
+1=tống tiền
+2=danh thiếp
+3=trên trời
+4=chữa khỏi
+5=làm lộ
+6=xa lạ
+7=nghiệp dư
+8=giai (tốt đẹp);;jiā;;giai
+9=điển lễ
+10=dự thi
+11=trung tâm thương mại
+12=trả lời; hồi phục
+13=tối hôm đó
+14=thuốc nổ
+15=say mê
+16=bằng lái xe
+17=con vịt
+18=sản;;chǎn;;sản
+19=nhân tài
+20=triệu hồi
+21=an nghỉ
+22=bus (phiên âm)
+23=chiến thuật
+24=chống cự
+25=đều, tất cả (văn viết);;jiē;;giai
+> 我有一张名片。 | Tôi có một tấm danh thiếp.
+> 他对音乐很着迷。 | Anh ấy rất say mê âm nhạc.
+> 我们坐巴士去商场。 | Chúng ta đi bus đến trung tâm thương mại.
+> 他是公司的人才。 | Anh ấy là nhân tài của công ty.

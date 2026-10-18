@@ -1,0 +1,247 @@
+l1-8 | 吃饭时不要看手机。 | Lúc ăn cơm đừng xem điện thoại.
+l1-22 | 天气会变成晴天。 | Thời tiết sẽ biến thành trời nắng.
+l1-27 | 我每天晚上都听音乐。 | Tối nào tôi cũng nghe nhạc.
+l1-30 | 他的身体很正常。 | Cơ thể anh ấy rất bình thường.
+l1-33 | 他摔倒了，屁股很疼。 | Anh ấy bị ngã, mông rất đau.
+l1-33 | 老师安排我们明天去公园。 | Cô giáo sắp xếp cho chúng tôi mai đi công viên.
+l1-35 | 我喜欢苹果以及香蕉。 | Tôi thích táo cũng như chuối.
+l1-35 | 这件事有很大的意义。 | Việc này có ý nghĩa rất lớn.
+l1-35 | 我们玩了一局游戏。 | Chúng tôi đã chơi một ván trò chơi.
+l1-36 | 她很喜欢跳舞。 | Cô ấy rất thích nhảy múa.
+l1-37 | 尔后他就回家了。 | Sau đó anh ấy về nhà.
+l1-41 | 谢谢你的帮助！ | Cảm ơn sự giúp đỡ của bạn!
+l1-42 | 你说得太快，请慢一点。 | Bạn nói nhanh quá, xin hãy chậm một chút.
+l1-43 | 这件衣服是尼龙的。 | Bộ quần áo này làm bằng ni lông.
+l1-44 | 这把刀很快。 | Con dao này rất sắc.
+l1-53 | 我对小时候的记忆很深。 | Ký ức thời thơ ấu của tôi rất sâu sắc.
+l1-56 | 这种水果叫做苹果。 | Loại quả này gọi là táo.
+l1-56 | 你可以随我一起去。 | Bạn có thể đi cùng tôi.
+l1-57 | 他得了亚军。 | Anh ấy đạt giải á quân.
+l1-58 | 我会尽力帮助你。 | Tôi sẽ cố hết sức giúp bạn.
+l1-59 | 这根丝很细。 | Sợi tơ này rất mảnh.
+l1-59 | 他在实验室工作。 | Anh ấy làm việc trong phòng thí nghiệm.
+l2-2 | 这条路很直。 | Con đường này rất thẳng.
+l2-3 | 他在院子里挖了一个洞。 | Anh ấy đào một cái lỗ trong sân.
+l2-4 | 他们在河边搭房子。 | Họ dựng nhà bên sông.
+l2-7 | 杯子里在冒热气。 | Trong cốc đang bốc hơi nóng.
+l2-9 | 他的名字叫洛伊。 | Tên anh ấy là Roy.
+l2-10 | 这种病折磨了他很多年。 | Căn bệnh này đã dày vò anh ấy nhiều năm.
+l2-11 | 他们看见了一具尸体。 | Họ nhìn thấy một thi thể.
+l2-11 | 他买了一卷纸。 | Anh ấy mua một cuộn giấy.
+l2-11 | 海上有一艘大船。 | Trên biển có một chiếc tàu lớn.
+l2-11 | 大脑需要好好休息。 | Đại não cần được nghỉ ngơi tốt.
+l2-13 | 她喜欢兰花。 | Cô ấy thích hoa lan.
+l2-14 | 抽烟对身体不好。 | Hút thuốc không tốt cho cơ thể.
+l2-14 | 这种药有毒。 | Loại thuốc này có độc.
+l2-15 | 她的名字叫莱拉。 | Tên cô ấy là Layla.
+l2-15 | 她去过萨尔瓦多。 | Cô ấy từng đến El Salvador.
+l2-17 | 他得了很重的症。 | Anh ấy mắc chứng bệnh rất nặng.
+l2-21 | 请把盖子盖好。 | Xin hãy đậy nắp lại cho kín.
+l2-22 | 女王住在大城堡里。 | Nữ vương sống trong lâu đài lớn.
+l2-22 | 别幻想了，快去工作。 | Đừng ảo tưởng nữa, mau đi làm đi.
+l2-22 | 我再也不能忍受这种生活了。 | Tôi không thể chịu đựng cuộc sống này nữa.
+l2-23 | 她的名字叫安妮。 | Tên cô ấy là Annie.
+l2-24 | 新年时我们去拜年。 | Dịp năm mới chúng tôi đi chúc Tết.
+l2-24 | 这个机构帮助很多人。 | Cơ quan này giúp đỡ rất nhiều người.
+l2-25 | 她的皮肤很白。 | Làn da của cô ấy rất trắng.
+l2-27 | 他用刀砍树。 | Anh ấy dùng dao chặt cây.
+l2-27 | 这里的土地很大。 | Đất đai ở đây rất rộng.
+l2-27 | 请在这里签名。 | Xin hãy ký tên ở đây.
+l2-28 | 医生给他注射了药。 | Bác sĩ tiêm thuốc cho anh ấy.
+l2-29 | 他是犹太人。 | Anh ấy là người Do Thái.
+l2-29 | 他们是一个好团。 | Họ là một đoàn rất tốt.
+l2-30 | 她的笑容很迷人。 | Nụ cười của cô ấy rất quyến rũ.
+l2-30 | 他吃了一颗丹药。 | Anh ấy uống một viên thuốc đan.
+l2-31 | 他变得越来越成熟。 | Anh ấy ngày càng chín chắn.
+l2-31 | 他经过这里时看见了我。 | Anh ấy đi qua đây thì nhìn thấy tôi.
+l2-31 | 研究表明，睡觉很重要。 | Nghiên cứu cho thấy giấc ngủ rất quan trọng.
+l2-31 | 墙上挂着一幅画。 | Trên tường treo một bức tranh.
+l2-31 | 电脑是很好的工具。 | Máy tính là công cụ rất tốt.
+l2-33 | 人家已经等你很久了。 | Người ta đã đợi bạn rất lâu rồi.
+l2-33 | 草地上有一条蛇。 | Trên bãi cỏ có một con rắn.
+l2-34 | 这个地方很美丽。 | Nơi này rất đẹp.
+l2-35 | 我们一路上都很开心。 | Suốt đường chúng tôi đều rất vui.
+l2-36 | 她喜欢吃甜食。 | Cô ấy thích ăn đồ ngọt.
+l2-37 | 这里的交通很方便。 | Giao thông ở đây rất thuận tiện.
+l2-39 | 他想去太空看看。 | Anh ấy muốn lên vũ trụ xem thử.
+l2-42 | 这家店供应早饭。 | Quán này có phục vụ bữa sáng.
+l2-43 | 医院给他做了检测。 | Bệnh viện đã kiểm nghiệm cho anh ấy.
+l2-44 | 孩子的精力很好。 | Tinh lực của đứa trẻ rất tốt.
+l2-47 | 他的手流血了。 | Tay anh ấy chảy máu rồi.
+l2-47 | 这个战士很勇敢。 | Chiến sĩ này rất dũng cảm.
+l2-48 | 森林里有很多鸟。 | Trong rừng có rất nhiều chim.
+l2-49 | 他是一名士兵。 | Anh ấy là một người lính.
+l2-53 | 这个城市有着很长的历史。 | Thành phố này có lịch sử rất lâu đời.
+l2-54 | 人们开始反抗。 | Mọi người bắt đầu phản kháng.
+l2-55 | 他靠着电线杆站着。 | Anh ấy đứng dựa vào cột điện.
+l2-55 | 他只是个小喽。 | Hắn chỉ là một tên lâu la.
+l2-55 | 请在脸上涂一点药。 | Xin hãy bôi một ít thuốc lên mặt.
+l2-57 | 大使有豁免权。 | Đại sứ có quyền miễn trừ.
+l2-59 | 请把门关上。 | Xin hãy đóng cửa lại.
+l2-61 | 她怀着希望等他回来。 | Cô ấy ôm hy vọng chờ anh ấy về.
+l2-61 | 听到好消息，大家都很喜。 | Nghe tin tốt, mọi người đều rất mừng.
+l2-63 | 他们在咖啡店里交谈。 | Họ trò chuyện trong quán cà phê.
+l2-64 | 我在路上遇见了老朋友。 | Tôi gặp bạn cũ trên đường.
+l2-65 | 他们来自不同的种族。 | Họ đến từ các chủng tộc khác nhau.
+l2-65 | 请量一下你的身高。 | Xin hãy đo chiều cao của bạn.
+l2-65 | 她叫萝拉。 | Cô ấy tên là Lola.
+l2-65 | 我们要消灭所有的敌人。 | Chúng ta phải tiêu diệt hết kẻ địch.
+l2-67 | 很多人来支援我们。 | Rất nhiều người đến chi viện cho chúng tôi.
+l2-68 | 这个基金帮助穷孩子。 | Quỹ này giúp đỡ trẻ em nghèo.
+l2-69 | 老人有很多智慧。 | Người già có rất nhiều trí tuệ.
+l2-69 | 他用手钉钉子。 | Anh ấy dùng tay đóng đinh.
+l2-69 | 联合起来，我们就有力量。 | Hợp lại với nhau, chúng ta sẽ có sức mạnh.
+l2-71 | 这条项链是黄金做的。 | Sợi dây chuyền này làm bằng vàng.
+l2-71 | 他的耳朵很灵。 | Tai anh ấy rất thính.
+l2-72 | 警卫站在门口。 | Cảnh vệ đứng ở cửa.
+l3-1 | 医生按了他的穴位。 | Bác sĩ bấm huyệt vị của anh ấy.
+l3-2 | 仙尊是一位宗师。 | Tiên tôn là một vị tông sư.
+l3-3 | 长老和师叔、师伯都来了。 | Trưởng lão, sư thúc và sư bá đều đến rồi.
+l3-4 | 他有一把宝剑。 | Anh ấy có một thanh bảo kiếm.
+l3-4 | 剑气很强，剑意更深。 | Kiếm khí rất mạnh, kiếm ý còn sâu hơn.
+l3-5 | 这是门派的传承。 | Đây là truyền thừa của môn phái.
+l3-6 | 魔气很重。 | Ma khí rất nặng.
+l3-6 | 蛟龙和麒麟都是传说中的动物。 | Giao long và kỳ lân đều là động vật trong truyền thuyết.
+l3-7 | 山上有冰霜。 | Trên núi có băng sương.
+l3-8 | 他要过雷劫。 | Anh ấy phải vượt lôi kiếp.
+l3-8 | 修道要有道心。 | Tu đạo phải có đạo tâm.
+l3-8 | 阴阳是中国的文化。 | Âm dương là văn hóa của Trung Quốc.
+l3-10 | 这个侠客很勇敢。 | Vị hiệp khách này rất dũng cảm.
+l3-10 | 他带着匕首和弓箭。 | Anh ấy mang theo chủy thủ và cung tên.
+l3-10 | 门主是个好人。 | Môn chủ là người tốt.
+l3-11 | 太监和宫女都在宫里。 | Thái giám và cung nữ đều ở trong cung.
+l3-11 | 郡主和世子来了。 | Quận chúa và thế tử đến rồi.
+l3-12 | 他去衙门找县令。 | Anh ấy đến nha môn tìm huyện lệnh.
+l3-12 | 她的嫁妆很多，聘礼也很多。 | Của hồi môn của cô ấy rất nhiều, sính lễ cũng nhiều.
+l3-13 | 他有这家公司的股份。 | Anh ấy có cổ phần của công ty này.
+l3-15 | 刺客逃走了。 | Thích khách đã chạy mất.
+l3-15 | 弓箭手站在城墙上。 | Xạ thủ cung đứng trên tường thành.
+l3-18 | 他狠狠地打了桌子。 | Anh ấy đập mạnh xuống bàn.
+l3-20 | 山脉很长，瀑布很美。 | Dãy núi rất dài, thác nước rất đẹp.
+l3-20 | 湖泊和海洋都很大。 | Hồ nước và đại dương đều rất lớn.
+l3-20 | 大地一片绿色。 | Mặt đất một màu xanh.
+l3-21 | 战马跑得很快。 | Chiến mã chạy rất nhanh.
+l3-21 | 她有一头长发。 | Cô ấy có mái tóc dài.
+l3-21 | 她戴着一只玉镯。 | Cô ấy đeo một chiếc vòng ngọc.
+l3-23 | 敌人决定投诚。 | Quân địch quyết định quy hàng.
+l3-25 | 天上有一片白云。 | Trên trời có một đám mây trắng.
+l3-25 | 一众人都看着他。 | Cả một đám người đều nhìn anh ấy.
+l3-25 | 我听到一声大叫。 | Tôi nghe thấy một tiếng kêu lớn.
+l3-25 | 我买了一件新衣服。 | Tôi mua một bộ quần áo mới.
+l3-26 | 你太放肆了！ | Ngươi quá hỗn xược rồi!
+l3-27 | 他看起来很好，其实很腹黑。 | Anh ta nhìn thì tốt nhưng thật ra rất thâm hiểm.
+l3-29 | 森林里有一个精。 | Trong rừng có một tinh quái.
+l3-30 | 公司采取了新措施。 | Công ty đã áp dụng biện pháp mới.
+l3-32 | 地毯上有一只猫。 | Trên thảm có một con mèo.
+l3-32 | 风兮风兮，快来吧。 | Gió hề gió hề, mau đến đi.
+l3-33 | 他懂得很多，很有见识。 | Anh ấy biết nhiều, rất từng trải.
+l3-33 | 宝贝是我的心。 | Bảo bối là tim của tôi.
+l3-35 | 蜜蜂在花上工作。 | Ong mật đang làm việc trên hoa.
+l3-35 | 请除去这些旧东西。 | Xin hãy loại bỏ những đồ cũ này.
+l3-36 | 他去过曼谷。 | Anh ấy từng đến Bangkok.
+l3-37 | 他的教师生涯很长。 | Sự nghiệp giáo viên của anh ấy rất dài.
+l3-38 | 过度工作对身体不好。 | Làm việc quá độ không tốt cho cơ thể.
+l3-39 | 房间里有毒气。 | Trong phòng có khí độc.
+l3-40 | 请不要触摸这里。 | Xin đừng chạm vào chỗ này.
+l3-41 | 他给了我明确的回答。 | Anh ấy cho tôi câu trả lời rõ ràng.
+l3-42 | 这个苹果很酸。 | Quả táo này rất chua.
+l3-43 | 酒精很臭。 | Cồn có mùi rất khó chịu.
+l3-43 | 气温开始下降。 | Nhiệt độ bắt đầu giảm.
+l3-45 | 他站立在门口。 | Anh ấy đứng ở cửa.
+l3-45 | 大家要团结。 | Mọi người phải đoàn kết.
+l3-45 | 我们要除掉坏习惯。 | Chúng ta phải trừ bỏ thói quen xấu.
+l3-45 | 人民很爱他。 | Nhân dân rất yêu mến ông ấy.
+l3-46 | 屋顶上有很多瓦。 | Trên mái nhà có rất nhiều ngói.
+l3-47 | 她的嘴唇很红。 | Môi của cô ấy rất đỏ.
+l3-48 | 他把工作和学习结合起来。 | Anh ấy kết hợp công việc và học tập.
+l3-49 | 她叫菲菲。 | Cô ấy tên là Phi Phi.
+l3-49 | 可卡因是一种毒品。 | Cocain là một loại ma túy.
+l3-49 | 医生要测血压。 | Bác sĩ cần đo huyết áp.
+l3-50 | 他做了心脏移植手术。 | Anh ấy đã phẫu thuật cấy ghép tim.
+l3-50 | 他叫伦。 | Anh ấy tên là Luân.
+l3-50 | 我们用花来装饰房间。 | Chúng tôi dùng hoa để trang trí căn phòng.
+l3-51 | 他是一位君子。 | Ông ấy là một bậc quân tử.
+l3-52 | 电话会干扰我学习。 | Điện thoại làm nhiễu việc học của tôi.
+l3-52 | 农民在田里工作。 | Nông dân làm việc trên ruộng.
+l3-53 | 没有人质疑他的决定。 | Không ai chất vấn quyết định của anh ấy.
+l3-53 | 他拼命地跑。 | Anh ấy liều mạng chạy.
+l3-54 | 我去树上摘苹果。 | Tôi lên cây hái táo.
+l3-54 | 墙上吊着一幅画。 | Trên tường treo một bức tranh.
+l3-54 | 这个方法很简单。 | Cách này rất đơn giản.
+l3-55 | 犯人被枪毙了。 | Tên tội phạm bị xử bắn.
+l3-55 | 他的生意很隆。 | Việc làm ăn của anh ấy phát đạt.
+l3-57 | 这个儿童很可爱。 | Đứa trẻ này rất đáng yêu.
+l3-58 | 她学会了新的舞步。 | Cô ấy học được bước nhảy mới.
+l3-58 | 孩子依靠妈妈。 | Đứa trẻ dựa vào mẹ.
+l3-58 | 我买了一件恤。 | Tôi mua một chiếc áo phông.
+l3-58 | 他在空军工作。 | Anh ấy làm việc trong không quân.
+l3-58 | 她披上了外套。 | Cô ấy khoác áo ngoài lên.
+l3-60 | 花开得很艳丽。 | Hoa nở rất diễm lệ.
+l3-60 | 他得了肿瘤。 | Anh ấy mắc khối u.
+l3-60 | 这个国家遭受了地震。 | Đất nước này hứng chịu động đất.
+l3-62 | 这里禁止吸烟。 | Ở đây cấm hút thuốc.
+l3-62 | 她把房间布置得很漂亮。 | Cô ấy bài trí căn phòng rất đẹp.
+l3-62 | 他说话很粗鲁。 | Anh ấy nói năng rất thô lỗ.
+l3-63 | 坏人想勒索他。 | Kẻ xấu muốn tống tiền anh ấy.
+l3-63 | 愿他安息。 | Mong ông ấy yên nghỉ.
+l3-64 | 他们要重建房子。 | Họ phải xây dựng lại ngôi nhà.
+l3-65 | 他扮成老人。 | Anh ấy cải trang thành ông già.
+l3-65 | 她相信佛。 | Cô ấy tin Phật.
+l3-65 | 这支笔很尖。 | Cây bút này rất nhọn.
+l3-66 | 他控告了那家公司。 | Anh ấy đã tố cáo công ty đó.
+l3-66 | 战士穿着铁甲。 | Chiến sĩ mặc giáp sắt.
+l3-67 | 祝你旅途愉快！ | Chúc bạn có chuyến đi vui vẻ!
+l3-68 | 他有很强的信念。 | Anh ấy có niềm tin rất mạnh.
+l3-68 | 今天极度寒冷。 | Hôm nay lạnh cực độ.
+l3-68 | 青少年需要多睡觉。 | Thanh thiếu niên cần ngủ nhiều.
+l3-71 | 舰队离开了海边。 | Hạm đội rời khỏi bờ biển.
+l3-71 | 今晚有一个晚宴。 | Tối nay có một bữa tiệc tối.
+l3-73 | 他躲避雨水。 | Anh ấy tránh mưa.
+l3-73 | 她在吃口香糖。 | Cô ấy đang ăn kẹo cao su.
+l3-73 | 奥运火炬很亮。 | Ngọn đuốc Olympic rất sáng.
+l3-74 | 在路口向左转。 | Rẽ trái ở ngã tư.
+l3-76 | 路边有一家店。 | Ven đường có một cửa hàng.
+l3-79 | 我们要爱护大自然。 | Chúng ta phải bảo vệ thiên nhiên.
+l3-79 | 旅客都上车了。 | Hành khách đều lên xe rồi.
+l4-1 | 听到消息，她悲痛欲绝。 | Nghe tin, cô ấy đau thương tột cùng.
+l4-1 | 孩子们兴高采烈地玩。 | Bọn trẻ chơi đùa hớn hở.
+l4-1 | 他吓得魂飞魄散。 | Anh ấy sợ đến hồn bay phách lạc.
+l4-2 | 敌人兵临城下。 | Quân địch đã binh lâm thành hạ.
+l4-3 | 他恩将仇报，真让人生气。 | Anh ta lấy oán báo ơn, thật khiến người ta tức giận.
+l4-6 | 她长得闭月羞花。 | Cô ấy đẹp đến bế nguyệt tu hoa.
+l4-6 | 她真是国色天香。 | Cô ấy đúng là quốc sắc thiên hương.
+l4-6 | 这座房子金碧辉煌。 | Ngôi nhà này lộng lẫy huy hoàng.
+l4-6 | 山上云雾缭绕。 | Trên núi mây mù bao quanh.
+l4-8 | 雷声惊天动地。 | Tiếng sấm kinh thiên động địa.
+l4-8 | 他有排山倒海的力量。 | Anh ấy có sức mạnh dời non lấp biển.
+l4-8 | 孩子们把房间翻江倒海。 | Bọn trẻ làm căn phòng đảo lộn tung lên.
+l4-9 | 他杯弓蛇影，什么都怕。 | Anh ấy chén cung bóng rắn, cái gì cũng sợ.
+l4-9 | 他卧薪尝胆，终于成功了。 | Anh ấy nằm gai nếm mật, cuối cùng đã thành công.
+l4-9 | 不要指鹿为马。 | Đừng chỉ hươu bảo ngựa.
+l4-9 | 他三顾茅庐请老师。 | Anh ấy ba lần đến lều tranh mời thầy.
+l4-11 | 这样的例子比比皆是。 | Ví dụ như vậy nhan nhản khắp nơi.
+l4-11 | 游客络绎不绝。 | Du khách nườm nượp không ngớt.
+l4-11 | 商店里水泄不通。 | Trong cửa hàng chật như nêm.
+l4-11 | 她做事有条不紊。 | Cô ấy làm việc trật tự không rối.
+l4-12 | 小偷让人防不胜防。 | Kẻ trộm khiến người ta phòng không xuể.
+l4-12 | 爱父母天经地义。 | Yêu cha mẹ là điều đương nhiên.
+l4-14 | 他有口难言。 | Anh ấy có miệng khó nói.
+l4-14 | 他义无反顾地走了。 | Anh ấy không quay đầu mà ra đi.
+l4-14 | 她助人为乐。 | Cô ấy lấy việc giúp người làm vui.
+l4-15 | 他是个老油条。 | Anh ta là một tay lọc lõi.
+l4-18 | 今天我点了外卖。 | Hôm nay tôi gọi đồ ăn giao tận nơi.
+l4-19 | 他很喜欢二次元。 | Anh ấy rất thích thế giới hai chiều.
+l4-28 | 联合国在美国。 | Liên Hợp Quốc ở nước Mỹ.
+l4-36 | 请把纸折好。 | Xin hãy gấp giấy lại.
+l4-38 | 工人在维修电梯。 | Công nhân đang sửa chữa thang máy.
+l4-39 | 夏天我爱吃西瓜。 | Mùa hè tôi thích ăn dưa hấu.
+l4-41 | 他拉开了窗户。 | Anh ấy kéo cửa sổ ra.
+l4-41 | 公司安置了新员工。 | Công ty đã bố trí nhân viên mới.
+l4-42 | 水由很多东西构成。 | Nước được cấu tạo từ nhiều thứ.
+l4-43 | 这首歌很优美。 | Bài hát này rất hay.
+l4-48 | 树叶在风中摆动。 | Lá cây đung đưa trong gió.
+l4-48 | 我们要扩展市场。 | Chúng ta phải mở rộng thị trường.
+l4-49 | 春天，花都开花了。 | Mùa xuân, hoa đều nở rồi.
+l4-50 | 公司制定了新的方针。 | Công ty đã đề ra phương châm mới.
+l4-53 | 再等一刻就好。 | Đợi thêm mười lăm phút nữa là được.
+l3-33 | 他是一名博士。 | Anh ấy là một tiến sĩ.

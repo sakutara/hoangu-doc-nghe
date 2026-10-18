@@ -1,0 +1,180 @@
+## F2-55 | Cầu hôn, bảo tàng & văn hóa
+1=cầu hôn
+2=phòng tắm
+3=cán, cột;;gǎn;;can
+4=đắng; khổ;;kǔ;;khổ
+5=liệu; nguyên liệu;;liào;;liệu
+6=lâu la (đàn em);;lóu;;lâu
+7=chiếc, quả (lượng từ);;méi;;mai
+8=đá; thạch (họ);;shí;;thạch
+9=hội kiến
+10=đi bộ
+11=có thể hình dung
+12=bôi, tô;;tú;;đồ
+13=không dừng ở
+14=chướng ngại
+15=cố vấn
+16=khủng hoảng
+17=nhạy cảm
+18=nhân lúc;;chèn;;sấn
+19=bảo tàng
+20=thứ sáu
+21=mất;;shī;;thất
+22=máy quay phim
+23=thuộc hạ
+24=đánh vỡ
+25=văn hóa
+> 我们周五去博物馆。 | Thứ sáu chúng ta đi bảo tàng.
+> 他喜欢走路。 | Anh ấy thích đi bộ.
+> 这是一个危机。 | Đây là một cuộc khủng hoảng.
+> 浴室在哪里？ | Phòng tắm ở đâu?
+## F2-56 | Chủ nghĩa, tàu vũ trụ & khắp nơi
+1=mác (tiền tệ); Mark;;mǎkè;;mã khắc
+2=tuân thủ
+3=phi thuyền
+4=người phụ trách
+5=bảo thủ
+6=cạo; thổi (gió);;guā;;quát
+7=duy trì
+8=chủ nghĩa
+9=xanh lá;;lǜ;;lục
+10=thường thường
+11=nhiếp ảnh gia
+12=nấu;;zhǔ;;chử
+13=trại
+14=dữ;;xiōng;;hung
+15=gánh vác
+16=sĩ quan chỉ huy
+17=xảy ra chuyện
+18=đó đây, mọi nơi
+19=đại sảnh
+20=quét dọn
+21=tháo;;chāi;;sách
+22=thuật;;shù;;thuật
+23=thái;;tài;;thái
+24=thiếu;;quē;;khuyết
+25=vườn hoa
+> 他常常出事。 | Anh ấy thường xuyên gặp chuyện.
+> 花园里有很多花。 | Trong vườn có rất nhiều hoa.
+> 请你打扫房间。 | Xin bạn quét dọn phòng.
+> 我们要遵守规则。 | Chúng ta phải tuân thủ quy tắc.
+## F2-57 | Đính hôn, bầu trời & tủ lạnh
+1=đính hôn
+2=đời; thế;;shì;;thế
+3=cỏ;;cǎo;;thảo
+4=quyền miễn trừ
+5=gặp phải (chuyện xui);;zāo;;tao
+6=quận;;jùn;;quận
+7=chán ngán
+8=rượu whisky
+9=phát thanh
+10=lon, hũ;;guàn;;quán
+11=to tiếng
+12=bầu trời
+13=diệu;;miào;;diệu
+14=bản địa
+15=dính;;zhān;;niêm
+16=vạn tuế
+17=tủ lạnh
+18=cát;;shā;;sa
+19=người hùn vốn
+20=đáp;;dá;;đáp
+21=video
+22=chuyên môn; riêng
+23=toàn thân
+24=bán đứng
+25=ký hiệu, đánh dấu
+> 冰箱里有牛奶。 | Trong tủ lạnh có sữa bò.
+> 天空很蓝。 | Bầu trời rất xanh.
+> 别大声说话。 | Đừng nói to tiếng.
+> 我看了一个视频。 | Tôi đã xem một video.
+## F2-58 | Trị an, đàn piano & toán học
+1=trị an
+2=cách ăn mặc
+3=cuộc gặp mặt
+4=phục thù
+5=ngoại khoa
+6=cô nương trẻ
+7=đàn piano
+8=thương;;shāng;;thương
+9=toán học
+10=còn về
+11=nếm;;cháng;;thường
+12=đăng ký
+13=bóng rổ
+14=mắng;;mà;;mạ
+15=hộ; bảo vệ;;hù;;hộ
+16=chỉ đạo, hướng dẫn
+17=giới;;jiè;;giới
+18=công bố
+19=nguyên liệu, tư liệu
+20=thịnh hành
+21=phòng khám
+22=bất an
+23=lục soát;;sōu;;sưu
+24=hôn mê
+25=nửa đêm
+> 他会弹钢琴。 | Anh ấy biết chơi piano.
+> 我喜欢打篮球。 | Tôi thích chơi bóng rổ.
+> 我数学不好。 | Môn toán của tôi không giỏi.
+> 诊所在哪里？ | Phòng khám ở đâu?
+## F2-59 | Công dân, quý ông & trực giác
+1=liên đới
+2=dáng người
+3=châm biếm
+4=sỉ nhục
+5=rạng sáng
+6=trường (thành tố);;xiào;;hiệu
+7=bờ biển
+8=đều; đủ;;qí;;tề
+9=thăng cấp
+10=trực giác
+11=làm ra (văn viết)
+12=nay (văn viết);;zī;;tư
+13=cổ xưa;;gǔ;;cổ
+14=phế vật
+15=lộ ra
+16=thân sĩ
+17=con sâu bọ
+18=lời thoại
+19=công dân
+20=địa bàn
+21=nắm chặt
+22=nhìn có vẻ
+23=trứng gà
+24=tàn nhẫn
+25=đóng lại
+> 他是一位绅士。 | Ông ấy là một quý ông.
+> 看起来要下雨了。 | Trông có vẻ sắp mưa.
+> 他的身材很好。 | Dáng người anh ấy rất đẹp.
+> 我吃了两个鸡蛋。 | Tôi đã ăn hai quả trứng gà.
+## F2-60 | Nghỉ mát, bến tàu & guitar
+1=con nhỏ
+2=camera
+3=phát; gieo;;bō;;phát
+4=tạo hình
+5=dù (là)
+6=tròn;;yuán;;viên
+7=đối thoại
+8=trầm mặc
+9=tỉ mỉ, đầy đủ
+10=nghiêm nghị
+11=kẻ tình nghi
+12=thiêng liêng
+13=dấu hiệu
+14=khoan; kim cương;;zuān;;toản
+15=đi nghỉ
+16=thám trưởng
+17=tròn, trọn
+18=trên không
+19=hàng không
+20=nhà kho
+21=nổ súng (khai hỏa)
+22=đàn guitar
+23=bến tàu
+24=sân; tòa;;tíng;;đình
+25=tản; rời;;sǎn;;tán
+> 我们去度假吧。 | Chúng ta đi nghỉ mát đi.
+> 他弹吉他。 | Anh ấy chơi guitar.
+> 这是一个仓库。 | Đây là một nhà kho.
+> 船在码头。 | Con thuyền ở bến tàu.

@@ -1,0 +1,210 @@
+## F1-47 | Khán giả, tình cảm & tội phạm
+1=khán giả
+2=hôi;;chòu;;xú
+3=đạt tới
+4=kể từ khi
+5=chuông; đồng hồ; chén;;zhōng;;chung
+6=viên đạn
+7=chú
+8=rác
+9=bạn trai
+10=đau
+11=ma túy
+12=ký; thăm;;qiān;;thiêm
+13=không cần thiết
+14=phản đối
+15=hạt, viên (lượng từ);;kē;;khỏa
+16=dừng lại
+17=thịt;;ròu;;nhục
+18=thử nghiệm
+19=đặc sắc
+20=vàng; kim;;jīn;;kim
+21=tình cảm
+22=có khi, có lúc
+23=tập kích
+24=cả đời
+25=buổi biểu diễn
+> 这场演出很精彩。 | Buổi biểu diễn này rất đặc sắc.
+> 垃圾在外面。 | Rác ở bên ngoài.
+> 我一生都爱你。 | Cả đời này anh đều yêu em.
+> 我叔叔反对这个计划。 | Chú tôi phản đối kế hoạch này.
+## F1-48 | Ngôi sao, hơi thở & linh hồn
+1=không bận tâm
+2=triều; hướng về;;cháo;;triều
+3=hít thở
+4=ngôi sao
+5=thành;;chéng;;thành
+6=máy; cơ;;jī;;cơ
+7=siêu cấp
+8=linh hồn
+9=phá hoại
+10=chẳng qua
+11=phòng; nhà;;fáng;;phòng
+12=vui vẻ, dễ chịu
+13=nổ
+14=đến muộn
+15=mang đi
+16=bữa tối
+17=đùa
+18=vai diễn, nhân vật
+19=đầu óc
+20=trên đường
+21=quái quỷ
+22=tạp chí
+23=tú; thể hiện (show);;xiù;;tú
+24=phục vụ
+25=thích hợp
+> 他是一个超级明星。 | Anh ấy là một siêu sao.
+> 我迟到了，对不起。 | Tôi đến muộn, xin lỗi.
+> 你在开玩笑吗？ | Bạn đang đùa đấy à?
+> 晚餐的服务很好。 | Dịch vụ của bữa tối rất tốt.
+## F1-49 | Học tập, quảng cáo & tự nhiên
+1=học tập
+2=bữa; dừng;;dùn;;đốn
+3=tiện; liền;;biàn;;tiện
+4=bao gồm
+5=mệt;;lèi;;lụy
+6=ô tô
+7=thời khắc
+8=đơn; hóa đơn; lẻ;;dān;;đơn
+9=quảng cáo
+10=anh em (thân mật)
+11=Anh
+12=kiểu, dạng;;yàng;;dạng
+13=đồ ngốc
+14=lạnh;;lěng;;lãnh
+15=khá, tương đương
+16=ném; đầu tư;;tóu;;đầu
+17=ngửi; nghe tin;;wén;;văn
+18=công bằng
+19=thứ đồ chơi
+20=và; kịp;;jí;;cập
+21=rắm;;pì;;thí
+22=giày
+23=nhìn chằm chằm
+24=tự nhiên
+25=đống;;duī;;đôi
+> 这个广告很有意思。 | Quảng cáo này rất thú vị.
+> 外面很冷，你穿鞋了吗？ | Bên ngoài rất lạnh, bạn đã đi giày chưa?
+> 我累了，想休息。 | Tôi mệt rồi, muốn nghỉ ngơi.
+> 他盯着我看。 | Anh ta nhìn chằm chằm vào tôi.
+## F1-50 | Lịch sử, tòa án & trái đất
+1=lịch sử
+2=sâu;;shēn;;thâm
+3=lấy;;qǔ;;thủ
+4=tòa án
+5=câu lạc bộ
+6=thông thường
+7=cứu rỗi
+8=bia
+9=suýt nữa
+10=cắn
+11=ngắn
+12=trái đất
+13=chặt;;jǐn;;khẩn
+14=thấu, xuyên qua;;tòu;;thấu
+15=nạn nhân
+16=lực;;lì;;lực
+17=ngu dại
+18=bom
+19=đá
+20=liên bang
+21=ban giám khảo
+22=khách sáo
+23=đi qua; sau khi
+24=gây ra
+25=tín hiệu
+> 地球是我们的家。 | Trái đất là ngôi nhà của chúng ta.
+> 他差点被车撞了。 | Anh ấy suýt bị xe đâm.
+> 别客气！ | Đừng khách sáo!
+> 法庭里没有人说话。 | Trong tòa án không có ai nói chuyện.
+## F1-51 | Cuối tuần, hôn nhân & thói quen
+1=cuối tuần
+2=sao;;xīng;;tinh
+3=uống rượu
+4=đẩy;;tuī;;suy
+5=theo dõi, bám đuôi
+6=lần sau
+7=đầy ắp
+8=then chốt
+9=đứt, gãy; cắt;;duàn;;đoạn
+10=khác (vật)
+11=để sau hẵng nói
+12=trống; không;;kōng;;không
+13=ôm
+14=xét cho cùng
+15=tốt đẹp
+16=lớp; ca;;bān;;ban
+17=thánh;;shèng;;thánh
+18=giá; khung; (lượng từ máy bay);;jià;;giá
+19=e rằng
+20=chuẩn; cho phép;;zhǔn;;chuẩn
+21=cướp;;qiǎng;;thương
+22=bài học; môn;;kè;;khóa
+23=thói quen
+24=hiện thực
+25=đưa ra (quyết định)
+> 周末你想做什么？ | Cuối tuần bạn muốn làm gì?
+> 下次我们再说吧。 | Lần sau chúng ta hẵng nói nhé.
+> 他抱着孩子。 | Anh ấy đang ôm đứa trẻ.
+> 这是我的习惯。 | Đây là thói quen của tôi.
+## F1-52 | Sức khỏe, công viên & hôn nhân
+1=đi làm
+2=nằm
+3=ngày càng
+4=núi
+5=danh sách
+6=bất hạnh
+7=hồi phục
+8=công viên
+9=mang thai
+10=xác nhận
+11=buổi tụ họp
+12=bắt cóc
+13=bộ lạc
+14=chịu, bằng lòng;;kěn;;khẳng
+15=tư liệu
+16=sạch sẽ
+17=hôn nhân
+18=đau đớn
+19=thân; hôn; người thân;;qīn;;thân
+20=nhà thờ
+21=da;;pí;;bì
+22=sảng khoái;;shuǎng;;sảng
+23=chim;;niǎo;;điểu
+24=sức khỏe
+25=vòng;;quān;;khuyên
+> 我明天上班。 | Ngày mai tôi đi làm.
+> 山上有一只鸟。 | Trên núi có một con chim.
+> 他需要时间恢复。 | Anh ấy cần thời gian để hồi phục.
+> 公园很干净。 | Công viên rất sạch sẽ.
+## F1-53 | Khách hàng, kỹ thuật & khó khăn
+1=khách hàng
+2=cái đầu
+3=không đủ
+4=suỵt;;xū;;hư
+5=chia tay
+6=phía trước
+7=phương hướng
+8=tâm lý
+9=hạnh phúc (viên mãn)
+10=cây
+11=tiếp theo
+12=cứu mạng
+13=hạng mục; (lượng từ);;xiàng;;hạng
+14=kẻ điên
+15=thi đấu;;sài;;trại
+16=tướng quân
+17=kỹ thuật
+18=ăn cơm
+19=truyền; chuyển;;chuán;;truyền
+20=khó khăn
+21=không được phép
+22=một loại nào đó
+23=ký ức
+24=ban nhạc
+25=khẩn cấp
+> 我们去吃饭吧。 | Chúng ta đi ăn cơm thôi.
+> 前面有一个人。 | Phía trước có một người.
+> 客户需要你的帮助。 | Khách hàng cần sự giúp đỡ của bạn.
+> 救命！ | Cứu với!

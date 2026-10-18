@@ -1,0 +1,52 @@
+## F1-01 | Đại từ & trợ từ cốt lõi
+1=của; (trợ từ sở hữu, định ngữ)
+3=bạn, anh, chị
+4=là
+5=(trợ từ hoàn thành / thay đổi)
+7=ở, tại; đang
+10=tốt, khỏe, hay
+11=có
+12=này, đây
+13=thì, liền, ngay
+14=biết (làm); sẽ; hội
+15=không? (trợ từ nghi vấn)
+16=muốn; cần; phải
+17=cái gì, gì
+20=nghĩ; muốn; nhớ
+21=một
+22=rất
+23=biết
+24=người
+25=nhé, đi (trợ từ gợi ý)
+> 你好吗？ | Bạn khỏe không?
+> 我们都很好。 | Chúng tôi đều rất khỏe.
+> 你要什么？ | Bạn muốn cái gì?
+> 他不想说，她也不想说。 | Anh ấy không muốn nói, cô ấy cũng không muốn nói.
+## F1-02 | Chỉ thị, phủ định & động từ nền
+1=kia, đó
+2=đến, lại
+3=đều
+4=cái, con (lượng từ chung);;ge;;cá
+5=có thể, có năng lực
+6=đi
+7=không có; chưa
+8=và, với; hòa
+10=đến, tới
+11=đúng; đối với
+12=cũng
+13=à, ạ (thán từ)
+14=vẫn, còn; trả lại
+15=(giới từ "bả": đưa tân ngữ ra trước)
+16=để cho, nhường
+17=làm
+18=cho; đưa
+19=trên; lên
+20=các bạn
+21=qua, trải qua; (trợ từ kinh nghiệm)
+23=(trợ từ bổ ngữ: "đến mức...")
+24=xem, nhìn, đọc;;kàn;;khán
+25=thật, thật sự
+> 他们都去了。 | Họ đều đã đi rồi.
+> 你没有看吗？ | Bạn không xem à?
+> 我也想去，你们让我去吧。 | Tôi cũng muốn đi, các bạn cho tôi đi nhé.
+> 这个是真的吗？ | Cái này là thật à?

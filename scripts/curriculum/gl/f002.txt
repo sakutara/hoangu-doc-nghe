@@ -1,0 +1,210 @@
+## F3-07 | Tội lỗi, kỳ nghỉ & thực lực
+1=tội lỗi, điều ác
+2=dùng để
+3=nhìn; xem;;shì;;thị
+4=xa tít
+5=kỳ nghỉ
+6=quét
+7=đề; câu hỏi;;tí;;đề
+8=nghĩa vụ
+9=mạnh dữ;;měng;;mãnh
+10=thiếu hụt
+11=liên tục
+12=dục vọng
+13=ban ngày
+14=liên hoàn
+15=ảo thuật
+16=sở dĩ
+17=thực lực
+18=tinh linh
+19=ong mật
+20=trừ; loại bỏ;;chú;;trừ
+21=mất kiểm soát
+22=phóng đại
+23=cờ bạc
+24=nằm vùng
+25=hoàn cảnh
+> 白天我去上班。 | Ban ngày tôi đi làm.
+> 这是我的义务。 | Đây là nghĩa vụ của tôi.
+> 他喜欢赌博。 | Anh ta thích cờ bạc.
+> 你的实力很强。 | Thực lực của bạn rất mạnh.
+## F3-08 | Lễ phục, thừa kế & cách ly
+1=lễ phục
+2=không (số 0)
+3=album
+4=lưu giữ
+5=sửa xong
+6=làm cảm động
+7=lắc lư;;huàng;;hoảng
+8=mạn (dài, đẹp);;màn;;mạn
+9=thừa kế
+10=ngày nay
+11=chơi bóng
+12=nhuộm; nhiễm;;rǎn;;nhiễm
+13=tổ mẫu (bà)
+14=lão cha
+15=không bằng
+16=mưu toan
+17=két sắt
+18=dây vào, nhiễm;;zhān;;triêm
+19=phúc;;fú;;phúc
+20=quần (thành tố);;kù;;khố
+21=bộ vest
+22=cách ly
+23=thuê mướn
+24=bếp;;chú;;trù
+25=lữ; du lịch;;lǚ;;lữ
+> 他继承了爷爷的房子。 | Anh ấy thừa kế căn nhà của ông nội.
+> 我们去打球吧。 | Chúng ta đi chơi bóng nhé.
+> 现在我不如以前了。 | Bây giờ tôi không bằng trước kia nữa.
+> 他穿着一件西装。 | Anh ấy mặc một bộ vest.
+## F3-09 | Hộ chiếu, kẻ cắp & tri thức
+1=biết rõ
+2=đài phát thanh
+3=phạt;;fá;;phạt
+4=sớm muộn
+5=hộ chiếu
+6=sự nghiệp, sinh nhai
+7=họp
+8=chi trả
+9=tri thức
+10=kẻ cắp
+11=giãy giụa
+12=đề cử
+13=cầu thủ
+14=inch
+15=xem
+16=lãnh tụ
+17=nhận nuôi
+18=quấy rối
+19=khớp
+20=kích nổ
+21=người trưởng thành
+22=đồng xu
+23=ngày lễ
+24=trần;;luǒ;;lõa
+25=giấy phép
+> 我的护照不见了。 | Hộ chiếu của tôi mất rồi.
+> 他是一个小偷。 | Hắn là một tên trộm.
+> 明天下午开会。 | Chiều mai họp.
+> 这个节日很特别。 | Ngày lễ này rất đặc biệt.
+## F3-10 | Xấu hổ, tiền thưởng & ra tòa
+1=khó coi, bẽ mặt
+2=mất mặt
+3=đánh rắm
+4=tổng hợp báo cáo
+5=khó chịu
+6=vỗ tay
+7=tiền thưởng
+8=hành trình
+9=xúc xích hot dog
+10=ngày tận thế
+11=bộ phim
+12=người chứng kiến
+13=kẹo
+14=mặt đất
+15=xưng rằng
+16=chốc nữa
+17=bắt;;zhuō;;tróc
+18=xé;;sī;;tê
+19=cọc; việc (lượng từ);;zhuāng;;thung
+20=quá độ
+21=ra tòa
+22=bao vây
+23=tư vấn
+24=gợi ý nhắc nhở
+25=hồ đồ
+> 我觉得很难受。 | Tôi cảm thấy rất khó chịu.
+> 大家都在鼓掌。 | Mọi người đều đang vỗ tay.
+> 他不想丢脸。 | Anh ấy không muốn mất mặt.
+> 他今天要出庭。 | Hôm nay ông ấy phải ra tòa.
+## F3-11 | Phổi, hài hước & đấu tranh
+1=phổi;;fèi;;phế
+2=viện; sân;;yuàn;;viện
+3=cháy
+4=quyền anh
+5=khí độc
+6=xa hoa
+7=tranh cãi ồn ào
+8=nữ tu
+9=hỗn hợp
+10=riêng;;sī;;tư
+11=hài hước
+12=sáng suốt
+13=dễ dãi, tùy tiện
+14=xanh;;qīng;;thanh
+15=thụt lùi
+16=hoang mang
+17=thùng;;tǒng;;dũng
+18=vũ trang
+19=Cơ Đốc;;jīdū;;cơ đốc
+20=băng ghi hình
+21=lễ Tạ ơn
+22=móng tay
+23=đấu tranh
+24=ánh đèn
+25=tính; kế;;jì;;kế
+> 他们在争吵。 | Họ đang tranh cãi.
+> 他很幽默。 | Anh ấy rất hài hước.
+> 房间里有一个桶。 | Trong phòng có một cái thùng.
+> 感恩节快乐！ | Chúc mừng lễ Tạ ơn!
+## F3-12 | Bầu cử, kem & đời tư
+1=tiết lộ
+2=bầu cử
+3=tương; sốt;;jiàng;;tương
+4=lên xe
+5=kem
+6=cướp; kiếp;;jié;;kiếp
+7=vòng đeo; khâu;;huán;;hoàn
+8=truy xét
+9=xưởng; bộ hán;;chǎng;;xưởng
+10=dễ chịu hơn
+11=không cần đến
+12=yêu nhau
+13=đủ để
+14=không tồi
+15=dân số
+16=nổi danh
+17=áo jacket
+18=mềm;;ruǎn;;nhuyễn
+19=đầu phố
+20=chạm;;chù;;xúc
+21=phạm pháp
+22=đời tư
+23=chuột (thành tố);;shǔ;;thử
+24=đồ lót
+25=chức năng
+> 我们去吃冰淇淋吧。 | Chúng ta đi ăn kem đi.
+> 他想上车。 | Anh ấy muốn lên xe.
+> 这个人很出名。 | Người này rất nổi tiếng.
+> 请保护我的隐私。 | Xin hãy bảo vệ đời tư của tôi.
+## F3-13 | Thương hiệu, giọng nói & thu nhập
+1=vững;;wěn;;ổn
+2=bạc;;yín;;ngân
+3=giọng nói vùng miền
+4=rõ ràng dứt khoát
+5=thương hiệu
+6=xoay tròn
+7=đột nhập
+8=chải; quét;;shuā;;xoát
+9=nhìn lại
+10=cố ý, có ý
+11=hổ;;hǔ;;hổ
+12=đối tượng tình nghi
+13=cháu nội
+14=dẹt;;biǎn;;biển
+15=nắm chắc
+16=kịch liệt
+17=bỏ đi
+18=ủy quyền
+19=mồ hôi;;hàn;;hãn
+20=máy ảnh
+21=người ủy thác
+22=thứ (tha);;shù;;thứ
+23=thu nhập
+24=niềm vui sướng
+25=kẻ buôn ma túy
+> 他在街头卖东西。 | Anh ấy bán đồ ngoài đầu phố.
+> 他的口音很特别。 | Giọng nói của anh ấy rất đặc biệt.
+> 我有把握。 | Tôi nắm chắc.
+> 他流了很多汗。 | Anh ấy đổ rất nhiều mồ hôi.

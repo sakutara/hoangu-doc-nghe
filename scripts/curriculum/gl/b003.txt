@@ -1,0 +1,177 @@
+## F2-13 | Bữa trưa, mặt trời & cưỡi ngựa
+1=giấy;;zhǐ;;chỉ
+2=trên mặt đất
+3=hết mức có thể
+4=gọi là; cân;;chēng;;xưng
+5=phạm vi
+6=cưỡi
+7=bữa trưa
+8=mặt trời
+9=đưa ra
+10=cơm trưa
+11=-
+12=tạm thời
+13=ưu tú
+14=đích thân
+15=ca khúc
+16=muộn, chậm;;chí;;trì
+17=trẻ sơ sinh
+18=cực kỳ; cực;;jí;;cực
+19=lan;;lán;;lan
+20=đáng tiếc
+21=chuyện cười
+22=kêu, vang;;xiǎng;;hưởng
+23=hòn đá
+24=foot (đơn vị đo)
+25=nhà, phòng;;wū;;ốc
+> 太阳在天上。 | Mặt trời ở trên trời.
+> 午饭我想吃鱼。 | Bữa trưa tôi muốn ăn cá.
+> 真可惜，你来迟了。 | Thật đáng tiếc, bạn đến muộn rồi.
+> 他骑着马。 | Anh ấy đang cưỡi ngựa.
+## F2-14 | Khoa học, chi tiết & đồng nghiệp
+1=tiết kiệm; tỉnh;;shěng;;tỉnh
+2=chi tiết
+3=đỉnh;;dǐng;;đỉnh
+4=tháp
+5=khoa học
+6=vụng, ngốc nghếch
+7=mê; lạc;;mí;;mê
+8=có (người/cái)
+9=lẽ phải, đạo lý
+10=thuyền trưởng
+11=đại tá
+12=vãi, rải;;sā;;tát
+13=ca sĩ
+14=vận khí, may rủi
+15=chủ yếu
+16=đồng nghiệp
+17=hét, gọi to
+18=khói; thuốc lá;;yān;;yên
+19=nhà hàng
+20=mỗi, các;;gè;;các
+21=ma;;mó;;ma
+22=người đẹp
+23=khoảng cách
+24=độc;;dú;;độc
+25=chế tác
+> 我们是同事。 | Chúng tôi là đồng nghiệp.
+> 塔很高。 | Cái tháp rất cao.
+> 这个道理很简单。 | Đạo lý này rất đơn giản.
+> 他是我最喜欢的歌手。 | Anh ấy là ca sĩ tôi thích nhất.
+## F2-15 | Cửa sổ, y tá & kỳ tích
+1=có phần nào
+2=phát biểu
+3=ngã; quăng;;shuāi;;suất
+5=trên phố
+6=đội nhóm
+7=từ lâu rồi
+8=chung sống
+9=mũi
+10=thôi, mà thôi
+11=trải qua
+12=về; quy;;guī;;quy
+13=tuyệt; cắt đứt;;jué;;tuyệt
+14=nắm đấm;;quán;;quyền
+15=quan tâm theo dõi
+16=Đức
+17=phần lớn
+18=cửa sổ
+19=kỳ tích
+20=y tá
+21=không khí
+22=chia sẻ
+24=bị bắt
+25=cơ sở;;jī;;cơ
+> 窗户外面有一只鸟。 | Bên ngoài cửa sổ có một con chim.
+> 这是一个奇迹！ | Đây là một kỳ tích!
+> 我们要分享这个好消息。 | Chúng ta phải chia sẻ tin tốt này.
+> 护士在哪里？ | Y tá đang ở đâu?
+## F2-16 | Chính trị, truyền thông & biểu đạt
+1=tín ngưỡng
+2=hối hận
+3=nhân viên bảo an
+4=biến thái
+5=truyền thông
+6=mau chóng
+7=con (ngựa); xứng;;pǐ;;thất
+8=cái gọi là
+9=góc; sừng; vai diễn;;jiǎo;;giác
+10=thành lập
+11=in; dấu;;yìn;;ấn
+12=sao cũng được
+13=biến hóa
+14=biểu đạt
+15=khoảng chừng
+16=suốt đời người
+17=đông;;dōng;;đông
+18=chỉ mới
+19=tạo; chế;;zào;;tạo
+20=chị em
+21=thực hiện
+22=bí ẩn
+23=thành phố; chợ;;shì;;thị
+24=chính trị
+25=giữ, buộc (thành tố);;wéi;;duy
+> 我后悔了。 | Tôi hối hận rồi.
+> 他不在乎政治。 | Anh ấy không quan tâm đến chính trị.
+> 媒体报道了这件事。 | Truyền thông đã đưa tin về chuyện này.
+> 我们是姐妹。 | Chúng tôi là chị em.
+## F2-17 | Cô đơn, ma quỷ & môi trường
+1=chứng bệnh;;zhèng;;chứng
+2=ma quỷ
+3=cô độc
+5=nội dung
+6=to lớn
+7=bé yêu
+8=trừng phạt
+9=thêm vào
+10=mở cửa
+11=màu xanh lam
+12=rút khỏi
+13=tiến lên
+14=đối thủ
+15=sao, thế nào;;zěn;;chẩm
+16=hồn ma
+17=thần kỳ
+18=mục sư
+19=lớp (khối)
+20=thế hệ; thay;;dài;;đại
+21=nhắc đến
+22=đồ tạp chủng (chửi)
+23=môi trường
+24=lên, leo;;dēng;;đăng
+25=kích thích
+> 他一个人，很孤独。 | Anh ấy chỉ một mình, rất cô độc.
+> 魔鬼是不是真的？ | Ma quỷ có thật không?
+> 他提到了你的名字。 | Anh ấy đã nhắc đến tên bạn.
+> 这个环境很安静。 | Môi trường này rất yên tĩnh.
+## F2-18 | Quy định, phép thuật & lời hứa
+1=dựa vào;;píng;;bằng
+2=quy định
+3=rất nhiều (khẩu ngữ)
+4=mưa;;yǔ;;vũ
+5=cân (đơn vị); pound;;bàng;;bàng
+6=tốt nhất
+7=người bị hại
+8=lời thừa
+9=vết thương
+10=hiệu quả
+11=(trợ từ ngữ khí);;lo;;lạc
+12=ma pháp
+13=tự mình một thân
+14=đoạt;;duó;;đoạt
+15=tiền mặt
+16=nắm vững
+17=nhi đồng
+18=thiếu nữ, cô bé
+19=hùng mạnh
+20=tách ra
+21=thuê;;zū;;tô
+22=kiệt (xuất chúng);;jié;;kiệt
+23=gã (phương ngữ);;lǎo;;lão
+24=hứa hẹn
+25=ưa nhìn, hay
+> 外面下雨了。 | Bên ngoài trời mưa rồi.
+> 我要租一个房子。 | Tôi muốn thuê một căn nhà.
+> 他有强大的魔法。 | Anh ấy có ma pháp rất mạnh.
+> 你要记住你的承诺。 | Bạn phải nhớ lời hứa của mình.

@@ -1,0 +1,180 @@
+## F2-67 | Quảng trường, thú cưng & hạn chế
+1=phong tỏa
+2=kiện tụng
+3=cấp trên
+4=gen
+5=ngô
+6=kỷ lục; ghi chép
+7=độ cao; cao độ
+8=thú cưng
+9=tiệc tối, liên hoan
+10=tro; xám;;huī;;hôi
+11=che mắt;;mán;;man
+12=quảng trường
+13=được gọi là
+14=chức vị
+15=màu vàng
+16=đáng ghét
+17=những vì sao nhỏ
+18=giẫm;;tà;;đạp
+19=chế;;zhì;;chế
+20=đâm; buộc;;zhā;;trát
+21=tìm lại
+22=chi viện
+23=tộc;;zú;;tộc
+24=xác đáng
+25=hạn chế
+> 广场上有很多人。 | Trên quảng trường có rất nhiều người.
+> 我的宠物是一只猫。 | Thú cưng của tôi là một con mèo.
+> 晚会几点开始？ | Mấy giờ dạ hội bắt đầu?
+> 星星很漂亮。 | Những ngôi sao rất đẹp.
+## F2-68 | Thầy thuốc, tình bạn & đầu hàng
+1=dưới
+2=dơ bẩn
+3=thầy thuốc
+4=tập dượt
+5=vô số
+6=tắm rửa (thành tố);;zǎo;;táo
+7=khác người
+8=lương thiện
+9=bỏng; ủi;;tàng;;thang
+10=bình luận
+11=cấm không cho
+12=đáng buồn
+13=quỹ
+14=đội bóng
+15=phía, nghiêng;;cè;;trắc
+16=tình hữu nghị
+17=ra khỏi nhà
+18=bữa ăn;;cān;;xan
+19=rùa; đồ khốn;;wángba;;vương bát
+20=lên sân
+21=sẽ không
+22=vị trí chỗ
+23=đại hội
+24=đầu hàng
+25=bề mặt
+> 他不会来了。 | Anh ấy sẽ không đến nữa.
+> 我们是好朋友，友谊很重要。 | Chúng ta là bạn tốt, tình bạn rất quan trọng.
+> 请出门左转。 | Xin ra khỏi cửa rồi rẽ trái.
+> 他投降了。 | Anh ta đã đầu hàng.
+## F2-69 | Chủ tịch, trí tuệ & cảm hứng
+1=chủ tịch
+2=chuẩn xác
+3=đánh trúng
+4=trí tuệ
+5=reo hò
+6=chân; đủ;;zú;;túc
+7=chủ động
+8=tình dục
+9=dịch; dễ (văn viết);;yì;;dịch
+10=truyện tranh
+11=cảm hứng
+12=nhà hàng, khách sạn
+13=ngày thường
+14=đinh;;dīng;;đinh
+15=vả lại;;qiě;;thả
+16=tù nhân
+17=đối diện
+18=liên hợp
+19=lừa người
+20=dị;;yì;;dị
+21=rò rỉ;;lòu;;lậu
+22=góc
+23=lời tiên tri
+24=đại sư
+25=phê chuẩn
+> 他是我们的主席。 | Ông ấy là chủ tịch của chúng tôi.
+> 银行就在对面。 | Ngân hàng ở ngay đối diện.
+> 不要骗人！ | Đừng có lừa người!
+> 我平时不喝酒。 | Ngày thường tôi không uống rượu.
+## F2-70 | Bầu không khí, chiến lược & lợi thế
+1=bầu không khí
+2=tĩnh;;jìng;;tĩnh
+3=giá cả
+4=hi hi;;xī;;hi
+5=không có tội
+6=mảnh vỡ
+7=sách lược
+8=ông già
+9=tính khí
+10=trốn thoát
+11=tự mình trải nghiệm
+12=đáng tin
+13=đồ xấu xa
+14=-
+15=chay; nguyên tố;;sù;;tố
+16=trang bị
+17=dẫn đầu
+18=buổi trưa
+19=ghi âm
+20=trông nom
+21=ghi điểm
+22=xe tải hàng
+23=nhất thời, lâm thời
+24=ưu thế
+25=bản tuyên bố, thông cáo
+> 这里的气氛很好。 | Bầu không khí ở đây rất tốt.
+> 价格太高了。 | Giá cao quá.
+> 他很可靠。 | Anh ấy rất đáng tin.
+> 中午我们一起吃饭。 | Buổi trưa chúng ta cùng ăn cơm.
+## F2-71 | Tính cách, vàng & hoàng hậu
+1=quên đi
+2=tính cách
+3=lưu manh
+4=múa đơn
+5=biên tập
+6=hành sự
+7=bánh nhân
+8=hoàng kim
+9=hiểu được
+10=loại trừ
+11=năm sau
+12=trẻ nhỏ
+13=dục;;yù;;dục
+14=dịu dàng
+15=đôi vợ chồng (cặp đôi)
+16=chốt giao dịch
+17=hoàng hậu
+18=ký (chữ ký)
+19=nhĩ (tai, văn viết);;ěr;;nhĩ
+20=khích lệ
+21=càng nhiều càng tốt
+22=thành tựu
+23=giáo hội
+24=người già
+25=đọc sách, đi học
+> 明年我想去中国。 | Sang năm tôi muốn đi Trung Quốc.
+> 我想读书。 | Tôi muốn đọc sách.
+> 他很温柔。 | Anh ấy rất dịu dàng.
+> 老人坐在椅子上。 | Cụ già ngồi trên ghế.
+## F2-72 | Tiền bạc, tàu điện ngầm & hỗ trợ
+1=tiền bạc
+2=hình dung, diễn tả
+3=phương án
+4=phòng cháy chữa cháy
+5=tỷ lệ; dẫn dắt;;lǜ;;suất
+6=thấp (người);;ǎi;;ải
+7=cảnh vệ
+8=chẳng biết gì
+9=quyền lợi, lợi ích
+10=đến đây thôi
+11=gầm;;hǒu;;hống
+12=tìm cầu
+13=rừng cây
+14=đặt; thiết;;shè;;thiết
+15=thu hồi
+16=phát động
+17=nhịp tim
+18=kỳ dị
+19=quân sự
+20=tàu điện ngầm
+21=quyên góp;;juān;;quyên
+22=hỏi han
+23=đường lối
+24=tập đoàn
+25=hiệp trợ
+> 我坐地铁去上班。 | Tôi đi tàu điện ngầm đến chỗ làm.
+> 他是我们集团的老板。 | Ông ấy là sếp của tập đoàn chúng tôi.
+> 我想捐一些钱。 | Tôi muốn quyên góp một ít tiền.
+> 请你协助警察。 | Xin bạn hãy hỗ trợ cảnh sát.

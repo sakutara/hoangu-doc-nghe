@@ -1,0 +1,146 @@
+## F1-18 | Trường học, lựa chọn & cảm xúc mạnh
+1=chết tiệt
+2=đóng, nhắm
+3=lựa chọn
+4=xấu; hỏng
+5=nguyên nhân
+6=đi xuống; tiếp tục (bổ ngữ)
+7=chịu, nhận;;shòu;;thụ
+8=liền; ngay cả;;lián;;liên
+9=cho tốt, đàng hoàng
+10=toàn, tất cả
+11=quả thật, đúng là
+12=khá, rất (khẩu ngữ); thẳng
+13=này, đây (văn viết)
+14=nước
+15=đồ khốn
+16=cốc, ly
+17=bảo đảm
+18=trường học
+19=bán
+20=thư; tin;;xìn;;tín
+21=chấp nhận
+22=thay đổi, cải biến
+23=múa, khiêu vũ
+24=xem ra, có vẻ
+25=cao
+> 我选择相信你。 | Tôi chọn tin bạn.
+> 这是真的，我保证。 | Đây là thật, tôi đảm bảo.
+> 看来他不想接受。 | Xem ra anh ấy không muốn chấp nhận.
+> 你要喝水吗？ | Bạn có muốn uống nước không?
+## F1-19 | Phim ảnh, chú ý & kết quả
+1=rắc rối; phiền
+4=phim điện ảnh
+5=thử
+6=trên người
+8=đẹp; mỹ lệ
+9=bất kể
+10=sách; thư
+11=đặc biệt
+12=chú ý
+13=kiểm tra, tra
+14=quả bóng, bóng
+15=quên
+16=thậm chí
+17=bảo vệ
+18=thật sự, chân chính
+19=kết quả
+20=biểu hiện
+21=vỗ; chụp, quay
+22=thực ra
+23=cẩn thận
+24=vào đây
+25=đường
+> 我们今晚去看电影吧。 | Tối nay chúng ta đi xem phim nhé.
+> 请你小心，路很远。 | Xin bạn cẩn thận, đường rất xa.
+> 他特别喜欢看书。 | Anh ấy đặc biệt thích đọc sách.
+> 其实结果不重要。 | Thực ra kết quả không quan trọng.
+## F1-20 | Pháp luật, mức độ & thời điểm
+1=ngốc; ở lại;;dāi;;ngai
+2=bốn
+3=lâu;;jiǔ;;cửu
+4=lúc đó
+5=hoặc (văn viết);;huò;;hoặc
+6=hiểu
+7=chỉ có
+8=làm sao đây
+9=thứ (tiền tố số thứ tự)
+10=ngựa
+11=nói; giảng
+12=tuyệt đối
+13=sĩ quan, cấp trên
+14=nhân viên, thành viên (hậu tố);;yuán;;viên
+15=đi vào
+16=ít nhất
+17=luật sư
+18=ồ, ô (thán từ)
+19=cả, trọn vẹn
+20=nghe thấy
+21=biểu diễn
+22=đang
+23=không có (văn viết);;wú;;vô
+24=đã (văn viết);;yǐ;;dĩ
+25=cười;;xiào;;tiếu
+> 你懂我的意思吗？ | Bạn có hiểu ý tôi không?
+> 他是一位律师。 | Ông ấy là một luật sư.
+> 至少我们还有四个小时。 | Ít nhất chúng ta vẫn còn bốn tiếng.
+> 我听到有人在笑。 | Tôi nghe thấy có người đang cười.
+## F1-21 | Hôn nhân, gia đình & hành động
+2=cảm nhận được, thấy
+3=bên kia
+4=xa
+5=con; (hậu tố nhi hóa)
+6=câu chuyện
+7=điên
+8=đổi
+9=kết hôn
+10=đoán
+11=chúng ta (gồm cả người nghe)
+12=giường
+13=xử lý
+14=vợ
+15=tiến hành
+16=trong, bên trong (văn viết)
+17=có hay không
+18=đoạn
+19=lệnh; khiến;;lìng;;lệnh
+20=vừa mới đây
+21=vụ án (khẩu ngữ)
+22=hành động
+23=thứ hai
+24=nỗ lực
+25=sợ hãi
+> 咱们去那边坐吧。 | Chúng ta qua bên kia ngồi đi.
+> 我猜这个故事是真的。 | Tôi đoán câu chuyện này là thật.
+> 我妻子很害怕。 | Vợ tôi rất sợ hãi.
+> 你要努力，我们换一个办法。 | Bạn phải cố gắng, chúng ta đổi một cách khác.
+## F1-22 | Âm nhạc, rượu & suy nghĩ
+1=rượu
+2=gửi; phát;;fā;;phát
+3=điều tra
+4=mất đi
+5=bài hát
+6=thành công
+7=hát
+8=cân nhắc
+9=vừa nãy
+10=cuộc hẹn hò
+11=chương trình
+12=thông qua; vượt qua
+13=giữa
+14=cái khác
+15=học
+16=vui, thoải mái
+17=mẹ (trang trọng)
+18=chiếc (lượng từ xe)
+19=chủ ý, ý tưởng
+20=thăm dò; thăm;;tàn;;thám
+21=chồng
+22=biến thành
+23=ở lại; đối xử;;dāi;;đãi
+24=ngã; đổ;;dǎo;;đảo
+25=cách; rời;;lí;;ly
+> 我们刚才在唱歌。 | Vừa nãy chúng tôi đang hát.
+> 他想喝酒。 | Anh ấy muốn uống rượu.
+> 这是个好主意。 | Đây là một ý hay.
+> 你要考虑一下。 | Bạn phải cân nhắc một chút.

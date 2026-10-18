@@ -1,0 +1,180 @@
+## F1-29 | Đại học, tính cách & dấu hiệu
+1=anh bạn (xưng hô thân mật)
+2=đến từ
+3=càng; vượt;;yuè;;việt
+4=đại học
+5=chăm sóc
+6=bà, vợ (cách gọi)
+7=vốn dĩ
+8=thông minh
+9=cố lên; đổ xăng
+10=trên thực tế
+11=ngọt
+12=sợ
+13=bao lâu
+14=và còn, đồng thời
+15=trực tiếp
+16=đối với
+17=ghi nhớ; ghi chép;;jì;;ký
+18=gì (phương ngữ)
+19=đột nhiên
+20=nổ súng
+21=tiếng;;shēng;;thanh
+22=trừ phi
+23=tập hợp; tập (phim);;jí;;tập
+24=cửa hàng
+25=ngầu (cool)
+> 他本来很聪明。 | Vốn dĩ anh ấy rất thông minh.
+> 你来自哪个国家？ | Bạn đến từ nước nào?
+> 我怕他突然开枪。 | Tôi sợ anh ta đột nhiên nổ súng.
+> 请你照顾好我太太。 | Xin bạn chăm sóc tốt cho vợ tôi.
+## F1-30 | Bình tĩnh, hoàn hảo & ma quỷ
+1=bình thường
+2=tử vong
+3=cuối cùng thì
+4=sở hữu
+5=thuyền, tàu
+6=cảnh báo; cảnh sát (viết tắt);;jǐng;;cảnh
+7=trả (tiền);;fù;;phó
+8=tiệc (party)
+9=lượt, lần (từ đầu đến cuối);;biàn;;biến
+10=bước
+11=không còn nữa
+12=ma, quỷ
+13=cà phê
+14=ngốc
+15=ngăn cản
+16=tưởng tượng
+17=bình tĩnh
+18=phương pháp
+19=ném, vứt
+20=phạm
+21=chúc
+22=năng lực
+23=hoàn mỹ
+24=gam; khắc phục;;kè;;khắc
+25=khẩu; cửa
+> 你要冷静，不要扔东西。 | Bạn phải bình tĩnh, đừng ném đồ.
+> 祝你快乐！ | Chúc bạn vui vẻ!
+> 这里没有鬼。 | Ở đây không có ma.
+> 你有这个能力吗？ | Bạn có năng lực này không?
+## F1-31 | Nghỉ ngơi, giấc mơ & mục tiêu
+1=mục tiêu
+2=yeah (reo vui)
+3=ngày; mặt trời;;rì;;nhật
+4=có liên quan
+5=tinh thần, sức sống
+6=ngoài ra
+7=thư giãn
+8=mất; vứt
+9=nghỉ ngơi
+10=mỗi ngày
+11=trả lời
+12=hung thủ
+13=mạng, mệnh;;mìng;;mệnh
+14=chịu trách nhiệm
+15=ngoài;;wài;;ngoại
+16=va, chạm
+17=để bụng, phiền lòng
+18=giấc mơ
+19=hôm đó
+20=đi ngủ
+21=hệ thống
+22=lăn; cút;;gǔn;;cổn
+23=mưu sát
+24=quà tặng
+25=đeo, đội
+> 我的目标很简单。 | Mục tiêu của tôi rất đơn giản.
+> 他每天都在休息。 | Ngày nào anh ấy cũng nghỉ ngơi.
+> 你昨天做了一个梦吗？ | Hôm qua bạn có nằm mơ không?
+> 谁是凶手？ | Ai là hung thủ?
+## F1-32 | Giáo viên, nhân loại & tự do
+1=loại đó
+2=quý vị, mọi người
+3=sai lầm
+4=con; (hậu tố danh từ);;zǐ;;tử
+5=tùy tiện, tùy ý
+6=tóc
+7=giấu
+8=quan tâm
+9=đáy; nền;;dǐ;;để
+10=hứng thú
+11=tình; cảm xúc;;qíng;;tình
+12=báo cáo
+13=chưa từng
+14=thay
+15=mặt; mì;;miàn;;diện
+16=trải nghiệm
+17=sáu
+18=bay
+19=giáo viên
+20=khí; tức giận;;qì;;khí
+21=không cần
+22=trẻ con
+23=loài người
+24=xông; xối; xả;;chōng;;xung
+25=tự do
+> 老师，我有一个问题。 | Thầy ơi, em có một câu hỏi.
+> 你从没飞过吗？ | Bạn chưa từng đi máy bay à?
+> 我对音乐有兴趣。 | Tôi có hứng thú với âm nhạc.
+> 人类都想要自由。 | Loài người ai cũng muốn tự do.
+## F1-33 | Sinh nhật, cơ thể & sắp xếp
+1=ủng hộ
+2=tuần
+3=phá hủy
+4=bàn chân
+5=tức giận
+6=đề nghị
+7=làm được
+8=bộ; bọc;;tào;;sáo
+9=khóc
+10=mông
+11=sinh nhật
+12=nếu không thì
+13=chúc ngủ ngon
+14=vẽ; bức tranh;;huà;;họa
+15=bệnh;;bìng;;bệnh
+16=sợi dây; tuyến;;xiàn;;tuyến
+17=ánh sáng; chỉ riêng;;guāng;;quang
+18=sắp xếp
+19=trẻ tuổi
+20=thần
+21=thao tác; (chửi thề);;cāo;;tháo
+22=phía dưới
+23=cô gái trẻ
+24=đường; đạo;;dào;;đạo
+25=ấn, bấm
+> 祝你生日快乐！ | Chúc mừng sinh nhật bạn!
+> 我有一个建议。 | Tôi có một đề nghị.
+> 他的脚有病。 | Chân anh ấy bị bệnh.
+> 请按这里。 | Xin hãy bấm vào đây.
+## F1-34 | Pháp đình, thông tin & vật dụng
+1=chìa khóa;;yàoshi;;thược thi
+2=thẩm phán
+3=túi; gói; bao bọc
+4=chân (đùi, cẳng)
+5=tự, từ;;zì;;tự
+6=tuyển thủ
+7=thông tin
+8=nguyên, trọn; chỉnh;;zhěng;;chỉnh
+9=bỏ phiếu
+10=anh trai
+11=cần thiết
+12=phẫu thuật
+13=bên mình
+14=biết (văn viết);;zhī;;tri
+15=vé; phiếu
+16=nói dối
+17=vũ khí
+18=đau khổ
+19=toàn bộ
+20=điện thoại di động
+21=quên mất
+22=tồn tại
+23=trước hết
+24=nhóm; tổ;;zǔ;;tổ
+25=chiếu; chụp;;zhào;;chiếu
+> 我的手机在哪里？ | Điện thoại của tôi đâu rồi?
+> 请不要撒谎。 | Xin đừng nói dối.
+> 我忘记带钥匙了。 | Tôi quên mang chìa khóa rồi.
+> 法官需要更多的证据。 | Thẩm phán cần thêm chứng cứ.

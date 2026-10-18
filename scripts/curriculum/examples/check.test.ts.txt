@@ -1,0 +1,20 @@
+import { it } from 'vitest';
+import { readFileSync, writeFileSync } from 'fs';
+import { defaultSegmenter as seg } from '../src/domains/dictionary';
+import { LESSONS } from '../src/data/curriculum';
+// Đọc /tmp/cand.txt (id | 中文 | Việt), ghi /tmp/cand-report.txt
+it('check', () => {
+  const out: string[] = [];
+  const have = new Map<string, string[]>();
+  for (const ln of readFileSync('/tmp/cand.txt', 'utf8').split('\n').filter(Boolean)) {
+    const [id, zh] = ln.split('|').map((x) => x.trim());
+    const l = LESSONS.find((x) => x.id === id);
+    if (!l) { out.push(`BAD_LESSON ${id}`); continue; }
+    have.set(id, [...(have.get(id) ?? []), zh]);
+    for (const t of seg.segmentSentence(zh)) if (t.isChineseOrAlnum && !t.entry) out.push(`UNKNOWN_TOKEN ${t.text} in ${id} ${zh}`);
+  }
+  for (const l of LESSONS) for (const v of l.vocab) {
+    if (!l.lines.some((x) => x.zh.includes(v.simplified)) && !(have.get(l.id) ?? []).some((z) => z.includes(v.simplified))) out.push(`UNCOVERED ${l.id} ${v.simplified}`);
+  }
+  writeFileSync('/tmp/cand-report.txt', out.join('\n') || 'OK');
+});

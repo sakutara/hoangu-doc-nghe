@@ -1,0 +1,180 @@
+## F2-07 | Thiết bị, giải thưởng & điều kiện
+1=kiểu, loại;;xíng;;hình
+2=này (trợ từ gọi);;na;;nột
+3=báo; thông báo;;bào;;báo
+4=chế tạo
+5=căn phòng
+6=tất cả đều
+7=đánh cược
+8=ở giữa
+9=lùi, rút;;tuì;;thoái
+10=ca hát
+11=bốc; mạo;;mào;;mạo
+12=đến; tới (văn viết);;zhì;;chí
+13=đặc vụ
+14=thị trấn; trấn áp;;zhèn;;trấn
+15=đỗ xe
+16=giải thưởng
+17=thuê (người làm);;gù;;cố
+18=băng, đá
+19=quay đầu; lát nữa
+20=nhẫn
+21=hang, lỗ
+22=chúc mừng (trang trọng)
+23=vụ việc, vụ án (pháp lý)
+24=điều kiện
+25=tác phẩm
+> 我们打赌吧。 | Chúng ta cá cược đi.
+> 房子中间有一个洞。 | Ở giữa ngôi nhà có một cái lỗ.
+> 祝贺你得了奖！ | Chúc mừng bạn đã đạt giải!
+> 他的戒指在桌子上。 | Chiếc nhẫn của anh ấy ở trên bàn.
+## F2-08 | Quy tắc, thỏa thuận & tài xế
+1=nếu; như;;ruò;;nhược
+2=trong tay
+3=phải lòng
+4=thì; quy tắc;;zé;;tắc
+5=nhất định; mười triệu;;qiānwàn;;thiên vạn
+6=hồ sơ
+7=mất (qua đời)
+8=tới gần
+9=nên; đáp ứng;;yīng;;ứng
+10=bánh;;bǐng;;bính
+11=quy tắc
+12=tiếp nhận (cuộc gọi, thư)
+13=bỏ ra, trả giá
+14=thành viên đội
+15=thỏa thuận
+16=mũ
+17=tuần trước
+18=gì; sao (văn viết);;hé;;hà
+19=thuyết phục
+20=điện;;diàn;;điện
+21=tài xế
+22=khám xét
+23=nảy sinh
+24=nghìn;;qiān;;thiên
+25=vải; bố cáo;;bù;;bố
+> 我上周接到他的电话。 | Tuần trước tôi nhận được điện thoại của anh ấy.
+> 司机说他爱上了这个女孩。 | Tài xế nói anh ta đã phải lòng cô gái này.
+> 这个规则很简单。 | Quy tắc này rất đơn giản.
+> 请你说服他。 | Xin bạn hãy thuyết phục anh ấy.
+## F2-09 | Giao thông, tội phạm & phân tích
+1=tiếp xúc
+2=thời đại
+3=xe tải
+4=cướp giật
+5=bắt gặp
+6=linh mục
+7=quy củ
+8=(phiên âm) lạc;;luò;;lạc
+9=trong số
+10=tàu hỏa
+11=nói thật
+12=thập; (trong 什么);;shí;;thập
+13=cũ
+14=đường, kẹo
+15=bỏ trốn
+16=linh; nhanh nhạy;;líng;;linh
+17=như, kiểu;;bān;;ban
+18=bộ phận (phòng ban)
+19=cơ bản
+20=taxi
+21=khống; kiểm soát;;kòng;;khống
+22=phân tích
+23=cái giá phải trả
+24=khu vực
+25=phản bội
+> 我们坐火车去。 | Chúng ta đi bằng tàu hỏa.
+> 这个卡车太旧了。 | Chiếc xe tải này cũ quá rồi.
+> 他背叛了朋友。 | Anh ta đã phản bội bạn bè.
+> 你要付出代价。 | Bạn phải trả giá.
+## F2-10 | Thiên đường, chủ nhân & mật mã
+1=chuyến;;tàng;;thảng
+2=thiên đường
+3=quay chụp
+4=dẫn đến
+5=người trẻ
+6=chủ nhân
+7=đối xử
+8=biểu; bảng; đồng hồ đeo tay;;biǎo;;biểu
+9=phóng thích
+10=buồn ngủ; khốn;;kùn;;khốn
+11=phố lớn
+12=thùng, rương
+13=do
+14=tuyên bố
+15=(họ) kiều; cao;;qiáo;;kiều
+16=thi hành
+17=báo cảnh sát
+18=vật;;wù;;vật
+19=không đúng
+20=mật mã
+21=màu đỏ
+22=kẻ lừa đảo
+23=hàng hóa
+24=không gian
+25=dày vò
+> 他是这里的主人。 | Ông ấy là chủ nhân của nơi này.
+> 我要报警！ | Tôi sẽ báo cảnh sát!
+> 你的密码不对。 | Mật mã của bạn không đúng.
+> 这一趟旅行很顺利。 | Chuyến du lịch lần này rất suôn sẻ.
+## F2-11 | Kinh nghiệm, gấu & bằng chứng
+1=dầu;;yóu;;du
+2=thi;;shī;;thi
+3=để lại lời nhắn
+4=gấu
+5=đáng giá; trị;;zhí;;trị
+6=nhớ nhung
+7=mà nói
+8=lần (gấp bội);;bèi;;bội
+9=lau chùi;;cā;;sát
+10=cuộn; quyển;;juǎn;;quyển
+11=nhất là
+12=hộp
+13=kinh nghiệm
+14=cạn ly
+15=chiếc (lượng từ tàu);;sōu;;tao
+16=đại não
+17=cách nhìn
+18=chung; tổng cộng;;gòng;;cộng
+19=tội phạm
+20=chưa tới
+21=khử, tiêu diệt
+22=cáo buộc
+23=hành tinh
+24=quay phim; băng ghi hình
+25=đâm; gai;;cì;;thích
+> 我很想念你。 | Tôi rất nhớ bạn.
+> 他有很多经验。 | Anh ấy có rất nhiều kinh nghiệm.
+> 干杯！ | Cạn ly!
+> 我们的看法不同。 | Cách nhìn của chúng ta khác nhau.
+## F2-12 | Nghệ thuật, tốc độ & dũng cảm
+1=tình báo
+2=xào;;chǎo;;sao
+3=trình tự; chương trình
+4=nay;;jīn;;kim
+5=sáng tạo
+6=quái vật
+7=cảm xúc
+8=sát hại
+9=nội tâm
+10=bạo lực
+11=bẩn;;zāng;;tạng
+12=đi chỗ khác
+13=tai nạn
+14=hài lòng
+15=nghệ thuật
+16=đa số
+17=thần kinh
+18=tốc độ
+19=hy sinh
+20=dũng cảm
+21=phẫn nộ
+22=hợp; gộp;;hé;;hợp
+23=meo (gọi mèo);;mī;;mễ
+24=lạ;;qí;;kỳ
+25=con số, chữ số
+> 他很勇敢。 | Anh ấy rất dũng cảm.
+> 我对这个结果很满意。 | Tôi rất hài lòng với kết quả này.
+> 这个速度太快了。 | Tốc độ này nhanh quá.
+> 他的情绪很不好。 | Cảm xúc của anh ấy rất không tốt.

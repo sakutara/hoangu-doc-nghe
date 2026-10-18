@@ -1,0 +1,304 @@
+l2-68 | 在大家的帮助之下，他很快就好起来了。 | Nhờ sự giúp đỡ của mọi người, anh ấy nhanh chóng khỏe lại.
+l2-68 | 这条街又肮脏又吵闹。 | Con phố này vừa dơ bẩn vừa ồn ào.
+l2-68 | 大夫说你需要多休息。 | Thầy thuốc nói bạn cần nghỉ ngơi nhiều.
+l2-68 | 我们每天晚上都在排练新节目。 | Mỗi tối chúng tôi đều tập dượt tiết mục mới.
+l2-68 | 夜空中有无数颗星星。 | Trên bầu trời đêm có vô số vì sao.
+l2-68 | 我想洗个澡再睡觉。 | Tôi muốn tắm một cái rồi mới đi ngủ.
+l2-68 | 她是个与众不同的女孩，而且很善良。 | Cô ấy là một cô gái khác người, mà lại rất lương thiện.
+l2-68 | 小心，水很烫！ | Cẩn thận, nước rất nóng!
+l2-68 | 网上有很多人评论这部电影。 | Trên mạng có rất nhiều người bình luận bộ phim này.
+l2-68 | 医院里不准抽烟。 | Trong bệnh viện không được hút thuốc.
+l2-68 | 这个结局真可悲。 | Cái kết này thật đáng buồn.
+l2-68 | 我们的球队下午三点上场。 | Đội bóng của chúng tôi lên sân lúc ba giờ chiều.
+l2-68 | 请你坐在我的左侧。 | Mời bạn ngồi ở phía bên trái của tôi.
+l2-68 | 我们去吃晚餐吧。 | Chúng ta đi ăn bữa tối nhé.
+l2-68 | 他骂那个人是王八蛋。 | Anh ta chửi người kia là đồ khốn.
+l2-68 | 这个位子有人坐吗？ | Chỗ này có ai ngồi không?
+l2-68 | 大会明天上午九点开始。 | Đại hội bắt đầu lúc chín giờ sáng mai.
+l2-68 | 湖水表面很平静。 | Mặt hồ rất yên ả.
+l2-69 | 你的发音很准确。 | Phát âm của bạn rất chuẩn xác.
+l2-69 | 球击中了他的头。 | Quả bóng đánh trúng đầu anh ấy.
+l2-69 | 观众为他们欢呼。 | Khán giả reo hò cổ vũ họ.
+l2-69 | 这些钱已经足够了。 | Số tiền này đã đủ rồi.
+l2-69 | 他主动帮我拿行李。 | Anh ấy chủ động giúp tôi xách hành lý.
+l2-69 | 这本书讨论了性爱与健康的话题。 | Cuốn sách này bàn về chủ đề tình dục và sức khỏe.
+l2-69 | 这件事说易行难。 | Việc này nói thì dễ, làm thì khó.
+l2-69 | 我弟弟喜欢看漫画。 | Em trai tôi thích đọc truyện tranh.
+l2-69 | 他突然有了写歌的灵感。 | Anh ấy bỗng có cảm hứng viết bài hát.
+l2-69 | 这家饭店的菜很好吃。 | Món ăn ở nhà hàng này rất ngon.
+l2-69 | 这个房间大而且干净。 | Căn phòng này vừa rộng vừa sạch.
+l2-69 | 囚犯从监狱里逃走了。 | Tù nhân đã trốn khỏi nhà tù.
+l2-69 | 他们的看法大同小异。 | Quan điểm của họ gần như giống nhau, chỉ khác chút ít.
+l2-69 | 屋顶漏雨了。 | Mái nhà bị dột nước mưa rồi.
+l2-69 | 小猫躲在房间的角落里。 | Chú mèo con trốn trong góc phòng.
+l2-69 | 他的预言后来变成了现实。 | Lời tiên tri của ông ấy về sau đã thành sự thật.
+l2-69 | 这位大师画了一幅山水画。 | Vị đại sư này đã vẽ một bức tranh sơn thủy.
+l2-69 | 经理批准了我的假期。 | Giám đốc đã phê chuẩn kỳ nghỉ của tôi.
+l2-70 | 夜深了，周围很静。 | Đêm đã khuya, xung quanh rất tĩnh lặng.
+l2-70 | 他嘻嘻地笑了起来。 | Anh ấy cười hi hi.
+l2-70 | 法官宣布他无罪。 | Thẩm phán tuyên bố anh ta vô tội.
+l2-70 | 地上都是玻璃碎片。 | Dưới đất toàn là mảnh kính vỡ.
+l2-70 | 这个策略很有效。 | Sách lược này rất hiệu quả.
+l2-70 | 那个老头每天都在公园散步。 | Ông già đó ngày nào cũng đi dạo trong công viên.
+l2-70 | 他脾气不太好。 | Tính khí anh ấy không được tốt lắm.
+l2-70 | 犯人想逃脱，但是被抓住了。 | Phạm nhân định trốn thoát nhưng đã bị bắt lại.
+l2-70 | 我想亲自体验一下当地的生活。 | Tôi muốn tự mình trải nghiệm cuộc sống địa phương.
+l2-70 | 电影里的坏蛋最后被抓住了。 | Tên xấu xa trong phim cuối cùng đã bị bắt.
+l2-70 | 我今天只吃素。 | Hôm nay tôi chỉ ăn chay.
+l2-70 | 爬山前要检查好装备。 | Trước khi leo núi phải kiểm tra kỹ trang bị.
+l2-70 | 我们队在比赛中一直领先。 | Đội chúng tôi luôn dẫn đầu trong trận đấu.
+l2-70 | 老师允许我们录音。 | Thầy giáo cho phép chúng tôi ghi âm.
+l2-70 | 请你帮我照看一下孩子。 | Nhờ bạn trông giúp tôi đứa bé một lát.
+l2-70 | 他在比赛中得分最多。 | Anh ấy ghi nhiều điểm nhất trong trận đấu.
+l2-70 | 一辆货车停在门口。 | Một chiếc xe tải hàng đỗ trước cửa.
+l2-70 | 我临时有事，不能去了。 | Tôi có việc đột xuất nên không đi được nữa.
+l2-70 | 身高是他的优势。 | Chiều cao là ưu thế của anh ấy.
+l2-70 | 公司发表了一份声明。 | Công ty đã đưa ra một bản tuyên bố.
+l2-71 | 忘掉那些不开心的事吧。 | Hãy quên đi những chuyện không vui ấy đi.
+l2-71 | 她性格开朗，朋友很多。 | Cô ấy tính cách cởi mở, có rất nhiều bạn.
+l2-71 | 那个流氓欺负过路的人。 | Tên lưu manh đó bắt nạt người qua đường.
+l2-71 | 她在晚会上表演了一段独舞。 | Cô ấy biểu diễn một điệu múa đơn trong buổi tiệc.
+l2-71 | 他是这家杂志的编辑。 | Anh ấy là biên tập viên của tạp chí này.
+l2-71 | 他行事一向很小心。 | Anh ấy hành sự lúc nào cũng rất cẩn thận.
+l2-71 | 妈妈做的馅饼特别香。 | Bánh nhân mẹ làm thơm lắm.
+l2-71 | 你要懂得感恩。 | Con phải biết cảm ơn.
+l2-71 | 医生排除了其他的可能。 | Bác sĩ đã loại trừ những khả năng khác.
+l2-71 | 小孩子不应该熬夜。 | Trẻ nhỏ không nên thức khuya.
+l2-71 | 他有很强的求知欲。 | Anh ấy có ham muốn hiểu biết rất mạnh.
+l2-71 | 这对夫妻结婚二十年了。 | Đôi vợ chồng này đã kết hôn hai mươi năm.
+l2-71 | 好，那就成交！ | Được, vậy chốt giao dịch nhé!
+l2-71 | 皇后坐在国王的身旁。 | Hoàng hậu ngồi bên cạnh nhà vua.
+l2-71 | 请在这里签字。 | Xin hãy ký tên ở đây.
+l2-71 | 老师总是鼓励我们。 | Thầy giáo luôn khích lệ chúng tôi.
+l2-71 | 请你尽可能早点儿来。 | Xin bạn đến sớm nhất có thể.
+l2-71 | 他取得了很大的成就。 | Anh ấy đã đạt được thành tựu lớn.
+l2-71 | 他每个星期天都去教会。 | Chủ nhật nào anh ấy cũng đến giáo hội.
+l2-72 | 金钱买不到幸福。 | Tiền bạc không mua được hạnh phúc.
+l2-72 | 很难用一句话形容这里的风景。 | Khó mà diễn tả phong cảnh nơi đây chỉ bằng một câu.
+l2-72 | 我们讨论了三个方案。 | Chúng tôi đã bàn về ba phương án.
+l2-72 | 消防员很快赶到了现场。 | Lính cứu hỏa nhanh chóng đến hiện trường.
+l2-72 | 这家公司的成功率很高。 | Tỷ lệ thành công của công ty này rất cao.
+l2-72 | 他个子矮，但是篮球打得很好。 | Anh ấy thấp nhưng chơi bóng rổ rất giỏi.
+l2-72 | 对这件事，我一无所知。 | Về chuyện này, tôi chẳng biết gì cả.
+l2-72 | 我们要保护消费者的利益。 | Chúng ta phải bảo vệ quyền lợi của người tiêu dùng.
+l2-72 | 今天的会就到此为止吧。 | Cuộc họp hôm nay đến đây thôi nhé.
+l2-72 | 狮子大声地吼了一声。 | Con sư tử gầm lên một tiếng thật to.
+l2-72 | 他向朋友寻求帮助。 | Anh ấy tìm sự giúp đỡ từ bạn bè.
+l2-72 | 树林里的空气很新鲜。 | Không khí trong rừng cây rất trong lành.
+l2-72 | 我们在门口设了一个接待处。 | Chúng tôi đặt một quầy tiếp đón ở cửa.
+l2-72 | 公司收回了那笔钱。 | Công ty đã thu hồi khoản tiền đó.
+l2-72 | 他发动了汽车。 | Anh ấy khởi động chiếc xe.
+l2-72 | 看到他，我的心跳突然加快。 | Nhìn thấy anh ấy, nhịp tim tôi bỗng đập nhanh.
+l2-72 | 这个房间的气氛有点怪异。 | Bầu không khí trong căn phòng này hơi kỳ dị.
+l2-72 | 他很喜欢研究军事历史。 | Anh ấy rất thích nghiên cứu lịch sử quân sự.
+l2-72 | 他礼貌地询问路人。 | Anh ấy lịch sự hỏi han người đi đường.
+l2-72 | 这条道路通往山顶。 | Con đường này dẫn lên đỉnh núi.
+l3-1 | 他从小就想修真，成为仙人。 | Từ nhỏ anh ấy đã muốn tu chân để trở thành tiên nhân.
+l3-1 | 传说仙子住在仙界。 | Truyền thuyết kể rằng tiên tử sống ở tiên giới.
+l3-1 | 她从仙界来到了凡间。 | Nàng từ tiên giới xuống phàm trần.
+l3-1 | 神仙也会有烦恼吗？ | Thần tiên cũng có phiền muộn sao?
+l3-1 | 道士住在山上的道观里。 | Đạo sĩ sống trong đạo quán trên núi.
+l3-1 | 他体内的灵力越来越强。 | Linh lực trong cơ thể anh ấy ngày càng mạnh.
+l3-1 | 他的真气和内力都很深厚。 | Chân khí và nội lực của ông ấy đều rất thâm hậu.
+l3-1 | 真气从丹田流向全身的经脉。 | Chân khí từ đan điền chảy khắp các kinh mạch trong người.
+l3-1 | 他每天早晨打坐一个小时。 | Mỗi sáng anh ấy ngồi thiền một tiếng.
+l3-1 | 师父闭关三年，终于出关了。 | Sư phụ bế quan ba năm, cuối cùng đã xuất quan.
+l3-1 | 植物吸收阳光和水分。 | Cây cối hấp thụ ánh nắng và nước.
+l3-1 | 他让灵力在体内运转一周。 | Anh ấy cho linh lực vận chuyển một vòng trong cơ thể.
+l3-2 | 他的修炼境界又提高了。 | Cảnh giới tu luyện của anh ấy lại được nâng cao.
+l3-2 | 修炼要先炼气，再筑基。 | Tu luyện phải luyện khí trước, rồi mới trúc cơ.
+l3-2 | 元婴期之后是化神期。 | Sau kỳ nguyên anh là kỳ hóa thần.
+l3-2 | 他准备渡劫，然后飞升。 | Anh ấy chuẩn bị độ kiếp, sau đó phi thăng.
+l3-2 | 合体期之后是大乘期。 | Sau kỳ hợp thể là kỳ đại thừa.
+l3-2 | 天仙、真仙和金仙都是仙人的等级。 | Thiên tiên, chân tiên và kim tiên đều là các cấp bậc của tiên nhân.
+l3-2 | 散修没有门派，只能靠自己。 | Tán tu không có môn phái, chỉ có thể dựa vào chính mình.
+l3-2 | 这是本门祖师留下的规矩。 | Đây là quy củ do tổ sư bản môn để lại.
+l3-2 | 他在世上有至尊的地位。 | Ông ấy có địa vị chí tôn trên đời.
+l3-2 | 强者从不抱怨环境。 | Người mạnh không bao giờ than phiền hoàn cảnh.
+l3-2 | 这位高手一出手就赢了。 | Vị cao thủ này vừa ra tay đã thắng.
+l3-3 | 这个门派在山里已有上千年的历史。 | Môn phái này đã có lịch sử hàng nghìn năm trong núi.
+l3-3 | 他还是外门弟子，没能进内门。 | Anh ấy vẫn là đệ tử ngoại môn, chưa vào được nội môn.
+l3-3 | 他是师父的亲传弟子。 | Anh ấy là đệ tử thân truyền của sư phụ.
+l3-3 | 弟子们都很敬重师尊。 | Các đệ tử đều rất kính trọng sư tôn.
+l3-3 | 师姐教我练剑，师弟帮我拿东西。 | Sư tỷ dạy tôi luyện kiếm, sư đệ giúp tôi cầm đồ.
+l3-3 | 师妹今天下山去了。 | Hôm nay sư muội xuống núi rồi.
+l3-3 | 我们是同门，要互相帮助。 | Chúng ta là đồng môn, phải giúp đỡ lẫn nhau.
+l3-3 | 入门并不难，难的是坚持。 | Nhập môn không khó, khó là ở chỗ kiên trì.
+l3-3 | 他背叛了门派，成了叛徒。 | Anh ta phản bội môn phái, trở thành phản đồ.
+l3-3 | 他走上了邪道。 | Anh ta đã bước lên con đường tà đạo.
+l3-4 | 他得到了一件强大的法宝。 | Anh ấy có được một món pháp bảo mạnh mẽ.
+l3-4 | 法器和灵器的品质不一样。 | Pháp khí và linh khí có phẩm chất khác nhau.
+l3-4 | 这件仙器闪着金光。 | Món tiên khí này tỏa ánh vàng.
+l3-4 | 传说神器能改变天下。 | Truyền thuyết nói thần khí có thể thay đổi thiên hạ.
+l3-4 | 他背着一把灵剑。 | Anh ấy mang trên lưng một thanh linh kiếm.
+l3-4 | 他是一名剑修。 | Anh ấy là một kiếm tu.
+l3-4 | 他在墙上贴了一张符箓。 | Anh ấy dán một lá phù lục lên tường.
+l3-4 | 找到阵眼，才能破阵。 | Tìm được trận nhãn mới có thể phá trận.
+l3-4 | 洞口设有禁制。 | Cửa hang có đặt cấm chế.
+l3-4 | 他的储物戒里有很多东西。 | Trong nhẫn trữ vật của anh ấy có rất nhiều đồ.
+l3-4 | 玉简里记着一套功法。 | Trong ngọc giản ghi một bộ công pháp.
+l3-4 | 弟子出入都要带令牌。 | Đệ tử ra vào đều phải mang lệnh bài.
+l3-4 | 他在丹炉前炼丹。 | Anh ấy luyện đan trước đan lô.
+l3-4 | 炼器需要很多材料。 | Luyện khí cần rất nhiều vật liệu.
+l3-4 | 这件法袍能护身。 | Chiếc pháp bào này có thể hộ thân.
+l3-5 | 他吃下一颗丹药，伤好多了。 | Anh ấy uống một viên đan dược, vết thương đỡ nhiều.
+l3-5 | 传说吃了仙丹能长生不老。 | Truyền thuyết nói ăn tiên đan thì trường sinh bất lão.
+l3-5 | 这种灵药很难找到。 | Loại linh dược này rất khó tìm.
+l3-5 | 山谷里长着许多灵草和灵果。 | Trong thung lũng mọc nhiều linh thảo và linh quả.
+l3-5 | 灵泉的水能治病。 | Nước của linh tuyền có thể chữa bệnh.
+l3-5 | 这座山下有一条灵脉。 | Dưới ngọn núi này có một đường linh mạch.
+l3-5 | 他根骨很好，悟性也高。 | Căn cốt của anh ấy rất tốt, ngộ tính cũng cao.
+l3-5 | 她体质不好，要多锻炼。 | Thể chất cô ấy không tốt, cần rèn luyện nhiều.
+l3-5 | 这是一场天大的造化。 | Đây là một cơ duyên tạo hóa trời ban.
+l3-5 | 他的气运很好，福缘也深厚。 | Khí vận của anh ấy rất tốt, phúc duyên cũng sâu dày.
+l3-5 | 这个家族的血脉很特别。 | Huyết mạch của gia tộc này rất đặc biệt.
+l3-5 | 这是我们家的宝物。 | Đây là bảo vật của nhà chúng tôi.
+l3-5 | 这是天下的至宝。 | Đây là chí bảo của thiên hạ.
+l3-5 | 大熊猫是稀有动物。 | Gấu trúc là loài động vật hiếm có.
+l3-5 | 时间比金钱更珍贵。 | Thời gian quý hơn tiền bạc.
+l3-6 | 森林里有一只凶猛的妖兽。 | Trong rừng có một con yêu thú hung dữ.
+l3-6 | 小孩子都怕妖怪。 | Trẻ con đều sợ yêu quái.
+l3-6 | 妖族的首领就是妖王。 | Thủ lĩnh của yêu tộc chính là yêu vương.
+l3-6 | 那个魔头自称魔尊。 | Tên ma đầu đó tự xưng là ma tôn.
+l3-6 | 邪修和鬼修都不走正道。 | Tà tu và quỷ tu đều không đi theo chính đạo.
+l3-6 | 厉鬼半夜出现了。 | Lệ quỷ xuất hiện lúc nửa đêm.
+l3-6 | 电影里的僵尸很吓人。 | Cương thi trong phim rất đáng sợ.
+l3-6 | 地上有一具骷髅。 | Dưới đất có một bộ xương.
+l3-6 | 恶灵一直缠着他不放。 | Ác linh cứ bám lấy anh ta không buông.
+l3-6 | 神兽守护着这座山。 | Thần thú bảo vệ ngọn núi này.
+l3-6 | 玄武、青龙和朱雀都是四象之一。 | Huyền vũ, thanh long và chu tước đều là một trong tứ tượng.
+l3-7 | 他的神通非常广大。 | Thần thông của ông ấy vô cùng quảng đại.
+l3-7 | 他学会了几种法术。 | Anh ấy đã học được vài loại pháp thuật.
+l3-7 | 这种术法很难学。 | Loại thuật pháp này rất khó học.
+l3-7 | 这套功法是门派的秘密，心法更不能外传。 | Bộ công pháp này là bí mật của môn phái, tâm pháp càng không được truyền ra ngoài.
+l3-7 | 他在山洞里找到了一本秘籍。 | Anh ấy tìm thấy một cuốn bí kíp trong hang núi.
+l3-7 | 他的武技非常高明。 | Võ kỹ của anh ấy vô cùng cao minh.
+l3-7 | 他的剑法很快，掌法很稳。 | Kiếm pháp của anh ấy rất nhanh, chưởng pháp rất vững.
+l3-7 | 他从小就练拳法。 | Anh ấy luyện quyền pháp từ nhỏ.
+l3-7 | 他身法灵活，轻功了得。 | Thân pháp anh ấy linh hoạt, khinh công xuất sắc.
+l3-7 | 他内功深厚，外功也不错。 | Nội công anh ấy thâm hậu, ngoại công cũng không tệ.
+l3-7 | 这是他的绝招。 | Đây là tuyệt chiêu của anh ấy.
+l3-7 | 空气中充满了杀气。 | Trong không khí đầy sát khí.
+l3-7 | 一道剑光闪过。 | Một tia kiếm quang lóe lên.
+l3-7 | 天空中雷电交加。 | Trên trời sấm chớp đan xen.
+l3-7 | 火焰烧红了夜空。 | Ngọn lửa nhuộm đỏ bầu trời đêm.
+l3-8 | 天劫来了，他却很平静。 | Thiên kiếp đã đến, nhưng anh ấy rất bình tĩnh.
+l3-8 | 他经历了很多劫难。 | Anh ấy đã trải qua nhiều kiếp nạn.
+l3-8 | 这是命数，也是天命。 | Đây là mệnh số, cũng là thiên mệnh.
+l3-8 | 天机不可泄露。 | Thiên cơ không thể tiết lộ.
+l3-8 | 宇宙有自己的法则。 | Vũ trụ có pháp tắc riêng của nó.
+l3-8 | 万物都有各自的本源。 | Vạn vật đều có bản nguyên riêng.
+l3-8 | 天地之大，无奇不有。 | Thiên địa rộng lớn, cái gì cũng có.
+l3-8 | 乾坤未定，大家继续努力。 | Càn khôn chưa định, mọi người cứ tiếp tục cố gắng.
+l3-8 | 五行和八卦都是古代的学说。 | Ngũ hành và bát quái đều là học thuyết thời cổ.
+l3-8 | 生死有命，富贵在天。 | Sinh tử có số, giàu sang do trời.
+l3-8 | 他的元神离开了身体。 | Nguyên thần của anh ấy rời khỏi thân thể.
+l3-8 | 他的神魂受到了损伤。 | Thần hồn của anh ấy bị tổn thương.
+l3-8 | 人类的寿命越来越长。 | Thọ mệnh của con người ngày càng dài.
+l3-9 | 考古队发现了一处遗迹。 | Đội khảo cổ phát hiện một di tích.
+l3-9 | 古墓里有很多机关。 | Trong cổ mộ có rất nhiều cơ quan.
+l3-9 | 他们在岛上找到了宝藏。 | Họ đã tìm thấy kho báu trên đảo.
+l3-9 | 这个位面和我们的世界不一样。 | Vị diện này khác với thế giới của chúng ta.
+l3-9 | 他在小世界里修炼。 | Anh ấy tu luyện trong tiểu thế giới.
+l3-9 | 他不小心掉进了深渊。 | Anh ấy sơ ý rơi xuống vực thẳm.
+l3-9 | 魔域很危险，仙域却很美。 | Ma vực rất nguy hiểm, còn tiên vực lại rất đẹp.
+l3-9 | 凡界和灵界是相连的。 | Phàm giới và linh giới nối liền với nhau.
+l3-9 | 他从下界一路来到了上界。 | Anh ấy từ hạ giới đi một mạch lên thượng giới.
+l3-9 | 传送阵启动了，他被传送到远方。 | Truyền tống trận khởi động, anh ấy bị truyền tống đến nơi xa.
+l3-9 | 这里是修炼的福地。 | Nơi đây là phúc địa để tu luyện.
+l3-9 | 他们陷入了绝境。 | Họ rơi vào tuyệt cảnh.
+l3-9 | 这是个险地，千万小心。 | Đây là nơi hiểm yếu, nhất định phải cẩn thận.
+l3-10 | 帮主带领着整个帮派。 | Bang chủ dẫn dắt cả bang phái.
+l3-10 | 镖局的镖师护送货物出城。 | Tiêu sư của tiêu cục hộ tống hàng hóa ra khỏi thành.
+l3-10 | 他用暗器打中了敌人。 | Anh ấy dùng ám khí bắn trúng kẻ địch.
+l3-10 | 酒里被人下了毒药。 | Trong rượu bị người ta bỏ độc dược.
+l3-10 | 他受了很重的内伤。 | Anh ấy bị nội thương rất nặng.
+l3-10 | 他会点穴，一下就制住了对手。 | Anh ấy biết điểm huyệt, chỉ một cái đã khống chế được đối thủ.
+l3-10 | 他拔出长剑，我拿起长刀。 | Anh ấy rút trường kiếm, tôi cầm lấy trường đao.
+l3-10 | 魔教的教主非常神秘。 | Giáo chủ của ma giáo vô cùng bí ẩn.
+l3-11 | 皇室成员出席了典礼。 | Các thành viên hoàng thất đã dự buổi lễ.
+l3-11 | 贵妃和其他嫔妃都住在后宫。 | Quý phi và các tần phi khác đều sống trong hậu cung.
+l3-11 | 大臣们在朝廷上讨论国事。 | Các đại thần bàn việc nước tại triều đình.
+l3-11 | 宫廷里的规矩特别多。 | Trong cung đình có rất nhiều quy củ.
+l3-11 | 王爷和王妃一起出门了。 | Vương gia và vương phi cùng ra ngoài.
+l3-11 | 侯爷和国公都来参加宴会了。 | Hầu gia và quốc công đều đến dự yến tiệc.
+l3-11 | 驸马是公主的丈夫。 | Phò mã là chồng của công chúa.
+l3-11 | 太后很疼爱她的孙子。 | Thái hậu rất yêu thương cháu nội của bà.
+l3-12 | 那位公子穿着一身白衣。 | Vị công tử đó mặc một bộ đồ trắng.
+l3-12 | 老爷在书房里，小厮在外面等着。 | Lão gia ở trong thư phòng, tiểu tư đứng đợi bên ngoài.
+l3-12 | 管家把一切都安排好了。 | Quản gia đã sắp xếp mọi thứ ổn thỏa.
+l3-12 | 他们住在一家客栈，掌柜很热情。 | Họ ở một khách điếm, chưởng quầy rất nhiệt tình.
+l3-12 | 捕快抓住了那个小偷。 | Bộ khoái đã bắt được tên trộm đó.
+l3-12 | 他考中了秀才，是个书生。 | Anh ấy thi đỗ tú tài, là một thư sinh.
+l3-12 | 小时候他在私塾读书。 | Hồi nhỏ anh ấy học ở trường tư thục.
+l3-12 | 他们在洞房里拜堂成亲。 | Họ bái đường thành thân trong động phòng.
+l3-12 | 媒人上门来提亲。 | Bà mối đến tận nhà để dạm hỏi.
+l3-12 | 他们的婚事定在明年春天。 | Hôn sự của họ được định vào mùa xuân năm sau.
+l3-12 | 他写了一封休书。 | Anh ta viết một bức thư bỏ vợ.
+l3-12 | 两个人决定和离。 | Hai người quyết định hòa ly.
+l3-13 | 董事长今天要开会。 | Hôm nay chủ tịch hội đồng quản trị phải họp.
+l3-13 | 她是一位富商的千金。 | Cô ấy là thiên kim của một thương gia giàu có.
+l3-13 | 小说里的总裁总是很霸道。 | Tổng tài trong tiểu thuyết lúc nào cũng rất bá đạo.
+l3-13 | 她的继母对她很好。 | Mẹ kế của cô ấy đối xử với cô rất tốt.
+l3-13 | 富二代和官二代常常上新闻。 | Nhị đại nhà giàu và nhị đại quan chức thường xuất hiện trên tin tức.
+l3-13 | 总监让实习生准备资料。 | Giám đốc bộ phận bảo thực tập sinh chuẩn bị tài liệu.
+l3-13 | 我今天晚上又要加班。 | Tối nay tôi lại phải tăng ca.
+l3-13 | 他想跳槽到别的公司。 | Anh ấy muốn nhảy việc sang công ty khác.
+l3-13 | 双方签了一份合约。 | Hai bên đã ký một bản hợp đồng.
+l3-13 | 这份契约必须遵守。 | Bản khế ước này phải được tuân thủ.
+l3-13 | 老总很看重这位继承人。 | Sếp tổng rất coi trọng người thừa kế này.
+l3-13 | 狗仔一直跟着那位明星。 | Paparazzi cứ bám theo ngôi sao đó mãi.
+l3-13 | 这个楼盘卖得很快。 | Dự án bất động sản này bán rất nhanh.
+l3-13 | 这家财团投资了新项目。 | Tập đoàn tài chính này đã đầu tư vào dự án mới.
+l3-13 | 他是本市的首富。 | Ông ấy là người giàu nhất thành phố này.
+l3-14 | 他穿越到了古代。 | Anh ấy xuyên không về thời cổ đại.
+l3-14 | 她穿书后成了小说里的反派。 | Sau khi xuyên sách, cô ấy trở thành nhân vật phản diện trong truyện.
+l3-14 | 他好像开了外挂。 | Anh ta có vẻ như đã dùng hack.
+l3-14 | 每天签到可以领奖励。 | Điểm danh mỗi ngày có thể nhận thưởng.
+l3-14 | 我在抽奖中得了一等奖。 | Tôi trúng giải nhất trong lần quay thưởng.
+l3-14 | 他的技能很强。 | Kỹ năng của anh ấy rất mạnh.
+l3-14 | 打开面板，看看角色的属性。 | Mở bảng thông số lên xem thuộc tính của nhân vật.
+l3-14 | 他的等级已经很高了。 | Cấp bậc của anh ấy đã rất cao rồi.
+l3-14 | 打怪能获得经验值，然后升级。 | Đánh quái nhận được điểm kinh nghiệm, rồi lên cấp.
+l3-14 | 系统已经激活，正在绑定宿主。 | Hệ thống đã được kích hoạt, đang ràng buộc với ký chủ.
+l3-14 | 新的地图已经解锁了。 | Bản đồ mới đã được mở khóa.
+l3-14 | 他的随身空间里有很多东西。 | Trong không gian mang theo của anh ấy có rất nhiều đồ.
+l3-14 | 他已经到了神级，真是逆天。 | Anh ấy đã đạt cấp thần, thật là nghịch thiên.
+l3-14 | 他想起了前世的事。 | Anh ấy nhớ lại chuyện kiếp trước.
+l3-15 | 这个游戏有上千万玩家。 | Trò chơi này có hàng chục triệu người chơi.
+l3-15 | 坦克在前面挡伤害，奶妈负责加血。 | Tank đứng trước chịu sát thương, healer phụ trách hồi máu.
+l3-15 | 我喜欢玩辅助，他负责输出。 | Tôi thích chơi hỗ trợ, còn anh ấy phụ trách sát thương.
+l3-15 | 他加入了一个公会。 | Anh ấy đã gia nhập một công hội.
+l3-15 | 这个道具可以恢复体力。 | Đạo cụ này có thể hồi phục thể lực.
+l3-15 | 我不想氪金。 | Tôi không muốn nạp tiền.
+l3-15 | 他每天玩十几个小时，真是个肝帝。 | Ngày nào anh ấy cũng chơi mười mấy tiếng, đúng là vua cày game.
+l3-15 | 他是老手，我还是菜鸟。 | Anh ấy là người lão luyện, còn tôi vẫn là gà mờ.
+l3-15 | 大神带我通关了。 | Đại thần đã dẫn tôi qua màn.
+l3-15 | 他排在排行榜的第一名。 | Anh ấy đứng hạng nhất trên bảng xếp hạng.
+l3-16 | 我的蓝量不够了。 | Lượng mana của tôi không đủ rồi.
+l3-16 | 魔法值用完了，不能放技能。 | Điểm ma pháp hết rồi, không thể dùng kỹ năng.
+l3-16 | 他的攻击力和防御力都提高了。 | Sức tấn công và sức phòng thủ của anh ấy đều tăng lên.
+l3-16 | 他打出了一次暴击。 | Anh ấy tung ra một đòn chí mạng.
+l3-16 | 敌人闪避了我的攻击。 | Kẻ địch đã né đòn tấn công của tôi.
+l3-16 | 这个技能能给队友增益，给敌人减益。 | Kỹ năng này giúp đồng đội tăng chỉ số và làm giảm chỉ số của kẻ địch.
+l3-16 | 队友可以让他复活。 | Đồng đội có thể hồi sinh anh ấy.
+l3-16 | 他得到了一件史诗装备。 | Anh ấy nhận được một món trang bị sử thi.
+l3-16 | 他全身都是神装。 | Cả người anh ấy toàn trang bị thần.
+l3-16 | 有人开挂，真不公平。 | Có người bật hack, thật không công bằng.
+l3-16 | 我每天晚上都刷怪。 | Tối nào tôi cũng cày quái.
+l3-16 | 打怪升级很有意思。 | Đánh quái lên cấp rất thú vị.
+l3-16 | 先打小怪，再打野怪。 | Đánh quái nhỏ trước, rồi mới đánh quái hoang.
+l3-17 | 他在电影里演配角。 | Anh ấy đóng vai phụ trong phim.
+l3-17 | 男主很帅，女配很坏。 | Nam chính rất đẹp trai, nữ phụ thì rất xấu tính.
+l3-17 | 男配其实更受欢迎。 | Nam phụ thực ra được yêu thích hơn.
+l3-17 | 他在剧中只是个炮灰。 | Trong phim anh ấy chỉ là bia đỡ đạn.
+l3-17 | 我只是个跑龙套的。 | Tôi chỉ là người đóng vai quần chúng thôi.
+l3-17 | 路人都在看着他。 | Người qua đường đều nhìn anh ấy.
+l3-17 | 他们是多年的宿敌。 | Họ là kẻ thù truyền kiếp nhiều năm.
+l3-17 | 他们是师徒，也是道侣。 | Họ là thầy trò, đồng thời là đạo lữ.
+l3-17 | 娘子，相公回来了。 | Nương tử, tướng công về rồi.
+l3-17 | 她是他的爱人。 | Cô ấy là người yêu của anh ấy.
+l3-17 | 我和前任已经分手了。 | Tôi và người yêu cũ đã chia tay rồi.
+l3-17 | 她是我的女神，他是大家的男神。 | Cô ấy là nữ thần của tôi, còn anh ấy là nam thần của mọi người.
+l3-17 | 她是校花，也是学霸。 | Cô ấy là hoa khôi, cũng là học bá.
+l3-17 | 你是我的恩人。 | Bạn là ân nhân của tôi.

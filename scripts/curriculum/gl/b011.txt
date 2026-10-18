@@ -1,0 +1,180 @@
+## F2-61 | Cùng với, xe đạp & bồi thường
+1=cùng với, theo đà
+2=thuận;;shùn;;thuận
+3=trùng hợp
+4=nữ tử
+5=ôm ấp; lòng;;huái;;hoài
+6=xưng hô
+7=phối hợp
+8=có (mang)
+9=vừa đúng
+10=cùng lắm thì
+11=bản thân (tôi)
+12=sám hối
+13=sáng mai
+14=xe đạp
+15=bồi thường
+16=đi theo
+17=hỷ, vui;;xǐ;;hỉ
+18=nghỉ, thôi;;xiū;;hưu
+19=biểu tượng, cột mốc
+20=hiện;;xiàn;;hiện
+21=trêu; chọc cười;;dòu;;đậu
+22=mắc (bệnh); họa;;huàn;;hoạn
+23=đồ vớ vẩn (chửi)
+24=nhện
+25=xung động
+> 我明早骑自行车去。 | Sáng mai tôi sẽ đi bằng xe đạp.
+> 这是巧合。 | Đây là sự trùng hợp.
+> 他对我很好，我要补偿他。 | Anh ấy rất tốt với tôi, tôi muốn đền bù cho anh ấy.
+> 他跟着我走。 | Anh ấy đi theo tôi.
+## F2-62 | Lo lắng, lâu đài & ảo giác
+1=dải, dây đai
+2=sốt ruột
+3=tận mắt
+4=biểu diễn nhạc
+5=thiện;;shàn;;thiện
+6=giàu có
+7=bìa
+8=ảo giác
+9=quấn;;chán;;triền
+10=dê, cừu;;yáng;;dương
+11=kiếm tiền
+12=lén lút
+13=thứ bảy
+14=lâu đài
+15=đối kháng
+16=khá; man;;mán;;man
+17=khéo; trùng hợp;;qiǎo;;xảo
+18=hạ cánh
+19=bình thường (hằng ngày)
+20=mát-xa
+21=lắc;;yáo;;dao
+22=bản thân (sự vật)
+23=kẻ giết người
+24=nghi can
+25=dọa người
+> 他很着急。 | Anh ấy rất sốt ruột.
+> 周六我去城堡。 | Thứ bảy tôi đến lâu đài.
+> 我亲眼看见了。 | Tôi đã tận mắt nhìn thấy.
+> 他偷偷地走了。 | Anh ta lén lút bỏ đi.
+## F2-63 | Làng quê, bi kịch & động cơ máy
+1=nô lệ
+2=ninh; chịu đựng;;āo;;ngao
+3=theo kịp
+4=làng quê
+5=công phu, kung fu
+6=vụ nổ súng
+7=chú ý đến
+8=nguyên vẹn
+9=cái miệng
+10=lão đại, anh cả
+11=đại lộ
+12=thăm hỏi
+13=tương hỗ
+14=quyết không
+15=mẫu vật
+16=băng đảng
+17=nghiêm khắc
+18=khen thưởng
+19=tuyên truyền
+20=vai
+21=mua bán
+22=chuyện trò, đàm đạo
+23=bi kịch
+24=động cơ máy
+25=đầu gối
+> 他的肩膀很疼。 | Vai của anh ấy rất đau.
+> 我们去乡村吧。 | Chúng ta về làng quê đi.
+> 这是一个悲剧。 | Đây là một bi kịch.
+> 老师很严格。 | Thầy giáo rất nghiêm khắc.
+## F2-64 | Đàm phán, nhật ký & sa mạc
+1=gặp;;yù;;ngộ
+2=hình;;xíng;;hình
+3=gầy;;shòu;;sấu
+4=cổ phần; đùi;;gǔ;;cổ
+5=đàm phán
+6=dưới đây
+7=y học
+8=nhật ký
+9=nụ hoa;;lěi;;lôi
+10=nhà bên
+11=thương nghiệp
+12=ích kỷ
+13=vận động viên
+14=thực phẩm
+15=bắt tay vào làm
+16=ngoan ngoãn
+17=giết mổ; chém;;zǎi;;tể
+18=nâng cao
+19=trễ giờ
+20=cởi ra
+21=xông vào
+22=kệ, hồ sơ; hạng;;dàng;;đáng
+23=sa mạc
+24=tên trộm;;zéi;;tặc
+25=trăm triệu;;yì;;ức
+> 我每天写日记。 | Ngày nào tôi cũng viết nhật ký.
+> 他很瘦。 | Anh ấy rất gầy.
+> 我们明天谈判。 | Ngày mai chúng ta đàm phán.
+> 沙漠里没有水。 | Trong sa mạc không có nước.
+## F2-65 | Chủng tộc, găng tay & khóa học
+1=thỉnh thoảng
+2=găng tay
+3=cung;;gōng;;cung
+4=tất yếu, nhất định;;bì;;tất
+5=chủng tộc
+6=bằng với
+7=khiêu dâm
+8=đối diện (khó khăn)
+9=xâm nhập
+10=coi chừng
+11=vội đến nơi
+12=có mặt (dự)
+13=kinh doanh
+14=khóa học
+15=lượng; đo;;liàng;;lượng
+16=chữ cái
+17=phụ huynh
+18=lưỡi
+19=củ cải (thành tố);;luó;;la
+20=tiêu diệt
+21=người béo
+22=niềm vui thú
+23=nhỏ; con (phương ngữ);;zǎi;;tử
+24=thực tế
+25=biết được
+> 他偶尔来这里。 | Thỉnh thoảng anh ấy mới đến đây.
+> 当心！ | Coi chừng!
+> 请看这个字母。 | Xin hãy nhìn chữ cái này.
+> 一加一等于二。 | Một cộng một bằng hai.
+## F2-66 | Vòng cổ, mặt nạ & lương bổng
+1=may; khe;;fèng;;phùng
+2=dây chuyền
+3=màn;;mù;;mạc
+4=nhanh chóng
+5=liếm;;tiǎn;;thiểm
+6=ngược đãi
+7=mặt nạ
+8=hẹn trước
+9=đài truyền hình
+10=cất cánh
+11=hữu hảo
+12=tiền lương
+13=trái lại
+14=kinh;;jīng;;kinh
+15=vô dụng
+16=khuyên;;quàn;;khuyến
+17=nguyên tắc
+18=dẫu cho
+19=em gái (thành tố);;mèi;;muội
+20=bạn cùng phòng
+21=tối mai
+22=lý trí
+23=vốn liếng
+24=nuốt;;tūn;;thôn
+25=kẹp;;jiā;;giáp
+> 我已经预约了。 | Tôi đã hẹn trước rồi.
+> 我的薪水很低。 | Lương của tôi rất thấp.
+> 这个面具很吓人。 | Chiếc mặt nạ này rất đáng sợ.
+> 我明晚有空。 | Tối mai tôi rảnh.

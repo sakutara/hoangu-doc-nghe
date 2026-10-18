@@ -1,0 +1,210 @@
+## F4-26 | Đoạn đọc: Chuyến đi mùa xuân
+1=khó tránh
+2=bác (ông già)
+3=cuối kỳ
+4=bàn tán
+5=sửa cho đúng
+6=không thể thiếu
+7=đóng cửa phá sản
+8=đường dài
+9=khám sức khỏe
+10=mùa xuân (viết)
+11=nghịch ngợm
+12=mi-li-lít
+13=buổi giảng
+14=thành thạo
+15=gieo trồng
+16=túi nhựa
+17=hướng dẫn viên
+18=xếp vào
+19=trúng giải
+20=dưa hấu
+21=kiểu mới
+22=phía sau (khẩu ngữ)
+23=nhà ăn tập thể
+24=giao tế
+25=xu thế
+> 春季，导游带我们去长途旅行。 | Mùa xuân, hướng dẫn viên đưa chúng tôi đi một chuyến đường dài.
+> 在食堂里，大爷在议论新型的塑料袋。 | Trong nhà ăn, bác lớn tuổi đang bàn tán về loại túi nhựa kiểu mới.
+> 有的孩子调皮，难免会出错，要改正。 | Có đứa trẻ nghịch ngợm, khó tránh mắc lỗi, phải sửa cho đúng.
+> 期末的时候，学校有一个讲座，讲种植西瓜。 | Cuối kỳ, trường có một buổi giảng về trồng dưa hấu.
+> 他很熟练，一次就中奖了。 | Anh ấy rất thành thạo, một lần là trúng giải.
+> 现在的趋势是，大家都离不开手机。 | Xu thế hiện nay là ai cũng không thể thiếu điện thoại.
+## F4-27 | Đoạn đọc: Leo núi và bữa ăn set
+1=đung đưa
+2=đặc biệt là
+3=cá thể
+4=món ăn vặt
+5=leo đỉnh núi
+6=cấu trúc
+7=liệt vào
+8=ống hút
+9=gọi tên
+10=phân bố
+11=thúc tiến
+12=dưa chuột
+13=nhiều loại
+14=đồ cũ, second-hand
+15=môi giới
+16=giữ gìn trân trọng
+17=suất ăn set
+18=xe khách lớn
+19=thiết thực
+20=bác gái
+21=khuyến mãi
+22=mở rộng ra
+23=chú trọng
+24=uy tín
+25=lùi xe
+> 我们坐大巴去登山，导游先点名。 | Chúng tôi đi xe khách lớn đi leo núi, hướng dẫn viên điểm danh trước.
+> 午饭吃套餐，小吃也格外好。 | Bữa trưa ăn suất set, món ăn vặt cũng đặc biệt ngon.
+> 大妈带着吸管，还有黄瓜。 | Bác gái mang theo ống hút, còn có dưa chuột.
+> 商店在促销二手东西，很实用。 | Cửa hàng đang khuyến mãi đồ cũ, rất thiết thực.
+> 做生意要讲究诚信，也要爱护客人。 | Làm ăn phải chú trọng uy tín, cũng phải trân trọng khách hàng.
+> 倒车的时候要小心。 | Khi lùi xe phải cẩn thận.
+## F4-28 | Đoạn đọc: Hóa đơn và ngữ pháp
+1=rút ngắn
+2=đơn điệu
+3=bình ổn
+4=cây thông
+5=hóa đơn
+6=nở hoa
+7=bàn chải
+8=nghiên cứu chế tạo
+9=băng tuyết
+10=chia thành
+11=dồn dập
+12=tích lũy
+13=nước khoáng
+14=an dưỡng
+15=phía trước (khẩu ngữ)
+16=nhiều lần liên tiếp
+17=nhập vào, đưa vào
+18=ngữ pháp
+19=cuối tháng
+20=có thể thấy
+21=ba lần bốn lượt
+22=rõ nét
+23=bách hóa
+24=nhà ngoại giao
+25=giá đặc biệt
+> 月底，百货商店的特价东西很多。 | Cuối tháng, cửa hàng bách hóa có rất nhiều đồ giá đặc biệt.
+> 我买了矿泉水，请人开发票。 | Tôi mua nước khoáng, nhờ người xuất hóa đơn.
+> 外交官在疗养，松树上的花开了。 | Nhà ngoại giao đang an dưỡng, hoa trên cây thông đã nở.
+> 学习语法要不断积累，不能单调。 | Học ngữ pháp phải không ngừng tích lũy, không thể đơn điệu.
+> 他们引进了新的技术，缩短了时间。 | Họ đưa vào kỹ thuật mới, rút ngắn thời gian.
+> 可见，大家纷纷研究冰雪的运动。 | Có thể thấy, mọi người dồn dập nghiên cứu môn thể thao băng tuyết.
+## F4-29 | Đoạn đọc: Kỳ thi giữa kỳ
+1=tỉ mỉ
+2=tiện tay
+3=bài thi
+4=từng bước
+5=củ sạc
+6=Công Nguyên
+7=ươm trồng
+8=ưu việt
+9=đại hội thể thao
+10=tín chỉ
+11=lá trà
+12=phong tục
+13=giữa kỳ
+14=khái quát
+15=quả thực
+16=hạ nhiệt
+17=giá cao
+18=nhân viên bán hàng
+19=bệ cửa sổ
+20=tàu thủy
+21=cẩu thả
+22=thấp bé
+23=phương châm
+24=coi thường
+25=đảm đang
+> 期中考试的试卷很难，他很粗心。 | Bài thi giữa kỳ rất khó, cậu ấy lại rất cẩu thả.
+> 他随手放下充电器，没有细致检查。 | Cậu ấy tiện tay đặt củ sạc xuống, không kiểm tra tỉ mỉ.
+> 老师说，不要看不起任何人，要逐步培育好习惯。 | Thầy giáo nói, đừng coi thường bất kỳ ai, phải từng bước ươm trồng thói quen tốt.
+> 运动会上，他很能干，拿了学分。 | Trong đại hội thể thao, cậu ấy rất đảm đang, giành được tín chỉ.
+> 公元前的风俗是用茶叶招待客人。 | Phong tục trước Công Nguyên là dùng lá trà tiếp đãi khách.
+> 天气降温了，窗台上的果实很甜。 | Thời tiết hạ nhiệt, quả trên bệ cửa sổ rất ngọt.
+## F4-30 | Đoạn đọc: Lớp bồi dưỡng
+1=cảm thấy hứng thú
+2=bóng đèn
+3=địa chỉ trang web
+4=giấy thông báo
+5=học vấn
+6=hình thành thói quen
+7=khoa nội
+8=đĩa quang
+9=soạn thảo
+10=sâu dày
+11=bao la
+12=năm học
+13=lần lượt
+14=đi đầu
+15=sấm rền
+16=nhất loạt
+17=lớp bồi dưỡng
+18=chép lại
+19=phiến diện
+20=nước sôi
+21=hạ giá
+22=hết cách (nhi hóa)
+23=xe điện
+24=ngoại hối
+25=đại học chính quy
+> 新学年，他对内科很感兴趣。 | Năm học mới, cậu ấy rất hứng thú với khoa nội.
+> 他收到了培训班的通知书，上面有网址。 | Cậu nhận được giấy thông báo của lớp bồi dưỡng, trên đó có địa chỉ trang web.
+> 他学习很深厚的学问，养成了好习惯。 | Cậu học những kiến thức rất sâu dày, hình thành thói quen tốt.
+> 打雷的时候，电灯突然灭了，他没法儿看书。 | Khi sấm rền, bóng đèn đột nhiên tắt, cậu không có cách nào đọc sách.
+> 大家陆续喝开水，用光盘学习。 | Mọi người lần lượt uống nước sôi, dùng đĩa quang để học.
+> 外汇降价了，电动车一律打折。 | Ngoại hối giảm giá, xe điện nhất loạt được giảm giá.
+## F4-31 | Đoạn đọc: Chuyến đi Thượng Hải
+1=đa dạng
+2=khẩu ngữ
+3=hấp tấp
+4=dấu ngoặc
+5=tỷ giá
+6=cận đại
+7=đủ sắc màu
+8=kỳ nghỉ đông
+9=cái thước
+10=nước tinh khiết
+11=phần (phân số)
+12=Á vận hội
+13=điền chỗ trống
+14=đẹp trai; soái;;shuài;;soái
+15=tiết học
+16=mặc vào
+17=dịch thuật
+18=tàu cao tốc
+19=ngăn cách
+20=sông lớn;;jiāng;;giang
+21=không ngờ
+22=hàng hiệu (nhi hóa)
+23=người mẫu (nhi hóa)
+24=anh chàng đẹp trai
+25=WeChat
+> 寒假里，我坐高铁去上海旅游。 | Trong kỳ nghỉ đông, tôi đi tàu cao tốc đến Thượng Hải du lịch.
+> 到那里，我穿上名牌儿的衣服，遇到一位帅哥。 | Đến nơi, tôi mặc đồ hàng hiệu, gặp một anh chàng đẹp trai.
+> 他是翻译，会说多样的口语，我们用微信聊天。 | Anh ấy là phiên dịch, biết nói đủ kiểu khẩu ngữ, chúng tôi dùng WeChat trò chuyện.
+> 他急忙说，这条江很有名，没想到我们竟然都喜欢这里。 | Anh vội nói, con sông này rất nổi tiếng, không ngờ chúng tôi đều thích nơi này.
+> 模特儿穿着五颜六色的衣服。 | Người mẫu mặc những bộ đồ đủ sắc màu.
+> 回家后，我做了填空题，也喝了一杯纯净水。 | Về nhà, tôi làm bài điền chỗ trống, cũng uống một ly nước tinh khiết.
+## F4-32 | Đoạn đọc: Nhà văn trứ danh
+1=tháng sau
+2=xuống lầu
+3=nổi bật rõ
+4=trứ danh, nổi tiếng
+5=trước tác
+一个=một cái;;yíge;;nhất cá
+每个=mỗi cái;;měige;;mỗi cá
+会儿=một lát (hậu tố)
+一刻=một khắc; mười lăm phút
+深呼吸=hít thở sâu
+警员=nhân viên cảnh sát
+> 下个月，这位著名的作家要出版新的著作。 | Tháng sau, nhà văn nổi tiếng này sẽ xuất bản tác phẩm mới.
+> 他的作品对社会有显著的影响。 | Tác phẩm của ông có ảnh hưởng rõ rệt đối với xã hội.
+> 今天他下楼，去书店看看。 | Hôm nay ông xuống lầu, đến hiệu sách xem thử.
+> 很多读者都在排队。 | Rất nhiều độc giả đang xếp hàng.
+> 他笑着给大家签名。 | Ông mỉm cười ký tên cho mọi người.
+> 这是一个难忘的下午。 | Đây là một buổi chiều khó quên.

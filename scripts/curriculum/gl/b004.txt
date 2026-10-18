@@ -1,0 +1,180 @@
+## F2-19 | Gián điệp, hòa bình & thái độ
+1=công tố viên
+2=cổ
+3=gián điệp
+4=bài, thiên (lượng từ);;piān;;thiên
+5=đồ chơi
+6=người máy
+7=thỏa mãn
+8=đánh bại
+9=dù thế nào
+10=không thấy, biến mất
+11=truyền thống
+12=tin chắc
+13=khoa; ngành;;kē;;khoa
+14=lãng mạn
+15=hừ; ngâm nga;;hēng;;hanh
+16=đọc to; nhớ;;niàn;;niệm
+17=hòa bình
+18=thưởng thức; ngưỡng mộ
+19=lặp lại;;chóngfù;;trùng phục
+20=thời tiết
+21=trói
+22=lần lượt từng cái
+23=canh giữ;;shǒu;;thủ
+24=ngượng ngùng;;gāngà;;giám giới
+25=thái độ
+> 今天的天气很好。 | Hôm nay thời tiết rất đẹp.
+> 他有一个机器人。 | Anh ấy có một con người máy.
+> 这是我们的传统。 | Đây là truyền thống của chúng tôi.
+> 他们想要和平。 | Họ muốn có hòa bình.
+## F2-20 | Bữa sáng, trà & rồng
+1=hứa;;nuò;;nặc
+2=xin chào
+3=rừng;;lín;;lâm
+4=khó mà
+5=ghép; liều;;pīn;;bính
+6=séc
+7=vui, hay (để chơi)
+8=bữa sáng
+9=trà
+10=chỉ, duy (văn viết);;wéi;;duy
+11=tự tin
+12=đi học
+13=lý thuyết
+14=sinh vật
+15=tuổi tác
+16=góc độ
+17=nhẹ;;qīng;;khinh
+18=quan sát
+19=chín
+20=chuột
+21=đánh, đập;;jī;;kích
+22=rồng;;lóng;;long
+23=chôn;;mái;;mai
+24=bạn trai (ngắn)
+25=tắt đi
+> 你好！你吃早餐了吗？ | Xin chào! Bạn đã ăn sáng chưa?
+> 他喜欢喝茶。 | Anh ấy thích uống trà.
+> 老鼠怕猫。 | Chuột sợ mèo.
+> 我们九点上学。 | Chín giờ chúng tôi đến trường.
+## F2-21 | Cửa hàng, công chúa & độc thân
+1=giật mình
+2=nắp; che; xây;;gài;;cái
+3=tòa nhà lớn
+4=di động
+5=cửa tiệm
+6=gái mại dâm
+7=không ngừng
+8=năng lượng
+9=quen thuộc
+10=răng;;yá;;nha
+11=giải; tháo;;jiě;;giải
+12=công chúa
+13=hữu hiệu
+14=đô Mỹ (khẩu ngữ)
+15=ồn ào; quậy;;nào;;náo
+16=trượt;;huá;;hoạt
+17=đêm tối
+18=tỉnh táo
+19=nghĩa là
+20=lây nhiễm
+21=trông mong
+22=lộ; sương;;lù;;lộ
+23=vứt bỏ
+24=sờ
+25=độc thân
+> 这个商店有很多衣服。 | Cửa hàng này có rất nhiều quần áo.
+> 公主很漂亮。 | Công chúa rất xinh đẹp.
+> 我很熟悉这里。 | Tôi rất quen thuộc với nơi này.
+> 你还是单身吗？ | Bạn vẫn còn độc thân à?
+## F2-22 | Bản đồ, bánh mì & sói
+1=suy nghĩ
+2=tấm ván;;bǎn;;bản
+3=nữ vương
+4=ngon
+5=sóng;;bō;;ba
+6=béo
+7=ghì; thắt;;lè;;lặc
+8=nhận ra;;rèn;;nhận
+9=bản đồ
+10=dựa theo
+11=đánh (ai)
+12=tuyệt diệu
+13=xin phép đi trước
+14=đóng cửa
+15=giỏi về
+16=ảo tưởng
+17=sói
+18=dược phẩm
+19=không chỉ
+20=chịu đựng
+21=mô; khuôn;;mó;;mô
+22=bánh mì
+23=bạn đồng hành
+24=bạn gái (ngắn)
+25=vung; quăng;;shuǎi;;suất
+> 这个面包很好吃。 | Chiếc bánh mì này rất ngon.
+> 你胖了。 | Bạn béo lên rồi.
+> 请按照地图走。 | Xin hãy đi theo bản đồ.
+> 他擅长唱歌。 | Anh ấy hát giỏi.
+## F2-23 | Thế kỷ, thư điện tử & bệ hạ
+1=thế kỷ
+2=cần sa
+3=cắm;;chā;;sáp
+4=đạt đến
+5=vận chuyển; vận;;yùn;;vận
+6=hồi ức
+7=thư từ, email
+8=sáng; minh;;míng;;minh
+9=sử;;shǐ;;sử
+10=ra tay
+11=(phiên âm tên nữ) ni;;nī;;ni
+12=tóm lại
+13=liệu có thể
+14=tiếng Anh
+15=làm việc (chân tay)
+16=ghế
+17=thanh lý, dọn sạch
+18=giống hệt
+19=bệ hạ
+20=đôi giày
+21=xong xuôi
+22=hòm, rương;;xiāng;;tương
+23=thắng; vượt trội;;shèng;;thắng
+24=máu (huyết dịch)
+25=dù thế nào đi nữa
+> 陛下，请坐。 | Bệ hạ, xin mời ngồi.
+> 你说英语吗？ | Bạn có nói tiếng Anh không?
+> 我收到了他的邮件。 | Tôi đã nhận được thư điện tử của anh ấy.
+> 无论如何，我都会去。 | Dù thế nào tôi cũng sẽ đi.
+## F2-24 | Giáo dục, tang lễ & ủy ban
+1=vị;;wèi;;vị
+2=phù hộ
+3=có mặt
+4=trọng điểm
+5=cao nhất
+6=cần;;xū;;nhu
+7=đại úy
+8=thể;;tǐ;;thể
+9=không thể, chớ
+10=giáo dục
+11=lời dối trá
+12=gặp gỡ
+13=trên đời
+14=tai
+15=tang lễ
+16=bái, lạy;;bài;;bái
+17=người nào đó
+18=hôn nhân (thành tố);;hūn;;hôn
+19=ủy ban
+20=cơ quan, tổ chức
+21=sáng;;liàng;;lượng
+22=sắp sửa
+23=đĩa; bàn cờ;;pán;;bàn
+24=vỡ vụn;;suì;;toái
+25=mức độ
+> 我们去参加葬礼。 | Chúng tôi đi dự tang lễ.
+> 世上没有永远。 | Trên đời không có mãi mãi.
+> 天亮了。 | Trời sáng rồi.
+> 他即将毕业。 | Anh ấy sắp tốt nghiệp.

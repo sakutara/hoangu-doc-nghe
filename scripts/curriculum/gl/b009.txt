@@ -1,0 +1,180 @@
+## F2-49 | Bối cảnh, thảm họa & công lý
+1=triệu
+2=bối cảnh
+3=tan làm
+4=sĩ;;shì;;sĩ
+5=xe cứu thương
+6=ví dụ như
+7=tuyệt vọng
+8=hiệp;;xiá;;hiệp
+9=hoàn toàn mới
+10=Tây Đức
+11=hoang dã;;yě;;dã
+12=phòng bị, đề phòng;;fáng;;phòng
+13=bắt chước
+14=chán nản
+15=hồ;;hú;;hồ
+16=nói thử
+17=văn phòng (luật...)
+18=tai họa
+19=phỏng vấn (báo chí)
+20=thượng nghị sĩ
+21=nơi ở
+22=chính nghĩa
+23=trang web
+24=đánh giá
+25=hung khí
+> 我们几点下班？ | Mấy giờ chúng ta tan làm?
+> 他很绝望。 | Anh ấy rất tuyệt vọng.
+> 这个网站很有意思。 | Trang web này rất thú vị.
+> 湖很大，也很漂亮。 | Hồ rất rộng và cũng rất đẹp.
+## F2-50 | Thành tích, hài kịch & vi phạm
+1=cục trưởng
+2=mãnh liệt
+3=thành tích
+4=lưới; mạng;;wǎng;;võng
+5=lũy;;lěi;;lũy
+6=ý vị
+7=hài kịch
+8=điện hạ
+9=lên lớp
+10=bát;;wǎn;;oản
+11=thi; khảo;;kǎo;;khảo
+12=vinh dự
+13=mang; âm; thua;;fù;;phụ
+14=giãy giụa; kiếm;;zhèng;;tranh
+15=nhà thiết kế
+16=phủ nhận
+17=đừng; chớ;;mò;;mạc
+18=vi phạm
+19=giai đoạn
+20=gì gì đó
+21=thương lượng
+22=xuất phát từ
+23=che; lừa; mông;;mēng;;mông
+24=cao bồi
+25=đứng lại
+> 他的成绩很好。 | Thành tích của anh ấy rất tốt.
+> 你违反了规则。 | Bạn đã vi phạm quy tắc.
+> 请站住！ | Xin đứng lại!
+> 我们商量一下吧。 | Chúng ta thương lượng một chút đi.
+## F2-51 | Nghệ sĩ, kênh truyền hình & nguyện vọng
+1=sâm panh
+2=nghệ sĩ
+3=kỹ xảo
+4=Âu (phiên âm);;ōu;;âu
+5=cảm xúc, tình cảm sâu
+6=trung ương
+7=kiến nghị đưa ra
+8=mỗi tuần
+9=trốn tránh
+10=tội danh
+11=khu phố
+12=kênh
+13=truyền thuyết
+14=công cộng
+15=thời kỳ
+16=vật chất
+17=duỗi;;shēn;;thân
+18=dù cho
+19=xạ kích, bắn súng
+20=kính mắt
+21=âm;;yīn;;âm
+22=mái nhà
+23=nguyện vọng
+24=dậy (khỏi giường)
+25=sự vật
+> 我每周看一部电影。 | Mỗi tuần tôi xem một bộ phim.
+> 他戴着眼镜。 | Anh ấy đang đeo kính.
+> 我起床了。 | Tôi dậy rồi.
+> 屋顶上有一只猫。 | Trên mái nhà có một con mèo.
+## F2-52 | Con thỏ, sợi dây & lòng trung thành
+1=thỏ
+2=giải đấu lớn
+3=hình tượng
+4=cái túi
+5=ở ngoài ra
+6=phát điên
+7=dây thừng
+8=không còn lựa chọn
+9=khả năng (xác suất)
+10=Kinh Thánh
+11=tổng bộ
+12=mỹ vị, ngon
+13=vết máu
+14=dì
+15=nhân vật chính
+16=phát huy
+17=cơ mật
+18=xui xẻo
+19=toàn cầu
+20=kỷ niệm (tưởng nhớ)
+21=đồn cảnh sát
+22=vùng ngực
+23=sức, hăng;;jìn;;kình
+24=trung thành
+25=ác;;è;;ác
+> 他有一个袋子。 | Anh ấy có một cái túi.
+> 我阿姨是警察。 | Dì của tôi là cảnh sát.
+> 我们去警察局。 | Chúng ta đến đồn cảnh sát.
+> 他是这个故事的主角。 | Anh ấy là nhân vật chính của câu chuyện này.
+## F2-53 | Râu ria, hành lang & nhà khoa học
+1=bên;;páng;;bàng
+2=râu
+3=trong cơ thể
+4=đại ca, anh cả
+5=nhổ;;bá;;bạt
+6=bóng bầu dục
+7=người ngoài hành tinh
+8=rốt cuộc thì
+9=hành lang
+10=hồi đó
+11=triệu chứng
+12=đạo đức
+13=ngủ say
+14=cốt;;gǔ;;cốt
+15=an ủi
+16=bảo;;bǎo;;bảo
+17=có (văn viết)
+18=chuỗi
+19=cơ bắp
+20=thú;;qù;;thú
+21=bảo trọng
+22=nhà khoa học
+23=giải trí
+24=sắp đến lúc
+25=chấn kinh
+> 请保重！ | Xin hãy bảo trọng!
+> 他在走廊里睡着了。 | Anh ấy ngủ thiếp đi ở hành lang.
+> 科学家有很多问题。 | Các nhà khoa học có rất nhiều vấn đề.
+> 这个系列很有意思。 | Loạt phim này rất thú vị.
+## F2-54 | Ác mộng, thư viện & truyền kỳ
+1=phản kháng
+2=ác mộng
+3=sữa; vú;;nǎi;;nãi
+4=đáng được
+5=tâm hồn
+6=yểm hộ
+7=đất;;tǔ;;thổ
+8=mở (mắt)
+9=cái gương
+10=người tình
+11=sức sống
+12=kinh điển
+13=phụ (cha);;fù;;phụ
+14=chức;;zhí;;chức
+15=thư viện
+16=trông có vẻ, tỏ ra
+17=tử hình
+18=lời dối;;huǎng;;hoảng
+19=tiến bộ
+20=theo đuổi (mục tiêu)
+21=thằng ngốc
+22=miền nam
+23=bẩm sinh
+24=quả táo
+25=truyền kỳ
+> 他做了一个噩梦。 | Anh ấy đã gặp một cơn ác mộng.
+> 图书馆在哪里？ | Thư viện ở đâu?
+> 我吃了一个苹果。 | Tôi đã ăn một quả táo.
+> 他是一个传奇。 | Anh ấy là một huyền thoại.

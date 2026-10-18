@@ -1,0 +1,180 @@
+## F2-25 | Váy áo, quyền lực & bánh sandwich
+1=váy
+2=kim cương
+3=không chịu nổi
+4=hình, bản vẽ;;tú;;đồ
+5=nằm ở chỗ
+6=gian nan
+7=bài học; khiển trách
+8=toàn quốc
+9=thẳng thắn
+10=nghị sĩ
+11=từ thiện
+12=đặt (trước); định;;dìng;;đính
+13=quán ăn
+14=phu; chồng;;fū;;phu
+15=làn da
+16=sự khác biệt
+17=đơn vị quân đội
+18=phía sau lưng
+19=toàn thế giới
+20=thiết bị lắp đặt
+21=bánh sandwich
+22=quyền lực
+23=bóng chày
+24=tươi mới
+25=trái phải; khoảng
+> 我喜欢吃三明治。 | Tôi thích ăn bánh sandwich.
+> 全世界都知道。 | Cả thế giới đều biết.
+> 她穿着一条红色的裙子。 | Cô ấy mặc một chiếc váy màu đỏ.
+> 新鲜的鱼很好吃。 | Cá tươi rất ngon.
+## F2-26 | Dòng sông, dũng khí & liên minh
+1=yên tâm
+2=học được
+3=phí; tốn;;fèi;;phí
+4=dấu vết
+5=ổn định
+6=kính trọng
+7=ty; quản lý;;sī;;ty
+8=sông;;hé;;hà
+9=vùng
+10=kiên cường
+11=dữ liệu
+12=thủy tinh, kính
+13=dũng khí
+14=ống kính, cảnh quay
+15=nhân viên
+16=bảo; giữ;;bǎo;;bảo
+17=liên minh
+18=cánh (cửa); quạt;;shàn;;phiến
+19=tò mò
+20=ánh nắng
+21=giỏi quá, ghê gớm
+22=xét xử
+23=cảm giác; giấc;;jué;;giác
+24=giả sử
+25=căn cứ địa
+> 你放心，我会照顾他。 | Bạn yên tâm, tôi sẽ chăm sóc anh ấy.
+> 他学会了开车。 | Anh ấy đã học được cách lái xe.
+> 阳光很好。 | Ánh nắng rất đẹp.
+> 他很有勇气。 | Anh ấy rất có dũng khí.
+## F2-27 | Đất đai, ghen tị & thời trang
+1=chặt, bổ;;kǎn;;khảm
+2=ở ngoài, ngoài phạm vi
+3=ghen tị
+4=trò chuyện
+5=cớ
+6=đất đai
+7=bằng phẳng; bình;;píng;;bình
+8=vú em
+9=nhạc rock
+10=buông tay
+11=than phiền
+12=sự chú ý
+13=gánh chịu
+14=trang;;yè;;hiệt
+15=ký tên
+16=thời thượng
+17=thiên phú
+18=đánh nhau
+19=cả ngày
+20=bài văn
+21=vi-rút
+22=nếu... thì (cuối mệnh đề)
+23=bãi biển
+24=thiết bị
+25=đả kích
+> 我们在海滩上聊天。 | Chúng tôi trò chuyện trên bãi biển.
+> 你不要找借口。 | Bạn đừng viện cớ.
+> 他整天打游戏。 | Anh ta cả ngày chơi game.
+> 这篇文章很有意思。 | Bài văn này rất thú vị.
+## F2-28 | Mô tả, tiêu chuẩn & ngôn ngữ
+1=miêu tả
+2=bọt; ngâm;;pào;;bào
+3=tượng thần
+4=y tế
+5=tương tự
+6=túi;;dài;;đại
+7=cứng;;yìng;;ngạnh
+8=ẩn giấu
+9=tiêu chuẩn
+10=đam mê
+11=ngôn ngữ
+12=trị; chữa;;zhì;;trị
+13=tiêm
+14=chiếc xe
+15=công; thợ;;gōng;;công
+16=coi như
+17=các hạ
+18=phương nam;;nán;;nam
+19=bí ẩn; (Áo);;ào;;áo
+20=cho phép; có lẽ;;xǔ;;hứa
+21=cưới (vợ);;qǔ;;thú
+22=văn;;wén;;văn
+23=ở vào (trạng thái)
+24=đầu tư
+25=tóm tắt
+> 他会说三种语言。 | Anh ấy biết nói ba thứ tiếng.
+> 我们的标准很高。 | Tiêu chuẩn của chúng tôi rất cao.
+> 他想娶她。 | Anh ấy muốn cưới cô ấy.
+> 你可以把我当作朋友。 | Bạn có thể coi tôi như bạn bè.
+## F2-29 | Thí nghiệm, chợ & trợ lý
+1=người Do Thái
+2=quá đáng
+3=nhất trí
+4=đối tượng
+5=kỳ;;qī;;kỳ
+6=dán;;tiē;;thiếp
+7=quản lý
+8=chuyển dời
+9=giữ bí mật
+10=trợ thủ
+11=thoát khỏi
+12=sức hút
+13=thí nghiệm
+14=hiểu lầm
+15=khởi động
+16=ôi chao;;yō;;yêu
+17=xây;;jiàn;;kiến
+18=yêu đương
+19=hồi nhỏ
+20=chủ đề
+21=thị trường, chợ
+22=gỗ; cây;;mù;;mộc
+23=tòa, dãy (lượng từ nhà);;dòng;;đống
+24=đoàn; cục;;tuán;;đoàn
+25=luyện;;liàn;;luyện
+> 我小时候住在这里。 | Hồi nhỏ tôi sống ở đây.
+> 这个话题很有意思。 | Chủ đề này rất thú vị.
+> 你们在恋爱吗？ | Hai người đang yêu nhau à?
+> 他是我的助手。 | Anh ấy là trợ lý của tôi.
+## F2-30 | Cây cầu, hoàng tử & mùa hè
+1=cầu;;qiáo;;kiều
+2=quyến rũ
+3=kiến trúc
+4=cử hành
+5=tổn thất
+6=hoàng tử
+7=mã; yard;;mǎ;;mã
+8=đan; thuốc viên;;dān;;đan
+9=lùi lại
+10=bụng
+11=hãnh diện
+12=y (đại từ cổ: anh/cô ấy);;yī;;y
+13=không những
+14=mùa hè
+15=đuổi học/việc
+16=bánh quy
+17=chứng;;zhèng;;chứng
+18=mẫu; giống cái;;mǔ;;mẫu
+19=nực cười
+20=lúa mì;;mài;;mạch
+21=nhiệt tình
+22=làm chứng
+23=buồn cười
+24=mở lời
+25=cách nói
+> 夏天太热了。 | Mùa hè nóng quá.
+> 王子爱上了公主。 | Hoàng tử đã phải lòng công chúa.
+> 这座桥很长。 | Cây cầu này rất dài.
+> 这个说法很好笑。 | Cách nói này rất buồn cười.

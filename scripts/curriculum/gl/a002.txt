@@ -1,0 +1,150 @@
+## F1-03 | Từ nghi vấn, liên từ & chỉ thị thường gặp
+1=(trợ từ chỉ trạng thái đang diễn ra);;zhe;;trứ
+2=việc, sự việc
+3=cái này, này
+4=thế nào, sao
+5=bây giờ
+6=có thể, được phép
+7=điểm; giờ; gọi (món)
+8=thì sao? (trợ từ hỏi lại)
+9=nếu, nếu như
+10=chỉ, chỉ có;;zhǐ;;chỉ
+11=đừng; khác;;bié;;biệt
+12=ồ (thán từ);;ò;;ngạc
+13=nhưng
+14=bị (câu bị động);;bèi;;bị
+15=đi, đi bộ
+16=quá, rất;;tài;;thái
+17=như vậy, thế này
+18=trong, bên trong;;lǐ;;lý
+19=theo; cùng với;;gēn;;cân
+20=bảo, nói cho biết
+21=bởi vì
+22=bản thân, tự mình
+23=lại, nữa;;zài;;tái
+24=nghe
+25=ở đây
+> 我们现在可以去。 | Bây giờ chúng ta có thể đi.
+> 如果你不想去，我告诉他。 | Nếu bạn không muốn đi, tôi sẽ nói với anh ấy.
+> 因为他走了，我也想走。 | Vì anh ấy đi rồi nên tôi cũng muốn đi.
+> 你自己看，这里有什么？ | Bạn tự xem đi, ở đây có gì?
+## F1-04 | Thời gian, lý do & cảm xúc cơ bản
+1=nhanh
+2=ai;;shéi;;thùy
+3=nhưng, tuy nhiên
+4=nhiều
+5=dùng, sử dụng
+6=lúc, khi
+7=xuống; dưới;;xià;;hạ
+8=đã, rồi
+9=cảm ơn
+10=tại sao
+11=cảm thấy, thấy rằng
+12=ngày; trời
+13=giống, như;;xiàng;;tượng
+14=như thế này, đến thế
+15=nó (chỉ vật)
+16=từ; theo;;cóng;;tùng
+17=ngài, ông; thầy
+18=tìm
+19=nhất (mức cao nhất);;zuì;;tối
+20=thích
+21=có thể; thật là (nhấn mạnh);;kě;;khả
+22=vì, cho (giới từ);;wèi;;vị
+23=to, lớn;;dà;;đại
+24=có thể, khả năng
+25=cần, cần phải
+> 他已经走了，谢谢你。 | Anh ấy đã đi rồi, cảm ơn bạn.
+> 为什么你觉得这个可能是真的？ | Tại sao bạn thấy cái này có thể là thật?
+> 现在是什么时候？ | Bây giờ là lúc nào?
+> 我喜欢这里，它很大。 | Tôi thích ở đây, nó rất rộng.
+## F1-05 | Lượng từ, liên từ & nhấn mạnh
+1=đúng vậy
+2=chết
+3=lần (số lần); thứ tự
+4=ra, đi ra
+5=như thế, vậy thì
+6=làm (khẩu ngữ);;gàn;;cán
+7=cái kia, đó
+8=này, ê (thán từ)
+9=(hậu tố số nhiều);;men;;môn
+10=lời, lời nói;;huà;;thoại
+11=mà, và (liên từ);;ér;;nhi
+12=(hậu tố trong 什么, 这么...);;me;;ma
+13=đồ, thứ, đồ vật
+14=nên, cần phải
+15=đứa trẻ, con
+16=đứng dậy; (bổ ngữ) lên
+17=cho nên
+18=những cái này
+19=mới, vừa mới;;cái;;tài
+20=hai (đếm)
+21=sai, lỗi
+22=còn có, ngoài ra
+23=lại (đã xảy ra)
+24=nhỏ, bé
+25=trong; giữa;;zhōng;;trung
+> 这些东西他都有。 | Những thứ này anh ấy đều có.
+> 孩子们都很小。 | Bọn trẻ đều còn rất nhỏ.
+> 孩子们都起来了，所以我们可以走了。 | Bọn trẻ đều dậy rồi nên chúng ta có thể đi.
+> 这是我的东西，不是你的。 | Đây là đồ của tôi, không phải của bạn.
+## F1-06 | Động từ hành động thường gặp
+1=gọi; bảo; tên là
+2=ừm, ừ;;èn;;ân
+3=nên; đến lượt;;gāi;;cai
+4=đợi, chờ
+5=vấn đề, câu hỏi
+6=cùng nhau
+7=cầm, lấy;;ná;;nã
+8=hơn nữa, càng;;gèng;;cánh
+9=bắt đầu
+10=giúp;;bāng;;bang
+11=đánh; gọi (điện thoại)
+12=yêu
+13=mang, dẫn theo;;dài;;đái
+14=thời gian
+15=năm
+16=mời; xin vui lòng
+17=về, trở lại; lần;;huí;;hồi
+18=làm việc; công việc
+19=sau đó, rồi
+20=làm; đang khi; đáng;;dāng;;đương
+21=thấy, gặp;;jiàn;;kiến
+22=tiền
+23=ồ, ôi (thán từ)
+24=giống nhau
+25=sự việc, chuyện
+> 请你等我，我现在就回来。 | Xin bạn đợi tôi, tôi về ngay bây giờ.
+> 他们开始工作了，然后我们一起去。 | Họ bắt đầu làm việc rồi, sau đó chúng ta cùng đi.
+> 你有钱吗？ | Bạn có tiền không?
+> 我爱你，你也爱我吗？ | Anh yêu em, em cũng yêu anh chứ?
+## F1-07 | Đời thường: ăn uống, gia đình, tin tưởng
+1=chính là; đúng là
+2=ăn
+3=tất cả, mọi
+4=mở; lái; bật
+5=một chút, thử (sau động từ)
+6=nhà; gia đình
+7=vô cùng
+8=nhìn tới, trông thấy
+9=hy vọng, mong
+10=những cái kia
+11=nào? (hỏi chọn);;nǎ;;na
+12=dĩ nhiên
+13=có lẽ
+14=được; đi (khẩu ngữ);;xíng;;hành
+15=bạn bè
+16=mẹ
+17=tin, tin tưởng
+18=trước; phía trước
+19=chào (hi)
+20=cho rằng, nghĩ rằng
+21=sẽ; sắp;;jiāng;;tương
+22=ở đây (khẩu ngữ)
+23=hôm nay
+24=hiểu, rõ
+25=luôn luôn; thẳng một mạch
+> 朋友们非常喜欢这个。 | Các bạn bè vô cùng thích cái này.
+> 我希望你明白，我一直相信你。 | Tôi mong bạn hiểu rằng tôi luôn tin bạn.
+> 你要吃什么？ | Bạn muốn ăn gì?
+> 你在哪里工作？ | Bạn làm việc ở đâu?

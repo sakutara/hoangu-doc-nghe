@@ -1,0 +1,150 @@
+## F1-13 | Con người, cảnh sát & cuộc gọi
+1=quan trọng
+2=nói chuyện, bàn
+3=người khác
+4=đàn ông
+5=đầu
+6=cơ hội
+7=tuổi
+8=đi ra ngoài
+9=sống
+10=nhìn thấy (trông thấy)
+11=người (hậu tố: -giả)
+12=gọi điện thoại
+13=alô, này;;wèi;;uý
+14=hình như, giống như
+15=đạt được, nhận được
+16=cảnh sát
+17=xong, hết
+18=tờ, tấm (lượng từ cho giấy, bàn);;zhāng;;trương
+19=con trai
+20=sau đó, sau khi
+21=xinh đẹp, đẹp mắt
+22=phút
+23=nối; nhận; đón
+24=sân; trận (lượng từ);;chǎng;;trường
+25=tạm biệt
+> 喂，我是警察，请接电话。 | Alô, tôi là cảnh sát, xin hãy nghe máy.
+> 你儿子几岁？ | Con trai bạn năm nay mấy tuổi?
+> 这是一个重要的机会。 | Đây là một cơ hội quan trọng.
+> 他好像看见了别人。 | Hình như anh ấy đã nhìn thấy người khác.
+## F1-14 | Quyết định, quan hệ & tình huống
+1=cầu xin; tìm kiếm;;qiú;;cầu
+2=vừa mới;;gāng;;cương
+3=như thế nào
+4=cuộc thi, trận đấu
+5=(trợ từ ngữ khí, biến thể của 啊)
+6=tình hình
+7=biến, trở nên khác
+8=quan hệ
+9=thật là (than phiền)
+10=quý bà, chị
+11=gốc; quyển (lượng từ sách)
+12=ngay lập tức
+13=quyết định
+14=gặp được, thấy
+15=căn bản, hoàn toàn (phủ định)
+16=về, liên quan đến
+17=ở đó (khẩu ngữ)
+18=khó;;nán;;nan
+19=chỉ cần
+20=bên trong
+21=phần; suất (lượng từ)
+22=mỗi
+23=rốt cuộc
+24=hiểu rõ, tìm hiểu
+25=ngày mai
+> 我马上决定了。 | Tôi quyết định ngay rồi.
+> 关于这件事，你了解吗？ | Về chuyện này, bạn có hiểu rõ không?
+> 明天的比赛你去不去？ | Trận đấu ngày mai bạn có đi không?
+> 你们的关系到底怎么样？ | Rốt cuộc quan hệ của hai người thế nào?
+## F1-15 | Công ty, an toàn & kế hoạch
+1=đứng; ga, trạm
+2=kết thúc
+3=công ty
+4=trở thành
+5=mãi mãi
+6=giúp đỡ
+7=bao nhiêu
+8=ôi, wow
+9=tên; (lượng từ cho người)
+10=chúng (chỉ vật)
+11=luôn; tóm lại;;zǒng;;tổng
+12=xác định, chắc chắn
+13=có người
+14=rõ ràng
+15=buổi tối
+16=an toàn
+17=như thế nào, làm sao
+18=không có gì
+19=cục, miếng; đồng (tiền)
+20=về nhà
+21=để lại; ở lại;;liú;;lưu
+22=tuần; vòng;;zhōu;;chu
+23=bằng lòng, sẵn sàng
+24=kế hoạch
+25=bố, ba;;bà;;bả
+> 这个计划安全吗？ | Kế hoạch này có an toàn không?
+> 我永远爱你。 | Anh sẽ yêu em mãi mãi.
+> 这个多少钱？ | Cái này bao nhiêu tiền?
+> 有人在里面吗？ | Có ai ở bên trong không?
+## F1-16 | Cảm ơn, chào đón & thái độ
+1=hai người, hai (khẩu ngữ);;liǎ;;lưỡng
+2=dừng
+3=không thể
+4=mẹ kiếp (chửi thề)
+5=nói chuyện
+6=khác, ngoài ra
+7=tim; tâm
+8=hoa; tiêu (tiền)
+9=các cô ấy
+10=một số; hơi
+11=cửa
+12=cảm tạ
+13=bàn bạc, nói chuyện
+14=định, quyết định;;dìng;;định
+15=ở, tại; hơn (văn viết);;yú;;vu
+16=sau này
+17=quản; ống;;guǎn;;quản
+18=ảnh
+19=hoan nghênh, chào mừng
+20=dám
+21=anh em
+22=từ trước đến nay
+23=luôn luôn
+24=miệng
+25=nhảy
+> 欢迎你来我家。 | Chào mừng bạn đến nhà tôi.
+> 我们俩一起谈谈。 | Hai chúng ta cùng nói chuyện một chút.
+> 他从来不说话。 | Từ trước đến nay anh ấy không hề nói chuyện.
+> 你敢跳吗？ | Bạn có dám nhảy không?
+## F1-17 | Nhà cửa, quần áo & tin tức
+1=nhờ vả, làm ơn
+2=con gái
+3=bắt; nắm
+4=cô, tiểu thư
+5=động; di chuyển
+6=thắng
+7=tin tức
+8=nữ
+9=bận
+10=có thể là, hoặc giả
+11=như vậy
+12=đội
+13=không thể (không có cách)
+14=nhà, căn nhà
+15=kéo; kéo (đàn)
+16=quần áo
+17=nghe nói
+18=cứu;;jiù;;cứu
+19=tham gia
+20=cách, biện pháp
+21=ngủ
+22=duy nhất
+23=quay về
+24=mọi người, người ta
+25=tối; muộn
+> 听说你女儿很漂亮。 | Nghe nói con gái bạn rất xinh.
+> 我有一件新衣服。 | Tôi có một bộ quần áo mới.
+> 这是唯一的办法。 | Đây là cách duy nhất.
+> 小姐，你想睡了吗？ | Cô ơi, cô buồn ngủ rồi à?

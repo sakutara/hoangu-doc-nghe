@@ -1,0 +1,288 @@
+## F4-01 | Đoạn đọc: Một ngày của lớp trưởng
+1=đông bắc
+2=nhật báo
+3=tên gọi
+4=máy giặt
+5=hiệu thuốc
+6=từ ngữ
+7=đường đi thuận lợi
+8=đồ ăn nhanh
+9=tháng (trong năm)
+10=câu
+11=sân vận động
+12=lớp trưởng
+13=mát mẻ
+14=ga tàu điện ngầm
+15=nhiệt độ không khí
+16=giày thể thao
+17=tuổi già
+18=khai giảng
+19=khó coi
+20=bữa trưa / món Trung
+21=đũa
+22=nơi khác
+23=về nước
+24=bật máy
+25=nhà ở
+> 九月开学了，小明是我们班的班长。 | Tháng chín khai giảng rồi, Tiểu Minh là lớp trưởng của lớp chúng tôi.
+> 今天天气很凉快，气温不高。 | Hôm nay thời tiết rất mát mẻ, nhiệt độ không cao.
+> 中午他和同学在快餐店吃中餐，用筷子吃饭。 | Buổi trưa cậu ấy cùng bạn học ăn trưa ở tiệm đồ ăn nhanh, dùng đũa để ăn.
+> 下午他穿球鞋去体育场，坐地铁到地铁站。 | Buổi chiều cậu ấy đi giày thể thao đến sân vận động, đi tàu điện ngầm đến ga.
+> 回家的路上，他去药店买了药。 | Trên đường về nhà, cậu ấy ghé hiệu thuốc mua thuốc.
+> 晚上，他在住房里看日报，学习新的词语和句子。 | Buổi tối, cậu ấy đọc nhật báo trong nhà, học từ ngữ và câu mới.
+## F4-02 | Đoạn đọc: Đi leo núi cuối tuần
+1=leo núi
+2=thường dùng
+3=bảng đen
+4=được gọi bằng
+5=đông nam
+6=tổ trưởng
+7=cân (500g);;jīn;;cân
+8=người đi đường
+9=kết bạn
+10=nắng ráo;;qíng;;tình
+11=thuốc nước
+12=quán cơm
+13=bài tập làm văn
+14=âm tiết
+15=dưới không độ
+16=bóng chuyền
+17=sủi cảo
+18=ngày nắng
+19=bước vào
+20=trôi chảy
+21=hỏi đường
+22=khó nghe
+23=từ điển (từ ngữ)
+24=một chút xíu
+25=mì ăn liền
+> 周末是晴天，我们决定去爬山。 | Cuối tuần trời nắng, chúng tôi quyết định đi leo núi.
+> 组长带着我们走进山里，山路上行人很少。 | Tổ trưởng dẫn chúng tôi vào núi, trên đường núi rất ít người đi.
+> 我们一边爬山，一边交朋友，聊天。 | Chúng tôi vừa leo núi vừa kết bạn, trò chuyện.
+> 山上很冷，气温有零下几度，但是大家都很高兴。 | Trên núi rất lạnh, nhiệt độ dưới không vài độ, nhưng mọi người đều rất vui.
+> 中午我们在饭馆吃饺子，一点点辣的更好吃。 | Buổi trưa chúng tôi ăn sủi cảo ở quán cơm, thêm chút xíu cay thì càng ngon.
+> 回到学校，我们用中文写了一篇作文。 | Về đến trường, chúng tôi viết một bài văn bằng tiếng Trung.
+## F4-03 | Đoạn đọc: Lưu học sinh ăn Tết
+1=tiếng phổ thông
+2=kilôgam (đơn vị chuẩn)
+3=ngủ trưa
+4=nghe giảng
+5=năm kia
+6=ăn Tết
+7=lấy ra
+8=báo chiều
+9=làm việc (nhi hóa)
+10=cả năm
+11=cách đọc
+12=trung cấp
+13=tây y
+14=đông y
+15=ngày âm u
+16=lưu học sinh
+17=món Tây
+18=Tết Nguyên đán
+19=thí sinh
+20=trung tiểu học
+21=từ mới
+22=vàng;;huáng;;hoàng
+23=không nhất định
+24=tin nhắn
+25=nhiều mây
+> 我是留学生，前年来到中国。 | Tôi là lưu học sinh, năm kia đã đến Trung Quốc.
+> 我的普通话是中级，但是有些生词的读音还不太好。 | Tiếng phổ thông của tôi ở trình độ trung cấp, nhưng cách đọc của vài từ mới vẫn chưa tốt lắm.
+> 春节的时候，我去朋友家过年，大家一起吃饺子。 | Dịp Tết Nguyên đán, tôi đến nhà bạn ăn Tết, mọi người cùng ăn sủi cảo.
+> 他爷爷是中医，奶奶喜欢看晚报。 | Ông nội của cậu ấy là đông y, bà nội thích đọc báo chiều.
+> 阴天的时候，我喜欢午睡；多云的日子我也不一定出门。 | Ngày âm u tôi thích ngủ trưa; ngày nhiều mây tôi cũng chưa chắc ra ngoài.
+> 朋友给我发了一条短信：新年快乐！ | Bạn gửi cho tôi một tin nhắn: Chúc mừng năm mới!
+## F4-04 | Đoạn đọc: Đến thăm nhà bạn
+1=xe buýt công cộng
+2=xe công cộng
+3=tranh vẽ (nhi hóa)
+4=nhanh lên chút
+5=vào lúc ấy
+6=rất ổn
+7=tuần sau
+8=chuyện cười (nhi hóa)
+9=thượng lộ bình an
+10=thẻ ngân hàng
+11=hơi (nhi hóa)
+12=rảnh (nhi hóa)
+13=có chút ít
+14=tìm ra
+15=làm chi vậy
+16=cao tốc
+17=quyết tâm
+18=vui nhộn; cola
+19=lan truyền
+20=làm nghề, theo đuổi
+21=chuối
+22=các nơi
+23=đón chào
+24=hội viên
+25=lâu dài
+> 下周我有空儿，想去朋友家。 | Tuần sau tôi rảnh, muốn đến nhà bạn.
+> 我坐公共汽车，他在车站迎接我。 | Tôi đi xe buýt, bạn đón tôi ở bến xe.
+> 他从事电影工作，是电影会员，也画画儿。 | Anh ấy làm việc trong ngành điện ảnh, là hội viên điện ảnh, cũng vẽ tranh.
+> 他给我讲了一个笑话儿，真有点儿可乐。 | Anh ấy kể cho tôi một chuyện cười, thật sự hơi vui nhộn.
+> 他说他有决心长期住在这里。 | Anh ấy nói mình có quyết tâm sống lâu dài ở đây.
+> 回家时他说：一路平安！ | Lúc tôi về nhà, anh ấy nói: Thượng lộ bình an!
+## F4-05 | Đoạn đọc: Nhà văn phát biểu
+1=viết văn
+2=phim truyền hình
+3=còn thiếu
+4=nhiệt liệt
+5=giấy tờ
+6=lên tiếng phát biểu
+7=áo (thân trên)
+8=dẫn dắt
+9=lạc hậu
+10=tiếng hát
+11=hơn, tương đối;;jiào;;giảo
+12=nhập vào
+13=tiên tiến
+14=khái niệm
+15=lắp đặt
+16=nhận ra (biết mặt chữ)
+17=sửa đổi
+18=chia tay; riêng biệt
+19=thành quả
+20=phía nam (phần)
+21=độ khó
+22=bắt tay
+23=hình dạng
+24=quần short
+25=cải tạo
+> 她是一位作家，喜欢写作，也喜欢看电视剧。 | Cô ấy là một nhà văn, thích viết văn và cũng thích xem phim truyền hình.
+> 她在会上发言，大家热烈地鼓掌。 | Cô ấy phát biểu trong cuộc họp, mọi người nhiệt liệt vỗ tay.
+> 她说：我们不能缺少先进的技术，也不能落后。 | Cô ấy nói: Chúng ta không thể thiếu kỹ thuật tiên tiến, cũng không thể lạc hậu.
+> 她用电脑输入文章，请人安装新的软件。 | Cô ấy nhập bài viết bằng máy tính, nhờ người cài đặt phần mềm mới.
+> 修改以后，难度小了很多。 | Sau khi sửa đổi, độ khó giảm đi rất nhiều.
+> 最后，她和大家握手告别。 | Cuối cùng, cô ấy bắt tay mọi người rồi từ biệt.
+## F4-06 | Đoạn đọc: Ngày làm việc của kỹ sư
+1=chạy bộ
+2=phòng vệ sinh
+3=tiếp đến
+4=nhà cửa
+5=biểu mẫu
+6=phong bì
+7=nhu cầu
+8=nên
+9=vận tải
+10=đề ra
+11=tự thân
+12=kỹ sư
+13=viễn thông liên lạc
+14=đặt câu hỏi
+15=tăng cường
+16=khai phá, phát triển
+17=không riêng
+18=văn tự
+19=áo sơ mi (khẩu ngữ)
+20=nhà hát kịch
+21=bổ sung
+22=phân phối
+23=công nghiệp
+24=thường nhật
+25=tài năng, tài cán
+> 每天早上，我先跑步，然后去卫生间洗澡。 | Mỗi sáng, tôi chạy bộ trước, rồi vào phòng vệ sinh tắm.
+> 其次，我穿上衬衣，去公司上班。 | Tiếp đến, tôi mặc áo sơ mi, đến công ty đi làm.
+> 我是工程师，工作是开发新的产品。 | Tôi là kỹ sư, công việc là phát triển sản phẩm mới.
+> 我们公司制定了新的计划，加强运输和通信。 | Công ty chúng tôi đề ra kế hoạch mới, tăng cường vận tải và thông tin liên lạc.
+> 同事们不光有才能，还愿意提问和补充。 | Các đồng nghiệp không chỉ có tài năng mà còn sẵn lòng đặt câu hỏi và bổ sung.
+> 下班后，我们去剧场看戏，这是我们日常的休息。 | Tan làm, chúng tôi đi nhà hát xem kịch, đó là cách nghỉ ngơi thường nhật của chúng tôi.
+## F4-07 | Đoạn đọc: Thủ đô và trường học
+1=trong nước
+2=thuộc;;shǔ;;thuộc
+3=người hâm mộ bóng
+4=khuyết điểm
+5=cải tiến
+6=tập thể
+7=sinh trưởng
+8=chọn dùng
+9=thủ đô
+10=bó; buộc;;shù;;thúc
+11=Liên Hợp Quốc
+12=đẩy tiến lên
+13=chốn, nơi chốn
+14=miền bắc (phần)
+15=văn học
+16=học phí
+17=dò hỏi
+18=bài vở
+19=chế độ
+20=công nhận
+21=miền đông (phần)
+22=hạt cát
+23=vọng đến
+24=bà cụ
+25=đẩy nhanh
+> 北京是中国的首都，也是国内最大的城市之一。 | Bắc Kinh là thủ đô của Trung Quốc, cũng là một trong những thành phố lớn nhất trong nước.
+> 这里的学校采用新的制度，学费也比较高。 | Trường học ở đây áp dụng chế độ mới, học phí cũng khá cao.
+> 学生们喜欢文学，也喜欢集体活动。 | Học sinh thích văn học, cũng thích hoạt động tập thể.
+> 球迷们在体育场里高声唱歌，歌声传来。 | Người hâm mộ hát to trong sân vận động, tiếng hát vọng đến.
+> 一位老太太向我打听去地铁站的路。 | Một bà cụ hỏi tôi đường đến ga tàu điện ngầm.
+> 我们要改进缺点，加快发展。 | Chúng ta phải cải tiến khuyết điểm, đẩy nhanh phát triển.
+## F4-08 | Đoạn đọc: Ngôi nhà ấm áp
+1=ấm lên, ấm cúng
+2=lặp đi lặp lại
+3=mặt hàng
+4=dự kiến
+5=dân tộc
+6=thính giả
+7=nổi bật
+8=nhấn mạnh
+9=máy lạnh
+10=ưu điểm
+11=độc giả
+12=thân nhân, gia quyến
+13=thu phí
+14=nông dân
+15=gây hại
+16=tình nguyện viên
+17=đường sắt
+18=chủ nhà trọ
+19=người quen
+20=tăng trưởng
+21=thường hay
+22=đã từ lâu
+23=bảo vệ môi trường
+24=tiếp đãi
+25=xa lộ
+> 冬天，房间里有空调，很暖和。 | Mùa đông, trong phòng có máy lạnh nên rất ấm.
+> 房东是一位农民，他有很多熟人。 | Chủ nhà là một nông dân, ông ấy có rất nhiều người quen.
+> 他往往反复强调：环保很重要，要保护大自然。 | Ông thường hay nhấn mạnh đi nhấn mạnh lại: bảo vệ môi trường rất quan trọng, phải bảo vệ thiên nhiên.
+> 志愿者们接待了很多游客，听众们热烈鼓掌。 | Các tình nguyện viên đã tiếp đón nhiều du khách, thính giả nhiệt liệt vỗ tay.
+> 铁路和高速公路都要收费。 | Đường sắt và đường cao tốc đều phải thu phí.
+> 读者朋友们，我们的优点是服务好。 | Các bạn độc giả, ưu điểm của chúng tôi là phục vụ tốt.
+## F4-09 | Đoạn đọc: Làm thủ tục ở đại sứ quán
+1=nét đặc sắc
+2=thể hiện
+3=đạt chuẩn
+4=mặt khác
+5=giới tính
+6=ngoại giao
+7=miền trung
+8=sơ bộ
+9=phủ định
+10=quan niệm
+11=tổng thể
+12=trình diện
+13=dinh dưỡng
+14=Internet
+15=hạt giống
+16=xếp hạng
+17=nhân công; nhân tạo
+18=hộp thư điện tử
+19=cảnh sắc
+20=đại sứ quán
+21=rắn chắc
+22=huy chương vàng
+23=món ngon
+24=tổng kết
+25=thủ tục
+> 他在大使馆工作，今天去报到，办了一些手续。 | Anh ấy làm việc ở đại sứ quán, hôm nay đi trình diện và làm một số thủ tục.
+> 中国中部有很多美食，营养也很好。 | Miền trung Trung Quốc có nhiều món ngon, dinh dưỡng cũng rất tốt.
+> 这个城市的景色很有特色。 | Phong cảnh của thành phố này rất có nét đặc sắc.
+> 另一方面，互联网让世界变小了。 | Mặt khác, Internet khiến thế giới trở nên nhỏ bé hơn.
+> 他的身体很结实，在比赛中拿了金牌。 | Cơ thể anh ấy rất rắn chắc, đã giành huy chương vàng trong cuộc thi.
+> 最后，他对一年的工作做了总结。 | Cuối cùng, anh ấy tổng kết công việc cả năm.

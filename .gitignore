@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+scripts/curriculum/data/
+scripts/curriculum/venv/
+scripts/curriculum/__pycache__/
+scripts/curriculum/*.json
+.claude/
+/cedict.json
+/data/
