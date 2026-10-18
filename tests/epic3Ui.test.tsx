@@ -15,6 +15,7 @@ const wrap = (ui: React.ReactElement) =>
   render(<ServicesProvider value={svc}><MemoryRouter>{ui}</MemoryRouter></ServicesProvider>);
 
 beforeEach(() => {
+  localStorage.setItem('studyBarOpen', '1');
   svc = testServices();
   const speak = vi.fn();
   vi.stubGlobal('SpeechSynthesisUtterance', class { constructor(public text: string) {} });
@@ -136,5 +137,17 @@ describe('Banner nhắc học: nhắc lại / bỏ qua', () => {
     svc.storage.saveHabitSettings({ ...svc.storage.getHabitSettings(), dailyGoalMinutes: 60 });
     fireEvent.click(screen.getByLabelText('Cộng 1 phút'));
     expect(screen.getByTestId('timer')).toHaveTextContent('/ 60:00');
+  });
+});
+
+describe('Thanh thời gian ẩn/hiện', () => {
+  it('mặc định thu gọn, bấm để mở và ẩn lại', () => {
+    localStorage.removeItem('studyBarOpen');
+    wrap(<DailyStudyHeader />);
+    expect(screen.queryByLabelText('Cộng 1 phút')).toBeNull();
+    fireEvent.click(screen.getByLabelText('Hiện thanh thời gian'));
+    expect(screen.getByLabelText('Cộng 1 phút')).toBeInTheDocument();
+    fireEvent.click(screen.getByLabelText('Ẩn thanh thời gian'));
+    expect(screen.queryByLabelText('Cộng 1 phút')).toBeNull();
   });
 });

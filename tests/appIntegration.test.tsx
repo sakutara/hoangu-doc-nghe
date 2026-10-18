@@ -19,6 +19,7 @@ vi.mock('../src/services/swBridge', () => ({
 
 let svc = testServices();
 beforeEach(() => {
+  localStorage.setItem('studyBarOpen', '1');
   svc = testServices();
   setServices(svc);
   dispatchJob.mockClear();
