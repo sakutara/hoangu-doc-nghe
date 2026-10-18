@@ -60,7 +60,6 @@ export function ReviewPage({ now = () => new Date() }: { now?: () => Date }) {
         {flipped && entry && (
           <div className="mt-4 space-y-1">
             <div className="text-xl font-medium text-brand">{entry.pinyin}</div>
-            <div className="capitalize">{entry.hanViet}</div>
             <div>{entry.meanings.join('; ')}</div>
             <button onClick={() => speakChinese(head)} className="btn mt-2">Nghe</button>
           </div>

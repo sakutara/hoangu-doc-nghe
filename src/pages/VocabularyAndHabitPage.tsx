@@ -43,7 +43,7 @@ export function VocabularyAndHabitPage() {
         <ul className="mt-2 divide-y divide-line">
           {words.map((w) => (
             <li key={w.simplified} className="flex items-center justify-between gap-2 py-2">
-              <span><b className="text-2xl" lang="zh-CN">{w.simplified}</b> {w.pinyin} · <span className="capitalize">{w.hanViet}</span> — {w.meanings[0]}
+              <span><b className="text-2xl" lang="zh-CN">{w.simplified}</b> {w.pinyin} — {w.meanings[0]}
                 <small className="ml-2 text-muted">hộp {cards.find((c) => c.simplified === w.simplified)?.box ?? 0}</small></span>
               <span className="flex shrink-0 gap-1">
                 <button className="btn !px-3" onClick={() => speakChinese(w.simplified)}>Nghe</button>

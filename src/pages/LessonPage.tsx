@@ -54,7 +54,7 @@ export function LessonPage() {
                 <div>
                   <b className="text-3xl" lang="zh-CN">{v.simplified}</b>{v.traditional && <span className="ml-1 text-xs text-muted">({v.traditional})</span>}
                   {showPinyin && <div className="font-medium text-brand">{v.pinyin}</div>}
-                  <div><span className="capitalize">{v.hanViet}</span> — {v.meaning}</div>
+                  <div>{v.meaning}</div>
                 </div>
                 <button className="btn-icon shrink-0" aria-label={`Nghe ${v.simplified}`} onClick={() => speakChinese(v.simplified)}><Volume2 size={20} /></button>
               </li>
