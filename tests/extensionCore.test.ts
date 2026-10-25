@@ -48,6 +48,15 @@ describe('extension core', () => {
     expect(C.parseToc(doc('<a href="/a">x</a>'), 'https://x.test/b/index.html')).toHaveLength(0);
   });
 
+  it('trang mục lục “小说目录” có nhiều chữ Hán vẫn được nhận là mục lục', () => {
+    const items = Array.from({ length: 12 }, (_, i) => `<dd><a href="/b/${i + 1}.html">第${i + 1}章 ${HAN}</a></dd>`).join('');
+    const toc = doc(`<h2>小说目录</h2><a href="/b/">小说目录</a><div id="list"><dl>${items}</dl></div>`);
+    expect(C.looksLikeToc(toc, 'https://x.test/b/index.html')).toBe(true);
+    const chap = doc(`<a href="/b/index.html">小说目录</a><div id="content"><p>${HAN}${HAN}${HAN}${HAN}${HAN}${HAN}</p></div><a href="/b/2.html">下一章</a>`);
+    expect(C.looksLikeToc(chap, 'https://x.test/b/1.html')).toBe(false);
+    expect(C.findTocUrl(chap, 'https://x.test/b/1.html')).toBe('https://x.test/b/index.html');
+  });
+
   it('makeBundle tương thích CaptureBundleImporter', () => {
     const bundle = C.makeBundle(
       { title: '书', origin: 'https://x.test', bookKey: 'https://x.test/b/index.html' },

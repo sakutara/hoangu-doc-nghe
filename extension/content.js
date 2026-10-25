@@ -288,10 +288,11 @@
   // ---------- khởi tạo ----------
   async function init() {
     const page = C.extractPage(document, here);
-    const hasContent = C.han(page.paragraphs.join('')) > 100;
+    s.isTocPage = C.looksLikeToc(document, here);
+    const hasContent = !s.isTocPage && C.han(page.paragraphs.join('')) > 100;
     s.livePage = hasContent ? page : null;
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
-    s.isTocPage = !hasContent && C.parseToc(document, here).length >= 3;
+    if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
     const idx = await store.get(K.idx, {});
     s.bookKey = s.isTocPage ? here : (s.tocUrl || idx[here] || here);
     s.info = await store.get(K.book(s.bookKey), null) || {

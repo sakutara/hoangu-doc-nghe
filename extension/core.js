@@ -146,6 +146,15 @@
     return items;
   }
 
+  /** Trang mục lục? Nhiều link tiêu đề chương, hoặc (không có khối nội dung rõ ràng) một nhóm link lớn.
+   *  Không dựa vào “có chữ Hán nhiều” vì mục lục cũng toàn chữ Hán. */
+  function looksLikeToc(d, pageUrl) {
+    const pattern = [...d.querySelectorAll('a[href]')].filter((a) => CHAPTER_TITLE_RE.test((a.textContent || '').trim())).length;
+    if (pattern >= 8) return true;
+    const strict = SELECTORS.some((sel) => { const e = d.querySelector(sel); return e && han(e.textContent || '') > 100; });
+    return !strict && parseToc(d, pageUrl).length >= 5;
+  }
+
   /** Tên sách: phần tiêu đề tab không phải tên chương. */
   function guessBookTitle(docTitle, chapterTitle) {
     const parts = docTitle.split(/[-_|—·]/).map((s) => s.trim()).filter(Boolean);
@@ -165,6 +174,6 @@
   }
 
   root.HNCore = {
-    han, extractPage, findTocUrl, parseToc, guessBookTitle, safeName, makeBundle, isChallengeHtml, stripHash,
+    han, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, makeBundle, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));
