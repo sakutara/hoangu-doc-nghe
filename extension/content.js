@@ -17,7 +17,7 @@
     remove(k) { return chrome.storage.local.remove(k); },
   };
   const K = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, buf: (b) => `hn:buf:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx',
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, buf: (b) => `hn:buf:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
   // ---------- trạng thái ----------
@@ -74,6 +74,9 @@
     const lo = Number(s.from) || 1;
     const hi = s.count === '' ? Infinity : lo + Number(s.count) - 1;
 
+    const oldList = bd.querySelector('.list');
+    const listTop = oldList ? oldList.scrollTop : 0;
+    const bdTop = bd.scrollTop;
     bd.replaceChildren(
       el('div', null, el('b', null, s.info ? s.info.title : '…'), el('br'),
         el('small', null, `${savedCount} chương đã lưu trong extension · ${s.toc.length || '?'} chương trong mục lục`)),
@@ -101,6 +104,10 @@
       el('div', { class: 'row' },
         el('button', { onclick: () => forget(), disabled: s.running }, 'Xóa dữ liệu truyện này')),
     );
+    // replaceChildren dựng lại DOM → giữ nguyên vị trí cuộn của danh sách chương (không nhảy lên đầu mỗi lần cập nhật).
+    const newList = bd.querySelector('.list');
+    if (newList) newList.scrollTop = listTop;
+    bd.scrollTop = bdTop;
   }
   const say = (m) => { s.msg = m; render(); };
 
@@ -153,6 +160,39 @@
     s.info.updatedAt = new Date().toISOString();
     await store.set(K.book(s.bookKey), s.info);
     await store.set(K.chap(s.bookKey), s.chap);
+    const reg = await loadRegistry();
+    if (!reg.includes(s.bookKey)) await store.set(K.reg, [...reg, s.bookKey]);
+  }
+
+  /** Danh sách bookKey đã lưu. Dữ liệu từ bản cũ chưa có sổ đăng ký → quét một lần theo tiền tố key. */
+  async function loadRegistry() {
+    const reg = await store.get(K.reg, null);
+    if (reg) return reg;
+    const all = await chrome.storage.local.get(null);
+    const keys = Object.keys(all).filter((k) => k.startsWith('hn:book:')).map((k) => k.slice('hn:book:'.length));
+    await store.set(K.reg, keys);
+    return keys;
+  }
+
+  const normKey = (u) => u.replace(/#.*$/, '').replace(/index\.html?$/i, '').replace(/\/+$/, '');
+
+  /** Tìm truyện đã lưu cho trang hiện tại: chương đã lưu → link 目录 (so khớp chuẩn hóa) → mục lục đã lưu có chứa trang này. */
+  async function resolveBookKey() {
+    const reg = await loadRegistry();
+    const idx = await store.get(K.idx, {});
+    if (!s.isTocPage && idx[here] && reg.includes(idx[here])) return idx[here];
+    const tocUrl = s.isTocPage ? here : s.tocUrl;
+    if (tocUrl) {
+      const hit = reg.find((k) => normKey(k) === normKey(tocUrl));
+      if (hit) return hit;
+    }
+    if (!s.isTocPage) {
+      for (const k of reg) {
+        const toc = await store.get(K.toc(k), []);
+        if (toc.some((c) => C.stripHash(c.url) === here)) return k;
+      }
+    }
+    return tocUrl || here;
   }
 
   /** Nội dung chương nằm trong storage của extension (mỗi chương một key) → tải thêm hay xuất file lúc nào cũng được. */
@@ -288,6 +328,7 @@
     const bodyKeys = Object.values(s.chap).map((c) => K.body(s.bookKey, c.n));
     await chrome.storage.local.remove(bodyKeys);
     await Promise.all([K.book, K.chap, K.buf, K.toc].map((k) => store.remove(k(s.bookKey))));
+    await store.set(K.reg, (await loadRegistry()).filter((k) => k !== s.bookKey));
     s.chap = {}; s.toc = [];
     say('Đã xóa dữ liệu truyện.');
   }
@@ -300,8 +341,7 @@
     s.livePage = hasContent ? page : null;
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
     if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
-    const idx = await store.get(K.idx, {});
-    s.bookKey = s.isTocPage ? here : (s.tocUrl || idx[here] || here);
+    s.bookKey = await resolveBookKey();
     s.info = await store.get(K.book(s.bookKey), null) || {
       title: C.guessBookTitle(document.title, page.title), origin: location.origin, bookKey: s.bookKey, parts: 0,
     };
