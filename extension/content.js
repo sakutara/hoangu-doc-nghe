@@ -176,7 +176,17 @@
 
   const normKey = (u) => u.replace(/#.*$/, '').replace(/index\.html?$/i, '').replace(/\/+$/, '');
 
-  /** Tìm truyện đã lưu cho trang hiện tại: chương đã lưu → link 目录 (so khớp chuẩn hóa) → mục lục đã lưu có chứa trang này. */
+  /** Thư mục chứa trang: https://x/book/38/24781.html và https://x/book/38/index.html đều → https://x/book/38/ (null nếu là gốc site). */
+  function dirOf(u) {
+    try {
+      const url = new URL(u);
+      const dir = url.pathname.replace(/[^/]*$/, '');
+      return dir.length > 1 ? `${url.origin}${dir}` : null;
+    } catch (e) { return null; }
+  }
+
+  /** Nhận diện truyện đang mở theo link và tên, theo thứ tự tin cậy:
+   *  1) chương này đã từng lưu; 2) link 目录 của trang; 3) cùng thư mục /book/<id>/; 4) mục lục đã lưu có chứa trang này; 5) cùng tên truyện. */
   async function resolveBookKey() {
     const reg = await loadRegistry();
     const idx = await store.get(K.idx, {});
@@ -186,13 +196,25 @@
       const hit = reg.find((k) => normKey(k) === normKey(tocUrl));
       if (hit) return hit;
     }
+    const dir = dirOf(here);
+    if (dir) {
+      const hit = reg.find((k) => normKey(k) === normKey(dir) || normKey(dirOf(k) || '') === normKey(dir));
+      if (hit) return hit;
+    }
     if (!s.isTocPage) {
       for (const k of reg) {
         const toc = await store.get(K.toc(k), []);
         if (toc.some((c) => C.stripHash(c.url) === here)) return k;
       }
     }
-    return tocUrl || here;
+    const name = s.pageTitle;
+    if (name && name !== 'Truyện') {
+      for (const k of reg) {
+        const info = await store.get(K.book(k), null);
+        if (info && info.origin === location.origin && info.title === name) return k;
+      }
+    }
+    return tocUrl || (dir ? `${dir}index.html` : here);
   }
 
   /** Nội dung chương nằm trong storage của extension (mỗi chương một key) → tải thêm hay xuất file lúc nào cũng được. */
@@ -341,9 +363,10 @@
     s.livePage = hasContent ? page : null;
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
     if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
+    s.pageTitle = C.guessBookTitle(document.title, page.title);
     s.bookKey = await resolveBookKey();
     s.info = await store.get(K.book(s.bookKey), null) || {
-      title: C.guessBookTitle(document.title, page.title), origin: location.origin, bookKey: s.bookKey, parts: 0,
+      title: s.pageTitle, origin: location.origin, bookKey: s.bookKey, parts: 0,
     };
     s.chap = await store.get(K.chap(s.bookKey), {});
     // Di trú bộ đệm của bản cũ (chương chờ xuất) vào kho chương.
