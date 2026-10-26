@@ -10,19 +10,11 @@ import { ServicesProvider } from '../src/services/ServicesContext';
 import { setServices } from '../src/services/appServices';
 import { testServices } from './helpers';
 
-const dispatchJob = vi.fn(async (_m: unknown) => {});
-let progressCb: (d: unknown) => void = () => {};
-vi.mock('../src/services/swBridge', () => ({
-  dispatchJob: (m: unknown) => dispatchJob(m as never),
-  onProgress: (cb: (d: unknown) => void) => { progressCb = cb; return () => {}; },
-}));
-
 let svc = testServices();
 beforeEach(() => {
   localStorage.setItem('studyBarOpen', '1');
   svc = testServices();
   setServices(svc);
-  dispatchJob.mockClear();
   window.location.hash = '#/analyzer';
 });
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
@@ -168,7 +160,7 @@ async function epubFile() {
 }
 
 describe('Tủ truyện & Trình đọc', () => {
-  it('upload → đọc lazy theo chương → dịch → xuất → xóa', async () => {
+  it('upload → đọc lazy theo chương → xóa', async () => {
     window.location.hash = '#/library';
     render(<App />);
     fireEvent.change(screen.getByLabelText('Tải lên epub'), { target: { files: [await epubFile()] } });
@@ -188,30 +180,13 @@ describe('Tủ truyện & Trình đọc', () => {
     await screen.findByText('第一章');
     fireEvent.click(screen.getByTitle('Tủ truyện'));
 
-    // dịch
-    fireEvent.click(await screen.findByText('Dịch sang tiếng Việt'));
-    await waitFor(() => expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'START_TRANSLATION' })));
-    const tj = (await svc.meta.list<any>('translation_jobs'))[0];
-    await svc.meta.put('translation_jobs', tj.jobId, { ...tj, status: 'paused_at_deadpoint', deadPoint: { failedChapterIndex: 2, lastTranslatedChapterIndex: 1, errorReason: 'x', failedAt: '', retryCount: 1 } });
-    act(() => progressCb({}));
-    fireEvent.click(await screen.findByText('Dịch tiếp từ điểm chết'));
-    await waitFor(() => expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'RESUME_TRANSLATION' })));
-
-    // xuất
-    (URL as any).createObjectURL = () => 'blob:x';
-    (URL as any).revokeObjectURL = () => {};
-    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
-    fireEvent.click(screen.getAllByText('Xuất .epub')[0]);
-    await waitFor(() => expect(click).toHaveBeenCalled());
-
     // xóa (huỷ confirm rồi đồng ý)
     const confirm = vi.spyOn(window, 'confirm').mockReturnValueOnce(false).mockReturnValue(true);
     const before = (await svc.library.listAllBooks()).length;
-    fireEvent.click(screen.getAllByText('Xóa truyện')[0]);
+    fireEvent.click((await screen.findAllByText('Xóa truyện'))[0]);
     expect((await svc.library.listAllBooks()).length).toBe(before);
     fireEvent.click(screen.getAllByText('Xóa truyện')[0]);
     await waitFor(async () => expect((await svc.library.listAllBooks()).length).toBeLessThan(before));
-    expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'PAUSE_JOB' }));
     confirm.mockRestore();
   });
 

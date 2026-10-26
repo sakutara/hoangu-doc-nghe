@@ -5,7 +5,6 @@ import { LESSONS } from '../src/data/curriculum';
 import { setServices } from '../src/services/appServices';
 import { testServices } from './helpers';
 
-vi.mock('../src/services/swBridge', () => ({ dispatchJob: async () => {}, onProgress: () => () => {} }));
 
 let svc = testServices();
 beforeEach(() => {

@@ -40,7 +40,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src/domains/**', 'src/services/**', 'src/components/**', 'src/pages/**', 'src/App.tsx'],
-      exclude: ['src/services/storage/idbBackend.ts', 'src/services/storage/opfsBackend.ts', 'src/services/swBridge.ts', 'src/services/appServices.ts', 'src/sw/custom-sw.ts'],
+      exclude: ['src/services/storage/idbBackend.ts', 'src/services/storage/opfsBackend.ts', 'src/services/appServices.ts', 'src/sw/custom-sw.ts'],
       reporter: ['text', 'html', 'json-summary'],
       thresholds: { lines: 90, functions: 90, branches: 90, statements: 90 },
     },
