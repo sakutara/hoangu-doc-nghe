@@ -242,17 +242,9 @@ describe('Tủ truyện & Trình đọc', () => {
     expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'CHECK_NEW_CHAPTERS' }));
   });
 
-  it('tải qua trình duyệt: bookmarklet, nhập gói, nối tiếp, lỗi, và điểm chết do bot challenge', async () => {
+  it('nhập gói từ extension: nối tiếp, lỗi, và điểm chết do bot challenge', async () => {
     window.location.hash = '#/library';
     render(<App />);
-    expect(screen.getByText(/HoaNgữ: tải truyện/).getAttribute('href')).toMatch(/^javascript:/);
-    const writeText = vi.fn(async () => {});
-    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
-    fireEvent.click(screen.getByText('sao chép mã'));
-    await screen.findByText('Đã sao chép mã bookmarklet.');
-    writeText.mockRejectedValueOnce(new Error('x'));
-    fireEvent.click(screen.getByText('sao chép mã'));
-    await screen.findByText(/Không sao chép được/);
 
     const bundle = (urls: string[]) => new File([JSON.stringify({
       format: 'hoangu-capture/1', bookTitle: '河图', sourceOrigin: 'http://h', bookKey: 'http://h/index.html',

@@ -1,7 +1,23 @@
 import type { BookFileSystemStore } from '../../../services/storage/BookFileSystemStore';
 import { chapterFileName } from '../../../services/storage/BookFileSystemStore';
 import type { BookMetadata, IMetaStore } from '../../../services/storage/types';
-import type { CaptureBundle, CapturedBlock, CapturedChapter, CapturedTag } from './captureBookmarklet';
+
+/** Gói `hoangu-capture/1` do extension trình duyệt (thư mục `extension/`) xuất ra. */
+export type CapturedTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+/** Khối nội dung giữ nguyên loại thẻ: tiêu đề (h1–h6) hoặc đoạn văn (p; mỗi div/dòng văn bản → một p). */
+export interface CapturedBlock { tag: CapturedTag; text: string }
+/** `paragraphs` = văn bản của mọi khối (tương thích gói cũ); `blocks` giữ thêm loại thẻ. */
+export interface CapturedChapter { url: string; title: string; paragraphs: string[]; blocks?: CapturedBlock[] }
+
+export interface CaptureBundle {
+  format: 'hoangu-capture/1';
+  bookTitle: string;
+  sourceOrigin: string;
+  bookKey: string;
+  capturedAt: string;
+  chapters: CapturedChapter[];
+  nextUrl?: string;
+}
 
 const TAGS: readonly string[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 

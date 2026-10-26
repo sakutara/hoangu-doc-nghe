@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { buildEpubBlob, triggerEpubDownload } from '../domains/epub/EpubExporter';
 import { importEpub } from '../domains/epub/EpubPlainImporter';
@@ -11,7 +11,6 @@ import { NovelCrawlerRunner } from '../domains/crawler/NovelCrawlerRunner';
 import { NovelTranslationRunner } from '../domains/translator/NovelTranslationRunner';
 import { createTranslationProvider, loadTranslationSettings, saveTranslationSettings } from '../domains/translator/createTranslationProvider';
 import { DEFAULT_GEMINI_MODEL, GEMINI_MODELS, GeminiNovelTranslator } from '../domains/translator/GeminiNovelTranslator';
-import { buildBookmarkletHref, buildBookmarkletSource } from '../domains/crawler/browserCapture/captureBookmarklet';
 import { importCaptureBundle, parseCaptureBundle } from '../domains/crawler/browserCapture/CaptureBundleImporter';
 
 const newId = () => `book-${Date.now().toString(36)}`;
@@ -29,7 +28,6 @@ export function BookLibraryPage() {
   const [model, setModel] = useState<string>(DEFAULT_GEMINI_MODEL);
   const [hasKey, setHasKey] = useState(false);
   const [aiMsg, setAiMsg] = useState('');
-  const bookmarkletRef = useRef<HTMLAnchorElement>(null);
 
   const refresh = useCallback(async () => {
     setBooks(await library.listAllBooks());
@@ -38,11 +36,6 @@ export function BookLibraryPage() {
     setCrawl(Object.fromEntries(c.map((j) => [j.bookId, j])));
     setTrans(Object.fromEntries(t.map((j) => [j.sourceBookId, j])));
   }, [library, meta]);
-
-  // React chặn href="javascript:…" khi render, nên gán trực tiếp lên DOM.
-  useEffect(() => {
-    bookmarkletRef.current?.setAttribute('href', buildBookmarkletHref());
-  }, []);
 
   useEffect(() => {
     void loadTranslationSettings(meta).then((s) => {
@@ -77,11 +70,6 @@ export function BookLibraryPage() {
       setMsg(e instanceof Error ? e.message : 'Lỗi nhập gói tải');
     }
     await refresh();
-  };
-
-  const copyBookmarklet = async () => {
-    try { await navigator.clipboard.writeText(`javascript:${encodeURIComponent(buildBookmarkletSource())}`); setMsg('Đã sao chép mã bookmarklet.'); }
-    catch { setMsg('Không sao chép được — hãy kéo link lên thanh dấu trang.'); }
   };
 
   const startCrawl = async () => {
@@ -163,24 +151,16 @@ export function BookLibraryPage() {
           <button className="btn btn-primary" onClick={() => void startCrawl()}>Bắt đầu cào</button>
         </div>
       </div>
-      <div className="card min-w-0 text-sm">
-        <div className="mb-1 font-semibold">Tải qua trình duyệt (trang chặn bot như Cloudflare)</div>
-        <ol className="ml-5 list-decimal space-y-2">
-          <li>Kéo <a ref={bookmarkletRef} className="rounded-lg bg-brand px-2 py-1 text-on-brand no-underline" onClick={(e) => e.preventDefault()}>📥 HoaNgữ: tải truyện</a> lên thanh dấu trang (hoặc <button className="underline" onClick={() => void copyBookmarklet()}>sao chép mã</button>).</li>
-          <li>Mở trang chương muốn bắt đầu trên web truyện (tự qua bước kiểm tra như bình thường).</li>
-          <li>Bấm dấu trang vừa tạo; chờ hoặc bấm “Dừng”, rồi “Tải file”.</li>
-          <li>
-            <label>Nối vào:{' '}
-              <select className="input mt-1 min-w-0" aria-label="Truyện đích" value={target} onChange={(e) => setTarget(e.target.value)}>
-                <option value="">Tự nhận theo nguồn / tạo truyện mới</option>
-                {books.filter((b) => b.language === 'zh').map((b) => <option key={b.bookId} value={b.bookId}>{b.title}</option>)}
-              </select>
-            </label>
-          </li>
-          <li>Chọn file <code>.hoangu.json</code> tại đây:
-            <input type="file" accept=".json,application/json" aria-label="Nhập gói tải" className="mt-1 block w-full min-w-0 text-sm" onChange={(e) => void importCapture(e.target.files?.[0])} />
-          </li>
-        </ol>
+      <div className="card min-w-0 space-y-2 text-sm">
+        <div className="font-semibold">Nhập truyện từ extension HoaNgữ</div>
+        <p className="text-muted">Dùng extension trong thư mục <code>extension/</code> để tải truyện (kể cả trang chặn bot), rồi chọn file <code>.hoangu.json</code> tại đây.</p>
+        <label className="block">Nối vào:{' '}
+          <select className="input mt-1 min-w-0" aria-label="Truyện đích" value={target} onChange={(e) => setTarget(e.target.value)}>
+            <option value="">Tự nhận theo nguồn / tạo truyện mới</option>
+            {books.filter((b) => b.language === 'zh').map((b) => <option key={b.bookId} value={b.bookId}>{b.title}</option>)}
+          </select>
+        </label>
+        <input type="file" accept=".json,application/json" aria-label="Nhập gói tải" className="block w-full min-w-0 text-sm" onChange={(e) => void importCapture(e.target.files?.[0])} />
       </div>
       <div className="card min-w-0 space-y-2 text-sm">
         <div className="font-semibold">Dịch bằng AI (Gemini)</div>
@@ -217,7 +197,7 @@ export function BookLibraryPage() {
                 {tj && tj.status !== 'completed' && tj.status !== 'running' && <button className="btn" onClick={() => void startTranslate(b)}>{tj.deadPoint ? 'Dịch tiếp từ điểm chết' : 'Dịch tiếp'}</button>}
                 {tj && tj.status !== 'running' && <button className="btn" onClick={() => void retranslate(b)}>Dịch lại từ đầu</button>}
                 {b.language === 'zh' && b.chapterCount > 0 && !hasKey && (!tj || tj.status !== 'completed') && <span className="text-muted">Đang dùng dịch offline từng từ — thêm Gemini key ở trên để dịch mượt.</span>}
-                {cj && cj.deadPoint?.errorKind === 'bot_challenge' && <span className="text-gold-ink">Trang này chặn bot — dùng “Tải qua trình duyệt” ở trên.</span>}
+                {cj && cj.deadPoint?.errorKind === 'bot_challenge' && <span className="text-gold-ink">Trang này chặn bot — dùng extension HoaNgữ để tải.</span>}
                 {cj && cj.status === 'paused_at_deadpoint' && cj.deadPoint?.errorKind !== 'bot_challenge' && <button className="btn" onClick={() => void dispatchJob({ type: 'RESUME_FROM_DEADPOINT', jobId: cj.jobId })}>Cào tiếp từ điểm chết</button>}
                 {cj && cj.status === 'completed' && <button className="btn" onClick={() => void dispatchJob({ type: 'CHECK_NEW_CHAPTERS', jobId: cj.jobId })}>Kiểm tra chương mới</button>}
                 {b.chapterCount > 0 && <button className="btn" onClick={() => void exportEpub(b)}>Xuất .epub</button>}
