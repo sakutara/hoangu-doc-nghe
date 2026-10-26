@@ -65,9 +65,11 @@ describe('extension core', () => {
   it('dọn nội dung: bỏ mọi khoảng trắng (trừ sau dấu ;) rồi mới dọn link / hetushu / .com', () => {
     expect(C.squeezeSpaces('他 走 了　过 去\n了')).toBe('他走了过去了');
     expect(C.squeezeSpaces('甲； 乙;  丙 丁')).toBe('甲； 乙; 丙丁');
+    expect(C.squeezeSpaces('他说。 然后， 走 了. 好, 的\n行')).toBe('他说。 然后， 走了. 好, 的行');
     expect(C.cleanText('访问 www.hetushu.com 继续')).toBe('访问继续');
     expect(C.cleanText(`${HAN} https://www.hetushu.com/book/1.html 后`)).toBe(`${HAN}后`);
-    expect(C.cleanText('h e t u s h u 书 x . c o m')).toBe('书x');
+    expect(C.cleanText('h e t u s h u 书 x . c o m')).toBe('书x. com');
+    expect(C.cleanText('访问 hetushu.com 。 继续')).toBe('访问。 继续');
     expect(C.cleanText('甲； hetushu乙')).toBe('甲； 乙');
     expect(C.cleanText('HeTuShu.COM')).toBe('');
   });

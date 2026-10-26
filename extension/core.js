@@ -15,14 +15,15 @@
   const URL_RE = new RegExp(`https?://[${URL_CHARS}]*`, 'gi');
   const SEMI_MARK = '\u0001';
 
-  /** Bỏ MỌI khoảng trắng (kể cả全角, xuống dòng), chỉ giữ khoảng trắng ngay sau dấu chấm phẩy ; hoặc ；(gộp thành 1 dấu cách). */
+  /** Bỏ MỌI khoảng trắng (kể cả dấu cách full-width, xuống dòng), chỉ giữ khoảng trắng ngay sau dấu chấm / phẩy / chấm phẩy
+   *  (. 。 , ， ; ；) — gộp thành 1 dấu cách. */
   function squeezeSpaces(text) {
-    return text.replace(/([;；])\s+/g, `$1${SEMI_MARK}`).replace(/\s+/g, '').split(SEMI_MARK).join(' ');
+    return text.replace(/([.。,，;；])\s+/g, `$1${SEMI_MARK}`).replace(/\s+/g, '').split(SEMI_MARK).join(' ');
   }
 
   /** Dọn link chèn: URL http(s), rồi MỌI “hetushu”, MỌI “.com” (và “www.” còn sót) — gọi SAU khi đã bỏ khoảng trắng. */
   function stripLinks(text) {
-    return text.replace(URL_RE, '').replace(/hetushu/gi, '').replace(/\.com/gi, '').replace(/www\./gi, '');
+    return text.replace(URL_RE, '').replace(/hetushu/gi, '').replace(/\.com/gi, '').replace(/www\.\s*/gi, '');
   }
 
   /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng trước, dọn link sau. */
