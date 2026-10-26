@@ -9,14 +9,12 @@ Ngoài ra trang này có thể sắp lại thứ tự đoạn bằng JS, nên HT
 - **Không** tự động giải challenge, giả mạo fingerprint hay dùng trình duyệt headless “stealth”.
 - Crawler nhận diện challenge (`BotChallengeError`, `DeadPointCheckpoint.errorKind = 'bot_challenge'`) và UI gợi ý chế độ mới
   thay vì nút “Cào tiếp” vô ích.
-- Chế độ **Tải qua trình duyệt**: người dùng tự mở trang chương trong trình duyệt của họ (qua challenge như người đọc bình thường),
-  bấm một bookmarklet (`captureBookmarklet.ts`). Bookmarklet đọc DOM đã render, lần theo “下一章” bằng iframe cùng origin,
-  nghỉ 2–4 giây giữa chương, tối đa 200 chương/lượt, và **dừng ngay** khi gặp trang kiểm tra bot hoặc không có nội dung.
-- Kết quả là gói `hoangu-capture/1` (JSON). App nhập bằng `CaptureBundleImporter`: tạo truyện mới hoặc nối tiếp truyện cùng
+- ~~Bookmarklet~~ (đã gỡ): chế độ “Tải qua trình duyệt” bằng bookmarklet đã bị loại bỏ khỏi app; thay bằng **Chrome extension** (`extension/`).
+  Người dùng tự mở trang truyện trong trình duyệt (qua challenge như người đọc bình thường), extension đọc DOM đã render, nghỉ 2–4 giây
+  giữa chương và **dừng ngay** khi gặp trang kiểm tra bot hoặc không có nội dung.
+- Kết quả là gói `hoangu-capture/1` (JSON, file `.hoangu.json`). App nhập bằng `CaptureBundleImporter`: tạo truyện mới hoặc nối tiếp truyện cùng
   `sourceUrl` (= `bookKey`), bỏ trùng theo URL chương (`BookMetadata.chapterUrls`).
 
 ## Giới hạn
-- Bookmarklet bị chặn trên trang có CSP nghiêm ngặt (`script-src` cấm `javascript:`); khi đó dán `buildBookmarkletSource()` vào
-  userscript manager hoặc console.
-- Khó dùng trên điện thoại; khuyến nghị máy tính.
-- Bộ chọn nội dung theo heuristic (`#content`, `.Readarea`, `article`, khối nhiều chữ Hán nhất) — trang lạ có thể cần chỉnh.
+- Cần cài extension trên trình duyệt máy tính (xem `extension/README.md`); khó dùng trên điện thoại.
+- Bộ chọn nội dung theo heuristic — trang lạ có thể cần chỉnh.
