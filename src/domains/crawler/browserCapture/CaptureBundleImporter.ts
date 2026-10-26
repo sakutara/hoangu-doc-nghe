@@ -1,5 +1,6 @@
 import type { BookFileSystemStore } from '../../../services/storage/BookFileSystemStore';
 import { chapterFileName } from '../../../services/storage/BookFileSystemStore';
+import { stripInjectedLinks } from '../stripInjectedLinks';
 import type { BookMetadata, IMetaStore } from '../../../services/storage/types';
 
 /** Gói `hoangu-capture/1` do extension trình duyệt (thư mục `extension/`) xuất ra. */
@@ -23,16 +24,6 @@ const TAGS: readonly string[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 
 const MAX_CHAPTERS = 5000;
 const MAX_PARAGRAPHS = 5000;
-
-const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()";
-/** Link bị trang nguồn chèn vào nội dung (vd. https://www.hetushu.com/) và tên miền hetushu.com trần. Chỉ ăn ký tự ASCII của URL nên không nuốt chữ Hán liền sau. */
-const INJECTED_LINK_RE = new RegExp(`(?:https?://[${URL_CHARS}]+|(?:www\\.)?hetushu\\.com(?:/[${URL_CHARS}]*)?)`, 'gi');
-
-/** Bỏ link chèn vào văn bản; trả chuỗi rỗng nếu chỉ còn khoảng trắng. */
-export function stripInjectedLinks(text: string): string {
-  const clean = text.replace(INJECTED_LINK_RE, '');
-  return (clean === text ? text : clean.replace(/[ \t\u3000]{2,}/g, ' ')).trim();
-}
 
 export function parseCaptureBundle(text: string): CaptureBundle {
   let raw: unknown;

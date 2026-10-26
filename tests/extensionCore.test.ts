@@ -67,4 +67,11 @@ describe('extension core', () => {
     expect(C.guessBookTitle('书名 - 第1章 开始 - 站点', '第1章 开始')).toBe('书名');
     expect(C.safeName('a/b:c')).toBe('a_b_c');
   });
+
+  it('lọc link hetushu.com chèn trong nội dung', () => {
+    const d = doc(`<h1>第1章 开始</h1><div id="content"><p>${HAN}https://www.hetushu.com/一</p><p>https://www.hetushu.com/</p></div>`);
+    const p = C.extractPage(d, 'http://s/1.html');
+    expect(p.paragraphs).toEqual([`${HAN}一`]);
+    expect(C.stripLinks('访问 www.hetushu.com 继续')).toBe('访问 继续');
+  });
 });

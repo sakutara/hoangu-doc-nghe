@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { importCaptureBundle, parseCaptureBundle, type CaptureBundle } from '../src/domains/crawler/browserCapture/CaptureBundleImporter';
+import { cleanStoredBook } from '../src/domains/crawler/stripInjectedLinks';
+import { extractChapterFromHtml } from '../src/domains/crawler/HtmlNovelExtractor';
 import { testServices } from './helpers';
 
 describe('CaptureBundleImporter', () => {
@@ -36,6 +38,17 @@ describe('CaptureBundleImporter', () => {
     expect(ok).toMatchObject({ bookTitle: 'Truyện', sourceOrigin: '', capturedAt: '', nextUrl: 'n' });
     expect(ok.chapters).toEqual([{ url: 'u1', title: '', paragraphs: ['a'] }]);
     expect(parseCaptureBundle(JSON.stringify({ format: 'hoangu-capture/1', bookKey: 'k', bookTitle: 'Tên', chapters: [] })).nextUrl).toBeUndefined();
+  });
+
+  it('cào: bỏ link hetushu khi trích chương; cleanStoredBook lọc lại chương đã lưu', async () => {
+    const r = extractChapterFromHtml('<h1>第1章</h1><div id="content"><p>他走了https://www.hetushu.com/过去</p><p>www.hetushu.com</p><p>正常</p></div>', 'http://s/1.html');
+    expect(r.paragraphs).toEqual(['他走了过去', '正常']);
+    const s = testServices();
+    await s.files.writeChapterFile('b1', { index: 1, title: '第1章 https://www.hetushu.com/', paragraphs: ['甲https://www.hetushu.com/乙', 'https://www.hetushu.com/', '丙'] });
+    await s.files.writeChapterFile('b1', { index: 2, title: '第2章', paragraphs: ['干净'] });
+    const book = { bookId: 'b1', chapters: [{ index: 1 }, { index: 2 }] } as never;
+    expect(await cleanStoredBook(book, s.files)).toEqual({ changed: 1, removed: 1 });
+    expect(await s.files.readChapterFile('b1', 1)).toEqual({ index: 1, title: '第1章', paragraphs: ['甲乙', '丙'] });
   });
 
   it('nhận blocks h/p: lưu tiêu đề phụ, đọc lại đúng thẻ; thẻ lạ → p', async () => {

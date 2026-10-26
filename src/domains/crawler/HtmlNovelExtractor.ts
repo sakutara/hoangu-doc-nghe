@@ -1,4 +1,5 @@
 import { sanitizeHtmlToPlainText } from '../epub/PlainTextSanitizer';
+import { stripInjectedLinks } from './stripInjectedLinks';
 
 export interface ExtractedChapterResult {
   title: string;
@@ -56,8 +57,8 @@ function isTocUrl(next: string, pageUrl: string): boolean {
 export function extractChapterFromHtml(html: string, pageUrl: string): ExtractedChapterResult {
   const cleaned = html.replace(/<(script|style|iframe)[\s\S]*?<\/\1>/gi, '').replace(/<div[^>]*class=["'][^"']*(?:ads|bottem)[^"']*["'][\s\S]*?<\/div>/gi, '');
   const titleMatch = /<h1[^>]*>([\s\S]*?)<\/h1>/i.exec(cleaned) ?? /<title[^>]*>([\s\S]*?)<\/title>/i.exec(cleaned);
-  const title = titleMatch ? sanitizeHtmlToPlainText(titleMatch[1]).paragraphs.join(' ') : '';
-  const paragraphs = sanitizeHtmlToPlainText(pickContentHtml(cleaned)).paragraphs.filter((p) => p !== title);
+  const title = titleMatch ? stripInjectedLinks(sanitizeHtmlToPlainText(titleMatch[1]).paragraphs.join(' ')) : '';
+  const paragraphs = sanitizeHtmlToPlainText(pickContentHtml(cleaned)).paragraphs.map(stripInjectedLinks).filter((p) => p.length > 0 && p !== title);
   const next = findNextUrl(cleaned, pageUrl);
   const hasNextChapter = !!next && !isTocUrl(next, pageUrl);
   return { title, paragraphs, nextChapterUrl: hasNextChapter ? next : undefined, hasNextChapter };

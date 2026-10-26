@@ -10,6 +10,14 @@
   const BLOCK_RE = /^(p|div|li|section|article|ul|ol|blockquote|tr)$/i;
   const HEAD_RE = /^h[1-6]$/i;
 
+  // Link do trang nguồn chèn vào nội dung (vd. https://www.hetushu.com/). Giữ khớp với src/domains/crawler/stripInjectedLinks.ts.
+  const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()";
+  const INJECTED_LINK_RE = new RegExp(`(?:https?://[${URL_CHARS}]+|(?:www\\.)?hetushu\\.com(?:/[${URL_CHARS}]*)?)`, 'gi');
+  function stripLinks(text) {
+    const clean = text.replace(INJECTED_LINK_RE, '');
+    return (clean === text ? text : clean.replace(/[ \t\u3000]{2,}/g, ' ')).trim();
+  }
+
   const han = (s) => (s.match(/[一-鿿]/g) || []).length;
 
   function blocksOf(rootEl) {
@@ -17,7 +25,7 @@
     let buf = '';
     const flush = () => {
       buf.split('\n').forEach((l) => {
-        const t = l.replace(/\s+/g, ' ').trim();
+        const t = stripLinks(l.replace(/\s+/g, ' ').trim());
         if (t) out.push({ tag: 'p', text: t });
       });
       buf = '';
@@ -30,7 +38,7 @@
       if (name === 'BR') { buf += '\n'; return; }
       if (HEAD_RE.test(name)) {
         flush();
-        const t = (n.textContent || '').replace(/\s+/g, ' ').trim();
+        const t = stripLinks((n.textContent || '').replace(/\s+/g, ' ').trim());
         if (t) out.push({ tag: name.toLowerCase(), text: t });
         return;
       }
@@ -93,7 +101,7 @@
     if (!all.length && isChallengeHtml(full)) return { title: '', paragraphs: [], blocks: [], challenge: true };
     const inner = all.filter((b) => b.tag !== 'p' && b.tag < 'h4')[0];
     const h = d.querySelector('h1') || d.querySelector('h2');
-    const title = ((inner && inner.text) || (h && h.textContent) || d.title || '').trim();
+    const title = stripLinks(((inner && inner.text) || (h && h.textContent) || d.title || '').trim());
     const blocks = all.filter((b) => b.text !== title);
     let next;
     const a = d.querySelector('a#next') || d.querySelector('#next a') || findAnchor(d, NEXT_RE, true);
@@ -174,6 +182,6 @@
   }
 
   root.HNCore = {
-    han, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, makeBundle, isChallengeHtml, stripHash,
+    han, stripLinks, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, makeBundle, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

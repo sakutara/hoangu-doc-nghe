@@ -12,6 +12,7 @@ import { NovelCrawlerRunner } from '../domains/crawler/NovelCrawlerRunner';
 import { NovelTranslationRunner } from '../domains/translator/NovelTranslationRunner';
 import { createTranslationProvider, loadTranslationSettings, saveTranslationSettings } from '../domains/translator/createTranslationProvider';
 import { DEFAULT_GEMINI_MODEL, GEMINI_MODELS, GeminiNovelTranslator } from '../domains/translator/GeminiNovelTranslator';
+import { cleanStoredBook } from '../domains/crawler/stripInjectedLinks';
 import { importCaptureBundle, parseCaptureBundle } from '../domains/crawler/browserCapture/CaptureBundleImporter';
 
 /** Nút chọn file: input thật được ẩn (vẫn truy cập được bằng bàn phím), hiện nút bấm rõ ràng. */
@@ -143,6 +144,16 @@ export function BookLibraryPage() {
     }
   };
 
+  const cleanBook = async (b: BookMetadata) => {
+    setMsg(`Đang lọc link trong “${b.title}”…`);
+    try {
+      const r = await cleanStoredBook(b, files);
+      setMsg(`Đã lọc “${b.title}”: sửa ${r.changed} chương, bỏ ${r.removed} đoạn chỉ chứa link.`);
+    } catch (e) {
+      setMsg(e instanceof Error ? e.message : 'Lỗi lọc link');
+    }
+  };
+
   const exportEpub = async (b: BookMetadata) => {
     triggerEpubDownload(await buildEpubBlob(b, files), b.title);
   };
@@ -221,6 +232,7 @@ export function BookLibraryPage() {
                 {cj && cj.status === 'paused_at_deadpoint' && cj.deadPoint?.errorKind !== 'bot_challenge' && <button className="btn" onClick={() => void dispatchJob({ type: 'RESUME_FROM_DEADPOINT', jobId: cj.jobId })}>Cào tiếp từ điểm chết</button>}
                 {cj && cj.status === 'completed' && <button className="btn" onClick={() => void dispatchJob({ type: 'CHECK_NEW_CHAPTERS', jobId: cj.jobId })}>Kiểm tra chương mới</button>}
                 {b.chapterCount > 0 && <button className="btn" onClick={() => void exportEpub(b)}>Xuất .epub</button>}
+                {b.chapterCount > 0 && <button className="btn" onClick={() => void cleanBook(b)}>Lọc link trong nội dung</button>}
                 <button className="btn btn-danger" onClick={() => void remove(b)}>Xóa truyện</button>
               </div>
             </li>

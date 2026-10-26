@@ -86,7 +86,8 @@
       el('div', { class: 'row' },
         el('button', { onclick: () => loadToc(true), disabled: s.running }, s.toc.length ? 'Làm mới mục lục' : 'Tải mục lục'),
         el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống truyện (${savedCount} chương)`),
-        el('button', { onclick: () => recover(), disabled: s.running, title: 'Quét kho extension, nhặt lại chương còn nội dung nhưng bị mất khỏi danh sách' }, 'Khôi phục chương mất')),
+        el('button', { onclick: () => recover(), disabled: s.running, title: 'Quét kho extension, nhặt lại chương còn nội dung nhưng bị mất khỏi danh sách' }, 'Khôi phục chương mất'),
+        el('button', { onclick: () => refilter(), disabled: s.running || !savedCount, title: 'Lọc bỏ link chèn (vd. hetushu.com) khỏi nội dung các chương đã lưu' }, 'Lọc lại nội dung đã lưu')),
       s.toc.length ? el('input', { class: 'wide', placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } }) : '',
       s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
         class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
@@ -318,6 +319,41 @@
     }
     if (dropped) await store.set(K.chap(s.bookKey), s.chap);
     return dropped;
+  }
+
+  /** Chạy lại bộ lọc link trên nội dung đã lưu: ghi lại chương có link, bỏ đoạn chỉ chứa link. */
+  async function refilter() {
+    s.running = true;
+    let changed = 0;
+    let removed = 0;
+    try {
+      say('Đang lọc lại nội dung đã lưu…');
+      const ents = Object.entries(s.chap);
+      for (let i = 0; i < ents.length; i += READ_BATCH) {
+        const part = ents.slice(i, i + READ_BATCH);
+        const keys = part.map(([u, c]) => bodyKey(c, u));
+        const got = await chrome.storage.local.get(keys);
+        const out = {};
+        keys.forEach((k) => {
+          const b = got[k];
+          if (!b) return;
+          const blocks = (b.blocks && b.blocks.length ? b.blocks : (b.paragraphs || []).map((text) => ({ tag: 'p', text })))
+            .map((x) => ({ tag: x.tag, text: C.stripLinks(x.text) })).filter((x) => x.text);
+          const title = C.stripLinks(b.title || '') || b.title;
+          const same = title === b.title && blocks.length === (b.paragraphs || []).length && blocks.every((x, j) => x.text === b.paragraphs[j]);
+          if (same) return;
+          removed += (b.paragraphs || []).length - blocks.length;
+          changed += 1;
+          out[k] = { ...b, title, paragraphs: blocks.map((x) => x.text), blocks };
+        });
+        if (changed) await chrome.storage.local.set(out);
+      }
+      say(`Đã lọc xong: sửa ${changed} chương, bỏ ${removed} đoạn chỉ chứa link. Xuất lại file để có bản sạch.`);
+    } catch (err) {
+      say(`⚠ Lỗi khi lọc: ${err.message}`);
+    }
+    s.running = false;
+    render();
   }
 
   async function recover() {
