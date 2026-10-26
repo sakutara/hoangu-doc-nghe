@@ -59,3 +59,21 @@ describe('SpeechService', () => {
     delete (window as any).speechSynthesis;
   });
 });
+
+describe('IdbFileBackend (fallback khi OPFS không ghi được, vd. iOS Safari)', () => {
+  it('ghi/đọc/liệt kê/xoá thư mục theo từng truyện', async () => {
+    const fdb = await import('fake-indexeddb');
+    Object.assign(globalThis, { indexedDB: new fdb.IDBFactory(), IDBKeyRange: fdb.IDBKeyRange });
+    const { IdbFileBackend } = await import('../src/services/storage/idbBackend');
+    const b = new IdbFileBackend();
+    await b.write('book-a', 'chapter-0002.txt', 'hai');
+    await b.write('book-a', 'chapter-0001.txt', 'một');
+    await b.write('book-ab', 'chapter-0001.txt', 'khác');
+    expect(await b.read('book-a', 'chapter-0001.txt')).toBe('một');
+    expect(await b.read('book-a', 'nope.txt')).toBeNull();
+    expect(await b.list('book-a')).toEqual(['chapter-0001.txt', 'chapter-0002.txt']);
+    expect(await b.removeDir('book-a')).toBe(true);
+    expect(await b.list('book-a')).toEqual([]);
+    expect(await b.read('book-ab', 'chapter-0001.txt')).toBe('khác');
+  });
+});

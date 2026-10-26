@@ -16,12 +16,16 @@ import { importCaptureBundle, parseCaptureBundle } from '../domains/crawler/brow
 
 /** Nút chọn file: input thật được ẩn (vẫn truy cập được bằng bàn phím), hiện nút bấm rõ ràng. */
 function UploadButton({ label, accept, ariaLabel, onFile, primary }: {
-  label: string; accept: string; ariaLabel: string; onFile: (f: File | undefined) => void; primary?: boolean;
+  label: string; accept: string; ariaLabel: string; onFile: (f: File | undefined) => void | Promise<void>; primary?: boolean;
 }) {
   return (
     <label className={`btn has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand ${primary ? 'btn-primary' : ''}`}>
       <Upload size={16} aria-hidden="true" /> {label}
-      <input type="file" accept={accept} aria-label={ariaLabel} className="sr-only" onChange={(e) => { onFile(e.target.files?.[0]); e.target.value = ''; }} />
+      <input type="file" accept={accept} aria-label={ariaLabel} className="sr-only" onChange={(e) => {
+        // Giữ input đến khi đọc xong: trên điện thoại, xoá giá trị sớm có thể làm File không đọc được.
+        const input = e.target;
+        void Promise.resolve(onFile(input.files?.[0])).finally(() => { input.value = ''; });
+      }} />
     </label>
   );
 }
@@ -63,6 +67,7 @@ export function BookLibraryPage() {
 
   const upload = async (file: File | undefined) => {
     if (!file) return;
+    setMsg(`Đang nhập “${file.name}”…`);
     try {
       const book = await importEpub(await file.arrayBuffer(), newId(), files);
       await library.saveBook(book);
@@ -75,6 +80,7 @@ export function BookLibraryPage() {
 
   const importCapture = async (file: File | undefined) => {
     if (!file) return;
+    setMsg(`Đang nhập “${file.name}”…`);
     try {
       const bundle = parseCaptureBundle(await file.text());
       const r = await importCaptureBundle(bundle, { meta, files }, newId, undefined, target || undefined);
@@ -152,11 +158,12 @@ export function BookLibraryPage() {
   return (
     <section className="space-y-[var(--gap)]">
       <h2 className="page-title">Tủ truyện</h2>
+      {msg && <p role="status" className="rounded-xl bg-info-soft px-4 py-3 text-sm text-info-ink">{msg}</p>}
       <div className="fluid-grid items-start">
         <div className="card space-y-2">
           <div className="font-medium">Tải lên file .epub</div>
-          <p className="text-sm text-muted">Chọn file .epub từ máy; chỉ giữ văn bản thuần, mỗi chương một file.</p>
-          <UploadButton primary label="Chọn file .epub" accept=".epub" ariaLabel="Tải lên epub" onFile={(f) => void upload(f)} />
+          <p className="text-sm text-muted">Chọn file .epub từ máy — app tự nhập ngay sau khi chọn (không cần bấm thêm), chỉ giữ văn bản thuần, mỗi chương một file.</p>
+          <UploadButton primary label="Chọn file .epub" accept=".epub,application/epub+zip,application/octet-stream" ariaLabel="Tải lên epub" onFile={upload} />
         </div>
         <div className="card space-y-2">
           <div className="font-medium">Cào truyện từ link (mục lục hoặc chương)</div>
@@ -167,14 +174,14 @@ export function BookLibraryPage() {
       </div>
       <div className="card min-w-0 space-y-2 text-sm">
         <div className="font-semibold">Nhập truyện từ extension HoaNgữ</div>
-        <p className="text-muted">Dùng extension trong thư mục <code>extension/</code> để tải truyện (kể cả trang chặn bot), rồi chọn file <code>.hoangu.json</code> tại đây.</p>
+        <p className="text-muted">Dùng extension trong thư mục <code>extension/</code> để tải truyện (kể cả trang chặn bot), rồi chọn file <code>.hoangu.json</code> tại đây — app tự nhập ngay sau khi chọn.</p>
         <label className="block">Nối vào:{' '}
           <select className="input mt-1 min-w-0" aria-label="Truyện đích" value={target} onChange={(e) => setTarget(e.target.value)}>
             <option value="">Tự nhận theo nguồn / tạo truyện mới</option>
             {books.filter((b) => b.language === 'zh').map((b) => <option key={b.bookId} value={b.bookId}>{b.title}</option>)}
           </select>
         </label>
-        <div><UploadButton label="Chọn file .hoangu.json" accept=".json,application/json" ariaLabel="Nhập gói tải" onFile={(f) => void importCapture(f)} /></div>
+        <div><UploadButton label="Chọn file .hoangu.json" accept=".json,application/json" ariaLabel="Nhập gói tải" onFile={importCapture} /></div>
       </div>
       <div className="card min-w-0 space-y-2 text-sm">
         <div className="font-semibold">Dịch bằng AI (Gemini)</div>
@@ -193,7 +200,6 @@ export function BookLibraryPage() {
         </div>
         {aiMsg && <p role="status" aria-label="Trạng thái Gemini" className="break-words">{aiMsg}</p>}
       </div>
-      {msg && <p role="status" className="rounded-xl bg-info-soft px-4 py-3 text-sm text-info-ink">{msg}</p>}
       {books.length === 0 && <p className="card text-center text-muted">Chưa có truyện nào.</p>}
       <ul className="fluid-grid items-start">
         {books.map((b) => {
