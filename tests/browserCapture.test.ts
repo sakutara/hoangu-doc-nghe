@@ -8,6 +8,18 @@ describe('CaptureBundleImporter', () => {
     chapters: [{ url: 'http://s/1', title: '第1章', paragraphs: ['甲', '乙'] }, { url: 'http://s/2', title: '', paragraphs: ['丙'] }], ...over,
   });
 
+  it('parse: lọc link hetushu.com chèn vào nội dung và tiêu đề', () => {
+    const out = parseCaptureBundle(JSON.stringify({
+      format: 'hoangu-capture/1', bookKey: 'k',
+      chapters: [{
+        url: 'u', title: '第1章 开始 https://www.hetushu.com/',
+        blocks: [{ tag: 'p', text: '他走了https://www.hetushu.com/book/1/2.html过去' }, { tag: 'p', text: 'https://www.hetushu.com/' }, { tag: 'p', text: '访问 www.hetushu.com 继续' }, { tag: 'p', text: '正常' }],
+      }],
+    }));
+    expect(out.chapters[0].title).toBe('第1章 开始');
+    expect(out.chapters[0].paragraphs).toEqual(['他走了过去', '访问 继续', '正常']);
+  });
+
   it('parse: từ chối dữ liệu sai, lọc đoạn/chương rỗng, giá trị mặc định', () => {
     expect(() => parseCaptureBundle('not json')).toThrow('JSON');
     expect(() => parseCaptureBundle('null')).toThrow('format');

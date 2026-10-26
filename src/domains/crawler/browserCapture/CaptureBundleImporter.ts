@@ -24,6 +24,16 @@ const TAGS: readonly string[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 const MAX_CHAPTERS = 5000;
 const MAX_PARAGRAPHS = 5000;
 
+const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()";
+/** Link bị trang nguồn chèn vào nội dung (vd. https://www.hetushu.com/) và tên miền hetushu.com trần. Chỉ ăn ký tự ASCII của URL nên không nuốt chữ Hán liền sau. */
+const INJECTED_LINK_RE = new RegExp(`(?:https?://[${URL_CHARS}]+|(?:www\\.)?hetushu\\.com(?:/[${URL_CHARS}]*)?)`, 'gi');
+
+/** Bỏ link chèn vào văn bản; trả chuỗi rỗng nếu chỉ còn khoảng trắng. */
+export function stripInjectedLinks(text: string): string {
+  const clean = text.replace(INJECTED_LINK_RE, '');
+  return (clean === text ? text : clean.replace(/[ \t\u3000]{2,}/g, ' ')).trim();
+}
+
 export function parseCaptureBundle(text: string): CaptureBundle {
   let raw: unknown;
   try { raw = JSON.parse(text); } catch { throw new Error('File không phải JSON hợp lệ.'); }
@@ -35,14 +45,15 @@ export function parseCaptureBundle(text: string): CaptureBundle {
   const chapters: CapturedChapter[] = [];
   for (const c of o.chapters as Array<Partial<CapturedChapter>>) {
     if (!c || typeof c.url !== 'string' || (!Array.isArray(c.paragraphs) && !Array.isArray(c.blocks))) throw new Error('Chương trong gói sai cấu trúc.');
-    const title = typeof c.title === 'string' ? c.title : '';
+    const title = typeof c.title === 'string' ? stripInjectedLinks(c.title) : '';
     // Gói mới: `blocks` có thẻ h1–h6/p. Gói cũ: chỉ `paragraphs` → toàn bộ là p.
     const blocks: CapturedBlock[] = Array.isArray(c.blocks)
       ? (c.blocks as Array<Partial<CapturedBlock>>)
-        .filter((b) => b && typeof b.text === 'string' && b.text.trim().length > 0)
-        .map((b) => ({ tag: (TAGS.includes(b.tag as string) ? b.tag : 'p') as CapturedTag, text: (b.text as string).trim() }))
+        .filter((b) => b && typeof b.text === 'string')
+        .map((b) => ({ tag: (TAGS.includes(b.tag as string) ? b.tag : 'p') as CapturedTag, text: stripInjectedLinks(b.text as string) }))
+        .filter((b) => b.text.length > 0)
         .slice(0, MAX_PARAGRAPHS)
-      : (c.paragraphs ?? []).filter((p): p is string => typeof p === 'string' && p.trim().length > 0).slice(0, MAX_PARAGRAPHS)
+      : (c.paragraphs ?? []).filter((p): p is string => typeof p === 'string').map(stripInjectedLinks).filter((p) => p.length > 0).slice(0, MAX_PARAGRAPHS)
         .map((text) => ({ tag: 'p' as CapturedTag, text }));
     if (blocks.length === 0) continue;
     const chapter: CapturedChapter = { url: c.url, title, paragraphs: blocks.map((b) => b.text) };
