@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { buildEpubBlob, triggerEpubDownload } from '../domains/epub/EpubExporter';
 import { importEpub } from '../domains/epub/EpubPlainImporter';
@@ -12,6 +13,18 @@ import { NovelTranslationRunner } from '../domains/translator/NovelTranslationRu
 import { createTranslationProvider, loadTranslationSettings, saveTranslationSettings } from '../domains/translator/createTranslationProvider';
 import { DEFAULT_GEMINI_MODEL, GEMINI_MODELS, GeminiNovelTranslator } from '../domains/translator/GeminiNovelTranslator';
 import { importCaptureBundle, parseCaptureBundle } from '../domains/crawler/browserCapture/CaptureBundleImporter';
+
+/** Nút chọn file: input thật được ẩn (vẫn truy cập được bằng bàn phím), hiện nút bấm rõ ràng. */
+function UploadButton({ label, accept, ariaLabel, onFile, primary }: {
+  label: string; accept: string; ariaLabel: string; onFile: (f: File | undefined) => void; primary?: boolean;
+}) {
+  return (
+    <label className={`btn has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand ${primary ? 'btn-primary' : ''}`}>
+      <Upload size={16} aria-hidden="true" /> {label}
+      <input type="file" accept={accept} aria-label={ariaLabel} className="sr-only" onChange={(e) => { onFile(e.target.files?.[0]); e.target.value = ''; }} />
+    </label>
+  );
+}
 
 const newId = () => `book-${Date.now().toString(36)}`;
 
@@ -140,10 +153,11 @@ export function BookLibraryPage() {
     <section className="space-y-[var(--gap)]">
       <h2 className="page-title">Tủ truyện</h2>
       <div className="fluid-grid items-start">
-        <label className="card block font-medium">
-          Tải lên file .epub
-          <input type="file" accept=".epub" aria-label="Tải lên epub" className="mt-2 block w-full min-w-0 text-sm file:mr-3 file:min-h-10 file:rounded-xl file:border-0 file:bg-brand file:px-4 file:text-on-brand" onChange={(e) => void upload(e.target.files?.[0])} />
-        </label>
+        <div className="card space-y-2">
+          <div className="font-medium">Tải lên file .epub</div>
+          <p className="text-sm text-muted">Chọn file .epub từ máy; chỉ giữ văn bản thuần, mỗi chương một file.</p>
+          <UploadButton primary label="Chọn file .epub" accept=".epub" ariaLabel="Tải lên epub" onFile={(f) => void upload(f)} />
+        </div>
         <div className="card space-y-2">
           <div className="font-medium">Cào truyện từ link (mục lục hoặc chương)</div>
           <input aria-label="Link truyện" placeholder="https://..." className="input" value={url} onChange={(e) => setUrl(e.target.value)} />
@@ -160,7 +174,7 @@ export function BookLibraryPage() {
             {books.filter((b) => b.language === 'zh').map((b) => <option key={b.bookId} value={b.bookId}>{b.title}</option>)}
           </select>
         </label>
-        <input type="file" accept=".json,application/json" aria-label="Nhập gói tải" className="block w-full min-w-0 text-sm" onChange={(e) => void importCapture(e.target.files?.[0])} />
+        <div><UploadButton label="Chọn file .hoangu.json" accept=".json,application/json" ariaLabel="Nhập gói tải" onFile={(f) => void importCapture(f)} /></div>
       </div>
       <div className="card min-w-0 space-y-2 text-sm">
         <div className="font-semibold">Dịch bằng AI (Gemini)</div>
