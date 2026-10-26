@@ -3,7 +3,7 @@ import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { CacheFirst } from 'workbox-strategies';
 import { IdbMetaStore } from '../services/storage/idbBackend';
-import { OpfsFileBackend } from '../services/storage/opfsBackend';
+import { createFileBackend } from '../services/storage/opfsBackend';
 import { handleJobMessage, resumeRunningJobs, type JobEnv, type JobMessage } from './jobHandlers';
 
 declare const self: ServiceWorkerGlobalScope;
@@ -16,7 +16,7 @@ registerRoute(({ url }) => url.pathname.endsWith('/cedict.json'), new CacheFirst
 const channel = new BroadcastChannel('hoangu-progress');
 const env: JobEnv = {
   meta: new IdbMetaStore(),
-  backend: new OpfsFileBackend(),
+  backend: createFileBackend(),
   broadcast: (d) => channel.postMessage(d),
 };
 

@@ -1,3 +1,4 @@
+import { IdbFileBackend } from './idbBackend';
 import type { IFileBackend } from './types';
 
 async function booksRoot(create: boolean): Promise<FileSystemDirectoryHandle> {
@@ -39,4 +40,11 @@ export class OpfsFileBackend implements IFileBackend {
       return false;
     }
   }
+}
+
+/** OPFS ghi được khi có `createWritable`; iOS Safari/WebView cũ thì rơi về IndexedDB. */
+export function createFileBackend(): IFileBackend {
+  const opfsWritable = typeof navigator !== 'undefined' && !!navigator.storage?.getDirectory
+    && typeof FileSystemFileHandle !== 'undefined' && 'createWritable' in FileSystemFileHandle.prototype;
+  return opfsWritable ? new OpfsFileBackend() : new IdbFileBackend();
 }
