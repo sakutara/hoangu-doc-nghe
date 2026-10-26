@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 import { describe, expect, it } from 'vitest';
 import { sanitizeHtmlToPlainText } from '../src/domains/epub/PlainTextSanitizer';
 import { importEpub } from '../src/domains/epub/EpubPlainImporter';
-import { buildEpubBlob, triggerEpubDownload } from '../src/domains/epub/EpubExporter';
+import { buildEpubBlob, chapterXhtml, triggerEpubDownload } from '../src/domains/epub/EpubExporter';
 import { testServices } from './helpers';
 
 async function makeEpub(extra = true) {
@@ -89,6 +89,25 @@ describe('EPUB import / library / export', () => {
     expect((await s.files.readChapterFile('b4', 1))!.title).toBe('第一章 开始');
     const vi = await buildEpubBlob({ ...book, language: 'vi' }, s.files);
     expect(await (await JSZip.loadAsync(await vi.arrayBuffer())).file('OEBPS/content.opf')!.async('string')).toContain('<dc:language>vi');
+  });
+
+  it('chapterXhtml: dọn thẻ/ký tự thừa, bỏ khối rỗng và tiêu đề lặp', () => {
+    const x = chapterXhtml(' 第一章 ', [
+      { tag: 'h2', text: '第一章' }, { tag: 'p', text: '  你\u200b好   世界\ufeff ' }, { tag: 'p', text: ' \u200b ' }, { tag: 'div', text: '甲' },
+    ]);
+    expect(x).toContain('<body><h2>第一章</h2><p>你好 世界</p><p>甲</p></body>');
+    expect(x.match(/第一章/g)).toHaveLength(2);
+  });
+
+  it('xuất epub nén DEFLATE, mimetype giữ STORE, không có creator rỗng', async () => {
+    const s = testServices();
+    const book = await importEpub(await makeEpub(), 'b5', s.files);
+    const blob = await buildEpubBlob({ ...book, author: undefined }, s.files);
+    const raw = new Uint8Array(await blob.arrayBuffer());
+    const zip = await JSZip.loadAsync(raw);
+    expect(await zip.file('OEBPS/content.opf')!.async('string')).not.toContain('<dc:creator>');
+    expect((zip.file('mimetype') as any)._data.compression.magic).toBe('\x00\x00');
+    expect((zip.file('OEBPS/toc.ncx') as any)._data.compression.magic).toBe('\x08\x00');
   });
 
   it('triggerEpubDownload', () => {

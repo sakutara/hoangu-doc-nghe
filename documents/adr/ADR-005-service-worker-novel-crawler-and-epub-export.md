@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md), [BR-EPIC-05](file:///Users/sakutara/Work/chinese-study/docs/epics/epic-5-novel-crawler-and-epub-export/BR-EPIC-05.md), [SA-EPIC-05](file:///Users/sakutara/Work/chinese-study/docs/epics/epic-5-novel-crawler-and-epub-export/SA-EPIC-05.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md), [BR-EPIC-05](file:///Users/sakutara/Work/chinese-study/documents/epics/epic-5-novel-crawler-and-epub-export/BR-EPIC-05.md), [SA-EPIC-05](file:///Users/sakutara/Work/chinese-study/documents/epics/epic-5-novel-crawler-and-epub-export/SA-EPIC-05.md)
 
 ## 1. Bối cảnh (Context)
 Người học tiếng Hoa muốn đọc trực tiếp các bộ tiểu thuyết mạng đang ra (ongoing) hoặc đã hoàn thành từ đường link (URL) online gửi vào ứng dụng. Quy trình này đòi hỏi 4 yêu cầu kỹ thuật đặc thù trên một ứng dụng tĩnh chạy trên GitHub Pages:
@@ -17,7 +17,7 @@ Người học tiếng Hoa muốn đọc trực tiếp các bộ tiểu thuyết
 * Chuyển cấu hình `vite-plugin-pwa` sang chế độ **`injectManifest`** với file Service Worker tùy chỉnh (`src/sw/custom-sw.ts`).
 * **Cơ chế chạy ngầm khi tắt màn hình:**
   1. **Service Worker Execution Context:** Vòng lặp tải chương (`CrawlLoop`) chạy bên trong Service Worker và được giữ sống bằng `ExtendableEvent.waitUntil()` thông qua sự kiện `message` và `sync` (Background Sync API) / `periodicsync`.
-  2. **Ghi Trực Tiếp Từng Chương Thành File Riêng trên OPFS (Per-Chapter Atomic File Commit):** Thay vì lưu nội dung chương vào RAM hay nhồi vào một bản ghi IndexedDB lớn, Service Worker sử dụng `BookFileSystemStore` (OPFS) để ghi mỗi chương thành 1 file văn bản độc lập `/books/<bookId>/chapter-XXXX.txt` bên trong thư mục riêng của bộ truyện, và chỉ cập nhật metadata/tiến độ vào `IndexedDB` (xem chi tiết trong [ADR-006](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)).
+  2. **Ghi Trực Tiếp Từng Chương Thành File Riêng trên OPFS (Per-Chapter Atomic File Commit):** Thay vì lưu nội dung chương vào RAM hay nhồi vào một bản ghi IndexedDB lớn, Service Worker sử dụng `BookFileSystemStore` (OPFS) để ghi mỗi chương thành 1 file văn bản độc lập `/books/<bookId>/chapter-XXXX.txt` bên trong thư mục riêng của bộ truyện, và chỉ cập nhật metadata/tiến độ vào `IndexedDB` (xem chi tiết trong [ADR-006](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)).
   3. **Kết hợp Wake Lock & Notification Keep-Alive:** Trên giao diện chính, ứng dụng yêu cầu `navigator.wakeLock.request('screen')` (nếu thiết bị hỗ trợ và người dùng đang để máy) kết hợp cập nhật Web Notification tiến độ từ Service Worker để hệ điều hành di động ưu tiên duy trì kết nối mạng cho tiến trình đang chạy.
 
 ### 2.2 Vượt Rào cản CORS trên GitHub Pages (`CorsFetchPipeline`)

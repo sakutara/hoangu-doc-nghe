@@ -194,7 +194,7 @@ flowchart TD
 
 ```text
 /Users/sakutara/Work/chinese-study/
-├── docs/                                   # Toàn bộ tài liệu dự án
+├── documents/                                   # Toàn bộ tài liệu dự án
 │   ├── BR-MASTER.md                        # Tài liệu Yêu cầu Nghiệp vụ Tổng thể
 │   ├── SA-MASTER.md                        # Tài liệu Kiến trúc Giải pháp Tổng thể
 │   ├── adr/                                # Architecture Decision Records
@@ -260,10 +260,10 @@ flowchart TD
 ---
 
 ## 6. Danh mục Hồ sơ Quyết định Kiến trúc (ADR Index)
-* [ADR-001: Lựa chọn Tech Stack (React + TypeScript + Vite) và Kiến trúc Offline PWA trên GitHub Pages](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-001-tech-stack-and-pwa-architecture.md)
-* [ADR-002: Kiến trúc Lưu trữ Offline và Bộ Tách Từ / Từ Điển Đa Tầng (Từ Kép, Liên 3, Tiếng Lóng, Từ Ngoại Lai)](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-002-offline-storage-and-dictionary-engine.md)
-* [ADR-003: Chiến lược Kiểm thử Tự động và Cổng Chất lượng 90% Coverage không dùng Coverage Farm](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-003-testing-and-90-percent-coverage-gate.md)
-* [ADR-004: Chiến lược Ưu tiên Chữ Hán Giản thể và Lớp Trừu tượng Mở rộng Phồn thể](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-004-simplified-first-script-abstraction.md)
-* [ADR-005: Kiến trúc Cào Truyện Online Ngầm bằng Service Worker, Quản lý Điểm Chết và Xuất File EPUB](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)
-* [ADR-006: Lưu Trữ Truyện Theo Thư Mục/File Chương (OPFS), Tinh Giản Văn Bản Thuần, Xóa Truyện & Dịch Truyện Chạy Ngầm (ZH $\rightarrow$ VI)](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
-* [ADR-007: Bộ lập lịch SRS Leitner, Phân tích Tiến độ & Trạng thái Nhắc học Cục bộ](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-007-srs-scheduler-and-progress-analytics.md)
+* [ADR-001: Lựa chọn Tech Stack (React + TypeScript + Vite) và Kiến trúc Offline PWA trên GitHub Pages](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-001-tech-stack-and-pwa-architecture.md)
+* [ADR-002: Kiến trúc Lưu trữ Offline và Bộ Tách Từ / Từ Điển Đa Tầng (Từ Kép, Liên 3, Tiếng Lóng, Từ Ngoại Lai)](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-002-offline-storage-and-dictionary-engine.md)
+* [ADR-003: Chiến lược Kiểm thử Tự động và Cổng Chất lượng 90% Coverage không dùng Coverage Farm](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-003-testing-and-90-percent-coverage-gate.md)
+* [ADR-004: Chiến lược Ưu tiên Chữ Hán Giản thể và Lớp Trừu tượng Mở rộng Phồn thể](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-004-simplified-first-script-abstraction.md)
+* [ADR-005: Kiến trúc Cào Truyện Online Ngầm bằng Service Worker, Quản lý Điểm Chết và Xuất File EPUB](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)
+* [ADR-006: Lưu Trữ Truyện Theo Thư Mục/File Chương (OPFS), Tinh Giản Văn Bản Thuần, Xóa Truyện & Dịch Truyện Chạy Ngầm (ZH $\rightarrow$ VI)](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
+* [ADR-007: Bộ lập lịch SRS Leitner, Phân tích Tiến độ & Trạng thái Nhắc học Cục bộ](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-007-srs-scheduler-and-progress-analytics.md)

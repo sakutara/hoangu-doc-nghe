@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, Library, Minus, Plus } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { InteractiveChineseText } from '../components/InteractiveChineseText';
 import type { ChapterFileContent } from '../services/storage/BookFileSystemStore';
@@ -12,6 +13,16 @@ export function ReaderPage() {
   const { library, files } = useServices();
   const [book, setBook] = useState<BookMetadata | undefined>();
   const [content, setContent] = useState<ChapterFileContent | null | undefined>(undefined);
+  const [scale, setScale] = useState(() => {
+    try { return Number(localStorage.getItem('readerScale')) || 1; } catch { return 1; }
+  });
+  const zoom = (d: number) => setScale((s) => {
+    const n = Math.min(1.8, Math.max(0.8, Math.round((s + d) * 10) / 10));
+    try { localStorage.setItem('readerScale', String(n)); } catch { /* bỏ qua */ }
+    return n;
+  });
+
+  useEffect(() => { window.scrollTo({ top: 0 }); }, [bookId, index]);
 
   useEffect(() => {
     let alive = true;
@@ -29,23 +40,34 @@ export function ReaderPage() {
   if (content === undefined) return <p>Đang tải…</p>;
   if (!book || !content) return <p>Không tìm thấy chương. <Link to="/library">Về tủ truyện</Link></p>;
 
+  const prev = index > 1 ? `/reader/${bookId}/${index - 1}` : null;
+  const next = index < book.chapterCount ? `/reader/${bookId}/${index + 1}` : null;
+
   return (
-    <article className="mx-auto w-full max-w-[min(100%,52rem)]">
-      <Link to="/library" className="inline-flex min-h-10 items-center text-sm font-medium">← Tủ truyện</Link>
-      <h2 className="page-title mt-2">{content.title}</h2>
-      <div className="text-sm text-muted">{book.title} · {index}/{book.chapterCount}</div>
-      <div className="card mt-4 space-y-4 md:p-8">
+    <article className="w-full" style={{ '--reader-scale': scale } as React.CSSProperties}>
+      <div className="sticky top-0 z-10 -mx-[clamp(0.75rem,2.5vw,3rem)] mb-4 flex items-center gap-2 border-b border-line bg-bg/85 px-[clamp(0.75rem,2.5vw,3rem)] py-2 backdrop-blur-md">
+        <Link to="/library" aria-label="Tủ truyện" className="btn-icon shrink-0" title="Tủ truyện"><Library size={20} /></Link>
+        <div className="min-w-0 flex-1">
+          <h2 className="truncate text-sm font-semibold sm:text-base">{content.title}</h2>
+          <div className="truncate text-xs text-muted">{book.title} · {index}/{book.chapterCount}</div>
+        </div>
+        <button className="btn-icon" aria-label="Giảm cỡ chữ" onClick={() => zoom(-0.1)}><Minus size={18} /></button>
+        <button className="btn-icon" aria-label="Tăng cỡ chữ" onClick={() => zoom(0.1)}><Plus size={18} /></button>
+        {prev ? <Link className="btn-icon" aria-label="Chương trước" to={prev}><ChevronLeft size={22} /></Link> : <span className="size-11" />}
+        {next ? <Link className="btn-icon" aria-label="Chương sau" to={next}><ChevronRight size={22} /></Link> : <span className="size-11" />}
+      </div>
+      <div className="w-full space-y-4 pb-4">
         {(content.blocks ?? content.paragraphs.map((text) => ({ tag: 'p' as const, text }))).map((b, i) => {
           if (b.tag === 'p') {
-            return book.language === 'zh' ? <InteractiveChineseText key={i} text={b.text} /> : <p key={i} className="text-[length:clamp(1.0625rem,1rem+0.4vw,1.25rem)] leading-loose">{b.text}</p>;
+            return book.language === 'zh' ? <InteractiveChineseText key={i} text={b.text} sheet /> : <p key={i} className="text-[length:calc(clamp(1.0625rem,1rem+0.5vw,1.5rem)*var(--reader-scale))] leading-loose">{b.text}</p>;
           }
           const H = b.tag;
           return <H key={i} lang={book.language === 'zh' ? 'zh-CN' : undefined} className="mt-6 text-xl font-semibold">{b.text}</H>;
         })}
       </div>
       <nav className="mt-6 flex justify-between gap-3">
-        {index > 1 ? <Link className="btn no-underline" to={`/reader/${bookId}/${index - 1}`}>← Chương trước</Link> : <span />}
-        {index < book.chapterCount ? <Link className="btn btn-primary no-underline" to={`/reader/${bookId}/${index + 1}`}>Chương sau →</Link> : <span />}
+        {prev ? <Link className="btn no-underline" to={prev}>← Chương trước</Link> : <span />}
+        {next ? <Link className="btn btn-primary no-underline" to={next}>Chương sau →</Link> : <span />}
       </nav>
     </article>
   );

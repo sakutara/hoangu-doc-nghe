@@ -3,7 +3,7 @@
 * **Mã Epic:** EPIC-06
 * **Tên Epic:** Service Worker Background Novel Translator (ZH $\rightarrow$ VI) & Dead-Point Resume
 * **Trạng thái:** Chờ duyệt (Pending User Review)
-* **Liên kết Tài liệu Chung:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md) | [ADR-006](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
+* **Liên kết Tài liệu Chung:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md) | [ADR-006](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
 
 ---
 

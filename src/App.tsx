@@ -1,5 +1,5 @@
 import { BookOpen, GraduationCap, Layers, NotebookPen, Search, TrendingUp } from 'lucide-react';
-import { HashRouter, NavLink, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { DailyStudyHeader } from './components/DailyStudyHeader';
 import { BookLibraryPage } from './pages/BookLibraryPage';
 import { LessonPage } from './pages/LessonPage';
@@ -21,11 +21,20 @@ const TABS = [
 ] as const;
 
 export default function App() {
-  const online = useOnline();
   return (
     <HashRouter>
-      <div className="min-h-dvh md:grid md:grid-cols-[var(--sidebar-w)_minmax(0,1fr)]">
-        <aside className="sticky top-0 z-20 border-b border-line bg-surface px-4 pb-3 pt-[calc(0.75rem+env(safe-area-inset-top))] md:h-dvh md:overflow-y-auto md:border-b-0 md:border-r md:p-5">
+      <Shell />
+    </HashRouter>
+  );
+}
+
+function Shell() {
+  const online = useOnline();
+  // Màn đọc truyện: bỏ thanh bên + tab dưới để nội dung chiếm trọn màn hình.
+  const reading = useLocation().pathname.startsWith('/reader/');
+  return (
+      <div className={`min-h-dvh ${reading ? '' : 'md:grid md:grid-cols-[var(--sidebar-w)_minmax(0,1fr)]'}`}>
+        <aside className={`sticky top-0 z-20 border-b border-line bg-surface/85 px-4 pb-3 pt-[calc(0.75rem+env(safe-area-inset-top))] backdrop-blur-md md:h-dvh md:overflow-y-auto md:border-b-0 md:border-r md:p-5 ${reading ? 'hidden' : ''}`}>
           <div className="flex min-w-0 items-center justify-between gap-3 md:flex-col md:items-start md:gap-1">
             <div className="flex min-w-0 items-center gap-2.5">
               <span aria-hidden="true" lang="zh-CN" className="grid size-9 place-items-center rounded-xl bg-brand text-lg font-bold text-on-brand">华</span>
@@ -51,8 +60,10 @@ export default function App() {
             ))}
           </nav>
         </aside>
-        <main className="min-w-0 px-[var(--gutter)] pb-[calc(var(--tabbar-h)+1.5rem+env(safe-area-inset-bottom))] pt-[clamp(1rem,2.5vw,2.5rem)] md:pb-[clamp(1rem,2.5vw,2.5rem)]">
-          <div className="mx-auto w-full max-w-[120rem] space-y-[var(--gap)]">
+        <main className={reading
+          ? 'min-w-0 px-[clamp(0.75rem,2.5vw,3rem)] pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-[calc(0.5rem+env(safe-area-inset-top))]'
+          : 'min-w-0 px-[var(--gutter)] pb-[calc(var(--tabbar-h)+1.5rem+env(safe-area-inset-bottom))] pt-[clamp(1rem,2.5vw,2.5rem)] md:pb-[clamp(1rem,2.5vw,2.5rem)]'}>
+          <div key={reading ? 'reader' : 'app'} className={`page-enter mx-auto w-full space-y-[var(--gap)] ${reading ? '' : 'max-w-[120rem]'}`}>
           <DailyStudyHeader />
           <Routes>
             <Route path="/analyzer" element={<SentenceAnalyzerPage />} />
@@ -68,6 +79,5 @@ export default function App() {
           </div>
         </main>
       </div>
-    </HashRouter>
   );
 }

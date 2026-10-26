@@ -3,8 +3,8 @@
 * **Mã Epic:** EPIC-05
 * **Tên Epic:** Service Worker Web Novel Crawler, Dead-Point Resume & EPUB Exporter
 * **Trạng thái:** Chờ duyệt (Pending User Review)
-* **Liên kết Tài liệu:** [BR-EPIC-05](file:///Users/sakutara/Work/chinese-study/docs/epics/epic-5-novel-crawler-and-epub-export/BR-EPIC-05.md) | [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
-* **ADRs Áp dụng:** [ADR-001](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-001-tech-stack-and-pwa-architecture.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-003](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-003-testing-and-90-percent-coverage-gate.md), [ADR-005](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md), [ADR-006](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
+* **Liên kết Tài liệu:** [BR-EPIC-05](file:///Users/sakutara/Work/chinese-study/documents/epics/epic-5-novel-crawler-and-epub-export/BR-EPIC-05.md) | [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
+* **ADRs Áp dụng:** [ADR-001](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-001-tech-stack-and-pwa-architecture.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-003](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-003-testing-and-90-percent-coverage-gate.md), [ADR-005](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md), [ADR-006](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # Quy trình biên soạn giáo trình (EPIC-02)
 
-Sinh `src/data/lessons/level1..4.ts` (≈ 6.600 từ, 266 bài). Xem lý do & số liệu ở [ADR-008](../../docs/adr/ADR-008-curriculum-scale-and-data-pipeline.md).
+Sinh `src/data/lessons/level1..4.ts` (≈ 6.600 từ, 266 bài). Xem lý do & số liệu ở [ADR-008](../../documents/adr/ADR-008-curriculum-scale-and-data-pipeline.md).
 
 ## Chỉ cần sửa/ thêm nội dung bài?
 Sửa tệp trong `gl/` rồi chạy mục "Sinh lại dữ liệu" bên dưới. Không cần tải lại kho ngữ liệu nếu bạn chỉ sửa chữ (nhưng vẫn cần `pool.json`/`plan.json`, xem mục chuẩn bị).

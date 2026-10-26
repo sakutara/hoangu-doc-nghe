@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
 
 ## 1. Bối cảnh (Context)
 Ứng dụng học tiếng Hoa (Đọc & Nghe) cần đáp ứng các yêu cầu kỹ thuật cốt lõi:
@@ -15,7 +15,7 @@
 Chúng tôi quyết định lựa chọn bộ công nghệ:
 * **Frontend Framework:** React 18 + TypeScript (Strict Mode).
 * **Bundler & Dev Server:** Vite.
-* **PWA & Service Worker:** `vite-plugin-pwa` (sử dụng chiến lược `injectManifest` với Custom TypeScript Service Worker `src/sw/custom-sw.ts`: vừa precache toàn bộ bundle JS/CSS/JSON/Font/HTML cho chế độ offline, vừa thực thi tác vụ chạy ngầm như Background Novel Crawler trong [ADR-005](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)).
+* **PWA & Service Worker:** `vite-plugin-pwa` (sử dụng chiến lược `injectManifest` với Custom TypeScript Service Worker `src/sw/custom-sw.ts`: vừa precache toàn bộ bundle JS/CSS/JSON/Font/HTML cho chế độ offline, vừa thực thi tác vụ chạy ngầm như Background Novel Crawler trong [ADR-005](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)).
 * **Cơ chế Điều hướng (Routing):** Sử dụng **Hash-based Routing** (hoặc quản lý state tab kết hợp URL hash `#/lessons`, `#/reader`, `#/progress`, `#/dictionary`) và cấu hình `base: './'` trong `vite.config.ts`.
 * **Styling:** Tailwind CSS.
 

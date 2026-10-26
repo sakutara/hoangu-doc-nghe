@@ -3,7 +3,7 @@
 * **Mã Epic:** EPIC-04
 * **Tên Epic:** Plain-Text EPUB Upload, Lazy-Loaded Chapter Reader & Book Library Manager
 * **Trạng thái:** Chờ duyệt (Pending User Review)
-* **Liên kết Tài liệu:** [BR-EPIC-04](file:///Users/sakutara/Work/chinese-study/docs/epics/epic-4-epub-reader/BR-EPIC-04.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md) | [ADR-006](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
+* **Liên kết Tài liệu:** [BR-EPIC-04](file:///Users/sakutara/Work/chinese-study/documents/epics/epic-4-epub-reader/BR-EPIC-04.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md) | [ADR-006](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-006-opfs-chapter-file-storage-and-background-novel-translator.md)
 
 ---
 

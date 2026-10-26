@@ -186,7 +186,7 @@ describe('Tủ truyện & Trình đọc', () => {
     expect(screen.queryByText('Chương sau →')).toBeNull();
     fireEvent.click(screen.getByText('← Chương trước'));
     await screen.findByText('第一章');
-    fireEvent.click(screen.getByText('← Tủ truyện'));
+    fireEvent.click(screen.getByTitle('Tủ truyện'));
 
     // dịch
     fireEvent.click(await screen.findByText('Dịch sang tiếng Việt'));

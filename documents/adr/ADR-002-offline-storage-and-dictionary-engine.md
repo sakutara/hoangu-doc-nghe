@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
 
 ## 1. Bối cảnh (Context)
 Chữ Hán viết liền nhau không có khoảng trắng giữa các từ. Khi người học đọc truyện `.epub` hoặc bài học tiếng Hoa và chạm vào một chữ, các công cụ tra từ thô sơ thường chỉ dịch từng chữ đơn lẻ hoặc tách sai ranh giới từ. Đặc biệt, mục tiêu của người học trong ứng dụng này là đọc truyện mạng, lướt web, xem phim và chơi game nên văn bản xuất hiện rất nhiều:

@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-005](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-005](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-005-service-worker-novel-crawler-and-epub-export.md)
 
 ## 1. Bối cảnh (Context)
 Một bộ tiểu thuyết mạng tiếng Hoa thường có từ 500 đến hơn 3.000 chương. Nếu lưu toàn bộ nội dung các chương vào một đối tượng JSON trong RAM hoặc nhồi chung vào một bản ghi IndexedDB, ứng dụng sẽ gặp các vấn đề nghiêm trọng trên điện thoại:

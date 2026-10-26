@@ -3,7 +3,7 @@
 * **Mã Epic:** EPIC-01
 * **Tên Epic:** Foundation, Core Storage, Smart Dictionary Engine & App Shell
 * **Trạng thái:** Chờ duyệt (Pending User Review)
-* **Liên kết Tài liệu Chung:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
+* **Liên kết Tài liệu Chung:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
 
 ---
 

@@ -82,7 +82,7 @@
 }
 
 /* ---------- Base ---------- */
-html { -webkit-text-size-adjust: 100%; max-width: 100%; overflow-x: clip; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; max-width: 100%; overflow-x: clip; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -112,6 +112,10 @@ progress::-webkit-progress-bar { background: var(--surface-2); }
 progress::-webkit-progress-value { background: var(--brand); border-radius: 999px; transition: width 0.3s; }
 progress::-moz-progress-bar { background: var(--brand); border-radius: 999px; }
 
+@keyframes page-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.page-enter { animation: page-enter 0.25s ease-out; }
+.hanzi-reader { font-size: calc(clamp(1.375rem, 1rem + 1.2vw, 2.25rem) * var(--reader-scale, 1)); line-height: 2; }
+
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
@@ -123,7 +127,7 @@ progress::-moz-progress-bar { background: var(--brand); border-radius: 999px; }
 
 @layer components {
   .card {
-    @apply min-w-0 rounded-2xl border border-line bg-surface shadow-card;
+    @apply min-w-0 rounded-2xl border border-line bg-surface shadow-card transition-shadow duration-200 hover:shadow-lg;
     padding: clamp(0.875rem, 2vw, 1.5rem);
   }
   .fluid-grid {

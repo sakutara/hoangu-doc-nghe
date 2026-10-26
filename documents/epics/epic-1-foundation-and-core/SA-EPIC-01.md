@@ -3,8 +3,8 @@
 * **Mã Epic:** EPIC-01
 * **Tên Epic:** Foundation, Core Storage, Smart Dictionary Engine & App Shell
 * **Trạng thái:** Chờ duyệt (Pending User Review)
-* **Liên kết Tài liệu:** [BR-EPIC-01](file:///Users/sakutara/Work/chinese-study/docs/epics/epic-1-foundation-and-core/BR-EPIC-01.md) | [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
-* **ADRs Áp dụng:** [ADR-001](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-001-tech-stack-and-pwa-architecture.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-003](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-003-testing-and-90-percent-coverage-gate.md), [ADR-004](file:///Users/sakutara/Work/chinese-study/docs/adr/ADR-004-simplified-first-script-abstraction.md)
+* **Liên kết Tài liệu:** [BR-EPIC-01](file:///Users/sakutara/Work/chinese-study/documents/epics/epic-1-foundation-and-core/BR-EPIC-01.md) | [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md) | [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
+* **ADRs Áp dụng:** [ADR-001](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-001-tech-stack-and-pwa-architecture.md), [ADR-002](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-002-offline-storage-and-dictionary-engine.md), [ADR-003](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-003-testing-and-90-percent-coverage-gate.md), [ADR-004](file:///Users/sakutara/Work/chinese-study/documents/adr/ADR-004-simplified-first-script-abstraction.md)
 
 ---
 
@@ -148,9 +148,7 @@ export interface SegmentedToken {
 
 ---
 
-## 4. Cấu hình Triển khai GitHub Pages (`.github/workflows/deploy.yml`)
-* Sử dụng GitHub Actions chạy trên sự kiện `push` vào nhánh `main`:
-  1. `npm ci`
-  2. `npm run test:coverage` (Cổng chặn cứng: phải đạt $\ge 90\%$ mới cho phép đi tiếp)
-  3. `npm run build` (Tạo bản build PWA tĩnh trong `dist/` với `base: './'`)
-  4. Deploy `dist/` lên GitHub Pages bằng `actions/upload-pages-artifact` và `actions/deploy-pages`.
+## 4. Cấu hình Triển khai GitHub Pages (thư mục `docs/`, không dùng GitHub Actions)
+* Không còn workflow GitHub Actions. GitHub Pages được cấu hình **Deploy from a branch → `main` → `/docs`** và phục vụ trực tiếp `docs/index.html`.
+* `npm run build` xuất bản build PWA tĩnh (`base: './'`) vào `docs/` (`build.outDir = 'docs'`); thư mục này được commit vào git. Tài liệu dự án nằm ở `documents/`.
+* Hook git `post-merge` (`.githooks/post-merge`, bật bằng script `prepare` khi `npm install`): sau mỗi lần merge vào `main` tại máy local sẽ chạy `npm run build` và tự commit `docs/` nếu có thay đổi. Merge ngay trên giao diện GitHub không chạy hook local — khi đó cần `git pull && npm run build` rồi commit `docs/`.

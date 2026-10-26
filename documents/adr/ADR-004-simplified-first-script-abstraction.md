@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
 
 ## 1. Bối cảnh (Context)
 Người học hiện tại ưu tiên tuyệt đối **Chữ Hán Giản thể (`简体中文`)** để đọc truyện mạng đại lục, lướt web, xem phim và chơi game ngay lập tức. Tuy nhiên, trong tương lai ứng dụng sẽ bổ sung tính năng hỗ trợ **Chữ Hán Phồn thể (`繁體中文`)** (phục vụ truyện/web/game Đài Loan, Hồng Kông). Nếu thiết kế cứng chỉ một loại chữ ngay từ đầu, việc nâng cấp sau này sẽ phải sửa lại toàn bộ dữ liệu từ điển, giáo trình và bộ tách từ.

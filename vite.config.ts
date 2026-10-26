@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   base: './',
+  build: { outDir: 'docs', emptyOutDir: true }, // GitHub Pages phục vụ trực tiếp docs/index.html trên main
   plugins: [
     react(),
     tailwindcss(),

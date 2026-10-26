@@ -2,7 +2,7 @@
 
 * **Trạng thái:** Đã chấp thuận (Accepted)
 * **Ngày tạo:** 2026-10-17
-* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/docs/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/docs/SA-MASTER.md)
+* **Liên quan đến:** [BR-MASTER](file:///Users/sakutara/Work/chinese-study/documents/BR-MASTER.md), [SA-MASTER](file:///Users/sakutara/Work/chinese-study/documents/SA-MASTER.md)
 
 ## 1. Bối cảnh (Context)
 Dự án yêu cầu quy trình phát triển chặt chẽ **BR $\rightarrow$ SA $\rightarrow$ Test $\rightarrow$ Code** và đặt mục tiêu bắt buộc **Test Coverage đạt tối thiểu 90%** mà không sử dụng các dịch vụ coverage farm bên ngoài (như Codecov, Coveralls hay SonarCloud).
