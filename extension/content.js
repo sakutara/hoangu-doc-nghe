@@ -1,5 +1,5 @@
 /* Panel “HoaNgữ – Tải truyện”: duyệt mục lục, tải tuần tự từng chương bằng chính trình duyệt của bạn
- * (đã qua kiểm tra bot như người đọc bình thường), lưu ra file .hoangu.json và nhớ chương đã lưu theo URL.
+ * (đã qua kiểm tra bot như người đọc bình thường), xuất EPUB (có ảnh bìa) và nhớ chương đã lưu theo URL.
  * Không giải/vượt challenge: gặp trang kiểm tra bot là DỪNG. */
 (function () {
   if (window.__hoanguPanel) { window.__hoanguPanel.toggle(); return; }
@@ -17,7 +17,7 @@
     remove(k) { return chrome.storage.local.remove(k); },
   };
   const K = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, cover: (b) => `hn:cover:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
   // ---------- trạng thái ----------
@@ -25,7 +25,7 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
-    sel: new Set(), lastClick: -1,
+    sel: new Set(), lastClick: -1, cover: null,
   };
   /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
   const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
@@ -85,9 +85,14 @@
         el('small', null, `${savedCount} chương đã lưu trong extension · ${s.toc.length || '?'} chương trong mục lục`)),
       el('div', { class: 'row' },
         el('button', { onclick: () => loadToc(true), disabled: s.running }, s.toc.length ? 'Làm mới mục lục' : 'Tải mục lục'),
-        el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống truyện (${savedCount} chương)`),
+        el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống EPUB (${savedCount} chương)`),
         el('button', { onclick: () => recover(), disabled: s.running, title: 'Quét kho extension, nhặt lại chương còn nội dung nhưng bị mất khỏi danh sách' }, 'Khôi phục chương mất'),
-        el('button', { onclick: () => refilter(), disabled: s.running || !savedCount, title: 'Lọc bỏ link chèn (vd. hetushu.com) khỏi nội dung các chương đã lưu' }, 'Lọc lại nội dung đã lưu')),
+        el('button', { onclick: () => refilter(), disabled: s.running || !savedCount, title: 'Bỏ khoảng trắng (trừ sau dấu ;) rồi dọn link, “hetushu”, “.com” khỏi nội dung các chương đã lưu' }, 'Lọc lại nội dung đã lưu')),
+      el('div', { class: 'row' },
+        s.cover ? el('img', { src: s.cover.url, style: 'height:56px;border:1px solid #ccc;border-radius:3px', alt: 'Bìa' }) : el('small', null, 'Chưa có ảnh bìa'),
+        el('button', { onclick: () => pickFile('image/*', setCover), disabled: s.running }, s.cover ? 'Đổi ảnh bìa' : 'Tải ảnh bìa'),
+        s.cover ? el('button', { onclick: () => clearCover(), disabled: s.running }, 'Gỡ bìa') : '',
+        el('button', { onclick: () => pickFile('.epub,application/epub+zip', importEpub), disabled: s.running, title: 'Đổ chương trong EPUB vào kho + mục lục để tải lại / xử lý lại' }, 'Nhập EPUB')),
       s.toc.length ? el('input', { class: 'wide', placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } }) : '',
       s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
         class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
@@ -123,6 +128,36 @@
     bd.scrollTop = bdTop;
   }
   const say = (m) => { s.msg = m; render(); };
+
+  /** Mở hộp chọn file tạm (input không gắn vào giao diện để render() không làm mất nó). */
+  function pickFile(accept, handler) {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = accept; inp.style.display = 'none';
+    inp.onchange = () => { const f = inp.files && inp.files[0]; inp.remove(); if (f) handler(f); };
+    document.body.appendChild(inp);
+    inp.click();
+  }
+
+  // ---------- ảnh bìa ----------
+  const toB64 = (u8) => { let bin = ''; for (let i = 0; i < u8.length; i += 0x8000) bin += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(bin); };
+  const fromB64 = (b64) => Uint8Array.from(atob(b64), (ch) => ch.charCodeAt(0));
+
+  async function loadCover() {
+    const c = await store.get(K.cover(s.bookKey), null);
+    s.cover = c ? { mime: c.mime, b64: c.b64, url: `data:${c.mime};base64,${c.b64}` } : null;
+  }
+  async function saveCover(mime, u8) {
+    const b64 = toB64(u8);
+    await store.set(K.cover(s.bookKey), { mime, b64 });
+    s.cover = { mime, b64, url: `data:${mime};base64,${b64}` };
+  }
+  async function setCover(file) {
+    if (!/^image\/(jpeg|png|gif|webp)$/.test(file.type)) { say('⚠ Ảnh bìa phải là JPEG, PNG, GIF hoặc WebP.'); return; }
+    if (file.size > 8 * 1024 * 1024) { say('⚠ Ảnh bìa quá lớn (>8MB).'); return; }
+    await saveCover(file.type, new Uint8Array(await file.arrayBuffer()));
+    say('Đã đặt ảnh bìa — sẽ dùng khi tải xuống EPUB.');
+  }
+  async function clearCover() { await store.remove(K.cover(s.bookKey)); s.cover = null; say('Đã gỡ ảnh bìa.'); }
 
   function toggleSel(c, view, shift) {
     const i = view.findIndex((x) => x.url === c.url);
@@ -264,15 +299,15 @@
     await persistMeta();
   }
 
-  function download(fileName, json) {
-    const u = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+  function download(fileName, data, mime) {
+    const u = URL.createObjectURL(new Blob([data], { type: mime }));
     const a = document.createElement('a');
     a.href = u; a.download = fileName;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(u), 15000);
   }
 
-  /** Gom mọi chương đã lưu của truyện thành MỘT file .hoangu.json (theo thứ tự mục lục; chương ngoài mục lục theo thứ tự lưu). */
+  /** Gom các chương đã lưu (tất cả, hoặc chỉ những URL được chọn) thành MỘT file .epub theo thứ tự mục lục; chương ngoài mục lục theo thứ tự lưu. */
   async function exportBook(onlyUrls) {
     await verifyChapters();
     const only = onlyUrls && new Set(onlyUrls);
@@ -297,9 +332,74 @@
       });
     }
     const suffix = only ? `-${chapters.length}ch` : '';
-    const fileName = `${C.safeName(s.info.title)}${suffix}.hoangu.json`;
-    download(fileName, JSON.stringify(C.makeBundle(s.info, chapters)));
+    const fileName = `${C.safeName(s.info.title)}${suffix}.epub`;
+    const cover = s.cover ? { mime: s.cover.mime, data: fromB64(s.cover.b64) } : null;
+    const bytes = C.buildEpub({ title: s.info.title, bookKey: s.bookKey, cover, chapters });
+    download(fileName, bytes, 'application/epub+zip');
     say(`Đã xuất ${chapters.length} chương → ${fileName}${missing ? `\n⚠ ${missing} chương mất nội dung — bấm “Khôi phục chương mất” rồi tải lại chúng.` : '\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.'}`);
+  }
+
+  // ---------- nhập EPUB ----------
+  /** Đổ chương của một EPUB vào kho + mục lục. Chương đã lưu được giữ nguyên; chương chưa có thì thêm; mục lục chưa có thì lấy theo EPUB.
+   *  Khớp chương theo URL gốc (EPUB do extension xuất), không có thì theo tiêu đề mục lục; còn lại thêm cuối mục lục với URL tạm. */
+  async function importEpub(file) {
+    s.running = true;
+    try {
+      say(`Đang đọc “${file.name}”…`);
+      const book = await C.parseEpub(new Uint8Array(await file.arrayBuffer()));
+      if (!book.chapters.length) { say('⚠ Không thấy chương nào trong EPUB này.'); s.running = false; return; }
+      const tocByUrl = new Map(s.toc.map((c) => [C.stripHash(c.url), c]));
+      const normTitle = (x) => C.squeezeSpaces(x);
+      const tocByTitle = new Map();
+      s.toc.forEach((c) => { const k = normTitle(c.title); if (!tocByTitle.has(k)) tocByTitle.set(k, c); });
+      const used = new Set();
+      const tag = (C.cleanText(s.bookKey).length * 7919 + book.chapters.length).toString(36);
+      const items = [];
+      book.chapters.forEach((ch, i) => {
+        let url = ch.url ? C.stripHash(ch.url) : '';
+        if (!url || !tocByUrl.has(url)) {
+          const hit = !url ? tocByTitle.get(normTitle(ch.title)) : null;
+          if (hit && !used.has(C.stripHash(hit.url))) url = C.stripHash(hit.url);
+          else if (!url) url = `epub://${tag}/${i + 1}`;
+        }
+        if (used.has(url)) return;
+        used.add(url);
+        items.push({ url, title: ch.title, paragraphs: ch.paragraphs, blocks: ch.blocks });
+      });
+      let added = 0;
+      let skipped = 0;
+      let newToc = 0;
+      for (let i = 0; i < items.length; i += 50) {
+        const part = items.slice(i, i + 50);
+        const out = {};
+        part.forEach((it) => {
+          if (s.chap[it.url]) { skipped += 1; return; }
+          const k = K.bodyUrl(s.bookKey, it.url);
+          out[k] = { url: it.url, title: it.title, paragraphs: it.paragraphs, blocks: it.blocks };
+          s.chap[it.url] = { t: it.title, k, at: new Date().toISOString() };
+          added += 1;
+        });
+        if (Object.keys(out).length) await chrome.storage.local.set(out);
+        say(`Đang nhập EPUB… ${Math.min(i + 50, items.length)}/${items.length}`);
+      }
+      // Mục lục: giữ mục lục hiện có, thêm các chương EPUB chưa có (cuối danh sách).
+      const toc = s.toc.slice();
+      items.forEach((it) => { if (!tocByUrl.has(it.url)) { toc.push({ title: it.title, url: it.url }); newToc += 1; } });
+      s.toc = toc;
+      await store.set(K.toc(s.bookKey), toc);
+      const idx = await store.get(K.idx, {});
+      items.forEach((it) => { idx[it.url] = s.bookKey; });
+      await store.set(K.idx, idx);
+      if (!s.info.title || s.info.title === 'Truyện') s.info.title = book.title || s.info.title;
+      if (book.cover && !s.cover) await saveCover(book.cover.mime, book.cover.data);
+      await persistMeta();
+      s.running = false;
+      const missing = s.toc.filter((c) => !s.chap[c.url]).length;
+      say(`Đã nhập EPUB: +${added} chương mới, ${skipped} chương đã có (giữ nguyên), +${newToc} mục mới trong mục lục.\n${missing ? `Còn ${missing} chương chưa có nội dung — chọn “Chọn chưa tải” rồi tải.` : 'Mục lục đã đủ chương.'}`);
+    } catch (err) {
+      s.running = false;
+      say(`⚠ Không nhập được EPUB: ${err.message}`);
+    }
   }
 
   /** Đối chiếu danh sách chương với nội dung thật trong kho: bỏ mục không còn nội dung (để tải lại được),
@@ -321,7 +421,7 @@
     return dropped;
   }
 
-  /** Chạy lại bộ lọc link trên nội dung đã lưu: ghi lại chương có link, bỏ đoạn chỉ chứa link. */
+  /** Chạy lại quy trình xử lý (bỏ khoảng trắng → dọn link) trên nội dung đã lưu; ghi lại chương thay đổi, bỏ đoạn rỗng. */
   async function refilter() {
     s.running = true;
     let changed = 0;
@@ -338,7 +438,7 @@
           const b = got[k];
           if (!b) return;
           const blocks = (b.blocks && b.blocks.length ? b.blocks : (b.paragraphs || []).map((text) => ({ tag: 'p', text })))
-            .map((x) => ({ tag: x.tag, text: C.stripLinks(x.text) })).filter((x) => x.text);
+            .map((x) => ({ tag: x.tag, text: C.cleanText(x.text) })).filter((x) => x.text);
           const title = C.stripLinks(b.title || '') || b.title;
           const same = title === b.title && blocks.length === (b.paragraphs || []).length && blocks.every((x, j) => x.text === b.paragraphs[j]);
           if (same) return;
@@ -348,7 +448,7 @@
         });
         if (changed) await chrome.storage.local.set(out);
       }
-      say(`Đã lọc xong: sửa ${changed} chương, bỏ ${removed} đoạn chỉ chứa link. Xuất lại file để có bản sạch.`);
+      say(`Đã lọc xong: sửa ${changed} chương, bỏ ${removed} đoạn rỗng. Xuất lại EPUB để có bản sạch.`);
     } catch (err) {
       say(`⚠ Lỗi khi lọc: ${err.message}`);
     }
@@ -430,7 +530,9 @@
   /** Tải các chương đang tick (theo thứ tự mục lục). force=true → tải lại và ghi đè cả chương đã lưu. */
   async function startSelected(force) {
     if (!force) { s.running = true; say('Đang kiểm tra nội dung các chương đã lưu…'); const d = await verifyChapters(); s.running = false; if (d) say(`Đã bỏ ${d} chương mất nội dung khỏi danh sách đã lưu.`); }
-    const queue = s.toc.filter((c) => s.sel.has(c.url) && (force || !s.chap[c.url]));
+    const all = s.toc.filter((c) => s.sel.has(c.url) && (force || !s.chap[c.url]));
+    const queue = all.filter((c) => !c.url.startsWith('epub://')); // chương nhập từ EPUB không có link web để tải lại
+    if (all.length > queue.length) say(`Bỏ qua ${all.length - queue.length} chương nhập từ EPUB (không có link gốc).`);
     if (!queue.length) { say('Không có chương nào cần tải trong phần đã chọn.'); return; }
     let i = 0;
     runLoop(() => {
@@ -503,6 +605,7 @@
       title: s.pageTitle, origin: location.origin, bookKey: s.bookKey, parts: 0,
     };
     s.chap = await store.get(K.chap(s.bookKey), {});
+    await loadCover();
     // Di trú bộ đệm của bản cũ (chương chờ xuất) vào kho chương.
     const legacy = await store.get(K.buf(s.bookKey), []);
     for (const c of legacy) if (!s.chap[c.url]) await saveChapter(c.url, c);

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import coreSource from '../extension/core.js?raw';
-import { parseCaptureBundle } from '../src/domains/crawler/browserCapture/CaptureBundleImporter';
+import JSZip from 'jszip';
 
 // core.js là classic script của Chrome extension → nạp bằng eval để gắn globalThis.HNCore.
 // eslint-disable-next-line no-new-func
@@ -57,21 +57,66 @@ describe('extension core', () => {
     expect(C.findTocUrl(chap, 'https://x.test/b/1.html')).toBe('https://x.test/b/index.html');
   });
 
-  it('makeBundle tương thích CaptureBundleImporter', () => {
-    const bundle = C.makeBundle(
-      { title: '书', origin: 'https://x.test', bookKey: 'https://x.test/b/index.html' },
-      [{ url: 'https://x.test/b/1.html', title: '第1章', paragraphs: [HAN], blocks: [{ tag: 'p', text: HAN }] }],
-    );
-    const parsed = parseCaptureBundle(JSON.stringify(bundle));
-    expect(parsed.chapters).toHaveLength(1);
+  it('tên sách / tên file', () => {
     expect(C.guessBookTitle('书名 - 第1章 开始 - 站点', '第1章 开始')).toBe('书名');
     expect(C.safeName('a/b:c')).toBe('a_b_c');
   });
 
-  it('lọc link hetushu.com chèn trong nội dung', () => {
-    const d = doc(`<h1>第1章 开始</h1><div id="content"><p>${HAN}https://www.hetushu.com/一</p><p>https://www.hetushu.com/</p></div>`);
+  it('dọn nội dung: bỏ mọi khoảng trắng (trừ sau dấu ;) rồi mới dọn link / hetushu / .com', () => {
+    expect(C.squeezeSpaces('他 走 了　过 去\n了')).toBe('他走了过去了');
+    expect(C.squeezeSpaces('甲； 乙;  丙 丁')).toBe('甲； 乙; 丙丁');
+    expect(C.cleanText('访问 www.hetushu.com 继续')).toBe('访问继续');
+    expect(C.cleanText(`${HAN} https://www.hetushu.com/book/1.html 后`)).toBe(`${HAN}后`);
+    expect(C.cleanText('h e t u s h u 书 x . c o m')).toBe('书x');
+    expect(C.cleanText('甲； hetushu乙')).toBe('甲； 乙');
+    expect(C.cleanText('HeTuShu.COM')).toBe('');
+  });
+
+  it('trích chương áp dụng quy trình dọn; bỏ đoạn chỉ chứa link', () => {
+    const d = doc(`<h1>第1章 开始</h1><div id="content"><p>${HAN} 一 https://www.hetushu.com/</p><p>https://www.hetushu.com/</p><p>www. hetushu .com</p></div>`);
     const p = C.extractPage(d, 'http://s/1.html');
     expect(p.paragraphs).toEqual([`${HAN}一`]);
-    expect(C.stripLinks('访问 www.hetushu.com 继续')).toBe('访问 继续');
+  });
+
+  it('EPUB: xuất (có bìa, URL gốc) → nhập lại đúng thứ tự, tiêu đề, khối, bìa', async () => {
+    const cover = { mime: 'image/png', data: new Uint8Array([137, 80, 78, 71, 1, 2, 3]) };
+    const bytes = C.buildEpub({
+      title: '书 & <名>', bookKey: 'https://x.test/b/', cover,
+      chapters: [
+        { url: 'https://x.test/b/1.html', title: '第1章 开始', blocks: [{ tag: 'h2', text: '小节' }, { tag: 'p', text: HAN }] },
+        { url: 'https://x.test/b/2.html', title: '第2章', paragraphs: [`${HAN}二`, '二 hetushu.com 三'] },
+      ],
+    });
+    const back = await C.parseEpub(bytes);
+    expect(back.title).toBe('书 & <名>');
+    expect(back.cover.mime).toBe('image/png');
+    expect([...back.cover.data]).toEqual([...cover.data]);
+    expect(back.chapters.map((c: { url: string; title: string }) => [c.url, c.title])).toEqual([['https://x.test/b/1.html', '第1章 开始'], ['https://x.test/b/2.html', '第2章']]);
+    expect(back.chapters[0].blocks).toEqual([{ tag: 'h2', text: '小节' }, { tag: 'p', text: HAN }]);
+    expect(back.chapters[1].paragraphs).toEqual([`${HAN}二`, '二三']);
+  });
+
+  it('EPUB: đọc file nén deflate từ trình tạo khác, không có URL gốc, bỏ qua nav', async () => {
+    const z = new JSZip();
+    z.file('mimetype', 'application/epub+zip');
+    z.file('META-INF/container.xml', '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OPS/book.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');
+    z.file('OPS/book.opf', '<package xmlns="http://www.idpf.org/2005/opf"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>外书</dc:title></metadata><manifest><item id="n" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="a" href="t/a.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="n"/><itemref idref="a"/></spine></package>');
+    z.file('OPS/nav.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><body><nav><ol><li>x</li></ol></nav></body></html>');
+    z.file('OPS/t/a.xhtml', `<html xmlns="http://www.w3.org/1999/xhtml"><head><title>T</title></head><body><h2>第一章</h2><p>${HAN} 甲</p><p>乙<br/>丙</p></body></html>`);
+    const bytes = new Uint8Array(await z.generateAsync({ type: 'uint8array', compression: 'DEFLATE' }));
+    const back = await C.parseEpub(bytes);
+    expect(back.title).toBe('外书');
+    expect(back.cover).toBeNull();
+    expect(back.chapters).toHaveLength(1);
+    expect(back.chapters[0]).toMatchObject({ url: '', title: '第一章', paragraphs: [`${HAN}甲`, '乙', '丙'] });
+    await expect(C.parseEpub(new Uint8Array([1, 2, 3]))).rejects.toThrow('ZIP');
+  });
+
+  it('EPUB xuất ra mở được bằng trình đọc ZIP chuẩn (mimetype đứng đầu)', async () => {
+    const bytes = C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
+    const zip = await JSZip.loadAsync(bytes);
+    expect(Object.keys(zip.files)[0]).toBe('mimetype');
+    expect(await zip.file('mimetype')!.async('string')).toBe('application/epub+zip');
+    expect(await zip.file('OEBPS/ch0001.xhtml')!.async('string')).toContain('data-hn-url="u"');
   });
 });

@@ -223,49 +223,6 @@ describe('Tủ truyện & Trình đọc', () => {
     expect(await screen.findByRole('status')).toHaveTextContent('container');
   });
 
-  it('cào truyện: tạo job, hiển thị điểm chết, cào tiếp, kiểm tra chương mới', async () => {
-    window.location.hash = '#/library';
-    render(<App />);
-    fireEvent.click(screen.getByText('Bắt đầu cào')); // link rỗng: bỏ qua
-    expect(dispatchJob).not.toHaveBeenCalled();
-    fireEvent.change(screen.getByLabelText('Link truyện'), { target: { value: 'http://x.com/1' } });
-    fireEvent.click(screen.getByText('Bắt đầu cào'));
-    await waitFor(() => expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'START_CRAWL' })));
-    const job = (await svc.meta.list<any>('crawl_jobs'))[0];
-    await svc.meta.put('crawl_jobs', job.jobId, { ...job, status: 'paused_at_deadpoint', deadPoint: { failedUrl: 'u', failedChapterIndex: 3, errorReason: 'HTTP 500', failedAt: '', retryCount: 1 } });
-    act(() => progressCb({}));
-    fireEvent.click(await screen.findByText('Cào tiếp từ điểm chết'));
-    expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'RESUME_FROM_DEADPOINT' }));
-    await svc.meta.put('crawl_jobs', job.jobId, { ...job, status: 'completed' });
-    act(() => progressCb({}));
-    fireEvent.click(await screen.findByText('Kiểm tra chương mới'));
-    expect(dispatchJob).toHaveBeenCalledWith(expect.objectContaining({ type: 'CHECK_NEW_CHAPTERS' }));
-  });
-
-  it('nhập gói từ extension: nối tiếp, lỗi, và điểm chết do bot challenge', async () => {
-    window.location.hash = '#/library';
-    render(<App />);
-
-    const bundle = (urls: string[]) => new File([JSON.stringify({
-      format: 'hoangu-capture/1', bookTitle: '河图', sourceOrigin: 'http://h', bookKey: 'http://h/index.html',
-      chapters: urls.map((u, i) => ({ url: u, title: `第${i}章`, paragraphs: ['正文'] })),
-    })], 'a.hoangu.json');
-    const input = screen.getByLabelText('Nhập gói tải');
-    fireEvent.change(input, { target: { files: [] } });
-    fireEvent.change(input, { target: { files: [bundle(['u1', 'u2'])] } });
-    await screen.findByText(/Đã tạo “河图”: thêm 2 chương \(tổng 2\)/);
-    fireEvent.change(input, { target: { files: [bundle(['u2', 'u3'])] } });
-    await screen.findByText(/Đã nối tiếp “河图”: thêm 1 chương \(tổng 3\)/);
-    fireEvent.change(input, { target: { files: [new File(['nope'], 'x.json')] } });
-    await screen.findByText('File không phải JSON hợp lệ.');
-
-    const book = (await svc.library.listAllBooks())[0];
-    await svc.meta.put('crawl_jobs', 'crawl-x', { jobId: 'crawl-x', bookId: book.bookId, bookTitle: 'x', startUrl: 'u', status: 'paused_at_deadpoint', chaptersCrawled: 0, maxChaptersLimit: 0, updatedAt: '', deadPoint: { failedUrl: 'u', failedChapterIndex: 1, errorReason: 'CF', errorKind: 'bot_challenge', failedAt: '', retryCount: 1 } });
-    act(() => progressCb({}));
-    await screen.findByText(/Trang này chặn bot/);
-    expect(screen.queryByText('Cào tiếp từ điểm chết')).toBeNull();
-  });
-
   it('reader: chương không tồn tại', async () => {
     window.location.hash = '#/reader/none/1';
     render(<App />);

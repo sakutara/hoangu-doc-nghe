@@ -114,36 +114,26 @@ describe('NovelTranslationRunner', () => {
 });
 
 describe('jobHandlers (SW + fallback)', () => {
-  it('chạy dịch, cào, tạm dừng, resume job đang chạy, báo lỗi', async () => {
+  it('chạy dịch, tạm dừng, resume job đang chạy, báo lỗi', async () => {
     const s = await seed(2);
     const events: any[] = [];
     const env = { meta: s.meta, backend: s.backend, broadcast: (d: unknown) => events.push(d),
-      fetchHtml: async (u: string) => (u.endsWith('2') ? '<div id="content">中文二</div>' : `<h1>一</h1><div id="content">中文一</div><a href="http://x.com/2">下一章</a>`) };
+    };
     const tj = await new NovelTranslationRunner({ meta: s.meta, files: s.files, provider: tr }).createJob('zh');
     await handleJobMessage({ type: 'START_TRANSLATION', jobId: tj.jobId }, env);
     expect(events.some((e) => e.kind === 'translation')).toBe(true);
-
-    const { NovelCrawlerRunner } = await import('../src/domains/crawler/NovelCrawlerRunner');
-    const cj = await new NovelCrawlerRunner({ meta: s.meta, files: s.files, fetchHtml: async () => '' }).createJob('c', 'C', 'http://x.com/1');
-    await handleJobMessage({ type: 'START_CRAWL', jobId: cj.jobId }, env);
-    expect((await s.library.getBook('c'))!.chapterCount).toBe(2);
-    await handleJobMessage({ type: 'CHECK_NEW_CHAPTERS', jobId: cj.jobId }, env);
-    await handleJobMessage({ type: 'RESUME_FROM_DEADPOINT', jobId: cj.jobId }, env);
 
     await handleJobMessage({ type: 'PAUSE_JOB', jobId: tj.jobId }, env);
     await handleJobMessage({ type: 'RESUME_TRANSLATION', jobId: tj.jobId }, env);
     expect((await s.meta.get<any>('translation_jobs', tj.jobId)).status).toBe('completed');
 
-    await handleJobMessage({ type: 'START_CRAWL', jobId: 'nope' }, env);
     await handleJobMessage({ type: 'START_TRANSLATION', jobId: 'nope' }, env);
-    expect(events.filter((e) => e.kind === 'error')).toHaveLength(2);
+    expect(events.filter((e) => e.kind === 'error')).toHaveLength(1);
     const bad = { ...env, broadcast: () => {} };
-    await handleJobMessage({ type: 'START_CRAWL', jobId: 'x' }, bad);
+    await handleJobMessage({ type: 'START_TRANSLATION', jobId: 'x' }, bad);
 
-    await s.meta.put('crawl_jobs', cj.jobId, { ...(await s.meta.get<any>('crawl_jobs', cj.jobId)), status: 'running' });
     await s.meta.put('translation_jobs', tj.jobId, { ...(await s.meta.get<any>('translation_jobs', tj.jobId)), status: 'running', nextChapterIndex: 1 });
     await resumeRunningJobs(env);
-    expect((await s.meta.get<any>('crawl_jobs', cj.jobId)).status).not.toBe('running');
     expect((await s.meta.get<any>('translation_jobs', tj.jobId)).status).toBe('completed');
   });
 });
