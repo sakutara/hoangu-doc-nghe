@@ -23,7 +23,7 @@
 
   /** Dọn link chèn: URL http(s), rồi MỌI “hetushu”, MỌI “.com” (và “www.” còn sót) — gọi SAU khi đã bỏ khoảng trắng. */
   function stripLinks(text) {
-    return text.replace(URL_RE, '').replace(/hetushu/gi, '').replace(/\.com/gi, '').replace(/www\.\s*/gi, '');
+    return text.replace(URL_RE, '').replace(/hetushu/gi, '').replace(/\.\s*com/gi, '').replace(/www\.\s*/gi, '');
   }
 
   /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng trước, dọn link sau. */

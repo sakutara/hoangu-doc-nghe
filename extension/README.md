@@ -22,7 +22,7 @@ Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot
 
 ## Xử lý nội dung (tự động khi tải, nhập EPUB; hoặc bấm “Lọc lại nội dung đã lưu”)
 1. Bỏ **mọi khoảng trắng** trong nội dung (kể cả dấu cách full-width, xuống dòng) — **trừ** khoảng trắng ngay sau dấu chấm, phẩy, chấm phẩy (`.` `。` `,` `，` `;` `；`) — gộp còn 1 dấu cách.
-2. Rồi dọn link: URL `http(s)://…`, mọi chuỗi **“hetushu”** và mọi **“.com”** (không phân biệt hoa/thường), cùng “www.” còn sót.
+2. Rồi dọn link: URL `http(s)://…`, mọi chuỗi **“hetushu”** và mọi **“.com”** / **“. com”** (không phân biệt hoa/thường), cùng “www.” còn sót.
 3. Đoạn rỗng sau khi dọn bị bỏ. Nút “Lọc lại…” ghi đè nội dung đã lưu; sau đó xuất lại EPUB.
 
 ## Lưu trạng thái
