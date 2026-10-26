@@ -273,6 +273,7 @@
 
   /** Gom mọi chương đã lưu của truyện thành MỘT file .hoangu.json (theo thứ tự mục lục; chương ngoài mục lục theo thứ tự lưu). */
   async function exportBook(onlyUrls) {
+    await verifyChapters();
     const only = onlyUrls && new Set(onlyUrls);
     const entries = Object.entries(s.chap).filter(([u]) => !only || only.has(u));
     if (!entries.length) return;
@@ -302,22 +303,29 @@
 
   /** Đối chiếu danh sách chương với nội dung thật trong kho: bỏ mục không còn nội dung (để tải lại được),
    *  nhặt lại nội dung mồ côi (của truyện này hoặc khớp mục lục) bị mất khỏi danh sách. */
+  /** Đọc lại nội dung thật của từng chương “đã lưu”: thiếu / sai URL / rỗng → bỏ khỏi danh sách (mất dấu ✓). Trả về số mục bị bỏ. */
+  async function verifyChapters() {
+    const ents = Object.entries(s.chap);
+    let dropped = 0;
+    for (let i = 0; i < ents.length; i += READ_BATCH) {
+      const part = ents.slice(i, i + READ_BATCH);
+      const keys = part.map(([u, c]) => bodyKey(c, u));
+      const got = await chrome.storage.local.get(keys);
+      part.forEach(([u], j) => {
+        const b = got[keys[j]];
+        if (!b || C.stripHash(b.url) !== u || !b.paragraphs || !b.paragraphs.length) { delete s.chap[u]; dropped += 1; }
+      });
+    }
+    if (dropped) await store.set(K.chap(s.bookKey), s.chap);
+    return dropped;
+  }
+
   async function recover() {
     s.running = true;
     try {
       say('Đang quét kho extension…');
       const ls = chrome.storage.local;
-      let dropped = 0;
-      const ents = Object.entries(s.chap);
-      for (let i = 0; i < ents.length; i += READ_BATCH) {
-        const part = ents.slice(i, i + READ_BATCH);
-        const keys = part.map(([u, c]) => bodyKey(c, u));
-        const got = await ls.get(keys);
-        part.forEach(([u], j) => {
-          const b = got[keys[j]];
-          if (!b || C.stripHash(b.url) !== u) { delete s.chap[u]; dropped += 1; }
-        });
-      }
+      const dropped = await verifyChapters();
       const all = ls.getKeys ? await ls.getKeys() : Object.keys(await ls.get(null));
       const bodies = all.filter((k) => k.startsWith('hn:body:'));
       const mine = `hn:body:${s.bookKey}`;
@@ -384,7 +392,8 @@
   }
 
   /** Tải các chương đang tick (theo thứ tự mục lục). force=true → tải lại và ghi đè cả chương đã lưu. */
-  function startSelected(force) {
+  async function startSelected(force) {
+    if (!force) { s.running = true; say('Đang kiểm tra nội dung các chương đã lưu…'); const d = await verifyChapters(); s.running = false; if (d) say(`Đã bỏ ${d} chương mất nội dung khỏi danh sách đã lưu.`); }
     const queue = s.toc.filter((c) => s.sel.has(c.url) && (force || !s.chap[c.url]));
     if (!queue.length) { say('Không có chương nào cần tải trong phần đã chọn.'); return; }
     let i = 0;
@@ -467,7 +476,9 @@
     const here1 = s.toc.findIndex((c) => C.stripHash(c.url) === here);
     if (here1 >= 0) s.from = here1 + 1;
     else if (s.toc.length) { const u = s.toc.findIndex((c) => !s.chap[c.url]); s.from = u >= 0 ? u + 1 : 1; }
-    if (Object.keys(s.chap).length) s.msg = `Đã có ${Object.keys(s.chap).length} chương lưu trong extension — tải thêm hoặc bấm “Tải xuống truyện”.`;
+    const lost = await verifyChapters();
+    if (lost) s.msg = `Đã kiểm tra: ${lost} chương mất nội dung → bỏ dấu ✓, hãy chọn lại để tải. Bấm “Khôi phục chương mất” để nhặt lại nếu còn trong kho.`;
+    else if (Object.keys(s.chap).length) s.msg = `Đã có ${Object.keys(s.chap).length} chương lưu trong extension — tải thêm hoặc bấm “Tải xuống truyện”.`;
     render();
   }
 
