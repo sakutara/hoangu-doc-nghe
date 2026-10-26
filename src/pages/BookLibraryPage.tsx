@@ -63,6 +63,7 @@ export function BookLibraryPage() {
 
   const upload = async (file: File | undefined) => {
     if (!file) return;
+    setMsg(`Đang nhập “${file.name}”…`);
     try {
       const book = await importEpub(await file.arrayBuffer(), newId(), files);
       await library.saveBook(book);
@@ -75,6 +76,7 @@ export function BookLibraryPage() {
 
   const importCapture = async (file: File | undefined) => {
     if (!file) return;
+    setMsg(`Đang nhập “${file.name}”…`);
     try {
       const bundle = parseCaptureBundle(await file.text());
       const r = await importCaptureBundle(bundle, { meta, files }, newId, undefined, target || undefined);
@@ -152,10 +154,11 @@ export function BookLibraryPage() {
   return (
     <section className="space-y-[var(--gap)]">
       <h2 className="page-title">Tủ truyện</h2>
+      {msg && <p role="status" className="rounded-xl bg-info-soft px-4 py-3 text-sm text-info-ink">{msg}</p>}
       <div className="fluid-grid items-start">
         <div className="card space-y-2">
           <div className="font-medium">Tải lên file .epub</div>
-          <p className="text-sm text-muted">Chọn file .epub từ máy; chỉ giữ văn bản thuần, mỗi chương một file.</p>
+          <p className="text-sm text-muted">Chọn file .epub từ máy — app tự nhập ngay sau khi chọn (không cần bấm thêm), chỉ giữ văn bản thuần, mỗi chương một file.</p>
           <UploadButton primary label="Chọn file .epub" accept=".epub" ariaLabel="Tải lên epub" onFile={(f) => void upload(f)} />
         </div>
         <div className="card space-y-2">
@@ -167,7 +170,7 @@ export function BookLibraryPage() {
       </div>
       <div className="card min-w-0 space-y-2 text-sm">
         <div className="font-semibold">Nhập truyện từ extension HoaNgữ</div>
-        <p className="text-muted">Dùng extension trong thư mục <code>extension/</code> để tải truyện (kể cả trang chặn bot), rồi chọn file <code>.hoangu.json</code> tại đây.</p>
+        <p className="text-muted">Dùng extension trong thư mục <code>extension/</code> để tải truyện (kể cả trang chặn bot), rồi chọn file <code>.hoangu.json</code> tại đây — app tự nhập ngay sau khi chọn.</p>
         <label className="block">Nối vào:{' '}
           <select className="input mt-1 min-w-0" aria-label="Truyện đích" value={target} onChange={(e) => setTarget(e.target.value)}>
             <option value="">Tự nhận theo nguồn / tạo truyện mới</option>
@@ -193,7 +196,6 @@ export function BookLibraryPage() {
         </div>
         {aiMsg && <p role="status" aria-label="Trạng thái Gemini" className="break-words">{aiMsg}</p>}
       </div>
-      {msg && <p role="status" className="rounded-xl bg-info-soft px-4 py-3 text-sm text-info-ink">{msg}</p>}
       {books.length === 0 && <p className="card text-center text-muted">Chưa có truyện nào.</p>}
       <ul className="fluid-grid items-start">
         {books.map((b) => {
