@@ -17,7 +17,7 @@
     remove(k) { return chrome.storage.local.remove(k); },
   };
   const K = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, buf: (b) => `hn:buf:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
   // ---------- trạng thái ----------
@@ -25,7 +25,10 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
+    sel: new Set(), lastClick: -1,
   };
+  /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
+  const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
 
   // ---------- UI (shadow DOM để không đụng CSS của trang) ----------
   const host = document.createElement('div');
@@ -71,8 +74,8 @@
     const view = f ? items.filter((c) => c.title.toLowerCase().includes(f)) : items;
     const off = Math.min(s.offset, Math.max(0, view.length - 1));
     const page = view.slice(off, off + LIST_PAGE);
-    const lo = Number(s.from) || 1;
-    const hi = s.count === '' ? Infinity : lo + Number(s.count) - 1;
+    const selUrls = [...s.sel];
+    const selSaved = selUrls.filter((u) => s.chap[u]).length;
 
     const oldList = bd.querySelector('.list');
     const listTop = oldList ? oldList.scrollTop : 0;
@@ -82,21 +85,30 @@
         el('small', null, `${savedCount} chương đã lưu trong extension · ${s.toc.length || '?'} chương trong mục lục`)),
       el('div', { class: 'row' },
         el('button', { onclick: () => loadToc(true), disabled: s.running }, s.toc.length ? 'Làm mới mục lục' : 'Tải mục lục'),
-        el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống truyện (${savedCount} chương)`)),
+        el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống truyện (${savedCount} chương)`),
+        el('button', { onclick: () => recover(), disabled: s.running, title: 'Quét kho extension, nhặt lại chương còn nội dung nhưng bị mất khỏi danh sách' }, 'Khôi phục chương mất')),
       s.toc.length ? el('input', { class: 'wide', placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } }) : '',
       s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
-        class: `it${c.n >= lo && c.n <= hi ? ' sel' : ''}`, title: c.title,
-        onclick: () => { s.from = c.n; render(); },
-      }, el('i', null, s.chap[c.url] ? '✓' : ''), el('span', { class: 'n' }, String(c.n)), el('span', null, c.title)))) : '',
+        class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
+        onclick: (e) => toggleSel(c, view, e.shiftKey),
+      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', null, s.chap[c.url] ? '✓' : ''), el('span', { class: 'n' }, String(c.n)), el('span', null, c.title)))) : '',
       s.toc.length > LIST_PAGE || f ? el('div', { class: 'row' },
         el('button', { onclick: () => { s.offset = Math.max(0, off - LIST_PAGE); render(); }, disabled: off === 0 }, '‹'),
         el('small', null, `${view.length ? off + 1 : 0}–${Math.min(off + LIST_PAGE, view.length)} / ${view.length}`),
         el('button', { onclick: () => { s.offset = off + LIST_PAGE; render(); }, disabled: off + LIST_PAGE >= view.length }, '›')) : '',
       s.toc.length ? el('div', { class: 'row' },
-        'Từ #', el('input', { type: 'number', min: 1, value: String(s.from), onchange: (e) => { s.from = Number(e.target.value) || 1; render(); } }),
-        'số chương', el('input', { type: 'number', min: 1, placeholder: 'đến hết', value: s.count, onchange: (e) => { s.count = e.target.value; render(); } })) : '',
+        'Từ #', el('input', { type: 'number', min: 1, value: String(s.from), onchange: (e) => { s.from = Number(e.target.value) || 1; } }),
+        'số chương', el('input', { type: 'number', min: 1, placeholder: 'đến hết', value: s.count, onchange: (e) => { s.count = e.target.value; } }),
+        el('button', { onclick: () => selectRange() }, 'Chọn khoảng')) : '',
+      s.toc.length ? el('div', { class: 'row' },
+        el('button', { onclick: () => { s.toc.forEach((c) => { if (!s.chap[c.url]) s.sel.add(c.url); }); render(); } }, 'Chọn chưa tải'),
+        el('button', { onclick: () => { s.toc.forEach((c) => s.sel.add(c.url)); render(); } }, 'Chọn tất cả'),
+        el('button', { onclick: () => { s.sel.clear(); render(); } }, 'Bỏ chọn'),
+        el('small', null, `${selUrls.length} chương được chọn (${selSaved} đã lưu)`)) : '',
       el('div', { class: 'row' },
-        s.toc.length ? el('button', { class: 'pri', onclick: () => startList(), disabled: s.running }, 'Tải chương đã chọn') : '',
+        s.toc.length ? el('button', { class: 'pri', onclick: () => startSelected(false), disabled: s.running || selUrls.length === selSaved }, 'Tải chương chưa lưu') : '',
+        s.toc.length ? el('button', { onclick: () => startSelected(true), disabled: s.running || !selUrls.length, title: 'Tải lại và ghi đè các chương đã chọn' }, 'Tải lại đã chọn') : '',
+        s.toc.length ? el('button', { onclick: () => exportBook(selUrls), disabled: s.running || !selSaved }, `Xuất đã chọn (${selSaved})`) : '',
         el('button', { class: s.toc.length ? '' : 'pri', onclick: () => startFollow(), disabled: s.running || !s.livePage }, 'Tải từ trang này (下一章)'),
         el('button', { onclick: () => { s.stop = true; say('Đang dừng…'); }, disabled: !s.running }, 'Dừng')),
       s.livePage ? '' : el('small', null, 'Trang này không phải chương — chọn chương trong mục lục.'),
@@ -110,6 +122,24 @@
     bd.scrollTop = bdTop;
   }
   const say = (m) => { s.msg = m; render(); };
+
+  function toggleSel(c, view, shift) {
+    const i = view.findIndex((x) => x.url === c.url);
+    if (shift && s.lastClick >= 0 && s.lastClick < view.length) {
+      const [a, b] = [Math.min(s.lastClick, i), Math.max(s.lastClick, i)];
+      const on = !s.sel.has(c.url);
+      for (let j = a; j <= b; j += 1) { if (on) s.sel.add(view[j].url); else s.sel.delete(view[j].url); }
+    } else if (s.sel.has(c.url)) s.sel.delete(c.url); else s.sel.add(c.url);
+    s.lastClick = i;
+    render();
+  }
+
+  function selectRange() {
+    const lo = Math.max(1, Number(s.from) || 1);
+    const end = s.count === '' ? s.toc.length : Math.min(s.toc.length, lo + Number(s.count) - 1);
+    s.toc.slice(lo - 1, end).forEach((c) => s.sel.add(c.url));
+    render();
+  }
 
   // ---------- tải trang ----------
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -158,6 +188,9 @@
   // ---------- lưu chương / xuất file ----------
   async function persistMeta() {
     s.info.updatedAt = new Date().toISOString();
+    // Gộp với bản đang lưu: tab/panel khác (hoặc lượt chạy cũ) không được ghi đè mất chương của nhau.
+    const stored = await store.get(K.chap(s.bookKey), {});
+    s.chap = { ...stored, ...s.chap };
     await store.set(K.book(s.bookKey), s.info);
     await store.set(K.chap(s.bookKey), s.chap);
     const reg = await loadRegistry();
@@ -220,10 +253,10 @@
   /** Nội dung chương nằm trong storage của extension (mỗi chương một key) → tải thêm hay xuất file lúc nào cũng được. */
   async function saveChapter(url, page) {
     const title = page.title || `Chương ${Object.keys(s.chap).length + 1}`;
-    s.info.seq = (s.info.seq || 0) + 1;
-    const n = s.info.seq;
-    await store.set(K.body(s.bookKey, n), { url, title, paragraphs: page.paragraphs, blocks: page.blocks });
-    s.chap[url] = { t: title, n, at: new Date().toISOString() };
+    const old = s.chap[url];
+    const k = old ? bodyKey(old, url) : K.bodyUrl(s.bookKey, url); // tải lại → ghi đè đúng chỗ cũ
+    await store.set(k, { url, title, paragraphs: page.paragraphs, blocks: page.blocks });
+    s.chap[url] = { t: title, k, at: new Date().toISOString() };
     const idx = await store.get(K.idx, {});
     idx[url] = s.bookKey;
     await store.set(K.idx, idx);
@@ -239,21 +272,78 @@
   }
 
   /** Gom mọi chương đã lưu của truyện thành MỘT file .hoangu.json (theo thứ tự mục lục; chương ngoài mục lục theo thứ tự lưu). */
-  async function exportBook() {
-    const entries = Object.entries(s.chap);
+  async function exportBook(onlyUrls) {
+    const only = onlyUrls && new Set(onlyUrls);
+    const entries = Object.entries(s.chap).filter(([u]) => !only || only.has(u));
     if (!entries.length) return;
     const order = new Map(s.toc.map((c, i) => [C.stripHash(c.url), i]));
-    entries.sort(([ua, a], [ub, b]) => (order.has(ua) ? order.get(ua) : 1e9 + a.n) - (order.has(ub) ? order.get(ub) : 1e9 + b.n));
+    entries.sort(([ua, a], [ub, b]) => {
+      const oa = order.has(ua); const ob = order.has(ub);
+      if (oa && ob) return order.get(ua) - order.get(ub);
+      if (oa !== ob) return oa ? -1 : 1;
+      return String(a.at).localeCompare(String(b.at));
+    });
     say('Đang gom file…');
     const chapters = [];
+    let missing = 0;
     for (let i = 0; i < entries.length; i += READ_BATCH) {
-      const keys = entries.slice(i, i + READ_BATCH).map(([, c]) => K.body(s.bookKey, c.n));
+      const keys = entries.slice(i, i + READ_BATCH).map(([u, c]) => bodyKey(c, u));
       const got = await chrome.storage.local.get(keys);
-      keys.forEach((k) => { if (got[k]) chapters.push(got[k]); });
+      keys.forEach((k, j) => {
+        const want = entries[i + j][0];
+        if (got[k] && C.stripHash(got[k].url) === want) chapters.push(got[k]); else missing += 1;
+      });
     }
-    const fileName = `${C.safeName(s.info.title)}.hoangu.json`;
+    const suffix = only ? `-${chapters.length}ch` : '';
+    const fileName = `${C.safeName(s.info.title)}${suffix}.hoangu.json`;
     download(fileName, JSON.stringify(C.makeBundle(s.info, chapters)));
-    say(`Đã xuất ${chapters.length} chương → ${fileName}\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.`);
+    say(`Đã xuất ${chapters.length} chương → ${fileName}${missing ? `\n⚠ ${missing} chương mất nội dung — bấm “Khôi phục chương mất” rồi tải lại chúng.` : '\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.'}`);
+  }
+
+  /** Đối chiếu danh sách chương với nội dung thật trong kho: bỏ mục không còn nội dung (để tải lại được),
+   *  nhặt lại nội dung mồ côi (của truyện này hoặc khớp mục lục) bị mất khỏi danh sách. */
+  async function recover() {
+    s.running = true;
+    try {
+      say('Đang quét kho extension…');
+      const ls = chrome.storage.local;
+      let dropped = 0;
+      const ents = Object.entries(s.chap);
+      for (let i = 0; i < ents.length; i += READ_BATCH) {
+        const part = ents.slice(i, i + READ_BATCH);
+        const keys = part.map(([u, c]) => bodyKey(c, u));
+        const got = await ls.get(keys);
+        part.forEach(([u], j) => {
+          const b = got[keys[j]];
+          if (!b || C.stripHash(b.url) !== u) { delete s.chap[u]; dropped += 1; }
+        });
+      }
+      const all = ls.getKeys ? await ls.getKeys() : Object.keys(await ls.get(null));
+      const bodies = all.filter((k) => k.startsWith('hn:body:'));
+      const mine = `hn:body:${s.bookKey}`;
+      const tocUrls = new Set(s.toc.map((c) => C.stripHash(c.url)));
+      let found = 0;
+      for (let i = 0; i < bodies.length; i += READ_BATCH) {
+        const keys = bodies.slice(i, i + READ_BATCH);
+        const got = await ls.get(keys);
+        keys.forEach((k) => {
+          const b = got[k];
+          if (!b || !b.url) return;
+          const u = C.stripHash(b.url);
+          if (s.chap[u]) return;
+          if (k.startsWith(`${mine}#`) || k.startsWith(`${mine}@`) || tocUrls.has(u)) {
+            s.chap[u] = { t: b.title, k, at: new Date().toISOString() };
+            found += 1;
+          }
+        });
+      }
+      await persistMeta();
+      s.running = false;
+      say(`Khôi phục xong: nhặt lại ${found} chương, bỏ ${dropped} mục mất nội dung (sẽ hiện chưa ✓ để tải lại).`);
+    } catch (err) {
+      s.running = false;
+      say(`⚠ Lỗi khi khôi phục: ${err.message}`);
+    }
   }
 
   // ---------- vòng tải tuần tự ----------
@@ -282,7 +372,7 @@
           }
         }
         first = false;
-        if (!s.chap[t.url]) { await saveChapter(t.url, page); got += 1; }
+        if (!s.chap[t.url] || t.force) { await saveChapter(t.url, page); got += 1; }
         if (t.onPage) t.onPage(page);
         say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)`);
       }
@@ -293,17 +383,16 @@
     say(`${reason} (+${got} chương, đã lưu trong extension)`.trim());
   }
 
-  function startList() {
-    const lo = Math.max(1, Number(s.from) || 1);
-    const end = s.count === '' ? s.toc.length : Math.min(s.toc.length, lo + Number(s.count) - 1);
-    const queue = s.toc.slice(lo - 1, end).filter((c) => !s.chap[c.url]);
-    if (!queue.length) { say('Các chương trong khoảng này đã được lưu hết.'); return; }
+  /** Tải các chương đang tick (theo thứ tự mục lục). force=true → tải lại và ghi đè cả chương đã lưu. */
+  function startSelected(force) {
+    const queue = s.toc.filter((c) => s.sel.has(c.url) && (force || !s.chap[c.url]));
+    if (!queue.length) { say('Không có chương nào cần tải trong phần đã chọn.'); return; }
     let i = 0;
     runLoop(() => {
       if (i >= queue.length) return null;
       const c = queue[i]; i += 1;
-      return { ...c, live: C.stripHash(c.url) === here };
-    }, 'Xong khoảng đã chọn.');
+      return { ...c, force, live: C.stripHash(c.url) === here };
+    }, 'Xong các chương đã chọn.');
   }
 
   function startFollow() {
@@ -347,7 +436,7 @@
 
   async function forget() {
     if (!confirm('Xóa toàn bộ chương đã lưu của truyện này khỏi extension? (File đã tải xuống không bị xóa)')) return;
-    const bodyKeys = Object.values(s.chap).map((c) => K.body(s.bookKey, c.n));
+    const bodyKeys = Object.entries(s.chap).map(([u, c]) => bodyKey(c, u));
     await chrome.storage.local.remove(bodyKeys);
     await Promise.all([K.book, K.chap, K.buf, K.toc].map((k) => store.remove(k(s.bookKey))));
     await store.set(K.reg, (await loadRegistry()).filter((k) => k !== s.bookKey));
