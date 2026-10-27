@@ -1,6 +1,6 @@
 # HoaNgữ – Tải truyện (Chrome extension)
 
-Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot), dọn nội dung, xuất **EPUB** (có ảnh bìa). Nhập file EPUB vào app HoaNgữ ở tab Tủ truyện.
+Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot), dọn nội dung, xuất **EPUB** (có ảnh bìa, nén deflate nên file nhỏ). Nhập file EPUB vào app HoaNgữ ở tab Tủ truyện.
 
 ## Cài đặt
 `chrome://extensions` → bật **Developer mode** → **Load unpacked** → chọn thư mục `extension/`.

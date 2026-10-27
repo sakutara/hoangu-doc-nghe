@@ -636,7 +636,7 @@
     const cover = s.cover ? { mime: s.cover.mime, data: fromB64(s.cover.b64) } : null;
     const volByUrl = new Map(s.toc.map((c) => [C.stripHash(c.url), c.vol]));
     chapters.forEach((c) => { const v = volByUrl.get(C.stripHash(c.url)); if (v) c.vol = v; });
-    const bytes = C.buildEpub({ title: s.info.title, bookKey: s.bookKey, cover, chapters });
+    const bytes = await C.buildEpub({ title: s.info.title, bookKey: s.bookKey, cover, chapters });
     download(fileName, bytes, 'application/epub+zip');
     say(`Đã xuất ${chapters.length} chương → ${fileName}${missing ? `\n⚠ ${missing} chương mất nội dung — bấm “Khôi phục chương mất” rồi tải lại chúng.` : '\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.'}`);
   }

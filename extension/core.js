@@ -333,7 +333,7 @@
 
   const safeName = (s) => s.replace(/[\\/:*?"<>|]/g, '_').trim().slice(0, 80) || 'truyen';
 
-  // ---------- ZIP tối giản (chỉ ghi kiểu “store”; đọc được cả deflate) ----------
+  // ---------- ZIP tối giản (ghi: deflate hoặc store; đọc: store + deflate) ----------
   const CRC_TABLE = (() => {
     const tb = new Uint32Array(256);
     for (let n = 0; n < 256; n += 1) {
@@ -350,28 +350,40 @@
   }
   const utf8 = (s) => new TextEncoder().encode(s);
 
-  /** @param {Array<{name:string,data:Uint8Array}>} entries @returns {Uint8Array} */
-  function zipStore(entries) {
+  async function deflateRaw(data) {
+    const stream = new Response(data).body.pipeThrough(new CompressionStream('deflate-raw'));
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  }
+
+  /** Ghi ZIP: nén deflate từng file; file đánh dấu `store` (mimetype — chuẩn EPUB bắt buộc không nén —, ảnh đã nén sẵn) và file nén không nhỏ đi thì để nguyên.
+   *  @param {Array<{name:string,data:Uint8Array,store?:boolean}>} entries @returns {Promise<Uint8Array>} */
+  async function zipPack(entries) {
     const chunks = [];
     const central = [];
     let offset = 0;
-    entries.forEach((e) => {
+    for (const e of entries) {
       const name = utf8(e.name);
       const crc = crc32(e.data);
+      let body = e.data;
+      let method = 0;
+      if (!e.store && e.data.length > 64) {
+        const z = await deflateRaw(e.data);
+        if (z.length < e.data.length) { body = z; method = 8; }
+      }
       const local = new DataView(new ArrayBuffer(30));
       local.setUint32(0, 0x04034b50, true); local.setUint16(4, 20, true); local.setUint16(6, 0x0800, true);
-      local.setUint16(8, 0, true); local.setUint16(10, 0, true); local.setUint16(12, 0x21, true);
-      local.setUint32(14, crc, true); local.setUint32(18, e.data.length, true); local.setUint32(22, e.data.length, true);
+      local.setUint16(8, method, true); local.setUint16(10, 0, true); local.setUint16(12, 0x21, true);
+      local.setUint32(14, crc, true); local.setUint32(18, body.length, true); local.setUint32(22, e.data.length, true);
       local.setUint16(26, name.length, true); local.setUint16(28, 0, true);
-      chunks.push(new Uint8Array(local.buffer), name, e.data);
+      chunks.push(new Uint8Array(local.buffer), name, body);
       const cen = new DataView(new ArrayBuffer(46));
       cen.setUint32(0, 0x02014b50, true); cen.setUint16(4, 20, true); cen.setUint16(6, 20, true); cen.setUint16(8, 0x0800, true);
-      cen.setUint16(10, 0, true); cen.setUint16(12, 0, true); cen.setUint16(14, 0x21, true);
-      cen.setUint32(16, crc, true); cen.setUint32(20, e.data.length, true); cen.setUint32(24, e.data.length, true);
+      cen.setUint16(10, method, true); cen.setUint16(12, 0, true); cen.setUint16(14, 0x21, true);
+      cen.setUint32(16, crc, true); cen.setUint32(20, body.length, true); cen.setUint32(24, e.data.length, true);
       cen.setUint16(28, name.length, true); cen.setUint32(42, offset, true);
       central.push(new Uint8Array(cen.buffer), name);
-      offset += 30 + name.length + e.data.length;
-    });
+      offset += 30 + name.length + body.length;
+    }
     const cenSize = central.reduce((n, c) => n + c.length, 0);
     const end = new DataView(new ArrayBuffer(22));
     end.setUint32(0, 0x06054b50, true); end.setUint16(8, entries.length, true); end.setUint16(10, entries.length, true);
@@ -425,14 +437,14 @@
   const IMG_EXT = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/gif': 'gif', 'image/webp': 'webp', 'image/svg+xml': 'svg' };
   const pad = (n) => String(n).padStart(4, '0');
 
-  /** Dựng EPUB 3 từ các chương. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
+  /** Dựng EPUB 3 (nén deflate) từ các chương; trả Promise<Uint8Array>. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
    *  @param {{title:string,bookKey?:string,origin?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
-  function buildEpub(book) {
+  async function buildEpub(book) {
     const cover = book.cover && IMG_EXT[book.cover.mime] ? book.cover : null;
     const css = 'body{line-height:1.7}h1,h2,h3{text-align:center}p{margin:.6em 0;text-indent:2em}';
     const xhtml = (title, body, attr) => `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="zh"><head><meta charset="utf-8"/><title>${xmlEsc(title)}</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body${attr || ''}>${body}</body></html>`;
     const entries = [
-      { name: 'mimetype', data: utf8('application/epub+zip') },
+      { name: 'mimetype', data: utf8('application/epub+zip'), store: true },
       { name: 'META-INF/container.xml', data: utf8('<?xml version="1.0" encoding="UTF-8"?>\n<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>') },
       { name: 'OEBPS/style.css', data: utf8(css) },
     ];
@@ -440,7 +452,7 @@
     const spine = [];
     if (cover) {
       const img = `cover.${IMG_EXT[cover.mime]}`;
-      entries.push({ name: `OEBPS/${img}`, data: cover.data });
+      entries.push({ name: `OEBPS/${img}`, data: cover.data, store: true });
       entries.push({ name: 'OEBPS/cover.xhtml', data: utf8(xhtml(book.title, `<div style="text-align:center"><img src="${img}" alt="${xmlEsc(book.title)}" style="max-width:100%;max-height:100%"/></div>`)) });
       manifest.push(`<item id="cover-image" href="${img}" media-type="${cover.mime}" properties="cover-image"/>`, '<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>');
       spine.push('<itemref idref="cover" linear="no"/>');
@@ -477,7 +489,7 @@
     entries.push({ name: 'OEBPS/nav.xhtml', data: utf8(xhtml(book.title, `<nav epub:type="toc"><h1>Mục lục</h1><ol>${navItems.join('')}</ol></nav>`)) });
     entries.push({ name: 'OEBPS/toc.ncx', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="${uid}"/></head><docTitle><text>${xmlEsc(book.title)}</text></docTitle><navMap>${ncxPoints.join('')}</navMap></ncx>`) });
     entries.push({ name: 'OEBPS/content.opf', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2005/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">${uid}</dc:identifier><dc:title>${xmlEsc(book.title)}</dc:title><dc:language>zh</dc:language>${book.bookKey ? `<dc:source>${xmlEsc(book.bookKey)}</dc:source>` : ''}<meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, 'Z')}</meta>${cover ? '<meta name="cover" content="cover-image"/>' : ''}</metadata><manifest>${manifest.join('')}</manifest><spine toc="ncx">${spine.join('')}</spine></package>`) });
-    return zipStore(entries);
+    return zipPack(entries);
   }
 
   const dirname = (p) => (p.includes('/') ? p.slice(0, p.lastIndexOf('/') + 1) : '');

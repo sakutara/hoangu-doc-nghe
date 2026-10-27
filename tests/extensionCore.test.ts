@@ -141,7 +141,7 @@ describe('extension core', () => {
 
   it('EPUB: xuất (có bìa, URL gốc) → nhập lại đúng thứ tự, tiêu đề, khối, bìa', async () => {
     const cover = { mime: 'image/png', data: new Uint8Array([137, 80, 78, 71, 1, 2, 3]) };
-    const bytes = C.buildEpub({
+    const bytes = await C.buildEpub({
       title: '书 & <名>', bookKey: 'https://x.test/b/', cover,
       chapters: [
         { url: 'https://x.test/b/1.html', title: '第1章 开始', blocks: [{ tag: 'h2', text: '小节' }, { tag: 'p', text: HAN }] },
@@ -158,7 +158,7 @@ describe('extension core', () => {
   });
 
   it('EPUB: mục lục 2 tầng Quyển → Chương, playOrder tăng dần', async () => {
-    const bytes = C.buildEpub({
+    const bytes = await C.buildEpub({
       title: 'T',
       chapters: [
         { url: 'u1', title: '第一章 山边小村', vol: '第一卷 七玄门风云', paragraphs: ['甲'] },
@@ -198,8 +198,25 @@ describe('extension core', () => {
     await expect(C.parseEpub(new Uint8Array([1, 2, 3]))).rejects.toThrow('ZIP');
   });
 
+  it('EPUB xuất ra được nén: mimetype không nén ở đầu file, nhỏ hơn bản không nén, nhập lại nguyên vẹn', async () => {
+    const para = '韩立睁开双眼，看着四周陌生的山村，心中暗自盘算着下一步该怎么走。'.repeat(20);
+    const chapters = Array.from({ length: 30 }, (_, i) => ({ url: `u${i}`, title: `第${i + 1}章`, paragraphs: [para, `${para}${i}`] }));
+    const cover = { mime: 'image/png', data: new Uint8Array(200).map((_, i) => i) };
+    const bytes = await C.buildEpub({ title: 'T', cover, chapters });
+    const raw = chapters.reduce((n, c) => n + c.paragraphs.join('').length * 3, 0);
+    expect(bytes.length).toBeLessThan(raw / 3);
+    expect(new TextDecoder().decode(bytes.subarray(30, 38))).toBe('mimetype'); // mimetype đầu tiên
+    expect(new TextDecoder().decode(bytes.subarray(38, 58))).toBe('application/epub+zip'); // và không nén
+    const zip = await JSZip.loadAsync(bytes);
+    expect(await zip.file('OEBPS/ch0030.xhtml')!.async('string')).toContain('第30章');
+    const back = await C.parseEpub(bytes);
+    expect(back.chapters).toHaveLength(30);
+    expect(back.chapters[29].paragraphs).toEqual([para, `${para}29`]);
+    expect([...back.cover.data]).toEqual([...cover.data]);
+  });
+
   it('EPUB xuất ra mở được bằng trình đọc ZIP chuẩn (mimetype đứng đầu)', async () => {
-    const bytes = C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
+    const bytes = await C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
     const zip = await JSZip.loadAsync(bytes);
     expect(Object.keys(zip.files)[0]).toBe('mimetype');
     expect(await zip.file('mimetype')!.async('string')).toBe('application/epub+zip');
