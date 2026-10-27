@@ -28,54 +28,79 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
-    sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl',
+    sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl', current: null, follow: false, rangeOpen: false,
   };
   /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
   const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
 
-  // ---------- UI (shadow DOM để không đụng CSS của trang) ----------
+  // ---------- UI (shadow DOM để không đụng CSS của trang; kiểu dáng Tailwind biên dịch sẵn ở panel.css) ----------
   const host = document.createElement('div');
   host.id = 'hoangu-panel-host';
   host.style.cssText = 'position:fixed;top:12px;right:12px;z-index:2147483647';
   const sh = host.attachShadow({ mode: 'open' });
-  sh.innerHTML = `<style>
-    :host{all:initial}
-    .box{width:340px;max-height:86vh;display:flex;flex-direction:column;background:#fffaf0;color:#222;border:2px solid #b91c1c;border-radius:8px;font:13px/1.4 sans-serif;box-shadow:0 2px 14px rgba(0,0,0,.35)}
-    .hd{display:flex;align-items:center;gap:6px;padding:8px 10px;background:#b91c1c;color:#fff;border-radius:5px 5px 0 0}
-    .hd b{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .bd{padding:8px 10px;overflow:auto;display:flex;flex-direction:column;gap:6px}
-    button{cursor:pointer;padding:3px 9px;border:1px solid #b91c1c;background:#fff;color:#b91c1c;border-radius:4px;font:inherit}
-    button.pri{background:#b91c1c;color:#fff}
-    button:disabled{opacity:.45;cursor:default}
-    input{font:inherit;padding:2px 4px;border:1px solid #bbb;border-radius:4px;width:64px}
-    input.wide,input.edit{width:100%;box-sizing:border-box}
-    .ttl{cursor:text;border-bottom:1px dashed #bbb}
-    .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-    .msg{padding:4px 6px;background:#fff;border:1px solid #ddd;border-radius:4px;white-space:pre-wrap}
-    .warn{border-color:#b91c1c;color:#b91c1c}
-    .list{border:1px solid #ddd;background:#fff;max-height:220px;overflow:auto}
-    .it{display:flex;gap:6px;padding:2px 6px;cursor:pointer;border-bottom:1px solid #f0f0f0}
-    .it:hover{background:#fdecec}.it.sel{background:#fbd5d5}
-    .it i{width:14px;font-style:normal;color:#15803d}.it span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .n{color:#888;min-width:34px}
-    small{color:#666}
-    .tabs{display:flex;border-bottom:2px solid #b91c1c;background:#fde8e8}
-    .tabs button{flex:1;border:0;border-radius:0;background:transparent;padding:6px 4px;font-weight:600}
-    .tabs button.on{background:#b91c1c;color:#fff}
-    .sw{display:flex;align-items:center;gap:8px;padding:0;border:0;background:none;color:inherit;font-weight:600}
-    .sw i{position:relative;width:38px;height:20px;border-radius:99px;background:#bbb;transition:background .15s;flex:none}
-    .sw i::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
-    .sw[aria-checked="true"] i{background:#15803d}.sw[aria-checked="true"] i::after{left:20px}
-    .sv{display:flex;gap:6px;align-items:baseline;padding:2px 6px;border-bottom:1px solid #f0f0f0}
-    .sv b{font-size:15px}.sv span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sv button{padding:0 6px}
-  </style><div class="box"><div class="hd"><b>HoaNgữ</b><button data-a="hide">×</button></div><div class="tabs"><button data-t="read">Đọc truyện</button><button data-t="dl">Tải truyện</button></div><div class="bd"></div></div>`;
+  sh.innerHTML = `<div class="hn-shadow flex max-h-[88vh] w-[372px] flex-col overflow-hidden rounded-xl border-2 border-brand bg-paper text-[13px] text-neutral-800" style="font-family:system-ui,-apple-system,'Segoe UI',sans-serif">
+    <div class="flex items-center gap-2 bg-brand px-3 py-2 text-white">
+      <b class="text-sm tracking-wide">HoaNgữ</b>
+      <div class="ml-1 flex flex-1 rounded-md bg-black/20 p-0.5" role="tablist">
+        <button data-t="dl" role="tab" class="flex-1 cursor-pointer rounded px-2 py-1 text-xs font-semibold">Tải truyện</button>
+        <button data-t="read" role="tab" class="flex-1 cursor-pointer rounded px-2 py-1 text-xs font-semibold">Đọc truyện</button>
+      </div>
+      <button data-a="hide" aria-label="Đóng panel" title="Đóng panel" class="grid size-7 cursor-pointer place-items-center rounded-md hover:bg-black/20"></button>
+    </div>
+    <div class="bd hn-scroll flex min-h-0 flex-1 flex-col gap-3 overflow-auto p-3"></div>
+    <div class="ft hidden flex-col gap-2 border-t border-brand/25 bg-white px-3 py-2"></div>
+  </div>`;
   document.documentElement.appendChild(host);
+  // CSS: nạp panel.css (web_accessible_resources) qua stylesheet nhận nuôi → không vướng CSP của trang.
+  fetch(chrome.runtime.getURL('panel.css')).then((r) => r.text()).then((css) => {
+    try { const ss = new CSSStyleSheet(); ss.replaceSync(css); sh.adoptedStyleSheets = [ss]; } catch (e) { const st = document.createElement('style'); st.textContent = css; sh.prepend(st); }
+  }).catch(() => { /* không có CSS vẫn dùng được, chỉ xấu */ });
   const bd = sh.querySelector('.bd');
-  sh.querySelector('[data-a="hide"]').onclick = () => { host.style.display = 'none'; };
-  sh.querySelectorAll('.tabs button').forEach((b) => {
-    b.onclick = () => { s.tab = b.getAttribute('data-t'); store.set(K.ui, { tab: s.tab, reader: HN().state.on }); render(); };
-  });
+  const ft = sh.querySelector('.ft');
   const HN = () => window.HNReader;
+
+  // Biểu tượng (Lucide, nét 2px).
+  const ICONS = {
+    image: '<rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+    trash: '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>',
+    pencil: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+    refresh: '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
+    upload: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/>',
+    download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+    search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    lifebuoy: '<circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/>',
+    filter: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
+    stop: '<rect width="14" height="14" x="5" y="5" rx="1"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    alert: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+    left: '<path d="m15 18-6-6 6-6"/>',
+    right: '<path d="m9 18 6-6-6-6"/>',
+    skip: '<polygon points="5 4 15 12 5 20 5 4"/><line x1="19" x2="19" y1="5" y2="19"/>',
+    volume: '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>',
+    star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  };
+  const icon = (name, cls = 'size-4') => {
+    const e = document.createElement('span');
+    e.className = `inline-flex shrink-0 ${cls}`;
+    e.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-full" aria-hidden="true">${ICONS[name] || ''}</svg>`;
+    return e;
+  };
+  sh.querySelector('[data-a="hide"]').append(icon('x'));
+  sh.querySelector('[data-a="hide"]').onclick = () => { host.style.display = 'none'; };
+  sh.querySelectorAll('[data-t]').forEach((b) => {
+    b.onclick = () => { s.tab = b.getAttribute('data-t'); saveUi(); render(); };
+  });
+  const saveUi = () => store.set(K.ui, { tab: s.tab, reader: HN().state.on, mode: HN().state.mode });
+
+  const BTN = {
+    pri: 'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-md bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark disabled:pointer-events-none disabled:opacity-40',
+    sec: 'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-md border border-brand bg-white px-2.5 py-1.5 font-medium text-brand hover:bg-brand-soft disabled:pointer-events-none disabled:opacity-40',
+    ico: 'grid size-7 cursor-pointer place-items-center rounded-md text-neutral-600 hover:bg-brand-soft hover:text-brand disabled:pointer-events-none disabled:opacity-40',
+    chip: 'cursor-pointer rounded-full border border-neutral-300 bg-white px-2 py-0.5 text-xs hover:border-brand hover:text-brand disabled:pointer-events-none disabled:opacity-40',
+    over: 'grid size-6 cursor-pointer place-items-center rounded-full bg-black/60 text-white hover:bg-brand disabled:pointer-events-none disabled:opacity-40',
+    field: 'rounded-md border border-neutral-300 bg-white px-2 py-1 outline-none focus:border-brand',
+  };
 
   function el(tag, props, ...kids) {
     const e = document.createElement(tag);
@@ -83,9 +108,16 @@
     kids.flat().forEach((c) => e.append(c));
     return e;
   }
+  /** Nút chỉ có biểu tượng (có tooltip + nhãn cho trình đọc màn hình). */
+  const ibtn = (name, label, onclick, opts = {}) => el('button', { class: opts.class || BTN.ico, title: label, 'aria-label': label, onclick, disabled: opts.disabled }, icon(name, opts.size));
 
   function render() {
-    sh.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.getAttribute('data-t') === s.tab));
+    sh.querySelectorAll('[data-t]').forEach((b) => {
+      const on = b.getAttribute('data-t') === s.tab;
+      b.setAttribute('aria-selected', String(on));
+      b.classList.toggle('bg-white', on); b.classList.toggle('text-brand', on);
+      b.classList.toggle('text-white', !on); b.classList.toggle('hover:bg-white/15', !on);
+    });
     if (s.tab === 'read') renderRead(); else renderDownload();
   }
 
@@ -95,27 +127,44 @@
     const st = R.state;
     const dict = { idle: '', loading: 'Đang tải từ điển CC-CEDICT…', ready: `Từ điển sẵn sàng (+${st.count.toLocaleString('vi-VN')} mục CC-CEDICT, cùng từ điển lõi & giáo trình của app).`, error: '⚠ Không nạp được CC-CEDICT — chỉ dùng từ điển lõi & giáo trình.' }[st.dict];
     const saved = R.getSaved();
+    const seg = (mode, label, hint) => el('button', {
+      class: `flex-1 cursor-pointer rounded px-2 py-1 text-xs font-medium ${st.mode === mode ? 'bg-brand text-white' : 'text-neutral-700 hover:bg-brand-soft'}`, title: hint, role: 'radio', 'aria-checked': String(st.mode === mode),
+      onclick: () => { R.setMode(mode); saveUi(); render(); },
+    }, label);
+    ft.className = 'ft hidden'; ft.replaceChildren();
     bd.replaceChildren(
-      el('button', { class: 'sw', role: 'switch', 'aria-checked': String(st.on), onclick: () => setReader(!st.on) }, el('i'), st.on ? 'Đọc từ: BẬT' : 'Đọc từ: TẮT'),
-      el('small', null, 'Bật lên rồi bấm vào chữ Hán bất kỳ trên trang web để xem phiên âm, Hán-Việt, nghĩa, chữ thành phần, nghe phát âm và lưu từ — giống tính năng tra từ của app. Link và nút trên trang vẫn bấm bình thường; Esc để đóng popup.'),
-      dict ? el('div', { class: `msg${dict.startsWith('⚠') ? ' warn' : ''}` }, dict) : '',
-      el('small', null, 'Công tắc chỉ có hiệu lực trên tab này; sang trang khác (bấm 下一章…) cần bấm lại biểu tượng extension để mở panel — trạng thái bật/tắt được nhớ.'),
-      el('b', null, `Từ đã lưu (${saved.length})`),
-      saved.length ? el('div', { class: 'list' }, saved.map((w) => el('div', { class: 'sv', title: w.meanings.join('; ') },
-        el('b', { lang: 'zh-CN' }, w.simplified), el('small', null, w.pinyin), el('span', null, w.meanings[0] || ''),
-        el('button', { onclick: () => R.removeSaved(w.simplified), title: 'Bỏ lưu' }, '×')))) : el('small', null, 'Chưa lưu từ nào — bấm “☆ Lưu từ” trong popup.'),
+      el('button', { class: 'flex cursor-pointer items-center gap-3 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-left font-semibold', role: 'switch', 'aria-checked': String(st.on), onclick: () => setReader(!st.on) },
+        el('span', { class: `relative h-5 w-9 shrink-0 rounded-full transition-colors ${st.on ? 'bg-green-600' : 'bg-neutral-400'}` },
+          el('span', { class: `absolute top-0.5 size-4 rounded-full bg-white transition-all ${st.on ? 'left-[18px]' : 'left-0.5'}` })),
+        el('span', { class: 'flex-1' }, st.on ? 'Tra từ: BẬT' : 'Tra từ: TẮT')),
+      el('div', { class: 'flex flex-col gap-1' },
+        el('span', { class: 'text-xs font-semibold text-neutral-600' }, 'Cách mở popup tra từ'),
+        el('div', { class: 'flex gap-0.5 rounded-md border border-neutral-200 bg-white p-0.5', role: 'radiogroup' },
+          seg('alt', 'Giữ Alt + bấm', 'Bấm bình thường vẫn dùng được mọi tính năng của trang'),
+          seg('click', 'Bấm vào chữ', 'Mọi cú bấm vào chữ Hán đều mở popup (trừ link/nút)')),
+        el('small', { class: 'text-xs text-neutral-500' }, st.mode === 'alt'
+          ? 'Bấm bình thường không bị can thiệp — tính năng bấm của trang (menu, lật trang…) vẫn dùng được. Giữ Alt (⌥ trên Mac) rồi bấm vào chữ Hán để tra.'
+          : 'Bấm vào chữ Hán bất kỳ để tra; link, nút và vùng có con trỏ bấm của trang được bỏ qua. Nếu vẫn vướng, chuyển sang “Giữ Alt + bấm” hoặc tắt Tra từ.')),
+      dict ? el('div', { class: `rounded-md border px-2 py-1 text-xs ${dict.startsWith('⚠') ? 'border-brand text-brand' : 'border-neutral-200 bg-white text-neutral-600'}` }, dict) : '',
+      el('div', { class: 'flex items-baseline justify-between' }, el('b', null, `Từ đã lưu (${saved.length})`), el('small', { class: 'text-xs text-neutral-500' }, 'Esc để đóng popup')),
+      saved.length ? el('div', { class: 'max-h-[300px] overflow-auto rounded-md border border-neutral-200 bg-white' }, saved.map((w) => el('div', { class: 'flex items-baseline gap-2 border-b border-neutral-100 px-2 py-1', title: w.meanings.join('; ') },
+        el('b', { class: 'text-[15px]', lang: 'zh-CN' }, w.simplified), el('small', { class: 'text-xs text-neutral-500' }, w.pinyin), el('span', { class: 'min-w-0 flex-1 truncate' }, w.meanings[0] || ''),
+        ibtn('x', 'Bỏ lưu', () => R.removeSaved(w.simplified), { class: 'grid size-5 cursor-pointer place-items-center rounded text-neutral-500 hover:bg-brand-soft hover:text-brand', size: 'size-3.5' }))))
+        : el('small', { class: 'text-xs text-neutral-500' }, 'Chưa lưu từ nào — bấm “Lưu từ” trong popup.'),
+      el('small', { class: 'text-xs text-neutral-500' }, 'Công tắc chỉ có hiệu lực trên tab này; sang trang khác (bấm 下一章…) cần bấm lại biểu tượng extension để mở panel — trạng thái được nhớ.'),
     );
   }
 
   async function setReader(on) {
     const R = HN();
     if (on) await R.enable(); else R.disable();
-    await store.set(K.ui, { tab: s.tab, reader: on });
+    await saveUi();
     render();
   }
 
   function renderDownload() {
     const savedCount = Object.keys(s.chap).length;
+    const total = s.toc.length;
     const items = s.toc.map((c, i) => ({ ...c, n: i + 1 }));
     const f = s.filter.trim().toLowerCase();
     const view = f ? items.filter((c) => c.title.toLowerCase().includes(f)) : items;
@@ -124,59 +173,114 @@
     const selUrls = [...s.sel];
     const selSaved = selUrls.filter((u) => s.chap[u]).length;
     const oldCount = s.toc.filter((c) => s.chap[c.url] && isOld(s.chap[c.url])).length;
+    const pct = total ? Math.min(100, Math.round((Object.keys(s.chap).filter((u) => s.toc.some((c) => c.url === u)).length / total) * 100)) : 0;
 
-    const oldList = bd.querySelector('.list');
+    const oldList = bd.querySelector('.hn-list');
     const listTop = oldList ? oldList.scrollTop : 0;
     const bdTop = bd.scrollTop;
-    bd.replaceChildren(
-      el('div', null, s.editing === BOOK_EDIT ? editBox(s.info.title, (v) => saveBookTitle(v))
-        : el('b', { class: 'ttl', title: 'Bấm để sửa tên truyện', onclick: () => startEdit(BOOK_EDIT) }, s.info ? s.info.title : '…'), el('br'),
-        el('small', null, `${savedCount} chương đã lưu trong extension · ${s.toc.length || '?'} chương trong mục lục`)),
-      el('div', { class: 'row' },
-        el('button', { onclick: () => loadToc(true), disabled: s.running }, s.toc.length ? 'Làm mới mục lục' : 'Tải mục lục'),
-        el('button', { class: 'pri', onclick: () => exportBook(), disabled: s.running || !savedCount }, `Tải xuống EPUB (${savedCount} chương)`),
-        el('button', { onclick: () => recover(), disabled: s.running, title: 'Quét kho extension, nhặt lại chương còn nội dung nhưng bị mất khỏi danh sách' }, 'Khôi phục chương mất'),
-        el('button', { onclick: () => refilter(), disabled: s.running || !savedCount, title: 'Bỏ khoảng trắng (trừ sau dấu ;) rồi dọn link, “hetushu”, “.com” khỏi nội dung các chương đã lưu' }, 'Lọc lại nội dung đã lưu')),
-      el('div', { class: 'row' },
-        s.cover ? el('img', { src: s.cover.url, style: 'height:56px;border:1px solid #ccc;border-radius:3px', alt: 'Bìa' }) : el('small', null, 'Chưa có ảnh bìa'),
-        el('button', { onclick: () => pickFile('image/*', setCover), disabled: s.running }, s.cover ? 'Đổi ảnh bìa' : 'Tải ảnh bìa'),
-        s.cover ? el('button', { onclick: () => clearCover(), disabled: s.running }, 'Gỡ bìa') : '',
-        el('button', { onclick: () => pickFile('.epub,application/epub+zip', importEpub), disabled: s.running, title: 'Đổ chương trong EPUB vào kho + mục lục để tải lại / xử lý lại' }, 'Nhập EPUB')),
-      s.toc.length ? el('input', { class: 'wide', placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } }) : '',
-      s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
-        class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
+
+    // --- thẻ truyện: bìa (nút bấm nằm trên bìa) + tên + tiến độ + xuất ---
+    const cover = el('div', { class: 'group relative h-[104px] w-[78px] shrink-0 overflow-hidden rounded-md border border-neutral-300 bg-brand-soft' },
+      s.cover
+        ? el('img', { src: s.cover.url, alt: 'Bìa', class: 'size-full object-cover' })
+        : el('button', { class: 'flex size-full cursor-pointer flex-col items-center justify-center gap-1 text-xs text-brand/80 hover:bg-white/60 disabled:pointer-events-none', title: 'Tải ảnh bìa', disabled: s.running, onclick: () => pickFile('image/*', setCover) }, icon('image', 'size-6'), 'Thêm bìa'),
+      s.cover ? el('div', { class: 'absolute right-1 top-1 flex flex-col gap-1 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100' },
+        ibtn('image', 'Đổi ảnh bìa', () => pickFile('image/*', setCover), { class: BTN.over, disabled: s.running, size: 'size-3.5' }),
+        ibtn('x', 'Xoá ảnh bìa', () => clearCover(), { class: BTN.over, disabled: s.running, size: 'size-3.5' })) : '');
+
+    const head = el('div', { class: 'flex gap-3' }, cover,
+      el('div', { class: 'flex min-w-0 flex-1 flex-col gap-1.5' },
+        s.editing === BOOK_EDIT ? editBox(s.info.title, (v) => saveBookTitle(v))
+          : el('div', { class: 'group flex items-start gap-1' },
+            el('b', { class: 'line-clamp-2 min-w-0 flex-1 text-[15px] leading-snug' }, s.info ? s.info.title : '…'),
+            ibtn('pencil', 'Sửa tên truyện', () => startEdit(BOOK_EDIT), { class: 'grid size-6 shrink-0 cursor-pointer place-items-center rounded text-neutral-400 hover:bg-brand-soft hover:text-brand', size: 'size-3.5' })),
+        el('div', { class: 'h-1.5 overflow-hidden rounded-full bg-neutral-200', title: `${pct}% mục lục đã lưu` }, el('div', { class: 'h-full rounded-full bg-green-600', style: `width:${pct}%` })),
+        el('small', { class: 'text-xs text-neutral-600' }, `${savedCount} chương đã lưu · ${total || '?'} trong mục lục`),
+        el('button', { class: `${BTN.pri} mt-auto`, onclick: () => exportBook(), disabled: s.running || !savedCount }, icon('download'), `Tải EPUB (${savedCount})`)));
+
+    // --- công cụ: dãy nút biểu tượng ---
+    const tools = el('div', { class: 'flex items-center gap-0.5 rounded-md border border-neutral-200 bg-white px-1 py-0.5' },
+      ibtn('refresh', total ? 'Làm mới mục lục' : 'Tải mục lục', () => loadToc(true), { disabled: s.running }),
+      ibtn('upload', 'Nhập EPUB — đổ chương trong EPUB vào kho + mục lục để tải lại / xử lý lại', () => pickFile('.epub,application/epub+zip', importEpub), { disabled: s.running }),
+      ibtn('lifebuoy', 'Khôi phục chương mất — quét kho extension, nhặt lại chương còn nội dung nhưng mất khỏi danh sách', () => recover(), { disabled: s.running }),
+      ibtn('filter', 'Lọc lại nội dung đã lưu — bỏ khoảng trắng (trừ sau dấu ;) rồi dọn link, “hetushu”, “.com” khỏi các chương đã lưu', () => refilter(), { disabled: s.running || !savedCount }),
+      el('span', { class: 'flex-1' }),
+      ibtn('trash', 'Xoá dữ liệu truyện này', () => forget(), { disabled: s.running, class: 'grid size-7 cursor-pointer place-items-center rounded-md text-neutral-500 hover:bg-red-100 hover:text-red-700 disabled:pointer-events-none disabled:opacity-40' }));
+
+    // --- danh sách chương ---
+    let lastVol = null;
+    const rows = [];
+    page.forEach((c) => {
+      if (!f && c.vol && c.vol !== lastVol) {
+        const vol = c.vol;
+        rows.push(el('div', { class: 'sticky top-0 z-10 flex cursor-pointer items-center gap-1 border-b border-brand/20 bg-brand-soft px-2 py-1 text-xs font-semibold text-brand-dark', title: 'Bấm để chọn / bỏ chọn cả quyển', onclick: () => toggleVolume(vol) }, el('span', { class: 'truncate' }, vol)));
+      }
+      lastVol = c.vol || lastVol;
+      const isCur = s.current === c.url;
+      const saved = s.chap[c.url];
+      const sel = s.sel.has(c.url);
+      const status = isCur ? el('span', { class: 'flex w-3 shrink-0 justify-center', title: 'Đang tải' }, el('span', { class: 'hn-pulse size-2 rounded-full bg-amber-500' }))
+        : saved ? (isOld(saved) ? el('span', { class: 'w-3 shrink-0 text-center text-amber-600', title: 'Lưu bằng bản cũ — có thể sai thứ tự/lẫn đoạn nhiễu, nên tải lại' }, '△') : icon('check', 'size-3 text-green-600'))
+          : el('span', { class: 'w-3 shrink-0' });
+      rows.push(el('div', {
+        class: `group flex cursor-pointer items-center gap-2 border-b border-neutral-100 px-2 py-1 ${isCur ? 'bg-amber-100' : sel ? 'bg-red-100' : 'hover:bg-brand-soft'}`, title: c.title, 'data-u': c.url,
         onclick: (e) => toggleSel(c, view, e.shiftKey),
-      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', { title: s.chap[c.url] && isOld(s.chap[c.url]) ? 'Lưu bằng bản cũ — có thể sai thứ tự/lẫn đoạn nhiễu, nên tải lại' : '' }, s.chap[c.url] ? (isOld(s.chap[c.url]) ? '△' : '✓') : ''), el('span', { class: 'n' }, String(c.n)),
-        s.editing === c.url ? editBox(c.title, (v) => saveChapterTitle(c.url, v))
-          : el('span', { class: 'ttl', title: 'Bấm để sửa tiêu đề (bấm chỗ khác trên dòng để chọn chương)', onclick: (e) => { e.stopPropagation(); startEdit(c.url); } }, c.title)))) : '',
-      s.toc.length > LIST_PAGE || f ? el('div', { class: 'row' },
-        el('button', { onclick: () => { s.offset = Math.max(0, off - LIST_PAGE); render(); }, disabled: off === 0 }, '‹'),
-        el('small', null, `${view.length ? off + 1 : 0}–${Math.min(off + LIST_PAGE, view.length)} / ${view.length}`),
-        el('button', { onclick: () => { s.offset = off + LIST_PAGE; render(); }, disabled: off + LIST_PAGE >= view.length }, '›')) : '',
-      s.toc.length ? el('div', { class: 'row' },
-        'Từ #', el('input', { type: 'number', min: 1, value: String(s.from), onchange: (e) => { s.from = Number(e.target.value) || 1; } }),
-        'số chương', el('input', { type: 'number', min: 1, placeholder: 'đến hết', value: s.count, onchange: (e) => { s.count = e.target.value; } }),
-        el('button', { onclick: () => selectRange() }, 'Chọn khoảng')) : '',
-      s.toc.length ? el('div', { class: 'row' },
-        el('button', { onclick: () => { s.toc.forEach((c) => { if (!s.chap[c.url]) s.sel.add(c.url); }); render(); } }, 'Chọn chưa tải'),
-        el('button', { onclick: () => { s.toc.forEach((c) => s.sel.add(c.url)); render(); } }, 'Chọn tất cả'),
-        el('button', { onclick: () => selectOld(), title: 'Tick các chương đã lưu bằng bản cào cũ (△) rồi bấm “Tải lại đã chọn”' }, `Chọn chương bản cũ (${oldCount})`),
-        el('button', { onclick: () => { s.sel.clear(); render(); } }, 'Bỏ chọn'),
-        el('small', null, `${selUrls.length} chương được chọn (${selSaved} đã lưu)`)) : '',
-      el('div', { class: 'row' },
-        s.toc.length ? el('button', { class: 'pri', onclick: () => startSelected(false), disabled: s.running || selUrls.length === selSaved }, 'Tải chương chưa lưu') : '',
-        s.toc.length ? el('button', { onclick: () => startSelected(true), disabled: s.running || !selUrls.length, title: 'Tải lại và ghi đè các chương đã chọn' }, 'Tải lại đã chọn') : '',
-        s.toc.length ? el('button', { onclick: () => exportBook(selUrls), disabled: s.running || !selSaved }, `Xuất đã chọn (${selSaved})`) : '',
-        el('button', { class: s.toc.length ? '' : 'pri', onclick: () => startFollow(), disabled: s.running || !s.livePage }, 'Tải từ trang này (下一章)'),
-        el('button', { onclick: () => { s.stop = true; say('Đang dừng…'); }, disabled: !s.running }, 'Dừng')),
-      s.livePage ? '' : el('small', null, 'Trang này không phải chương — chọn chương trong mục lục.'),
-      el('div', { class: `msg${s.msg.startsWith('⚠') ? ' warn' : ''}` }, s.msg || 'Sẵn sàng. Tiến độ được lưu theo URL truyện, tải lại trang không mất.'),
-      el('div', { class: 'row' },
-        el('button', { onclick: () => forget(), disabled: s.running }, 'Xóa dữ liệu truyện này')),
-    );
-    // replaceChildren dựng lại DOM → giữ nguyên vị trí cuộn của danh sách chương (không nhảy lên đầu mỗi lần cập nhật).
-    const newList = bd.querySelector('.list');
-    if (newList) newList.scrollTop = listTop;
+      }, el('input', { type: 'checkbox', checked: sel, class: 'pointer-events-none size-3.5 shrink-0 accent-[#b91c1c]', tabindex: '-1' }), status,
+      el('span', { class: 'w-8 shrink-0 text-right text-xs tabular-nums text-neutral-400' }, String(c.n)),
+      s.editing === c.url ? editBox(c.title, (v) => saveChapterTitle(c.url, v))
+        : [el('span', { class: 'min-w-0 flex-1 truncate' }, c.title),
+          el('button', { class: 'grid size-5 shrink-0 cursor-pointer place-items-center rounded text-neutral-400 opacity-0 hover:bg-white hover:text-brand group-hover:opacity-100', title: 'Sửa tiêu đề', 'aria-label': 'Sửa tiêu đề', onclick: (e) => { e.stopPropagation(); startEdit(c.url); } }, icon('pencil', 'size-3'))]));
+    });
+
+    const chapters = total ? el('div', { class: 'flex flex-col gap-2' },
+      el('div', { class: 'relative' },
+        el('span', { class: 'pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-neutral-400' }, icon('search', 'size-3.5')),
+        el('input', { class: `${BTN.field} wide w-full pl-7`, placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } })),
+      el('div', { class: 'flex flex-wrap items-center gap-1.5' },
+        el('button', { class: BTN.chip, onclick: () => { s.toc.forEach((c) => { if (!s.chap[c.url]) s.sel.add(c.url); }); render(); } }, 'Chưa tải'),
+        el('button', { class: BTN.chip, onclick: () => { s.toc.forEach((c) => s.sel.add(c.url)); render(); } }, 'Tất cả'),
+        el('button', { class: BTN.chip, onclick: () => selectOld(), title: 'Tick các chương đã lưu bằng bản cào cũ (△) rồi bấm “Tải lại”' }, `Bản cũ (${oldCount})`),
+        el('button', { class: BTN.chip, onclick: () => { s.sel.clear(); render(); } }, 'Bỏ chọn'),
+        el('small', { class: 'ml-auto text-xs text-neutral-500' }, `${selUrls.length} chọn · ${selSaved} đã lưu`)),
+      el('details', { class: 'text-xs', open: s.rangeOpen, ontoggle: (e) => { s.rangeOpen = e.target.open; } },
+        el('summary', { class: 'cursor-pointer select-none text-neutral-600 hover:text-brand' }, 'Chọn theo khoảng'),
+        el('div', { class: 'mt-1.5 flex items-center gap-1.5' },
+          'Từ #', el('input', { type: 'number', min: 1, class: `${BTN.field} w-16`, value: String(s.from), onchange: (e) => { s.from = Number(e.target.value) || 1; } }),
+          'số chương', el('input', { type: 'number', min: 1, class: `${BTN.field} w-20`, placeholder: 'đến hết', value: s.count, onchange: (e) => { s.count = e.target.value; } }),
+          el('button', { class: BTN.chip, onclick: () => selectRange() }, 'Chọn'))),
+      el('div', { class: 'hn-list hn-scroll relative max-h-[230px] overflow-auto rounded-md border border-neutral-200 bg-white' }, rows),
+      total > LIST_PAGE || f ? el('div', { class: 'flex items-center justify-center gap-2' },
+        ibtn('left', 'Trang trước', () => { s.offset = Math.max(0, off - LIST_PAGE); render(); }, { disabled: off === 0 }),
+        el('small', { class: 'text-xs text-neutral-500' }, `${view.length ? off + 1 : 0}–${Math.min(off + LIST_PAGE, view.length)} / ${view.length}`),
+        ibtn('right', 'Trang sau', () => { s.offset = off + LIST_PAGE; render(); }, { disabled: off + LIST_PAGE >= view.length })) : '')
+      : el('div', { class: 'rounded-md border border-dashed border-neutral-300 bg-white px-3 py-4 text-center text-xs text-neutral-500' }, 'Chưa có mục lục. Bấm ', el('b', null, '↻'), ' ở dãy công cụ để tải mục lục, hoặc dùng “Từ trang này” ở dưới.');
+
+    bd.replaceChildren(head, tools, chapters);
+
+    // --- thanh thao tác cố định phía dưới ---
+    const warn = s.msg.startsWith('⚠');
+    ft.className = 'ft flex flex-col gap-2 border-t border-brand/25 bg-white px-3 py-2';
+    ft.replaceChildren(
+      el('div', { class: `flex max-h-[72px] items-start gap-1.5 overflow-auto whitespace-pre-wrap rounded-md border px-2 py-1 text-xs ${warn ? 'border-brand bg-brand-soft text-brand-dark' : 'border-neutral-200 bg-neutral-50 text-neutral-600'}`, role: 'status' },
+        warn ? icon('alert', 'mt-px size-3.5') : '', el('span', { class: 'min-w-0 flex-1' }, s.msg || 'Sẵn sàng. Tiến độ được lưu theo URL truyện, tải lại trang không mất.')),
+      s.livePage || !total ? '' : el('small', { class: 'text-xs text-neutral-500' }, 'Trang này không phải chương — chọn chương trong mục lục.'),
+      el('div', { class: 'flex flex-wrap gap-1.5' },
+        total ? el('button', { class: BTN.pri, onclick: () => startSelected(false), disabled: s.running || selUrls.length === selSaved, title: 'Tải các chương đã chọn mà chưa lưu' }, icon('download'), 'Tải chưa lưu') : '',
+        total ? el('button', { class: BTN.sec, onclick: () => startSelected(true), disabled: s.running || !selUrls.length, title: 'Tải lại và ghi đè các chương đã chọn' }, icon('refresh'), 'Tải lại') : '',
+        total ? el('button', { class: BTN.sec, onclick: () => exportBook(selUrls), disabled: s.running || !selSaved, title: 'Xuất EPUB chỉ gồm các chương đã chọn và đã lưu' }, icon('upload'), `Xuất chọn (${selSaved})`) : '',
+        el('button', { class: total ? BTN.sec : BTN.pri, onclick: () => startFollow(), disabled: s.running || !s.livePage, title: 'Tải trang này rồi lần theo link 下一章 (chương kế)' }, icon('skip'), 'Từ trang này'),
+        s.running ? el('button', { class: 'inline-flex cursor-pointer items-center gap-1.5 rounded-md bg-neutral-800 px-3 py-1.5 font-semibold text-white hover:bg-black', onclick: () => { s.stop = true; say('Đang dừng…'); } }, icon('stop', 'size-3.5'), 'Dừng') : ''));
+
+    // replaceChildren dựng lại DOM → giữ vị trí cuộn; riêng khi đang tải thì cuộn tới chương đang tải (một lần mỗi chương).
+    const newList = bd.querySelector('.hn-list');
+    if (newList) {
+      newList.scrollTop = listTop;
+      if (s.follow) {
+        s.follow = false;
+        const row = [...newList.querySelectorAll('[data-u]')].find((r) => r.getAttribute('data-u') === s.current);
+        if (row) newList.scrollTop = Math.max(0, row.offsetTop - newList.clientHeight / 2 + row.offsetHeight / 2);
+      }
+    }
     bd.scrollTop = bdTop;
   }
   const say = (m) => { s.msg = m; render(); };
@@ -188,7 +292,7 @@
     let done = false;
     const finish = (save, v) => { if (done) return; done = true; if (save) onSave(v); else { s.editing = null; render(); } };
     return el('input', {
-      class: 'edit', value, onclick: (e) => e.stopPropagation(),
+      class: `edit ${BTN.field} min-w-0 flex-1`, value, onclick: (e) => e.stopPropagation(),
       onkeydown: (e) => { if (e.key === 'Enter') finish(true, e.target.value); else if (e.key === 'Escape') finish(false); },
       onblur: (e) => finish(true, e.target.value),
     });
@@ -261,6 +365,14 @@
       for (let j = a; j <= b; j += 1) { if (on) s.sel.add(view[j].url); else s.sel.delete(view[j].url); }
     } else if (s.sel.has(c.url)) s.sel.delete(c.url); else s.sel.add(c.url);
     s.lastClick = i;
+    render();
+  }
+
+  /** Bấm tiêu đề quyển: chọn cả quyển, hoặc bỏ chọn nếu đã chọn đủ. */
+  function toggleVolume(vol) {
+    const urls = s.toc.filter((c) => c.vol === vol).map((c) => c.url);
+    const all = urls.every((u) => s.sel.has(u));
+    urls.forEach((u) => { if (all) s.sel.delete(u); else s.sel.add(u); });
     render();
   }
 
@@ -689,6 +801,14 @@
   }
 
   // ---------- vòng tải tuần tự ----------
+  /** Đánh dấu chương đang tải: danh sách tự nhảy sang đúng trang (nếu phân trang) và cuộn tới dòng đó. */
+  function markCurrent(url) {
+    s.current = url;
+    s.follow = true;
+    const i = s.toc.findIndex((c) => c.url === url);
+    if (i >= 0 && !s.filter.trim()) s.offset = Math.floor(i / LIST_PAGE) * LIST_PAGE;
+  }
+
   async function runLoop(nextTask, limitNote) {
     s.running = true; s.stop = false;
     s.fast = { ok: null, n: 0, pending: [], last: null };
@@ -702,10 +822,11 @@
         if (!t) { reason = limitNote || 'Hết danh sách.'; break; }
         if (s.stop) { reason = 'Đã dừng.'; break; }
         let page = t.live && s.livePage;
-        if (page) { await settle(document); page = C.extractPage(document, here); s.livePage = page; }
+        if (page) { markCurrent(t.url); await settle(document); page = C.extractPage(document, here); s.livePage = page; }
         if (!page) {
           if (!first) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
           if (s.stop) { reason = 'Đã dừng.'; break; }
+          markCurrent(t.url);
           say(`Đang tải: ${t.title || t.url}`);
           page = await loadPage(t.url);
           first = false;
@@ -718,6 +839,7 @@
         }
         first = false;
         if (!s.chap[t.url] || t.force) { await saveChapter(t.url, page); got += 1; }
+        s.sel.delete(t.url); // đã tải xong → tự bỏ chọn
         if (t.onPage) t.onPage(page);
         say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ' · chế độ nhanh' : ''}`);
       }
@@ -726,6 +848,7 @@
     }
     try { await finalCheck(); } catch (err) { /* kiểm cuối lỗi → bỏ qua */ }
     s.running = false;
+    s.current = null;
     say(`${reason} (+${got} chương, đã lưu trong extension)${s.fastNote ? `\n${s.fastNote}` : ''}`.trim());
   }
 
@@ -798,6 +921,7 @@
     const ui = await store.get(K.ui, {});
     if (ui.tab === 'read' || ui.tab === 'dl') s.tab = ui.tab;
     HN().onChange(() => { if (s.tab === 'read') render(); });
+    if (ui.mode) HN().setMode(ui.mode);
     if (ui.reader) HN().enable();
     await settle(document);
     const page = C.extractPage(document, here);

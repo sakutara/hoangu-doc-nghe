@@ -1,0 +1,31 @@
+/* Nguồn Tailwind của panel → `npm run build:extension:css` sinh ra panel.css (đã commit, extension không cần build lúc chạy).
+ * Panel nằm trong shadow DOM nên: cỡ chữ/khoảng cách dùng px (không phụ thuộc font-size gốc của trang), và không dùng
+ * các class shadow và ring của Tailwind (chúng cần @property, không hoạt động trong shadow DOM) — bóng đổ viết tay ở .hn-shadow. */
+@import "tailwindcss" source(none);
+@source "./content.js";
+
+@theme {
+  --spacing: 4px;
+  --text-xs: 11px;
+  --text-xs--line-height: 1.4;
+  --text-sm: 12.5px;
+  --text-sm--line-height: 1.45;
+  --text-base: 14px;
+  --text-base--line-height: 1.45;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --color-brand: #b91c1c;
+  --color-brand-dark: #991b1b;
+  --color-brand-soft: #fde8e8;
+  --color-paper: #fffaf0;
+}
+
+:host { all: initial; }
+/* @property không đăng ký được trong shadow DOM → đặt giá trị khởi tạo cho các biến Tailwind cần */
+:host { --tw-border-style: solid; --tw-translate-x: 0; --tw-translate-y: 0; --tw-translate-z: 0; }
+.hn-shadow { box-shadow: 0 4px 22px rgba(0, 0, 0, .35); }
+.hn-scroll { scrollbar-width: thin; }
+@keyframes hn-pulse { 50% { opacity: .35; } }
+.hn-pulse { animation: hn-pulse 1s ease-in-out infinite; }

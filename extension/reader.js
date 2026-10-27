@@ -1,5 +1,6 @@
 /* Đọc từ: bật lên thì bấm vào chữ Hán bất kỳ trên trang để hiện popup giải nghĩa (cùng bộ tra từ với webapp:
  * SmartSegmenter + từ điển lõi + giáo trình đóng gói trong dict.js, cộng CC-CEDICT nạp từ data/cedict.json).
+ * Mặc định phải giữ Alt khi bấm (bấm thường không bị can thiệp); có thể đổi sang bấm thường.
  * Link/nút/ô nhập vẫn hoạt động bình thường (không chặn). Từ đã lưu nằm trong chrome.storage.local. */
 (function () {
   if (window.HNReader) return;
@@ -15,7 +16,7 @@
     core: 'Thông dụng', compound: 'Từ ghép', idiom: 'Thành ngữ', slang: 'Tiếng lóng mạng', gaming: 'Game / Truyện', loanword: 'Từ gốc Anh',
   };
 
-  const state = { on: false, dict: 'idle', count: 0 };
+  const state = { on: false, dict: 'idle', count: 0, mode: 'alt' }; // mode: 'alt' = giữ Alt + bấm mới tra (bấm thường không bị can thiệp); 'click' = bấm thường
   const listeners = new Set();
   const emit = () => listeners.forEach((fn) => { try { fn(state); } catch (e) { /* bỏ qua */ } });
 
@@ -231,10 +232,13 @@
   // ---------- bật / tắt ----------
   function onClick(e) {
     if (!state.on || e.button !== 0 || e.defaultPrevented) return;
+    if (state.mode === 'alt' && !e.altKey) return; // bấm thường: để yên cho tính năng của trang
+    if (e.ctrlKey || e.metaKey || e.shiftKey) return; // tổ hợp phím của trình duyệt (mở tab mới, chọn…)
     const path = e.composedPath ? e.composedPath() : [];
     if (path.some((n) => n === host || (n && n.id === 'hoangu-panel-host'))) return; // bấm trong popup / panel
     const t = e.target;
     if (t && t.closest && t.closest(IGNORE_CLICK)) return;
+    if (state.mode === 'click' && t && t.nodeType === 1 && getComputedStyle(t).cursor === 'pointer') return; // vùng trang tự làm thành nút bấm
     const sel = window.getSelection && window.getSelection();
     if (sel && !sel.isCollapsed) return; // đang bôi đen để copy
     const hit = charAtPoint(e.clientX, e.clientY);
@@ -269,6 +273,7 @@
     state,
     enable,
     disable,
+    setMode(m) { state.mode = m === 'click' ? 'click' : 'alt'; emit(); },
     onChange(fn) { listeners.add(fn); return () => listeners.delete(fn); },
     getSaved() { return saved.slice(); },
     loadSaved,

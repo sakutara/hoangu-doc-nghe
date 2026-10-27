@@ -12,11 +12,18 @@ Panel có hai tab: **Đọc truyện** và **Tải truyện** (tab này chứa t
 - Công tắc **Đọc từ** bật/tắt tính năng. Khi bật, bấm vào chữ Hán bất kỳ trên trang web để hiện popup giống tính năng tra từ của app:
   phiên âm, Hán-Việt, nghĩa, loại từ, chữ thành phần, **Nghe phát âm** (giọng zh-CN của trình duyệt) và **Lưu từ**.
 - Cùng bộ tra từ với app (`SmartSegmenter` + từ điển lõi + từ vựng giáo trình, đóng gói thành `dict.js`) cộng CC-CEDICT (`data/cedict.json`, nạp lần đầu khi bật).
-- Link, nút, ô nhập trên trang vẫn hoạt động bình thường (không bị chặn). Bôi đen chữ để copy không mở popup. Esc / bấm ra ngoài / cuộn trang để đóng.
+- **Cách mở popup** (chọn ngay trong tab): *Giữ Alt + bấm* (mặc định — bấm thường không bị can thiệp nên tính năng bấm của trang như menu, lật trang vẫn dùng được; Alt = ⌥ trên Mac) hoặc *Bấm vào chữ* (mọi cú bấm vào chữ Hán đều tra, trừ link/nút/ô nhập và vùng trang có con trỏ bấm).
+- Bôi đen chữ để copy không mở popup. Esc / bấm ra ngoài / cuộn trang để đóng.
 - Từ đã lưu nằm trong kho của extension (không dùng chung với danh sách từ của app) và hiện ở tab này, có nút bỏ lưu.
 - Công tắc chỉ áp dụng trên tab trình duyệt đang mở panel; trạng thái bật/tắt được nhớ, nhưng sang trang khác cần bấm lại biểu tượng extension để panel (và bộ đọc từ) được nạp lại.
 
-### Cập nhật bộ tra từ khi app đổi từ điển
+### Giao diện (Tailwind)
+Panel dùng Tailwind, biên dịch sẵn thành `panel.css` (đã commit; extension không cần build lúc chạy). Sau khi đổi class trong `content.js` hoặc `panel.src.css`:
+`npm run build:extension:css`. Trong shadow DOM không dùng được các class shadow/ring của Tailwind (cần `@property`), nên bóng đổ viết tay trong `panel.src.css`.
+Ảnh bìa có nút đổi/xoá ngay trên bìa (hiện khi rê chuột); dãy biểu tượng dưới thẻ truyện: làm mới mục lục, nhập EPUB, khôi phục chương mất, lọc lại nội dung, xoá dữ liệu.
+Khi đang tải, chương vừa tải xong tự bỏ chọn và danh sách tự cuộn tới chương đang tải. Bấm tiêu đề quyển trong danh sách để chọn/bỏ chọn cả quyển.
+
+## Cập nhật bộ tra từ khi app đổi từ điển
 `npm run build:extension` — đóng gói lại `dict.js` từ mã của app và chép `public/cedict.json` vào `extension/data/`. (Có test kiểm tra hai bản không lệch nhau.)
 
 ## Dùng (tab Tải truyện)

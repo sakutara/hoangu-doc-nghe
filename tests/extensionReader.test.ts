@@ -26,8 +26,17 @@ describe('extension dict.js (đóng gói từ webapp)', () => {
   });
 
   it('manifest: cho content script đọc cedict.json, không xin quyền host rộng', () => {
+    expect(manifest.web_accessible_resources[0].resources).toContain("panel.css");
     expect(manifest.web_accessible_resources[0].resources).toContain('data/cedict.json');
     expect((manifest as { host_permissions?: string[] }).host_permissions).toBeUndefined();
+  });
+});
+
+describe('extension reader.js — chế độ mở popup', () => {
+  it('mặc định là Giữ Alt + bấm; setMode chỉ nhận alt/click', () => {
+    expect(R.state.mode).toBe('alt');
+    R.setMode('click'); expect(R.state.mode).toBe('click');
+    R.setMode('bậy'); expect(R.state.mode).toBe('alt');
   });
 });
 
