@@ -79,7 +79,7 @@ export function BookLibraryPage() {
             <div className="text-sm text-muted">{b.chapterCount} chương</div>
             <div className="mt-auto flex flex-wrap gap-2 pt-3 text-sm">
               {b.chapterCount > 0 && <Link className="btn" to={`/reader/${b.bookId}/${b.lastReadChapterIndex}`}>Đọc ngay</Link>}
-              {b.chapterCount > 0 && <button className="btn" onClick={() => void exportEpub(b)}>Xuất .epub</button>}
+              {b.chapterCount > 0 && <button className="btn" onClick={() => void exportEpub(b)}>Download epub</button>}
               <button className="btn btn-danger" onClick={() => void remove(b)}>Xóa truyện</button>
             </div>
           </li>
