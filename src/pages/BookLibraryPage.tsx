@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { importBookFile } from '../domains/import/BookFileImporter';
+import { buildEpubBlob, triggerEpubDownload } from '../domains/epub/EpubExporter';
 import type { BookMetadata } from '../services/storage/types';
 import { useServices } from '../services/ServicesContext';
 
@@ -45,6 +46,16 @@ export function BookLibraryPage() {
     await refresh();
   };
 
+  const exportEpub = async (b: BookMetadata) => {
+    setMsg(`Đang tạo “${b.title}”…`);
+    try {
+      triggerEpubDownload(await buildEpubBlob(b, files), b.title);
+      setMsg(`Đã xuất “${b.title}” thành .epub.`);
+    } catch (e) {
+      setMsg(e instanceof Error ? e.message : 'Lỗi xuất EPUB');
+    }
+  };
+
   const remove = async (b: BookMetadata) => {
     if (!window.confirm(`Xóa “${b.title}” và toàn bộ file chương?`)) return;
     await library.deleteBookCompletely(b.bookId);
@@ -68,6 +79,7 @@ export function BookLibraryPage() {
             <div className="text-sm text-muted">{b.chapterCount} chương</div>
             <div className="mt-auto flex flex-wrap gap-2 pt-3 text-sm">
               {b.chapterCount > 0 && <Link className="btn" to={`/reader/${b.bookId}/${b.lastReadChapterIndex}`}>Đọc ngay</Link>}
+              {b.chapterCount > 0 && <button className="btn" onClick={() => void exportEpub(b)}>Xuất .epub</button>}
               <button className="btn btn-danger" onClick={() => void remove(b)}>Xóa truyện</button>
             </div>
           </li>
