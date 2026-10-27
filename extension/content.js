@@ -6,8 +6,8 @@
 
   const C = window.HNCore;
   const READ_BATCH = 200; // số chương đọc từ storage mỗi lượt khi gom file
-  const DELAY_MIN = 2000;
-  const DELAY_JITTER = 2000;
+  const DELAY_MIN = 1000;
+  const DELAY_JITTER = 500;
   const LIST_PAGE = 200;
   // Phiên bản cách cào: 2 = đã xử lý xáo trộn/đoạn nhiễu của hetushu (chờ script, bỏ thẻ ẩn, tự giải mã). Chương lưu trước đó (không có v) có thể sai thứ tự/lẫn đoạn clone.
   const SCRAPE_V = 2;
@@ -281,17 +281,29 @@
   // ---------- tải trang ----------
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  /** Đợi script của trang (xáo trộn rồi sắp lại / xóa thẻ p thừa) chạy xong: tải xong + nội dung không đổi liên tục ~1,2s (tối đa 12s). */
+  /** Đợi script của trang (xáo trộn rồi sắp lại / xóa thẻ p thừa) chạy xong, tối đa 12s.
+   *  Trang hetushu (body[data-randomtype]): script xóa khối .mask rồi sắp lại ĐỒNG BỘ → thấy .mask biến mất là xong, chỉ đợi thêm 300ms cho chắc.
+   *  Trang khác: tải xong + nội dung không đổi liên tục ~1,2s. */
   async function settle(d) {
     const t0 = Date.now();
-    while (d.readyState !== 'complete' && Date.now() - t0 < 12000) await sleep(200);
-    let sig = C.contentSignature(d);
-    let since = Date.now();
-    while (Date.now() - since < 1200 && Date.now() - t0 < 12000) {
-      await sleep(250);
-      const cur = C.contentSignature(d);
-      if (cur !== sig) { sig = cur; since = Date.now(); }
+    const left = () => Date.now() - t0 < 12000;
+    const quiet = async (ms) => {
+      let sig = C.contentSignature(d);
+      let since = Date.now();
+      while (Date.now() - since < ms && left()) {
+        await sleep(100);
+        const cur = C.contentSignature(d);
+        if (cur !== sig) { sig = cur; since = Date.now(); }
+      }
+    };
+    if (d.body && d.body.hasAttribute('data-randomtype')) {
+      while (d.readyState === 'loading' && left()) await sleep(50);
+      while (d.querySelector('#content > .mask') && left()) await sleep(50);
+      await quiet(300);
+      return;
     }
+    while (d.readyState !== 'complete' && left()) await sleep(200);
+    await quiet(1200);
   }
 
   async function loadViaFetch(url) {
@@ -324,28 +336,77 @@
       let done = false;
       const finish = (v) => { if (done) return; done = true; fr.remove(); resolve(v); };
       setTimeout(() => finish(null), 45000);
-      fr.onload = () => {
-        const started = Date.now();
-        const poll = () => {
-          if (done) return;
-          let d = null;
-          try { d = fr.contentDocument; } catch (e) { d = null; }
-          if (!d) { loadViaFetch(url).then(finish, () => finish(null)); return; }
-          const page = C.extractPage(d, url);
-          if (page.challenge) { finish(page); return; }
-          if (C.han(page.paragraphs.join('')) > 20) { settle(d).then(() => finish(C.extractPage(d, url)), () => finish(null)); return; }
-          if (Date.now() - started > 15000) { finish(page); return; }
-          setTimeout(poll, 500);
-        };
-        poll();
+      // Không đợi onload (ảnh, quảng cáo, analytics): thăm dò ngay, có nội dung rồi thì settle() lo phần đợi script.
+      const started = Date.now();
+      const poll = () => {
+        if (done) return;
+        let d = null;
+        try { d = fr.contentDocument; } catch (e) { d = null; }
+        if (!d) { loadViaFetch(url).then(finish, () => finish(null)); return; }
+        const page = C.extractPage(d, url);
+        if (page.challenge) { finish(page); return; }
+        if (C.han(page.paragraphs.join('')) > 20) { settle(d).then(() => finish(C.extractPage(d, url)), () => finish(null)); return; }
+        if (Date.now() - started > 20000) { finish(page); return; }
+        setTimeout(poll, 150);
       };
       fr.src = url;
       document.body.appendChild(fr);
+      setTimeout(poll, 150);
     });
   }
 
+  const sameText = (a, b) => a.paragraphs.join('\n') === b.paragraphs.join('\n');
+
+  /** Đường nhanh: fetch HTML + tự giải mã (không mở iframe, không đợi tải trang). Chỉ dùng khi đã TỰ KIỂM CHỨNG:
+   *  chương đầu của mỗi lượt (và cứ 10 chương một lần) tải cả hai đường, so từng đoạn; lệch dù chỉ một đoạn → tắt đường nhanh, dùng iframe. */
   async function loadPage(url) {
-    try { return await loadViaFrame(url); } catch (e) { return null; }
+    const f = s.fast;
+    f.n += 1;
+    const verify = f.ok === null || (f.ok && f.n % 10 === 0);
+    if (f.ok && !verify) {
+      try {
+        const p = await loadViaFetch(url);
+        if (p && !p.challenge && p.paragraphs.length) { f.pending.push(url); f.last = { url, page: p }; return p; }
+      } catch (e) { /* rơi về iframe */ }
+    }
+    let framed = null;
+    try { framed = await loadViaFrame(url); } catch (e) { framed = null; }
+    if (verify && framed && !framed.challenge && framed.paragraphs.length) {
+      let fp = null;
+      try { fp = await loadViaFetch(url); } catch (e) { fp = null; }
+      const was = f.ok;
+      f.ok = !!(fp && !fp.challenge && fp.paragraphs.length && sameText(fp, framed));
+      if (was && !f.ok) await repairPending(); // lệch giữa chừng → các chương đã lưu bằng đường nhanh từ lần kiểm trước đều bị nghi
+      else if (f.ok) f.pending = [];
+    }
+    return framed;
+  }
+
+  /** Tải lại bằng iframe (đường chuẩn) các chương đã lưu bằng đường nhanh mà chưa được kiểm chứng; không tải được thì hạ về “bản cũ” (△) để chọn tải lại sau. */
+  async function repairPending() {
+    const urls = s.fast.pending.splice(0);
+    let fixed = 0;
+    for (let i = 0; i < urls.length; i += 1) {
+      say(`Phát hiện đường nhanh lệch — tải lại chương đã lưu bằng đường chuẩn (${i + 1}/${urls.length})…`);
+      await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
+      let p = null;
+      try { p = await loadViaFrame(urls[i]); } catch (e) { p = null; }
+      if (p && !p.challenge && p.paragraphs.length) { await saveChapter(urls[i], p); fixed += 1; } else if (s.chap[urls[i]]) s.chap[urls[i]].v = 1;
+    }
+    await persistMeta();
+    s.fastNote = `Đường nhanh bị lệch: đã tải lại ${fixed}/${urls.length} chương đã lưu bằng đường chuẩn${fixed < urls.length ? `, ${urls.length - fixed} chương hạ về △ (chọn “Chọn chương bản cũ” để tải lại)` : ''}.`;
+  }
+
+  /** Cuối lượt: kiểm lại chương nhanh gần nhất bằng đường chuẩn để các chương cuối (chưa tới mốc kiểm 10) cũng được xác nhận. */
+  async function finalCheck() {
+    const f = s.fast;
+    if (!f.ok || !f.pending.length || !f.last) return;
+    say('Đang kiểm tra lại chương cuối bằng đường chuẩn…');
+    let framed = null;
+    try { framed = await loadViaFrame(f.last.url); } catch (e) { framed = null; }
+    if (!framed || framed.challenge || !framed.paragraphs.length) return; // không kiểm được → giữ nguyên, không kết luận
+    if (sameText(f.last.page, framed)) f.pending = [];
+    else { f.ok = false; await repairPending(); }
   }
 
   // ---------- lưu chương / xuất file ----------
@@ -628,6 +689,8 @@
   // ---------- vòng tải tuần tự ----------
   async function runLoop(nextTask, limitNote) {
     s.running = true; s.stop = false;
+    s.fast = { ok: null, n: 0, pending: [], last: null };
+    s.fastNote = '';
     let got = 0;
     let reason = '';
     let first = true;
@@ -654,13 +717,14 @@
         first = false;
         if (!s.chap[t.url] || t.force) { await saveChapter(t.url, page); got += 1; }
         if (t.onPage) t.onPage(page);
-        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)`);
+        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ' · chế độ nhanh' : ''}`);
       }
     } catch (err) {
       reason = `⚠ Lỗi: ${err && err.message ? err.message : err}`;
     }
+    try { await finalCheck(); } catch (err) { /* kiểm cuối lỗi → bỏ qua */ }
     s.running = false;
-    say(`${reason} (+${got} chương, đã lưu trong extension)`.trim());
+    say(`${reason} (+${got} chương, đã lưu trong extension)${s.fastNote ? `\n${s.fastNote}` : ''}`.trim());
   }
 
   /** Tải các chương đang tick (theo thứ tự mục lục). force=true → tải lại và ghi đè cả chương đã lưu. */
