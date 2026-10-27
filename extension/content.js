@@ -9,6 +9,9 @@
   const DELAY_MIN = 2000;
   const DELAY_JITTER = 2000;
   const LIST_PAGE = 200;
+  // Phiên bản cách cào: 2 = đã xử lý xáo trộn/đoạn nhiễu của hetushu (chờ script, bỏ thẻ ẩn, tự giải mã). Chương lưu trước đó (không có v) có thể sai thứ tự/lẫn đoạn clone.
+  const SCRAPE_V = 2;
+  const isOld = (c) => !c || (c.v || 0) < SCRAPE_V;
 
   // ---------- lưu trữ (chrome.storage.local + unlimitedStorage) ----------
   const store = {
@@ -120,6 +123,7 @@
     const page = view.slice(off, off + LIST_PAGE);
     const selUrls = [...s.sel];
     const selSaved = selUrls.filter((u) => s.chap[u]).length;
+    const oldCount = s.toc.filter((c) => s.chap[c.url] && isOld(s.chap[c.url])).length;
 
     const oldList = bd.querySelector('.list');
     const listTop = oldList ? oldList.scrollTop : 0;
@@ -142,7 +146,7 @@
       s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
         class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
         onclick: (e) => toggleSel(c, view, e.shiftKey),
-      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', null, s.chap[c.url] ? '✓' : ''), el('span', { class: 'n' }, String(c.n)),
+      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', { title: s.chap[c.url] && isOld(s.chap[c.url]) ? 'Lưu bằng bản cũ — có thể sai thứ tự/lẫn đoạn nhiễu, nên tải lại' : '' }, s.chap[c.url] ? (isOld(s.chap[c.url]) ? '△' : '✓') : ''), el('span', { class: 'n' }, String(c.n)),
         s.editing === c.url ? editBox(c.title, (v) => saveChapterTitle(c.url, v))
           : el('span', { class: 'ttl', title: 'Bấm để sửa tiêu đề (bấm chỗ khác trên dòng để chọn chương)', onclick: (e) => { e.stopPropagation(); startEdit(c.url); } }, c.title)))) : '',
       s.toc.length > LIST_PAGE || f ? el('div', { class: 'row' },
@@ -156,6 +160,7 @@
       s.toc.length ? el('div', { class: 'row' },
         el('button', { onclick: () => { s.toc.forEach((c) => { if (!s.chap[c.url]) s.sel.add(c.url); }); render(); } }, 'Chọn chưa tải'),
         el('button', { onclick: () => { s.toc.forEach((c) => s.sel.add(c.url)); render(); } }, 'Chọn tất cả'),
+        el('button', { onclick: () => selectOld(), title: 'Tick các chương đã lưu bằng bản cào cũ (△) rồi bấm “Tải lại đã chọn”' }, `Chọn chương bản cũ (${oldCount})`),
         el('button', { onclick: () => { s.sel.clear(); render(); } }, 'Bỏ chọn'),
         el('small', null, `${selUrls.length} chương được chọn (${selSaved} đã lưu)`)) : '',
       el('div', { class: 'row' },
@@ -257,6 +262,13 @@
     } else if (s.sel.has(c.url)) s.sel.delete(c.url); else s.sel.add(c.url);
     s.lastClick = i;
     render();
+  }
+
+  /** Tick các chương đã lưu bằng bản cào cũ (bỏ chương nhập từ EPUB vì không có link gốc để tải lại). */
+  function selectOld() {
+    s.sel.clear();
+    s.toc.forEach((c) => { if (s.chap[c.url] && isOld(s.chap[c.url]) && !c.url.startsWith('epub://')) s.sel.add(c.url); });
+    say(s.sel.size ? `Đã chọn ${s.sel.size} chương lưu bằng bản cũ — bấm “Tải lại đã chọn”.` : 'Không có chương nào lưu bằng bản cũ.');
   }
 
   function selectRange() {
@@ -407,7 +419,7 @@
     const old = s.chap[url];
     const k = old ? bodyKey(old, url) : K.bodyUrl(s.bookKey, url); // tải lại → ghi đè đúng chỗ cũ
     await store.set(k, { url, title, paragraphs: page.paragraphs, blocks: page.blocks });
-    s.chap[url] = { t: title, k, at: new Date().toISOString() };
+    s.chap[url] = { t: title, k, at: new Date().toISOString(), v: SCRAPE_V };
     const idx = await store.get(K.idx, {});
     idx[url] = s.bookKey;
     await store.set(K.idx, idx);

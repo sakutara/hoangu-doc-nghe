@@ -59,3 +59,7 @@ và báo lại; extension không cố vượt kiểm tra. Hãy mở trang, qua k
 
 ## Giới hạn
 Mục lục phân nhiều trang chưa được gộp; bộ chọn nội dung theo heuristic. Việc bỏ khoảng trắng cũng làm dính các từ tiếng Anh/số trong nội dung.
+
+## Chương lưu bằng bản cào cũ
+
+Hetushu xáo trộn thứ tự đoạn và chèn đoạn clone ẩn; extension chỉ xử lý đúng từ khi cào bằng bản có xử lý này (chờ script của trang chạy xong, bỏ thẻ ẩn, tự giải mã khóa khi cần). Mỗi chương lưu mới được đánh dấu phiên bản; chương lưu trước đó hiện **△** thay vì ✓ và **không thể sửa từ dữ liệu đã lưu** (khóa sắp xếp không được lưu, không phân biệt được đoạn thật/clone). Bấm **Chọn chương bản cũ** → **Tải lại đã chọn** để cào lại chúng.
