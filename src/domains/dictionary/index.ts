@@ -20,9 +20,12 @@ function lessonEntries(known: Set<string>): DictionaryEntry[] {
   return out;
 }
 
-export const defaultSegmenter = new SmartSegmenter([
+/** Từ điển lõi + từ vựng giáo trình — dùng chung với extension (scripts/build-extension.mjs đóng gói thành extension/dict.js). */
+export const LEXICON: DictionaryEntry[] = [
   ...CORE_LEXICON,
   ...lessonEntries(new Set(CORE_LEXICON.map((e) => e.simplified))),
-]);
+];
+
+export const defaultSegmenter = new SmartSegmenter(LEXICON);
 export { SmartSegmenter };
 export * from './types';

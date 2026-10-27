@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
   "name": "HoaNgữ – Tải truyện",
-  "version": "0.1.0",
-  "description": "Duyệt danh sách chương, tải tuần tự bằng trình duyệt của bạn, xuất EPUB có ảnh bìa, nhập lại EPUB để sửa/bổ sung chương (không giới hạn số chương). Dừng khi gặp trang kiểm tra bot.",
+  "version": "0.2.0",
+  "description": "Tab Đọc truyện: bấm chữ Hán để tra nghĩa (như app). Tab Tải truyện: duyệt danh sách chương, tải tuần tự bằng trình duyệt của bạn, xuất EPUB có ảnh bìa, nhập lại EPUB để sửa/bổ sung chương (không giới hạn số chương). Dừng khi gặp trang kiểm tra bot.",
   "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
   "background": { "service_worker": "background.js" },
   "action": { "default_title": "HoaNgữ – Tải truyện" },
+  "web_accessible_resources": [{ "resources": ["data/cedict.json"], "matches": ["<all_urls>"], "use_dynamic_url": true }],
   "icons": { "192": "icons/icon-192.png", "512": "icons/icon-512.png" }
 }

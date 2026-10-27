@@ -5,7 +5,21 @@ Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot
 ## Cài đặt
 `chrome://extensions` → bật **Developer mode** → **Load unpacked** → chọn thư mục `extension/`.
 
-## Dùng
+## Hai tab
+Panel có hai tab: **Đọc truyện** và **Tải truyện** (tab này chứa toàn bộ chức năng tải/xuất/nhập EPUB bên dưới).
+
+### Tab Đọc truyện — đọc từ
+- Công tắc **Đọc từ** bật/tắt tính năng. Khi bật, bấm vào chữ Hán bất kỳ trên trang web để hiện popup giống tính năng tra từ của app:
+  phiên âm, Hán-Việt, nghĩa, loại từ, chữ thành phần, **Nghe phát âm** (giọng zh-CN của trình duyệt) và **Lưu từ**.
+- Cùng bộ tra từ với app (`SmartSegmenter` + từ điển lõi + từ vựng giáo trình, đóng gói thành `dict.js`) cộng CC-CEDICT (`data/cedict.json`, nạp lần đầu khi bật).
+- Link, nút, ô nhập trên trang vẫn hoạt động bình thường (không bị chặn). Bôi đen chữ để copy không mở popup. Esc / bấm ra ngoài / cuộn trang để đóng.
+- Từ đã lưu nằm trong kho của extension (không dùng chung với danh sách từ của app) và hiện ở tab này, có nút bỏ lưu.
+- Công tắc chỉ áp dụng trên tab trình duyệt đang mở panel; trạng thái bật/tắt được nhớ, nhưng sang trang khác cần bấm lại biểu tượng extension để panel (và bộ đọc từ) được nạp lại.
+
+### Cập nhật bộ tra từ khi app đổi từ điển
+`npm run build:extension` — đóng gói lại `dict.js` từ mã của app và chép `public/cedict.json` vào `extension/data/`. (Có test kiểm tra hai bản không lệch nhau.)
+
+## Dùng (tab Tải truyện)
 1. Mở trang mục lục (hoặc một chương) của truyện, qua kiểm tra bot như bình thường.
 2. Bấm biểu tượng extension → hiện panel.
 3. **Tải mục lục** → tick các chương muốn lấy (bấm để chọn/bỏ, Shift+bấm để chọn cả dãy; hoặc nhập “Từ #/số chương” rồi **Chọn khoảng**,

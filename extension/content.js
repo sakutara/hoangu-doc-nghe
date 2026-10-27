@@ -17,7 +17,7 @@
     remove(k) { return chrome.storage.local.remove(k); },
   };
   const K = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, cover: (b) => `hn:cover:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, ui: 'hn:ui', cover: (b) => `hn:cover:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
   // ---------- trạng thái ----------
@@ -25,7 +25,7 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
-    sel: new Set(), lastClick: -1, cover: null, editing: null,
+    sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl',
   };
   /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
   const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
@@ -56,10 +56,23 @@
     .it i{width:14px;font-style:normal;color:#15803d}.it span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .n{color:#888;min-width:34px}
     small{color:#666}
-  </style><div class="box"><div class="hd"><b>HoaNgữ – Tải truyện</b><button data-a="hide">×</button></div><div class="bd"></div></div>`;
+    .tabs{display:flex;border-bottom:2px solid #b91c1c;background:#fde8e8}
+    .tabs button{flex:1;border:0;border-radius:0;background:transparent;padding:6px 4px;font-weight:600}
+    .tabs button.on{background:#b91c1c;color:#fff}
+    .sw{display:flex;align-items:center;gap:8px;padding:0;border:0;background:none;color:inherit;font-weight:600}
+    .sw i{position:relative;width:38px;height:20px;border-radius:99px;background:#bbb;transition:background .15s;flex:none}
+    .sw i::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+    .sw[aria-checked="true"] i{background:#15803d}.sw[aria-checked="true"] i::after{left:20px}
+    .sv{display:flex;gap:6px;align-items:baseline;padding:2px 6px;border-bottom:1px solid #f0f0f0}
+    .sv b{font-size:15px}.sv span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sv button{padding:0 6px}
+  </style><div class="box"><div class="hd"><b>HoaNgữ</b><button data-a="hide">×</button></div><div class="tabs"><button data-t="read">Đọc truyện</button><button data-t="dl">Tải truyện</button></div><div class="bd"></div></div>`;
   document.documentElement.appendChild(host);
   const bd = sh.querySelector('.bd');
   sh.querySelector('[data-a="hide"]').onclick = () => { host.style.display = 'none'; };
+  sh.querySelectorAll('.tabs button').forEach((b) => {
+    b.onclick = () => { s.tab = b.getAttribute('data-t'); store.set(K.ui, { tab: s.tab, reader: HN().state.on }); render(); };
+  });
+  const HN = () => window.HNReader;
 
   function el(tag, props, ...kids) {
     const e = document.createElement(tag);
@@ -69,6 +82,36 @@
   }
 
   function render() {
+    sh.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.getAttribute('data-t') === s.tab));
+    if (s.tab === 'read') renderRead(); else renderDownload();
+  }
+
+  // ---------- tab “Đọc truyện” ----------
+  function renderRead() {
+    const R = HN();
+    const st = R.state;
+    const dict = { idle: '', loading: 'Đang tải từ điển CC-CEDICT…', ready: `Từ điển sẵn sàng (+${st.count.toLocaleString('vi-VN')} mục CC-CEDICT, cùng từ điển lõi & giáo trình của app).`, error: '⚠ Không nạp được CC-CEDICT — chỉ dùng từ điển lõi & giáo trình.' }[st.dict];
+    const saved = R.getSaved();
+    bd.replaceChildren(
+      el('button', { class: 'sw', role: 'switch', 'aria-checked': String(st.on), onclick: () => setReader(!st.on) }, el('i'), st.on ? 'Đọc từ: BẬT' : 'Đọc từ: TẮT'),
+      el('small', null, 'Bật lên rồi bấm vào chữ Hán bất kỳ trên trang web để xem phiên âm, Hán-Việt, nghĩa, chữ thành phần, nghe phát âm và lưu từ — giống tính năng tra từ của app. Link và nút trên trang vẫn bấm bình thường; Esc để đóng popup.'),
+      dict ? el('div', { class: `msg${dict.startsWith('⚠') ? ' warn' : ''}` }, dict) : '',
+      el('small', null, 'Công tắc chỉ có hiệu lực trên tab này; sang trang khác (bấm 下一章…) cần bấm lại biểu tượng extension để mở panel — trạng thái bật/tắt được nhớ.'),
+      el('b', null, `Từ đã lưu (${saved.length})`),
+      saved.length ? el('div', { class: 'list' }, saved.map((w) => el('div', { class: 'sv', title: w.meanings.join('; ') },
+        el('b', { lang: 'zh-CN' }, w.simplified), el('small', null, w.pinyin), el('span', null, w.meanings[0] || ''),
+        el('button', { onclick: () => R.removeSaved(w.simplified), title: 'Bỏ lưu' }, '×')))) : el('small', null, 'Chưa lưu từ nào — bấm “☆ Lưu từ” trong popup.'),
+    );
+  }
+
+  async function setReader(on) {
+    const R = HN();
+    if (on) await R.enable(); else R.disable();
+    await store.set(K.ui, { tab: s.tab, reader: on });
+    render();
+  }
+
+  function renderDownload() {
     const savedCount = Object.keys(s.chap).length;
     const items = s.toc.map((c, i) => ({ ...c, n: i + 1 }));
     const f = s.filter.trim().toLowerCase();
@@ -647,6 +690,10 @@
 
   // ---------- khởi tạo ----------
   async function init() {
+    const ui = await store.get(K.ui, {});
+    if (ui.tab === 'read' || ui.tab === 'dl') s.tab = ui.tab;
+    HN().onChange(() => { if (s.tab === 'read') render(); });
+    if (ui.reader) HN().enable();
     const page = C.extractPage(document, here);
     s.isTocPage = C.looksLikeToc(document, here);
     const hasContent = !s.isTocPage && C.han(page.paragraphs.join('')) > 100;

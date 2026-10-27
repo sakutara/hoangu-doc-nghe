@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
+    "build:extension": "node scripts/build-extension.mjs",
     "prepare": "git config core.hooksPath .githooks || true",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"

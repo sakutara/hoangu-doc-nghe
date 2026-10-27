@@ -2,7 +2,7 @@
 chrome.action.onClicked.addListener(async (tab) => {
   if (!tab.id) return;
   try {
-    await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['core.js', 'content.js'] });
+    await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['core.js', 'dict.js', 'reader.js', 'content.js'] });
   } catch (err) {
     console.warn('HoaNgữ: không chèn được vào trang này', err);
   }
