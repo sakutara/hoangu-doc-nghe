@@ -163,21 +163,21 @@ describe('Tủ truyện & Trình đọc', () => {
   it('upload → đọc lazy theo chương → xóa', async () => {
     window.location.hash = '#/library';
     render(<App />);
-    fireEvent.change(screen.getByLabelText('Tải lên epub'), { target: { files: [await epubFile()] } });
+    fireEvent.change(screen.getByLabelText('Tải lên truyện'), { target: { files: [await epubFile()] } });
     await screen.findByText(/Đã nhập “测试书”/);
     const li = await screen.findByTestId(/book-/);
     expect(li).toHaveTextContent('2 chương');
 
     // đọc
     fireEvent.click(screen.getByText('Đọc ngay'));
-    await screen.findByText('第一章');
+    await screen.findByRole('heading', { name: '第一章' });
     fireEvent.click(document.querySelector('[data-index="1"]')!);
     expect(screen.getByRole('dialog')).toHaveTextContent('看');
     fireEvent.click(screen.getByText('Chương sau →'));
-    await screen.findByText('第二章');
+    await screen.findByRole('heading', { name: '第二章' });
     expect(screen.queryByText('Chương sau →')).toBeNull();
     fireEvent.click(screen.getByText('← Chương trước'));
-    await screen.findByText('第一章');
+    await screen.findByRole('heading', { name: '第一章' });
     fireEvent.click(screen.getByTitle('Tủ truyện'));
 
     // xóa (huỷ confirm rồi đồng ý)
@@ -193,8 +193,8 @@ describe('Tủ truyện & Trình đọc', () => {
   it('epub lỗi báo lỗi; không chọn file thì bỏ qua', async () => {
     window.location.hash = '#/library';
     render(<App />);
-    fireEvent.change(screen.getByLabelText('Tải lên epub'), { target: { files: [] } });
-    fireEvent.change(screen.getByLabelText('Tải lên epub'), { target: { files: [new File([await new JSZip().generateAsync({ type: 'arraybuffer' })], 'x.epub')] } });
+    fireEvent.change(screen.getByLabelText('Tải lên truyện'), { target: { files: [] } });
+    fireEvent.change(screen.getByLabelText('Tải lên truyện'), { target: { files: [new File([await new JSZip().generateAsync({ type: 'arraybuffer' })], 'x.epub')] } });
     expect(await screen.findByRole('status')).toHaveTextContent('container');
   });
 

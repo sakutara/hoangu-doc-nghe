@@ -56,6 +56,22 @@ export function ReaderPage() {
         {prev ? <Link className="btn-icon" aria-label="Chương trước" to={prev}><ChevronLeft size={22} /></Link> : <span className="size-11" />}
         {next ? <Link className="btn-icon" aria-label="Chương sau" to={next}><ChevronRight size={22} /></Link> : <span className="size-11" />}
       </div>
+      <details className="card mb-4 text-sm">
+        <summary className="cursor-pointer font-medium">Mục lục · {book.chapterCount} chương</summary>
+        <ol className="mt-3 max-h-[60vh] list-none space-y-1 overflow-y-auto p-0">
+          {book.chapters.map((c) => (
+            <li key={c.index}>
+              <Link
+                to={`/reader/${bookId}/${c.index}`}
+                aria-current={c.index === index ? 'page' : undefined}
+                className={`block rounded-lg px-2 py-1.5 no-underline hover:bg-line/40 ${c.index === index ? 'font-semibold text-brand' : ''}`}
+              >
+                <span className="tabular-nums text-muted">{c.index}.</span> {c.title}
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </details>
       <div className="w-full space-y-4 pb-4">
         {(content.blocks ?? content.paragraphs.map((text) => ({ tag: 'p' as const, text }))).map((b, i) => {
           if (b.tag === 'p') {

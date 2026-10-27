@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { importEpub } from '../domains/epub/EpubPlainImporter';
+import { importBookFile } from '../domains/import/BookFileImporter';
 import type { BookMetadata } from '../services/storage/types';
 import { useServices } from '../services/ServicesContext';
 
@@ -36,7 +36,7 @@ export function BookLibraryPage() {
     if (!file) return;
     setMsg(`Đang nhập “${file.name}”…`);
     try {
-      const book = await importEpub(await file.arrayBuffer(), newId(), files);
+      const book = await importBookFile(file, newId(), files);
       await library.saveBook(book);
       setMsg(`Đã nhập “${book.title}” (${book.chapterCount} chương, chỉ văn bản thuần).`);
     } catch (e) {
@@ -56,9 +56,9 @@ export function BookLibraryPage() {
       <h2 className="page-title">Tủ truyện</h2>
       {msg && <p role="status" className="rounded-xl bg-info-soft px-4 py-3 text-sm text-info-ink">{msg}</p>}
       <div className="card space-y-2">
-        <div className="font-medium">Tải lên file .epub</div>
-        <p className="text-sm text-muted">Chọn file .epub từ máy — app tự nhập ngay sau khi chọn (không cần bấm thêm), chỉ giữ văn bản thuần, mỗi chương một file.</p>
-        <UploadButton primary label="Chọn file .epub" accept=".epub,application/epub+zip,application/octet-stream" ariaLabel="Tải lên epub" onFile={upload} />
+        <div className="font-medium">Tải lên truyện</div>
+        <p className="text-sm text-muted">Chọn file .epub, .pdf (có chữ), .docx, .txt, .md hoặc .html — app tự nhập ngay sau khi chọn, chỉ giữ văn bản thuần, mỗi chương một file. Chương được nhận theo tiêu đề như “第一章”, “Chương 1”; nếu không có thì chia theo phần.</p>
+        <UploadButton primary label="Chọn file truyện" accept=".epub,.pdf,.docx,.txt,.md,.html,.htm,application/epub+zip,application/pdf,text/plain,text/markdown,text/html,application/vnd.openxmlformats-officedocument.wordprocessingml.document" ariaLabel="Tải lên truyện" onFile={upload} />
       </div>
       {books.length === 0 && <p className="card text-center text-muted">Chưa có truyện nào.</p>}
       <ul className="fluid-grid items-start">

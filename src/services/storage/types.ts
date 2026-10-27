@@ -20,7 +20,7 @@ export interface BookMetadata {
   title: string;
   author?: string;
   language: 'zh' | 'vi';
-  originType: 'epub_upload' | 'web_crawl' | 'translated_vi';
+  originType: 'epub_upload' | 'file_upload' | 'web_crawl' | 'translated_vi';
   sourceBookId?: string;
   /** Khoá nguồn (URL mục lục/chương đầu) để nối tiếp các lượt tải qua trình duyệt. */
   sourceUrl?: string;

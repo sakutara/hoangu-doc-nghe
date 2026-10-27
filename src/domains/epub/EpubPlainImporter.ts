@@ -18,6 +18,34 @@ function resolvePath(base: string, href: string): string {
   return out.join('/');
 }
 
+type ManifestItem = { href: string; type: string; props: string };
+
+/** Đọc mục lục (EPUB3 nav hoặc EPUB2 NCX) → tên chương theo đường dẫn file. File đầu tiên trong mục lục thắng. */
+async function readToc(zip: JSZip, opfPath: string, manifest: Map<string, ManifestItem>): Promise<Map<string, string>> {
+  const toc = new Map<string, string>();
+  const add = (base: string, href: string, label: string) => {
+    const path = resolvePath(base, href);
+    const title = sanitizeHtmlToPlainText(`<p>${label}</p>`).paragraphs[0];
+    if (path && title && !toc.has(path)) toc.set(path, title);
+  };
+  const items = [...manifest.values()];
+  const nav = items.find((i) => /\bnav\b/.test(i.props));
+  const ncx = items.find((i) => i.type === 'application/x-dtbncx+xml');
+  if (nav) {
+    const navPath = resolvePath(opfPath, nav.href);
+    const doc = await zip.file(navPath)?.async('string');
+    const body = doc && (/<nav\b[^>]*toc[^>]*>([\s\S]*?)<\/nav>/i.exec(doc)?.[1] ?? doc);
+    for (const a of body?.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi) ?? []) add(navPath, a[1], a[2]);
+  } else if (ncx) {
+    const ncxPath = resolvePath(opfPath, ncx.href);
+    const doc = await zip.file(ncxPath)?.async('string');
+    for (const p of doc?.matchAll(/<navPoint\b[^>]*>\s*<navLabel>\s*<text>([\s\S]*?)<\/text>\s*<\/navLabel>\s*<content\b[^>]*src="([^"]+)"/gi) ?? []) {
+      add(ncxPath, p[2], p[1]);
+    }
+  }
+  return toc;
+}
+
 export async function importEpub(
   buffer: ArrayBuffer | Uint8Array, bookId: string, files: BookFileSystemStore,
 ): Promise<BookMetadata> {
@@ -28,26 +56,30 @@ export async function importEpub(
   const opf = await zip.file(opfPath)?.async('string');
   if (!opf) throw new Error('EPUB không hợp lệ: không đọc được OPF');
 
-  const manifest = new Map<string, { href: string; type: string }>();
+  const manifest = new Map<string, ManifestItem>();
   for (const m of opf.matchAll(/<item\b[^>]*>/gi)) {
     const id = /\bid="([^"]+)"/.exec(m[0])?.[1];
     const href = /\bhref="([^"]+)"/.exec(m[0])?.[1];
     const type = /media-type="([^"]+)"/.exec(m[0])?.[1] ?? '';
-    if (id && href) manifest.set(id, { href, type });
+    const props = /properties="([^"]+)"/.exec(m[0])?.[1] ?? '';
+    if (id && href) manifest.set(id, { href, type, props });
   }
+  const toc = await readToc(zip, opfPath, manifest);
 
   const chapters: BookMetadata['chapters'] = [];
   let index = 0;
   for (const ref of opf.matchAll(/<itemref\b[^>]*idref="([^"]+)"/gi)) {
     const item = manifest.get(ref[1]);
     if (!item || !/xhtml|html/.test(item.type)) continue; // bỏ ảnh/css/font
-    const html = await zip.file(resolvePath(opfPath, item.href))?.async('string');
+    const path = resolvePath(opfPath, item.href);
+    const html = await zip.file(path)?.async('string');
     if (!html) continue;
     const { title, paragraphs } = sanitizeHtmlToPlainText(html);
     if (title && paragraphs[0] === title) paragraphs.shift(); // tiêu đề đã nằm ở dòng đầu file
     if (paragraphs.length === 0) continue;
     index += 1;
-    const chTitle = title ?? `Chương ${index}`;
+    // Ưu tiên tên trong mục lục của EPUB, rồi tới thẻ tiêu đề trong file.
+    const chTitle = toc.get(path) ?? title ?? `Chương ${index}`;
     await files.writeChapterFile(bookId, { index, title: chTitle, paragraphs });
     chapters.push({ index, title: chTitle, fileName: chapterFileName(index) });
   }
