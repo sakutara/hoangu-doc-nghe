@@ -259,11 +259,34 @@
     try { return stripHash(new URL(a.getAttribute('href') || '', pageUrl).href); } catch (e) { return null; }
   }
 
-  /** Danh sách chương [{title,url}] từ trang mục lục, theo thứ tự xuất hiện, bỏ trùng URL. */
+  const VOL_RE = /^\s*(第.{1,9}?[卷部集篇]|卷\s*[\d一二三四五六七八九十百零]+|[上中下]部)/;
+  const VOL_TITLE_RE = /^(第.{1,9}?[卷部集篇][^第]*?)\s*(第.{1,9}?[章节節回].*)$/;
+
+  /** Tách “第一卷 七玄门风云 第一章 山边小村” thành {vol, title}; không có phần quyển thì vol rỗng. */
+  function splitVolume(title, vol) {
+    const t = String(title || '').trim();
+    if (vol) {
+      const rest = t.startsWith(vol) ? t.slice(vol.length).trim() : t;
+      return { vol, title: rest || t };
+    }
+    const m = VOL_TITLE_RE.exec(t);
+    return m ? { vol: m[1].trim(), title: m[2].trim() } : { vol: '', title: t };
+  }
+
+  /** Danh sách chương [{title,url,vol?}] từ trang mục lục, theo thứ tự xuất hiện, bỏ trùng URL. */
   function parseToc(d, tocUrl) {
     const base = new URL(tocUrl);
     const items = [];
     const seen = new Set();
+    // Quyển hiện hành của từng link: tiêu đề quyển (dt, h2–h6, strong…) không chứa link, đứng trước link theo thứ tự tài liệu.
+    const volOf = new Map();
+    let curVol = '';
+    d.querySelectorAll('a[href], dt, h2, h3, h4, h5, h6, strong, b').forEach((e) => {
+      if (e.tagName === 'A') { volOf.set(e, curVol); return; }
+      if (e.querySelector('a[href]')) return;
+      const t = cleanTitle(e.textContent || '');
+      if (t && t.length <= 40 && VOL_RE.test(t) && !/[章节節回]\s*$/.test(t.split(/\s+/)[0])) curVol = t;
+    });
     const push = (a) => {
       let u;
       try { u = new URL(a.getAttribute('href') || '', base); } catch (e) { return; }
@@ -272,7 +295,8 @@
       const title = cleanTitle(a.textContent || '');
       if (!title || seen.has(href)) return;
       seen.add(href);
-      items.push({ title, url: href });
+      const vol = volOf.get(a);
+      items.push(vol ? { title, url: href, vol } : { title, url: href });
     };
     const anchors = [...d.querySelectorAll('a[href]')];
     anchors.filter((a) => CHAPTER_TITLE_RE.test((a.textContent || '').trim())).forEach(push);
@@ -402,7 +426,7 @@
   const pad = (n) => String(n).padStart(4, '0');
 
   /** Dựng EPUB 3 từ các chương. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
-   *  @param {{title:string,bookKey?:string,origin?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,blocks?:Array,paragraphs:string[]}>}} book */
+   *  @param {{title:string,bookKey?:string,origin?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
   function buildEpub(book) {
     const cover = book.cover && IMG_EXT[book.cover.mime] ? book.cover : null;
     const css = 'body{line-height:1.7}h1,h2,h3{text-align:center}p{margin:.6em 0;text-indent:2em}';
@@ -421,8 +445,8 @@
       manifest.push(`<item id="cover-image" href="${img}" media-type="${cover.mime}" properties="cover-image"/>`, '<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>');
       spine.push('<itemref idref="cover" linear="no"/>');
     }
-    const navItems = [];
-    const ncxPoints = [];
+    const groups = [];
+    let order = 0;
     book.chapters.forEach((c, i) => {
       const file = `ch${pad(i + 1)}.xhtml`;
       const blocks = c.blocks && c.blocks.length ? c.blocks : (c.paragraphs || []).map((text) => ({ tag: 'p', text }));
@@ -430,8 +454,24 @@
       entries.push({ name: `OEBPS/${file}`, data: utf8(xhtml(c.title, body, ` data-hn-url="${xmlEsc(c.url || '')}"`)) });
       manifest.push(`<item id="c${i + 1}" href="${file}" media-type="application/xhtml+xml"/>`);
       spine.push(`<itemref idref="c${i + 1}"/>`);
-      navItems.push(`<li><a href="${file}">${xmlEsc(c.title)}</a></li>`);
-      ncxPoints.push(`<navPoint id="n${i + 1}" playOrder="${i + 1}"><navLabel><text>${xmlEsc(c.title)}</text></navLabel><content src="${file}"/></navPoint>`);
+      const sp = splitVolume(c.title, c.vol);
+      const last = groups[groups.length - 1];
+      if (sp.vol && last && last.vol === sp.vol) last.items.push({ file, title: sp.title });
+      else groups.push({ vol: sp.vol, file, items: [{ file, title: sp.title }] });
+    });
+    const li = (f, t) => `<li><a href="${f}">${xmlEsc(t)}</a></li>`;
+    const pt = (f, t, inner) => { order += 1; return `<navPoint id="n${order}" playOrder="${order}"><navLabel><text>${xmlEsc(t)}</text></navLabel><content src="${f}"/>${inner || ''}</navPoint>`; };
+    const navItems = [];
+    const ncxPoints = [];
+    groups.forEach((g) => {
+      if (!g.vol) {
+        g.items.forEach((it) => { navItems.push(li(it.file, it.title)); ncxPoints.push(pt(it.file, it.title)); });
+        return;
+      }
+      navItems.push(`<li><a href="${g.file}">${xmlEsc(g.vol)}</a><ol>${g.items.map((it) => li(it.file, it.title)).join('')}</ol></li>`);
+      const volOrder = order + 1;
+      const kids = (order += 1, g.items.map((it) => pt(it.file, it.title)).join(''));
+      ncxPoints.push(`<navPoint id="v${volOrder}" playOrder="${volOrder}"><navLabel><text>${xmlEsc(g.vol)}</text></navLabel><content src="${g.file}"/>${kids}</navPoint>`);
     });
     const uid = `hoangu-${crc32(utf8(book.bookKey || book.title)).toString(16)}`;
     entries.push({ name: 'OEBPS/nav.xhtml', data: utf8(xhtml(book.title, `<nav epub:type="toc"><h1>Mục lục</h1><ol>${navItems.join('')}</ol></nav>`)) });
@@ -502,6 +542,6 @@
   }
 
   root.HNCore = {
-    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

@@ -157,6 +157,31 @@ describe('extension core', () => {
     expect(back.chapters[1].paragraphs).toEqual([`${HAN}二`, '二三']);
   });
 
+  it('EPUB: mục lục 2 tầng Quyển → Chương, playOrder tăng dần', async () => {
+    const bytes = C.buildEpub({
+      title: 'T',
+      chapters: [
+        { url: 'u1', title: '第一章 山边小村', vol: '第一卷 七玄门风云', paragraphs: ['甲'] },
+        { url: 'u2', title: '第一卷 七玄门风云 第二章 三叔', paragraphs: ['乙'] },
+        { url: 'u3', title: '第二卷 神手谷 第三章 新', paragraphs: ['丙'] },
+        { url: 'u4', title: '番外', paragraphs: ['丁'] },
+      ],
+    });
+    const z = await JSZip.loadAsync(bytes);
+    const nav = await z.file('OEBPS/nav.xhtml')!.async('string');
+    expect(nav).toContain('<li><a href="ch0001.xhtml">第一卷 七玄门风云</a><ol><li><a href="ch0001.xhtml">第一章 山边小村</a></li><li><a href="ch0002.xhtml">第二章 三叔</a></li></ol></li>');
+    expect(nav).toContain('<a href="ch0003.xhtml">第二卷 神手谷</a><ol><li><a href="ch0003.xhtml">第三章 新</a></li></ol>');
+    expect(nav).toContain('<li><a href="ch0004.xhtml">番外</a></li>');
+    const ncx = await z.file('OEBPS/toc.ncx')!.async('string');
+    expect([...ncx.matchAll(/playOrder="(\d+)"/g)].map((m) => +m[1])).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(ncx.indexOf('第一卷')).toBeLessThan(ncx.indexOf('第一章'));
+  });
+
+  it('parseToc: gán quyển theo tiêu đề dt đứng trước', () => {
+    const d = new DOMParser().parseFromString('<dl><dt>第一卷 七玄门风云</dt><dd><a href="/b/1.html">第一章 山边小村</a></dd><dd><a href="/b/2.html">第二章 三叔</a></dd><dt>第二卷 神手谷</dt><dd><a href="/b/3.html">第三章 新</a></dd></dl>', 'text/html');
+    expect(C.parseToc(d, 'https://x.test/b/').map((c: { vol: string }) => c.vol)).toEqual(['第一卷 七玄门风云', '第一卷 七玄门风云', '第二卷 神手谷']);
+  });
+
   it('EPUB: đọc file nén deflate từ trình tạo khác, không có URL gốc, bỏ qua nav', async () => {
     const z = new JSZip();
     z.file('mimetype', 'application/epub+zip');
