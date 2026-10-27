@@ -6,8 +6,8 @@
 
   const C = window.HNCore;
   const READ_BATCH = 200; // số chương đọc từ storage mỗi lượt khi gom file
-  const DELAY_MIN = 1000;
-  const DELAY_JITTER = 500;
+  const DELAY_MIN = 500;
+  const DELAY_JITTER = 200;
   const LIST_PAGE = 200;
   // Phiên bản cách cào: 2 = đã xử lý xáo trộn/đoạn nhiễu của hetushu (chờ script, bỏ thẻ ẩn, tự giải mã). Chương lưu trước đó (không có v) có thể sai thứ tự/lẫn đoạn clone.
   const SCRAPE_V = 2;
@@ -358,11 +358,11 @@
   const sameText = (a, b) => a.paragraphs.join('\n') === b.paragraphs.join('\n');
 
   /** Đường nhanh: fetch HTML + tự giải mã (không mở iframe, không đợi tải trang). Chỉ dùng khi đã TỰ KIỂM CHỨNG:
-   *  chương đầu của mỗi lượt (và cứ 10 chương một lần) tải cả hai đường, so từng đoạn; lệch dù chỉ một đoạn → tắt đường nhanh, dùng iframe. */
+   *  chương đầu của mỗi lượt (và cứ 20 chương một lần) tải cả hai đường, so từng đoạn; lệch dù chỉ một đoạn → tắt đường nhanh, dùng iframe. */
   async function loadPage(url) {
     const f = s.fast;
     f.n += 1;
-    const verify = f.ok === null || (f.ok && f.n % 10 === 0);
+    const verify = f.ok === null || (f.ok && f.n % 20 === 0);
     if (f.ok && !verify) {
       try {
         const p = await loadViaFetch(url);
