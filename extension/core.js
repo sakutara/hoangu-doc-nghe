@@ -5,19 +5,11 @@
   const TOC_RE = /目录|目錄|章节列表|章節列表/;
   const CHAPTER_TITLE_RE = /第.{1,9}[章节節回卷]|^\s*\d+\s*[.、]|^\s*chapter\s*\d+/i;
   const CHALLENGE_RE = /Just a moment|cf-chl|challenge-form|challenges\.cloudflare\.com|captcha|验证码|人机验证|verify you are human|unusual traffic/i;
-  const SELECTORS = ['#chapter-content', '#content', '#chaptercontent', '.Readarea', '.chapter-content', 'article'];
+  const SELECTORS = ['#content', '#chaptercontent', '.Readarea', '.chapter-content', 'article'];
   // dfn/samp/bdo/q/u: hetushu chèn tên site / link giả vào giữa đoạn bằng các thẻ inline này.
   const SKIP_RE = /^(script|style|iframe|noscript|dfn|samp|bdo|q|u)$/i;
   const BLOCK_RE = /^(p|div|li|section|article|ul|ol|blockquote|tr)$/i;
   const HEAD_RE = /^h[1-6]$/i;
-
-  // ---------- zhaiyuedu.com ----------
-  // Trang truyện: /<mã>.html (có danh sách “最新” + ~60 chương đầu, không có mục lục đầy đủ); chương n: /<mã>/<n>.html.
-  // Nội dung chương nạp bằng script (initTxt → file .zyd): đến lúc đó #chapter-content chỉ có khối .chapter-loading + khung giới thiệu .gray.
-  const ZY_HOST_RE = /^(?:www\.)?zhaiyuedu\.com$/i;
-  const ZY_RESERVED_RE = /^(?:all|author|k|readed|static|data|search|top|rank|user|shelf|login|js|css|img)$/i;
-  const ZY_JUNK_RE = /宅阅读|ZHAIYUEDU|章节内容加载中|请记住|若无法阅读|章节报错|推荐作品|相关作品|大家正在读|返回目录|上一章|下一章|首章|尾章|加书签|朗读|滚屏/i;
-  const ZY_SKIP = '.chapter-loading,.chapter-ext-report,.pages,.box-wrap,#chapter-content .gray,#chapter-content .line';
 
   // ---------- dọn nội dung ----------
   const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()•·．・";
@@ -105,7 +97,6 @@
   /** Trang có script xáo trộn thẻ p rồi mới sắp lại (hetushu: <body data-randomtype=…>; khóa sắp xếp là chuỗi base64 trong meta, hoặc tải r<id>.json
    *  khi data-doctype="json") → HTML thô (fetch/DOMParser, script không chạy) còn nguyên thứ tự xáo + đoạn thừa, KHÔNG dùng được. */
   function needsScripts(d) {
-    if (chapterLoading(d)) return true;
     if (d.body && d.body.hasAttribute('data-randomtype')) return true;
     return Array.from(d.querySelectorAll('meta[content]')).some((m) => /^[A-Za-z0-9+/=]{40,}$/.test(m.getAttribute('content') || ''));
   }
@@ -150,58 +141,6 @@
     return true;
   }
 
-  function isZhaiyuedu(url) {
-    try { return ZY_HOST_RE.test(new URL(url).hostname); } catch (e) { return false; }
-  }
-
-  /** Nhận diện trang zhaiyuedu: {code, origin, home, isHome, chapter, chapterUrl(n)}; null nếu không phải trang truyện / chương. */
-  function zhaiyueduBook(pageUrl) {
-    let u;
-    try { u = new URL(pageUrl); } catch (e) { return null; }
-    if (!ZY_HOST_RE.test(u.hostname)) return null;
-    const m = /^\/([A-Za-z0-9-]+)(?:\.html|\/(\d+)\.html)$/.exec(u.pathname);
-    if (!m || ZY_RESERVED_RE.test(m[1])) return null;
-    return { code: m[1], origin: u.origin, home: `${u.origin}/${m[1]}.html`, isHome: m[2] === undefined, chapter: m[2] ? +m[2] : 0, chapterUrl: (n) => `${u.origin}/${m[1]}/${n}.html` };
-  }
-
-  /** Trang chương còn đang chờ script nạp nội dung (khối .chapter-loading còn hiện). */
-  function chapterLoading(d) {
-    const l = d.querySelector('#chapter-content .chapter-loading');
-    return !!l && !isHidden(l);
-  }
-
-  /** Tên truyện từ trang zhaiyuedu (a#book-title ở trang chương, h1 ở trang truyện). */
-  function zhaiyueduBookTitle(d) {
-    const a = d.querySelector('#book-title');
-    if (a) return cleanTitle(a.getAttribute('data-book') || a.textContent || '');
-    const h = d.querySelector('h1');
-    return h ? cleanTitle(h.textContent || '') : '';
-  }
-
-  /** Mục lục đầy đủ 1..N của truyện zhaiyuedu. N = lớn nhất trong: biến CHAPTERS của trang chương, mọi link /<mã>/<n>.html (danh sách 最新, 尾章…) của các tài liệu đưa vào. */
-  function zhaiyueduToc(docs, pageUrl) {
-    const book = zhaiyueduBook(pageUrl);
-    if (!book) return [];
-    const re = new RegExp(`^/${book.code}/(\\d+)\\.html$`);
-    let total = 0;
-    [].concat(docs).forEach((d) => {
-      const sc = /\bCHAPTERS\s*=\s*(\d+)/.exec(Array.from(d.querySelectorAll('script')).map((x) => x.textContent || '').join('\n'));
-      if (sc) total = Math.max(total, +sc[1]);
-      d.querySelectorAll('a[href]').forEach((a) => {
-        try {
-          const m = re.exec(new URL(a.getAttribute('href') || '', book.home).pathname);
-          if (m) total = Math.max(total, +m[1]);
-        } catch (e) { /* link hỏng */ }
-      });
-    });
-    return Array.from({ length: total }, (_, i) => ({ title: `第${i + 1}章`, url: book.chapterUrl(i + 1) }));
-  }
-
-  /** Bỏ các dòng ngắn là rác của trang (menu, tên miền, nút điều hướng, quảng cáo…). */
-  function dropZhaiyueduJunk(blocks) {
-    return blocks.filter((b) => b.tag !== 'p' || b.text.length > 40 || !ZY_JUNK_RE.test(b.text));
-  }
-
   /** Dấu vân tay nội dung chương hiện tại — đổi nghĩa là script của trang vẫn đang sắp lại/xóa thẻ. */
   function contentSignature(d) {
     const el = pickContent(d);
@@ -222,7 +161,7 @@
       if (n.nodeType === 3) { buf += n.nodeValue || ''; return; }
       if (n.nodeType !== 1) return;
       const name = n.tagName;
-      if (SKIP_RE.test(name) || (n.matches && n.matches(`.ads,.bottem,${ZY_SKIP}`)) || isHidden(n)) return;
+      if (SKIP_RE.test(name) || (n.matches && n.matches('.ads,.bottem')) || isHidden(n)) return;
       if (name.toUpperCase() === 'BR') { buf += '\n'; return; }
       if (HEAD_RE.test(name)) {
         flush();
@@ -281,26 +220,16 @@
 
   function isChallengeHtml(html) { return CHALLENGE_RE.test(html.slice(0, 20000)); }
 
-  /** Tiêu đề chương zhaiyuedu: .chapter-name (script điền), không có thì phần giữa của <title> “『Tên』在线/第 2 章/Tác giả”; bỏ dấu cách trong “第 2 章”. */
-  function zhaiyueduChapterTitle(d, pageUrl) {
-    const n = d.querySelector('.chapter-name');
-    let t = (n && (n.textContent || '').trim()) || '';
-    if (!t) t = (/\/\s*(第[^/]{1,12}?[章节節回])\s*\//.exec(d.title || '') || [])[1] || '';
-    if (!t) { const b = zhaiyueduBook(pageUrl); if (b && b.chapter) t = `第${b.chapter}章`; }
-    return t.replace(/第\s*(\d+)\s*([章节節回])/, '第$1$2');
-  }
-
   /** @returns {{title:string,paragraphs:string[],blocks:Array,next?:string,challenge?:boolean}} */
   function extractPage(d, pageUrl) {
     const full = d.documentElement ? d.documentElement.outerHTML : '';
     const el = pickContent(d);
     const all = el ? blocksOf(el) : [];
     if (!all.length && isChallengeHtml(full)) return { title: '', paragraphs: [], blocks: [], challenge: true };
-    const zy = isZhaiyuedu(pageUrl);
     const inner = all.filter((b) => b.tag !== 'p' && b.tag < 'h4')[0];
     const h = d.querySelector('h1') || d.querySelector('h2');
     const ct = d.querySelector('#ctitle .title');
-    const title = cleanTitle((ct && ct.textContent) || (zy && zhaiyueduChapterTitle(d, pageUrl)) || (inner && inner.text) || (h && h.textContent) || d.title || '');
+    const title = cleanTitle((ct && ct.textContent) || (inner && inner.text) || (h && h.textContent) || d.title || '');
     const st = squeezeSpaces(title);
     // Bỏ các h1–h3 đầu bài lặp lại tiêu đề (hetushu tách “第一季” / “第一节 …” thành hai h2).
     let lead = true;
@@ -310,7 +239,7 @@
       if (b.tag === 'p') lead = false;
       return true;
     });
-    const blocks = dedupeBlocks(zy ? dropZhaiyueduJunk(body) : body);
+    const blocks = dedupeBlocks(body);
     let next;
     const a = d.querySelector('a#next') || d.querySelector('#next a') || findAnchor(d, NEXT_RE, true);
     if (a) {
@@ -320,8 +249,6 @@
         if (n.origin === page.origin && !isTocUrl(n, page)) next = n.href;
       } catch (e) { /* link hỏng */ }
     }
-    // zhaiyuedu: nội dung chưa nạp xong → coi như rỗng (không lưu rác của trang); người gọi chờ rồi trích lại.
-    if (zy && chapterLoading(d)) return { title, paragraphs: [], blocks: [], next };
     return { title, paragraphs: blocks.map((b) => b.text), blocks, next };
   }
 
@@ -627,6 +554,6 @@
   }
 
   root.HNCore = {
-    isZhaiyuedu, zhaiyueduBook, zhaiyueduBookTitle, zhaiyueduToc, chapterLoading, needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

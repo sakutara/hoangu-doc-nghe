@@ -64,11 +64,6 @@ là thấy dấu ✓ các chương đã lưu (được kiểm tra lại nội du
 Nghỉ 2–4 giây giữa chương. Gặp trang challenge/captcha (hoặc HTTP 403/429/503, chương rỗng) thì **dừng ngay**, các chương đã lấy vẫn nằm trong extension
 và báo lại; extension không cố vượt kiểm tra. Hãy mở trang, qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).
 
-## zhaiyuedu.com
-- Trang truyện `zhaiyuedu.com/<mã>.html`, chương n: `zhaiyuedu.com/<mã>/<n>.html`. Site không có mục lục đầy đủ nên extension **dựng mục lục 1..N** với N = số chương lớn nhất tìm thấy (danh sách 最新 ở trang truyện, biến `CHAPTERS`, link 尾章). Mở trang truyện *hoặc* một chương đều được (trang chương sẽ tự tải trang truyện); tên chương là “第N章”.
-- Nội dung chương nạp bằng script nên luôn tải qua iframe và đợi khối “章节内容加载中” biến mất; hết 20s vẫn chưa nạp thì dừng, không lưu rác. Các dòng menu/giới thiệu/quảng cáo/nút điều hướng của site bị lọc.
-- Bản mục lục chỉ cập nhật khi bấm làm mới (site có cache, “最新” có thể trễ vài chương).
-
 ## Giới hạn
 Mục lục phân nhiều trang chưa được gộp; bộ chọn nội dung theo heuristic. Việc bỏ khoảng trắng cũng làm dính các từ tiếng Anh/số trong nội dung.
 

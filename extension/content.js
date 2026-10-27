@@ -414,13 +414,6 @@
       await quiet(300);
       return;
     }
-    if (d.querySelector('#chapter-content')) {
-      // zhaiyuedu: nội dung nạp bằng script → đợi khối .chapter-loading biến mất rồi thêm 300ms.
-      while (d.readyState === 'loading' && left()) await sleep(50);
-      while (C.chapterLoading(d) && left()) await sleep(100);
-      await quiet(300);
-      return;
-    }
     while (d.readyState !== 'complete' && left()) await sleep(200);
     await quiet(1200);
   }
@@ -895,20 +888,8 @@
   async function loadToc(force) {
     if (!force && s.toc.length) return;
     let list = [];
-    const zy = C.zhaiyueduBook(here);
     try {
-      if (zy) {
-        // zhaiyuedu không có trang mục lục đầy đủ: dựng 1..N từ số chương mới nhất (最新 / CHAPTERS) của trang truyện.
-        let docs = [document];
-        if (!zy.isHome) {
-          say('Đang tải trang truyện…');
-          const res = await fetch(zy.home, { credentials: 'include' });
-          const html = await res.text();
-          if (res.status === 403 || res.status === 429 || C.isChallengeHtml(html)) { say('⚠ Trang truyện bị kiểm tra bot — hãy mở nó, qua kiểm tra rồi bấm lại.'); return; }
-          docs = [new DOMParser().parseFromString(html, 'text/html'), document];
-        }
-        list = C.zhaiyueduToc(docs, zy.home);
-      } else if (s.isTocPage) list = C.parseToc(document, here);
+      if (s.isTocPage) list = C.parseToc(document, here);
       else if (s.tocUrl) {
         say('Đang tải mục lục…');
         const res = await fetch(s.tocUrl, { credentials: 'include' });
@@ -949,13 +930,7 @@
     s.livePage = hasContent ? page : null;
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
     if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
-    const zy = C.zhaiyueduBook(here);
-    if (zy) { // trang chương zhaiyuedu có link “目录” riêng (indexlist) không phải mục lục → dùng trang truyện làm gốc
-      s.isTocPage = zy.isHome;
-      if (zy.isHome) s.livePage = null;
-      s.tocUrl = zy.isHome ? null : zy.home;
-    }
-    s.pageTitle = (zy && C.zhaiyueduBookTitle(document)) || C.guessBookTitle(document.title, page.title);
+    s.pageTitle = C.guessBookTitle(document.title, page.title);
     s.bookKey = await resolveBookKey();
     s.info = await store.get(K.book(s.bookKey), null) || {
       title: s.pageTitle, origin: location.origin, bookKey: s.bookKey, parts: 0,
