@@ -80,8 +80,8 @@ describe('extension core', () => {
     expect(C.cleanText('前文m.ｈｅｔｕshｕ.cｏｍ•cｏm后文')).toBe('前文后文');
     expect(C.cleanText('老老和图书实实')).toBe('老老实实');
     expect(C.cleanText('他去了和图书馆')).toBe('他去了和图书馆');
-    expect(C.cleanText('某某书名免费在线阅读 · 1/2451')).toBe('');
-    expect(C.cleanText('这一句话里正常提到免费在线阅读的人')).toBe('这一句话里正常提到免费在线阅读的人');
+    expect(C.cleanText('某某书名免费在线阅读 · 1/2451')).toBe('某某书名');
+    expect(C.cleanText('前文费在线阅读后文')).toBe('前文后文');
   });
 
   it('bỏ đoạn lặp dài trong cùng chương, giữ đoạn ngắn lặp', () => {

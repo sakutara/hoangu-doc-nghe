@@ -38,8 +38,8 @@
   const SITE_RE = new RegExp(`(?:https?[:：][/／]{0,2})?(?:(?:m|www)${DOT})?hetushu(?:${DOT}*(?:com|cn|net))*`, 'gi');
   // Tên site bằng chữ Hán chèn giữa chữ thường (…老老和图书实实…); không đụng 和图书馆/店/室/城/籍.
   const SITE_ZH_RE = /和图书(?![馆店室城籍])/g;
-  // Dòng đầu trang kiểu “Tên truyện免费在线阅读 · 1/2451”.
-  const PAGER_RE = /免费在线阅读[·•.．]?\d*\/\d+$/;
+  // Cụm watermark đầu trang “…免费在线阅读 · 1/2451”: bỏ riêng cụm này (kèm bộ đếm), giữ phần còn lại của dòng.
+  const PAGER_RE = /免?费在线阅读(?:[·•.．]?\d+\/\d+)?/g;
 
   function removeFolded(text, re) {
     const f = foldAscii(text);
@@ -58,10 +58,9 @@
     return removeFolded(removeFolded(text, URL_RE), SITE_RE).replace(/hetushu/gi, '').replace(/\.\s*com/gi, '').replace(/www\.\s*/gi, '');
   }
 
-  /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng → dọn link/watermark → bỏ tên site chữ Hán → bỏ dòng đầu trang “…免费在线阅读 · n/m”. */
+  /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng → dọn link/watermark → bỏ tên site chữ Hán → bỏ cụm “(免)费在线阅读 · n/m”. */
   function cleanText(text) {
-    const t = stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '');
-    return t.length <= 60 && PAGER_RE.test(t) ? '' : t;
+    return stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '').replace(PAGER_RE, '');
   }
 
   /** Bỏ đoạn văn y hệt nhau trong cùng một chương (trang nguồn chèn đoạn lặp làm nhiễu); chỉ xét đoạn p dài ≥ 12 ký tự, giữ lần xuất hiện đầu. */
