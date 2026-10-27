@@ -84,6 +84,16 @@ describe('extension core', () => {
     expect(C.cleanText('前文费在线阅读后文')).toBe('前文后文');
   });
 
+  it('tiêu đề: bỏ 免费在线阅读 / watermark nhưng giữ khoảng trắng; áp dụng cho tiêu đề chương và mục lục', () => {
+    expect(C.cleanTitle('第一章 山边小村 免费在线阅读')).toBe('第一章 山边小村');
+    expect(C.cleanTitle('书名免费在线阅读 · 1/2451')).toBe('书名 · 1/2451');
+    expect(C.cleanTitle('第二章ｍ•ｈｅtｕshu.cｏm.cｏm 开始')).toBe('第二章 开始');
+    const d = doc('<h1>第一章 山边小村免费在线阅读</h1><div id="content"><p>' + HAN + '</p></div>');
+    expect(C.extractPage(d, 'http://s/1.html').title).toBe('第一章 山边小村');
+    const toc = doc('<a href="/b/1.html">第1章 开始免费在线阅读</a><a href="/b/2.html">第2章 继续</a><a href="/b/3.html">第3章 三</a>');
+    expect(C.parseToc(toc, 'http://s/b/index.html').map((c: { title: string }) => c.title)).toEqual(['第1章 开始', '第2章 继续', '第3章 三']);
+  });
+
   it('bỏ đoạn lặp dài trong cùng chương, giữ đoạn ngắn lặp', () => {
     const a = `${HAN}甲`;
     const out = C.dedupeBlocks([{ tag: 'p', text: a }, { tag: 'p', text: '……' }, { tag: 'p', text: a }, { tag: 'p', text: '……' }, { tag: 'h2', text: a }]);

@@ -29,6 +29,11 @@ Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot
 5. Bỏ đoạn văn **y hệt nhau** trong cùng một chương (chỉ xét đoạn ≥ 12 ký tự, giữ lần đầu) — trang nguồn chèn đoạn lặp làm nhiễu.
 6. Đoạn rỗng sau khi dọn bị bỏ. Nút “Lọc lại…” ghi đè nội dung đã lưu; sau đó xuất lại EPUB.
 
+## Sửa tiêu đề
+Bấm vào **tên truyện** (đầu panel) hoặc **tiêu đề chương** trong danh sách để sửa tại chỗ: Enter hoặc bấm ra ngoài = lưu, Esc = hủy.
+Tiêu đề chương được ghi cả vào mục lục lẫn nội dung đã lưu nên EPUB xuất ra dùng tiêu đề mới. Bấm vào chỗ khác trên dòng (ô tick, số thứ tự) để chọn chương.
+Tiêu đề (chương, sách, mục lục) cũng được dọn watermark như nội dung (trừ việc bỏ khoảng trắng); “Lọc lại nội dung đã lưu” dọn luôn các tiêu đề đã lưu.
+
 ## Lưu trạng thái
 Theo URL mục lục của truyện: mục lục, danh sách và nội dung các chương đã lưu, ảnh bìa. Tải lại trang/đóng trình duyệt không mất; mở lại panel
 là thấy dấu ✓ các chương đã lưu (được kiểm tra lại nội dung thật) và tự bỏ qua chúng. **Khôi phục chương mất** nhặt lại nội dung mồ côi;

@@ -63,6 +63,11 @@
     return stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '').replace(PAGER_RE, '');
   }
 
+  /** Làm sạch tiêu đề (chương / sách / mục lục): dọn link-watermark, tên site chữ Hán, “(免)费在线阅读”; giữ khoảng trắng trong tiêu đề. */
+  function cleanTitle(text) {
+    return stripLinks(text.replace(/\s+/g, ' ')).replace(SITE_ZH_RE, '').replace(PAGER_RE, '').replace(/\s+/g, ' ').trim();
+  }
+
   /** Bỏ đoạn văn y hệt nhau trong cùng một chương (trang nguồn chèn đoạn lặp làm nhiễu); chỉ xét đoạn p dài ≥ 12 ký tự, giữ lần xuất hiện đầu. */
   function dedupeBlocks(blocks) {
     const seen = new Set();
@@ -157,7 +162,7 @@
     if (!all.length && isChallengeHtml(full)) return { title: '', paragraphs: [], blocks: [], challenge: true };
     const inner = all.filter((b) => b.tag !== 'p' && b.tag < 'h4')[0];
     const h = d.querySelector('h1') || d.querySelector('h2');
-    const title = stripLinks(((inner && inner.text) || (h && h.textContent) || d.title || '').replace(/\s+/g, ' ').trim()).trim();
+    const title = cleanTitle((inner && inner.text) || (h && h.textContent) || d.title || '');
     const blocks = dedupeBlocks(all.filter((b) => b.text !== title && b.text !== squeezeSpaces(title)));
     let next;
     const a = d.querySelector('a#next') || d.querySelector('#next a') || findAnchor(d, NEXT_RE, true);
@@ -188,7 +193,7 @@
       try { u = new URL(a.getAttribute('href') || '', base); } catch (e) { return; }
       if (u.origin !== base.origin || u.href === base.href) return;
       const href = stripHash(u.href);
-      const title = (a.textContent || '').replace(/\s+/g, ' ').trim();
+      const title = cleanTitle(a.textContent || '');
       if (!title || seen.has(href)) return;
       seen.add(href);
       items.push({ title, url: href });
@@ -223,7 +228,7 @@
   function guessBookTitle(docTitle, chapterTitle) {
     const parts = docTitle.split(/[-_|—·]/).map((s) => s.trim()).filter(Boolean);
     const pick = parts.filter((p) => p !== chapterTitle && !/第.{1,9}[章节節回]/.test(p))[0];
-    return pick || parts[0] || chapterTitle || 'Truyện';
+    return cleanTitle(pick || parts[0] || chapterTitle || '') || 'Truyện';
   }
 
   const safeName = (s) => s.replace(/[\\/:*?"<>|]/g, '_').trim().slice(0, 80) || 'truyen';
@@ -412,7 +417,7 @@
       if (!body) continue;
       const head = body.querySelector('h1,h2,h3');
       const docTitle = doc.querySelector('title');
-      const chTitle = stripLinks(((head && head.textContent) || (docTitle && docTitle.textContent) || '').replace(/\s+/g, ' ').trim()).trim();
+      const chTitle = cleanTitle((head && head.textContent) || (docTitle && docTitle.textContent) || '');
       const blocks = dedupeBlocks(blocksOf(body).filter((b) => b.text && b.text !== chTitle && b.text !== squeezeSpaces(chTitle)));
       if (!blocks.length) continue;
       chapters.push({ url: body.getAttribute('data-hn-url') || '', title: chTitle || `Chương ${chapters.length + 1}`, blocks, paragraphs: blocks.map((b) => b.text) });
@@ -421,6 +426,6 @@
   }
 
   root.HNCore = {
-    han, stripLinks, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
+    han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

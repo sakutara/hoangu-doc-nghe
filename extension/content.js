@@ -25,7 +25,7 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
-    sel: new Set(), lastClick: -1, cover: null,
+    sel: new Set(), lastClick: -1, cover: null, editing: null,
   };
   /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
   const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
@@ -45,7 +45,8 @@
     button.pri{background:#b91c1c;color:#fff}
     button:disabled{opacity:.45;cursor:default}
     input{font:inherit;padding:2px 4px;border:1px solid #bbb;border-radius:4px;width:64px}
-    input.wide{width:100%;box-sizing:border-box}
+    input.wide,input.edit{width:100%;box-sizing:border-box}
+    .ttl{cursor:text;border-bottom:1px dashed #bbb}
     .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
     .msg{padding:4px 6px;background:#fff;border:1px solid #ddd;border-radius:4px;white-space:pre-wrap}
     .warn{border-color:#b91c1c;color:#b91c1c}
@@ -81,7 +82,8 @@
     const listTop = oldList ? oldList.scrollTop : 0;
     const bdTop = bd.scrollTop;
     bd.replaceChildren(
-      el('div', null, el('b', null, s.info ? s.info.title : '…'), el('br'),
+      el('div', null, s.editing === BOOK_EDIT ? editBox(s.info.title, (v) => saveBookTitle(v))
+        : el('b', { class: 'ttl', title: 'Bấm để sửa tên truyện', onclick: () => startEdit(BOOK_EDIT) }, s.info ? s.info.title : '…'), el('br'),
         el('small', null, `${savedCount} chương đã lưu trong extension · ${s.toc.length || '?'} chương trong mục lục`)),
       el('div', { class: 'row' },
         el('button', { onclick: () => loadToc(true), disabled: s.running }, s.toc.length ? 'Làm mới mục lục' : 'Tải mục lục'),
@@ -97,7 +99,9 @@
       s.toc.length ? el('div', { class: 'list' }, page.map((c) => el('div', {
         class: `it${s.sel.has(c.url) ? ' sel' : ''}`, title: c.title,
         onclick: (e) => toggleSel(c, view, e.shiftKey),
-      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', null, s.chap[c.url] ? '✓' : ''), el('span', { class: 'n' }, String(c.n)), el('span', null, c.title)))) : '',
+      }, el('input', { type: 'checkbox', checked: s.sel.has(c.url), style: 'width:auto;pointer-events:none' }), el('i', null, s.chap[c.url] ? '✓' : ''), el('span', { class: 'n' }, String(c.n)),
+        s.editing === c.url ? editBox(c.title, (v) => saveChapterTitle(c.url, v))
+          : el('span', { class: 'ttl', title: 'Bấm để sửa tiêu đề (bấm chỗ khác trên dòng để chọn chương)', onclick: (e) => { e.stopPropagation(); startEdit(c.url); } }, c.title)))) : '',
       s.toc.length > LIST_PAGE || f ? el('div', { class: 'row' },
         el('button', { onclick: () => { s.offset = Math.max(0, off - LIST_PAGE); render(); }, disabled: off === 0 }, '‹'),
         el('small', null, `${view.length ? off + 1 : 0}–${Math.min(off + LIST_PAGE, view.length)} / ${view.length}`),
@@ -128,6 +132,48 @@
     bd.scrollTop = bdTop;
   }
   const say = (m) => { s.msg = m; render(); };
+
+  // ---------- sửa tiêu đề ----------
+  const BOOK_EDIT = '\u0000book';
+  /** Ô nhập tại chỗ: Enter/ra ngoài = lưu, Esc = hủy. */
+  function editBox(value, onSave) {
+    let done = false;
+    const finish = (save, v) => { if (done) return; done = true; if (save) onSave(v); else { s.editing = null; render(); } };
+    return el('input', {
+      class: 'edit', value, onclick: (e) => e.stopPropagation(),
+      onkeydown: (e) => { if (e.key === 'Enter') finish(true, e.target.value); else if (e.key === 'Escape') finish(false); },
+      onblur: (e) => finish(true, e.target.value),
+    });
+  }
+  function startEdit(key) {
+    s.editing = key;
+    render();
+    const inp = sh.querySelector('input.edit');
+    if (inp) { inp.focus(); inp.select(); }
+  }
+  async function saveBookTitle(v) {
+    const t = C.cleanTitle(v);
+    s.editing = null;
+    if (t && t !== s.info.title) { s.info.title = t; await persistMeta(); say(`Đã đổi tên truyện: ${t}`); } else render();
+  }
+  /** Đổi tiêu đề chương trong mục lục và trong nội dung đã lưu (nếu có) — EPUB xuất ra dùng tiêu đề mới. */
+  async function saveChapterTitle(url, v) {
+    const t = C.cleanTitle(v);
+    s.editing = null;
+    const item = s.toc.find((c) => c.url === url);
+    if (!t || !item || t === item.title) { render(); return; }
+    item.title = t;
+    await store.set(K.toc(s.bookKey), s.toc);
+    const c = s.chap[url];
+    if (c) {
+      const k = bodyKey(c, url);
+      const b = (await chrome.storage.local.get(k))[k];
+      if (b) await chrome.storage.local.set({ [k]: { ...b, title: t } });
+      c.t = t;
+      await persistMeta();
+    }
+    say(`Đã đổi tiêu đề: ${t}`);
+  }
 
   /** Mở hộp chọn file tạm (input không gắn vào giao diện để render() không làm mất nó). */
   function pickFile(accept, handler) {
@@ -440,7 +486,7 @@
           let blocks = (b.blocks && b.blocks.length ? b.blocks : (b.paragraphs || []).map((text) => ({ tag: 'p', text })))
             .map((x) => ({ tag: x.tag, text: C.cleanText(x.text) })).filter((x) => x.text);
           blocks = C.dedupeBlocks(blocks);
-          const title = C.stripLinks(b.title || '') || b.title;
+          const title = C.cleanTitle(b.title || '') || b.title;
           const same = title === b.title && blocks.length === (b.paragraphs || []).length && blocks.every((x, j) => x.text === b.paragraphs[j]);
           if (same) return;
           removed += (b.paragraphs || []).length - blocks.length;
@@ -449,7 +495,14 @@
         });
         if (changed) await chrome.storage.local.set(out);
       }
-      say(`Đã lọc xong: sửa ${changed} chương, bỏ ${removed} đoạn rỗng. Xuất lại EPUB để có bản sạch.`);
+      // Tiêu đề trong mục lục, tên truyện và nhãn chương cũng được dọn.
+      let titles = 0;
+      s.toc.forEach((c) => { const n = C.cleanTitle(c.title) || c.title; if (n !== c.title) { c.title = n; titles += 1; } });
+      Object.values(s.chap).forEach((c) => { if (c.t) c.t = C.cleanTitle(c.t) || c.t; });
+      const bt = C.cleanTitle(s.info.title) || s.info.title;
+      if (bt !== s.info.title) { s.info.title = bt; titles += 1; }
+      if (titles) { await store.set(K.toc(s.bookKey), s.toc); await persistMeta(); }
+      say(`Đã lọc xong: sửa ${changed} chương, bỏ ${removed} đoạn rỗng.${titles ? ` Dọn ${titles} tiêu đề.` : ''} Xuất lại EPUB để có bản sạch.`);
     } catch (err) {
       say(`⚠ Lỗi khi lọc: ${err.message}`);
     }
