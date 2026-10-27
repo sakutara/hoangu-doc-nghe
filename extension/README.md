@@ -25,7 +25,7 @@ Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot
 2. Rồi dọn link/watermark (so khớp sau khi “gập” chữ full-width, chữ Cyrillic giống Latin về ASCII, nên bắt được cả `ｍ•ｈｅtｕshu.cｏm.cｏm`, `ｈｔtps://ｍ•ｈｅｔｕshｕ.ｃｏm…`):
    URL `http(s)://…`, mọi “hetushu” (kèm `m.`/`www.`, dấu `•` `·`, đuôi `.com` lặp), mọi “.com” / “. com”, “www.”.
 3. Bỏ tên site chữ Hán chèn giữa chữ (“老老**和图书**实实” → “老老实实”; không đụng “和图书馆/店/室/城/籍”).
-4. Bỏ cụm watermark “免费在线阅读 · 1/2451” (và “费在线阅读”) khỏi dòng đầu trang; phần còn lại của dòng (tên truyện, tên tập) được giữ.
+4. Bỏ cụm watermark “免费在线阅读” (và “费在线阅读”); phần còn lại của dòng (tên truyện, bộ đếm…) được giữ.
 5. Bỏ đoạn văn **y hệt nhau** trong cùng một chương (chỉ xét đoạn ≥ 12 ký tự, giữ lần đầu) — trang nguồn chèn đoạn lặp làm nhiễu.
 6. Đoạn rỗng sau khi dọn bị bỏ. Nút “Lọc lại…” ghi đè nội dung đã lưu; sau đó xuất lại EPUB.
 
