@@ -269,10 +269,36 @@
   // ---------- tải trang ----------
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+  /** Đợi script của trang (xáo trộn rồi sắp lại / xóa thẻ p thừa) chạy xong: tải xong + nội dung không đổi liên tục ~1,2s (tối đa 12s). */
+  async function settle(d) {
+    const t0 = Date.now();
+    while (d.readyState !== 'complete' && Date.now() - t0 < 12000) await sleep(200);
+    let sig = C.contentSignature(d);
+    let since = Date.now();
+    while (Date.now() - since < 1200 && Date.now() - t0 < 12000) {
+      await sleep(250);
+      const cur = C.contentSignature(d);
+      if (cur !== sig) { sig = cur; since = Date.now(); }
+    }
+  }
+
   async function loadViaFetch(url) {
     const res = await fetch(url, { credentials: 'include' });
     const html = await res.text();
-    const page = C.extractPage(new DOMParser().parseFromString(html, 'text/html'), url);
+    const parsed = new DOMParser().parseFromString(html, 'text/html');
+    if (C.needsScripts(parsed)) {
+      // Script của trang không chạy trong DOMParser → tự sắp lại theo khóa (cùng thuật toán section.js); khóa không khớp thì không tin.
+      const src = C.scrambleKeySource(parsed, url);
+      if (!src) return null;
+      let key = src.key;
+      if (src.url) {
+        const kr = await fetch(src.url, { credentials: 'include' });
+        if (!kr.ok) return null;
+        key = await kr.text();
+      }
+      if (!key || !C.descramble(parsed, key)) return null;
+    }
+    const page = C.extractPage(parsed, url);
     if (!page.paragraphs.length && (res.status === 403 || res.status === 429 || res.status === 503 || C.isChallengeHtml(html))) {
       return { title: '', paragraphs: [], blocks: [], challenge: true };
     }
@@ -295,7 +321,7 @@
           if (!d) { loadViaFetch(url).then(finish, () => finish(null)); return; }
           const page = C.extractPage(d, url);
           if (page.challenge) { finish(page); return; }
-          if (C.han(page.paragraphs.join('')) > 20) { setTimeout(() => finish(C.extractPage(d, url)), 800); return; }
+          if (C.han(page.paragraphs.join('')) > 20) { settle(d).then(() => finish(C.extractPage(d, url)), () => finish(null)); return; }
           if (Date.now() - started > 15000) { finish(page); return; }
           setTimeout(poll, 500);
         };
@@ -599,6 +625,7 @@
         if (!t) { reason = limitNote || 'Hết danh sách.'; break; }
         if (s.stop) { reason = 'Đã dừng.'; break; }
         let page = t.live && s.livePage;
+        if (page) { await settle(document); page = C.extractPage(document, here); s.livePage = page; }
         if (!page) {
           if (!first) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
           if (s.stop) { reason = 'Đã dừng.'; break; }
@@ -694,6 +721,7 @@
     if (ui.tab === 'read' || ui.tab === 'dl') s.tab = ui.tab;
     HN().onChange(() => { if (s.tab === 'read') render(); });
     if (ui.reader) HN().enable();
+    await settle(document);
     const page = C.extractPage(document, here);
     s.isTocPage = C.looksLikeToc(document, here);
     const hasContent = !s.isTocPage && C.han(page.paragraphs.join('')) > 100;

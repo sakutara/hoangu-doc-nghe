@@ -6,7 +6,8 @@
   const CHAPTER_TITLE_RE = /第.{1,9}[章节節回卷]|^\s*\d+\s*[.、]|^\s*chapter\s*\d+/i;
   const CHALLENGE_RE = /Just a moment|cf-chl|challenge-form|challenges\.cloudflare\.com|captcha|验证码|人机验证|verify you are human|unusual traffic/i;
   const SELECTORS = ['#content', '#chaptercontent', '.Readarea', '.chapter-content', 'article'];
-  const SKIP_RE = /^(script|style|iframe|noscript)$/i;
+  // dfn/samp/bdo/q/u: hetushu chèn tên site / link giả vào giữa đoạn bằng các thẻ inline này.
+  const SKIP_RE = /^(script|style|iframe|noscript|dfn|samp|bdo|q|u)$/i;
   const BLOCK_RE = /^(p|div|li|section|article|ul|ol|blockquote|tr)$/i;
   const HEAD_RE = /^h[1-6]$/i;
 
@@ -37,7 +38,7 @@
   // [https://][m.|www.]hetushu[.com][.com]… với dấu chấm có thể là • · và chữ có thể là full-width.
   const SITE_RE = new RegExp(`(?:https?[:：][/／]{0,2})?(?:(?:m|www)${DOT})?hetushu(?:${DOT}*(?:com|cn|net))*`, 'gi');
   // Tên site bằng chữ Hán chèn giữa chữ thường (…老老和图书实实…); không đụng 和图书馆/店/室/城/籍.
-  const SITE_ZH_RE = /和图书(?![馆店室城籍])/g;
+  const SITE_ZH_RE = /和[\p{P}\p{S}\s]{0,2}图[\p{P}\p{S}\s]{0,2}书(?![馆店室城籍])/gu;
   // Cụm watermark “免费在线阅读” (hoặc “费在线阅读”): chỉ bỏ cụm chữ này, giữ phần còn lại của dòng (kể cả bộ đếm).
   const PAGER_RE = /免?费在线阅读/g;
 
@@ -81,6 +82,68 @@
 
   const han = (s) => (s.match(/[一-鿿]/g) || []).length;
 
+  /** Phần tử bị ẩn (display:none / visibility:hidden / hidden): trang nguồn chèn thêm thẻ p nhiễu rồi ẩn hoặc xóa đi bằng script. */
+  function isHidden(n) {
+    if (n.hidden || (n.style && (n.style.display === 'none' || n.style.visibility === 'hidden'))) return true;
+    const view = n.ownerDocument && n.ownerDocument.defaultView;
+    if (!view || !view.getComputedStyle || !n.ownerDocument.contains(n)) return false;
+    const cs = view.getComputedStyle(n);
+    return cs.display === 'none' || cs.visibility === 'hidden';
+  }
+
+  /** Trang có script xáo trộn thẻ p rồi mới sắp lại (hetushu: <body data-randomtype=…>; khóa sắp xếp là chuỗi base64 trong meta, hoặc tải r<id>.json
+   *  khi data-doctype="json") → HTML thô (fetch/DOMParser, script không chạy) còn nguyên thứ tự xáo + đoạn thừa, KHÔNG dùng được. */
+  function needsScripts(d) {
+    if (d.body && d.body.hasAttribute('data-randomtype')) return true;
+    return Array.from(d.querySelectorAll('meta[content]')).some((m) => /^[A-Za-z0-9+/=]{40,}$/.test(m.getAttribute('content') || ''));
+  }
+
+  /** Nguồn khóa sắp xếp của trang hetushu (đúng như section.js): body[data-randomtype]=substep → tải r<mã chương>.json|.html cùng thư mục
+   *  (theo data-doctype); kiểu khác → nội dung meta thứ 5. @returns {{key?:string,url?:string}|null} */
+  function scrambleKeySource(d, pageUrl) {
+    const b = d.body;
+    if (!b || !b.hasAttribute('data-randomtype')) return null;
+    if (b.getAttribute('data-randomtype') !== 'substep') {
+      const m = d.getElementsByTagName('meta')[4];
+      return m ? { key: m.getAttribute('content') || '' } : null;
+    }
+    const id = /\/([0-9]+)\.html?(?:[?#].*)?$/.exec(pageUrl);
+    if (!id) return null;
+    return { url: new URL(`r${id[1]}.${b.getAttribute('data-doctype') === 'json' ? 'json' : 'html'}`, pageUrl).href };
+  }
+
+  /** Sắp lại các thẻ con của #content y như script của trang: bỏ khối .mask đầu; base64-decode khóa rồi tách bằng /[A-Z]+%/;
+   *  thẻ con thứ i (sau các h2 tiêu đề) có số v: v<5 → vị trí v, ngược lại vị trí v − (số v<5 đã gặp trước đó). Trả về false nếu khóa không khớp. */
+  function descramble(d, keyB64) {
+    const root = d.querySelector('#content');
+    if (!root) return false;
+    let text;
+    try { text = atob(String(keyB64).trim()); } catch (e) { return false; }
+    const first = root.firstElementChild;
+    if (first && first.classList.contains('mask')) first.remove();
+    const kids = Array.from(root.children);
+    let off = 0;
+    for (let i = 0; i < kids.length; i += 1) {
+      if (kids[i].tagName === 'H2') off = i + 1;
+      if (kids[i].tagName === 'DIV' && kids[i].className !== 'chapter') break;
+    }
+    const parts = text.split(/[A-Z]+%/);
+    if (parts.length !== kids.length - off) return false;
+    const nodes = [];
+    let small = 0;
+    for (let i = 0; i < parts.length; i += 1) {
+      if (parts[i] < 5) { nodes[parts[i]] = kids[i + off]; small += 1; } else nodes[parts[i] - small] = kids[i + off];
+    }
+    nodes.forEach((n) => { if (n) root.appendChild(n); });
+    return true;
+  }
+
+  /** Dấu vân tay nội dung chương hiện tại — đổi nghĩa là script của trang vẫn đang sắp lại/xóa thẻ. */
+  function contentSignature(d) {
+    const el = pickContent(d);
+    return el ? `${el.childElementCount}|${el.textContent || ''}` : '';
+  }
+
   function blocksOf(rootEl) {
     const out = [];
     let buf = '';
@@ -95,7 +158,7 @@
       if (n.nodeType === 3) { buf += n.nodeValue || ''; return; }
       if (n.nodeType !== 1) return;
       const name = n.tagName;
-      if (SKIP_RE.test(name) || (n.matches && n.matches('.ads,.bottem'))) return;
+      if (SKIP_RE.test(name) || (n.matches && n.matches('.ads,.bottem')) || isHidden(n)) return;
       if (name.toUpperCase() === 'BR') { buf += '\n'; return; }
       if (HEAD_RE.test(name)) {
         flush();
@@ -162,8 +225,18 @@
     if (!all.length && isChallengeHtml(full)) return { title: '', paragraphs: [], blocks: [], challenge: true };
     const inner = all.filter((b) => b.tag !== 'p' && b.tag < 'h4')[0];
     const h = d.querySelector('h1') || d.querySelector('h2');
-    const title = cleanTitle((inner && inner.text) || (h && h.textContent) || d.title || '');
-    const blocks = dedupeBlocks(all.filter((b) => b.text !== title && b.text !== squeezeSpaces(title)));
+    const ct = d.querySelector('#ctitle .title');
+    const title = cleanTitle((ct && ct.textContent) || (inner && inner.text) || (h && h.textContent) || d.title || '');
+    const st = squeezeSpaces(title);
+    // Bỏ các h1–h3 đầu bài lặp lại tiêu đề (hetushu tách “第一季” / “第一节 …” thành hai h2).
+    let lead = true;
+    const body = all.filter((b) => {
+      if (b.text === title || b.text === st) return false;
+      if (lead && b.tag !== 'p' && b.tag < 'h4' && st.includes(b.text)) return false;
+      if (b.tag === 'p') lead = false;
+      return true;
+    });
+    const blocks = dedupeBlocks(body);
     let next;
     const a = d.querySelector('a#next') || d.querySelector('#next a') || findAnchor(d, NEXT_RE, true);
     if (a) {
@@ -426,6 +499,6 @@
   }
 
   root.HNCore = {
-    han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

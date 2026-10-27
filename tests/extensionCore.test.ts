@@ -106,6 +106,38 @@ describe('extension core', () => {
     expect(p.paragraphs).toEqual([`${HAN}一`]);
   });
 
+  it('bỏ thẻ p ẩn; nhận diện trang cần script (meta chứa khóa base64); chữ ký nội dung đổi khi script sắp lại', () => {
+    const d = doc(`<meta name="k" content="QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9w"><div id="content"><p>${HAN}一</p><p style="display:none">${HAN}rác</p><p hidden>${HAN}ẩn</p><p>${HAN}二</p></div>`);
+    expect(C.needsScripts(d)).toBe(true);
+    expect(C.extractPage(d, 'http://s/1.html').paragraphs).toEqual([`${HAN}一`, `${HAN}二`]);
+    const before = C.contentSignature(d);
+    const c = d.querySelector('#content')!;
+    c.insertBefore(c.lastElementChild!, c.firstElementChild);
+    expect(C.contentSignature(d)).not.toBe(before);
+    expect(C.needsScripts(doc('<div id="content"></div>'))).toBe(false);
+    const j = doc('<div id="content"></div>');
+    j.body.setAttribute('data-randomtype', 'substep');
+    expect(C.needsScripts(j)).toBe(true);
+  });
+
+  it('hetushu: sắp lại thẻ theo khóa base64 (như section.js) và lấy nguồn khóa', () => {
+    const d = doc('<div id="content"><div class="mask mask2"></div><h2>第一季</h2><h2 class="h2">第一节</h2>' + [0, 1, 2, 3, 4, 5, 6].map((i) => `<div>${HAN}${i}</div>`).join('') + '</div>');
+    d.body.setAttribute('data-randomtype', 'substep');
+    d.body.setAttribute('data-doctype', 'json');
+    expect(C.scrambleKeySource(d, 'https://www.hetushu.com/book/93/69188.html')).toEqual({ url: 'https://www.hetushu.com/book/93/r69188.json' });
+    expect(C.descramble(d, btoa('5X%6X%0X%1X%2X%3X%4'))).toBe(true);
+    expect(C.extractPage(d, 'http://s/1.html').paragraphs.filter((t: string) => t.startsWith(HAN)).map((t: string) => t.slice(-1))).toEqual(['2', '3', '4', '5', '6', '0', '1']);
+    expect(C.descramble(doc('<div id="content"><h2>t</h2><div>x</div></div>'), btoa('1X%2'))).toBe(false);
+  });
+
+  it('hetushu: thẻ inline nhiễu (dfn/samp/bdo/q/u), 和*图*书, tiêu đề từ #ctitle bỏ h2 lặp', () => {
+    const d = doc(`<div id="ctitle"><div class="title">第一季 第一节  以卡为生</div></div><div id="content"><div class="mask mask2"></div><h2>第一季</h2><h2 class="h2">第一节  以卡为生</h2><div>${HAN}蹲<dfn>和图书</dfn>下<samp>和*图*书</samp>去<bdo>wｗw•ｈｅｔusｈu•com•cｏｍ</bdo>来<q>https://www.hetushu.com.com</q>了<u>和-图-书</u>。</div></div>`);
+    const p = C.extractPage(d, 'http://s/1.html');
+    expect(p.title).toBe('第一季 第一节 以卡为生');
+    expect(p.paragraphs).toEqual([`${HAN}蹲下去来了。`]);
+    expect(C.cleanText('前和*图*书后')).toBe('前后');
+  });
+
   it('EPUB: xuất (có bìa, URL gốc) → nhập lại đúng thứ tự, tiêu đề, khối, bìa', async () => {
     const cover = { mime: 'image/png', data: new Uint8Array([137, 80, 78, 71, 1, 2, 3]) };
     const bytes = C.buildEpub({
