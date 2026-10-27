@@ -136,6 +136,7 @@ describe('extension core', () => {
     expect(p.title).toBe('第一季 第一节 以卡为生');
     expect(p.paragraphs).toEqual([`${HAN}蹲下去来了。`]);
     expect(C.cleanText('前和*图*书后')).toBe('前后');
+    expect(C.cleanText('笑咪|咪地看着 a|b')).toBe('笑咪咪地看着a|b');
   });
 
   it('EPUB: xuất (có bìa, URL gốc) → nhập lại đúng thứ tự, tiêu đề, khối, bìa', async () => {

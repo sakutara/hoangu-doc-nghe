@@ -42,6 +42,9 @@
   // Cụm watermark “免费在线阅读” (hoặc “费在线阅读”): chỉ bỏ cụm chữ này, giữ phần còn lại của dòng (kể cả bộ đếm).
   const PAGER_RE = /免?费在线阅读/g;
 
+  // Ký tự “|” nhiễu chèn giữa hai chữ Hán (笑咪|咪地).
+  const STRAY_BAR_RE = /(?<=[一-鿿])[|｜](?=[一-鿿])/g;
+
   function removeFolded(text, re) {
     const f = foldAscii(text);
     let out = '';
@@ -61,7 +64,7 @@
 
   /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng → dọn link/watermark → bỏ tên site chữ Hán → bỏ cụm “(免)费在线阅读”. */
   function cleanText(text) {
-    return stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '').replace(PAGER_RE, '');
+    return stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '').replace(PAGER_RE, '').replace(STRAY_BAR_RE, '');
   }
 
   /** Làm sạch tiêu đề (chương / sách / mục lục): dọn link-watermark, tên site chữ Hán, “(免)费在线阅读”; giữ khoảng trắng trong tiêu đề. */
