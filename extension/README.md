@@ -22,8 +22,12 @@ Tải truyện bằng chính trình duyệt của bạn (đã qua kiểm tra bot
 
 ## Xử lý nội dung (tự động khi tải, nhập EPUB; hoặc bấm “Lọc lại nội dung đã lưu”)
 1. Bỏ **mọi khoảng trắng** trong nội dung (kể cả dấu cách full-width, xuống dòng) — **trừ** khoảng trắng ngay sau dấu chấm, phẩy, chấm phẩy (`.` `。` `,` `，` `;` `；`) — gộp còn 1 dấu cách.
-2. Rồi dọn link: URL `http(s)://…`, mọi chuỗi **“hetushu”** và mọi **“.com”** / **“. com”** (không phân biệt hoa/thường), cùng “www.” còn sót.
-3. Đoạn rỗng sau khi dọn bị bỏ. Nút “Lọc lại…” ghi đè nội dung đã lưu; sau đó xuất lại EPUB.
+2. Rồi dọn link/watermark (so khớp sau khi “gập” chữ full-width, chữ Cyrillic giống Latin về ASCII, nên bắt được cả `ｍ•ｈｅtｕshu.cｏm.cｏm`, `ｈｔtps://ｍ•ｈｅｔｕshｕ.ｃｏm…`):
+   URL `http(s)://…`, mọi “hetushu” (kèm `m.`/`www.`, dấu `•` `·`, đuôi `.com` lặp), mọi “.com” / “. com”, “www.”.
+3. Bỏ tên site chữ Hán chèn giữa chữ (“老老**和图书**实实” → “老老实实”; không đụng “和图书馆/店/室/城/籍”).
+4. Bỏ dòng đầu trang dạng “Tên truyện免费在线阅读 · 1/2451”.
+5. Bỏ đoạn văn **y hệt nhau** trong cùng một chương (chỉ xét đoạn ≥ 12 ký tự, giữ lần đầu) — trang nguồn chèn đoạn lặp làm nhiễu.
+6. Đoạn rỗng sau khi dọn bị bỏ. Nút “Lọc lại…” ghi đè nội dung đã lưu; sau đó xuất lại EPUB.
 
 ## Lưu trạng thái
 Theo URL mục lục của truyện: mục lục, danh sách và nội dung các chương đã lưu, ảnh bìa. Tải lại trang/đóng trình duyệt không mất; mở lại panel

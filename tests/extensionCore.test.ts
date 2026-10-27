@@ -74,6 +74,22 @@ describe('extension core', () => {
     expect(C.cleanText('HeTuShu.COM')).toBe('');
   });
 
+  it('watermark: dạng full-width / dấu • / https lẫn chữ, tên site chữ Hán, dòng đầu trang', () => {
+    expect(C.cleanText('前文ｍ•ｈｅtｕshu.cｏm.cｏm后文')).toBe('前文后文');
+    expect(C.cleanText('前文ｈｔtps://ｍ•ｈｅｔｕshｕ.ｃｏm.ｃｏｍ后文')).toBe('前文后文');
+    expect(C.cleanText('前文m.ｈｅｔｕshｕ.cｏｍ•cｏm后文')).toBe('前文后文');
+    expect(C.cleanText('老老和图书实实')).toBe('老老实实');
+    expect(C.cleanText('他去了和图书馆')).toBe('他去了和图书馆');
+    expect(C.cleanText('某某书名免费在线阅读 · 1/2451')).toBe('');
+    expect(C.cleanText('这一句话里正常提到免费在线阅读的人')).toBe('这一句话里正常提到免费在线阅读的人');
+  });
+
+  it('bỏ đoạn lặp dài trong cùng chương, giữ đoạn ngắn lặp', () => {
+    const a = `${HAN}甲`;
+    const out = C.dedupeBlocks([{ tag: 'p', text: a }, { tag: 'p', text: '……' }, { tag: 'p', text: a }, { tag: 'p', text: '……' }, { tag: 'h2', text: a }]);
+    expect(out.map((b: { text: string }) => b.text)).toEqual([a, '……', '……', a]);
+  });
+
   it('trích chương áp dụng quy trình dọn; bỏ đoạn chỉ chứa link', () => {
     const d = doc(`<h1>第1章 开始</h1><div id="content"><p>${HAN} 一 https://www.hetushu.com/</p><p>https://www.hetushu.com/</p><p>www. hetushu .com</p></div>`);
     const p = C.extractPage(d, 'http://s/1.html');

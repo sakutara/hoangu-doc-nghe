@@ -11,7 +11,7 @@
   const HEAD_RE = /^h[1-6]$/i;
 
   // ---------- dọn nội dung ----------
-  const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()";
+  const URL_CHARS = "A-Za-z0-9\\-._~:/?#@!$&'*+,;=%\\[\\]()•·．・";
   const URL_RE = new RegExp(`https?://[${URL_CHARS}]*`, 'gi');
   const SEMI_MARK = '\u0001';
 
@@ -21,13 +21,59 @@
     return text.replace(/([.。,，;；])\s+/g, `$1${SEMI_MARK}`).replace(/\s+/g, '').split(SEMI_MARK).join(' ');
   }
 
-  /** Dọn link chèn: URL http(s), rồi MỌI “hetushu”, MỌI “.com” (và “www.” còn sót) — gọi SAU khi đã bỏ khoảng trắng. */
-  function stripLinks(text) {
-    return text.replace(URL_RE, '').replace(/hetushu/gi, '').replace(/\.\s*com/gi, '').replace(/www\.\s*/gi, '');
+  // Watermark thường viết bằng chữ full-width (ｈｅｔｕｓｈｕ), chữ Cyrillic giống Latin, dấu • · thay cho dấu chấm…
+  // → so khớp trên bản “gập” về ASCII (cùng độ dài ký tự) rồi cắt đúng đoạn tương ứng trong văn bản gốc.
+  const LOOKALIKE = { 'о': 'o', 'с': 'c', 'е': 'e', 'а': 'a', 'р': 'p', 'х': 'x', 'ѕ': 's', 'і': 'i' };
+  function foldAscii(s) {
+    let o = '';
+    for (const ch of s) {
+      const c = ch.codePointAt(0);
+      if ((c >= 0xFF21 && c <= 0xFF3A) || (c >= 0xFF41 && c <= 0xFF5A) || (c >= 0xFF10 && c <= 0xFF19)) o += String.fromCharCode(c - 0xFEE0);
+      else o += LOOKALIKE[ch] || ch;
+    }
+    return o;
+  }
+  const DOT = '(?:[.．·•・] ?)';
+  // [https://][m.|www.]hetushu[.com][.com]… với dấu chấm có thể là • · và chữ có thể là full-width.
+  const SITE_RE = new RegExp(`(?:https?[:：][/／]{0,2})?(?:(?:m|www)${DOT})?hetushu(?:${DOT}*(?:com|cn|net))*`, 'gi');
+  // Tên site bằng chữ Hán chèn giữa chữ thường (…老老和图书实实…); không đụng 和图书馆/店/室/城/籍.
+  const SITE_ZH_RE = /和图书(?![馆店室城籍])/g;
+  // Dòng đầu trang kiểu “Tên truyện免费在线阅读 · 1/2451”.
+  const PAGER_RE = /免费在线阅读[·•.．]?\d*\/\d+$/;
+
+  function removeFolded(text, re) {
+    const f = foldAscii(text);
+    let out = '';
+    let last = 0;
+    for (const m of f.matchAll(re)) {
+      if (!m[0]) continue;
+      out += text.slice(last, m.index);
+      last = m.index + m[0].length;
+    }
+    return out + text.slice(last);
   }
 
-  /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng trước, dọn link sau. */
-  const cleanText = (text) => stripLinks(squeezeSpaces(text));
+  /** Dọn link chèn: tên site (kể cả dạng full-width / dấu •), URL http(s), MỌI “hetushu”, MỌI “.com” / “. com”, “www.” — gọi SAU khi đã bỏ khoảng trắng. */
+  function stripLinks(text) {
+    return removeFolded(removeFolded(text, URL_RE), SITE_RE).replace(/hetushu/gi, '').replace(/\.\s*com/gi, '').replace(/www\.\s*/gi, '');
+  }
+
+  /** Quy trình xử lý nội dung truyện: bỏ khoảng trắng → dọn link/watermark → bỏ tên site chữ Hán → bỏ dòng đầu trang “…免费在线阅读 · n/m”. */
+  function cleanText(text) {
+    const t = stripLinks(squeezeSpaces(text)).replace(SITE_ZH_RE, '');
+    return t.length <= 60 && PAGER_RE.test(t) ? '' : t;
+  }
+
+  /** Bỏ đoạn văn y hệt nhau trong cùng một chương (trang nguồn chèn đoạn lặp làm nhiễu); chỉ xét đoạn p dài ≥ 12 ký tự, giữ lần xuất hiện đầu. */
+  function dedupeBlocks(blocks) {
+    const seen = new Set();
+    return blocks.filter((b) => {
+      if (b.tag !== 'p' || b.text.length < 12) return true;
+      if (seen.has(b.text)) return false;
+      seen.add(b.text);
+      return true;
+    });
+  }
 
   const han = (s) => (s.match(/[一-鿿]/g) || []).length;
 
@@ -113,7 +159,7 @@
     const inner = all.filter((b) => b.tag !== 'p' && b.tag < 'h4')[0];
     const h = d.querySelector('h1') || d.querySelector('h2');
     const title = stripLinks(((inner && inner.text) || (h && h.textContent) || d.title || '').replace(/\s+/g, ' ').trim()).trim();
-    const blocks = all.filter((b) => b.text !== title && b.text !== squeezeSpaces(title));
+    const blocks = dedupeBlocks(all.filter((b) => b.text !== title && b.text !== squeezeSpaces(title)));
     let next;
     const a = d.querySelector('a#next') || d.querySelector('#next a') || findAnchor(d, NEXT_RE, true);
     if (a) {
@@ -368,7 +414,7 @@
       const head = body.querySelector('h1,h2,h3');
       const docTitle = doc.querySelector('title');
       const chTitle = stripLinks(((head && head.textContent) || (docTitle && docTitle.textContent) || '').replace(/\s+/g, ' ').trim()).trim();
-      const blocks = blocksOf(body).filter((b) => b.text && b.text !== chTitle && b.text !== squeezeSpaces(chTitle));
+      const blocks = dedupeBlocks(blocksOf(body).filter((b) => b.text && b.text !== chTitle && b.text !== squeezeSpaces(chTitle)));
       if (!blocks.length) continue;
       chapters.push({ url: body.getAttribute('data-hn-url') || '', title: chTitle || `Chương ${chapters.length + 1}`, blocks, paragraphs: blocks.map((b) => b.text) });
     }
@@ -376,6 +422,6 @@
   }
 
   root.HNCore = {
-    han, stripLinks, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, squeezeSpaces, isChallengeHtml, stripHash,
+    han, stripLinks, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

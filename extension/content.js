@@ -437,8 +437,9 @@
         keys.forEach((k) => {
           const b = got[k];
           if (!b) return;
-          const blocks = (b.blocks && b.blocks.length ? b.blocks : (b.paragraphs || []).map((text) => ({ tag: 'p', text })))
+          let blocks = (b.blocks && b.blocks.length ? b.blocks : (b.paragraphs || []).map((text) => ({ tag: 'p', text })))
             .map((x) => ({ tag: x.tag, text: C.cleanText(x.text) })).filter((x) => x.text);
+          blocks = C.dedupeBlocks(blocks);
           const title = C.stripLinks(b.title || '') || b.title;
           const same = title === b.title && blocks.length === (b.paragraphs || []).length && blocks.every((x, j) => x.text === b.paragraphs[j]);
           if (same) return;
