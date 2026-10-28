@@ -157,11 +157,11 @@ describe('extension core', () => {
     expect(back.chapters[1].paragraphs).toEqual([`${HAN}二`, '二三']);
   });
 
-  it('EPUB: content.opf dùng namespace OPF 2005 (Calibre không báo Spineless)', async () => {
+  it('EPUB: content.opf dùng namespace OPF 2007 (Calibre không báo Spineless)', async () => {
     const bytes = await C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
     const opf = await (await JSZip.loadAsync(bytes)).file('OEBPS/content.opf')!.async('string');
-    expect(opf).toContain('<package xmlns="http://www.idpf.org/2005/opf"');
-    expect(opf).not.toContain('idpf.org/2007/opf');
+    expect(opf).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
+    expect(opf).not.toContain('idpf.org/2005/opf');
     expect(opf).toContain('<itemref');
   });
 
@@ -194,7 +194,7 @@ describe('extension core', () => {
     const z = new JSZip();
     z.file('mimetype', 'application/epub+zip');
     z.file('META-INF/container.xml', '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OPS/book.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');
-    z.file('OPS/book.opf', '<package xmlns="http://www.idpf.org/2005/opf"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>外书</dc:title></metadata><manifest><item id="n" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="a" href="t/a.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="n"/><itemref idref="a"/></spine></package>');
+    z.file('OPS/book.opf', '<package xmlns="http://www.idpf.org/2007/opf"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>外书</dc:title></metadata><manifest><item id="n" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="a" href="t/a.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="n"/><itemref idref="a"/></spine></package>');
     z.file('OPS/nav.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><body><nav><ol><li>x</li></ol></nav></body></html>');
     z.file('OPS/t/a.xhtml', `<html xmlns="http://www.w3.org/1999/xhtml"><head><title>T</title></head><body><h2>第一章</h2><p>${HAN} 甲</p><p>乙<br/>丙</p></body></html>`);
     const bytes = new Uint8Array(await z.generateAsync({ type: 'uint8array', compression: 'DEFLATE' }));

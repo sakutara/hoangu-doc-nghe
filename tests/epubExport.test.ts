@@ -28,8 +28,8 @@ describe('EPUB export', () => {
     expect(blob.type).toBe('application/epub+zip');
     const zip = await JSZip.loadAsync(await blob.arrayBuffer());
     expect(Object.keys(zip.files)).toEqual(expect.arrayContaining(['mimetype', 'META-INF/container.xml', 'OEBPS/content.opf', 'OEBPS/toc.ncx', 'OEBPS/chapter-0001.xhtml']));
-    // Calibre chỉ nhận namespace OPF 2005; sai namespace → "Book is empty, no content in spine".
-    expect(await zip.file('OEBPS/content.opf')!.async('string')).toContain('<package xmlns="http://www.idpf.org/2005/opf"');
+    // Namespace OPF đúng là 2007; 2005 làm Calibre báo "Book is empty, no content in spine".
+    expect(await zip.file('OEBPS/content.opf')!.async('string')).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
     const again = await importEpub(await blob.arrayBuffer(), 'b4', s.files);
     expect(again.chapterCount).toBe(2);
     expect((await s.files.readChapterFile('b4', 1))!.title).toBe('第一章 开始');
@@ -52,7 +52,7 @@ describe('EPUB export', () => {
     const book = await importBookFile(file, 'u1', s.files);
     const zip = await JSZip.loadAsync(await (await buildEpubBlob(book, s.files)).arrayBuffer());
     const opf = await zip.file('OEBPS/content.opf')!.async('string');
-    expect(opf).toContain('<package xmlns="http://www.idpf.org/2005/opf"');
+    expect(opf).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
     expect(opf.match(/<itemref /g)).toHaveLength(book.chapterCount);
   });
 

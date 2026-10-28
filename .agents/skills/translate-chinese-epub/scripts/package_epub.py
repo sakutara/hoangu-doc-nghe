@@ -208,7 +208,7 @@ def build_epub(
         cover_spine = '<itemref idref="cover" linear="no"/>' if has_cover else ""
 
         content_opf = f"""<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2005/opf" version="3.0" unique-identifier="uid">
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
   <dc:identifier id="uid">{book_uid}</dc:identifier>
   <dc:title>{html.escape(book_title)}</dc:title>
