@@ -8,3 +8,6 @@ scripts/curriculum/*.json
 .claude/
 /cedict.json
 /data/
+
+__pycache__/
+*.pyc
