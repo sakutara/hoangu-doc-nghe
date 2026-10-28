@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import { describe, expect, it } from 'vitest';
 import { importEpub } from '../src/domains/epub/EpubPlainImporter';
 import { buildEpubBlob, chapterXhtml, triggerEpubDownload } from '../src/domains/epub/EpubExporter';
+import { importBookFile } from '../src/domains/import/BookFileImporter';
 import { testServices } from './helpers';
 
 async function makeEpub(extra = true) {
@@ -42,6 +43,17 @@ describe('EPUB export', () => {
     ]);
     expect(x).toContain('<body><h2>第一章</h2><p>你好 世界</p><p>甲</p></body>');
     expect(x.match(/第一章/g)).toHaveLength(2);
+  });
+
+  it('upload .txt rồi xuất epub: spine có đủ chương (Calibre không báo Spineless)', async () => {
+    const s = testServices();
+    const bytes = new TextEncoder().encode('序\n第一章 起\n他来了\n第二章 承\n她走了\n');
+    const file = { name: 'Truyện.txt', arrayBuffer: async () => bytes.buffer } as unknown as File;
+    const book = await importBookFile(file, 'u1', s.files);
+    const zip = await JSZip.loadAsync(await (await buildEpubBlob(book, s.files)).arrayBuffer());
+    const opf = await zip.file('OEBPS/content.opf')!.async('string');
+    expect(opf).toContain('<package xmlns="http://www.idpf.org/2005/opf"');
+    expect(opf.match(/<itemref /g)).toHaveLength(book.chapterCount);
   });
 
   it('xuất epub nén DEFLATE, mimetype giữ STORE, không có creator rỗng', async () => {
