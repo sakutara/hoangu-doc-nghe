@@ -157,6 +157,14 @@ describe('extension core', () => {
     expect(back.chapters[1].paragraphs).toEqual([`${HAN}二`, '二三']);
   });
 
+  it('EPUB: content.opf dùng namespace OPF 2005 (Calibre không báo Spineless)', async () => {
+    const bytes = await C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
+    const opf = await (await JSZip.loadAsync(bytes)).file('OEBPS/content.opf')!.async('string');
+    expect(opf).toContain('<package xmlns="http://www.idpf.org/2005/opf"');
+    expect(opf).not.toContain('idpf.org/2007/opf');
+    expect(opf).toContain('<itemref');
+  });
+
   it('EPUB: mục lục 2 tầng Quyển → Chương, playOrder tăng dần', async () => {
     const bytes = await C.buildEpub({
       title: 'T',
