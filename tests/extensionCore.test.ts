@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import coreSource from '../extension/core.js?raw';
 import JSZip from 'jszip';
+import { expectValidEpub } from './epubValidate';
 
 // core.js là classic script của Chrome extension → nạp bằng eval để gắn globalThis.HNCore.
 // eslint-disable-next-line no-new-func
@@ -159,10 +160,28 @@ describe('extension core', () => {
 
   it('EPUB: content.opf dùng namespace OPF 2007 (Calibre không báo Spineless)', async () => {
     const bytes = await C.buildEpub({ title: 'T', chapters: [{ url: 'u', title: 'C', paragraphs: ['x'] }] });
-    const opf = await (await JSZip.loadAsync(bytes)).file('OEBPS/content.opf')!.async('string');
+    const opf = await (await expectValidEpub(bytes)).file('OEBPS/content.opf')!.async('string');
     expect(opf).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
     expect(opf).not.toContain('idpf.org/2005/opf');
-    expect(opf).toContain('<itemref');
+    const cover = { mime: 'image/png', data: new Uint8Array([137, 80, 78, 71]) };
+    await expectValidEpub(await C.buildEpub({ title: 'T', cover, chapters: [{ url: 'u', title: 'Q', vol: '第一卷', paragraphs: ['x'] }] }));
+  });
+
+  it('EPUB: không có chương nào → báo lỗi thay vì xuất EPUB spine rỗng', async () => {
+    await expect(C.buildEpub({ title: 'T', chapters: [] })).rejects.toThrow('Không có chương nào');
+    await expect(C.buildEpub({ title: 'T' })).rejects.toThrow('Không có chương nào');
+  });
+
+  it('EPUB: đọc được file cũ mang namespace OPF 2005 (do bản trước/package_epub.py tạo)', async () => {
+    const z = new JSZip();
+    z.file('mimetype', 'application/epub+zip');
+    z.file('META-INF/container.xml', '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');
+    z.file('OEBPS/content.opf', '<package xmlns="http://www.idpf.org/2005/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>旧书</dc:title></metadata><manifest><item id="c1" href="c1.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="c1"/></spine></package>');
+    z.file('OEBPS/c1.xhtml', `<html xmlns="http://www.w3.org/1999/xhtml"><body><h1>第一章</h1><p>${HAN}</p></body></html>`);
+    const back = await C.parseEpub(new Uint8Array(await z.generateAsync({ type: 'uint8array' })));
+    expect(back.title).toBe('旧书');
+    expect(back.chapters).toHaveLength(1);
+    expect(back.chapters[0].paragraphs).toEqual([HAN]);
   });
 
   it('EPUB: mục lục 2 tầng Quyển → Chương, playOrder tăng dần', async () => {

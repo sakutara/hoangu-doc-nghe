@@ -631,6 +631,7 @@
         if (got[k] && C.stripHash(got[k].url) === want) chapters.push(got[k]); else missing += 1;
       });
     }
+    if (!chapters.length) { say(`⚠ Cả ${missing} chương đều mất nội dung — bấm “Khôi phục chương mất” rồi tải lại.`); return; }
     const suffix = only ? `-${chapters.length}ch` : '';
     const fileName = `${C.safeName(s.info.title)}${suffix}.epub`;
     const cover = s.cover ? { mime: s.cover.mime, data: fromB64(s.cover.b64) } : null;

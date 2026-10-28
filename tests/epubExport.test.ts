@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { importEpub } from '../src/domains/epub/EpubPlainImporter';
 import { buildEpubBlob, chapterXhtml, triggerEpubDownload } from '../src/domains/epub/EpubExporter';
 import { importBookFile } from '../src/domains/import/BookFileImporter';
+import { expectValidEpub } from './epubValidate';
 import { testServices } from './helpers';
 
 async function makeEpub(extra = true) {
@@ -30,6 +31,7 @@ describe('EPUB export', () => {
     expect(Object.keys(zip.files)).toEqual(expect.arrayContaining(['mimetype', 'META-INF/container.xml', 'OEBPS/content.opf', 'OEBPS/toc.ncx', 'OEBPS/chapter-0001.xhtml']));
     // Namespace OPF đúng là 2007; 2005 làm Calibre báo "Book is empty, no content in spine".
     expect(await zip.file('OEBPS/content.opf')!.async('string')).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
+    await expectValidEpub(blob);
     const again = await importEpub(await blob.arrayBuffer(), 'b4', s.files);
     expect(again.chapterCount).toBe(2);
     expect((await s.files.readChapterFile('b4', 1))!.title).toBe('第一章 开始');
@@ -50,10 +52,30 @@ describe('EPUB export', () => {
     const bytes = new TextEncoder().encode('序\n第一章 起\n他来了\n第二章 承\n她走了\n');
     const file = { name: 'Truyện.txt', arrayBuffer: async () => bytes.buffer } as unknown as File;
     const book = await importBookFile(file, 'u1', s.files);
-    const zip = await JSZip.loadAsync(await (await buildEpubBlob(book, s.files)).arrayBuffer());
+    const zip = await expectValidEpub(await buildEpubBlob(book, s.files));
     const opf = await zip.file('OEBPS/content.opf')!.async('string');
-    expect(opf).toContain('<package xmlns="http://www.idpf.org/2007/opf"');
     expect(opf.match(/<itemref /g)).toHaveLength(book.chapterCount);
+  });
+
+  it('không đọc được chương nào → báo lỗi thay vì xuất EPUB spine rỗng', async () => {
+    const s = testServices();
+    const book = await importEpub(await makeEpub(), 'b6', s.files);
+    await expect(buildEpubBlob({ ...book, chapters: [{ index: 99, title: 'x', fileName: 'x' }] }, s.files)).rejects.toThrow('Không có chương nào');
+    await expect(buildEpubBlob({ ...book, chapters: [] }, s.files)).rejects.toThrow('Không có chương nào');
+  });
+
+  it('upload epub cũ mang namespace OPF 2005 (lỗi Calibre) rồi xuất lại → hợp lệ', async () => {
+    const z = new JSZip();
+    z.file('mimetype', 'application/epub+zip');
+    z.file('META-INF/container.xml', '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');
+    z.file('OEBPS/content.opf', '<?xml version="1.0"?><package xmlns="http://www.idpf.org/2005/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">x</dc:identifier><dc:title>Vớt thi nhân</dc:title><dc:creator>Thuần Khiết</dc:creator></metadata><manifest><item id="c1" href="ch1.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="c1"/></spine></package>');
+    z.file('OEBPS/ch1.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><body><h1>Chương 1</h1><p>Lũ ranh con kia.</p></body></html>');
+    const s = testServices();
+    const book = await importBookFile({ name: 'cu.epub', arrayBuffer: async () => await z.generateAsync({ type: 'arraybuffer' }) } as unknown as File, 'old1', s.files);
+    expect(book.chapterCount).toBe(1);
+    expect(book.title).toBe('Vớt thi nhân');
+    const zip = await expectValidEpub(await buildEpubBlob(book, s.files));
+    expect(await zip.file('OEBPS/content.opf')!.async('string')).not.toContain('idpf.org/2005/opf');
   });
 
   it('xuất epub nén DEFLATE, mimetype giữ STORE, không có creator rỗng', async () => {

@@ -440,7 +440,9 @@
   /** Dựng EPUB 3 (nén deflate) từ các chương; trả Promise<Uint8Array>. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
    *  @param {{title:string,bookKey?:string,origin?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
   async function buildEpub(book) {
-    const cover = book.cover && IMG_EXT[book.cover.mime] ? book.cover : null;
+    // Spine rỗng làm Calibre báo "Spineless"; thà báo lỗi rõ ràng còn hơn xuất file hỏng.
+    if (!book.chapters || !book.chapters.length) throw new Error('Không có chương nào để xuất EPUB.');
+    const cover =book.cover && IMG_EXT[book.cover.mime] ? book.cover : null;
     const css = 'body{line-height:1.7}h1,h2,h3{text-align:center}p{margin:.6em 0;text-indent:2em}';
     const xhtml = (title, body, attr) => `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="zh"><head><meta charset="utf-8"/><title>${xmlEsc(title)}</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body${attr || ''}>${body}</body></html>`;
     const entries = [

@@ -38,6 +38,8 @@ export async function buildEpubBlob(book: BookMetadata, files: BookFileSystemSto
       chapterXhtml(c.title, c.blocks ?? c.paragraphs.map((text) => ({ tag: 'p' as const, text }))));
     written.push({ index: c.index, title: c.title });
   }
+  // Spine rỗng làm Calibre báo "Spineless"; thà báo lỗi rõ ràng còn hơn xuất file hỏng.
+  if (written.length === 0) throw new Error('Không có chương nào đọc được để xuất EPUB.');
   const id = `urn:hoangu:${book.bookId}`;
   zip.file('OEBPS/content.opf',
     `<?xml version="1.0"?><package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="id"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>${esc(book.title)}</dc:title>${book.author ? `<dc:creator>${esc(book.author)}</dc:creator>` : ''}<dc:language>${lang}</dc:language><dc:identifier id="id">${esc(id)}</dc:identifier></metadata><manifest><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="css" href="styles.css" media-type="text/css"/>${written.map((w) => `<item id="c${w.index}" href="${fname(w.index)}" media-type="application/xhtml+xml"/>`).join('')}</manifest><spine toc="ncx">${written.map((w) => `<itemref idref="c${w.index}"/>`).join('')}</spine></package>`);

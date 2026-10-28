@@ -8,11 +8,17 @@ import argparse
 import html
 import json
 import os
+import posixpath
 import shutil
 import tempfile
 import uuid
+import xml.etree.ElementTree as ET
 import zipfile
 from datetime import datetime, timezone
+from urllib.parse import unquote
+
+OPF_NS = "http://www.idpf.org/2007/opf"
+CONTAINER_NS = "urn:oasis:names:tc:opendocument:xmlns:container"
 
 DEFAULT_CSS = """body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -62,6 +68,32 @@ def make_chapter_xhtml(title: str, paragraphs: list[str]) -> str:
 </html>"""
 
 
+def verify_package(epub_path: str) -> None:
+    """
+    Chặn lỗi Calibre "Spineless: Book is empty, no content in spine": namespace OPF phải là 2007
+    (2005 làm Calibre không thấy spine), spine không rỗng, mọi idref/href đều trỏ tới thứ có thật.
+    """
+    with zipfile.ZipFile(epub_path, "r") as z:
+        names = set(z.namelist())
+        rootfile = ET.fromstring(z.read("META-INF/container.xml")).find(f".//{{{CONTAINER_NS}}}rootfile")
+        if rootfile is None:
+            raise RuntimeError("EPUB thiếu rootfile trong container.xml")
+        opf_path = rootfile.get("full-path")
+        opf = ET.fromstring(z.read(opf_path))
+    if opf.tag != f"{{{OPF_NS}}}package":
+        raise RuntimeError(f"Namespace OPF sai ({opf.tag}); phải là {OPF_NS}")
+    manifest = {i.get("id"): i.get("href") for i in opf.iter(f"{{{OPF_NS}}}item")}
+    idrefs = [r.get("idref") for r in opf.iter(f"{{{OPF_NS}}}itemref")]
+    if not idrefs:
+        raise RuntimeError("Spine rỗng: Calibre sẽ báo 'Book is empty, no content in spine'")
+    for idref in idrefs:
+        if idref not in manifest:
+            raise RuntimeError(f"Spine trỏ tới id không có trong manifest: {idref}")
+    for href in manifest.values():
+        if posixpath.normpath(posixpath.join(posixpath.dirname(opf_path), unquote(href))) not in names:
+            raise RuntimeError(f"Manifest trỏ tới file không có trong gói: {href}")
+
+
 def build_epub(
     source_epub: str,
     chapters_data: list[dict],
@@ -73,6 +105,8 @@ def build_epub(
     """
     chapters_data: [{"title": "Chương 1: ...", "paragraphs": ["Đoạn 1...", "Đoạn 2..."]}, ...]
     """
+    if not chapters_data:
+        raise ValueError("Không có chương nào để đóng gói EPUB")
     book_uid = f"vi-epub-{uuid.uuid4().hex[:8]}"
     now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -251,6 +285,7 @@ def build_epub(
         err = z.testzip()
         if err is not None:
             raise RuntimeError(f"Lỗi hỏng file trong gói EPUB: {err}")
+    verify_package(output_epub)
 
     print(
         f"[OK] Đã xuất thành công: {output_epub} "
