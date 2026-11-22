@@ -60,9 +60,16 @@ Theo URL mục lục của truyện: mục lục, danh sách và nội dung các
 là thấy dấu ✓ các chương đã lưu (được kiểm tra lại nội dung thật) và tự bỏ qua chúng. **Khôi phục chương mất** nhặt lại nội dung mồ côi;
 “Xóa dữ liệu truyện này” mới xóa khỏi extension.
 
-## Dừng khi gặp bot
-Nghỉ 2–4 giây giữa chương. Gặp trang challenge/captcha (hoặc HTTP 403/429/503, chương rỗng) thì **dừng ngay**, các chương đã lấy vẫn nằm trong extension
-và báo lại; extension không cố vượt kiểm tra. Hãy mở trang, qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).
+## Tự tải lại trang khi bị chặn (ADR-010)
+Khi một chương bị trang kiểm tra bot chặn hoặc không đọc được (thường do phiên/cookie hết hạn), extension **tải lại cả tab** để trình duyệt lấy phiên mới
+rồi **tự tải tiếp** từ đúng chương đó (ô “Tự tải lại trang khi bị chặn rồi tải tiếp”, mặc định bật).
+- Chờ lùi dần 3s → 6s → 12s… (tối đa 60s) trước mỗi lần tải lại; tối đa 3 lần mỗi chương, 30 lần mỗi lượt — quá thì dừng, chương đã lấy vẫn lưu.
+- Sau khi tải lại, nếu trang hiện kiểm tra của site thì extension chờ nó chạy xong; kiểm tra cần thao tác (captcha) thì báo bạn tự qua — extension **không bấm hộ** —
+  rồi tự tải tiếp. Quá 3 phút thì dừng.
+- Lượt đang dở được giữ ở background theo tab. Nếu biểu tượng extension hiện “↻” (Chrome không cho tự chèn lại), bấm biểu tượng một lần để tải tiếp.
+- Bấm **Dừng** để huỷ cả lượt (kể cả khi đang đếm ngược hoặc chờ trang kiểm tra).
+
+Tắt ô trên thì như cũ: gặp chặn là **dừng ngay**; mở trang, qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).
 
 ## Giới hạn
 Mục lục phân nhiều trang chưa được gộp; bộ chọn nội dung theo heuristic. Việc bỏ khoảng trắng cũng làm dính các từ tiếng Anh/số trong nội dung.

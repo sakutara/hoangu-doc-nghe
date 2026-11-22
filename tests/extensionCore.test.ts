@@ -33,6 +33,34 @@ describe('extension core', () => {
     expect(ext.next).toBeUndefined();
   });
 
+  it('tự tải lại trang: lùi dần, giới hạn mỗi chương và mỗi lượt', () => {
+    const R = C.RELOAD;
+    const zero = () => 0;
+    let job = { failUrl: null, failCount: 0, reloads: 0 };
+    const d1 = C.reloadDecision(job, 'u1', zero);
+    expect(d1).toMatchObject({ reload: true, delay: R.baseMs, failUrl: 'u1', failCount: 1, reloads: 1 });
+    job = { ...job, ...d1 };
+    const d2 = C.reloadDecision(job, 'u1', zero);
+    expect(d2).toMatchObject({ reload: true, delay: R.baseMs * 2, failCount: 2, reloads: 2 });
+    job = { ...job, ...d2, ...C.reloadDecision({ ...job, ...d2 }, 'u1', zero) };
+    expect(C.reloadDecision(job, 'u1', zero)).toMatchObject({ reload: false, reason: 'chapter', tries: R.perChapter });
+    // chương khác → đếm lại từ đầu
+    expect(C.reloadDecision(job, 'u2', zero)).toMatchObject({ reload: true, delay: R.baseMs, failCount: 1, reloads: 4 });
+    // trần cả lượt
+    expect(C.reloadDecision({ failUrl: null, failCount: 0, reloads: R.perRun }, 'u3', zero)).toMatchObject({ reload: false, reason: 'run' });
+    // thời gian chờ có trần + ngẫu nhiên
+    const big = C.reloadDecision({ failUrl: 'u', failCount: 2, reloads: 0 }, 'u', () => 0.999);
+    expect(big.delay).toBeLessThanOrEqual(R.maxMs + R.jitterMs);
+    expect(big.delay).toBeGreaterThanOrEqual(R.baseMs * 4);
+  });
+
+  it('nhận diện tài liệu đang là trang chặn (không nhầm mục lục / chương có chữ captcha)', () => {
+    expect(C.isBlockedDoc(doc('<form id="challenge-form"></form>', 'Just a moment...'), 'https://x.test/b/2.html')).toBe(true);
+    expect(C.isBlockedDoc(doc(`<div id="content"><p>${HAN}</p></div><script>var captcha=1</script>`), 'https://x.test/b/2.html')).toBe(false);
+    const links = Array.from({ length: 10 }, (_, i) => `<li><a href="/b/${i + 1}.html">第${i + 1}章 标题</a></li>`).join('');
+    expect(C.isBlockedDoc(doc(`<ul>${links}</ul><script>captcha</script>`, '测试小说 目录'), 'https://x.test/b/')).toBe(false);
+  });
+
   it('nhận diện trang challenge', () => {
     const p = C.extractPage(doc('<title>Just a moment...</title><form id="challenge-form"></form>', 'Just a moment...'), 'https://x.test/b/2.html');
     expect(p.challenge).toBe(true);

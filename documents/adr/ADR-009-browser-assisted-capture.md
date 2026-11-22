@@ -12,6 +12,7 @@ Ngoài ra trang này có thể sắp lại thứ tự đoạn bằng JS, nên HT
 - ~~Bookmarklet~~ (đã gỡ): chế độ “Tải qua trình duyệt” bằng bookmarklet đã bị loại bỏ khỏi app; thay bằng **Chrome extension** (`extension/`).
   Người dùng tự mở trang truyện trong trình duyệt (qua challenge như người đọc bình thường), extension đọc DOM đã render, nghỉ 2–4 giây
   giữa chương và **dừng ngay** khi gặp trang kiểm tra bot hoặc không có nội dung.
+  *(Cập nhật: [ADR-010](ADR-010-extension-auto-reload-on-block.md) — mặc định tự tải lại cả tab để lấy phiên mới rồi tải tiếp, trong giới hạn; vẫn không tự giải captcha.)*
 - Kết quả là gói `hoangu-capture/1` (JSON, file `.hoangu.json`). App nhập bằng `CaptureBundleImporter`: tạo truyện mới hoặc nối tiếp truyện cùng
   `sourceUrl` (= `bookKey`), bỏ trùng theo URL chương (`BookMetadata.chapterUrls`).
 

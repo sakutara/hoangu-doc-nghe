@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "HoaNgữ – Tải truyện",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Tab Đọc truyện: bấm chữ Hán để tra nghĩa (như app). Tab Tải truyện: duyệt danh sách chương, tải tuần tự bằng trình duyệt của bạn, xuất EPUB có ảnh bìa, nhập lại EPUB để sửa/bổ sung chương (không giới hạn số chương). Dừng khi gặp trang kiểm tra bot.",
   "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
   "background": { "service_worker": "background.js" },
