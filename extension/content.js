@@ -29,7 +29,10 @@
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
     sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl', current: null, follow: false, rangeOpen: false,
+    autoReload: true, job: null,
   };
+  /** Nhắn background (giữ lượt tải dở qua lần tải lại trang). */
+  const bg = (m) => chrome.runtime.sendMessage(m).catch(() => null);
   /** Key chứa nội dung một chương: bản mới lưu theo URL (không thể đè nhau); bản cũ theo số thứ tự n. */
   const bodyKey = (c, url) => c.k || (c.n != null ? K.body(s.bookKey, c.n) : K.bodyUrl(s.bookKey, url));
 
@@ -91,7 +94,7 @@
   sh.querySelectorAll('[data-t]').forEach((b) => {
     b.onclick = () => { s.tab = b.getAttribute('data-t'); saveUi(); render(); };
   });
-  const saveUi = () => store.set(K.ui, { tab: s.tab, reader: HN().state.on, mode: HN().state.mode });
+  const saveUi = () => store.set(K.ui, { tab: s.tab, reader: HN().state.on, mode: HN().state.mode, autoReload: s.autoReload });
 
   const BTN = {
     pri: 'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-md bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark disabled:pointer-events-none disabled:opacity-40',
@@ -264,12 +267,15 @@
       el('div', { class: `flex max-h-[72px] items-start gap-1.5 overflow-auto whitespace-pre-wrap rounded-md border px-2 py-1 text-xs ${warn ? 'border-brand bg-brand-soft text-brand-dark' : 'border-neutral-200 bg-neutral-50 text-neutral-600'}`, role: 'status' },
         warn ? icon('alert', 'mt-px size-3.5') : '', el('span', { class: 'min-w-0 flex-1' }, s.msg || 'Sẵn sàng. Tiến độ được lưu theo URL truyện, tải lại trang không mất.')),
       s.livePage || !total ? '' : el('small', { class: 'text-xs text-neutral-500' }, 'Trang này không phải chương — chọn chương trong mục lục.'),
+      el('label', { class: 'flex cursor-pointer items-center gap-1.5 text-xs text-neutral-600', title: 'Chương bị chặn/không đọc được → tải lại cả trang để trình duyệt lấy phiên mới rồi tự tải tiếp (tối đa 3 lần mỗi chương, 30 lần mỗi lượt). Không tự bấm captcha.' },
+        el('input', { type: 'checkbox', checked: s.autoReload, class: 'size-3.5 accent-[#b91c1c]', onchange: (e) => { s.autoReload = e.target.checked; saveUi(); } }),
+        'Tự tải lại trang khi bị chặn rồi tải tiếp'),
       el('div', { class: 'flex flex-wrap gap-1.5' },
         total ? el('button', { class: BTN.pri, onclick: () => startSelected(false), disabled: s.running || selUrls.length === selSaved, title: 'Tải các chương đã chọn mà chưa lưu' }, icon('download'), 'Tải chưa lưu') : '',
         total ? el('button', { class: BTN.sec, onclick: () => startSelected(true), disabled: s.running || !selUrls.length, title: 'Tải lại và ghi đè các chương đã chọn' }, icon('refresh'), 'Tải lại') : '',
         total ? el('button', { class: BTN.sec, onclick: () => exportBook(selUrls), disabled: s.running || !selSaved, title: 'Xuất EPUB chỉ gồm các chương đã chọn và đã lưu' }, icon('upload'), `Xuất chọn (${selSaved})`) : '',
         el('button', { class: total ? BTN.sec : BTN.pri, onclick: () => startFollow(), disabled: s.running || !s.livePage, title: 'Tải trang này rồi lần theo link 下一章 (chương kế)' }, icon('skip'), 'Từ trang này'),
-        s.running ? el('button', { class: 'inline-flex cursor-pointer items-center gap-1.5 rounded-md bg-neutral-800 px-3 py-1.5 font-semibold text-white hover:bg-black', onclick: () => { s.stop = true; say('Đang dừng…'); } }, icon('stop', 'size-3.5'), 'Dừng') : ''));
+        s.running ? el('button', { class: 'inline-flex cursor-pointer items-center gap-1.5 rounded-md bg-neutral-800 px-3 py-1.5 font-semibold text-white hover:bg-black', onclick: () => { s.stop = true; bg({ type: 'job:clear' }); say('Đang dừng…'); } }, icon('stop', 'size-3.5'), 'Dừng') : ''));
 
     // replaceChildren dựng lại DOM → giữ vị trí cuộn; riêng khi đang tải thì cuộn tới chương đang tải (một lần mỗi chương).
     const newList = bd.querySelector('.hn-list');
@@ -478,7 +484,7 @@
     if (f.ok && !verify) {
       try {
         const p = await loadViaFetch(url);
-        if (p && !p.challenge && p.paragraphs.length) { f.pending.push(url); f.last = { url, page: p }; return p; }
+        if (p && !p.challenge && p.paragraphs.length) { f.pending.push(url); f.last = { url, page: p }; f.lastUrl = url; return p; }
       } catch (e) { /* rơi về iframe */ }
     }
     let framed = null;
@@ -512,12 +518,16 @@
   /** Cuối lượt: kiểm lại chương nhanh gần nhất bằng đường chuẩn để các chương cuối (chưa tới mốc kiểm 10) cũng được xác nhận. */
   async function finalCheck() {
     const f = s.fast;
-    if (!f.ok || !f.pending.length || !f.last) return;
+    const lastUrl = f.last ? f.last.url : f.lastUrl; // sau khi tải lại trang chỉ còn URL (nội dung không mang qua)
+    if (!f.ok || !f.pending.length || !lastUrl) return;
     say('Đang kiểm tra lại chương cuối bằng đường chuẩn…');
     let framed = null;
-    try { framed = await loadViaFrame(f.last.url); } catch (e) { framed = null; }
+    try { framed = await loadViaFrame(lastUrl); } catch (e) { framed = null; }
     if (!framed || framed.challenge || !framed.paragraphs.length) return; // không kiểm được → giữ nguyên, không kết luận
-    if (sameText(f.last.page, framed)) f.pending = [];
+    let fast = f.last ? f.last.page : null;
+    if (!fast) { try { fast = await loadViaFetch(lastUrl); } catch (e) { fast = null; } }
+    if (!fast || fast.challenge || !fast.paragraphs.length) return;
+    if (sameText(fast, framed)) f.pending = [];
     else { f.ok = false; await repairPending(); }
   }
 
@@ -810,20 +820,67 @@
     if (i >= 0 && !s.filter.trim()) s.offset = Math.floor(i / LIST_PAGE) * LIST_PAGE;
   }
 
-  async function runLoop(nextTask, limitNote) {
-    s.running = true; s.stop = false;
-    s.fast = { ok: null, n: 0, pending: [], last: null };
+  /** Một lượt tải là một “job” tuần tự hoá được (lưu qua background khi phải tải lại trang):
+   *  mode 'list' → queue các chương còn lại (chương đầu là chương đang tải); mode 'follow' → followUrl + seen (lần theo 下一章). */
+  function newJob(mode, extra) {
+    return { v: 1, mode, bookKey: s.bookKey, origin: location.origin, got: 0, reloads: 0, failUrl: null, failCount: 0, ...extra };
+  }
+  function nextTask(job) {
+    const url = job.mode === 'list' ? (job.queue[0] && job.queue[0].url) : job.followUrl;
+    if (!url) return null;
+    const title = job.mode === 'list' ? job.queue[0].title : '';
+    return { url, title, force: !!job.force, live: C.stripHash(url) === here && !!s.livePage };
+  }
+  function advance(job, page) {
+    if (job.mode === 'list') { job.queue.shift(); return; }
+    job.seen = [...(job.seen || []), job.followUrl].slice(-300);
+    job.followUrl = page.next && !job.seen.includes(page.next) ? page.next : null;
+  }
+
+  /** Chờ `ms` (bấm Dừng thì thôi), mỗi giây cập nhật dòng trạng thái. @returns false nếu đã dừng. */
+  async function countdown(ms, text) {
+    const until = Date.now() + ms;
+    while (Date.now() < until) {
+      if (s.stop) return false;
+      say(text(Math.ceil((until - Date.now()) / 1000)));
+      await sleep(Math.min(1000, until - Date.now()));
+    }
+    return !s.stop;
+  }
+
+  /** Lưu job rồi nhờ background tải lại cả tab. @returns true nếu trang sắp tải lại (vòng tải hiện tại kết thúc tại đây). */
+  async function reloadForSession(job, d, blocked) {
+    Object.assign(job, { failUrl: d.failUrl, failCount: d.failCount, reloads: d.reloads });
+    job.fast = { ok: s.fast.ok, pending: s.fast.pending, lastUrl: s.fast.last ? s.fast.last.url : s.fast.lastUrl };
+    const why = blocked ? 'Bị trang kiểm tra bot chặn' : 'Không đọc được chương';
+    const ok = await countdown(d.delay, (sec) => `${why} — tải lại trang để lấy phiên mới sau ${sec}s (lần ${d.failCount}/${C.RELOAD.perChapter} cho chương này)…`);
+    if (!ok) return false;
+    job.reloadAt = Date.now();
+    say('Đang tải lại trang…');
+    const r = await bg({ type: 'job:reload', job });
+    if (!r || r.error) { say(`⚠ Không tải lại được trang: ${(r && r.error) || 'background không phản hồi'}`); return false; }
+    return true;
+  }
+
+  async function runLoop(job) {
+    s.running = true; s.stop = false; s.job = job;
+    const fj = job.fast;
+    // Sau khi tải lại trang: đường nhanh đang bật thì kiểm lại ngay ở chương kế (n=19 → mốc 20), chương chờ kiểm vẫn được giữ.
+    s.fast = fj ? { ok: fj.ok, n: fj.ok ? 19 : 0, pending: fj.pending || [], last: null, lastUrl: fj.lastUrl || null } : { ok: null, n: 0, pending: [], last: null, lastUrl: null };
     s.fastNote = '';
-    let got = 0;
+    let got = job.got || 0;
     let reason = '';
     let first = true;
     try {
       while (true) {
-        const t = nextTask();
-        if (!t) { reason = limitNote || 'Hết danh sách.'; break; }
+        const t = nextTask(job);
+        if (!t) { reason = job.doneNote || 'Hết danh sách.'; break; }
         if (s.stop) { reason = 'Đã dừng.'; break; }
-        let page = t.live && s.livePage;
-        if (page) { markCurrent(t.url); await settle(document); page = C.extractPage(document, here); s.livePage = page; }
+        let page = null;
+        if (t.live) {
+          markCurrent(t.url); await settle(document); page = C.extractPage(document, here); s.livePage = page;
+          if (page.challenge || !page.paragraphs.length) page = null;
+        }
         if (!page) {
           if (!first) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
           if (s.stop) { reason = 'Đã dừng.'; break; }
@@ -832,25 +889,65 @@
           page = await loadPage(t.url);
           first = false;
           if (!page || page.challenge || !page.paragraphs.length) {
-            reason = page && page.challenge
-              ? '⚠ Gặp trang kiểm tra bot — đã dừng. Hãy mở trang, qua kiểm tra như bình thường rồi bấm tải tiếp.'
-              : '⚠ Không đọc được chương này (rỗng/lỗi) — đã dừng.';
+            const blocked = !!(page && page.challenge);
+            if (s.autoReload) {
+              const d = C.reloadDecision(job, t.url);
+              if (d.reload) {
+                job.got = got;
+                if (await reloadForSession(job, d, blocked)) return; // trang đang tải lại → bản chèn mới sẽ tải tiếp
+                reason = s.stop ? 'Đã dừng.' : s.msg;
+                break;
+              }
+              reason = d.reason === 'chapter'
+                ? `⚠ Đã tải lại trang ${d.tries} lần mà chương này vẫn ${blocked ? 'bị chặn' : 'không đọc được'} — đã dừng.`
+                : `⚠ Đã tải lại trang ${C.RELOAD.perRun} lần trong lượt này — đã dừng để tránh lặp vô hạn.`;
+            } else {
+              reason = blocked
+                ? '⚠ Gặp trang kiểm tra bot — đã dừng. Hãy mở trang, qua kiểm tra như bình thường rồi bấm tải tiếp.'
+                : '⚠ Không đọc được chương này (rỗng/lỗi) — đã dừng.';
+            }
             break;
           }
         }
         first = false;
         if (!s.chap[t.url] || t.force) { await saveChapter(t.url, page); got += 1; }
         s.sel.delete(t.url); // đã tải xong → tự bỏ chọn
-        if (t.onPage) t.onPage(page);
-        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ' · chế độ nhanh' : ''}`);
+        if (job.failUrl === t.url) { job.failUrl = null; job.failCount = 0; }
+        advance(job, page);
+        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ' · chế độ nhanh' : ''}${job.reloads ? ` · đã tải lại trang ${job.reloads} lần` : ''}`);
       }
     } catch (err) {
       reason = `⚠ Lỗi: ${err && err.message ? err.message : err}`;
     }
     try { await finalCheck(); } catch (err) { /* kiểm cuối lỗi → bỏ qua */ }
+    bg({ type: 'job:clear' });
     s.running = false;
     s.current = null;
+    s.job = null;
     say(`${reason} (+${got} chương, đã lưu trong extension)${s.fastNote ? `\n${s.fastNote}` : ''}`.trim());
+  }
+
+  /** Bản chèn sau khi tự tải lại trang: đợi trang kiểm tra (nếu có) của site chạy xong rồi tải tiếp job.
+   *  Kiểm tra cần người thao tác (captcha) thì báo và chờ người dùng — extension không bấm hộ. */
+  async function resumeJob(job) {
+    s.running = true; s.stop = false; s.job = job;
+    while (C.isBlockedDoc(document, here)) {
+      const waited = Date.now() - (job.reloadAt || 0);
+      if (s.stop) { await bg({ type: 'job:clear' }); s.running = false; s.job = null; say('Đã dừng.'); return; }
+      if (waited > C.RELOAD.resumeTimeoutMs) {
+        await bg({ type: 'job:clear' }); s.running = false; s.job = null;
+        say('⚠ Trang kiểm tra vẫn chưa qua sau 3 phút — đã dừng. Qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).');
+        return;
+      }
+      say(waited > C.RELOAD.needUserMs
+        ? '⚠ Trang đang hiện kiểm tra bot cần bạn thao tác — hãy qua kiểm tra, extension sẽ tự tải tiếp.'
+        : 'Đã tải lại trang — đang chờ kiểm tra của site chạy xong…');
+      await sleep(1000);
+    }
+    // Trang bình thường trở lại: bỏ job khỏi background (người dùng có đi trang khác cũng không bị chèn lại), giữ trong bộ nhớ để tải tiếp.
+    await bg({ type: 'job:clear' });
+    say(`Đã tải lại trang (lần ${job.reloads}) — tải tiếp…`);
+    runLoop(job);
   }
 
   /** Tải các chương đang tick (theo thứ tự mục lục). force=true → tải lại và ghi đè cả chương đã lưu. */
@@ -860,29 +957,11 @@
     const queue = all.filter((c) => !c.url.startsWith('epub://')); // chương nhập từ EPUB không có link web để tải lại
     if (all.length > queue.length) say(`Bỏ qua ${all.length - queue.length} chương nhập từ EPUB (không có link gốc).`);
     if (!queue.length) { say('Không có chương nào cần tải trong phần đã chọn.'); return; }
-    let i = 0;
-    runLoop(() => {
-      if (i >= queue.length) return null;
-      const c = queue[i]; i += 1;
-      return { ...c, force, live: C.stripHash(c.url) === here };
-    }, 'Xong các chương đã chọn.');
+    runLoop(newJob('list', { queue: queue.map((c) => ({ url: c.url, title: c.title })), force: !!force, doneNote: 'Xong các chương đã chọn.' }));
   }
 
   function startFollow() {
-    let url = here;
-    let page = s.livePage;
-    let started = false;
-    const seen = new Set();
-    runLoop(() => {
-      if (started) {
-        if (!page.next || seen.has(page.next)) return null;
-        url = page.next;
-      }
-      const live = !started;
-      started = true;
-      seen.add(url);
-      return { url, title: '', live, onPage: (p) => { page = p; } };
-    }, 'Hết truyện (không còn link “下一章”).');
+    runLoop(newJob('follow', { followUrl: here, seen: [], doneNote: 'Hết truyện (không còn link “下一章”).' }));
   }
 
   // ---------- mục lục ----------
@@ -921,6 +1000,9 @@
   async function init() {
     const ui = await store.get(K.ui, {});
     if (ui.tab === 'read' || ui.tab === 'dl') s.tab = ui.tab;
+    if (ui.autoReload === false) s.autoReload = false;
+    let job = await bg({ type: 'job:get' });
+    if (job && (job.origin !== location.origin || !job.bookKey)) { await bg({ type: 'job:clear' }); job = null; } // người dùng đã sang site khác
     HN().onChange(() => { if (s.tab === 'read') render(); });
     if (ui.mode) HN().setMode(ui.mode);
     if (ui.reader) HN().enable();
@@ -932,7 +1014,7 @@
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
     if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
     s.pageTitle = C.guessBookTitle(document.title, page.title);
-    s.bookKey = await resolveBookKey();
+    s.bookKey = job ? job.bookKey : await resolveBookKey(); // tải lại giữa lượt: giữ đúng truyện (trang kiểm tra không cho biết truyện nào)
     s.info = await store.get(K.book(s.bookKey), null) || {
       title: s.pageTitle, origin: location.origin, bookKey: s.bookKey, parts: 0,
     };
@@ -950,6 +1032,7 @@
     const lost = await verifyChapters();
     if (lost) s.msg = `Đã kiểm tra: ${lost} chương mất nội dung → bỏ dấu ✓, hãy chọn lại để tải. Bấm “Khôi phục chương mất” để nhặt lại nếu còn trong kho.`;
     else if (Object.keys(s.chap).length) s.msg = `Đã có ${Object.keys(s.chap).length} chương lưu trong extension — tải thêm hoặc bấm “Tải xuống truyện”.`;
+    if (job) { s.tab = 'dl'; resumeJob(job); return; }
     render();
   }
 

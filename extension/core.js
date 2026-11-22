@@ -555,7 +555,27 @@
     return { title, cover, chapters };
   }
 
+  // ---------- tự tải lại trang khi bị chặn ----------
+  /** Giới hạn tải lại cả tab (lấy phiên mới) trong một lượt tải; lỗi lặp lại quá giới hạn thì dừng hẳn. */
+  const RELOAD = { perChapter: 3, perRun: 30, baseMs: 3000, maxMs: 60000, jitterMs: 2000, resumeTimeoutMs: 180000, needUserMs: 15000 };
+
+  /** Quyết định có tải lại tab sau khi chương `url` lỗi không.
+   *  job: { failUrl, failCount, reloads } — trả về bản cập nhật kèm thời gian chờ (lùi dần 3s → 6s → 12s…, tối đa 60s, cộng ngẫu nhiên). */
+  function reloadDecision(job, url, rnd = Math.random) {
+    const tries = job.failUrl === url ? job.failCount || 0 : 0;
+    const reloads = job.reloads || 0;
+    if (tries >= RELOAD.perChapter) return { reload: false, reason: 'chapter', tries };
+    if (reloads >= RELOAD.perRun) return { reload: false, reason: 'run', tries };
+    const delay = Math.min(RELOAD.maxMs, RELOAD.baseMs * 2 ** tries) + Math.floor(rnd() * RELOAD.jitterMs);
+    return { reload: true, delay, failUrl: url, failCount: tries + 1, reloads: reloads + 1 };
+  }
+
+  /** Tài liệu đang là trang chặn/kiểm tra bot (không có nội dung chương, không phải mục lục, có dấu hiệu challenge). */
+  function isBlockedDoc(d, pageUrl) {
+    return !!extractPage(d, pageUrl).challenge && !looksLikeToc(d, pageUrl);
+  }
+
   root.HNCore = {
-    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));
