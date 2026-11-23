@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoaNgữ – Kho truyện</title>
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><b>HoaNgữ</b><span>Kho truyện đã cào</span></div>
+    <div class="usage" id="usage">Đang đọc kho…</div>
+  </header>
+  <main class="wrap">
+    <section class="side" aria-label="Danh sách truyện">
+      <div class="tools">
+        <input id="q" type="search" placeholder="Tìm theo tên hoặc link…" aria-label="Tìm truyện">
+        <select id="sort" aria-label="Sắp xếp">
+          <option value="title">Tên truyện</option>
+          <option value="updated">Mới cập nhật</option>
+          <option value="size">Dung lượng</option>
+          <option value="count">Số chương</option>
+        </select>
+      </div>
+      <ul id="books" class="books"></ul>
+      <div class="side-foot">
+        <button id="reload" class="btn ghost" type="button">Làm mới</button>
+        <button id="orphans" class="btn ghost" type="button" hidden></button>
+      </div>
+    </section>
+    <section class="detail" id="detail" aria-live="polite"></section>
+  </main>
+  <dialog id="preview" class="preview">
+    <form method="dialog" class="preview-head"><b id="pv-title"></b><button class="btn ghost" aria-label="Đóng">Đóng</button></form>
+    <div id="pv-body" class="preview-body"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="core.js"></script>
+  <script src="manage.js"></script>
+</body>
+</html>

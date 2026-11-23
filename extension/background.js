@@ -40,6 +40,8 @@ chrome.action.onClicked.addListener(async (tab) => {
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, reply) => {
+  // Trang Kho truyện là options page → openOptionsPage tự chuyển tới tab đang mở nếu có.
+  if (msg && msg.type === 'open:manage') { chrome.runtime.openOptionsPage().then(() => reply(true), () => reply(false)); return true; }
   const tabId = sender.tab && sender.tab.id;
   if (tabId == null || !msg || typeof msg.type !== 'string' || !msg.type.startsWith('job:')) return false;
   (async () => {
