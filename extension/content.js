@@ -81,6 +81,7 @@
     right: '<path d="m9 18 6-6-6-6"/>',
     skip: '<polygon points="5 4 15 12 5 20 5 4"/><line x1="19" x2="19" y1="5" y2="19"/>',
     volume: '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>',
+    library: '<path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/>',
     star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   };
   const icon = (name, cls = 'size-4') => {
@@ -208,6 +209,7 @@
       ibtn('lifebuoy', 'Khôi phục chương mất — quét kho extension, nhặt lại chương còn nội dung nhưng mất khỏi danh sách', () => recover(), { disabled: s.running }),
       ibtn('filter', 'Lọc lại nội dung đã lưu — bỏ khoảng trắng (trừ sau dấu ;) rồi dọn link, “hetushu”, “.com” khỏi các chương đã lưu', () => refilter(), { disabled: s.running || !savedCount }),
       el('span', { class: 'flex-1' }),
+      ibtn('library', 'Kho truyện — duyệt, xuất và xoá dữ liệu mọi truyện đã cào (mở tab mới)', () => bg({ type: 'open:manage' })),
       ibtn('trash', 'Xoá dữ liệu truyện này', () => forget(), { disabled: s.running, class: 'grid size-7 cursor-pointer place-items-center rounded-md text-neutral-500 hover:bg-red-100 hover:text-red-700 disabled:pointer-events-none disabled:opacity-40' }));
 
     // --- danh sách chương ---

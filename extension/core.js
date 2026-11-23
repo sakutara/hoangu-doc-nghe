@@ -587,7 +587,74 @@
     return u.href;
   }
 
+  // ---------- quản lý kho (trang manage.html) ----------
+  /** Tên key trong chrome.storage.local — PHẢI khớp với K trong content.js. */
+  const STORE = {
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, toc: (b) => `hn:toc:${b}`, buf: (b) => `hn:buf:${b}`, cover: (b) => `hn:cover:${b}`,
+    body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, idx: 'hn:idx', reg: 'hn:books',
+  };
+
+  /** Key chứa nội dung một chương (giống bodyKey của content.js): c.k nếu có; bản cũ theo số thứ tự n; còn lại theo URL. */
+  function chapterBodyKey(bookKey, c, url) {
+    if (c && c.k) return c.k;
+    return c && c.n != null ? STORE.body(bookKey, c.n) : STORE.bodyUrl(bookKey, url);
+  }
+
+  /** Chương đã lưu theo thứ tự mục lục (giống lúc xuất EPUB); chương ngoài mục lục xếp sau, theo thời điểm lưu.
+   *  @returns {Array<{url:string,title:string,at:string|null,v:number,vol:string|null,pos:number|null,key:string}>} pos: số thứ tự trong mục lục (1-based). */
+  function orderChapters(bookKey, chap, toc) {
+    const list = (toc || []).filter((c) => c && c.url);
+    const order = new Map(list.map((c, i) => [stripHash(c.url), i]));
+    const volBy = new Map(list.map((c) => [stripHash(c.url), c.vol || null]));
+    const rows = Object.entries(chap || {}).map(([url, c]) => {
+      const u = stripHash(url);
+      return {
+        url, title: (c && c.t) || url, at: (c && c.at) || null, v: (c && c.v) || 0,
+        vol: volBy.get(u) || null, pos: order.has(u) ? order.get(u) + 1 : null, key: chapterBodyKey(bookKey, c, url),
+      };
+    });
+    rows.sort((a, b) => {
+      if (a.pos != null && b.pos != null) return a.pos - b.pos;
+      if ((a.pos != null) !== (b.pos != null)) return a.pos != null ? -1 : 1;
+      return String(a.at || '').localeCompare(String(b.at || ''));
+    });
+    return rows;
+  }
+
+  /** Mọi key thuộc một truyện (meta + bìa + nội dung chương) — xoá hết là truyện biến mất khỏi extension. */
+  function bookStorageKeys(bookKey, chap) {
+    const bodies = Object.entries(chap || {}).map(([u, c]) => chapterBodyKey(bookKey, c, u));
+    return [STORE.book(bookKey), STORE.chap(bookKey), STORE.toc(bookKey), STORE.buf(bookKey), STORE.cover(bookKey), ...bodies];
+  }
+
+  /** Bỏ các URL khỏi chỉ mục URL→truyện (chỉ những URL đang trỏ về đúng truyện này). Trả bản mới, không sửa bản gốc. */
+  function pruneIndex(idx, bookKey, urls) {
+    const out = { ...(idx || {}) };
+    const drop = urls ? new Set(urls) : null;
+    Object.keys(out).forEach((u) => { if (out[u] === bookKey && (!drop || drop.has(u))) delete out[u]; });
+    return out;
+  }
+
+  /** Key nội dung chương (hn:body:*) không thuộc mục chương nào của bất kỳ truyện nào. books: { bookKey: chapMap }. */
+  function orphanBodyKeys(allKeys, books) {
+    const used = new Set();
+    Object.entries(books || {}).forEach(([b, chap]) => {
+      Object.entries(chap || {}).forEach(([u, c]) => used.add(chapterBodyKey(b, c, u)));
+    });
+    return (allKeys || []).filter((k) => k.startsWith('hn:body:') && !used.has(k));
+  }
+
+  /** 1536 → "1.5 KB". */
+  function fmtBytes(n) {
+    if (!(n > 0)) return '0 B';
+    const u = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.min(u.length - 1, Math.floor(Math.log(n) / Math.log(1024)));
+    const v = n / 1024 ** i;
+    return `${i ? v.toFixed(v < 10 ? 1 : 0) : v} ${u[i]}`;
+  }
+
   root.HNCore = {
+    STORE, chapterBodyKey, orderChapters, bookStorageKeys, pruneIndex, orphanBodyKeys, fmtBytes,
     needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

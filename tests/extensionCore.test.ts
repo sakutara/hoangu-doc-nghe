@@ -286,3 +286,78 @@ describe('extension core', () => {
     expect(C.reloadUrl('not a url')).toBeNull();
   });
 });
+
+describe('quản lý kho (ADR-012)', () => {
+  const B = 'https://x.test/b';
+
+  it('chapterBodyKey: ưu tiên c.k; bản cũ theo số n; còn lại theo URL', () => {
+    expect(C.chapterBodyKey('B', { k: 'hn:body:B#abc', n: 3 }, `${B}/1.html`)).toBe('hn:body:B#abc');
+    expect(C.chapterBodyKey('B', { n: 3 }, `${B}/1.html`)).toBe('hn:body:B#3');
+    expect(C.chapterBodyKey('B', { n: 0 }, `${B}/1.html`)).toBe('hn:body:B#0');
+    expect(C.chapterBodyKey('B', {}, `${B}/1.html`)).toBe(`hn:body:B@${B}/1.html`);
+    expect(C.chapterBodyKey('B', null, `${B}/1.html`)).toBe(`hn:body:B@${B}/1.html`);
+  });
+
+  it('orderChapters: theo mục lục (1-based), gán vol, chương ngoài mục lục xếp sau theo thời điểm lưu', () => {
+    const toc = [{ url: `${B}/1.html`, vol: 'Quyển 1' }, { url: `${B}/2.html` }, { url: `${B}/3.html`, vol: 'Quyển 2' }];
+    const chap = {
+      [`${B}/3.html`]: { t: 'Chương 3', at: '2026-01-03T00:00:00Z', k: 'hn:body:B#k3' },
+      [`${B}/1.html#frag`]: { t: 'Chương 1', at: '2026-01-05T00:00:00Z' }, // hash bị bỏ khi khớp mục lục
+      [`${B}/9.html`]: { t: 'Ngoài sau', at: '2026-02-01T00:00:00Z' },
+      [`${B}/8.html`]: { at: '2026-01-15T00:00:00Z' }, // không có tiêu đề → dùng URL
+    };
+    const rows = C.orderChapters('B', chap, toc);
+    expect(rows.map((r) => r.title)).toEqual(['Chương 1', 'Chương 3', `${B}/8.html`, 'Ngoài sau']);
+    expect(rows.map((r) => r.pos)).toEqual([1, 3, null, null]);
+    expect(rows.map((r) => r.vol)).toEqual(['Quyển 1', 'Quyển 2', null, null]);
+    expect(rows[0].key).toBe(`hn:body:B@${B}/1.html#frag`);
+    expect(rows[1].key).toBe('hn:body:B#k3');
+    expect(rows[2].v).toBe(0);
+    expect(rows[2].at).toBe('2026-01-15T00:00:00Z');
+  });
+
+  it('orderChapters: không có mục lục → mọi chương xếp theo thời điểm lưu', () => {
+    const rows = C.orderChapters('B', { [`${B}/b`]: { t: 'B', at: '2026-03-01' }, [`${B}/a`]: { t: 'A', at: '2026-02-01' } }, undefined);
+    expect(rows.map((r) => r.title)).toEqual(['A', 'B']);
+    expect(rows.every((r) => r.pos === null && r.vol === null)).toBe(true);
+  });
+
+  it('bookStorageKeys: gồm meta, mục lục, bìa, bộ đệm và mọi key nội dung chương', () => {
+    expect(C.bookStorageKeys('B', {
+      [`${B}/1.html`]: { n: 1 },
+      [`${B}/2.html`]: { k: 'hn:body:B#x' },
+    })).toEqual([
+      'hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B',
+      'hn:body:B#1', 'hn:body:B#x',
+    ]);
+    expect(C.bookStorageKeys('B', null)).toEqual(['hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B']);
+  });
+
+  it('pruneIndex: chỉ bỏ URL trỏ về đúng truyện; có danh sách URL thì chỉ bỏ những URL đó; không sửa bản gốc', () => {
+    const idx = { 'u1': 'B', 'u2': 'B', 'u3': 'C' };
+    const snapshot = { ...idx };
+    expect(C.pruneIndex(idx, 'B')).toEqual({ u3: 'C' });
+    expect(C.pruneIndex(idx, 'B', ['u1'])).toEqual({ u2: 'B', u3: 'C' });
+    expect(C.pruneIndex(idx, 'B', ['u3'])).toEqual({ u1: 'B', u2: 'B', u3: 'C' }); // u3 thuộc truyện khác
+    expect(idx).toEqual(snapshot);
+    expect(C.pruneIndex(null, 'B')).toEqual({});
+  });
+
+  it('orphanBodyKeys: chỉ trả key hn:body:* không thuộc chương nào của bất kỳ truyện nào', () => {
+    const allKeys = ['hn:body:B#1', 'hn:body:B#2', 'hn:body:C@https://c.test/1', 'hn:body:D#9', 'hn:book:B', 'hn:idx'];
+    const books = { B: { [`${B}/1.html`]: { n: 1 } }, C: { 'https://c.test/1': {} } };
+    expect(C.orphanBodyKeys(allKeys, books)).toEqual(['hn:body:B#2', 'hn:body:D#9']);
+    expect(C.orphanBodyKeys(allKeys, {})).toEqual(['hn:body:B#1', 'hn:body:B#2', 'hn:body:C@https://c.test/1', 'hn:body:D#9']);
+    expect(C.orphanBodyKeys(undefined, undefined)).toEqual([]);
+  });
+
+  it('fmtBytes: 0 B, byte lẻ, KB một chữ số thập phân, MB làm tròn', () => {
+    expect(C.fmtBytes(0)).toBe('0 B');
+    expect(C.fmtBytes(-5)).toBe('0 B');
+    expect(C.fmtBytes(undefined)).toBe('0 B');
+    expect(C.fmtBytes(512)).toBe('512 B');
+    expect(C.fmtBytes(1536)).toBe('1.5 KB');
+    expect(C.fmtBytes(10 * 1024 * 1024)).toBe('10 MB');
+    expect(C.fmtBytes(10.5 * 1024 * 1024)).toBe('11 MB');
+  });
+});

@@ -20,7 +20,7 @@ Panel có hai tab: **Đọc truyện** và **Tải truyện** (tab này chứa t
 ### Giao diện (Tailwind)
 Panel dùng Tailwind, biên dịch sẵn thành `panel.css` (đã commit; extension không cần build lúc chạy). Sau khi đổi class trong `content.js` hoặc `panel.src.css`:
 `npm run build:extension:css`. Trong shadow DOM không dùng được các class shadow/ring của Tailwind (cần `@property`), nên bóng đổ viết tay trong `panel.src.css`.
-Ảnh bìa có nút đổi/xoá ngay trên bìa (hiện khi rê chuột); dãy biểu tượng dưới thẻ truyện: làm mới mục lục, nhập EPUB, khôi phục chương mất, lọc lại nội dung, xoá dữ liệu.
+Ảnh bìa có nút đổi/xoá ngay trên bìa (hiện khi rê chuột); dãy biểu tượng dưới thẻ truyện: làm mới mục lục, nhập EPUB, khôi phục chương mất, lọc lại nội dung, xoá dữ liệu; biểu tượng **thư viện** mở trang Kho truyện (ADR-012).
 Khi đang tải, chương vừa tải xong tự bỏ chọn và danh sách tự cuộn tới chương đang tải. Bấm tiêu đề quyển trong danh sách để chọn/bỏ chọn cả quyển.
 
 ## Cập nhật bộ tra từ khi app đổi từ điển
@@ -72,6 +72,14 @@ rồi **tự tải tiếp** từ đúng chương đó (ô “Tự tải lại tr
 - Mỗi lần mở panel (kể cả sau khi tự tải lại), các chương chưa tải được tự tick sẵn; bấm tải để bắt đầu.
 
 Tắt ô trên thì như cũ: gặp chặn là **dừng ngay**; mở trang, qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).
+
+## Kho truyện (ADR-012)
+Biểu tượng **thư viện** trên panel mở trang **Kho truyện** (trang tùy chọn của extension, `manage.html`): xem toàn bộ dữ liệu đã cào, gom theo truyện.
+- Danh sách sắp theo tên / cập nhật / dung lượng / số chương, có ô tìm kiếm. Chi tiết: ảnh bìa, số chương, dung lượng, số chương bản cũ (△).
+- **Xuất EPUB** cả truyện hoặc các chương đã chọn (theo thứ tự mục lục, có quyển); **Gỡ ảnh bìa**; **Xoá cả truyện** (xoá meta, mục lục, bìa, bộ đệm và nội dung chương, bỏ khỏi sổ đăng ký và chỉ mục URL).
+- Bảng chương theo thứ tự mục lục: lọc, chọn, xem nội dung, **Xoá chương** (xoá nội dung và mục chương nhưng giữ mục lục để tải lại được).
+- **Dọn chương mồ côi**: xoá nội dung `hn:body:*` không thuộc truyện nào (sót lại sau khi xoá/di trú).
+- Tự làm mới khi panel ở tab khác thay đổi kho. Không gọi mạng; chỉ đọc/ghi `chrome.storage.local` theo cùng sơ đồ key với `content.js` (`HNCore.STORE`).
 
 ## Giới hạn
 Mục lục phân nhiều trang chưa được gộp; bộ chọn nội dung theo heuristic. Việc bỏ khoảng trắng cũng làm dính các từ tiếng Anh/số trong nội dung.
