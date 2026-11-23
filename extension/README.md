@@ -68,6 +68,8 @@ rồi **tự tải tiếp** từ đúng chương đó (ô “Tự tải lại tr
   rồi tự tải tiếp. Quá 3 phút thì dừng.
 - Lượt đang dở được giữ ở background theo tab. Nếu biểu tượng extension hiện “↻” (Chrome không cho tự chèn lại), bấm biểu tượng một lần để tải tiếp.
 - Bấm **Dừng** để huỷ cả lượt (kể cả khi đang đếm ngược hoặc chờ trang kiểm tra).
+- Trang được mở lại bằng điều hướng mới tới URL sạch (bỏ token `__cf_chl_*`), nên không hiện hộp thoại “gửi lại biểu mẫu” (ADR-011).
+- Mỗi lần mở panel (kể cả sau khi tự tải lại), các chương chưa tải được tự tick sẵn; bấm tải để bắt đầu.
 
 Tắt ô trên thì như cũ: gặp chặn là **dừng ngay**; mở trang, qua kiểm tra rồi bấm tải tiếp (chương đã lưu được bỏ qua).
 

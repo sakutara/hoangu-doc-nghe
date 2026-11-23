@@ -240,7 +240,7 @@
         el('span', { class: 'pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-neutral-400' }, icon('search', 'size-3.5')),
         el('input', { class: `${BTN.field} wide w-full pl-7`, placeholder: 'Lọc theo tiêu đề…', value: s.filter, oninput: (e) => { s.filter = e.target.value; s.offset = 0; render(); sh.querySelector('input.wide').focus(); } })),
       el('div', { class: 'flex flex-wrap items-center gap-1.5' },
-        el('button', { class: BTN.chip, onclick: () => { s.toc.forEach((c) => { if (!s.chap[c.url]) s.sel.add(c.url); }); render(); } }, 'Chưa tải'),
+        el('button', { class: BTN.chip, onclick: () => { selectUnsaved(); render(); } }, 'Chưa tải'),
         el('button', { class: BTN.chip, onclick: () => { s.toc.forEach((c) => s.sel.add(c.url)); render(); } }, 'Tất cả'),
         el('button', { class: BTN.chip, onclick: () => selectOld(), title: 'Tick các chương đã lưu bằng bản cào cũ (△) rồi bấm “Tải lại”' }, `Bản cũ (${oldCount})`),
         el('button', { class: BTN.chip, onclick: () => { s.sel.clear(); render(); } }, 'Bỏ chọn'),
@@ -387,6 +387,12 @@
     s.sel.clear();
     s.toc.forEach((c) => { if (s.chap[c.url] && isOld(s.chap[c.url]) && !c.url.startsWith('epub://')) s.sel.add(c.url); });
     say(s.sel.size ? `Đã chọn ${s.sel.size} chương lưu bằng bản cũ — bấm “Tải lại đã chọn”.` : 'Không có chương nào lưu bằng bản cũ.');
+  }
+
+  /** Tick mọi chương chưa lưu (bỏ chương nhập từ EPUB — không có link web). @returns số chương đang chọn. */
+  function selectUnsaved() {
+    s.toc.forEach((c) => { if (!s.chap[c.url] && !c.url.startsWith('epub://')) s.sel.add(c.url); });
+    return s.sel.size;
   }
 
   function selectRange() {
@@ -857,7 +863,8 @@
     if (!ok) return false;
     job.reloadAt = Date.now();
     say('Đang tải lại trang…');
-    const r = await bg({ type: 'job:reload', job });
+    job.reloadUrl = C.reloadUrl(location.href);
+    const r = await bg({ type: 'job:reload', job, url: job.reloadUrl });
     if (!r || r.error) { say(`⚠ Không tải lại được trang: ${(r && r.error) || 'background không phản hồi'}`); return false; }
     return true;
   }
@@ -1032,6 +1039,8 @@
     const lost = await verifyChapters();
     if (lost) s.msg = `Đã kiểm tra: ${lost} chương mất nội dung → bỏ dấu ✓, hãy chọn lại để tải. Bấm “Khôi phục chương mất” để nhặt lại nếu còn trong kho.`;
     else if (Object.keys(s.chap).length) s.msg = `Đã có ${Object.keys(s.chap).length} chương lưu trong extension — tải thêm hoặc bấm “Tải xuống truyện”.`;
+    const picked = selectUnsaved();
+    if (picked && !job) s.msg = `${s.msg ? `${s.msg}\n` : ''}Đã tự chọn ${picked} chương chưa tải — bấm tải để bắt đầu.`;
     if (job) { s.tab = 'dl'; resumeJob(job); return; }
     render();
   }

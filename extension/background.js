@@ -10,6 +10,16 @@ async function clearJob(tabId) {
   chrome.action.setTitle({ tabId, title: 'HoaNgữ – Tải truyện' }).catch(() => {});
 }
 
+/** URL điều hướng an toàn: chỉ http/https và cùng origin với trang đã gửi yêu cầu (sender.url, hoặc tab.url nếu thiếu); không thì null. */
+function safeTarget(url, sender) {
+  try {
+    const from = new URL(sender.url || (sender.tab && sender.tab.url));
+    const to = new URL(url);
+    if (!/^https?:$/.test(to.protocol) || to.origin !== from.origin) return null;
+    return to.href;
+  } catch (e) { return null; }
+}
+
 /** Chèn panel nếu tài liệu hiện tại chưa có (content.js tự bật/tắt panel khi chèn lần hai → phải kiểm tra trước). */
 async function inject(tabId, { onlyIfMissing }) {
   if (onlyIfMissing) {
@@ -36,9 +46,13 @@ chrome.runtime.onMessage.addListener((msg, sender, reply) => {
     if (msg.type === 'job:get') return getJob(tabId);
     if (msg.type === 'job:clear') { await clearJob(tabId); return true; }
     if (msg.type === 'job:reload') {
-      // Lưu lượt tải dở rồi tải lại cả tab: trình duyệt nhận phiên/cookie mới, kiểm tra của trang (nếu có) chạy như bình thường.
+      // Lưu lượt tải dở rồi mở lại trang. Không dùng chrome.tabs.reload: sau kiểm tra Cloudflare trang đang hiện là KẾT QUẢ POST,
+      // reload sẽ bật hộp thoại “Confirm Form Resubmission” mà extension không bấm được. Điều hướng GET tới URL sạch (content.js gửi kèm msg.url) thì không có hộp thoại.
       await chrome.storage.session.set({ [JOB(tabId)]: msg.job });
-      await chrome.tabs.reload(tabId);
+      await chrome.scripting.executeScript({ target: { tabId }, world: 'MAIN', func: () => { window.onbeforeunload = null; } }).catch(() => {});
+      const target = safeTarget(msg.url, sender);
+      if (target) await chrome.tabs.update(tabId, { url: target });
+      else await chrome.tabs.reload(tabId, { bypassCache: false });
       return true;
     }
     return null;

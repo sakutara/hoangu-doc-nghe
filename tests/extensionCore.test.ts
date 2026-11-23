@@ -277,4 +277,12 @@ describe('extension core', () => {
     expect(await zip.file('mimetype')!.async('string')).toBe('application/epub+zip');
     expect(await zip.file('OEBPS/ch0001.xhtml')!.async('string')).toContain('data-hn-url="u"');
   });
+
+  it('reloadUrl: bỏ hash và param __cf_chl_*, giữ param khác; URL không hợp lệ → null', () => {
+    expect(C.reloadUrl('https://www.hetushu.com/book/1/2.html?__cf_chl_tk=abc&__cf_chl_rt_tk=x#top')).toBe('https://www.hetushu.com/book/1/2.html');
+    expect(C.reloadUrl('https://x.test/a?p=2&__cf_chl_f_tk=z&q=3')).toBe('https://x.test/a?p=2&q=3');
+    expect(C.reloadUrl('https://x.test/b/1.html')).toBe('https://x.test/b/1.html');
+    expect(C.reloadUrl('chrome://extensions')).toBeNull();
+    expect(C.reloadUrl('not a url')).toBeNull();
+  });
 });

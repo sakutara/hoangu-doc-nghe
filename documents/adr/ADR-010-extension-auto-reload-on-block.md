@@ -25,6 +25,7 @@ Ràng buộc của Chrome extension: tải lại cả tab sẽ huỷ content scr
 - **Chính sách** (`HNCore.reloadDecision`, `HNCore.RELOAD`): chờ lùi dần 3s → 6s → 12s… (tối đa 60s, +0–2s ngẫu nhiên) trước mỗi lần tải lại;
   tối đa 3 lần cho một chương, 30 lần cho cả lượt; chương tải được thì đếm lại từ đầu. Vượt giới hạn → dừng như cũ.
 - **Đường nhanh sau tải lại**: nếu đang bật thì chương kế được kiểm chứng lại bằng cả hai đường; chương đã lưu bằng đường nhanh chưa kiểm vẫn được giữ trong `pending` để sửa nếu lệch.
+- Cách tải lại đổi thành điều hướng GET tới URL sạch (không gửi lại biểu mẫu) — xem ADR-011.
 
 ## 3. Ranh giới (giữ từ ADR-009)
 - Chỉ **tải lại trang trong trình duyệt thật của người dùng** — hành động người đọc vẫn làm. Kiểm tra của site chạy như bình thường.

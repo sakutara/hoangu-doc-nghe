@@ -575,7 +575,19 @@
     return !!extractPage(d, pageUrl).challenge && !looksLikeToc(d, pageUrl);
   }
 
+  /** URL mở lại trang sau khi bị chặn: bỏ hash và mọi param `__cf_chl_*` (token thử thách của Cloudflare), giữ nguyên các param khác và thứ tự.
+   *  Không parse được hoặc không phải http/https → null. */
+  function reloadUrl(href) {
+    let u;
+    try { u = new URL(href); } catch (e) { return null; }
+    if (u.protocol !== 'http:' && u.protocol !== 'https:') return null;
+    u.hash = '';
+    const kept = u.search.slice(1).split('&').filter((p) => p && !p.split('=')[0].startsWith('__cf_chl_'));
+    u.search = kept.length ? `?${kept.join('&')}` : '';
+    return u.href;
+  }
+
   root.HNCore = {
-    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));
