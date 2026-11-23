@@ -8,6 +8,7 @@ import { expectValidEpub } from './epubValidate';
 new Function(coreSource)();
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const C = (globalThis as any).HNCore;
+type Row = { title: string; pos: number | null; vol: string | null; v: number; key: string; at: string | null };
 
 const HAN = '这是一段足够长的中文正文内容用来通过检测';
 const doc = (html: string, title = '测试小说 - 第1章 开始 - 站点') => {
@@ -307,9 +308,9 @@ describe('quản lý kho (ADR-012)', () => {
       [`${B}/8.html`]: { at: '2026-01-15T00:00:00Z' }, // không có tiêu đề → dùng URL
     };
     const rows = C.orderChapters('B', chap, toc);
-    expect(rows.map((r) => r.title)).toEqual(['Chương 1', 'Chương 3', `${B}/8.html`, 'Ngoài sau']);
-    expect(rows.map((r) => r.pos)).toEqual([1, 3, null, null]);
-    expect(rows.map((r) => r.vol)).toEqual(['Quyển 1', 'Quyển 2', null, null]);
+    expect(rows.map((r: Row) => r.title)).toEqual(['Chương 1', 'Chương 3', `${B}/8.html`, 'Ngoài sau']);
+    expect(rows.map((r: Row) => r.pos)).toEqual([1, 3, null, null]);
+    expect(rows.map((r: Row) => r.vol)).toEqual(['Quyển 1', 'Quyển 2', null, null]);
     expect(rows[0].key).toBe(`hn:body:B@${B}/1.html#frag`);
     expect(rows[1].key).toBe('hn:body:B#k3');
     expect(rows[2].v).toBe(0);
@@ -318,8 +319,8 @@ describe('quản lý kho (ADR-012)', () => {
 
   it('orderChapters: không có mục lục → mọi chương xếp theo thời điểm lưu', () => {
     const rows = C.orderChapters('B', { [`${B}/b`]: { t: 'B', at: '2026-03-01' }, [`${B}/a`]: { t: 'A', at: '2026-02-01' } }, undefined);
-    expect(rows.map((r) => r.title)).toEqual(['A', 'B']);
-    expect(rows.every((r) => r.pos === null && r.vol === null)).toBe(true);
+    expect(rows.map((r: Row) => r.title)).toEqual(['A', 'B']);
+    expect(rows.every((r: Row) => r.pos === null && r.vol === null)).toBe(true);
   });
 
   it('bookStorageKeys: gồm meta, mục lục, bìa, bộ đệm và mọi key nội dung chương', () => {
