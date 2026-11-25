@@ -27,6 +27,21 @@ describe('extension core', () => {
     expect(C.findTocUrl(d, 'https://x.test/b/1.html')).toBe('https://x.test/b/index.html');
   });
 
+  it('danh mục: lấy ảnh bìa + thể loại, EPUB ghi bìa và dc:subject', async () => {
+    const d = doc('<div class="info">分类：玄幻</div>');
+    d.head.innerHTML = '<meta property="og:image" content="/img/c.jpg"><meta property="og:novel:category" content="玄幻,修真">';
+    const m = C.parseCatalogMeta(d, 'https://x.test/b/');
+    expect(m.coverUrl).toBe('https://x.test/img/c.jpg');
+    expect(m.genres).toEqual(['玄幻', '修真']);
+    const fb = C.parseCatalogMeta(doc('<div class="book-img"><img src="c.png"></div><p>类型：都市</p>'), 'https://x.test/b/');
+    expect(fb).toEqual({ coverUrl: 'https://x.test/b/c.png', genres: ['都市'] });
+    const bytes = await C.buildEpub({ title: 'T', genres: m.genres, cover: { mime: 'image/png', data: new Uint8Array([1, 2, 3]) }, chapters: [{ url: 'https://x.test/1', title: '第1章', paragraphs: [HAN] }] });
+    const opf = await (await JSZip.loadAsync(bytes)).file('OEBPS/content.opf')!.async('string');
+    expect(opf).toContain('<dc:subject>玄幻</dc:subject><dc:subject>修真</dc:subject>');
+    expect(opf).toContain('properties="cover-image"');
+    expect((await C.parseEpub(bytes)).genres).toEqual(['玄幻', '修真']);
+  });
+
   it('bỏ link 下一章 trỏ về mục lục / khác origin', () => {
     const toc = C.extractPage(doc(`<div id="content"><p>${HAN}</p></div><a href="/b/">下一章</a>`), 'https://x.test/b/9.html');
     expect(toc.next).toBeUndefined();
@@ -89,6 +104,17 @@ describe('extension core', () => {
 
   it('tên sách / tên file', () => {
     expect(C.guessBookTitle('书名 - 第1章 开始 - 站点', '第1章 开始')).toBe('书名');
+    // trang mục lục: h1 = tên truyện, các phần còn lại là khẩu hiệu/tên site
+    expect(C.guessBookTitle('太白金星有点烦 - 小说在线阅读 - 马伯庸 - 努努书坊', '')).toBe('太白金星有点烦');
+    expect(C.guessBookTitle('太白金星有点烦 - 正文 第一章 by 马伯庸 - 努努书坊 - 小说在线阅读', '太白金星有点烦 正文 第一章')).toBe('太白金星有点烦');
+    // hetushu: tiêu đề chứa hậu tố “最新章节” và tên tác giả (link /author/)
+    const hd = new DOMParser().parseFromString('<html><body><a href="/author/x.html">唐家三少</a></body></html>', 'text/html');
+    expect(C.guessBookTitle('斗罗大陆最新章节_斗罗大陆全文阅读_唐家三少_和图书', '', hd)).toBe('斗罗大陆');
+    expect(C.guessBookTitle('唐家三少_斗罗大陆_和图书', '', hd)).toBe('斗罗大陆');
+    // breadcrumb + alt bìa + h2 đối chiếu; “免费” không dính vào tên
+    const bd = new DOMParser().parseFromString('<html><body><div class="crumb"><a>和图书</a> &gt; <a>小说</a> &gt; <a>玄幻小说</a> &gt; 雪鹰领主</div><div class="book_info"><img alt="雪鹰领主" src="x.jpg"><h2>雪鹰领主</h2><a href="/author/y.html">我吃西红柿</a></div></body></html>', 'text/html');
+    expect(C.guessBookTitle('雪鹰领主免费_我吃西红柿_和图书', '', bd)).toBe('雪鹰领主');
+    expect(C.guessBookTitle('雪鹰领主-免费小说-和图书', '', bd)).toBe('雪鹰领主');
     expect(C.safeName('a/b:c')).toBe('a_b_c');
   });
 
@@ -236,6 +262,26 @@ describe('extension core', () => {
   it('parseToc: gán quyển theo tiêu đề dt đứng trước', () => {
     const d = new DOMParser().parseFromString('<dl><dt>第一卷 七玄门风云</dt><dd><a href="/b/1.html">第一章 山边小村</a></dd><dd><a href="/b/2.html">第二章 三叔</a></dd><dt>第二卷 神手谷</dt><dd><a href="/b/3.html">第三章 新</a></dd></dl>', 'text/html');
     expect(C.parseToc(d, 'https://x.test/b/').map((c: { vol: string }) => c.vol)).toEqual(['第一卷 七玄门风云', '第一卷 七玄门风云', '第二卷 神手谷']);
+  });
+
+  const dir99 = `<dl id="dir"><dt>第一章 领导都想用自己熟悉的人</dt><dd><a href="/book/5048/1.htm">祝焱走了，谁来当县委书记</a></dd><dd><a href="/book/5048/2.htm">尘埃落定</a></dd><dt>第二章 没有闲职</dt>${
+    Array.from({ length: 8 }, (_, i) => `<dd><a href="/book/5048/${i + 3}.htm">${i === 3 ? '第八章 招待省委书记夫人' : i === 4 ? '第九章 县长侄子' : i === 5 ? '第十章 让领导' : `普通${i}`}</a></dd>`).join('')}</dl>`;
+
+  it('parseToc: tên chương trơn, chỉ vài chương khớp 第N章 → vẫn lấy đủ nhóm dd (99csw)', () => {
+    const toc = C.parseToc(doc(`<div class="nav"><a href="/book/5048/1.htm">点击阅读</a></div>${dir99}`), 'https://www.99csw.com/book/5048/index.htm');
+    expect(toc).toHaveLength(10);
+    expect(toc[0]).toMatchObject({ title: '祝焱走了，谁来当县委书记', vol: '第一章 领导都想用自己熟悉的人' });
+    expect(toc[9].vol).toBe('第二章 没有闲职');
+  });
+
+  it('parsePastedToc: HTML giữ link, văn bản trần theo dòng, bỏ link khác site', () => {
+    const base = 'https://www.99csw.com/book/5048/index.htm';
+    expect(C.parsePastedToc(dir99, '', base)).toHaveLength(10);
+    const txt = ['祝焱走了 https://www.99csw.com/book/5048/1.htm', '/book/5048/2.htm 尘埃落定', '第三章', 'https://www.99csw.com/book/5048/3.htm', 'x https://other.test/a.htm', '没有链接的行'].join('\n');
+    expect(C.parsePastedToc('', txt, base).map((c: { title: string; url: string }) => [c.title, c.url])).toEqual([
+      ['祝焱走了', 'https://www.99csw.com/book/5048/1.htm'], ['尘埃落定', 'https://www.99csw.com/book/5048/2.htm'], ['第三章', 'https://www.99csw.com/book/5048/3.htm'],
+    ]);
+    expect(C.parsePastedToc('<a href="/book/5048/9.htm">甲</a>', '', base)).toEqual([{ title: '甲', url: 'https://www.99csw.com/book/5048/9.htm' }]);
   });
 
   it('EPUB: đọc file nén deflate từ trình tạo khác, không có URL gốc, bỏ qua nav', async () => {

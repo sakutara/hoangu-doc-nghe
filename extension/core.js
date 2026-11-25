@@ -285,7 +285,9 @@
       if (e.tagName === 'A') { volOf.set(e, curVol); return; }
       if (e.querySelector('a[href]')) return;
       const t = cleanTitle(e.textContent || '');
-      if (t && t.length <= 40 && VOL_RE.test(t) && !/[章节節回]\s*$/.test(t.split(/\s+/)[0])) curVol = t;
+      if (!t || t.length > 40) return;
+      if (VOL_RE.test(t) && !/[章节節回]\s*$/.test(t.split(/\s+/)[0])) curVol = t;
+      else if (e.tagName === 'DT' && CHAPTER_TITLE_RE.test(t)) curVol = t; // 99csw: <dt>第一章 …</dt> là nhóm, chương con là <dd><a>
     });
     const push = (a) => {
       let u;
@@ -300,8 +302,7 @@
     };
     const anchors = [...d.querySelectorAll('a[href]')];
     anchors.filter((a) => CHAPTER_TITLE_RE.test((a.textContent || '').trim())).forEach(push);
-    if (items.length >= 3) return items;
-    // Dự phòng: nhóm link cùng khối cha lớn nhất (tiêu đề chương không theo mẫu “第N章”).
+    // Nhóm link cùng khối cha lớn nhất (tiêu đề chương không theo mẫu “第N章”).
     const groups = new Map();
     anchors.forEach((a) => {
       const g = a.parentElement && a.parentElement.parentElement;
@@ -309,10 +310,51 @@
     });
     let best = [];
     groups.forEach((list) => { if (list.length > best.length) best = list; });
+    // Mẫu 第N章 chỉ khớp lác đác vài chương (còn lại tên trơn) → nhóm link lớn mới là mục lục thật.
+    const sparse = items.length >= 3 && best.length >= 8 && best.length >= items.length * 2;
+    if (items.length >= 3 && !sparse) return items;
     if (best.length < 5) return items;
     items.length = 0; seen.clear();
     best.forEach(push);
     return items;
+  }
+
+  /** Mục lục dán tay → [{title,url}] cùng origin với trang. Ưu tiên HTML (giữ link khi copy vùng chọn trên trang); không có thì đọc từng dòng văn bản có URL
+   *  (“tiêu đề URL”, “URL tiêu đề”, hoặc dòng tiêu đề rồi dòng URL). */
+  function parsePastedToc(html, text, baseUrl) {
+    const base = new URL(baseUrl);
+    let items = [];
+    if (html && /<a[\s>]/i.test(html)) {
+      const d = new DOMParser().parseFromString(html, 'text/html');
+      items = parseToc(d, baseUrl);
+      if (!items.length) {
+        const seen = new Set();
+        d.querySelectorAll('a[href]').forEach((a) => {
+          try {
+            const u = new URL(a.getAttribute('href') || '', base);
+            const href = stripHash(u.href);
+            const title = cleanTitle(a.textContent || '');
+            if (title && !seen.has(href)) { seen.add(href); items.push({ title, url: href }); }
+          } catch (e) { /* link hỏng */ }
+        });
+      }
+    }
+    if (!items.length && text) {
+      const seen = new Set();
+      let prev = '';
+      String(text).split(/\r?\n/).forEach((raw) => {
+        const line = raw.trim();
+        if (!line) return;
+        const m = /https?:\/\/[^\s<>"']+|(?:^|\s)\/[^\s<>"']+/.exec(line);
+        if (!m) { prev = cleanTitle(line); return; }
+        let href;
+        try { href = stripHash(new URL(m[0].trim(), base).href); } catch (e) { return; }
+        const title = cleanTitle(line.replace(m[0], ' ').replace(/[|\t,;]+/g, ' ')) || prev;
+        prev = '';
+        if (title && !seen.has(href)) { seen.add(href); items.push({ title, url: href }); }
+      });
+    }
+    return items.filter((c) => { try { return new URL(c.url).origin === base.origin; } catch (e) { return false; } });
   }
 
   /** Trang mục lục? Nhiều link tiêu đề chương, hoặc (không có khối nội dung rõ ràng) một nhóm link lớn.
@@ -324,11 +366,97 @@
     return !strict && parseToc(d, pageUrl).length >= 5;
   }
 
-  /** Tên sách: phần tiêu đề tab không phải tên chương. */
-  function guessBookTitle(docTitle, chapterTitle) {
-    const parts = docTitle.split(/[-_|—·]/).map((s) => s.trim()).filter(Boolean);
-    const pick = parts.filter((p) => p !== chapterTitle && !/第.{1,9}[章节節回]/.test(p))[0];
-    return cleanTitle(pick || parts[0] || chapterTitle || '') || 'Truyện';
+
+  /** Ảnh bìa + thể loại từ trang danh mục (meta og:*, khối bìa, dòng “分类/类型/题材”, link thể loại). @returns {{coverUrl:string|null,genres:string[]}} */
+  function parseCatalogMeta(d, pageUrl) {
+    const abs = (u) => { try { return u && !/^data:/.test(u) ? new URL(u, pageUrl).href : null; } catch (e) { return null; } };
+    const metaOf = (...names) => {
+      for (const n of names) {
+        const m = d.querySelector(`meta[property="${n}"], meta[name="${n}"]`);
+        const v = m && (m.getAttribute('content') || '').trim();
+        if (v) return v;
+      }
+      return '';
+    };
+    let coverUrl = abs(metaOf('og:image', 'twitter:image'));
+    if (!coverUrl) {
+      const img = d.querySelector('#fmimg img, .book-img img, .bookimg img, .book-cover img, .bookcover img, .cover img, .pic img, .book-info img, .info img, #bookimg img, .detail img');
+      if (img) coverUrl = abs(img.getAttribute('data-original') || img.getAttribute('data-src') || img.getAttribute('src'));
+    }
+    const genres = [];
+    const addGenre = (g) => {
+      const t = String(g || '').replace(/[\s ]+/g, ' ').replace(/^[:：\s]+|[\s,，、;；|/]+$/g, '').trim();
+      if (t && t.length <= 12 && !genres.includes(t)) genres.push(t);
+    };
+    const cat = metaOf('og:novel:category', 'og:novel:genre', 'category', 'genre');
+    cat.split(/[,，、;；|/\s]+/).forEach(addGenre);
+    if (!genres.length) {
+      d.querySelectorAll('a[href*="sort"], a[href*="category"], a[href*="genre"], a[href*="fenlei"], a[href*="/class"], .tags a, .tag a, .book-tags a, .labels a').forEach((a) => {
+        if (a.closest('nav, header, footer, .nav, .menu, #nav')) return;
+        addGenre(a.textContent);
+      });
+    }
+    if (!genres.length) {
+      const m = /(?:分\s*类|类\s*型|类\s*别|題\s*材|题\s*材|類\s*型)\s*[:：]\s*([^\s\n<|，,;；/]{1,12})/.exec(d.body ? d.body.textContent || '' : '');
+      if (m) addGenre(m[1]);
+    }
+    return { coverUrl, genres: genres.slice(0, 12) };
+  }
+
+  /** Tên sách: đối chiếu nhiều nguồn trên trang (meta, breadcrumb, alt bìa, h1/h2, tiêu đề tab), nguồn nào được nhiều chỗ đồng ý nhất thì thắng.
+   *  Loại tên chương, tên tác giả, tên site/khẩu hiệu. `d` (tuỳ chọn) là document để đọc các nguồn ngoài tiêu đề tab. */
+  function guessBookTitle(docTitle, chapterTitle, d) {
+    const SUFFIX = /(最新章节|最新章節|全文阅读|全文閱讀|在线阅读|在線閱讀|免费阅读|免費閱讀|免费|免費|txt下载|TXT下载|全集|无弹窗|目录|章节列表|小说|小說)+$/;
+    const PREFIX = /^(免费|免費)+/;
+    const norm = (t) => String(t || '').replace(/[\s\u00a0]+/g, ' ').trim().replace(SUFFIX, '').replace(PREFIX, '').trim();
+    const authors = new Set();
+    const src = []; // [văn bản đã chuẩn hoá, trọng số, loại]
+    const add = (t, w, kind) => { const v = norm(t); if (v) src.push([v, w, kind]); };
+    const hasDoc = !!(d && d.querySelector);
+    if (hasDoc) {
+      const meta = (...ns) => {
+        for (const n of ns) {
+          const m = d.querySelector(`meta[property="${n}"], meta[name="${n}"]`);
+          const v = m && (m.getAttribute('content') || '').trim();
+          if (v) return v;
+        }
+        return '';
+      };
+      const a = meta('og:novel:author', 'author');
+      if (a) authors.add(a);
+      d.querySelectorAll('a[href*="/author/"], a[href*="author="], a[href*="/zuozhe"]').forEach((el) => { const t = (el.textContent || '').trim(); if (t) authors.add(t); });
+      const am = /作\s*者\s*[:：]\s*([^\s\n<|，,;；/]{1,20})/.exec(d.body ? d.body.textContent || '' : '');
+      if (am) authors.add(am[1]);
+      add(meta('og:novel:book_name', 'og:novel:name'), 4, 'meta');
+      // breadcrumb: “和图书 > 小说 > 玄幻小说 > 雪鹰领主” — đoạn cuối là tên truyện (trang chương: đoạn kế cuối)
+      const crumb = d.querySelector('.crumb, .crumbs, .breadcrumb, .breadcrumbs, .bread, #breadcrumb, .path, .nav-path, .location, .position, .bread-crumb, .here');
+      if (crumb) {
+        const segs = (crumb.textContent || '').split(/[>›»＞]|\s\/\s/).map((x) => x.trim()).filter(Boolean);
+        const last = segs[segs.length - 1];
+        if (last && (last === chapterTitle || /第.{1,9}[章节節回]/.test(last))) add(segs[segs.length - 2], 3, 'crumb');
+        else add(last, 3, 'crumb');
+      }
+      // alt của ảnh bìa
+      d.querySelectorAll('#fmimg img, .book-img img, .bookimg img, .book-cover img, .bookcover img, .cover img, .pic img, .book-info img, .book_info img, .info img, #bookimg img, .detail img, .book img').forEach((img) => add(img.getAttribute('alt') || img.getAttribute('title'), 3, 'alt'));
+      d.querySelectorAll('h1, h2').forEach((h) => add(h.textContent, 2, 'h'));
+      add(meta('og:title'), 1, 'meta');
+    }
+    String(docTitle || '').split(/[-_|—·,，]/).forEach((x) => add(x, 1, 'title'));
+    const bad = (p) => !p || p.length > 40 || p === chapterTitle || authors.has(p) || /第.{1,9}[章节節回]/.test(p) || /(书坊|书院|书库|图书|圖書|小说网|小說網|文学网|文學網|阅读网|\.com|\.net)/.test(p) || /^(首页|首頁|目录|正文|小说|小說|在线阅读|作品|书籍|书库)$/.test(p);
+    const good = src.filter(([v]) => !bad(v));
+    const scored = new Map();
+    good.forEach(([v, w], idx) => {
+      const e = scored.get(v) || { score: 0, first: idx };
+      e.score += w;
+      scored.set(v, e);
+    });
+    // tiêu đề tab có chứa tên (vd “雪鹰领主免费小说_作者”) cũng là một phiếu
+    const tt = String(docTitle || '');
+    scored.forEach((e, v) => { if (tt.includes(v)) e.score += 1; });
+    const best = [...scored.entries()].sort((a, b) => b[1].score - a[1].score || a[1].first - b[1].first)[0];
+    if (best) return cleanTitle(best[0]) || best[0];
+    const fallback = src.map(([v]) => v).filter((v) => !authors.has(v) && !/第.{1,9}[章节節回]/.test(v))[0];
+    return cleanTitle(fallback || norm(chapterTitle) || '') || 'Truyện';
   }
 
   const safeName = (s) => s.replace(/[\\/:*?"<>|]/g, '_').trim().slice(0, 80) || 'truyen';
@@ -438,7 +566,7 @@
   const pad = (n) => String(n).padStart(4, '0');
 
   /** Dựng EPUB 3 (nén deflate) từ các chương; trả Promise<Uint8Array>. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
-   *  @param {{title:string,bookKey?:string,origin?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
+   *  @param {{title:string,bookKey?:string,origin?:string,genres?:string[],cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
   async function buildEpub(book) {
     // Spine rỗng làm Calibre báo "Spineless"; thà báo lỗi rõ ràng còn hơn xuất file hỏng.
     if (!book.chapters || !book.chapters.length) throw new Error('Không có chương nào để xuất EPUB.');
@@ -490,7 +618,7 @@
     const uid = `hoangu-${crc32(utf8(book.bookKey || book.title)).toString(16)}`;
     entries.push({ name: 'OEBPS/nav.xhtml', data: utf8(xhtml(book.title, `<nav epub:type="toc"><h1>Mục lục</h1><ol>${navItems.join('')}</ol></nav>`)) });
     entries.push({ name: 'OEBPS/toc.ncx', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="${uid}"/></head><docTitle><text>${xmlEsc(book.title)}</text></docTitle><navMap>${ncxPoints.join('')}</navMap></ncx>`) });
-    entries.push({ name: 'OEBPS/content.opf', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">${uid}</dc:identifier><dc:title>${xmlEsc(book.title)}</dc:title><dc:language>zh</dc:language>${book.bookKey ? `<dc:source>${xmlEsc(book.bookKey)}</dc:source>` : ''}<meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, 'Z')}</meta>${cover ? '<meta name="cover" content="cover-image"/>' : ''}</metadata><manifest>${manifest.join('')}</manifest><spine toc="ncx">${spine.join('')}</spine></package>`) });
+    entries.push({ name: 'OEBPS/content.opf', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">${uid}</dc:identifier><dc:title>${xmlEsc(book.title)}</dc:title><dc:language>zh</dc:language>${(book.genres || []).map((g) => `<dc:subject>${xmlEsc(g)}</dc:subject>`).join('')}${book.bookKey ? `<dc:source>${xmlEsc(book.bookKey)}</dc:source>` : ''}<meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, 'Z')}</meta>${cover ? '<meta name="cover" content="cover-image"/>' : ''}</metadata><manifest>${manifest.join('')}</manifest><spine toc="ncx">${spine.join('')}</spine></package>`) });
     return zipPack(entries);
   }
 
@@ -552,7 +680,8 @@
       if (!blocks.length) continue;
       chapters.push({ url: body.getAttribute('data-hn-url') || '', title: chTitle || `Chương ${chapters.length + 1}`, blocks, paragraphs: blocks.map((b) => b.text) });
     }
-    return { title, cover, chapters };
+    const genres = [...opf.getElementsByTagName('dc:subject')].map((e) => (e.textContent || '').trim()).filter(Boolean);
+    return { title, cover, genres, chapters };
   }
 
   // ---------- tự tải lại trang khi bị chặn ----------
@@ -655,6 +784,6 @@
 
   root.HNCore = {
     STORE, chapterBodyKey, orderChapters, bookStorageKeys, pruneIndex, orphanBodyKeys, fmtBytes,
-    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, looksLikeToc, guessBookTitle, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, parsePastedToc, looksLikeToc, guessBookTitle, parseCatalogMeta, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));
