@@ -6,8 +6,9 @@
 
   const C = window.HNCore;
   const READ_BATCH = 200; // số chương đọc từ storage mỗi lượt khi gom file
-  const DELAY_MIN = 500;
+  const DELAY_MIN = 300; // nghỉ ngẫu nhiên 0,3–0,5s giữa các lượt tải
   const DELAY_JITTER = 200;
+  const BATCH = 10; // đường nhanh: tải song song 10 chương mỗi lượt
   const LIST_PAGE = 200;
   // Phiên bản cách cào: 2 = đã xử lý xáo trộn/đoạn nhiễu của hetushu (chờ script, bỏ thẻ ẩn, tự giải mã). Chương lưu trước đó (không có v) có thể sai thứ tự/lẫn đoạn clone.
   const SCRAPE_V = 2;
@@ -28,7 +29,7 @@
   const s = {
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
-    sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl', current: null, follow: false, rangeOpen: false,
+    sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl', current: null, follow: false, rangeOpen: false, pasteOpen: false, pasteText: '', pasteHtml: '',
     autoReload: true, job: null,
   };
   /** Nhắn background (giữ lượt tải dở qua lần tải lại trang). */
@@ -73,6 +74,7 @@
     download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
     search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
     lifebuoy: '<circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/>',
+    clipboard: '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>',
     filter: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
     stop: '<rect width="14" height="14" x="5" y="5" rx="1"/>',
     check: '<path d="M20 6 9 17l-5-5"/>',
@@ -187,10 +189,7 @@
     const cover = el('div', { class: 'group relative h-[104px] w-[78px] shrink-0 overflow-hidden rounded-md border border-neutral-300 bg-brand-soft' },
       s.cover
         ? el('img', { src: s.cover.url, alt: 'Bìa', class: 'size-full object-cover' })
-        : el('button', { class: 'flex size-full cursor-pointer flex-col items-center justify-center gap-1 text-xs text-brand/80 hover:bg-white/60 disabled:pointer-events-none', title: 'Tải ảnh bìa', disabled: s.running, onclick: () => pickFile('image/*', setCover) }, icon('image', 'size-6'), 'Thêm bìa'),
-      s.cover ? el('div', { class: 'absolute right-1 top-1 flex flex-col gap-1 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100' },
-        ibtn('image', 'Đổi ảnh bìa', () => pickFile('image/*', setCover), { class: BTN.over, disabled: s.running, size: 'size-3.5' }),
-        ibtn('x', 'Xoá ảnh bìa', () => clearCover(), { class: BTN.over, disabled: s.running, size: 'size-3.5' })) : '');
+        : el('div', { class: 'flex size-full flex-col items-center justify-center gap-1 text-xs text-brand/80', title: 'Bìa được tự lấy từ trang danh mục khi tải mục lục' }, icon('image', 'size-6'), 'Chưa có bìa'));
 
     const head = el('div', { class: 'flex gap-3' }, cover,
       el('div', { class: 'flex min-w-0 flex-1 flex-col gap-1.5' },
@@ -199,6 +198,7 @@
             el('b', { class: 'line-clamp-2 min-w-0 flex-1 text-[15px] leading-snug' }, s.info ? s.info.title : '…'),
             ibtn('pencil', 'Sửa tên truyện', () => startEdit(BOOK_EDIT), { class: 'grid size-6 shrink-0 cursor-pointer place-items-center rounded text-neutral-400 hover:bg-brand-soft hover:text-brand', size: 'size-3.5' })),
         el('div', { class: 'h-1.5 overflow-hidden rounded-full bg-neutral-200', title: `${pct}% mục lục đã lưu` }, el('div', { class: 'h-full rounded-full bg-green-600', style: `width:${pct}%` })),
+        s.info && s.info.genres && s.info.genres.length ? el('small', { class: 'line-clamp-1 text-xs text-brand/80', title: s.info.genres.join(', ') }, s.info.genres.join(' · ')) : '',
         el('small', { class: 'text-xs text-neutral-600' }, `${savedCount} chương đã lưu · ${total || '?'} trong mục lục`),
         el('button', { class: `${BTN.pri} mt-auto`, onclick: () => exportBook(), disabled: s.running || !savedCount }, icon('download'), `Tải EPUB (${savedCount})`)));
 
@@ -206,6 +206,7 @@
     const tools = el('div', { class: 'flex items-center gap-0.5 rounded-md border border-neutral-200 bg-white px-1 py-0.5' },
       ibtn('refresh', total ? 'Làm mới mục lục' : 'Tải mục lục', () => loadToc(true), { disabled: s.running }),
       ibtn('upload', 'Nhập EPUB — đổ chương trong EPUB vào kho + mục lục để tải lại / xử lý lại', () => pickFile('.epub,application/epub+zip', importEpub), { disabled: s.running }),
+      ibtn('clipboard', 'Dán mục lục thủ công — copy vùng mục lục trên trang (giữ link) rồi dán vào để tạo hàng đợi tải', () => { s.pasteOpen = !s.pasteOpen; render(); }, { disabled: s.running }),
       ibtn('lifebuoy', 'Khôi phục chương mất — quét kho extension, nhặt lại chương còn nội dung nhưng mất khỏi danh sách', () => recover(), { disabled: s.running }),
       ibtn('filter', 'Lọc lại nội dung đã lưu — bỏ khoảng trắng (trừ sau dấu ;) rồi dọn link, “hetushu”, “.com” khỏi các chương đã lưu', () => refilter(), { disabled: s.running || !savedCount }),
       el('span', { class: 'flex-1' }),
@@ -260,7 +261,23 @@
         ibtn('right', 'Trang sau', () => { s.offset = off + LIST_PAGE; render(); }, { disabled: off + LIST_PAGE >= view.length })) : '')
       : el('div', { class: 'rounded-md border border-dashed border-neutral-300 bg-white px-3 py-4 text-center text-xs text-neutral-500' }, 'Chưa có mục lục. Bấm ', el('b', null, '↻'), ' ở dãy công cụ để tải mục lục, hoặc dùng “Từ trang này” ở dưới.');
 
-    bd.replaceChildren(head, tools, chapters);
+    const pasteBox = s.pasteOpen ? el('div', { class: 'flex flex-col gap-1.5 rounded-md border border-brand/40 bg-white p-2' },
+      el('small', { class: 'text-xs text-neutral-600' }, 'Bôi đen phần mục lục trên trang rồi copy (Ctrl/Cmd+C) và dán vào đây — giữ nguyên link. Hoặc dán mỗi dòng “tiêu đề URL”.'),
+      (() => {
+        const ta = el('textarea', {
+          class: `${BTN.field} w-full`, style: 'height:90px;resize:vertical', placeholder: 'Dán mục lục…',
+          onpaste: (e) => { s.pasteHtml = (e.clipboardData && e.clipboardData.getData('text/html')) || ''; s.pasteFresh = true; },
+          oninput: (e) => { s.pasteText = e.target.value; if (s.pasteFresh) s.pasteFresh = false; else s.pasteHtml = ''; },
+        });
+        ta.value = s.pasteText;
+        return ta;
+      })(),
+      el('div', { class: 'flex flex-wrap items-center gap-1.5' },
+        el('button', { class: BTN.chip, onclick: () => applyPastedToc(false), title: 'Thêm các chương mới vào cuối mục lục hiện có' }, 'Thêm vào mục lục'),
+        el('button', { class: BTN.chip, onclick: () => applyPastedToc(true), title: 'Thay mục lục bằng danh sách vừa dán (chương đã lưu vẫn giữ)' }, 'Thay mục lục'),
+        el('button', { class: BTN.chip, onclick: () => { s.pasteOpen = false; s.pasteText = ''; s.pasteHtml = ''; render(); } }, 'Đóng'))) : '';
+
+    bd.replaceChildren(head, tools, pasteBox, chapters);
 
     // --- thanh thao tác cố định phía dưới ---
     const warn = s.msg.startsWith('⚠');
@@ -357,13 +374,24 @@
     await store.set(K.cover(s.bookKey), { mime, b64 });
     s.cover = { mime, b64, url: `data:${mime};base64,${b64}` };
   }
-  async function setCover(file) {
-    if (!/^image\/(jpeg|png|gif|webp)$/.test(file.type)) { say('⚠ Ảnh bìa phải là JPEG, PNG, GIF hoặc WebP.'); return; }
-    if (file.size > 8 * 1024 * 1024) { say('⚠ Ảnh bìa quá lớn (>8MB).'); return; }
-    await saveCover(file.type, new Uint8Array(await file.arrayBuffer()));
-    say('Đã đặt ảnh bìa — sẽ dùng khi tải xuống EPUB.');
+  /** Tự lấy ảnh bìa + thể loại từ trang danh mục (doc đã parse). Lỗi mạng/CORS thì bỏ qua, không chặn việc tải. */
+  async function applyCatalogMeta(d, pageUrl) {
+    try {
+      const m = C.parseCatalogMeta(d, pageUrl);
+      let changed = false;
+      if (m.genres.length && JSON.stringify(m.genres) !== JSON.stringify(s.info.genres || [])) { s.info.genres = m.genres; changed = true; }
+      if (m.coverUrl && !s.cover) {
+        try {
+          const res = await fetch(m.coverUrl, { credentials: 'include' });
+          const blob = res.ok ? await res.blob() : null;
+          const mime = blob && (blob.type || '').split(';')[0];
+          if (blob && /^image\/(jpeg|png|gif|webp)$/.test(mime) && blob.size <= 8 * 1024 * 1024) { await saveCover(mime, new Uint8Array(await blob.arrayBuffer())); changed = true; }
+        } catch (e) { /* ảnh khác origin bị CORS chặn — bỏ qua */ }
+      }
+      if (changed) await persistMeta();
+      return changed;
+    } catch (e) { return false; }
   }
-  async function clearCover() { await store.remove(K.cover(s.bookKey)); s.cover = null; say('Đã gỡ ảnh bìa.'); }
 
   function toggleSel(c, view, shift) {
     const i = view.findIndex((x) => x.url === c.url);
@@ -491,7 +519,9 @@
     const verify = f.ok === null || (f.ok && f.n % 20 === 0);
     if (f.ok && !verify) {
       try {
-        const p = await loadViaFetch(url);
+        const pre = s.prefetch && s.prefetch.get(url);
+        if (pre) s.prefetch.delete(url);
+        const p = await (pre || loadViaFetch(url));
         if (p && !p.challenge && p.paragraphs.length) { f.pending.push(url); f.last = { url, page: p }; f.lastUrl = url; return p; }
       } catch (e) { /* rơi về iframe */ }
     }
@@ -655,7 +685,7 @@
     const cover = s.cover ? { mime: s.cover.mime, data: fromB64(s.cover.b64) } : null;
     const volByUrl = new Map(s.toc.map((c) => [C.stripHash(c.url), c.vol]));
     chapters.forEach((c) => { const v = volByUrl.get(C.stripHash(c.url)); if (v) c.vol = v; });
-    const bytes = await C.buildEpub({ title: s.info.title, bookKey: s.bookKey, cover, chapters });
+    const bytes = await C.buildEpub({ title: s.info.title, bookKey: s.bookKey, genres: s.info.genres, cover, chapters });
     download(fileName, bytes, 'application/epub+zip');
     say(`Đã xuất ${chapters.length} chương → ${fileName}${missing ? `\n⚠ ${missing} chương mất nội dung — bấm “Khôi phục chương mất” rồi tải lại chúng.` : '\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.'}`);
   }
@@ -713,6 +743,7 @@
       await store.set(K.idx, idx);
       if (!s.info.title || s.info.title === 'Truyện') s.info.title = book.title || s.info.title;
       if (book.cover && !s.cover) await saveCover(book.cover.mime, book.cover.data);
+      if (book.genres && book.genres.length && !(s.info.genres || []).length) s.info.genres = book.genres;
       await persistMeta();
       s.running = false;
       const missing = s.toc.filter((c) => !s.chap[c.url]).length;
@@ -872,7 +903,7 @@
   }
 
   async function runLoop(job) {
-    s.running = true; s.stop = false; s.job = job;
+    s.running = true; s.stop = false; s.job = job; s.prefetch = new Map();
     const fj = job.fast;
     // Sau khi tải lại trang: đường nhanh đang bật thì kiểm lại ngay ở chương kế (n=19 → mốc 20), chương chờ kiểm vẫn được giữ.
     s.fast = fj ? { ok: fj.ok, n: fj.ok ? 19 : 0, pending: fj.pending || [], last: null, lastUrl: fj.lastUrl || null } : { ok: null, n: 0, pending: [], last: null, lastUrl: null };
@@ -891,8 +922,18 @@
           if (page.challenge || !page.paragraphs.length) page = null;
         }
         if (!page) {
-          if (!first) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
+          const prefetched = s.prefetch.has(t.url);
+          if (!first && !prefetched) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
           if (s.stop) { reason = 'Đã dừng.'; break; }
+          // Đường nhanh + danh sách: bắn song song cả lượt 10 chương, các chương sau lấy từ bộ nhớ đệm (nghỉ ngẫu nhiên chỉ giữa các lượt).
+          if (job.mode === 'list' && s.fast.ok && !prefetched && (s.fast.n + 1) % 20 !== 0) {
+            s.prefetch.clear();
+            job.queue.slice(0, BATCH).forEach((c, i) => {
+              if (i > 0 && (s.fast.n + 1 + i) % 20 === 0) return; // chương tới mốc kiểm chứng sẽ đi đường chuẩn
+              if (C.stripHash(c.url) === here || (s.chap[c.url] && !job.force)) return;
+              s.prefetch.set(c.url, loadViaFetch(c.url).catch(() => null));
+            });
+          }
           markCurrent(t.url);
           say(`Đang tải: ${t.title || t.url}`);
           page = await loadPage(t.url);
@@ -929,6 +970,7 @@
       reason = `⚠ Lỗi: ${err && err.message ? err.message : err}`;
     }
     try { await finalCheck(); } catch (err) { /* kiểm cuối lỗi → bỏ qua */ }
+    s.prefetch.clear();
     bg({ type: 'job:clear' });
     s.running = false;
     s.current = null;
@@ -974,17 +1016,45 @@
   }
 
   // ---------- mục lục ----------
+  /** Dán mục lục thủ công → ghép/thay vào mục lục, tick sẵn các chương chưa tải (= hàng đợi tải). */
+  async function applyPastedToc(replace) {
+    const list = C.parsePastedToc(s.pasteHtml, s.pasteText, here);
+    if (!list.length) { say('⚠ Không nhận ra chương nào (cần link cùng trang web). Copy cả vùng mục lục trên trang — không copy bằng “Chọn tất cả” văn bản trần.'); return; }
+    const old = new Map(s.toc.map((c) => [c.url, c]));
+    let added = 0;
+    if (replace) {
+      s.toc = list.map((c) => { const o = old.get(c.url); return o ? { ...o, title: c.title, ...(c.vol ? { vol: c.vol } : {}) } : (added += 1, c); });
+    } else {
+      const toc = s.toc.slice();
+      list.forEach((c) => { if (!old.has(c.url)) { toc.push(c); added += 1; } });
+      s.toc = toc;
+    }
+    await store.set(K.toc(s.bookKey), s.toc);
+    const idx = await store.get(K.idx, {});
+    s.toc.forEach((c) => { idx[c.url] = s.bookKey; });
+    await store.set(K.idx, idx);
+    await persistMeta();
+    s.sel.clear();
+    const queued = selectUnsaved();
+    s.pasteOpen = false; s.pasteText = ''; s.pasteHtml = '';
+    const firstUnsaved = s.toc.findIndex((c) => !s.chap[c.url]);
+    s.from = firstUnsaved >= 0 ? firstUnsaved + 1 : 1;
+    say(`Đã dán ${list.length} chương (${added} mới) → mục lục ${s.toc.length} chương. Hàng đợi: ${queued} chương chưa tải đã được tick — bấm “Tải” để bắt đầu.`);
+  }
+
   async function loadToc(force) {
     if (!force && s.toc.length) return;
     let list = [];
+    let catDoc = null; let catUrl = here;
     try {
-      if (s.isTocPage) list = C.parseToc(document, here);
+      if (s.isTocPage) { list = C.parseToc(document, here); catDoc = document; }
       else if (s.tocUrl) {
         say('Đang tải mục lục…');
         const res = await fetch(s.tocUrl, { credentials: 'include' });
         const html = await res.text();
         if (res.status === 403 || res.status === 429 || C.isChallengeHtml(html)) { say('⚠ Trang mục lục bị kiểm tra bot — hãy mở nó, qua kiểm tra rồi bấm lại.'); return; }
-        list = C.parseToc(new DOMParser().parseFromString(html, 'text/html'), s.tocUrl);
+        catDoc = new DOMParser().parseFromString(html, 'text/html'); catUrl = s.tocUrl;
+        list = C.parseToc(catDoc, s.tocUrl);
       } else { say('Không tìm thấy link mục lục (目录) ở trang này — mở trang mục lục rồi bấm lại.'); return; }
     } catch (err) { say(`⚠ Không tải được mục lục: ${err.message}`); return; }
     if (!list.length) { say('Không nhận ra danh sách chương trong mục lục này.'); return; }
@@ -992,7 +1062,8 @@
     await store.set(K.toc(s.bookKey), list);
     const firstUnsaved = list.findIndex((c) => !s.chap[c.url]);
     s.from = firstUnsaved >= 0 ? firstUnsaved + 1 : 1;
-    say(`Mục lục: ${list.length} chương.`);
+    if (catDoc) await applyCatalogMeta(catDoc, catUrl);
+    say(`Mục lục: ${list.length} chương${s.info.genres && s.info.genres.length ? ` · ${s.info.genres.join(', ')}` : ''}${s.cover ? ' · đã có bìa' : ''}.`);
   }
 
   async function forget() {
@@ -1022,7 +1093,7 @@
     s.livePage = hasContent ? page : null;
     s.tocUrl = hasContent ? C.findTocUrl(document, here) : null;
     if (s.tocUrl === here) { s.isTocPage = true; s.livePage = null; s.tocUrl = null; }
-    s.pageTitle = C.guessBookTitle(document.title, page.title);
+    s.pageTitle = C.guessBookTitle(document.title, s.isTocPage ? '' : page.title, document); // trang mục lục: h1 chính là tên truyện, không phải tên chương
     s.bookKey = job ? job.bookKey : await resolveBookKey(); // tải lại giữa lượt: giữ đúng truyện (trang kiểm tra không cho biết truyện nào)
     s.info = await store.get(K.book(s.bookKey), null) || {
       title: s.pageTitle, origin: location.origin, bookKey: s.bookKey, parts: 0,
@@ -1035,6 +1106,12 @@
     if (legacy.length) await store.remove(K.buf(s.bookKey));
     s.toc = await store.get(K.toc(s.bookKey), []);
     if (s.isTocPage && !s.toc.length) await loadToc(false);
+    else if (!job && !s.cover && (s.isTocPage || s.tocUrl)) { // bắt đầu truyện đã có mục lục nhưng chưa có bìa/thể loại
+      try {
+        if (s.isTocPage) await applyCatalogMeta(document, here);
+        else { const r = await fetch(s.tocUrl, { credentials: 'include' }); const h = await r.text(); if (r.ok && !C.isChallengeHtml(h)) await applyCatalogMeta(new DOMParser().parseFromString(h, 'text/html'), s.tocUrl); }
+      } catch (e) { /* bỏ qua */ }
+    }
     const here1 = s.toc.findIndex((c) => C.stripHash(c.url) === here);
     if (here1 >= 0) s.from = here1 + 1;
     else if (s.toc.length) { const u = s.toc.findIndex((c) => !s.chap[c.url]); s.from = u >= 0 ? u + 1 : 1; }
