@@ -34,7 +34,7 @@ describe('extension core', () => {
     expect(m.coverUrl).toBe('https://x.test/img/c.jpg');
     expect(m.genres).toEqual(['玄幻', '修真']);
     const fb = C.parseCatalogMeta(doc('<div class="book-img"><img src="c.png"></div><p>类型：都市</p>'), 'https://x.test/b/');
-    expect(fb).toEqual({ coverUrl: 'https://x.test/b/c.png', genres: ['都市'] });
+    expect(fb).toEqual({ coverUrl: 'https://x.test/b/c.png', genres: ['都市'], description: '' });
     const bytes = await C.buildEpub({ title: 'T', genres: m.genres, cover: { mime: 'image/png', data: new Uint8Array([1, 2, 3]) }, chapters: [{ url: 'https://x.test/1', title: '第1章', paragraphs: [HAN] }] });
     const opf = await (await JSZip.loadAsync(bytes)).file('OEBPS/content.opf')!.async('string');
     expect(opf).toContain('<dc:subject>玄幻</dc:subject><dc:subject>修真</dc:subject>');
@@ -102,7 +102,7 @@ describe('extension core', () => {
     expect(C.findTocUrl(chap, 'https://x.test/b/1.html')).toBe('https://x.test/b/index.html');
   });
 
-  it('tên sách / tên file', () => {
+  it('tên sách / tên file', async () => {
     expect(C.guessBookTitle('书名 - 第1章 开始 - 站点', '第1章 开始')).toBe('书名');
     // trang mục lục: h1 = tên truyện, các phần còn lại là khẩu hiệu/tên site
     expect(C.guessBookTitle('太白金星有点烦 - 小说在线阅读 - 马伯庸 - 努努书坊', '')).toBe('太白金星有点烦');
@@ -115,6 +115,13 @@ describe('extension core', () => {
     const bd = new DOMParser().parseFromString('<html><body><div class="crumb"><a>和图书</a> &gt; <a>小说</a> &gt; <a>玄幻小说</a> &gt; 雪鹰领主</div><div class="book_info"><img alt="雪鹰领主" src="x.jpg"><h2>雪鹰领主</h2><a href="/author/y.html">我吃西红柿</a></div></body></html>', 'text/html');
     expect(C.guessBookTitle('雪鹰领主免费_我吃西红柿_和图书', '', bd)).toBe('雪鹰领主');
     expect(C.guessBookTitle('雪鹰领主-免费小说-和图书', '', bd)).toBe('雪鹰领主');
+    // hetushu: giới thiệu nằm trong .book_info
+    const cd = new DOMParser().parseFromString('<html><body><div class="book_info"><img src="/c.jpg" alt="雪鹰领主"><h2>雪鹰领主</h2><p>作者：我吃西红柿</p><p>状态：完结</p><div class="intro">简介：一个少年在雪鹰领主的庇护下成长，踏上了通往强者之路的漫长旅途。</div></div></body></html>', 'text/html');
+    const cm = C.parseCatalogMeta(cd, 'https://hetushu.com/book/1/index.html');
+    expect(cm.description).toBe('一个少年在雪鹰领主的庇护下成长，踏上了通往强者之路的漫长旅途。');
+    expect(cm.coverUrl).toBe('https://hetushu.com/c.jpg');
+    const ep = await C.parseEpub(await C.buildEpub({ title: 'T', description: '简介内容很长很长很长很长', chapters: [{ url: 'u', title: 'c', paragraphs: ['x'] }] }));
+    expect(ep.description).toBe('简介内容很长很长很长很长');
     expect(C.safeName('a/b:c')).toBe('a_b_c');
   });
 
@@ -369,15 +376,33 @@ describe('quản lý kho (ADR-012)', () => {
     expect(rows.every((r: Row) => r.pos === null && r.vol === null)).toBe(true);
   });
 
+  it('sortChapters: quyển trước chương sau, số Hán, chương không số đi theo chương trước', () => {
+    const mk = (title: string, vol?: string) => ({ title, url: title + (vol || ''), ...(vol ? { vol } : {}) });
+    const toc = [mk('第二章 b', '第二卷'), mk('第十章 j', '第一卷'), mk('第一章 a', '第二卷'), mk('第二章 b', '第一卷'), mk('第一百零一章 z', '第一卷'), mk('第一章 a', '第一卷')];
+    const r = C.sortChapters(toc);
+    expect(r.list.map((c: { vol?: string; title: string }) => `${c.vol} ${c.title}`)).toEqual(['第一卷 第一章 a', '第一卷 第二章 b', '第一卷 第十章 j', '第一卷 第一百零一章 z', '第二卷 第一章 a', '第二卷 第二章 b']);
+    // quyển nằm trong tiêu đề
+    expect(C.sortChapters([mk('第2卷 x 第1章 c'), mk('第1卷 y 第2章 b'), mk('第1卷 y 第1章 a')]).list.map((c: { title: string }) => c.title.slice(-1))).toEqual(['a', 'b', 'c']);
+    // 序章 lên đầu, 后记 xuống cuối, chương không số bám theo chương trước
+    expect(C.sortChapters([mk('后记'), mk('第2章'), mk('第1章'), mk('请假条'), mk('序章')]).list.map((c: { title: string }) => c.title)).toEqual(['序章', '第1章', '请假条', '第2章', '后记']);
+    expect(C.sortChapters([mk('10. x'), mk('9. y')]).list.map((c: { title: string }) => c.title)).toEqual(['9. y', '10. x']);
+    expect(C.sortChapters([mk('第1章'), mk('第1章 ')]).duplicates).toBe(1);
+    expect(C.parseCnNumber('两千零五')).toBe(2005);
+    expect(C.parseCnNumber('十二')).toBe(12);
+    // hoàn tác: đúng thứ tự cũ, chương thêm sau nằm cuối
+    const added = mk('第99章');
+    expect(C.restoreOrder([...r.list, added], toc.map((c) => c.url))).toEqual([...toc, added]);
+  });
+
   it('bookStorageKeys: gồm meta, mục lục, bìa, bộ đệm và mọi key nội dung chương', () => {
     expect(C.bookStorageKeys('B', {
       [`${B}/1.html`]: { n: 1 },
       [`${B}/2.html`]: { k: 'hn:body:B#x' },
     })).toEqual([
-      'hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B',
+      'hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B', 'hn:tocUndo:B',
       'hn:body:B#1', 'hn:body:B#x',
     ]);
-    expect(C.bookStorageKeys('B', null)).toEqual(['hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B']);
+    expect(C.bookStorageKeys('B', null)).toEqual(['hn:book:B', 'hn:chap:B', 'hn:toc:B', 'hn:buf:B', 'hn:cover:B', 'hn:tocUndo:B']);
   });
 
   it('pruneIndex: chỉ bỏ URL trỏ về đúng truyện; có danh sách URL thì chỉ bỏ những URL đó; không sửa bản gốc', () => {

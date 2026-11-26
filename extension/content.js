@@ -8,8 +8,11 @@
   const READ_BATCH = 200; // số chương đọc từ storage mỗi lượt khi gom file
   const DELAY_MIN = 300; // nghỉ ngẫu nhiên 0,3–0,5s giữa các lượt tải
   const DELAY_JITTER = 200;
-  const BATCH = 10; // đường nhanh: tải song song 10 chương mỗi lượt
+  const BATCH_DEF = 10; // số chương tải đồng thời mỗi lượt (chỉnh được trên panel)
+  const BATCH_MAX = 30;
+  const clampBatch = (v) => { const n = Math.floor(Number(v)); return n >= 1 ? Math.min(BATCH_MAX, n) : BATCH_DEF; };
   const LIST_PAGE = 200;
+  const UNDO_MAX = 10; // số lần sắp xếp có thể hoàn tác
   // Phiên bản cách cào: 2 = đã xử lý xáo trộn/đoạn nhiễu của hetushu (chờ script, bỏ thẻ ẩn, tự giải mã). Chương lưu trước đó (không có v) có thể sai thứ tự/lẫn đoạn clone.
   const SCRAPE_V = 2;
   const isOld = (c) => !c || (c.v || 0) < SCRAPE_V;
@@ -21,7 +24,7 @@
     remove(k) { return chrome.storage.local.remove(k); },
   };
   const K = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, ui: 'hn:ui', cover: (b) => `hn:cover:${b}`, toc: (b) => `hn:toc:${b}`, idx: 'hn:idx', reg: 'hn:books',
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, buf: (b) => `hn:buf:${b}`, ui: 'hn:ui', cover: (b) => `hn:cover:${b}`, toc: (b) => `hn:toc:${b}`, tocUndo: (b) => `hn:tocUndo:${b}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
   // ---------- trạng thái ----------
@@ -30,7 +33,7 @@
     bookKey: '', tocUrl: null, info: null, chap: {}, toc: [], livePage: null, isTocPage: false,
     running: false, stop: false, from: 1, count: '', offset: 0, filter: '', msg: '',
     sel: new Set(), lastClick: -1, cover: null, editing: null, tab: 'dl', current: null, follow: false, rangeOpen: false, pasteOpen: false, pasteText: '', pasteHtml: '',
-    autoReload: true, job: null,
+    autoReload: true, batch: BATCH_DEF, job: null, undo: [],
   };
   /** Nhắn background (giữ lượt tải dở qua lần tải lại trang). */
   const bg = (m) => chrome.runtime.sendMessage(m).catch(() => null);
@@ -83,6 +86,8 @@
     right: '<path d="m9 18 6-6-6-6"/>',
     skip: '<polygon points="5 4 15 12 5 20 5 4"/><line x1="19" x2="19" y1="5" y2="19"/>',
     volume: '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>',
+    sort: '<path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/>',
+    undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
     library: '<path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/>',
     star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
   };
@@ -97,7 +102,7 @@
   sh.querySelectorAll('[data-t]').forEach((b) => {
     b.onclick = () => { s.tab = b.getAttribute('data-t'); saveUi(); render(); };
   });
-  const saveUi = () => store.set(K.ui, { tab: s.tab, reader: HN().state.on, mode: HN().state.mode, autoReload: s.autoReload });
+  const saveUi = () => store.set(K.ui, { tab: s.tab, reader: HN().state.on, mode: HN().state.mode, autoReload: s.autoReload, batch: s.batch });
 
   const BTN = {
     pri: 'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-md bg-brand px-3 py-1.5 font-semibold text-white hover:bg-brand-dark disabled:pointer-events-none disabled:opacity-40',
@@ -199,12 +204,15 @@
             ibtn('pencil', 'Sửa tên truyện', () => startEdit(BOOK_EDIT), { class: 'grid size-6 shrink-0 cursor-pointer place-items-center rounded text-neutral-400 hover:bg-brand-soft hover:text-brand', size: 'size-3.5' })),
         el('div', { class: 'h-1.5 overflow-hidden rounded-full bg-neutral-200', title: `${pct}% mục lục đã lưu` }, el('div', { class: 'h-full rounded-full bg-green-600', style: `width:${pct}%` })),
         s.info && s.info.genres && s.info.genres.length ? el('small', { class: 'line-clamp-1 text-xs text-brand/80', title: s.info.genres.join(', ') }, s.info.genres.join(' · ')) : '',
+        s.info && s.info.description ? el('small', { class: 'line-clamp-2 text-xs text-neutral-500', title: s.info.description }, s.info.description) : '',
         el('small', { class: 'text-xs text-neutral-600' }, `${savedCount} chương đã lưu · ${total || '?'} trong mục lục`),
         el('button', { class: `${BTN.pri} mt-auto`, onclick: () => exportBook(), disabled: s.running || !savedCount }, icon('download'), `Tải EPUB (${savedCount})`)));
 
     // --- công cụ: dãy nút biểu tượng ---
     const tools = el('div', { class: 'flex items-center gap-0.5 rounded-md border border-neutral-200 bg-white px-1 py-0.5' },
       ibtn('refresh', total ? 'Làm mới mục lục' : 'Tải mục lục', () => loadToc(true), { disabled: s.running }),
+      ibtn('sort', 'Sắp xếp chương theo tên — quyển trước, số chương sau (hoàn tác được)', () => sortToc(), { disabled: s.running || total < 2 }),
+      ibtn('undo', s.undo.length ? `Hoàn tác sắp xếp (còn ${s.undo.length} bước)` : 'Chưa có lần sắp xếp nào để hoàn tác', () => undoSort(), { disabled: s.running || !s.undo.length }),
       ibtn('upload', 'Nhập EPUB — đổ chương trong EPUB vào kho + mục lục để tải lại / xử lý lại', () => pickFile('.epub,application/epub+zip', importEpub), { disabled: s.running }),
       ibtn('clipboard', 'Dán mục lục thủ công — copy vùng mục lục trên trang (giữ link) rồi dán vào để tạo hàng đợi tải', () => { s.pasteOpen = !s.pasteOpen; render(); }, { disabled: s.running }),
       ibtn('lifebuoy', 'Khôi phục chương mất — quét kho extension, nhặt lại chương còn nội dung nhưng mất khỏi danh sách', () => recover(), { disabled: s.running }),
@@ -286,6 +294,9 @@
       el('div', { class: `flex max-h-[72px] items-start gap-1.5 overflow-auto whitespace-pre-wrap rounded-md border px-2 py-1 text-xs ${warn ? 'border-brand bg-brand-soft text-brand-dark' : 'border-neutral-200 bg-neutral-50 text-neutral-600'}`, role: 'status' },
         warn ? icon('alert', 'mt-px size-3.5') : '', el('span', { class: 'min-w-0 flex-1' }, s.msg || 'Sẵn sàng. Tiến độ được lưu theo URL truyện, tải lại trang không mất.')),
       s.livePage || !total ? '' : el('small', { class: 'text-xs text-neutral-500' }, 'Trang này không phải chương — chọn chương trong mục lục.'),
+      el('label', { class: 'flex items-center gap-1.5 text-xs text-neutral-600', title: `Số chương tải song song mỗi lượt khi “tải chương đã chọn” (1–${BATCH_MAX}; 1 = lần lượt từng chương). Số lớn nhanh hơn nhưng dễ bị site chặn.` },
+        'Số chương tải đồng thời',
+        el('input', { type: 'number', min: 1, max: BATCH_MAX, class: `${BTN.field} w-16`, value: String(s.batch), disabled: s.running, onchange: (e) => { s.batch = clampBatch(e.target.value); e.target.value = String(s.batch); saveUi(); } })),
       el('label', { class: 'flex cursor-pointer items-center gap-1.5 text-xs text-neutral-600', title: 'Chương bị chặn/không đọc được → tải lại cả trang để trình duyệt lấy phiên mới rồi tự tải tiếp (tối đa 3 lần mỗi chương, 30 lần mỗi lượt). Không tự bấm captcha.' },
         el('input', { type: 'checkbox', checked: s.autoReload, class: 'size-3.5 accent-[#b91c1c]', onchange: (e) => { s.autoReload = e.target.checked; saveUi(); } }),
         'Tự tải lại trang khi bị chặn rồi tải tiếp'),
@@ -379,6 +390,7 @@
     try {
       const m = C.parseCatalogMeta(d, pageUrl);
       let changed = false;
+      if (m.description && m.description !== s.info.description) { s.info.description = m.description; changed = true; }
       if (m.genres.length && JSON.stringify(m.genres) !== JSON.stringify(s.info.genres || [])) { s.info.genres = m.genres; changed = true; }
       if (m.coverUrl && !s.cover) {
         try {
@@ -526,12 +538,15 @@
       } catch (e) { /* rơi về iframe */ }
     }
     let framed = null;
-    try { framed = await loadViaFrame(url); } catch (e) { framed = null; }
+    const preF = s.prefetchFrame && s.prefetchFrame.get(url);
+    if (preF) s.prefetchFrame.delete(url);
+    try { framed = await (preF || loadViaFrame(url)); } catch (e) { framed = null; }
     if (verify && framed && !framed.challenge && framed.paragraphs.length) {
       let fp = null;
       try { fp = await loadViaFetch(url); } catch (e) { fp = null; }
       const was = f.ok;
       f.ok = !!(fp && !fp.challenge && fp.paragraphs.length && sameText(fp, framed));
+      f.why = f.ok ? '' : !fp ? 'fetch không giải mã được trang' : (fp.challenge || !fp.paragraphs.length) ? 'fetch bị chặn/rỗng' : 'nội dung fetch khác iframe';
       if (was && !f.ok) await repairPending(); // lệch giữa chừng → các chương đã lưu bằng đường nhanh từ lần kiểm trước đều bị nghi
       else if (f.ok) f.pending = [];
     }
@@ -685,7 +700,7 @@
     const cover = s.cover ? { mime: s.cover.mime, data: fromB64(s.cover.b64) } : null;
     const volByUrl = new Map(s.toc.map((c) => [C.stripHash(c.url), c.vol]));
     chapters.forEach((c) => { const v = volByUrl.get(C.stripHash(c.url)); if (v) c.vol = v; });
-    const bytes = await C.buildEpub({ title: s.info.title, bookKey: s.bookKey, genres: s.info.genres, cover, chapters });
+    const bytes = await C.buildEpub({ title: s.info.title, bookKey: s.bookKey, genres: s.info.genres, description: s.info.description, cover, chapters });
     download(fileName, bytes, 'application/epub+zip');
     say(`Đã xuất ${chapters.length} chương → ${fileName}${missing ? `\n⚠ ${missing} chương mất nội dung — bấm “Khôi phục chương mất” rồi tải lại chúng.` : '\nDữ liệu vẫn còn trong extension, có thể tải thêm chương rồi xuất lại.'}`);
   }
@@ -744,6 +759,7 @@
       if (!s.info.title || s.info.title === 'Truyện') s.info.title = book.title || s.info.title;
       if (book.cover && !s.cover) await saveCover(book.cover.mime, book.cover.data);
       if (book.genres && book.genres.length && !(s.info.genres || []).length) s.info.genres = book.genres;
+      if (book.description && !s.info.description) s.info.description = book.description;
       await persistMeta();
       s.running = false;
       const missing = s.toc.filter((c) => !s.chap[c.url]).length;
@@ -903,7 +919,7 @@
   }
 
   async function runLoop(job) {
-    s.running = true; s.stop = false; s.job = job; s.prefetch = new Map();
+    s.running = true; s.stop = false; s.job = job; s.prefetch = new Map(); s.prefetchFrame = new Map();
     const fj = job.fast;
     // Sau khi tải lại trang: đường nhanh đang bật thì kiểm lại ngay ở chương kế (n=19 → mốc 20), chương chờ kiểm vẫn được giữ.
     s.fast = fj ? { ok: fj.ok, n: fj.ok ? 19 : 0, pending: fj.pending || [], last: null, lastUrl: fj.lastUrl || null } : { ok: null, n: 0, pending: [], last: null, lastUrl: null };
@@ -922,16 +938,23 @@
           if (page.challenge || !page.paragraphs.length) page = null;
         }
         if (!page) {
-          const prefetched = s.prefetch.has(t.url);
+          const prefetched = s.prefetch.has(t.url) || s.prefetchFrame.has(t.url);
           if (!first && !prefetched) await sleep(DELAY_MIN + Math.floor(Math.random() * DELAY_JITTER));
           if (s.stop) { reason = 'Đã dừng.'; break; }
           // Đường nhanh + danh sách: bắn song song cả lượt 10 chương, các chương sau lấy từ bộ nhớ đệm (nghỉ ngẫu nhiên chỉ giữa các lượt).
           if (job.mode === 'list' && s.fast.ok && !prefetched && (s.fast.n + 1) % 20 !== 0) {
             s.prefetch.clear();
-            job.queue.slice(0, BATCH).forEach((c, i) => {
+            job.queue.slice(0, s.batch).forEach((c, i) => {
               if (i > 0 && (s.fast.n + 1 + i) % 20 === 0) return; // chương tới mốc kiểm chứng sẽ đi đường chuẩn
               if (C.stripHash(c.url) === here || (s.chap[c.url] && !job.force)) return;
               s.prefetch.set(c.url, loadViaFetch(c.url).catch(() => null));
+            });
+          } else if (job.mode === 'list' && s.fast.ok === false && !prefetched) {
+            // Đường nhanh tắt (fetch không giải mã được) → mở song song tối đa s.batch iframe, các chương sau lấy kết quả từ đây.
+            s.prefetchFrame.clear();
+            job.queue.slice(0, s.batch).forEach((c) => {
+              if (C.stripHash(c.url) === here || (s.chap[c.url] && !job.force)) return;
+              s.prefetchFrame.set(c.url, loadViaFrame(c.url).catch(() => null));
             });
           }
           markCurrent(t.url);
@@ -964,13 +987,13 @@
         s.sel.delete(t.url); // đã tải xong → tự bỏ chọn
         if (job.failUrl === t.url) { job.failUrl = null; job.failCount = 0; }
         advance(job, page);
-        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ' · chế độ nhanh' : ''}${job.reloads ? ` · đã tải lại trang ${job.reloads} lần` : ''}`);
+        say(`Đã lưu ${got} chương mới… (${Object.keys(s.chap).length} tổng)${s.fast.ok ? ` · chế độ nhanh (${s.batch} chương/lượt)` : s.fast.ok === false ? ` · iframe song song ${s.batch} chương/lượt (${s.fast.why || 'đường nhanh tắt'})` : ''}${job.reloads ? ` · đã tải lại trang ${job.reloads} lần` : ''}`);
       }
     } catch (err) {
       reason = `⚠ Lỗi: ${err && err.message ? err.message : err}`;
     }
     try { await finalCheck(); } catch (err) { /* kiểm cuối lỗi → bỏ qua */ }
-    s.prefetch.clear();
+    s.prefetch.clear(); s.prefetchFrame.clear();
     bg({ type: 'job:clear' });
     s.running = false;
     s.current = null;
@@ -1024,6 +1047,7 @@
     let added = 0;
     if (replace) {
       s.toc = list.map((c) => { const o = old.get(c.url); return o ? { ...o, title: c.title, ...(c.vol ? { vol: c.vol } : {}) } : (added += 1, c); });
+      await clearUndo();
     } else {
       const toc = s.toc.slice();
       list.forEach((c) => { if (!old.has(c.url)) { toc.push(c); added += 1; } });
@@ -1040,6 +1064,36 @@
     const firstUnsaved = s.toc.findIndex((c) => !s.chap[c.url]);
     s.from = firstUnsaved >= 0 ? firstUnsaved + 1 : 1;
     say(`Đã dán ${list.length} chương (${added} mới) → mục lục ${s.toc.length} chương. Hàng đợi: ${queued} chương chưa tải đã được tick — bấm “Tải” để bắt đầu.`);
+  }
+
+  // ---------- sắp xếp chương ----------
+  async function setTocOrder(list) {
+    s.toc = list;
+    s.lastClick = -1; s.offset = 0;
+    await store.set(K.toc(s.bookKey), list);
+    const u = list.findIndex((c) => !s.chap[c.url]);
+    s.from = u >= 0 ? u + 1 : 1;
+  }
+  async function clearUndo() { s.undo = []; await store.remove(K.tocUndo(s.bookKey)); }
+
+  async function sortToc() {
+    const r = C.sortChapters(s.toc);
+    if (!r.numbered) { say('⚠ Không đọc được số chương trong tên nào — giữ nguyên thứ tự.'); return; }
+    if (!r.moved) { say('Mục lục đã đúng thứ tự theo tên chương.'); return; }
+    if (r.duplicates > r.numbered * 0.1 && !confirm(`${r.duplicates} chương trùng số trong cùng một quyển — có thể thiếu thông tin quyển nên các quyển sẽ bị trộn vào nhau. Vẫn sắp xếp? (Có thể hoàn tác.)`)) return;
+    s.undo = [...s.undo, s.toc.map((c) => c.url)].slice(-UNDO_MAX);
+    await store.set(K.tocUndo(s.bookKey), s.undo); // lưu bản cũ TRƯỚC khi ghi đè
+    await setTocOrder(r.list);
+    say(`Đã sắp xếp lại mục lục: ${r.moved} chương đổi vị trí${r.numbered < s.toc.length ? ` · ${s.toc.length - r.numbered} chương không có số đi theo chương đứng trước` : ''}. Sai thì bấm “Hoàn tác sắp xếp”.`);
+  }
+
+  async function undoSort() {
+    if (!s.undo.length) return;
+    const urls = s.undo[s.undo.length - 1];
+    await setTocOrder(C.restoreOrder(s.toc, urls));
+    s.undo = s.undo.slice(0, -1);
+    await store.set(K.tocUndo(s.bookKey), s.undo);
+    say(`Đã khôi phục thứ tự trước lần sắp xếp${s.undo.length ? ` (còn hoàn tác được ${s.undo.length} bước)` : ''}.`);
   }
 
   async function loadToc(force) {
@@ -1060,19 +1114,20 @@
     if (!list.length) { say('Không nhận ra danh sách chương trong mục lục này.'); return; }
     s.toc = list;
     await store.set(K.toc(s.bookKey), list);
+    await clearUndo();
     const firstUnsaved = list.findIndex((c) => !s.chap[c.url]);
     s.from = firstUnsaved >= 0 ? firstUnsaved + 1 : 1;
     if (catDoc) await applyCatalogMeta(catDoc, catUrl);
-    say(`Mục lục: ${list.length} chương${s.info.genres && s.info.genres.length ? ` · ${s.info.genres.join(', ')}` : ''}${s.cover ? ' · đã có bìa' : ''}.`);
+    say(`Mục lục: ${list.length} chương${s.info.genres && s.info.genres.length ? ` · ${s.info.genres.join(', ')}` : ''}${s.cover ? ' · đã có bìa' : ''}${s.info.description ? ' · đã có giới thiệu' : ''}.`);
   }
 
   async function forget() {
     if (!confirm('Xóa toàn bộ chương đã lưu của truyện này khỏi extension? (File đã tải xuống không bị xóa)')) return;
     const bodyKeys = Object.entries(s.chap).map(([u, c]) => bodyKey(c, u));
     await chrome.storage.local.remove(bodyKeys);
-    await Promise.all([K.book, K.chap, K.buf, K.toc].map((k) => store.remove(k(s.bookKey))));
+    await Promise.all([K.book, K.chap, K.buf, K.toc, K.tocUndo].map((k) => store.remove(k(s.bookKey))));
     await store.set(K.reg, (await loadRegistry()).filter((k) => k !== s.bookKey));
-    s.chap = {}; s.toc = [];
+    s.chap = {}; s.toc = []; s.undo = [];
     say('Đã xóa dữ liệu truyện.');
   }
 
@@ -1081,6 +1136,7 @@
     const ui = await store.get(K.ui, {});
     if (ui.tab === 'read' || ui.tab === 'dl') s.tab = ui.tab;
     if (ui.autoReload === false) s.autoReload = false;
+    if (ui.batch) s.batch = clampBatch(ui.batch);
     let job = await bg({ type: 'job:get' });
     if (job && (job.origin !== location.origin || !job.bookKey)) { await bg({ type: 'job:clear' }); job = null; } // người dùng đã sang site khác
     HN().onChange(() => { if (s.tab === 'read') render(); });
@@ -1105,6 +1161,7 @@
     for (const c of legacy) if (!s.chap[c.url]) await saveChapter(c.url, c);
     if (legacy.length) await store.remove(K.buf(s.bookKey));
     s.toc = await store.get(K.toc(s.bookKey), []);
+    s.undo = await store.get(K.tocUndo(s.bookKey), []);
     if (s.isTocPage && !s.toc.length) await loadToc(false);
     else if (!job && !s.cover && (s.isTocPage || s.tocUrl)) { // bắt đầu truyện đã có mục lục nhưng chưa có bìa/thể loại
       try {

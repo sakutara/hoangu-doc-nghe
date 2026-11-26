@@ -273,6 +273,89 @@
     return m ? { vol: m[1].trim(), title: m[2].trim() } : { vol: '', title: t };
   }
 
+  // ---------- sắp xếp chương theo tên ----------
+  const NUM = '[0-9零〇一二两兩三四五六七八九十百千万萬]+';
+  /** “一百二十三”, “两千零五”, “一零五”, “123” → số; không đọc được → null. */
+  function parseCnNumber(str) {
+    const t = String(str || '').trim();
+    if (/^\d+$/.test(t)) return Number(t);
+    const D = { 零: 0, 〇: 0, 一: 1, 二: 2, 两: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
+    const U = { 十: 10, 百: 100, 千: 1000 };
+    if (!t || ![...t].every((c) => c in D || c in U || c === '万' || c === '萬')) return null;
+    if ([...t].every((c) => c in D)) return Number([...t].map((c) => D[c]).join(''));
+    let total = 0; let section = 0; let digit = 0;
+    [...t].forEach((c) => {
+      if (c in D) digit = D[c];
+      else if (c in U) { section += (digit || 1) * U[c]; digit = 0; }
+      else { total += (section + digit || 1) * 10000; section = 0; digit = 0; }
+    });
+    return total + section + digit;
+  }
+
+  const firstNumber = (t, res) => {
+    for (const re of res) { const m = re.exec(t); if (m) { const n = parseCnNumber(m[1]); if (n != null) return n; } }
+    return null;
+  };
+
+  /** {vol: tên quyển, volNo, chapNo, edge: -1 mở đầu | 1 ngoại truyện/kết | 0, part: thứ tự 上/中/下} */
+  function chapterOrderInfo(c) {
+    const norm = (x) => String(x || '').normalize('NFKC').trim();
+    const sp = splitVolume(norm(c.title), norm(c.vol));
+    const volNo = sp.vol ? firstNumber(sp.vol, [new RegExp(`第\\s*(${NUM})\\s*[卷部集篇册冊]`), new RegExp(`^[卷部]\\s*(${NUM})`), /(?:volume|vol\.?|quyển)\s*(\d+)/i]) : null;
+    const t = sp.title;
+    const chapNo = firstNumber(t, [new RegExp(`第\\s*(${NUM})\\s*[章节節回话話]`), /^(?:chapter|chương|ch\.)\s*(\d+)/i, /^(\d+)\s*(?:[.、:_\-\s]|$)/, new RegExp(`^(${NUM})\\s*[、.]`)]);
+    let edge = 0;
+    if (chapNo == null) {
+      if (/^(序章|序言|序幕|序$|楔子|引子|引言|前言)/.test(t)) edge = -1;
+      else if (/^(尾声|尾聲|后记|後記|番外|终章|終章|大结局|完本|完结感言)/.test(t)) edge = 1;
+    }
+    const pm = /[(\[【]?([上中下])[)\]】]?$/.exec(t);
+    return { vol: sp.vol, volNo, chapNo, edge, part: pm ? '上中下'.indexOf(pm[1]) : 0 };
+  }
+
+  /** Sắp mục lục theo quyển trước, số chương sau. Không sửa mảng gốc.
+   *  Quyển có số được xếp theo số (quyển không số giữ nguyên chỗ); chương không số đi theo chương có số đứng trước nó (序章 lên đầu, 番外/后记 xuống cuối).
+   *  @returns {{list:Array,moved:number,numbered:number,duplicates:number}} duplicates: số chương trùng số trong cùng quyển (dấu hiệu thiếu thông tin quyển). */
+  function sortChapters(toc) {
+    const items = (toc || []).map((c, i) => ({ c, i, ...chapterOrderInfo(c) }));
+    const groups = new Map();
+    items.forEach((it) => {
+      const k = it.volNo != null ? `#${it.volNo}` : it.vol;
+      if (!groups.has(k)) groups.set(k, { volNo: it.volNo, items: [] });
+      groups.get(k).items.push(it);
+    });
+    const all = [...groups.values()];
+    const sorted = all.filter((g) => g.volNo != null).sort((a, b) => a.volNo - b.volNo);
+    let next = 0;
+    const ordered = all.map((g) => (g.volNo != null ? sorted[next++] : g));
+    let duplicates = 0;
+    const out = [];
+    ordered.forEach((g) => {
+      let prev = null; // chương có số gần nhất phía trước trong thứ tự hiện tại
+      const seen = new Set();
+      g.items.forEach((it) => {
+        if (it.chapNo != null) {
+          prev = it;
+          it.key = [0, it.chapNo, it.part, 0];
+          const id = `${it.chapNo}:${it.part}`;
+          if (seen.has(id)) duplicates += 1; else seen.add(id);
+        } else if (it.edge) it.key = [it.edge, 0, 0, 0];
+        else it.key = prev ? [0, prev.chapNo, prev.part, 1] : [-1, 1, 0, 0];
+      });
+      g.items.slice().sort((a, b) => {
+        for (let j = 0; j < 4; j += 1) if (a.key[j] !== b.key[j]) return a.key[j] - b.key[j];
+        return a.i - b.i;
+      }).forEach((it) => out.push(it));
+    });
+    return { list: out.map((it) => it.c), moved: out.filter((it, i) => it.i !== i).length, numbered: items.filter((it) => it.chapNo != null).length, duplicates };
+  }
+
+  /** Dựng lại thứ tự mục lục theo ảnh chụp danh sách URL (hoàn tác sắp xếp). Chỉ đổi thứ tự: tiêu đề hiện tại giữ nguyên, chương thêm sau đó nằm cuối. */
+  function restoreOrder(toc, urls) {
+    const rank = new Map((urls || []).map((u, i) => [u, i]));
+    return (toc || []).map((c, i) => ({ c, r: rank.has(c.url) ? rank.get(c.url) : rank.size + i })).sort((a, b) => a.r - b.r).map((x) => x.c);
+  }
+
   /** Danh sách chương [{title,url,vol?}] từ trang mục lục, theo thứ tự xuất hiện, bỏ trùng URL. */
   function parseToc(d, tocUrl) {
     const base = new URL(tocUrl);
@@ -380,7 +463,7 @@
     };
     let coverUrl = abs(metaOf('og:image', 'twitter:image'));
     if (!coverUrl) {
-      const img = d.querySelector('#fmimg img, .book-img img, .bookimg img, .book-cover img, .bookcover img, .cover img, .pic img, .book-info img, .info img, #bookimg img, .detail img');
+      const img = d.querySelector('#fmimg img, .book-img img, .bookimg img, .book-cover img, .bookcover img, .cover img, .pic img, .book-info img, .book_info img, .info img, #bookimg img, .detail img');
       if (img) coverUrl = abs(img.getAttribute('data-original') || img.getAttribute('data-src') || img.getAttribute('src'));
     }
     const genres = [];
@@ -400,7 +483,32 @@
       const m = /(?:分\s*类|类\s*型|类\s*别|題\s*材|题\s*材|類\s*型)\s*[:：]\s*([^\s\n<|，,;；/]{1,12})/.exec(d.body ? d.body.textContent || '' : '');
       if (m) addGenre(m[1]);
     }
-    return { coverUrl, genres: genres.slice(0, 12) };
+    return { coverUrl, genres: genres.slice(0, 12), description: parseDescription(d, metaOf) };
+  }
+
+  /** Giới thiệu truyện: khối giới thiệu riêng → đoạn văn dài nhất trong .book_info (hetushu) → meta description. Bỏ nhãn “简介：”, dòng tác giả/trạng thái. */
+  function parseDescription(d, metaOf) {
+    const clean = (t) => String(t || '').replace(/[\u00a0\u3000]/g, ' ').split(/\n+/).map((l) => l.replace(/[ \t]+/g, ' ').trim()).filter(Boolean)
+      .map((l) => l.replace(/^(?:内容)?(?:简\s*介|簡\s*介|介\s*绍|内容提要)\s*[:：]?\s*/, '').trim()).filter((l) => l && !/^(?:作\s*者|状\s*态|狀\s*態|分\s*类|类\s*型|更新(?:时间)?|字\s*数|最新章节)\s*[:：]/.test(l)).join('\n');
+    const text = (el) => clean((el.innerText !== undefined ? el.innerText : '') || el.textContent || '');
+    const textOf = (el) => {
+      // textContent không có xuống dòng giữa các khối → ghép từng khối con lá
+      const blocks = [...el.querySelectorAll('p, div, li')].filter((x) => !x.querySelector('p, div, li'));
+      const joined = blocks.length ? blocks.map((b) => clean(b.textContent || '')).filter(Boolean).join('\n') : '';
+      return joined || text(el);
+    };
+    const specific = d.querySelector('.book_info .intro, .book_info .desc, .book_info .description, .book_info .jianjie, .intro, #intro, .book-intro, .bookintro, #bookintro, .book_intro, .desc, .jianjie, #jianjie, .synopsis');
+    let desc = specific ? textOf(specific) : '';
+    if (desc.length < 20) {
+      const bi = d.querySelector('.book_info');
+      if (bi) {
+        const leaves = [...bi.querySelectorAll('p, div, li, span')].filter((x) => !x.querySelector('p, div, li') && !x.closest('a')).map((x) => clean(x.textContent || ''));
+        const longest = leaves.sort((a, b) => b.length - a.length)[0] || '';
+        desc = longest.length >= 20 ? longest : textOf(bi);
+      }
+    }
+    if (desc.length < 20) desc = clean(metaOf('og:description', 'description'));
+    return desc.length >= 10 ? desc.slice(0, 3000) : '';
   }
 
   /** Tên sách: đối chiếu nhiều nguồn trên trang (meta, breadcrumb, alt bìa, h1/h2, tiêu đề tab), nguồn nào được nhiều chỗ đồng ý nhất thì thắng.
@@ -566,7 +674,7 @@
   const pad = (n) => String(n).padStart(4, '0');
 
   /** Dựng EPUB 3 (nén deflate) từ các chương; trả Promise<Uint8Array>. Mỗi chương ghi lại URL gốc ở thuộc tính data-hn-url của <body> để nhập lại đúng mục lục.
-   *  @param {{title:string,bookKey?:string,origin?:string,genres?:string[],cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
+   *  @param {{title:string,bookKey?:string,origin?:string,genres?:string[],description?:string,cover?:{mime:string,data:Uint8Array}|null,chapters:Array<{url:string,title:string,vol?:string,blocks?:Array,paragraphs:string[]}>}} book */
   async function buildEpub(book) {
     // Spine rỗng làm Calibre báo "Spineless"; thà báo lỗi rõ ràng còn hơn xuất file hỏng.
     if (!book.chapters || !book.chapters.length) throw new Error('Không có chương nào để xuất EPUB.');
@@ -618,7 +726,7 @@
     const uid = `hoangu-${crc32(utf8(book.bookKey || book.title)).toString(16)}`;
     entries.push({ name: 'OEBPS/nav.xhtml', data: utf8(xhtml(book.title, `<nav epub:type="toc"><h1>Mục lục</h1><ol>${navItems.join('')}</ol></nav>`)) });
     entries.push({ name: 'OEBPS/toc.ncx', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="${uid}"/></head><docTitle><text>${xmlEsc(book.title)}</text></docTitle><navMap>${ncxPoints.join('')}</navMap></ncx>`) });
-    entries.push({ name: 'OEBPS/content.opf', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">${uid}</dc:identifier><dc:title>${xmlEsc(book.title)}</dc:title><dc:language>zh</dc:language>${(book.genres || []).map((g) => `<dc:subject>${xmlEsc(g)}</dc:subject>`).join('')}${book.bookKey ? `<dc:source>${xmlEsc(book.bookKey)}</dc:source>` : ''}<meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, 'Z')}</meta>${cover ? '<meta name="cover" content="cover-image"/>' : ''}</metadata><manifest>${manifest.join('')}</manifest><spine toc="ncx">${spine.join('')}</spine></package>`) });
+    entries.push({ name: 'OEBPS/content.opf', data: utf8(`<?xml version="1.0" encoding="UTF-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="uid">${uid}</dc:identifier><dc:title>${xmlEsc(book.title)}</dc:title><dc:language>zh</dc:language>${book.description ? `<dc:description>${xmlEsc(book.description)}</dc:description>` : ''}${(book.genres || []).map((g) => `<dc:subject>${xmlEsc(g)}</dc:subject>`).join('')}${book.bookKey ? `<dc:source>${xmlEsc(book.bookKey)}</dc:source>` : ''}<meta property="dcterms:modified">${new Date().toISOString().replace(/\.\d+Z$/, 'Z')}</meta>${cover ? '<meta name="cover" content="cover-image"/>' : ''}</metadata><manifest>${manifest.join('')}</manifest><spine toc="ncx">${spine.join('')}</spine></package>`) });
     return zipPack(entries);
   }
 
@@ -681,7 +789,8 @@
       chapters.push({ url: body.getAttribute('data-hn-url') || '', title: chTitle || `Chương ${chapters.length + 1}`, blocks, paragraphs: blocks.map((b) => b.text) });
     }
     const genres = [...opf.getElementsByTagName('dc:subject')].map((e) => (e.textContent || '').trim()).filter(Boolean);
-    return { title, cover, genres, chapters };
+    const dcDesc = opf.getElementsByTagName('dc:description')[0];
+    return { title, cover, genres, description: ((dcDesc && dcDesc.textContent) || '').trim(), chapters };
   }
 
   // ---------- tự tải lại trang khi bị chặn ----------
@@ -719,7 +828,7 @@
   // ---------- quản lý kho (trang manage.html) ----------
   /** Tên key trong chrome.storage.local — PHẢI khớp với K trong content.js. */
   const STORE = {
-    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, toc: (b) => `hn:toc:${b}`, buf: (b) => `hn:buf:${b}`, cover: (b) => `hn:cover:${b}`,
+    book: (b) => `hn:book:${b}`, chap: (b) => `hn:chap:${b}`, toc: (b) => `hn:toc:${b}`, tocUndo: (b) => `hn:tocUndo:${b}`, buf: (b) => `hn:buf:${b}`, cover: (b) => `hn:cover:${b}`,
     body: (b, n) => `hn:body:${b}#${n}`, bodyUrl: (b, u) => `hn:body:${b}@${u}`, idx: 'hn:idx', reg: 'hn:books',
   };
 
@@ -753,7 +862,7 @@
   /** Mọi key thuộc một truyện (meta + bìa + nội dung chương) — xoá hết là truyện biến mất khỏi extension. */
   function bookStorageKeys(bookKey, chap) {
     const bodies = Object.entries(chap || {}).map(([u, c]) => chapterBodyKey(bookKey, c, u));
-    return [STORE.book(bookKey), STORE.chap(bookKey), STORE.toc(bookKey), STORE.buf(bookKey), STORE.cover(bookKey), ...bodies];
+    return [STORE.book(bookKey), STORE.chap(bookKey), STORE.toc(bookKey), STORE.buf(bookKey), STORE.cover(bookKey), STORE.tocUndo(bookKey), ...bodies];
   }
 
   /** Bỏ các URL khỏi chỉ mục URL→truyện (chỉ những URL đang trỏ về đúng truyện này). Trả bản mới, không sửa bản gốc. */
@@ -784,6 +893,6 @@
 
   root.HNCore = {
     STORE, chapterBodyKey, orderChapters, bookStorageKeys, pruneIndex, orphanBodyKeys, fmtBytes,
-    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, parsePastedToc, looksLikeToc, guessBookTitle, parseCatalogMeta, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
+    needsScripts, scrambleKeySource, descramble, contentSignature, han, stripLinks, cleanTitle, extractPage, findTocUrl, parseToc, parsePastedToc, looksLikeToc, guessBookTitle, parseCatalogMeta, parseCnNumber, sortChapters, restoreOrder, safeName, buildEpub, splitVolume, parseEpub, zipRead, cleanText, dedupeBlocks, squeezeSpaces, isChallengeHtml, stripHash, RELOAD, reloadDecision, isBlockedDoc, reloadUrl,
   };
 }(typeof globalThis !== 'undefined' ? globalThis : window));

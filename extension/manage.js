@@ -243,7 +243,7 @@
       const { chapters, missing } = await readBodies(rows);
       if (!chapters.length) { toast(`⚠ Cả ${missing} chương đều mất nội dung.`); return; }
       const cover = coverSrc(b.cover) ? { mime: b.cover.mime, data: fromB64(b.cover.b64) } : null;
-      const bytes = await C.buildEpub({ title: b.info.title, bookKey: b.key, cover, chapters });
+      const bytes = await C.buildEpub({ title: b.info.title, bookKey: b.key, genres: b.info.genres, description: b.info.description, cover, chapters });
       const name = `${C.safeName(b.info.title)}${only ? `-${chapters.length}ch` : ''}.epub`;
       const u = URL.createObjectURL(new Blob([bytes], { type: 'application/epub+zip' }));
       const a = el('a', { href: u, download: name });
